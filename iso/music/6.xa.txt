@@ -1,0 +1,4 @@
+1 xa danger/Vocals.xa 1 0
+1 xa danger/Inst.xa 1 1
+1 xa double-kill/Vocals.xa 1 2
+1 xa double-kill/Inst.xa 1 3

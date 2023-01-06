@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Defines the ISO project -->
+<iso_project image_name="impostor.bin" cue_sheet="impostor.cue" no_xa="0">
+	<!-- Data track -->
+	<track type="data">
+		<!-- Identifiers -->
+		<identifiers
+			system        = "PLAYSTATION"
+			application   = "PLAYSTATION"
+			volume        = "PSXFUNKIN"
+			volume_set    = "PSXFUNKIN"
+			publisher     = "CUCKYDEV"
+			copyright     = "NINJAMUFFIN99"
+		/>
+		<license file="licensea.dat"/>
+		
+		<!-- Data directory tree -->
+		<directory_tree>
+			<!-- System -->
+			<file name = "system.cnf" type = "data" source = "iso/system.cnf"/>
+			<file name = "SCUS_615.18" type = "data" source = "funkin.ps-exe"/>
+			
+			<!-- Menu assets -->
+			<dir name = "menu">
+				<file name = "loading.tim" type = "data" source = "iso/menu/loading.tim"/>
+				<file name = "menu.arc" type = "data" source = "iso/menu/menu.arc"/>
+			</dir>
+			
+			<!-- Fonts -->
+			<dir name = "font">
+				<file name = "font.tim" type = "data" source = "iso/font/font.tim"/>
+			</dir>
+			
+			<!-- Stage assets -->
+			<dir name = "stage">
+				<file name = "hud0.tim" type = "data" source = "iso/stage/hud0.tim"/>
+				<file name = "hud1-1.tim" type = "data" source = "iso/stage/hud1-1.tim"/>
+				<file name = "hud1-2.tim" type = "data" source = "iso/stage/hud1-2.tim"/>
+				<file name = "hud1-3.tim" type = "data" source = "iso/stage/hud1-3.tim"/>
+				<file name = "hud1-4.tim" type = "data" source = "iso/stage/hud1-4.tim"/>
+				<file name = "hud1-5.tim" type = "data" source = "iso/stage/hud1-5.tim"/>
+				<file name = "hud1-6.tim" type = "data" source = "iso/stage/hud1-6.tim"/>
+				<file name = "count.tim" type = "data" source = "iso/stage/count.tim"/>
+			</dir>
+			
+			<!-- Week 1 assets -->
+			<dir name = "week1">
+				<!-- Background art -->
+				<file name = "back.arc" type = "data" source = "iso/stages/week1/back.arc"/>
+
+				<file name = "1.1n.cht" type = "data" source = "iso/music/sussus-moogus/sussus-moogus.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/music/sabotage/sabotage.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/music/meltdown/meltdown.json.cht"/>
+				<file name = "1.4n.cht" type = "data" source = "iso/music/sussus-toogus/sussus-toogus.json.cht"/>
+				<file name = "1.5n.cht" type = "data" source = "iso/music/lights-down/lights-down.json.cht"/>
+				<file name = "1.6n.cht" type = "data" source = "iso/music/reactor/reactor.json.cht"/>
+				<file name = "1.7n.cht" type = "data" source = "iso/music/ejected/ejected.json.cht"/>
+				<file name = "1.8n.cht" type = "data" source = "iso/music/mando/mando.json.cht"/>
+				<file name = "1.9n.cht" type = "data" source = "iso/music/dlow/dlow.json.cht"/>
+				<file name = "1.10n.cht" type = "data" source = "iso/music/oversight/oversight.json.cht"/>
+				<file name = "1.11n.cht" type = "data" source = "iso/music/danger/danger.json.cht"/>
+				<file name = "1.12n.cht" type = "data" source = "iso/music/double-kill/double-kill.json.cht"/>
+			</dir>
+			
+			<!-- Week 2 assets -->
+			<dir name = "week2">
+			
+				<file name = "2.1n.cht" type = "data" source = "iso/music/defeat/defeat.json.cht"/>
+				<file name = "2.2n.cht" type = "data" source = "iso/music/finale/finale.json.cht"/>
+				<file name = "2.3n.cht" type = "data" source = "iso/music/identity-crisis/identity-crisis.json.cht"/>
+				<file name = "2.4n.cht" type = "data" source = "iso/music/ashes/ashes.json.cht"/>
+				<file name = "2.5n.cht" type = "data" source = "iso/music/magmatic/magmatic.json.cht"/>
+				<file name = "2.6n.cht" type = "data" source = "iso/music/boiling-point/boiling-point.json.cht"/>
+				<file name = "2.7n.cht" type = "data" source = "iso/music/delusion/delusion.json.cht"/>
+				<file name = "2.8n.cht" type = "data" source = "iso/music/blackout/blackout.json.cht"/>
+				<file name = "2.9n.cht" type = "data" source = "iso/music/neurotic/neurotic.json.cht"/>
+			</dir>
+			
+			<!-- Week 3 assets -->
+			<dir name = "week3">
+				
+				<file name = "3.1n.cht" type = "data" source = "iso/music/heartbeat/heartbeat.json.cht"/>
+				<file name = "3.2n.cht" type = "data" source = "iso/music/pinkwave/pinkwave.json.cht"/>
+				<file name = "3.3n.cht" type = "data" source = "iso/music/pretender/pretender.json.cht"/>
+				<file name = "3.4n.cht" type = "data" source = "iso/music/sauces-moogus/sauces-moogus.json.cht"/>
+				<file name = "3.5n.cht" type = "data" source = "iso/music/o2/o2.json.cht"/>
+				<file name = "3.6n.cht" type = "data" source = "iso/music/voting-time/voting-time.json.cht"/>
+				<file name = "3.7n.cht" type = "data" source = "iso/music/turbulence/turbulence.json.cht"/>
+				<file name = "3.8n.cht" type = "data" source = "iso/music/victory/victory.json.cht"/>
+				<file name = "3.9n.cht" type = "data" source = "iso/music/roomcode/roomcode.json.cht"/>
+			</dir>
+			
+			<!-- Week 4 assets -->
+			<dir name = "week4">
+				
+				<file name = "4.1n.cht" type = "data" source = "iso/music/sussy-bussy/sussy-bussy.json.cht"/>
+				<file name = "4.2n.cht" type = "data" source = "iso/music/rivals/rivals.json.cht"/>
+				<file name = "4.3n.cht" type = "data" source = "iso/music/chewmate/chewmate.json.cht"/>
+				<file name = "4.4n.cht" type = "data" source = "iso/music/tomongus-tuesday/tomongus-tuesday.json.cht"/>
+				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas.json.cht"/>
+				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor.json.cht"/>
+				<file name = "4.7n.cht" type = "data" source = "iso/music/titular/titular.json.cht"/>
+				<file name = "4.8n.cht" type = "data" source = "iso/music/greatest-plan/greatest-plan.json.cht"/>
+				<file name = "4.9n.cht" type = "data" source = "iso/music/reinforcements/reinforcements.json.cht"/>
+				<file name = "4.10n.cht" type = "data" source = "iso/music/armed/armed.json.cht"/>
+			</dir>
+			
+			<!-- Week 5 assets -->
+			<dir name = "week5">
+				
+				<file name = "5.1n.cht" type = "data" source = "iso/music/alpha-moogus/alpha-moogus.json.cht"/>
+				<file name = "5.2n.cht" type = "data" source = "iso/music/actin-sus/actin-sus.json.cht"/>
+				<file name = "5.3n.cht" type = "data" source = "iso/music/ow/ow.json.cht"/>
+				<file name = "5.4n.cht" type = "data" source = "iso/music/who/who.json.cht"/>
+				<file name = "5.5n.cht" type = "data" source = "iso/music/insane-streamer/insane-streamer.json.cht"/>
+				<file name = "5.6n.cht" type = "data" source = "iso/music/sussus-nuzzus/sussus-nuzzus.json.cht"/>
+				<file name = "5.7n.cht" type = "data" source = "iso/music/idk/idk.json.cht"/>
+				<file name = "5.8n.cht" type = "data" source = "iso/music/esculent/esculent.json.cht"/>
+				<file name = "5.9n.cht" type = "data" source = "iso/music/drippypop/drippypop.json.cht"/>
+			</dir>
+			
+			<!-- Week 6 assets -->
+			<dir name = "week6">
+				
+				<file name = "6.1n.cht" type = "data" source = "iso/music/crewicide/crewicide.json.cht"/>
+				<file name = "6.2n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack.json.cht"/>
+				<file name = "6.3n.cht" type = "data" source = "iso/music/top-10/top-10.json.cht"/>
+				<file name = "6.4n.cht" type = "data" source = "iso/music/chippin/chippin.json.cht"/>
+				<file name = "6.5n.cht" type = "data" source = "iso/music/chipping/chipping.json.cht"/>
+				<file name = "6.6n.cht" type = "data" source = "iso/music/torture/torture.json.cht"/>
+				<file name = "6.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
+				<file name = "6.8n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-other.json.cht"/>
+			</dir>
+		
+			<!-- Character assets -->
+			<dir name = "char">
+				<!-- Boyfriend assets -->
+				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
+				<file name = "dead.tim" type = "data" source = "iso/chars/bf/dead.tim"/>
+				
+				<!-- Dad assets -->
+				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
+
+				<!-- Girlfriend assets -->
+				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
+				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
+				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
+			</dir>
+		    
+			<!-- Sound effects -->
+			<dir name = "sounds">
+				<!-- Menu Sounds -->
+				<file name = "scroll.vag" type = "data" source = "iso/sounds/menu/scroll.VAG"/>
+				<file name = "confirm.vag" type = "data" source = "iso/sounds/menu/confirm.VAG"/>
+				<file name = "cancel.vag" type = "data" source = "iso/sounds/menu/cancel.VAG"/>
+				<!-- Stage Sounds -->
+				<file name = "intro0.vag" type = "data" source = "iso/sounds/stage/intro0.ogg.vag"/>
+				<file name = "intro1.vag" type = "data" source = "iso/sounds/stage/intro1.ogg.vag"/>
+				<file name = "intro2.vag" type = "data" source = "iso/sounds/stage/intro2.ogg.vag"/>
+				<file name = "intro3.vag" type = "data" source = "iso/sounds/stage/intro3.ogg.vag"/>
+				<!-- Other Sounds -->
+				<file name = "death.vag" type = "data" source = "iso/sounds/stage/death.ogg.vag"/>
+				<file name = "retry.vag" type = "data" source = "iso/sounds/stage/retry.ogg.vag"/>
+
+				<!-- Miss Sounds -->
+				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
+				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
+				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
+			</dir>
+			
+			<!-- Music -->
+			<dir name = "music">
+				<file name = "menu.xa" type = "xa" source = "iso/music/menu.xa"/>
+				<dummy sectors="128"/>
+				<file name = "1.xa" type = "xa" source = "iso/music/1.xa"/>
+				<dummy sectors="128"/>
+				<file name = "2.xa" type = "xa" source = "iso/music/2.xa"/>
+				<dummy sectors="128"/>
+				<file name = "3.xa" type = "xa" source = "iso/music/3.xa"/>
+				<dummy sectors="128"/>
+				<file name = "4.xa" type = "xa" source = "iso/music/4.xa"/>
+				<dummy sectors="128"/>
+				<file name = "5.xa" type = "xa" source = "iso/music/5.xa"/>
+				<dummy sectors="128"/>
+				<file name = "6.xa" type = "xa" source = "iso/music/6.xa"/>
+				<dummy sectors="128"/>
+				<file name = "7.xa" type = "xa" source = "iso/music/7.xa"/>
+				<dummy sectors="128"/>
+				<file name = "8.xa" type = "xa" source = "iso/music/8.xa"/>
+				<dummy sectors="128"/>
+				<file name = "9.xa" type = "xa" source = "iso/music/9.xa"/>
+				<dummy sectors="128"/>
+				<file name = "10.xa" type = "xa" source = "iso/music/10.xa"/>
+				<dummy sectors="128"/>
+				<file name = "11.xa" type = "xa" source = "iso/music/11.xa"/>
+				<dummy sectors="128"/>
+				<file name = "12.xa" type = "xa" source = "iso/music/12.xa"/>
+				<dummy sectors="128"/>
+				<file name = "13.xa" type = "xa" source = "iso/music/13.xa"/>
+				<dummy sectors="128"/>
+				<file name = "14.xa" type = "xa" source = "iso/music/14.xa"/>
+				<dummy sectors="128"/>
+				<file name = "15.xa" type = "xa" source = "iso/music/15.xa"/>
+				<dummy sectors="128"/>
+				<file name = "16.xa" type = "xa" source = "iso/music/16.xa"/>
+				<dummy sectors="128"/>
+				<file name = "17.xa" type = "xa" source = "iso/music/17.xa"/>
+				<dummy sectors="128"/>
+				<file name = "18.xa" type = "xa" source = "iso/music/18.xa"/>
+				<dummy sectors="128"/>
+				<file name = "19.xa" type = "xa" source = "iso/music/19.xa"/>
+				<dummy sectors="128"/>
+				<file name = "20.xa" type = "xa" source = "iso/music/20.xa"/>
+				<dummy sectors="128"/>
+				<file name = "21.xa" type = "xa" source = "iso/music/21.xa"/>
+				<dummy sectors="128"/>
+				<file name = "22.xa" type = "xa" source = "iso/music/22.xa"/>
+				<dummy sectors="128"/>
+				<file name = "23.xa" type = "xa" source = "iso/music/23.xa"/>
+				<dummy sectors="128"/>
+				<file name = "24.xa" type = "xa" source = "iso/music/24.xa"/>
+				<dummy sectors="128"/>
+				<file name = "25.xa" type = "xa" source = "iso/music/25.xa"/>
+				<dummy sectors="128"/>
+				<file name = "26.xa" type = "xa" source = "iso/music/26.xa"/>
+				<dummy sectors="128"/>
+				<file name = "27.xa" type = "xa" source = "iso/music/27.xa"/>
+				<dummy sectors="128"/>
+				<file name = "28.xa" type = "xa" source = "iso/music/28.xa"/>
+				<dummy sectors="128"/>
+				<file name = "29.xa" type = "xa" source = "iso/music/29.xa"/>
+				<dummy sectors="128"/>
+			</dir>
+			
+			<!-- Dummy sectors -->
+			<dummy sectors="1024"/>
+		</directory_tree>
+	</track>
+</iso_project>

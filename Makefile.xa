@@ -1,0 +1,69 @@
+all: \
+  iso/music/menu.xa \
+  iso/music/1.xa \
+  iso/music/2.xa \
+  iso/music/3.xa \
+  iso/music/4.xa \
+  iso/music/5.xa \
+  iso/music/6.xa \
+  iso/music/7.xa \
+  iso/music/8.xa \
+  iso/music/9.xa \
+  iso/music/10.xa \
+  iso/music/11.xa \
+  iso/music/12.xa \
+  iso/music/13.xa \
+  iso/music/14.xa \
+  iso/music/15.xa \
+  iso/music/16.xa \
+  iso/music/17.xa \
+  iso/music/18.xa \
+  iso/music/19.xa \
+  iso/music/20.xa \
+  iso/music/21.xa \
+  iso/music/22.xa \
+  iso/music/23.xa \
+  iso/music/24.xa \
+  iso/music/25.xa \
+  iso/music/26.xa \
+  iso/music/27.xa \
+  iso/music/28.xa \
+  iso/music/29.xa 
+
+# XA converts
+iso/music/%.xa: iso/music/%.ogg
+	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@
+iso/music/%.xa:
+	tools/xainterleave/xainterleave $@
+
+# XA interleaves
+iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
+iso/music/1.xa: iso/music/sussus-moogus/Inst.xa iso/music/sussus-moogus/Vocals.xa iso/music/sabotage/Inst.xa iso/music/sabotage/Vocals.xa
+iso/music/2.xa: iso/music/meltdown/Inst.xa iso/music/meltdown/Vocals.xa iso/music/sussus-toogus/Inst.xa iso/music/sussus-toogus/Vocals.xa
+iso/music/3.xa: iso/music/lights-down/Inst.xa iso/music/lights-down/Vocals.xa iso/music/reactor/Inst.xa iso/music/reactor/Vocals.xa
+iso/music/4.xa: iso/music/ejected/Inst.xa iso/music/ejected/Vocals.xa iso/music/mando/Inst.xa iso/music/mando/Vocals.xa
+iso/music/5.xa: iso/music/dlow/Inst.xa iso/music/dlow/Vocals.xa iso/music/oversight/Inst.xa iso/music/oversight/Vocals.xa
+iso/music/6.xa: iso/music/danger/Inst.xa iso/music/danger/Vocals.xa iso/music/double-kill/Inst.xa iso/music/double-kill/Vocals.xa
+iso/music/7.xa: iso/music/defeat/Inst.xa iso/music/defeat/Vocals.xa iso/music/finale/Inst.xa iso/music/finale/Vocals.xa
+iso/music/8.xa: iso/music/identity-crisis/Inst.xa iso/music/identity-crisis/Vocals.xa
+iso/music/9.xa: iso/music/ashes/Inst.xa iso/music/ashes/Vocals.xa iso/music/magmatic/Inst.xa iso/music/magmatic/Vocals.xa
+iso/music/10.xa: iso/music/boiling-point/Inst.xa iso/music/boiling-point/Vocals.xa iso/music/delusion/Inst.xa iso/music/delusion/Vocals.xa
+iso/music/11.xa: iso/music/blackout/Inst.xa iso/music/blackout/Vocals.xa iso/music/neurotic/Inst.xa iso/music/neurotic/Vocals.xa
+iso/music/12.xa: iso/music/heartbeat/Inst.xa iso/music/heartbeat/Vocals.xa iso/music/pinkwave/Inst.xa iso/music/pinkwave/Vocals.xa
+iso/music/13.xa: iso/music/pretender/Inst.xa iso/music/pretender/Vocals.xa iso/music/sauces-moogus/Inst.xa iso/music/sauces-moogus/Vocals.xa
+iso/music/14.xa: iso/music/o2/Inst.xa iso/music/o2/Vocals.xa iso/music/voting-time/Inst.xa iso/music/voting-time/Vocals.xa
+iso/music/15.xa: iso/music/turbulence/Inst.xa iso/music/turbulence/Vocals.xa iso/music/victory/Inst.xa iso/music/victory/Vocals.xa
+iso/music/16.xa: iso/music/roomcode/Inst.xa iso/music/roomcode/Vocals.xa
+iso/music/17.xa: iso/music/sussy-bussy/Inst.xa iso/music/sussy-bussy/Vocals.xa iso/music/rivals/Inst.xa iso/music/rivals/Vocals.xa
+iso/music/18.xa: iso/music/chewmate/Inst.xa iso/music/chewmate/Vocals.xa iso/music/tomongus-tuesday/Inst.xa iso/music/tomongus-tuesday/Vocals.xa
+iso/music/19.xa: iso/music/christmas/Inst.xa iso/music/christmas/Vocals.xa iso/music/spookpostor/Inst.xa iso/music/spookpostor/Vocals.xa
+iso/music/20.xa: iso/music/titular/Inst.xa iso/music/titular/Vocals.xa iso/music/greatest-plan/Inst.xa iso/music/greatest-plan/Vocals.xa
+iso/music/21.xa: iso/music/reinforcements/Inst.xa iso/music/reinforcements/Vocals.xa iso/music/armed/Inst.xa iso/music/armed/Vocals.xa
+iso/music/22.xa: iso/music/alpha-moogus/Inst.xa iso/music/alpha-moogus/Vocals.xa iso/music/actin-sus/Inst.xa iso/music/actin-sus/Vocals.xa
+iso/music/23.xa: iso/music/ow/Inst.xa iso/music/ow/Vocals.xa iso/music/who/Inst.xa iso/music/who/Vocals.xa
+iso/music/24.xa: iso/music/insane-streamer/Inst.xa iso/music/insane-streamer/Vocals.xa iso/music/sussus-nuzzus/Inst.xa iso/music/sussus-nuzzus/Vocals.xa
+iso/music/25.xa: iso/music/idk/Inst.xa iso/music/idk/Vocals.xa iso/music/esculent/Inst.xa iso/music/esculent/Vocals.xa
+iso/music/26.xa: iso/music/drippypop/Inst.xa iso/music/drippypop/Vocals.xa iso/music/crewicide/Inst.xa iso/music/crewicide/Vocals.xa
+iso/music/27.xa: iso/music/monotone-attack/Inst.xa iso/music/monotone-attack/Vocals.xa iso/music/top-10/Inst.xa
+iso/music/28.xa: iso/music/chippin/Inst.xa iso/music/chippin/Vocals.xa iso/music/chipping/Inst.xa iso/music/chipping/Vocals.xa
+iso/music/29.xa: iso/music/torture/Inst.xa iso/music/torture/Vocals.xa

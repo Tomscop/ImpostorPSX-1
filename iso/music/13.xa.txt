@@ -1,0 +1,4 @@
+1 xa pretender/Vocals.xa 1 0
+1 xa pretender/Inst.xa 1 1
+1 xa sauces-moogus/Vocals.xa 1 2
+1 xa sauces-moogus/Inst.xa 1 3

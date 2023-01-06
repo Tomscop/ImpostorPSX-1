@@ -1,0 +1,4 @@
+1 xa ejected/Vocals.xa 1 0
+1 xa ejected/Inst.xa 1 1
+1 xa mando/Vocals.xa 1 2
+1 xa mando/Inst.xa 1 3

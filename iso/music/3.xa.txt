@@ -1,0 +1,4 @@
+1 xa lights-down/Vocals.xa 1 0
+1 xa lights-down/Inst.xa 1 1
+1 xa reactor/Vocals.xa 1 2
+1 xa reactor/Inst.xa 1 3

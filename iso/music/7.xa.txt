@@ -1,0 +1,4 @@
+1 xa defeat/Vocals.xa 1 0
+1 xa defeat/Inst.xa 1 1
+1 xa finale/Vocals.xa 1 2
+1 xa finale/Inst.xa 1 3

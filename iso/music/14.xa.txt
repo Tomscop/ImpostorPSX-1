@@ -1,0 +1,4 @@
+1 xa o2/Vocals.xa 1 0
+1 xa o2/Inst.xa 1 1
+1 xa voting-time/Vocals.xa 1 2
+1 xa voting-time/Inst.xa 1 3

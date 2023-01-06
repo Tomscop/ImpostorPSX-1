@@ -1,0 +1,4 @@
+1 xa blackout/Vocals.xa 1 0
+1 xa blackout/Inst.xa 1 1
+1 xa neurotic/Vocals.xa 1 2
+1 xa neurotic/Inst.xa 1 3
