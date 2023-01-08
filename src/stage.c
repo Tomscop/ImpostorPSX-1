@@ -1579,7 +1579,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
+	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
+	else
+		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
 	
 	sprintf(iconpath, "\\STAGE\\HUD1-%d.TIM;1", stage.stage_def->week);
 	Gfx_LoadTex(&stage.tex_hud1, IO_Read(iconpath), GFX_LOADTEX_FREE);
@@ -1865,7 +1868,10 @@ void Stage_Tick(void)
 			if (stage.prefs.songtimer)
 			{
 				if (show)
-					StageTimer_Draw();
+				{
+					if (stage.stage_id != StageId_Victory)
+						StageTimer_Draw();
+				}
 			}
 			if (stage.prefs.debug)
 				Debug_StageDebug();
@@ -2248,35 +2254,38 @@ void Stage_Tick(void)
 			{
 				if (stage.mode < StageMode_2P)
 				{
-					//Perform health checks
-					if (stage.player_state[0].health <= 0 && stage.prefs.practice == 0)
+					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_SussusNuzzus))
 					{
-						//Player has died
-						stage.player_state[0].health = 0;
-							
-						stage.state = StageState_Dead;
-					}
-					if (stage.player_state[0].health > 20000)
-						stage.player_state[0].health = 20000;
+						//Perform health checks
+						if (stage.player_state[0].health <= 0 && stage.prefs.practice == 0)
+						{
+							//Player has died
+							stage.player_state[0].health = 0;
+								
+							stage.state = StageState_Dead;
+						}
+						if (stage.player_state[0].health > 20000)
+							stage.player_state[0].health = 20000;
 
-					if (stage.player_state[0].health <= 0 && stage.prefs.practice)
-						stage.player_state[0].health = 0;
+						if (stage.player_state[0].health <= 0 && stage.prefs.practice)
+							stage.player_state[0].health = 0;
 
-					//Draw health heads
-					Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
-					Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
+						//Draw health heads
+						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
+						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
 					
-                    //Draw health bar
-                    if (stage.mode == StageMode_Swap)
-                    {
-					    Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.player->health_bar);
-					    Stage_DrawHealthBar(255, stage.opponent->health_bar);
-                    }
-                    else
-                    {
-					    Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
-					    Stage_DrawHealthBar(255, stage.player->health_bar);
-                    }
+						//Draw health bar
+						if (stage.mode == StageMode_Swap)
+						{
+							Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.player->health_bar);
+							Stage_DrawHealthBar(255, stage.opponent->health_bar);
+						}
+						else
+						{
+							Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
+							Stage_DrawHealthBar(255, stage.player->health_bar);
+						}
+					}
 				}
 			
 				//Tick note splashes
@@ -2420,8 +2429,8 @@ void Stage_Tick(void)
 					Audio_PlayXA_Track(XA_GameOverH, 0x40, 2, true);
 				else	
 					Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
-				stage.state = StageState_DeadLoad;
 			}
+			stage.state = StageState_DeadLoad;
 		}
 	//Fallthrough
 		case StageState_DeadLoad:
