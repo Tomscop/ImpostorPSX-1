@@ -151,9 +151,11 @@
 			<!-- Sound effects -->
 			<dir name = "sounds">
 				<!-- Menu Sounds -->
-				<file name = "scroll.vag" type = "data" source = "iso/sounds/menu/scroll.VAG"/>
-				<file name = "confirm.vag" type = "data" source = "iso/sounds/menu/confirm.VAG"/>
-				<file name = "cancel.vag" type = "data" source = "iso/sounds/menu/cancel.VAG"/>
+				<file name = "scroll.vag" type = "data" source = "iso/sounds/menu/scroll.ogg.vag"/>
+				<file name = "confirm.vag" type = "data" source = "iso/sounds/menu/confirm.ogg.vag"/>
+				<file name = "cancel.vag" type = "data" source = "iso/sounds/menu/cancel.ogg.vag"/>
+				<file name = "scrollfp.vag" type = "data" source = "iso/sounds/menu/scrollfp.ogg.vag"/>
+				<file name = "confirmf.vag" type = "data" source = "iso/sounds/menu/confirmfp.ogg.vag"/>
 				<!-- Stage Sounds -->
 				<file name = "intro0.vag" type = "data" source = "iso/sounds/stage/intro0.ogg.vag"/>
 				<file name = "intro1.vag" type = "data" source = "iso/sounds/stage/intro1.ogg.vag"/>
@@ -161,8 +163,14 @@
 				<file name = "intro3.vag" type = "data" source = "iso/sounds/stage/intro3.ogg.vag"/>
 				<!-- Other Sounds -->
 				<file name = "death.vag" type = "data" source = "iso/sounds/stage/death.ogg.vag"/>
+				<file name = "deathe.vag" type = "data" source = "iso/sounds/stage/deathe.ogg.vag"/>
+				<file name = "deathd.vag" type = "data" source = "iso/sounds/stage/deathd.ogg.vag"/>
+				<file name = "deathp.vag" type = "data" source = "iso/sounds/stage/deathp.ogg.vag"/>
+				<file name = "deathh.vag" type = "data" source = "iso/sounds/stage/deathh.ogg.vag"/>
 				<file name = "retry.vag" type = "data" source = "iso/sounds/stage/retry.ogg.vag"/>
-
+				<file name = "retryj.vag" type = "data" source = "iso/sounds/stage/retryj.ogg.vag"/>
+				<file name = "retryp.vag" type = "data" source = "iso/sounds/stage/retryp.ogg.vag"/>
+				<file name = "retryh.vag" type = "data" source = "iso/sounds/stage/retryh.ogg.vag"/>
 				<!-- Miss Sounds -->
 				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
 				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
@@ -172,6 +180,8 @@
 			<!-- Music -->
 			<dir name = "music">
 				<file name = "menu.xa" type = "xa" source = "iso/music/menu.xa"/>
+				<dummy sectors="128"/>
+				<file name = "gameovr.xa" type = "xa" source = "iso/music/gameovr.xa"/>
 				<dummy sectors="128"/>
 				<file name = "1.xa" type = "xa" source = "iso/music/1.xa"/>
 				<dummy sectors="128"/>

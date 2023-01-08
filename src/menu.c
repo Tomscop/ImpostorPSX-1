@@ -27,7 +27,7 @@
 
 #include "stdlib.h"
 
-static u32 Sounds[3];
+static u32 Sounds[5];
 static char scoredisp[30];
 //Menu messages
 static const char *funny_messages[][2] = {
@@ -307,6 +307,16 @@ void Menu_Load(MenuPage page)
 	IO_FindFile(&file, "\\SOUNDS\\CANCEL.VAG;1");
     data = IO_ReadFile(&file);
     Sounds[2] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\SCROLLFP.VAG;1");
+    data = IO_ReadFile(&file);
+    Sounds[3] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\CONFIRMF.VAG;1");
+    data = IO_ReadFile(&file);
+    Sounds[4] = Audio_LoadVAGData(data, file.size);
     Mem_Free(data);
 
 	//Play menu music
@@ -889,7 +899,7 @@ void Menu_Tick(void)
 				if (pad_state.press & PAD_UP)
 				{
 					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
+                    Audio_PlaySound(Sounds[3], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -898,7 +908,7 @@ void Menu_Tick(void)
 				if (pad_state.press & PAD_DOWN)
 				{
 					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
+                    Audio_PlaySound(Sounds[3], 0x3fff);
 					if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
 					else
@@ -909,7 +919,7 @@ void Menu_Tick(void)
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
 					//play confirm sound
-					Audio_PlaySound(Sounds[1], 0x3fff);
+					Audio_PlaySound(Sounds[4], 0x3fff);
 					menu.next_page = MenuPage_Stage;
 					menu.page_param.stage.id = menu_options[menu.select].stage;
 					menu.page_param.stage.story = false;
@@ -1025,8 +1035,6 @@ void Menu_Tick(void)
 				//Change option
 				if (pad_state.press & PAD_UP)
 				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -1034,8 +1042,6 @@ void Menu_Tick(void)
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
 					if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
 					else

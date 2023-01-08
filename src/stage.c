@@ -1340,7 +1340,43 @@ static void Stage_LoadSFX(void)
     }
 	
 	//death sound
-	if ((stage.stage_id == StageId_Temp) || (stage.stage_id != StageId_Temp))
+	if (stage.stage_id == StageId_Ejected)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\DEATHE.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[8] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else if (stage.stage_id == StageId_Defeat)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\DEATHD.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[8] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else if (stage.stage_id == StageId_Roomcode)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\DEATHP.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[8] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else if (stage.stage_id == StageId_GreatestPlan)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\DEATHH.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[8] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else
 	{
 		char text[0x80];
 		sprintf(text, "\\SOUNDS\\DEATH.VAG;1");
@@ -1351,7 +1387,34 @@ static void Stage_LoadSFX(void)
 	}
 	
 	//retry sound
-	if ((stage.stage_id == StageId_Temp) || (stage.stage_id != StageId_Temp))
+	if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\RETRYJ.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[9] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else if (stage.stage_id == StageId_Roomcode)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\RETRYP.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[9] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else if (stage.stage_id == StageId_GreatestPlan)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\RETRYH.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[9] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	else
 	{
 		char text[0x80];
 		sprintf(text, "\\SOUNDS\\RETRY.VAG;1");
@@ -1707,7 +1770,8 @@ void Stage_Tick(void)
 		{
 			inctimer = true;
 			Audio_StopXA();
-			Audio_PlaySound(Sounds[9], 0x3fff);
+			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
+				Audio_PlaySound(Sounds[9], 0x3fff);
 		}
 	}
 	else if (pad_state.press & PAD_CIRCLE && stage.state != StageState_Play)
@@ -2344,10 +2408,20 @@ void Stage_Tick(void)
 			Gfx_SetClear(0, 0, 0);
 			
 			stage.song_time = 0;
-
-			Audio_PlaySound(Sounds[8], 0x3fff);
-			Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
-			stage.state = StageState_DeadLoad;
+			
+			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
+			{
+				Audio_PlaySound(Sounds[8], 0x3fff);
+				if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
+					Audio_PlayXA_Track(XA_GameOverJ, 0x40, 0, true);
+				else if (stage.stage_id == StageId_Roomcode)
+					Audio_PlayXA_Track(XA_GameOverP, 0x40, 1, true);
+				else if (stage.stage_id == StageId_GreatestPlan)
+					Audio_PlayXA_Track(XA_GameOverH, 0x40, 2, true);
+				else	
+					Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
+				stage.state = StageState_DeadLoad;
+			}
 		}
 	//Fallthrough
 		case StageState_DeadLoad:

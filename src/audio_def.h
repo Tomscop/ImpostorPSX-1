@@ -10,6 +10,10 @@ static const XA_TrackDef xa_tracks[] = {
 	//MENU.XA
 	{XA_Menu, XA_LENGTH(4705)}, //XA_GettinFreaky
 	{XA_Menu, XA_LENGTH(7680)},  //XA_GameOver
+	//MENU.XA
+	{XA_GameOvr, XA_LENGTH(7680)}, //XA_GameOverJ
+	{XA_GameOvr, XA_LENGTH(2461)},  //XA_GameOverP
+	{XA_GameOvr, XA_LENGTH(3657)},  //XA_GameOverH
 	//1.XA
 	{XA_1, XA_LENGTH(18560)}, //XA_SussusMoogus
 	{XA_1, XA_LENGTH(14682)}, //XA_Sabotage
@@ -98,6 +102,7 @@ static const XA_TrackDef xa_tracks[] = {
 
 static const char *xa_paths[] = {
 	"\\MUSIC\\MENU.XA;1",   //XA_Menu
+	"\\MUSIC\\GAMEOVR.XA;1",   //XA_GameOvr
 	"\\MUSIC\\1.XA;1", //XA_1
 	"\\MUSIC\\2.XA;1", //XA_2
 	"\\MUSIC\\3.XA;1", //XA_3
@@ -140,6 +145,10 @@ static const XA_Mp3 xa_mp3s[] = {
 	//MENU.XA
 	{"freaky", false},   //XA_GettinFreaky
 	{"gameover", false}, //XA_GameOver
+	//GAMEOVR.XA
+	{"gameoverj", false},   //XA_GameOverJ
+	{"gameoverp", false}, //XA_GameOverP
+	{"gameoverh", false}, //XA_GameOverH
 	//1.XA
 	{"sussusmoogus", true}, //XA_SussusMoogus
 	{"sabotage", true},   //XA_Sabotage

@@ -1,5 +1,6 @@
 all: \
   iso/music/menu.xa \
+  iso/music/gameovr.xa \
   iso/music/1.xa \
   iso/music/2.xa \
   iso/music/3.xa \
@@ -38,6 +39,7 @@ iso/music/%.xa:
 
 # XA interleaves
 iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
+iso/music/gameovr.xa: iso/music/gameoverj.xa iso/music/gameoverp.xa iso/music/gameoverh.xa
 iso/music/1.xa: iso/music/sussus-moogus/Inst.xa iso/music/sussus-moogus/Vocals.xa iso/music/sabotage/Inst.xa iso/music/sabotage/Vocals.xa
 iso/music/2.xa: iso/music/meltdown/Inst.xa iso/music/meltdown/Vocals.xa iso/music/sussus-toogus/Inst.xa iso/music/sussus-toogus/Vocals.xa
 iso/music/3.xa: iso/music/lights-down/Inst.xa iso/music/lights-down/Vocals.xa iso/music/reactor/Inst.xa iso/music/reactor/Vocals.xa

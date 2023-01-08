@@ -13,6 +13,7 @@
 typedef enum
 {
 	XA_Menu,   //MENU.XA
+	XA_GameOvr,   //GAMEOVR.XA
 	XA_1, //1
 	XA_2, //2
 	XA_3, //3
@@ -51,6 +52,10 @@ typedef enum
 	//MENU.XA
 	XA_GettinFreaky, //Gettin' Freaky
 	XA_GameOver,     //Game Over
+	//GAMEOVR.XA
+	XA_GameOverJ, //Game Over Jorsawsee
+	XA_GameOverP, //Game Over Pico
+	XA_GameOverH, //Game Over Henry
 	//1.XA
 	XA_SussusMoogus, //Sussus Moogus
 	XA_Sabotage, //Sabotage
