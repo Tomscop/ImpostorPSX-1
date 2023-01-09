@@ -43,6 +43,7 @@
 				<file name = "hud1-5.tim" type = "data" source = "iso/stage/hud1-5.tim"/>
 				<file name = "hud1-6.tim" type = "data" source = "iso/stage/hud1-6.tim"/>
 				<file name = "count.tim" type = "data" source = "iso/stage/count.tim"/>
+				<file name = "countpix.tim" type = "data" source = "iso/stage/countpix.tim"/>
 			</dir>
 			
 			<!-- Week 1 assets -->
@@ -163,6 +164,10 @@
 				<file name = "intro1.vag" type = "data" source = "iso/sounds/stage/intro1.ogg.vag"/>
 				<file name = "intro2.vag" type = "data" source = "iso/sounds/stage/intro2.ogg.vag"/>
 				<file name = "intro3.vag" type = "data" source = "iso/sounds/stage/intro3.ogg.vag"/>
+				<file name = "intro0p.vag" type = "data" source = "iso/sounds/stage/intro0p.ogg.vag"/>
+				<file name = "intro1p.vag" type = "data" source = "iso/sounds/stage/intro1p.ogg.vag"/>
+				<file name = "intro2p.vag" type = "data" source = "iso/sounds/stage/intro2p.ogg.vag"/>
+				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
 				<!-- Other Sounds -->
 				<file name = "death.vag" type = "data" source = "iso/sounds/stage/death.ogg.vag"/>
 				<file name = "deathe.vag" type = "data" source = "iso/sounds/stage/deathe.ogg.vag"/>

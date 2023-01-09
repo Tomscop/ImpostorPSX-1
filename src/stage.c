@@ -1170,29 +1170,58 @@ static void Stage_CountDown(void)
 			break;
 	}
 
-	RECT ready_src = {  0,  0,142, 68};	
-	RECT_FIXED ready_dst = {FIXED_DEC(-89,1), FIXED_DEC(-43,1), FIXED_DEC(142 * 125,100), FIXED_DEC(68 * 125,100)};	
+	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+	{
+		RECT ready_src = {  0,  0, 87, 41};	
+		RECT_FIXED ready_dst = {FIXED_DEC(-65,1), FIXED_DEC(-31,1), FIXED_DEC(87 * 150,100), FIXED_DEC(41 * 150,100)};	
 
-	RECT set_src = {  0, 69,132, 61};	
-	RECT_FIXED set_dst = {FIXED_DEC(-83,1), FIXED_DEC(-38,1), FIXED_DEC(132 * 125,100), FIXED_DEC(61 * 125,100)};	
+		RECT set_src = {  0, 42, 80, 37};	
+		RECT_FIXED set_dst = {FIXED_DEC(-60,1), FIXED_DEC(-28,1), FIXED_DEC(80 * 150,100), FIXED_DEC(37 * 150,100)};	
 
-	RECT go_src = {  0,131, 58, 45};	
-	RECT_FIXED go_dst = {FIXED_DEC(-36,1), FIXED_DEC(-28,1), FIXED_DEC(58 * 125,100), FIXED_DEC(45 * 125,100)};	
+		RECT go_src = {  0, 80, 92, 37};	
+		RECT_FIXED go_dst = {FIXED_DEC(-69,1), FIXED_DEC(-28,1), FIXED_DEC(92 * 150,100), FIXED_DEC(37 * 150,100)};
+		
+		if (drawshit == 3 && stage.song_step >= -15 && stage.song_step <= -12)
+			Stage_DrawTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump);
+		else if (drawshit == 3 && stage.song_step >= -12 && stage.song_step <= -11)
+			Stage_BlendTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump,1);
 
-	if (drawshit == 3 && stage.song_step >= -15 && stage.song_step <= -12)
-		Stage_DrawTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump);
-	else if (drawshit == 3 && stage.song_step >= -12 && stage.song_step <= -11)
-		Stage_BlendTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump,1);
+		if (drawshit == 2 && stage.song_step >= -10 && stage.song_step <= -7)
+			Stage_DrawTex(&stage.tex_count, &set_src, &set_dst, stage.bump);
+		else if (drawshit == 2 && stage.song_step >= -7 && stage.song_step <= -6)
+			Stage_BlendTex(&stage.tex_count, &set_src, &set_dst, stage.bump,1);
 
-	if (drawshit == 2 && stage.song_step >= -10 && stage.song_step <= -7)
-		Stage_DrawTex(&stage.tex_count, &set_src, &set_dst, stage.bump);
-	else if (drawshit == 2 && stage.song_step >= -7 && stage.song_step <= -6)
-		Stage_BlendTex(&stage.tex_count, &set_src, &set_dst, stage.bump,1);
+		if (drawshit == 1 && stage.song_step >= -5 && stage.song_step <= -2)
+			Stage_DrawTex(&stage.tex_count, &go_src, &go_dst, stage.bump);
+		else if (drawshit == 1 && stage.song_step >= -2 && stage.song_step <= -1)
+			Stage_BlendTex(&stage.tex_count, &go_src, &go_dst, stage.bump,1);
+	}
+	else
+	{
+		RECT ready_src = {  0,  0,142, 68};	
+		RECT_FIXED ready_dst = {FIXED_DEC(-89,1), FIXED_DEC(-43,1), FIXED_DEC(142 * 125,100), FIXED_DEC(68 * 125,100)};	
 
-	if (drawshit == 1 && stage.song_step >= -5 && stage.song_step <= -2)
-		Stage_DrawTex(&stage.tex_count, &go_src, &go_dst, stage.bump);
-	else if (drawshit == 1 && stage.song_step >= -2 && stage.song_step <= -1)
-		Stage_BlendTex(&stage.tex_count, &go_src, &go_dst, stage.bump,1);
+		RECT set_src = {  0, 69,132, 61};	
+		RECT_FIXED set_dst = {FIXED_DEC(-83,1), FIXED_DEC(-38,1), FIXED_DEC(132 * 125,100), FIXED_DEC(61 * 125,100)};	
+
+		RECT go_src = {  0,131, 58, 45};	
+		RECT_FIXED go_dst = {FIXED_DEC(-36,1), FIXED_DEC(-28,1), FIXED_DEC(58 * 125,100), FIXED_DEC(45 * 125,100)};
+		
+		if (drawshit == 3 && stage.song_step >= -15 && stage.song_step <= -12)
+			Stage_DrawTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump);
+		else if (drawshit == 3 && stage.song_step >= -12 && stage.song_step <= -11)
+			Stage_BlendTex(&stage.tex_count, &ready_src, &ready_dst, stage.bump,1);
+
+		if (drawshit == 2 && stage.song_step >= -10 && stage.song_step <= -7)
+			Stage_DrawTex(&stage.tex_count, &set_src, &set_dst, stage.bump);
+		else if (drawshit == 2 && stage.song_step >= -7 && stage.song_step <= -6)
+			Stage_BlendTex(&stage.tex_count, &set_src, &set_dst, stage.bump,1);
+
+		if (drawshit == 1 && stage.song_step >= -5 && stage.song_step <= -2)
+			Stage_DrawTex(&stage.tex_count, &go_src, &go_dst, stage.bump);
+		else if (drawshit == 1 && stage.song_step >= -2 && stage.song_step <= -1)
+			Stage_BlendTex(&stage.tex_count, &go_src, &go_dst, stage.bump,1);
+	}
 }
 
 //Stage loads
@@ -1316,14 +1345,29 @@ static void Stage_LoadSFX(void)
 	CdlFILE file;
 
 	//intro sound
-	for (u8 i = 0; i < 4;i++)
+	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\INTRO%d.VAG;1", i);
-		IO_FindFile(&file, text);
-		u32 *data = IO_ReadFile(&file);
-		Sounds[i] = Audio_LoadVAGData(data, file.size);
-		Mem_Free(data);
+		for (u8 i = 0; i < 4;i++)
+		{
+			char text[0x80];
+			sprintf(text, "\\SOUNDS\\INTRO%dP.VAG;1", i);
+			IO_FindFile(&file, text);
+			u32 *data = IO_ReadFile(&file);
+			Sounds[i] = Audio_LoadVAGData(data, file.size);
+			Mem_Free(data);
+		}
+	}
+	else
+	{
+		for (u8 i = 0; i < 4;i++)
+		{
+			char text[0x80];
+			sprintf(text, "\\SOUNDS\\INTRO%d.VAG;1", i);
+			IO_FindFile(&file, text);
+			u32 *data = IO_ReadFile(&file);
+			Sounds[i] = Audio_LoadVAGData(data, file.size);
+			Mem_Free(data);
+		}
 	}
 
 	//miss sound
@@ -1581,13 +1625,18 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	//Load HUD textures
 	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNTPIX.TIM;1"), GFX_LOADTEX_FREE);
+	}
 	else
+	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
+	}
 	
 	sprintf(iconpath, "\\STAGE\\HUD1-%d.TIM;1", stage.stage_def->week);
 	Gfx_LoadTex(&stage.tex_hud1, IO_Read(iconpath), GFX_LOADTEX_FREE);
-	Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
 	
 	//Load death screen texture
 	Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
@@ -2117,29 +2166,125 @@ void Stage_Tick(void)
 			
 			//Score colours
 			if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
+			{
 				cr = 187, cg = 45, cb = 48;
+			}
 			else if ((stage.stage_id >= StageId_SussusToogus) && (stage.stage_id <= StageId_Reactor))
+			{
 				cr = 31, cg = 107, cb = 43;
+			}
 			else if (stage.stage_id == StageId_Ejected)
+			{
 				cr = 0, cg = 51, cb = 21;
+			}
 			else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Dlow))
+			{
 				cr = 240, cg = 185, cb = 70;
+			}
 			else if ((stage.stage_id == StageId_Oversight) || (stage.stage_id == StageId_DoubleKill))
+			{
 				cr = 209, cg = 210, cb = 248;
+			}
 			else if (stage.stage_id == StageId_Danger)
+			{
 				cr = 58, cg = 27, cb = 79;
+			}
 			else if (stage.stage_id == StageId_Defeat)
+			{
 				cr = 246, cg = 1, cb = 2;
+			}
 			else if ((stage.stage_id >= StageId_Ashes) && (stage.stage_id <= StageId_Magmatic))
+			{
 				cr = 82, cg = 35, cb = 47;
+			}
 			else if (stage.stage_id == StageId_BoilingPoint)
+			{
 				cr = 108, cg = 15, cb = 50;
+			}
 			else if ((stage.stage_id >= StageId_Delusion) && (stage.stage_id <= StageId_Neurotic) || (stage.stage_id == StageId_Pretender))
+			{
 				cr = 98, cg = 87, cb = 115;
+			}
 			else if ((stage.stage_id >= StageId_Heartbeat) && (stage.stage_id <= StageId_Pinkwave))
+			{
 				cr = 238, cg = 100, cb = 204;
+			}
+			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Rivals))
+			{
+				cr = 255, cg = 103, cb = 112;
+			}
+			else if (stage.stage_id == StageId_Chewmate)
+			{
+				cr = 248, cg = 165, cb = 115;
+			}
+			else if ((stage.stage_id >= StageId_Christmas) && (stage.stage_id <= StageId_Spookpostor))
+			{
+				cr = 40, cg = 144, cb = 86;
+			}
+			else if (stage.stage_id == StageId_Turbulence)
+			{
+				cr = 229, cg = 25, cb = 25;
+			}
+			else if (stage.stage_id == StageId_SaucesMoogus)
+			{
+				cr = 199, cg = 94, cb = 82;
+			}
+			else if (stage.stage_id == StageId_Roomcode)
+			{
+				cr = 137, cg = 215, cb = 255;
+			}
+			else if (stage.stage_id == StageId_TomongusTuesday)
+			{
+				cr = 255, cg = 79, cb = 97;
+			}
+			else if (stage.stage_id == StageId_Ow)
+			{
+				cr = 204, cg = 0, cb = 0;
+			}
+			else if (stage.stage_id == StageId_Who)
+			{
+				cr = 102, cg = 102, cb = 255;
+			}
+			else if (stage.stage_id == StageId_InsaneStreamer)
+			{
+				cr = 95, cg = 197, cb = 201;
+			}
+			else if (stage.stage_id == StageId_Idk)
+			{
+				cr = 255, cg = 140, cb = 177;
+			}
+			else if (stage.stage_id == StageId_Esculent)
+			{
+				cr = 135, cg = 66, cb = 61;
+			}
+			else if (stage.stage_id == StageId_Drippypop)
+			{
+				cr = 188, cg = 106, cb = 223;
+			}
+			else if (stage.stage_id == StageId_Crewicide)
+			{
+				cr = 76, cg = 82, cb = 180;
+			}
+			else if (stage.stage_id == StageId_Top10)
+			{
+				cr = 150, cg = 255, cb = 143;
+			}
+			else if ((stage.stage_id >= StageId_Chippin) && (stage.stage_id <= StageId_Torture))
+			{
+				cr = 0, cg = 102, cb = 204;
+			}
+			else if ((stage.stage_id >= StageId_Titular) && (stage.stage_id <= StageId_Reinforcements))
+			{
+				cr = 189, cg = 215, cb = 216;
+			}
+			else if (stage.stage_id == StageId_Armed)
+			{
+				cr = 228, cg = 72, cb = 50;
+			}
 			else
+			{
 				cr = 255, cg = 255, cb = 255;
+			}
 			
 			//Draw Score
 			for (int i = 0; i < ((stage.mode >= StageMode_2P) ? 2 : 1); i++)

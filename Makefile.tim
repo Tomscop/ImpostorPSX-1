@@ -12,6 +12,7 @@ all: \
 	iso/stage/hud1-5.tim \
 	iso/stage/hud1-6.tim \
 	iso/stage/count.tim \
+	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/dad/main.arc \
