@@ -13,7 +13,7 @@ all: \
 	iso/stage/hud1-6.tim \
 	iso/stage/count.tim \
 	iso/chars/bf/main.arc \
-	iso/chars/bf/dead.tim \
+	iso/chars/dead.tim \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \

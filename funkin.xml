@@ -136,9 +136,10 @@
 		
 			<!-- Character assets -->
 			<dir name = "char">
+				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
+				
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
-				<file name = "dead.tim" type = "data" source = "iso/chars/bf/dead.tim"/>
 				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>

@@ -45,6 +45,7 @@ static const u8 note_anims[4][3] = {
 //Stage definitions
 boolean noteshake;
 boolean show;
+fixed_t cr, cg, cb;
 fixed_t fade;
 fixed_t fade, fadespd;
 static u32 Sounds[10];
@@ -2114,6 +2115,32 @@ void Stage_Tick(void)
 				Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
 			Stage_ScrollCamera();
 			
+			//Score colours
+			if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
+				cr = 187, cg = 45, cb = 48;
+			else if ((stage.stage_id >= StageId_SussusToogus) && (stage.stage_id <= StageId_Reactor))
+				cr = 31, cg = 107, cb = 43;
+			else if (stage.stage_id == StageId_Ejected)
+				cr = 0, cg = 51, cb = 21;
+			else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Dlow))
+				cr = 240, cg = 185, cb = 70;
+			else if ((stage.stage_id == StageId_Oversight) || (stage.stage_id == StageId_DoubleKill))
+				cr = 209, cg = 210, cb = 248;
+			else if (stage.stage_id == StageId_Danger)
+				cr = 58, cg = 27, cb = 79;
+			else if (stage.stage_id == StageId_Defeat)
+				cr = 246, cg = 1, cb = 2;
+			else if ((stage.stage_id >= StageId_Ashes) && (stage.stage_id <= StageId_Magmatic))
+				cr = 82, cg = 35, cb = 47;
+			else if (stage.stage_id == StageId_BoilingPoint)
+				cr = 108, cg = 15, cb = 50;
+			else if ((stage.stage_id >= StageId_Delusion) && (stage.stage_id <= StageId_Neurotic) || (stage.stage_id == StageId_Pretender))
+				cr = 98, cg = 87, cb = 115;
+			else if ((stage.stage_id >= StageId_Heartbeat) && (stage.stage_id <= StageId_Pinkwave))
+				cr = 238, cg = 100, cb = 204;
+			else
+				cr = 255, cg = 255, cb = 255;
+			
 			//Draw Score
 			for (int i = 0; i < ((stage.mode >= StageMode_2P) ? 2 : 1); i++)
 			{
@@ -2130,11 +2157,12 @@ void Stage_Tick(void)
 				
 				if (show)
 				{
-					stage.font_cdr.draw(&stage.font_cdr,
+					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->score_text,
 						(stage.mode == StageMode_2P && i == 0) ? 10 : -150,
 						(screen.SCREEN_HEIGHT2 - 22),
-						FontAlign_Left 
+						FontAlign_Left,
+						cr, cg, cb
 					);
 				}
 			}
@@ -2155,11 +2183,12 @@ void Stage_Tick(void)
 				
 				if (show)
 				{
-					stage.font_cdr.draw(&stage.font_cdr,
+					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->miss_text,
 						(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
 						(screen.SCREEN_HEIGHT2 - 22),
-						FontAlign_Left
+						FontAlign_Left,
+						cr, cg, cb
 					);
 				}
 			}
@@ -2192,11 +2221,12 @@ void Stage_Tick(void)
 				//sorry for this shit lmao
 				if (show)
 				{
-					stage.font_cdr.draw(&stage.font_cdr,
+					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->accuracy_text,
 						(stage.mode == StageMode_2P && i == 0) ? 50 : (stage.mode == StageMode_2P && i == 1) ? -110 : 39, 
 						(screen.SCREEN_HEIGHT2 - 22),
-						FontAlign_Left
+						FontAlign_Left,
+						cr, cg, cb
 					);
 				}
 			}
@@ -2435,9 +2465,18 @@ void Stage_Tick(void)
 	//Fallthrough
 		case StageState_DeadLoad:
 		{
-			RECT src = {0, 0,255,255};
-			RECT dst = { 33,-8,255,255};
-			Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			if (inctimer == false)
+			{
+				RECT src = {  0,  0,216, 25};
+				RECT dst = { 52,108,216, 25};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else
+			{
+				RECT src = {  0, 26,216, 25};
+				RECT dst = { 52,108,216, 25};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
 			break;
 		}
 		default:
