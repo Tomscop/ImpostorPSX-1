@@ -6,6 +6,7 @@
 
 #include "../timer.h"
 #include "../stage.h"
+#include "../audio.h"
 
 #define TIMER_BITS (3)
 
@@ -125,7 +126,6 @@ void StageTimer_Tick()
 
 void StageTimer_Draw()
 {
-	RECT bar_fill = {252, 252, 1, 1};
 	RECT_FIXED bar_dst = {FIXED_DEC(-70,1), FIXED_DEC(-110,1), FIXED_DEC(140,1), FIXED_DEC(11,1)};
 	//Draw timer
 	sprintf(timer.timer_display, "%d", timer.timermin);
@@ -155,7 +155,26 @@ void StageTimer_Draw()
 		FontAlign_Left
 	);
 	if (stage.prefs.downscroll)
-		bar_dst.y = FIXED_DEC(99,1); 
+		bar_dst.y = FIXED_DEC(99,1);
+	
+	//draw square length
+	RECT square_black = { 0, 249, 116, 6};
+	RECT square_fill = { 0, 249, (115 * (stage.song_time) / (Audio_GetLength(stage.stage_def->music_track) * 1024)), 6};
 
-	Stage_BlendTex(&stage.tex_hud0, &bar_fill, &bar_dst, stage.bump, 1);
+	RECT_FIXED square_dst = {
+	FIXED_DEC(-144,1),
+	FIXED_DEC(-110,1),
+	0,
+	FIXED_DEC(7,1)
+	};
+	
+	if (stage.prefs.downscroll)
+		square_dst.y = -square_dst.y - square_dst.h + FIXED_DEC(1,1);
+
+	square_dst.w = square_fill.w << FIXED_SHIFT;
+	if (stage.song_step >= 0)
+		Stage_DrawTexCol(&stage.tex_hud1, &square_fill, &square_dst, stage.bump, 71, 213, 70);
+	
+	square_dst.w = square_black.w << FIXED_SHIFT;
+	Stage_DrawTexCol(&stage.tex_hud1, &square_black, &square_dst, stage.bump, 54, 64, 54);
 }
