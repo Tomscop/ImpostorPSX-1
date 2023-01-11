@@ -164,6 +164,7 @@ typedef struct
 	//Song info
 	u8 week, week_song;
 	u8 music_track, music_channel;
+	const char songname[40];
 	
 	StageId next_stage;
 	u8 next_load;
@@ -251,6 +252,7 @@ typedef struct
 	const StageDef *stage_def;
 	StageId stage_id;
 	StageDiff stage_diff;
+	char songname[40];
 	
 	IO_Data chart_data;
 	Section *sections;

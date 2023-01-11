@@ -12,6 +12,7 @@
 		//Song info
 		1, 1,
 		XA_SussusMoogus, 0,
+		"Sussus Moogus",
 		
 		StageId_Sabotage, 0
 	},
@@ -29,6 +30,7 @@
 		//Song info
 		1, 2,
 		XA_Sabotage, 2,
+		"Sabotage",
 		
 		StageId_Meltdown, 0
 	},
@@ -46,6 +48,7 @@
 		//Song info
 		1, 3,
 		XA_Meltdown, 0,
+		"Meltdown",
 		
 		StageId_Meltdown, 0
 	},
@@ -63,6 +66,7 @@
 		//Song info
 		1, 4,
 		XA_SussusToogus, 2,
+		"Sussus Toogus",
 		
 		StageId_LightsDown, 0
 	},
@@ -80,6 +84,7 @@
 		//Song info
 		1, 5,
 		XA_LightsDown, 0,
+		"Lights Down",
 		
 		StageId_Reactor, 0
 	},
@@ -97,6 +102,7 @@
 		//Song info
 		1, 6,
 		XA_Reactor, 2,
+		"Reactor",
 		
 		StageId_Ejected, 0
 	},
@@ -114,6 +120,7 @@
 		//Song info
 		1, 7,
 		XA_Ejected, 0,
+		"Ejected",
 		
 		StageId_Ejected, 0
 	},
@@ -131,6 +138,7 @@
 		//Song info
 		1, 8,
 		XA_Mando, 2,
+		"Mando",
 		
 		StageId_Dlow, 0
 	},
@@ -148,6 +156,7 @@
 		//Song info
 		1, 9,
 		XA_Dlow, 0,
+		"D'low",
 		
 		StageId_Oversight, 0
 	},
@@ -165,6 +174,7 @@
 		//Song info
 		1, 10,
 		XA_Oversight, 2,
+		"Oversight",
 		
 		StageId_Danger, 0,
 	},
@@ -182,6 +192,7 @@
 		//Song info
 		1, 11,
 		XA_Danger, 0,
+		"Danger",
 		
 		StageId_DoubleKill, 0
 	},
@@ -199,6 +210,7 @@
 		//Song info
 		1, 12,
 		XA_DoubleKill, 2,
+		"Double Kill",
 		
 		StageId_DoubleKill, 0
 	},
@@ -216,6 +228,7 @@
 		//Song info
 		2, 1,
 		XA_Defeat, 0,
+		"Defeat",
 		
 		StageId_Defeat, 0
 	},
@@ -233,6 +246,7 @@
 		//Song info
 		2, 2,
 		XA_Finale, 2,
+		"Finale",
 		
 		StageId_Finale, 0
 	},
@@ -250,6 +264,7 @@
 		//Song info
 		2, 3,
 		XA_IdentityCrisis, 0,
+		"Identity Crisis",
 		
 		StageId_IdentityCrisis, 0
 	},
@@ -268,6 +283,7 @@
 		//Song info
 		2, 4,
 		XA_Ashes, 0,
+		"Ashes",
 		
 		StageId_Magmatic, 0
 	},
@@ -285,6 +301,7 @@
 		//Song info
 		2, 5,
 		XA_Magmatic, 2,
+		"Magmatic",
 		
 		StageId_BoilingPoint, 0
 	},
@@ -302,6 +319,7 @@
 		//Song info
 		2, 6,
 		XA_BoilingPoint, 0,
+		"Boiling Point",
 		
 		StageId_BoilingPoint, 0
 	},
@@ -319,6 +337,7 @@
 		//Song info
 		2, 7,
 		XA_Delusion, 2,
+		"Delusion",
 		
 		StageId_Blackout, 0
 	},
@@ -336,6 +355,7 @@
 		//Song info
 		2, 8,
 		XA_Blackout, 0,
+		"Blackout",
 		
 		StageId_Neurotic, 0
 	},
@@ -353,6 +373,7 @@
 		//Song info
 		2, 9,
 		XA_Neurotic, 2,
+		"Neurotic",
 		
 		StageId_Neurotic, 0
 	},
@@ -370,6 +391,7 @@
 		//Song info
 		3, 1,
 		XA_Heartbeat, 0,
+		"Heartbeat",
 		
 		StageId_Pinkwave, 0
 	},
@@ -387,6 +409,7 @@
 		//Song info
 		3, 2,
 		XA_Pinkwave, 2,
+		"Pinkwave",
 		
 		StageId_Pretender, 0
 	},
@@ -404,6 +427,7 @@
 		//Song info
 		3, 3,
 		XA_Pretender, 0,
+		"Pretender",
 		
 		StageId_Pretender, 0
 	},
@@ -421,6 +445,7 @@
 		//Song info
 		3, 4,
 		XA_SaucesMoogus, 2,
+		"Sauces Moogus",
 		
 		StageId_SaucesMoogus, 0
 	},
@@ -439,6 +464,7 @@
 		//Song info
 		3, 5,
 		XA_O2, 0,
+		"O2",
 		
 		StageId_VotingTime, 0
 	},
@@ -456,6 +482,7 @@
 		//Song info
 		3, 6,
 		XA_VotingTime, 2,
+		"Voting Time",
 		
 		StageId_Turbulence, 0
 	},
@@ -473,6 +500,7 @@
 		//Song info
 		3, 7,
 		XA_Turbulence, 0,
+		"Turbulence",
 		
 		StageId_Victory, 0
 	},
@@ -490,6 +518,7 @@
 		//Song info
 		3, 8,
 		XA_Victory, 2,
+		"Victory",
 		
 		StageId_Victory, 0
 	},
@@ -507,6 +536,7 @@
 		//Song info
 		3, 9,
 		XA_Roomcode, 0,
+		"Roomcode",
 		
 		StageId_Roomcode, 0
 	},
@@ -525,6 +555,7 @@
 		//Song info
 		4, 1,
 		XA_SussyBussy, 0,
+		"Sussy Bussy",
 		
 		StageId_Rivals, 0
 	},
@@ -542,6 +573,7 @@
 		//Song info
 		4, 2,
 		XA_Rivals, 2,
+		"Rivals",
 		
 		StageId_Chewmate, 0
 	},
@@ -559,6 +591,7 @@
 		//Song info
 		4, 3,
 		XA_Chewmate, 0,
+		"Chewmate",
 		
 		StageId_Chewmate, 0
 	},
@@ -576,6 +609,7 @@
 		//Song info
 		4, 4,
 		XA_TomongusTuesday, 2,
+		"Tomongus Tuesday",
 		
 		StageId_TomongusTuesday, 0
 	},
@@ -594,6 +628,7 @@
 		//Song info
 		4, 5,
 		XA_Christmas, 0,
+		"Christmas",
 		
 		StageId_Spookpostor, 0
 	},
@@ -611,6 +646,7 @@
 		//Song info
 		4, 6,
 		XA_Spookpostor, 2,
+		"Spookpostor",
 		
 		StageId_Spookpostor, 0
 	},
@@ -629,6 +665,7 @@
 		//Song info
 		4, 7,
 		XA_Titular, 0,
+		"Titular",
 		
 		StageId_GreatestPlan, 0
 	},
@@ -646,6 +683,7 @@
 		//Song info
 		4, 8,
 		XA_GreatestPlan, 2,
+		"Greatest Plan",
 		
 		StageId_Reinforcements, 0
 	},
@@ -663,6 +701,7 @@
 		//Song info
 		4, 9,
 		XA_Reinforcements, 0,
+		"Reinforcements",
 		
 		StageId_Armed, 0
 	},
@@ -680,6 +719,7 @@
 		//Song info
 		4, 10,
 		XA_Armed, 2,
+		"Armed",
 		
 		StageId_Armed, 0
 	},
@@ -698,6 +738,7 @@
 		//Song info
 		5, 1,
 		XA_AlphaMoogus, 0,
+		"Alpha Moogus",
 		
 		StageId_AlphaMoogus, 0
 	},
@@ -715,6 +756,7 @@
 		//Song info
 		5, 2,
 		XA_ActinSus, 2,
+		"Actin' Sus",
 		
 		StageId_ActinSus, 0
 	},
@@ -733,6 +775,7 @@
 		//Song info
 		5, 3,
 		XA_Ow, 0,
+		"Ow",
 		
 		StageId_Ow, 0
 	},
@@ -750,6 +793,7 @@
 		//Song info
 		5, 4,
 		XA_Who, 2,
+		"Who",
 		
 		StageId_Who, 0
 	},
@@ -767,6 +811,7 @@
 		//Song info
 		5, 5,
 		XA_InsaneStreamer, 0,
+		"Insane Streamer",
 		
 		StageId_InsaneStreamer, 0
 	},
@@ -784,6 +829,7 @@
 		//Song info
 		5, 6,
 		XA_SussusNuzzus, 2,
+		"Sussus Nuzzus",
 		
 		StageId_SussusNuzzus, 0
 	},
@@ -801,6 +847,7 @@
 		//Song info
 		5, 7,
 		XA_Idk, 0,
+		"Idk",
 		
 		StageId_Idk, 0
 	},
@@ -818,6 +865,7 @@
 		//Song info
 		5, 8,
 		XA_Esculent, 2,
+		"Esculent",
 		
 		StageId_Esculent, 0
 	},
@@ -835,6 +883,7 @@
 		//Song info
 		5, 9,
 		XA_Drippypop, 0,
+		"Drippypop",
 		
 		StageId_Drippypop, 0
 	},
@@ -852,6 +901,7 @@
 		//Song info
 		6, 1,
 		XA_Crewicide, 2,
+		"Crewicide",
 		
 		StageId_Crewicide, 0
 	},
@@ -869,6 +919,7 @@
 		//Song info
 		6, 2,
 		XA_MonotoneAttack, 0,
+		"Monotone Attack",
 		
 		StageId_MonotoneAttack, 0
 	},
@@ -886,6 +937,7 @@
 		//Song info
 		6, 3,
 		XA_Top10, 2,
+		"Top 10",
 		
 		StageId_Top10, 0
 	},
@@ -904,6 +956,7 @@
 		//Song info
 		6, 4,
 		XA_Chippin, 0,
+		"Chippin'",
 		
 		StageId_Chippin, 0
 	},
@@ -921,6 +974,7 @@
 		//Song info
 		6, 5,
 		XA_Chipping, 2,
+		"Chipping",
 		
 		StageId_Chipping, 0
 	},
@@ -938,6 +992,7 @@
 		//Song info
 		6, 6,
 		XA_Torture, 0,
+		"Torture",
 		
 		StageId_Torture, 0
 	},

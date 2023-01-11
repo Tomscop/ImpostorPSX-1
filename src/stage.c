@@ -45,7 +45,6 @@ static const u8 note_anims[4][3] = {
 //Stage definitions
 boolean noteshake;
 boolean show;
-fixed_t cr, cg, cb;
 fixed_t fade;
 fixed_t fade, fadespd;
 static u32 Sounds[10];
@@ -1328,6 +1327,7 @@ static void Stage_LoadChart(void)
 	stage.cur_event = stage.events;
 	
 	stage.speed = stage.ogspeed = *((fixed_t*)stage.chart_data); //Get the speed value (4 bytes)
+	strcpy(stage.songname, stage.stage_def->songname);
 	
 	stage.step_crochet = 0;
 	stage.time_base = 0;
@@ -2164,129 +2164,12 @@ void Stage_Tick(void)
 				Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
 			Stage_ScrollCamera();
 			
-			//Score colours
-			if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
-			{
-				cr = 187, cg = 45, cb = 48;
-			}
-			else if ((stage.stage_id >= StageId_SussusToogus) && (stage.stage_id <= StageId_Reactor))
-			{
-				cr = 31, cg = 107, cb = 43;
-			}
-			else if (stage.stage_id == StageId_Ejected)
-			{
-				cr = 0, cg = 51, cb = 21;
-			}
-			else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Dlow))
-			{
-				cr = 240, cg = 185, cb = 70;
-			}
-			else if ((stage.stage_id == StageId_Oversight) || (stage.stage_id == StageId_DoubleKill))
-			{
-				cr = 209, cg = 210, cb = 248;
-			}
-			else if (stage.stage_id == StageId_Danger)
-			{
-				cr = 58, cg = 27, cb = 79;
-			}
-			else if (stage.stage_id == StageId_Defeat)
-			{
-				cr = 246, cg = 1, cb = 2;
-			}
-			else if ((stage.stage_id >= StageId_Ashes) && (stage.stage_id <= StageId_Magmatic))
-			{
-				cr = 82, cg = 35, cb = 47;
-			}
-			else if (stage.stage_id == StageId_BoilingPoint)
-			{
-				cr = 108, cg = 15, cb = 50;
-			}
-			else if ((stage.stage_id >= StageId_Delusion) && (stage.stage_id <= StageId_Neurotic) || (stage.stage_id == StageId_Pretender))
-			{
-				cr = 98, cg = 87, cb = 115;
-			}
-			else if ((stage.stage_id >= StageId_Heartbeat) && (stage.stage_id <= StageId_Pinkwave))
-			{
-				cr = 238, cg = 100, cb = 204;
-			}
-			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Rivals))
-			{
-				cr = 255, cg = 103, cb = 112;
-			}
-			else if (stage.stage_id == StageId_Chewmate)
-			{
-				cr = 248, cg = 165, cb = 115;
-			}
-			else if ((stage.stage_id >= StageId_Christmas) && (stage.stage_id <= StageId_Spookpostor))
-			{
-				cr = 40, cg = 144, cb = 86;
-			}
-			else if (stage.stage_id == StageId_Turbulence)
-			{
-				cr = 229, cg = 25, cb = 25;
-			}
-			else if (stage.stage_id == StageId_SaucesMoogus)
-			{
-				cr = 199, cg = 94, cb = 82;
-			}
-			else if (stage.stage_id == StageId_Roomcode)
-			{
-				cr = 137, cg = 215, cb = 255;
-			}
-			else if (stage.stage_id == StageId_TomongusTuesday)
-			{
-				cr = 255, cg = 79, cb = 97;
-			}
-			else if (stage.stage_id == StageId_Ow)
-			{
-				cr = 204, cg = 0, cb = 0;
-			}
-			else if (stage.stage_id == StageId_Who)
-			{
-				cr = 102, cg = 102, cb = 255;
-			}
-			else if (stage.stage_id == StageId_InsaneStreamer)
-			{
-				cr = 95, cg = 197, cb = 201;
-			}
-			else if (stage.stage_id == StageId_Idk)
-			{
-				cr = 255, cg = 140, cb = 177;
-			}
-			else if (stage.stage_id == StageId_Esculent)
-			{
-				cr = 135, cg = 66, cb = 61;
-			}
-			else if (stage.stage_id == StageId_Drippypop)
-			{
-				cr = 188, cg = 106, cb = 223;
-			}
-			else if (stage.stage_id == StageId_Crewicide)
-			{
-				cr = 76, cg = 82, cb = 180;
-			}
-			else if (stage.stage_id == StageId_Top10)
-			{
-				cr = 150, cg = 255, cb = 143;
-			}
-			else if ((stage.stage_id >= StageId_Chippin) && (stage.stage_id <= StageId_Torture))
-			{
-				cr = 0, cg = 102, cb = 204;
-			}
-			else if ((stage.stage_id >= StageId_Titular) && (stage.stage_id <= StageId_Reinforcements))
-			{
-				cr = 189, cg = 215, cb = 216;
-			}
-			else if (stage.stage_id == StageId_Armed)
-			{
-				cr = 228, cg = 72, cb = 50;
-			}
-			else
-			{
-				cr = 255, cg = 255, cb = 255;
-			}
-			
 			//Draw Score
+			//colors for score
+			u8 sred = (stage.opponent->health_bar >> 16) & 0xFF;
+			u8 sblue = (stage.opponent->health_bar >> 8) & 0xFF;
+			u8 sgreen = (stage.opponent->health_bar) & 0xFF;
+			
 			for (int i = 0; i < ((stage.mode >= StageMode_2P) ? 2 : 1); i++)
 			{
 				PlayerState *this = &stage.player_state[i];
@@ -2305,9 +2188,9 @@ void Stage_Tick(void)
 					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->score_text,
 						(stage.mode == StageMode_2P && i == 0) ? 10 : -150,
-						(screen.SCREEN_HEIGHT2 - 22),
+						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
 						FontAlign_Left,
-						cr, cg, cb
+						sred >> 1, sblue >> 1, sgreen >> 1
 					);
 				}
 			}
@@ -2331,9 +2214,9 @@ void Stage_Tick(void)
 					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->miss_text,
 						(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
-						(screen.SCREEN_HEIGHT2 - 22),
+						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
 						FontAlign_Left,
-						cr, cg, cb
+						sred >> 1, sblue >> 1, sgreen >> 1
 					);
 				}
 			}
@@ -2369,9 +2252,9 @@ void Stage_Tick(void)
 					stage.font_cdr.draw_col(&stage.font_cdr,
 						this->accuracy_text,
 						(stage.mode == StageMode_2P && i == 0) ? 50 : (stage.mode == StageMode_2P && i == 1) ? -110 : 39, 
-						(screen.SCREEN_HEIGHT2 - 22),
+						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
 						FontAlign_Left,
-						cr, cg, cb
+						sred >> 1, sblue >> 1, sgreen >> 1
 					);
 				}
 			}

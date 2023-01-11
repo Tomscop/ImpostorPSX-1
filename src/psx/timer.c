@@ -126,46 +126,23 @@ void StageTimer_Tick()
 
 void StageTimer_Draw()
 {
-	RECT_FIXED bar_dst = {FIXED_DEC(-70,1), FIXED_DEC(-110,1), FIXED_DEC(140,1), FIXED_DEC(11,1)};
-	//Draw timer
-	sprintf(timer.timer_display, "%d", timer.timermin);
-	stage.font_cdr.draw(&stage.font_cdr,
-		timer.timer_display,
-		-1 - 10 + stage.noteshakex, 
-		-109 + stage.noteshakey,
-		FontAlign_Left
-	);
-	sprintf(timer.timer_display, ":");
-	stage.font_cdr.draw(&stage.font_cdr,
-		timer.timer_display,
-
-		-1 + stage.noteshakex,
-		-109 + stage.noteshakey,
-		FontAlign_Left
-	);
-	if (timer.timersec >= 10)
-		sprintf(timer.timer_display, "%d", timer.timersec);
-	else
-		sprintf(timer.timer_display, "0%d", (timer.timersec > 0 ? timer.timersec : 0));
-
-	stage.font_cdr.draw(&stage.font_cdr,
-		timer.timer_display,
-		-1 + 7 + stage.noteshakex,
-		-109 + stage.noteshakey,
-		FontAlign_Left
-	);
-	if (stage.prefs.downscroll)
-		bar_dst.y = FIXED_DEC(99,1);
+	//Draw song name
+    stage.font_cdr.draw(&stage.font_cdr,
+        stage.songname,
+        -141 + stage.noteshakex, 
+        (stage.prefs.downscroll) ? (104 + stage.noteshakey) : (-113 + stage.noteshakey),
+        FontAlign_Left
+    );
 	
 	//draw square length
-	RECT square_black = { 0, 249, 116, 6};
-	RECT square_fill = { 0, 249, (115 * (stage.song_time) / (Audio_GetLength(stage.stage_def->music_track) * 1024)), 6};
+	RECT square_black = { 0, 249, 125, 6};
+	RECT square_fill = { 0, 249, (124 * (stage.song_time) / (Audio_GetLength(stage.stage_def->music_track) * 1024)), 6};
 
 	RECT_FIXED square_dst = {
 	FIXED_DEC(-144,1),
-	FIXED_DEC(-110,1),
+	FIXED_DEC(-113,1),
 	0,
-	FIXED_DEC(7,1)
+	FIXED_DEC(10,1)
 	};
 	
 	if (stage.prefs.downscroll)
