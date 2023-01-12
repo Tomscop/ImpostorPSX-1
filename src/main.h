@@ -10,6 +10,7 @@
 //Game loop
 typedef enum
 {
+	GameLoop_Intro,
 	GameLoop_Menu,
 	GameLoop_Stage,
 } GameLoop;

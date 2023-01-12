@@ -1,4 +1,5 @@
 all: \
+	iso/intro/intro.tim \
 	iso/menu/menu.arc \
 	iso/menu/loading.tim \
 	iso/icon16.tim \

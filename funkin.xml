@@ -27,6 +27,11 @@
 				<file name = "menu.arc" type = "data" source = "iso/menu/menu.arc"/>
 			</dir>
 			
+			<!-- Intro assets -->
+			<dir name = "intro">
+				<file name = "intro.tim" type = "data" source = "iso/intro/intro.tim"/>
+			</dir>
+			
 			<!-- Fonts -->
 			<dir name = "font">
 				<file name = "font.tim" type = "data" source = "iso/font/font.tim"/>

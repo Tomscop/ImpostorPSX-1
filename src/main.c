@@ -16,6 +16,7 @@
 #include "pause.h"
 #include "menu.h"
 #include "stage.h"
+#include "intro/intro.h"
 #include "save.h"
 
 //Game loop
@@ -81,8 +82,9 @@ int main(int argc, char **argv)
 		defaultSettings();
 
 	//Start game
-	gameloop = GameLoop_Menu;
-	Menu_Load(MenuPage_Opening);
+	gameloop = GameLoop_Intro;
+	Intro_Load();
+	//Menu_Load(MenuPage_Opening);
 
 	//Game loop
 	while (PSX_Running())
@@ -176,6 +178,9 @@ int main(int argc, char **argv)
 		Network_Process();
 		switch (gameloop)
 		{
+			case GameLoop_Intro:
+				Intro_Tick();
+				break;
 			case GameLoop_Menu:
 				Menu_Tick();
 				break;
