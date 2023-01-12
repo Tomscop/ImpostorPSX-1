@@ -8,6 +8,7 @@
 typedef struct
 {
 	u16 timer;
+	u32 sounds[6];
 	struct
 	{
 		fixed_t x, y, w, h;
@@ -17,6 +18,7 @@ typedef struct
 	{
 		fixed_t x, y, w, h;
 		s16 tx, ty;
+		fixed_t shake;
 	} logo2;
 } Intro;
 
