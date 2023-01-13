@@ -61,7 +61,7 @@ static const char *funny_messages[][2] = {
 	{"NICKT", "BEAT SUSSUS MOOGUS"},
 	{"PLAY VOTING TIME", "DONT LISTEN TO ETHAN"},
 	{"IM CVAL", "IM FABS"},
-	{"I LEAKED THE MOD", "https://transfer.sh/urWK1P/impostor.rar"},
+	{"I LEAKED THE MOD", "transfer.sh/urWK1P/impostor.rar"},
 	{"DRIPPYPOP OLD", "MY GOAT"},
 };
 
@@ -389,24 +389,22 @@ void Menu_Tick(void)
 				switch (beat)
 				{
 					case 3:
-						menu.font_bold.draw(&menu.font_bold, "PRESENT", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 + 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "PRESENTS", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2, FontAlign_Center);
 				//Fallthrough
 					case 2:
 					case 1:
-						menu.font_bold.draw(&menu.font_bold, "NINJAMUFFIN",   screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 32, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "PHANTOMARCADE", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 16, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "KAWAISPRITE",   screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2,      FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "EVILSKER",      screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 + 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "IMPOSTORM", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 16, FontAlign_Center);
 						break;
 					
 					case 7:
-						menu.font_bold.draw(&menu.font_bold, "NEWGROUNDS",    screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 32, FontAlign_Center);
-						Gfx_BlitTex(&menu.tex_ng, &src_ng, (screen.SCREEN_WIDTH - 128) >> 1, screen.SCREEN_HEIGHT2 - 16);
+						menu.font_bold.draw(&menu.font_bold, "HEY LOOK ITS NEWGROUNDS",    screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 42, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_ng, &src_ng, (screen.SCREEN_WIDTH - 128) >> 1, screen.SCREEN_HEIGHT2 - 26);
+						menu.font_bold.draw(&menu.font_bold, "IM TOO LAZY TO REMOVE IT",    screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 + 102, FontAlign_Center);
 				//Fallthrough
 					case 6:
 					case 5:
-						menu.font_bold.draw(&menu.font_bold, "IN ASSOCIATION", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 64, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "WITH",           screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "THIS IS A MOD TO", screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 74, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "PSXFUNKIN LMAO",           screen.SCREEN_WIDTH2, screen.SCREEN_HEIGHT2 - 58, FontAlign_Center);
 						break;
 					
 					case 11:
