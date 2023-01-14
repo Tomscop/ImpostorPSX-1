@@ -76,39 +76,6 @@
 			"fps": 24,
 			"name": "silly dance right",
 			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				92,
-				-218
-			],
-			"anim": "notice",
-			"fps": 24,
-			"name": "green notice",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				89,
-				-218
-			],
-			"anim": "handbye",
-			"fps": 24,
-			"name": "green unwave",
-			"indices": []
-		},
-		{
-			"offsets": [
-				110,
-				-218
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "wave",
-			"loop": true,
-			"name": "green wave"
 		}
 	],
 	"no_antialiasing": false,

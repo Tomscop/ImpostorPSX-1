@@ -26,6 +26,8 @@ SRCS = src/main.c \
        src/character.c \
        src/character/bf.c \
        src/character/red.c \
+	   src/character/redmd.c \
+	   src/character/greenst.c \
 	   src/character/black.c \
 	   src/character/powers.c \
 	   src/character/tomongus.c \

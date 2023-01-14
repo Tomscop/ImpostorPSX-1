@@ -151,6 +151,12 @@
 				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
 				
+				<!-- Red Meltdown assets -->
+				<file name = "redmd.arc" type = "data" source = "iso/chars/redmd/main.arc"/>
+				
+				<!-- Green ST assets -->
+				<file name = "greenst.arc" type = "data" source = "iso/chars/greenst/main.arc"/>
+				
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				
