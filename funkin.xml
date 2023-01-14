@@ -148,11 +148,17 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
-				<!-- Dad assets -->
-				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
-
+				<!-- Red assets -->
+				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
+				
+				<!-- Black assets -->
+				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
+				
 				<!-- Henry Stickmin assets -->
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
+				
+				<!-- Dad assets -->
+				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>

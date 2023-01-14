@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "res/Ellie_Assets",
-	"outdir": "iso/characters/dad/",
-	"charname" : "Dad",
+	"input":  "iso/chars/black/black",
+	"outdir": "iso/chars/black/",
+	"charname" : "Black",
 	"optimize" : false,
-	"optimizename" : "dad",
+	"optimizename" : "black",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
@@ -40,9 +40,9 @@
 	],
 
 	"bpp" : 8,
-	"resize" : 0.25,
+	"resize" : 0.18,
 	"xmlscale" : 1.0,
-	"padding" : 2,
+	"padding" : 1,
 	"max_width" : 256,
 	"max_height" : 256
 }
