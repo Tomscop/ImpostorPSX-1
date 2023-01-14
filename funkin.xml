@@ -154,6 +154,9 @@
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				
+				<!-- Powers assets -->
+				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
+				
 				<!-- Henry Stickmin assets -->
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
 				

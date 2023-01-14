@@ -52,6 +52,7 @@ static u32 Sounds[10];
 #include "character/bf.h"
 #include "character/red.h"
 #include "character/black.h"
+#include "character/powers.h"
 #include "character/henry.h"
 #include "character/dad.h"
 #include "character/gf.h"

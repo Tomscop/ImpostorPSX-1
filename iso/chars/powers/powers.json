@@ -58,17 +58,6 @@
 		{
 			"loop": false,
 			"offsets": [
-				-27,
-				-39
-			],
-			"anim": "idle-alt",
-			"fps": 24,
-			"name": "sax idle",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
 				-51,
 				-40
 			],
