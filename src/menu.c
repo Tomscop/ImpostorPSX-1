@@ -643,20 +643,20 @@ void Menu_Tick(void)
 				const char *week;
 				StageId stage;
 				const char *name;
-				const char *tracks[3];
+				const char *tracks[5];
 				int length;
 			} menu_options[] = {
-				{"1", StageId_SussusMoogus, "POLUS PROBLEMS", {"SUSSUS MOOGUS", "SABOTAGE", "MELTDOWN"}, 3},
-				{"2", StageId_SussusToogus, "MIRA MANIA", {"SUSSUS TOOGUS", "LIGHTS DOWN", "REACTOR", "EJECTED"}, 4},
+				{"1", StageId_SussusMoogus, "POLUS PROBLEMS", {"SUSSUS MOOGUS", "SABOTAGE", "MELTDOWN", NULL, NULL}, 3},
+				{"2", StageId_SussusToogus, "MIRA MANIA", {"SUSSUS TOOGUS", "LIGHTS DOWN", "REACTOR", "EJECTED", NULL}, 4},
 				{"3", StageId_Mando, "AIRSHIP ATROCITIES", {"MANDO", "DLOW", "OVERSIGHT", "DANGER", "DOUBLE KILL"}, 5},
-				{"4", StageId_Defeat, "DEFEAT", {""}, 1},
-				{"5", StageId_Ashes, "MAGMATIC MONSTROSITY", {"ASHES", "MAGMATIC", "BOILING POINT"}, 3},
-				{"6", StageId_Delusion, "DEADLY DELUSION", {"DELUSION", "BLACKOUT", "NEUROTIC"}, 3},
-				{"7", StageId_Heartbeat, "HUMANE HEARTBEAT", {"HEARTBEAT", "PINKWAVE", "PRETENDER"}, 3},
-				{NULL, StageId_O2, "JORSAWSEES JAMS", {"OTWO", "VOTING TIME", "TURBULENCE", "VICTORY"}, 4},
-				{NULL, StageId_SussyBussy, "ROUSEY RIVAL", {"SUSSY BUSSY", "RIVALS", "CHEWMATE"}, 3},
-				{NULL, StageId_Christmas, "LOGGOS HALLOWEEN", {"CHRISTMAS", "SPOOKPOSTOR"}, 2},
-				{NULL, StageId_Titular, "BATTLING THE BOYFRIEND", {"TITULAR", "GREATEST PLAN", "REINFORCEMENTS", "ARMED"}, 4},
+				{"4", StageId_Defeat, "DEFEAT", {NULL, NULL, NULL, NULL, NULL}, 1},
+				{"5", StageId_Ashes, "MAGMATIC MONSTROSITY", {"ASHES", "MAGMATIC", "BOILING POINT", NULL, NULL}, 3},
+				{"6", StageId_Delusion, "DEADLY DELUSION", {"DELUSION", "BLACKOUT", "NEUROTIC", NULL, NULL}, 3},
+				{"7", StageId_Heartbeat, "HUMANE HEARTBEAT", {"HEARTBEAT", "PINKWAVE", "PRETENDER", NULL, NULL}, 3},
+				{NULL, StageId_O2, "JORSAWSEES JAMS", {"OTWO", "VOTING TIME", "TURBULENCE", "VICTORY", NULL}, 4},
+				{NULL, StageId_SussyBussy, "ROUSEY RIVAL", {"SUSSY BUSSY", "RIVALS", "CHEWMATE", NULL, NULL}, 3},
+				{NULL, StageId_Christmas, "LOGGOS HALLOWEEN", {"CHRISTMAS", "SPOOKPOSTOR", NULL, NULL, NULL}, 2},
+				{NULL, StageId_Titular, "BATTLING THE BOYFRIEND", {"TITULAR", "GREATEST PLAN", "REINFORCEMENTS", "ARMED", NULL}, 4},
 			};
 	
 			//Draw week name and tracks
@@ -697,7 +697,7 @@ void Menu_Tick(void)
 				if (pad_state.press & PAD_UP)
 				{
 					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
+          Audio_PlaySound(Sounds[0], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -1109,6 +1109,7 @@ void Menu_Tick(void)
 					} spec_enum;
 				} spec;
 			} menu_options[] = {
+				{OptType_Enum,    "GAMEMODE", &stage.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
 				{OptType_Boolean, "GHOST TAP", &stage.prefs.ghost, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DOWNSCROLL", &stage.prefs.downscroll, {.spec_boolean = {0}}},
 				{OptType_Boolean, "MIDDLESCROLL", &stage.prefs.middlescroll, {.spec_boolean = {0}}},

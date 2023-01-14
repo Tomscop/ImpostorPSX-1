@@ -1169,7 +1169,7 @@ static void Stage_CountDown(void)
 			break;
 	}
 
-	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
 		RECT ready_src = {  0,  0, 87, 41};	
 		RECT_FIXED ready_dst = {FIXED_DEC(-65,1), FIXED_DEC(-31,1), FIXED_DEC(87 * 150,100), FIXED_DEC(41 * 150,100)};	
@@ -1345,7 +1345,7 @@ static void Stage_LoadSFX(void)
 	CdlFILE file;
 
 	//intro sound
-	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
 		for (u8 i = 0; i < 4;i++)
 		{
@@ -1624,7 +1624,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
+	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNTPIX.TIM;1"), GFX_LOADTEX_FREE);
@@ -1844,8 +1844,10 @@ void Stage_Tick(void)
 
 	if (Trans_Tick())
 	{
+		stage.pause_select = 0;
 		stage.paused = false;
-        switch (stage.trans)
+
+    switch (stage.trans)
 		{
 			case StageTrans_Menu:
 				CheckNewScore();
