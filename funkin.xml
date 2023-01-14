@@ -148,6 +148,10 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
+				<!-- Pico RC assets -->
+				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
+				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
+				
 				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
 				

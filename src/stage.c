@@ -50,6 +50,7 @@ fixed_t fade, fadespd;
 static u32 Sounds[10];
 
 #include "character/bf.h"
+#include "character/picorc.h"
 #include "character/red.h"
 #include "character/redmd.h"
 #include "character/greenst.h"
@@ -1647,7 +1648,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	Gfx_LoadTex(&stage.tex_hud1, IO_Read(iconpath), GFX_LOADTEX_FREE);
 	
 	//Load death screen texture
-	Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
+	if (stage.stage_id == StageId_Roomcode)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
+	else
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 
 	//Load stage background
 	Stage_LoadStage();
@@ -2472,7 +2476,7 @@ void Stage_Tick(void)
 			stage.player2 = NULL;
 			Character_Free(stage.opponent);
 			stage.opponent = NULL;
-            		Character_Free(stage.opponent2);
+            Character_Free(stage.opponent2);
 			stage.opponent2 = NULL;
 			Character_Free(stage.gf);
 			stage.gf = NULL;
@@ -2503,17 +2507,26 @@ void Stage_Tick(void)
 	//Fallthrough
 		case StageState_DeadLoad:
 		{
-			if (inctimer == false)
+			if (stage.stage_id == StageId_Roomcode)
 			{
-				RECT src = {  0,  0,216, 25};
-				RECT dst = { 52,108,216, 25};
+				RECT src = {  0,  0,124,124};
+				RECT dst = {  0,  0,124,124};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
-			else
+			else 
 			{
-				RECT src = {  0, 26,216, 25};
-				RECT dst = { 52,108,216, 25};
-				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				if (inctimer == false)
+				{
+					RECT src = {  0,  0,216, 25};
+					RECT dst = { 52,108,216, 25};
+					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				}
+				else
+				{
+					RECT src = {  0, 26,216, 25};
+					RECT dst = { 52,108,216, 25};
+					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				}
 			}
 			break;
 		}

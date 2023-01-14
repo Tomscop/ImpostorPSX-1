@@ -98,39 +98,6 @@
 			"anim": "singLEFTmiss",
 			"indices": [],
 			"name": "Pico NOTE LEFT miss"
-		},
-		{
-			"offsets": [
-				11,
-				8
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "firstDeath",
-			"loop": false,
-			"name": "picoDeathSTART"
-		},
-		{
-			"offsets": [
-				3,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "deathLoop",
-			"loop": true,
-			"name": "picoDeathLOOP"
-		},
-		{
-			"offsets": [
-				3,
-				30
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "deathConfirm",
-			"loop": false,
-			"name": "picoDeathCONFIRM"
 		}
 	],
 	"no_antialiasing": false,

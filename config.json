@@ -26,21 +26,31 @@
 			"hname"   : "Right"
 		},
 		{
-			"fnfanim" : "bopL",
-			"imgname" : "bopl",
-			"hname"   : "BopL"
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
 		},
 		{
-			"fnfanim" : "bopR",
-			"imgname" : "bopr",
-			"hname"   : "BopR"
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/greenst/crewmate",
-	"outdir": "iso/chars/greenst/",
-	"charname" : "GreenST",
+	"input":  "iso/chars/picorc/picolobbest",
+	"outdir": "iso/chars/picorc/",
+	"charname" : "PicoRC",
 	"optimize" : false,
-	"optimizename" : "greenst",
+	"optimizename" : "picorc",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
