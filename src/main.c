@@ -84,7 +84,6 @@ int main(int argc, char **argv)
 	//Start game
 	gameloop = GameLoop_Intro;
 	Intro_Load();
-	//Menu_Load(MenuPage_Opening);
 
 	//Game loop
 	while (PSX_Running())

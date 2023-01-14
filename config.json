@@ -1,0 +1,48 @@
+{
+	"animations": [
+		{
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		}
+	],
+	"input":  "res/Ellie_Assets",
+	"outdir": "iso/characters/dad/",
+	"charname" : "Dad",
+	"optimize" : false,
+	"optimizename" : "dad",
+	"arcname" : "ArcMain",
+	"vrampos" : [
+		448, 
+		256, 
+		0, 
+		481
+	],
+
+	"bpp" : 8,
+	"resize" : 0.25,
+	"xmlscale" : 1.0,
+	"padding" : 2,
+	"max_width" : 256,
+	"max_height" : 256
+}

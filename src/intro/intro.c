@@ -24,7 +24,8 @@ Intro intro;
 
 Gfx_Tex tex_intro;
 
-static void Intro_Animation() {
+static void Intro_Animation() 
+{
 	//FntPrint("%d\n", intro.timer);
 	switch(intro.timer)
 	{
@@ -58,11 +59,13 @@ static void Intro_Animation() {
 		case 400:
 			gameloop = GameLoop_Menu;
 			Menu_Load(MenuPage_Opening);
+			break;
 	}
 	intro.timer++;
 }
 
-static void Draw_logo2() {
+static void Draw_logo2() 
+{
 	RECT logo2_src = {0, 114, 195, 122};
 	
 	intro.logo2.x = lerp(intro.logo2.x, intro.logo2.tx, FIXED_DEC(1,10));
@@ -81,7 +84,8 @@ static void Draw_logo2() {
 	Gfx_DrawTex(&tex_intro, &logo2_src, &logo2_dst);
 }
 
-void Intro_Load() {
+void Intro_Load() 
+{
 	Gfx_SetClear(0, 0, 0);
 	
 	Gfx_LoadTex(&tex_intro, IO_Read("\\INTRO\\INTRO.TIM;1"), GFX_LOADTEX_FREE);
@@ -98,14 +102,14 @@ void Intro_Load() {
 	Mem_Free(data);
 }
 
-void Intro_Tick() {
+void Intro_Tick() 
+{
 	Intro_Animation();
-	
 	RECT logo1_src = {0, 0, 126, 113};
 	
-	if(intro.timer < 400)
+	if (intro.timer < 400)
 	{
-		if(intro.timer > 220)
+		if (intro.timer > 220)
 			Draw_logo2();
 
 		intro.logo1.x = lerp(intro.logo1.x, intro.logo1.tx, FIXED_DEC(1,10));
@@ -124,6 +128,7 @@ void Intro_Tick() {
 	}
 }
 
-void Intro_Unload() {
+void Intro_Unload() 
+{
 	
 }
