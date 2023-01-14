@@ -24,33 +24,13 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFT-alt",
-			"imgname" : "lefta",
-			"hname"   : "LeftAlt"
-		},
-		{
-			"fnfanim" : "singDOWN-alt",
-			"imgname" : "downa",
-			"hname"   : "DownAlt"
-		},
-		{
-			"fnfanim" : "singUP-alt",
-			"imgname" : "upa",
-			"hname"   : "UpAlt"
-		},
-		{
-			"fnfanim" : "singRIGHT-alt",
-			"imgname" : "righta",
-			"hname"   : "RightAlt"
 		}
 	],
-	"input":  "iso/chars/powers/powers",
-	"outdir": "iso/chars/powers/",
-	"charname" : "Powers",
+	"input":  "iso/chars/tomongh/hamster",
+	"outdir": "iso/chars/tomongh/",
+	"charname" : "TomongusH",
 	"optimize" : false,
-	"optimizename" : "powers",
+	"optimizename" : "tomongush",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
@@ -59,8 +39,8 @@
 		481
 	],
 
-	"bpp" : 4,
-	"resize" : 0.25,
+	"bpp" : 8,
+	"resize" : 1,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

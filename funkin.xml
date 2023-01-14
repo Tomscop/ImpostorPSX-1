@@ -157,6 +157,12 @@
 				<!-- Powers assets -->
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
 				
+				<!-- Tomongus assets -->
+				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
+				
+				<!-- TomongusH assets -->
+				<file name = "tomongh.arc" type = "data" source = "iso/chars/tomongh/main.arc"/>
+				
 				<!-- Henry Stickmin assets -->
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
 				

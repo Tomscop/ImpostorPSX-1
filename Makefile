@@ -28,6 +28,8 @@ SRCS = src/main.c \
        src/character/red.c \
 	   src/character/black.c \
 	   src/character/powers.c \
+	   src/character/tomongus.c \
+	   src/character/tomongush.c \
        src/character/henry.c \
        src/character/dad.c \
        src/character/gf.c \
