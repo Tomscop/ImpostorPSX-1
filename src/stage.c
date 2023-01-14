@@ -51,6 +51,7 @@ static u32 Sounds[10];
 
 #include "character/bf.h"
 #include "character/dad.h"
+#include "character/henry.h"
 #include "character/gf.h"
 
 #include "stage/dummy.h"

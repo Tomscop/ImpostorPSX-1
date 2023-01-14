@@ -10,7 +10,7 @@ SRCS = src/main.c \
        src/trans.c \
        src/loadscr.c \
        src/menu.c \
-	   src/events.c \
+	src/events.c \
        src/stage.c \
        src/debug.c \
        src/save.c \
@@ -26,8 +26,9 @@ SRCS = src/main.c \
        src/character.c \
        src/character/bf.c \
        src/character/dad.c \
+       src/character/henry.c \
        src/character/gf.c \
-	   src/character/speaker.c \
+	src/character/speaker.c \
        src/object.c \
        src/object/combo.c \
        src/object/splash.c \
