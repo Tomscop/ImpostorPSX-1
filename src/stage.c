@@ -55,6 +55,7 @@ static u32 Sounds[10];
 #include "character/redmd.h"
 #include "character/greenst.h"
 #include "character/black.h"
+#include "character/gray.h"
 #include "character/powers.h"
 #include "character/tomongus.h"
 #include "character/tomongush.h"
@@ -2494,14 +2495,17 @@ void Stage_Tick(void)
 			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 			{
 				Audio_PlaySound(Sounds[8], 0x3fff);
-				if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
-					Audio_PlayXA_Track(XA_GameOverJ, 0x40, 0, true);
-				else if (stage.stage_id == StageId_Roomcode)
-					Audio_PlayXA_Track(XA_GameOverP, 0x40, 1, true);
-				else if (stage.stage_id == StageId_GreatestPlan)
-					Audio_PlayXA_Track(XA_GameOverH, 0x40, 2, true);
-				else	
-					Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
+				if (VAG_IsPlaying(8) == false)
+				{
+					if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
+						Audio_PlayXA_Track(XA_GameOverJ, 0x40, 0, true);
+					else if (stage.stage_id == StageId_Roomcode)
+						Audio_PlayXA_Track(XA_GameOverP, 0x40, 1, true);
+					else if (stage.stage_id == StageId_GreatestPlan)
+						Audio_PlayXA_Track(XA_GameOverH, 0x40, 2, true);
+					else	
+						Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
+				}
 			}
 			stage.state = StageState_DeadLoad;
 		}
@@ -2510,26 +2514,23 @@ void Stage_Tick(void)
 		{
 			if (stage.stage_id == StageId_Roomcode)
 			{
-				if ((inctimer == false) || (inctimer == true))
-				{
-					RECT src = {  0,  0,124,124};
-					RECT dst = {  0,  0,124,124};
-					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
-				}
+				RECT src = { 0, 0, 124, 124};
+				RECT dst = { 98, 58, 124, 124};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
-			else 
+			else
 			{
 				if (inctimer == false)
 				{
-					RECT src = {  0,  0,216, 25};
-					RECT dst = { 52,108,216, 25};
-					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				RECT src = { 0, 0, 216, 25};
+				RECT dst = { 52,108, 216, 25};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 				else
 				{
-					RECT src = {  0, 26,216, 25};
-					RECT dst = { 52,108,216, 25};
-					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				RECT src = { 0, 26, 216, 25};
+				RECT dst = { 52,108, 216, 25};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 			}
 			break;

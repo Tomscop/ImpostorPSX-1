@@ -1,7 +1,12 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
+			"fnfanim" : "danceLeft",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "danceRight",
 			"imgname" : "idle",
 			"hname"   : "Idle"
 		},
@@ -24,33 +29,13 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/picorc/picolobbest",
-	"outdir": "iso/chars/picorc/",
-	"charname" : "PicoRC",
+	"input":  "iso/chars/gray/grey",
+	"outdir": "iso/chars/gray/",
+	"charname" : "Gray",
 	"optimize" : false,
-	"optimizename" : "picorc",
+	"optimizename" : "gray",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
@@ -60,7 +45,7 @@
 	],
 
 	"bpp" : 8,
-	"resize" : 0.25,
+	"resize" : 0.225,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

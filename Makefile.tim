@@ -22,6 +22,7 @@ all: \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
 	iso/chars/black/main.arc \
+	iso/chars/gray/main.arc \
 	iso/chars/powers/main.arc \
 	iso/chars/tomong/main.arc \
 	iso/chars/tomongh/main.arc \
@@ -59,6 +60,9 @@ iso/chars/greenst/main.arc: iso/chars/greenst/idle0.tim iso/chars/greenst/idle1.
 
 # Black
 iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim 
+
+# Gray
+iso/chars/gray/main.arc: iso/chars/gray/idle0.tim iso/chars/gray/idle1.tim iso/chars/gray/idle2.tim iso/chars/gray/idle3.tim iso/chars/gray/idle4.tim iso/chars/gray/idle5.tim iso/chars/gray/idle6.tim iso/chars/gray/idle7.tim iso/chars/gray/idle8.tim iso/chars/gray/idle9.tim iso/chars/gray/idle10.tim iso/chars/gray/idle11.tim iso/chars/gray/idle12.tim iso/chars/gray/idle13.tim iso/chars/gray/left0.tim iso/chars/gray/left1.tim iso/chars/gray/left2.tim iso/chars/gray/left3.tim iso/chars/gray/down0.tim iso/chars/gray/down1.tim iso/chars/gray/down2.tim iso/chars/gray/down3.tim iso/chars/gray/up0.tim iso/chars/gray/up1.tim iso/chars/gray/up2.tim iso/chars/gray/up3.tim iso/chars/gray/right0.tim iso/chars/gray/right1.tim iso/chars/gray/right2.tim iso/chars/gray/right3.tim 
 
 # Powers
 iso/chars/powers/main.arc: iso/chars/powers/idle0.tim iso/chars/powers/idle1.tim iso/chars/powers/idle2.tim iso/chars/powers/idle3.tim iso/chars/powers/idle4.tim iso/chars/powers/idle5.tim iso/chars/powers/idle6.tim iso/chars/powers/left0.tim iso/chars/powers/down0.tim iso/chars/powers/up0.tim iso/chars/powers/up1.tim iso/chars/powers/up2.tim iso/chars/powers/right0.tim iso/chars/powers/right1.tim iso/chars/powers/right2.tim iso/chars/powers/right3.tim iso/chars/powers/lefta0.tim iso/chars/powers/downa0.tim iso/chars/powers/downa1.tim iso/chars/powers/upa0.tim iso/chars/powers/upa1.tim iso/chars/powers/upa2.tim iso/chars/powers/upa3.tim iso/chars/powers/righta0.tim 
