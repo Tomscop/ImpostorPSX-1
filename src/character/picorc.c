@@ -219,9 +219,9 @@ Character *Char_PicoRC_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(-50,1);
-	this->character.focus_y = FIXED_DEC(-65,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-168,1);
+	this->character.focus_y = FIXED_DEC(-126,1);
+	this->character.focus_zoom = FIXED_DEC(271,256);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

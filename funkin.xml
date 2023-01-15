@@ -54,9 +54,7 @@
 			
 			<!-- Week 1 assets -->
 			<dir name = "week1">
-				<!-- Background art -->
-				<file name = "back.arc" type = "data" source = "iso/stages/week1/back.arc"/>
-
+			
 				<file name = "1.1n.cht" type = "data" source = "iso/music/sussus-moogus/sussus-moogus.json.cht"/>
 				<file name = "1.2n.cht" type = "data" source = "iso/music/sabotage/sabotage.json.cht"/>
 				<file name = "1.3n.cht" type = "data" source = "iso/music/meltdown/meltdown.json.cht"/>
@@ -183,6 +181,16 @@
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
+			</dir>
+			
+			<!-- Background assets -->
+			<dir name = "bg">
+			
+			<!-- Lobby BG -->
+				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
+			
+			<!-- Week 1 BG -->
+				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 		    
 			<!-- Sound effects -->

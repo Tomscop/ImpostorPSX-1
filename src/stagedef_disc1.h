@@ -524,14 +524,14 @@
 	},
 	{ //StageId_Roomcode (Roomcode)
 		//Characters
-		{Char_PicoRC_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_PicoRC_New,    FIXED_DEC(502,1),  FIXED_DEC(262,1)},
         {NULL},
-		{Char_Powers_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Powers_New, FIXED_DEC(268,1),  FIXED_DEC(231,1)},
         {NULL},
 		{NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Lobby_New,
 		
 		//Song info
 		3, 9,

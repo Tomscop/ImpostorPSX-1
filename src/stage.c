@@ -62,8 +62,9 @@ static u32 Sounds[10];
 #include "character/dad.h"
 #include "character/gf.h"
 
-#include "stage/dummy.h"
+#include "stage/lobby.h"
 #include "stage/week1.h"
+#include "stage/dummy.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
@@ -1933,7 +1934,7 @@ void Stage_Tick(void)
 			{
 				if (show)
 				{
-					if (stage.stage_id != StageId_Victory)
+					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
 						StageTimer_Draw();
 				}
 			}
@@ -2509,9 +2510,12 @@ void Stage_Tick(void)
 		{
 			if (stage.stage_id == StageId_Roomcode)
 			{
-				RECT src = {  0,  0,124,124};
-				RECT dst = {  0,  0,124,124};
-				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				if ((inctimer == false) || (inctimer == true))
+				{
+					RECT src = {  0,  0,124,124};
+					RECT dst = {  0,  0,124,124};
+					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+				}
 			}
 			else 
 			{
