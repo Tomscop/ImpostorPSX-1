@@ -27,6 +27,7 @@ all: \
 	iso/chars/tomong/main.arc \
 	iso/chars/tomongh/main.arc \
 	iso/chars/henry/main.arc \
+	iso/chars/nuzzus/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
@@ -75,6 +76,9 @@ iso/chars/tomongh/main.arc: iso/chars/tomongh/idle0.tim iso/chars/tomongh/left0.
 
 # Henry
 iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim iso/chars/henry/idle2.tim iso/chars/henry/left0.tim iso/chars/henry/left1.tim iso/chars/henry/left2.tim iso/chars/henry/down0.tim iso/chars/henry/down1.tim iso/chars/henry/up0.tim iso/chars/henry/right0.tim 
+
+# Nuzzus
+iso/chars/nuzzus/main.arc: iso/chars/nuzzus/idle0.tim iso/chars/nuzzus/idle1.tim iso/chars/nuzzus/left0.tim iso/chars/nuzzus/down0.tim iso/chars/nuzzus/up0.tim iso/chars/nuzzus/right0.tim 
 
 # Dad
 iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/chars/dad/left.tim iso/chars/dad/down.tim iso/chars/dad/up.tim iso/chars/dad/right.tim
