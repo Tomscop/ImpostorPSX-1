@@ -27,6 +27,7 @@ SRCS = src/main.c \
        src/character.c \
        src/character/bf.c \
 	   src/character/picorc.c \
+	   src/character/kid.c \
        src/character/red.c \
 	   src/character/redmd.c \
 	   src/character/greenst.c \
@@ -37,6 +38,7 @@ SRCS = src/main.c \
 	   src/character/tomongush.c \
        src/character/henry.c \
 	   src/character/nuzzus.c \
+	   src/character/tobyfox.c \
        src/character/dad.c \
        src/character/gf.c \
 	   src/character/speaker.c \

@@ -150,6 +150,9 @@
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				
+				<!-- Kid assets -->
+				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
+				
 				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
 				
@@ -179,6 +182,9 @@
 				
 				<!-- Nuzzus assets -->
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
+				
+				<!-- Toby Fox assets -->
+				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
 				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>

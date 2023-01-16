@@ -821,7 +821,7 @@
         {NULL},
 		{Char_Nuzzus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL},
 		
 		//Stage background
 		Back_Week1_New,
@@ -835,11 +835,11 @@
 	},
 	{ //StageId_Idk (Idk)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Kid_New,    FIXED_DEC(60,1),  FIXED_DEC(-289,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_TobyFox_New, FIXED_DEC(-120,1),  FIXED_DEC(-289,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL},
 		
 		//Stage background
 		Back_Week1_New,
