@@ -152,6 +152,7 @@
 				
 				<!-- Kid assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
+				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
 				
 				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
@@ -200,6 +201,9 @@
 			
 			<!-- Lobby BG -->
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
+				
+			<!-- Idk BG -->
+				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
 			
 			<!-- Week 1 BG -->
 				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>

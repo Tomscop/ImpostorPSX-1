@@ -19,6 +19,7 @@ all: \
 	iso/chars/picorc/main.arc \
 	iso/chars/picorc/dead.tim \
 	iso/chars/kid/main.arc \
+	iso/chars/kid/dead.tim \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
@@ -35,6 +36,7 @@ all: \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
 	iso/stages/lobby/back.arc \
+	iso/stages/idk/back.arc \
 	iso/stages/week1/back.arc \
 
 iso/%.tim: iso/%.png
@@ -97,6 +99,9 @@ iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 
 # Lobby
 iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim
+
+# Idk
+iso/stages/idk/back.arc: iso/stages/idk/back0.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim

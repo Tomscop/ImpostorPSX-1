@@ -66,6 +66,7 @@ static u32 Sounds[10];
 #include "character/dad.h"
 #include "character/gf.h"
 
+#include "stage/idk.h"
 #include "stage/lobby.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
@@ -258,15 +259,18 @@ static u8 Stage_HitNote(PlayerState *this, u8 type, fixed_t offset)
 	Stage_StartVocal();
 	this->health += 230;
 	
-	//Create combo object telling of our combo
-	Obj_Combo *combo = Obj_Combo_New(
-		this->character->focus_x,
-		this->character->focus_y,
-		hit_type,
-		this->combo >= 10 ? this->combo : 0xFFFF
-	);
-	if (combo != NULL)
-		ObjectList_Add(&stage.objlist_fg, (Object*)combo);
+	if ((stage.stage_id != StageId_O2) && (stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Christmas) && (stage.stage_id != StageId_Spookpostor) && (stage.stage_id != StageId_Ow) && (stage.stage_id != StageId_Idk) && (stage.stage_id != StageId_Esculent) && (stage.stage_id != StageId_Crewicide) && (stage.stage_id != StageId_MonotoneAttack))
+	{
+		//Create combo object telling of our combo
+		Obj_Combo *combo = Obj_Combo_New(
+			this->character->focus_x,
+			this->character->focus_y,
+			hit_type,
+			this->combo >= 10 ? this->combo : 0xFFFF
+		);
+		if (combo != NULL)
+			ObjectList_Add(&stage.objlist_fg, (Object*)combo);
+	}
 	
 	//Create note splashes if SICK
 	if (hit_type == 0)
@@ -304,15 +308,19 @@ static void Stage_MissNote(PlayerState *this, u8 type)
 		//Kill combo
 		this->combo = 0;
 		
-		//Create combo object telling of our lost combo
-		Obj_Combo *combo = Obj_Combo_New(
-			this->character->focus_x,
-			this->character->focus_y,
-			0xFF,
-			0
-		);
-		if (combo != NULL)
-			ObjectList_Add(&stage.objlist_fg, (Object*)combo);
+		if ((stage.stage_id != StageId_O2) && (stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Christmas) && (stage.stage_id != StageId_Spookpostor) && (stage.stage_id != StageId_Ow) && (stage.stage_id != StageId_Idk) && (stage.stage_id != StageId_Esculent) && (stage.stage_id != StageId_Crewicide) && (stage.stage_id != StageId_MonotoneAttack))
+		{
+			//Create combo object telling of our lost combo
+				Obj_Combo *combo = Obj_Combo_New(
+					this->character->focus_x,
+					this->character->focus_y,
+					0xFF,
+					0
+				);
+		
+			if (combo != NULL)
+				ObjectList_Add(&stage.objlist_fg, (Object*)combo);
+		}
 	}
 }
 
@@ -1655,6 +1663,8 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	//Load death screen texture
 	if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Idk)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 
@@ -2165,10 +2175,13 @@ void Stage_Tick(void)
 				is_bump_step = (stage.song_step & 0xF) == 0;
 				
 				//Bump screen
-				if (is_bump_step)
+				if((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) && (stage.stage_id != StageId_Idk))
 				{
-					stage.bump = FIXED_DEC(103,100);
-					stage.charbump += FIXED_DEC(15,1000); //0.015
+				if (is_bump_step)
+					{
+						stage.bump = FIXED_DEC(103,100);
+						stage.charbump += FIXED_DEC(15,1000); //0.015
+					}
 				}
 
 				//Bump health every 4 steps
@@ -2519,6 +2532,12 @@ void Stage_Tick(void)
 			{
 				RECT src = { 0, 0, 124, 124};
 				RECT dst = { 98, 58, 124, 124};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if (stage.stage_id == StageId_Idk)
+			{
+				RECT src = { 0, 0, 192, 255};
+				RECT dst = { 112, 56, 96, 128};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else

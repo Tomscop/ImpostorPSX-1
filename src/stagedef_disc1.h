@@ -835,14 +835,14 @@
 	},
 	{ //StageId_Idk (Idk)
 		//Characters
-		{Char_Kid_New,    FIXED_DEC(60,1),  FIXED_DEC(-289,1)},
+		{Char_Kid_New,    FIXED_DEC(584,1),  FIXED_DEC(73,1)},
         {NULL},
-		{Char_TobyFox_New, FIXED_DEC(-120,1),  FIXED_DEC(-289,1)},
+		{Char_TobyFox_New, FIXED_DEC(204,1),  FIXED_DEC(117,1)},
         {NULL},
 		{NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Idk_New,
 		
 		//Song info
 		5, 7,
