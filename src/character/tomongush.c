@@ -97,7 +97,10 @@ void Char_TomongusH_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_TomongusH_SetFrame);
-	Character_Draw(character, &this->tex, &char_tomongush_frame[this->frame]);
+	if (stage.stage_id != StageId_Rivals)
+		Character_Draw(character, &this->tex, &char_tomongush_frame[this->frame]);
+	else if ((stage.stage_id == StageId_Rivals) && (stage.song_step >= 1034))
+		Character_Draw(character, &this->tex, &char_tomongush_frame[this->frame]);
 }
 
 void Char_TomongusH_SetAnim(Character *character, u8 anim)

@@ -135,14 +135,28 @@ void Char_Red_Tick(Character *character)
 {
 	Char_Red *this = (Char_Red*)character;
 	
-	//Perform idle dance
-	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+	if((character->animatable.anim  != CharAnim_LeftAlt) && (character->animatable.anim  != CharAnim_DownAlt) && (character->animatable.anim  != CharAnim_UpAlt) && (character->animatable.anim  != CharAnim_RightAlt))
+	{
+	   //Perform idle dance
+	   if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
+			Character_PerformIdle(character);
+	}
 	
 	if (stage.stage_id == StageId_Sabotage)
 		Animatable_Init(&this->character.animatable, char_red_anim2);
 	else
 		Animatable_Init(&this->character.animatable, char_red_anim);
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Sabotage: //Stim
+				if (stage.song_step == 816)
+					character->set_anim(character, CharAnim_DownAlt);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Red_SetFrame);

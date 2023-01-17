@@ -128,10 +128,26 @@ void Char_GreenST_Tick(Character *character)
 {
 	Char_GreenST *this = (Char_GreenST*)character;
 	
-	//Perform idle dance
-	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+	if((character->animatable.anim  != CharAnim_LeftAlt) && (character->animatable.anim  != CharAnim_DownAlt) && (character->animatable.anim  != CharAnim_UpAlt) && (character->animatable.anim  != CharAnim_RightAlt))
+	{
+	   //Perform idle dance
+	   if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
+			Character_PerformIdle(character);
+	}
 	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_SussusToogus: //Stim
+				if ((stage.song_step == 112) || (stage.song_step == 120))
+					character->set_anim(character, CharAnim_LeftAlt);
+				if ((stage.song_step == 116) || (stage.song_step == 124))
+					character->set_anim(character, CharAnim_RightAlt);
+				break;
+			default:
+				break;
+		}
+		
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_GreenST_SetFrame);
 	Character_Draw(character, &this->tex, &char_greenst_frame[this->frame]);

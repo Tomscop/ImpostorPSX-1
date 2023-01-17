@@ -545,7 +545,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -563,8 +563,8 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
+        {Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(104,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -581,7 +581,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_TomongusH_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		

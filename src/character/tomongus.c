@@ -95,9 +95,15 @@ void Char_Tomongus_Tick(Character *character)
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
+	if ((stage.stage_id == StageId_Rivals) && (stage.song_step >= 1034))
+		this->character.health_bar = 0xFFF8A572;
+	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Tomongus_SetFrame);
-	Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
+	if (stage.stage_id != StageId_Rivals)
+		Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
+	else if ((stage.stage_id == StageId_Rivals) && (stage.song_step <= 1033))
+		Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
 }
 
 void Char_Tomongus_SetAnim(Character *character, u8 anim)
