@@ -68,6 +68,7 @@ static u32 Sounds[10];
 
 #include "stage/idk.h"
 #include "stage/lobby.h"
+#include "stage/henry.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
 

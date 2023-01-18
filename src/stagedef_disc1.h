@@ -653,14 +653,14 @@
 	
 	{ //StageId_Titular (Titular)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-80,1),  FIXED_DEC(100,1)},
+		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Henry_New,
 		
 		//Song info
 		4, 7,
@@ -671,14 +671,14 @@
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-80,1),  FIXED_DEC(100,1)},
+		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Henry_New,
 		
 		//Song info
 		4, 8,
@@ -689,14 +689,14 @@
 	},
 	{ //StageId_Reinforcements (Reinforcements)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-80,1),  FIXED_DEC(100,1)},
+		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Henry_New,
 		
 		//Song info
 		4, 9,

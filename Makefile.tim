@@ -37,6 +37,7 @@ all: \
 	iso/chars/gf/speaker.tim \
 	iso/stages/lobby/back.arc \
 	iso/stages/idk/back.arc \
+	iso/stages/henry/back.arc \
 	iso/stages/week1/back.arc \
 
 iso/%.tim: iso/%.png
@@ -102,6 +103,9 @@ iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim
 
 # Idk
 iso/stages/idk/back.arc: iso/stages/idk/back0.tim
+
+# Henry Stage
+iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim

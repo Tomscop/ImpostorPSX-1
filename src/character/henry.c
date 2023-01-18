@@ -146,8 +146,8 @@ Character *Char_Henry_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBDD7D8;
 	
-	this->character.focus_x = FIXED_DEC(25,1);
-	this->character.focus_y = FIXED_DEC(-95,1);
+	this->character.focus_x = FIXED_DEC(5,1);
+	this->character.focus_y = FIXED_DEC(-42,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.size = FIXED_DEC(1,1);
