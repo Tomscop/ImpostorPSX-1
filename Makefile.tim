@@ -23,6 +23,7 @@ all: \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
+	iso/chars/yellow/main.arc \
 	iso/chars/black/main.arc \
 	iso/chars/gray/main.arc \
 	iso/chars/powers/main.arc \
@@ -36,8 +37,8 @@ all: \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
 	iso/stages/lobby/back.arc \
-	iso/stages/idk/back.arc \
 	iso/stages/henry/back.arc \
+	iso/stages/idk/back.arc \
 	iso/stages/week1/back.arc \
 
 iso/%.tim: iso/%.png
@@ -66,6 +67,9 @@ iso/chars/redmd/main.arc: iso/chars/redmd/idle0.tim iso/chars/redmd/idle1.tim is
 
 # Green ST
 iso/chars/greenst/main.arc: iso/chars/greenst/idle0.tim iso/chars/greenst/idle1.tim iso/chars/greenst/left0.tim iso/chars/greenst/left1.tim iso/chars/greenst/left2.tim iso/chars/greenst/down0.tim iso/chars/greenst/down1.tim iso/chars/greenst/up0.tim iso/chars/greenst/up1.tim iso/chars/greenst/up2.tim iso/chars/greenst/up3.tim iso/chars/greenst/right0.tim iso/chars/greenst/right1.tim iso/chars/greenst/stiml0.tim iso/chars/greenst/stiml1.tim iso/chars/greenst/stimr0.tim iso/chars/greenst/stimr1.tim 
+
+# Yellow
+iso/chars/yellow/main.arc: iso/chars/yellow/idle0.tim iso/chars/yellow/idle1.tim iso/chars/yellow/idle2.tim iso/chars/yellow/left0.tim iso/chars/yellow/left1.tim iso/chars/yellow/down0.tim iso/chars/yellow/down1.tim iso/chars/yellow/down2.tim iso/chars/yellow/down3.tim iso/chars/yellow/up0.tim iso/chars/yellow/up1.tim iso/chars/yellow/right0.tim iso/chars/yellow/right1.tim iso/chars/yellow/death0.tim iso/chars/yellow/death1.tim iso/chars/yellow/death2.tim iso/chars/yellow/death3.tim iso/chars/yellow/death4.tim iso/chars/yellow/death5.tim iso/chars/yellow/death6.tim iso/chars/yellow/death7.tim iso/chars/yellow/death8.tim 
 
 # Black
 iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim 
@@ -101,11 +105,11 @@ iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 # Lobby
 iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim
 
-# Idk
-iso/stages/idk/back.arc: iso/stages/idk/back0.tim
-
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
+
+# Idk
+iso/stages/idk/back.arc: iso/stages/idk/back0.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim

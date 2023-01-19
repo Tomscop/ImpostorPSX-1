@@ -163,6 +163,9 @@
 				<!-- Green ST assets -->
 				<file name = "greenst.arc" type = "data" source = "iso/chars/greenst/main.arc"/>
 				
+				<!-- Yellow assets -->
+				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
+				
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				
@@ -201,11 +204,11 @@
 				<!-- Lobby BG -->
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
 				
-				<!-- Idk BG -->
-				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
-
 				<!-- Henry BG -->
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
+				
+				<!-- Idk BG -->
+				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
 			
 				<!-- Week 1 BG -->
 				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>

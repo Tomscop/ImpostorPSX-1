@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/ee/idk",
-	"outdir": "iso/chars/ee/",
-	"charname" : "ee",
+	"input":  "iso/chars/yellow/yellow",
+	"outdir": "iso/chars/yellow/",
+	"charname" : "Yellow",
 	"optimize" : false,
-	"optimizename" : "ee",
+	"optimizename" : "yellow",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 

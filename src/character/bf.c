@@ -65,42 +65,38 @@ static const CharFrame char_bf_frame[] = {
 	{BF_ArcMain_BF3, {  0, 103, 104, 103}, { 54,  96}}, //14 peace 2
 	{BF_ArcMain_BF3, {105, 106, 104, 104}, { 54,  97}}, //15 peace 3
 	
-	{BF_ArcMain_BF4, {  0,   0, 128, 128}, { 53,  92}}, //16 sweat 1
-	{BF_ArcMain_BF4, {128,   0, 128, 128}, { 53,  93}}, //17 sweat 2
-	{BF_ArcMain_BF4, {  0, 128, 128, 128}, { 53,  98}}, //18 sweat 3
-	{BF_ArcMain_BF4, {128, 128, 128, 128}, { 53,  98}}, //19 sweat 4
+	{BF_ArcMain_BF4, {  0,  0,102,103}, { 53,  96}}, //16 shock
 	
-	{BF_ArcMain_BF5, {  0,   0,  93, 108}, { 52, 101}}, //20 left miss 1
-	{BF_ArcMain_BF5, { 94,   0,  93, 108}, { 52, 101}}, //21 left miss 2
+	{BF_ArcMain_BF5, {  0,   0,  93, 108}, { 52, 101}}, //17 left miss 1
+	{BF_ArcMain_BF5, { 94,   0,  93, 108}, { 52, 101}}, //18 left miss 2
 	
-	{BF_ArcMain_BF5, {  0, 109,  95,  98}, { 50,  90}}, //22 down miss 1
-	{BF_ArcMain_BF5, { 96, 109,  95,  97}, { 50,  89}}, //23 down miss 2
+	{BF_ArcMain_BF5, {  0, 109,  95,  98}, { 50,  90}}, //19 down miss 1
+	{BF_ArcMain_BF5, { 96, 109,  95,  97}, { 50,  89}}, //20 down miss 2
 	
-	{BF_ArcMain_BF6, {  0,   0,  90, 107}, { 44,  99}}, //24 up miss 1
-	{BF_ArcMain_BF6, { 91,   0,  89, 108}, { 44, 100}}, //25 up miss 2
+	{BF_ArcMain_BF6, {  0,   0,  90, 107}, { 44,  99}}, //21 up miss 1
+	{BF_ArcMain_BF6, { 91,   0,  89, 108}, { 44, 100}}, //22 up miss 2
 	
-	{BF_ArcMain_BF6, {  0, 108,  99, 108}, { 42, 101}}, //26 right miss 1
-	{BF_ArcMain_BF6, {100, 109, 101, 108}, { 43, 101}}, //27 right miss 2
+	{BF_ArcMain_BF6, {  0, 108,  99, 108}, { 42, 101}}, //23 right miss 1
+	{BF_ArcMain_BF6, {100, 109, 101, 108}, { 43, 101}}, //24 right miss 2
 };
 
 static const Animation char_bf_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){ 0,  1,  2,  3,  4, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 5,  6, ASCR_BACK, 1}},             //CharAnim_Left
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
+	{2, (const u8[]){ 16, ASCR_CHGANI, CharAnim_LeftAlt}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 7,  8, ASCR_BACK, 1}},             //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_DownAlt
 	{2, (const u8[]){ 9, 10, ASCR_BACK, 1}},             //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
-	{2, (const u8[]){11, 12, ASCR_BACK, 1}},             //CharAnim_Right
+	{2, (const u8[]){ 11, 12, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
 	
-	{1, (const u8[]){ 20, 20, 21, ASCR_BACK, 1}},     //PlayerAnim_LeftMiss
-	{1, (const u8[]){ 22, 22, 23, ASCR_BACK, 1}},     //PlayerAnim_DownMiss
-	{1, (const u8[]){ 24, 24, 25, ASCR_BACK, 1}},     //PlayerAnim_UpMiss
-	{1, (const u8[]){ 26, 26, 27, ASCR_BACK, 1}},     //PlayerAnim_RightMiss
+	{1, (const u8[]){ 17, 17, 18, ASCR_BACK, 1}},     //PlayerAnim_LeftMiss
+	{1, (const u8[]){ 19, 19, 20, ASCR_BACK, 1}},     //PlayerAnim_DownMiss
+	{1, (const u8[]){ 21, 21, 22, ASCR_BACK, 1}},     //PlayerAnim_UpMiss
+	{1, (const u8[]){ 23, 23, 24, ASCR_BACK, 1}},     //PlayerAnim_RightMiss
 	
-	{2, (const u8[]){13, 14, 15, ASCR_BACK, 1}},         //PlayerAnim_Peace
-	{2, (const u8[]){16, 17, 18, 19, ASCR_REPEAT}},      //PlayerAnim_Sweat
+	{2, (const u8[]){ 13, 14, 15, ASCR_BACK, 1}},         //PlayerAnim_Peace
 };
 
 //Boyfriend player functions
@@ -122,6 +118,8 @@ void Char_BF_Tick(Character *character)
 {
 	Char_BF *this = (Char_BF*)character;
 	
+	if(character->animatable.anim  != CharAnim_LeftAlt)
+	{
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -171,6 +169,18 @@ void Char_BF_Tick(Character *character)
 			character->set_anim(character, CharAnim_LeftAlt);
 		}
 	}
+	}
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Dlow: //WHAT THE FUCK
+				if (stage.song_step == 1424)
+					character->set_anim(character, CharAnim_LeftAlt);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
@@ -225,7 +235,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.size = FIXED_DEC(1,1);
-	
+
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BF.ARC;1");
 		

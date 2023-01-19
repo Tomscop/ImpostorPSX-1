@@ -55,6 +55,7 @@ static u32 Sounds[10];
 #include "character/red.h"
 #include "character/redmd.h"
 #include "character/greenst.h"
+#include "character/yellow.h"
 #include "character/black.h"
 #include "character/gray.h"
 #include "character/powers.h"
@@ -66,9 +67,9 @@ static u32 Sounds[10];
 #include "character/dad.h"
 #include "character/gf.h"
 
-#include "stage/idk.h"
 #include "stage/lobby.h"
 #include "stage/henry.h"
+#include "stage/idk.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
 
@@ -1960,10 +1961,10 @@ void Stage_Tick(void)
 			//^ makes step show on screen
 			
 			//Draw white fade
-			if (stage.stage_id == StageId_Temp) //PLACEHOLDER
+			if ((stage.stage_id == StageId_Dlow) && (stage.song_step == 1424))
 			{
 				fade = FIXED_DEC(255,1);
-				fadespd = FIXED_DEC(175,1);
+				fadespd = FIXED_DEC(600,1);
 			}
 			if (stage.prefs.flash != 0)
 				if (fade > 0)
