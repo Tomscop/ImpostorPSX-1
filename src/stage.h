@@ -186,6 +186,8 @@ typedef struct
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
+#define NOTE_FLAG_CHAR2SING   (1 << 8) //Note that only the 2 character plays
+#define NOTE_FLAG_BOTHSING    (1 << 9) //Note that only that both the 1 and 2 character sings
 
 typedef struct
 {
@@ -239,7 +241,6 @@ typedef struct
 	
 	u32 offset;
 	
-
 	fixed_t pause_scroll;
 	u8 pause_select;
 	boolean paused;

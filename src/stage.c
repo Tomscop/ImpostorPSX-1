@@ -62,6 +62,7 @@ static u32 Sounds[10];
 #include "character/tomongus.h"
 #include "character/tomongush.h"
 #include "character/henry.h"
+#include "character/charles.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
 #include "character/dad.h"
@@ -81,11 +82,23 @@ static const StageDef stage_defs[StageId_Max] = {
 Stage stage;
 Debug debug;
 
-static void Stage_CheckAnimations(PlayerState *this, u8 type)
+static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 {
-	this->character->set_anim(this->character, type);
-	if (this->character2 != NULL)
+	if ((note->type & NOTE_FLAG_CHAR2SING) == false)
+		this->character->set_anim(this->character, type);
+
+	if (this->character2 != NULL && note->type & (NOTE_FLAG_CHAR2SING | NOTE_FLAG_BOTHSING))
+	{
 		this->character2->set_anim(this->character2, type);
+
+		if (note->type & NOTE_FLAG_SUSTAIN)
+			this->character2->pad_held = 1;
+		else
+			this->character2->pad_held = 0;
+	}
+
+	if ((note->type & NOTE_FLAG_CHAR2SING))
+		this->character->pad_held = 0;
 }
 
 Character* Stage_ChangeChars(Character* oldcharacter, Character* newcharacter)
@@ -345,7 +358,7 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			//Hit the note
 			note->type |= NOTE_FLAG_HIT;
 
-			Stage_CheckAnimations(this, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
+			Stage_CheckAnimations(this, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
 
 			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
 			this->arrow_hitan[type & 0x3] = stage.step_time;
@@ -416,7 +429,7 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 		//Hit the note
 		note->type |= NOTE_FLAG_HIT;
 		
-		Stage_CheckAnimations(this, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
+		Stage_CheckAnimations(this, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
 		
 		Stage_StartVocal();
 		this->health += 230;
@@ -437,10 +450,11 @@ static void CheckNewScore()
 static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 {
 	//Handle player note presses
-	if (stage.prefs.botplay == 0) {
+	if (stage.prefs.botplay == 0) 
+	{
 		if (playing)
 		{
-			u8 i = ((this->character == stage.opponent) || (this->character == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || (this->character2 == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			this->pad_held = this->character->pad_held = pad->held;
 			this->pad_press = pad->press;
@@ -470,11 +484,12 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		}
 	}
 	
-	if (stage.prefs.botplay == 1) {
+	if (stage.prefs.botplay == 1) 
+	{
 		//Do perfect note checks
 		if (playing)
 		{
-			u8 i = ((this->character == stage.opponent) || (this->character == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || (this->character2 == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			u8 hit[4] = {0, 0, 0, 0};
 			for (Note *note = stage.cur_note;; note++)
@@ -1510,7 +1525,7 @@ static void Stage_LoadMusic(void)
 	Audio_SeekXA_Track(stage.stage_def->music_track);
 	
 	//Initialize music state
-		//added more steps and disable intro
+	//added more steps and disable intro
 	if (stage.stage_id == StageId_Temp) //PLACEHOLDER
 	{
 		stage.intro = true;
@@ -1549,17 +1564,16 @@ static void Stage_LoadState(void)
 	if (stage.mode == StageMode_Swap)
 	{
 		stage.player_state[0].character = stage.opponent;
+		stage.player_state[0].character2 = stage.opponent2;
 		stage.player_state[1].character = stage.player;
+		stage.player_state[1].character2 = stage.player2;
 	}
 	else
 	{
 		stage.player_state[0].character = stage.player;
+		stage.player_state[0].character2 = stage.player2;
 		stage.player_state[1].character = stage.opponent;
-	}
-	
-	for (u8 i = 0; i < 2; i++)
-	{
-	stage.player_state[i].character2 = NULL;
+		stage.player_state[1].character2 = stage.opponent2;
 	}
 
 	for (int i = 0; i < 2; i++)
@@ -1613,7 +1627,7 @@ static void Stage_LoadState(void)
 		note_x[2] = FIXED_DEC(94 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[3] = FIXED_DEC(128 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		//opponent
-	    note_x[4] = FIXED_DEC(-50 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
+	  note_x[4] = FIXED_DEC(-50 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[5] = FIXED_DEC(-16 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4); //+34
 		note_x[6] = FIXED_DEC(170 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[7] = FIXED_DEC(204 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
@@ -1697,9 +1711,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	//Initialize camera
 	if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
-		Stage_FocusCharacter(stage.opponent, FIXED_UNIT);
+			Stage_FocusCharacter(stage.opponent, FIXED_UNIT);
 	else
-		Stage_FocusCharacter(stage.player, FIXED_UNIT);
+			Stage_FocusCharacter(stage.player, FIXED_UNIT);
+
 	stage.camera.x = stage.camera.tx;
 	stage.camera.y = stage.camera.ty;
 	stage.camera.zoom = stage.camera.tz;
@@ -2193,10 +2208,10 @@ void Stage_Tick(void)
 			
 			//Scroll camera
 			if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
-				Stage_FocusCharacter(stage.opponent, FIXED_UNIT / 24);
+					Stage_FocusCharacter(stage.opponent, FIXED_UNIT / 24);
 			else
-				Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
-			Stage_ScrollCamera();
+					Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
+					Stage_ScrollCamera();
 			
 			//Draw Score
 			//colors for score
@@ -2306,8 +2321,9 @@ void Stage_Tick(void)
 					//Handle opponent notes
 					u8 opponent_anote = CharAnim_Idle;
 					u8 opponent_snote = CharAnim_Idle;
+					Note* opponent_note = 0;
 						
-						for (Note *note = stage.cur_note;; note++)
+					for (Note *note = stage.cur_note;; note++)
 					{
 						if (note->pos > (stage.note_scroll >> FIXED_SHIFT))
 							break;
@@ -2323,13 +2339,14 @@ void Stage_Tick(void)
 							else
 								opponent_anote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
 							note->type |= NOTE_FLAG_HIT;
+							opponent_note = note;
 						}
 					}
 					
 					if (opponent_anote != CharAnim_Idle)
-						Stage_CheckAnimations(&stage.player_state[1], opponent_anote);
+						Stage_CheckAnimations(&stage.player_state[1], opponent_anote, opponent_note);
 					else if (opponent_snote != CharAnim_Idle)
-						Stage_CheckAnimations(&stage.player_state[1], opponent_snote);
+						Stage_CheckAnimations(&stage.player_state[1], opponent_snote, opponent_note);
 					break;
 					break;
 				}
@@ -2429,20 +2446,13 @@ void Stage_Tick(void)
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
-			if (stage.mode == StageMode_Swap)
-			{
-				stage.opponent->tick(stage.opponent);
-				stage.player->tick(stage.player);
-			}
-			else
-			{
-				stage.player->tick(stage.player);
-				stage.opponent->tick(stage.opponent);
-			}
-            if (stage.player2 != NULL)
+			stage.player->tick(stage.player);
+			stage.opponent->tick(stage.opponent);
+			
+      if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
 
-            if (stage.opponent2 != NULL)
+      if (stage.opponent2 != NULL)
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
@@ -2463,13 +2473,6 @@ void Stage_Tick(void)
 			if (stage.song_step > 0)
 				stage.song_beat = stage.song_step / 4;
 			StageTimer_Tick();
-			
-			//Player 2 and Opponent 2 Switches
-			if (stage.stage_id == StageId_Temp) //PLACEHOLDER
-			{
-				if (stage.stage_id == StageId_Temp) //PLACEHOLDER
-					stage.player_state[0].character = Stage_ChangeChars(stage.player_state[1].character, stage.player2);
-			}
 			break;
 		}
 		case StageState_Dead: //Start BREAK animation and reading extra data from CD

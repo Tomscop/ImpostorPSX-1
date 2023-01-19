@@ -10,7 +10,7 @@ SRCS = src/main.c \
        src/trans.c \
        src/loadscr.c \
        src/menu.c \
-	   src/events.c \
+	src/events.c \
        src/stage.c \
        src/debug.c \
        src/save.c \
@@ -20,31 +20,32 @@ SRCS = src/main.c \
        src/psx/audio.c \
        src/psx/pad.c \
        src/psx/timer.c \
-	   src/stage/lobby.c \
+	src/stage/lobby.c \
        src/stage/henry.c \
-	   src/stage/idk.c \
-	   src/stage/week1.c \
+	src/stage/idk.c \
+	src/stage/week1.c \
        src/stage/dummy.c \
        src/animation.c \
        src/character.c \
        src/character/bf.c \
-	   src/character/picorc.c \
-	   src/character/kid.c \
+	src/character/picorc.c \
+	src/character/kid.c \
        src/character/red.c \
-	   src/character/redmd.c \
-	   src/character/greenst.c \
-	   src/character/yellow.c \
-	   src/character/black.c \
-	   src/character/gray.c \
-	   src/character/powers.c \
-	   src/character/tomongus.c \
-	   src/character/tomongush.c \
+	src/character/redmd.c \
+	src/character/greenst.c \
+	src/character/yellow.c \
+	src/character/black.c \
+	src/character/gray.c \
+	src/character/powers.c \
+	src/character/tomongus.c \
+       src/character/tomongush.c \
        src/character/henry.c \
-	   src/character/nuzzus.c \
-	   src/character/tobyfox.c \
+       src/character/charles.c \
+       src/character/nuzzus.c \
+	src/character/tobyfox.c \
        src/character/dad.c \
        src/character/gf.c \
-	   src/character/speaker.c \
+	src/character/speaker.c \
        src/object.c \
        src/object/combo.c \
        src/object/splash.c \

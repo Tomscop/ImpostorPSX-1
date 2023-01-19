@@ -183,6 +183,9 @@
 				
 				<!-- Henry Stickmin assets -->
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
+
+				<!-- Charles assets -->
+				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
 				
 				<!-- Nuzzus assets -->
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>

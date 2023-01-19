@@ -655,7 +655,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
+		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -671,9 +671,9 @@
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
-        {NULL},
-		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
+		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
+        {Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
+		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(69,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -691,8 +691,8 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC( 5,1),  FIXED_DEC(70,1)},
-        {NULL},
+		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
+        {Char_Charles_New, FIXED_DEC(-185,1),  FIXED_DEC(70,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background

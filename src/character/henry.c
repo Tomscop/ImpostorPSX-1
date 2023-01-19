@@ -43,24 +43,24 @@ typedef struct
 
 //Henry character definitions
 static const CharFrame char_henry_frame[] = {
-  {Henry_ArcMain_Idle0, {  0,  0, 90,173}, {143,144}}, //0 idle 1
-  {Henry_ArcMain_Idle0, { 92,  0, 90,174}, {143,145}}, //1 idle 2
-  {Henry_ArcMain_Idle1, {  0,  0, 88,176}, {142,147}}, //2 idle 3
-  {Henry_ArcMain_Idle1, { 90,  0, 85,181}, {142,152}}, //3 idle 4
-  {Henry_ArcMain_Idle2, {  0,  0, 85,181}, {142,152}}, //4 idle 5
+  {Henry_ArcMain_Idle0, {  0,  0, 90,173}, {53,144}}, //0 idle 1
+  {Henry_ArcMain_Idle0, { 92,  0, 90,174}, {53,145}}, //1 idle 2
+  {Henry_ArcMain_Idle1, {  0,  0, 88,176}, {52,147}}, //2 idle 3
+  {Henry_ArcMain_Idle1, { 90,  0, 85,181}, {52,152}}, //3 idle 4
+  {Henry_ArcMain_Idle2, {  0,  0, 85,181}, {52,152}}, //4 idle 5
 
-  {Henry_ArcMain_Left0, {  0,  0,132,176}, {187,145}}, //5 left 1
-  {Henry_ArcMain_Left1, {  0,  0,129,175}, {183,144}}, //6 left 2
-  {Henry_ArcMain_Left2, {  0,  0,128,174}, {182,144}}, //7 left 3
+  {Henry_ArcMain_Left0, {  0,  0,132,176}, {97,145}}, //5 left 1
+  {Henry_ArcMain_Left1, {  0,  0,129,175}, {93,144}}, //6 left 2
+  {Henry_ArcMain_Left2, {  0,  0,128,174}, {92,144}}, //7 left 3
 
-  {Henry_ArcMain_Down0, {  0,  0,139,143}, {184,111}}, //8 down 1
-  {Henry_ArcMain_Down1, {  0,  0,140,145}, {184,113}}, //9 down 2
+  {Henry_ArcMain_Down0, {  0,  0,139,143}, {94,111}}, //8 down 1
+  {Henry_ArcMain_Down1, {  0,  0,140,145}, {94,113}}, //9 down 2
 
-  {Henry_ArcMain_Up0, {  0,  0,104,180}, {155,150}}, //10 up 1
-  {Henry_ArcMain_Up0, {106,  0,101,177}, {155,147}}, //11 up 2
+  {Henry_ArcMain_Up0, {  0,  0,104,180}, {65,150}}, //10 up 1
+  {Henry_ArcMain_Up0, {106,  0,101,177}, {65,147}}, //11 up 2
 
-  {Henry_ArcMain_Right0, {  0,  0,122,162}, {153,134}}, //12 right 1
-  {Henry_ArcMain_Right0, {124,  0,118,162}, {151,134}}, //13 right 2
+  {Henry_ArcMain_Right0, {  0,  0,122,162}, {63,134}}, //12 right 1
+  {Henry_ArcMain_Right0, {124,  0,118,162}, {61,134}}, //13 right 2
 };
 
 static const Animation char_henry_anim[CharAnim_Max] = {

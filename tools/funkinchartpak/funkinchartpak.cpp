@@ -30,6 +30,8 @@ struct Section
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
+#define NOTE_FLAG_CHAR2SING   (1 << 8) //Note that only the 2 character plays
+#define NOTE_FLAG_BOTHSING    (1 << 9) //Note that only that both the 1 and 2 character sings
 
 struct Note
 {
@@ -78,6 +80,17 @@ void WriteLong(std::ostream &out, uint32_t word)
 	out.put(word >> 16);
 	out.put(word >> 24);
 }
+
+bool isNumber(const std::string& string)
+{
+	for (char const &character : string) 
+	{
+    	if (std::isdigit(character) == false && character != '.')
+        	return false;
+	}
+	return true;
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -151,23 +164,14 @@ int main(int argc, char *argv[])
 			//invalid type
 			if (j[1] < 0)
 				continue;
-				
-			else if (j[2] == "Change Scroll Speed")
-				continue;
-
-			else if (j[2] == "Set GF Speed")
-				continue;
-
-			else if (j[2] == "Add Camera Zoom")
-				continue;
-				
-			else if (j[2] == "Play Animation")
-				continue;
 			
-			else if (j[2] == "Opponent Two")
-				continue;
-			
-			else if (j[2] == "Cam Boom Speed")
+			/* 
+			Check if the sustain actually are a number or a string that contain some Psych Engine event
+			Because old Psych Engine charts works in a really weird way
+			*/
+			std::string sustain_is_string = to_string(j[2]);
+
+			if (isNumber(sustain_is_string) == false)
 				continue;
 			
 			int sustain = (int)PosRound(j[2], step_crochet) - 1;
@@ -181,6 +185,10 @@ int main(int argc, char *argv[])
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			if (sustain >= 0)
 				new_note.type |= NOTE_FLAG_SUSTAIN_END;
+			if (j[3] == "Opponent 2 Sing")
+				new_note.type |= NOTE_FLAG_CHAR2SING;
+			if (j[3] == "Both Opponents Sing")
+				new_note.type |= NOTE_FLAG_BOTHSING;
 			if (((uint8_t)j[1]) & 8 || j[3] == "Hurt Note")
 				new_note.type |= NOTE_FLAG_MINE;
 			
