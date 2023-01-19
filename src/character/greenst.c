@@ -100,13 +100,16 @@ static const CharFrame char_greenst_frame[] = {
 static const Animation char_greenst_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 1}}, //CharAnim_Idle
 	{1, (const u8[]){ 6, 6, 7, 7, 8, 8, 9, 9, 10, ASCR_BACK, 1}},         //CharAnim_Left
-	{1, (const u8[]){ 27, 27, 28, 28, 29, 30, 30, 31, 31, 32, 32, ASCR_BACK, 1}},   //CharAnim_LeftAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 11, 12, 13, 14, ASCR_BACK, 1}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{1, (const u8[]){ 15, 15, 16, 17, 18, 19, 20, 21, 22, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 23, 24, 25, 26, ASCR_BACK, 1}},         //CharAnim_Right
-	{1, (const u8[]){ 33, 33, 34, 34, 35, 36, 36, 37, 37, 38, 38, ASCR_BACK, 1}},   //CharAnim_RightAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+    
+    {1, (const u8[]){ 27, 27, 28, 28, 29, 30, 30, 31, 31, 32, 32, ASCR_BACK, 1}},   //CharAnim_Special1
+    {1, (const u8[]){ 33, 33, 34, 34, 35, 36, 36, 37, 37, 38, 38, ASCR_BACK, 1}},   //CharAnim_Special2
 };
 
 //Green ST character functions
@@ -128,7 +131,7 @@ void Char_GreenST_Tick(Character *character)
 {
 	Char_GreenST *this = (Char_GreenST*)character;
 	
-	if((character->animatable.anim  != CharAnim_LeftAlt) && (character->animatable.anim  != CharAnim_DownAlt) && (character->animatable.anim  != CharAnim_UpAlt) && (character->animatable.anim  != CharAnim_RightAlt))
+	if((character->animatable.anim  != CharAnim_Special1) && (character->animatable.anim  != CharAnim_Special2))
 	{
 	   //Perform idle dance
 	   if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -140,9 +143,9 @@ void Char_GreenST_Tick(Character *character)
 		{
 			case StageId_SussusToogus: //Stim
 				if ((stage.song_step == 112) || (stage.song_step == 120))
-					character->set_anim(character, CharAnim_LeftAlt);
+					character->set_anim(character, CharAnim_Special1);
 				if ((stage.song_step == 116) || (stage.song_step == 124))
-					character->set_anim(character, CharAnim_RightAlt);
+					character->set_anim(character, CharAnim_Special2);
 				break;
 			default:
 				break;

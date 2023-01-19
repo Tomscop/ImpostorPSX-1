@@ -137,13 +137,16 @@ static const CharFrame char_yellow_frame[] = {
 static const Animation char_yellow_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 5, 6, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{1, (const u8[]){ 12, 13, 13, 14, 14, 15, 15, 16, 16, ASCR_BACK, 1}},         //CharAnim_Left
-	{1, (const u8[]){ 46, 47, 48, 49, 50, 51, 51, 52, 52, 53, 53, 54, 54, 55, 56, 57, 58, 59, 59, 60, 60, 61, 61, 62, 63, 64, 64, 65, 66, 67, 68, 68, 69, 69, 70, 70, 71, 71, ASCR_CHGANI, CharAnim_DownAlt}},   //CharAnim_LeftAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{1, (const u8[]){ 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 24, 25, 26, 27, 28, 28, 29, 29, 30, 30, 31, 31, 32, 32, 33, 33, 34, 34, 35, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Down
-	{2, (const u8[]){ 71, 71, 71, 71, 71, 71, ASCR_CHGANI, CharAnim_DownAlt}},   //CharAnim_DownAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{1, (const u8[]){ 36, 37, 37, 38, 38, 39, 39, 40, 40, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{1, (const u8[]){ 41, 42, 42, 43, 43, 44, 44, 45, 45, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+    
+    {1, (const u8[]){ 46, 47, 48, 49, 50, 51, 51, 52, 52, 53, 53, 54, 54, 55, 56, 57, 58, 59, 59, 60, 60, 61, 61, 62, 63, 64, 64, 65, 66, 67, 68, 68, 69, 69, 70, 70, 71, 71, ASCR_CHGANI, CharAnim_Special2}},   //CharAnim_Special1
+    {2, (const u8[]){ 71, 71, 71, 71, 71, 71, ASCR_CHGANI, CharAnim_Special2}},   //CharAnim_Special2
 };
 
 //Yellow character functions
@@ -165,7 +168,7 @@ void Char_Yellow_Tick(Character *character)
 {
 	Char_Yellow *this = (Char_Yellow*)character;
 	
-	if((character->animatable.anim  != CharAnim_LeftAlt) && (character->animatable.anim  != CharAnim_DownAlt) && (character->animatable.anim  != CharAnim_Down))
+	if((character->animatable.anim  != CharAnim_Special1) && (character->animatable.anim  != CharAnim_Special2) && (character->animatable.anim  != CharAnim_Down))
 	{
 	   //Perform idle dance
 	   if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -177,7 +180,7 @@ void Char_Yellow_Tick(Character *character)
 		{
 			case StageId_Dlow: //Major L
 				if (stage.song_step == 1424)
-					character->set_anim(character, CharAnim_LeftAlt);
+					character->set_anim(character, CharAnim_Special1);
 				break;
 			default:
 				break;

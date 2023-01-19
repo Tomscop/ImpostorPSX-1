@@ -109,11 +109,13 @@ static const Animation char_red_anim2[CharAnim_Max] = {
 	{2, (const u8[]){ 17, 18, 19, 20, 21, ASCR_BACK, 1}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 8, 9, 10, ASCR_BACK, 1}},         //CharAnim_Down
-	{1, (const u8[]){ 4, 4, 27, 27, 28, 28, 29, 29, 29, 29, 29, 29, 29, 29, 29, 30, 31, 31, 32, ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{2, (const u8[]){ 11, 12, 13, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 22, 23, 24, 25, 26, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+    
+    {1, (const u8[]){ 4, 4, 27, 27, 28, 28, 29, 29, 29, 29, 29, 29, 29, 29, 29, 30, 31, 31, 32, ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_Special1
 };
 
 //Red character functions
@@ -135,7 +137,7 @@ void Char_Red_Tick(Character *character)
 {
 	Char_Red *this = (Char_Red*)character;
 	
-	if((character->animatable.anim  != CharAnim_LeftAlt) && (character->animatable.anim  != CharAnim_DownAlt) && (character->animatable.anim  != CharAnim_UpAlt) && (character->animatable.anim  != CharAnim_RightAlt))
+	if(character->animatable.anim != CharAnim_Special1)
 	{
 	   //Perform idle dance
 	   if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -152,7 +154,7 @@ void Char_Red_Tick(Character *character)
 		{
 			case StageId_Sabotage: //Stim
 				if (stage.song_step == 816)
-					character->set_anim(character, CharAnim_DownAlt);
+					character->set_anim(character, CharAnim_Special1);
 				break;
 			default:
 				break;

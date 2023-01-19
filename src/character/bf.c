@@ -83,13 +83,17 @@ static const CharFrame char_bf_frame[] = {
 static const Animation char_bf_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){ 0,  1,  2,  3,  4, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 5,  6, ASCR_BACK, 1}},             //CharAnim_Left
-	{2, (const u8[]){ 16, ASCR_CHGANI, CharAnim_LeftAlt}},       //CharAnim_LeftAlt
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 7,  8, ASCR_BACK, 1}},             //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_DownAlt
 	{2, (const u8[]){ 9, 10, ASCR_BACK, 1}},             //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
 	{2, (const u8[]){ 11, 12, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
+    
+    {2, (const u8[]){ 16, ASCR_CHGANI, CharAnim_Special1}},   //CharAnim_Special1
+    {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
+    {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special3
 	
 	{1, (const u8[]){ 17, 17, 18, ASCR_BACK, 1}},     //PlayerAnim_LeftMiss
 	{1, (const u8[]){ 19, 19, 20, ASCR_BACK, 1}},     //PlayerAnim_DownMiss
@@ -118,7 +122,7 @@ void Char_BF_Tick(Character *character)
 {
 	Char_BF *this = (Char_BF*)character;
 	
-	if(character->animatable.anim  != CharAnim_LeftAlt)
+	if(character->animatable.anim  != CharAnim_Special1)
 	{
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -176,7 +180,7 @@ void Char_BF_Tick(Character *character)
 		{
 			case StageId_Dlow: //WHAT THE FUCK
 				if (stage.song_step == 1424)
-					character->set_anim(character, CharAnim_LeftAlt);
+					character->set_anim(character, CharAnim_Special1);
 				break;
 			default:
 				break;
