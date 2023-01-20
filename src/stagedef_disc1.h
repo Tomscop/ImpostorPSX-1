@@ -126,14 +126,14 @@
 	},
 	{ //StageId_Mando (Mando)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(96,1)},
         {NULL},
-		{Char_Yellow_New, FIXED_DEC(-26,1),  FIXED_DEC(119,1)},
+		{Char_Yellow_New, FIXED_DEC(262,1),  FIXED_DEC(114,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(279,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Airship_New,
 		
 		//Song info
 		1, 8,
@@ -144,14 +144,14 @@
 	},
 	{ //StageId_Dlow (Dlow)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(96,1)},
         {NULL},
-		{Char_Yellow_New, FIXED_DEC(-26,1),  FIXED_DEC(119,1)},
+		{Char_Yellow_New, FIXED_DEC(262,1),  FIXED_DEC(114,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(279,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Airship_New,
 		
 		//Song info
 		1, 9,
@@ -162,14 +162,14 @@
 	},
 	{ //StageId_Oversight (Oversight)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(96,1)},
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(279,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Airship_New,
 		
 		//Song info
 		1, 10,

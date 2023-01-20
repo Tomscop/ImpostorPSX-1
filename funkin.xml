@@ -204,6 +204,9 @@
 			
 			<!-- Background assets -->
 			<dir name = "bg">
+				<!-- Airship BG -->
+				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
+				
 				<!-- Lobby BG -->
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
 				

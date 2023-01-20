@@ -68,6 +68,7 @@ static u32 Sounds[10];
 #include "character/dad.h"
 #include "character/gf.h"
 
+#include "stage/airship.h"
 #include "stage/lobby.h"
 #include "stage/henry.h"
 #include "stage/idk.h"
