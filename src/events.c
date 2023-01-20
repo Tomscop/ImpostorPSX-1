@@ -31,35 +31,35 @@ void Events_StartEvents(void)
 			stage.cur_event++;
 
 		if (event->event & EVENTS_FLAG_PLAYED)
-		continue;
+			continue;
 
-			//Events
-			switch(event->event & EVENTS_FLAG_VARIANT)
+		//Events
+		switch (event->event & EVENTS_FLAG_VARIANT)
+		{
+			case EVENTS_FLAG_SPEED: //Scroll Speed!!
 			{
-				case EVENTS_FLAG_SPEED: //Scroll Speed!!
-				{
-					event_speed.value1 = event->value1;
-					event_speed.value2 = event->value2;
-					break;
-				}
-				case EVENTS_FLAG_GF: //Set GF Speed!!
-				{
-					//So easy LOL
-					stage.gf_speed = (event->value1 / FIXED_UNIT) * 4;
-					break;
-				}
-				case EVENTS_FLAG_CAMZOOM: //Add Camera Zoom!!
-				{
-					//So easy LOL
-					stage.charbump += event->value1;
-					stage.bump += event->value2;
-					break;
-				}
-				default: //nothing lol
-					break;
+				event_speed.value1 = event->value1;
+				event_speed.value2 = event->value2;
+				break;
 			}
+			case EVENTS_FLAG_GF: //Set GF Speed!!
+			{
+				//So easy LOL
+				stage.gf_speed = (event->value1 / FIXED_UNIT) * 4;
+				break;
+			}
+			case EVENTS_FLAG_CAMZOOM: //Add Camera Zoom!!
+			{
+				//So easy LOL
+				stage.charbump += event->value1;
+				stage.bump += event->value2;
+				break;
+			}
+			default: //nothing lol
+				break;
+		}
 
-				event->event |= EVENTS_FLAG_PLAYED;
+		event->event |= EVENTS_FLAG_PLAYED;
 	}
 	Events_Tick();
 }

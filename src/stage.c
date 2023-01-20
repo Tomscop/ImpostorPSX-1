@@ -89,24 +89,7 @@ static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 		this->character->set_anim(this->character, type);
 
 	if (this->character2 != NULL && note->type & (NOTE_FLAG_CHAR2SING | NOTE_FLAG_BOTHSING))
-	{
 		this->character2->set_anim(this->character2, type);
-
-		if (note->type & NOTE_FLAG_SUSTAIN)
-			this->character2->pad_held = 1;
-		else
-			this->character2->pad_held = 0;
-	}
-
-	if ((note->type & NOTE_FLAG_CHAR2SING))
-		this->character->pad_held = 0;
-}
-
-Character* Stage_ChangeChars(Character* oldcharacter, Character* newcharacter)
-{
-		oldcharacter->pad_held = 0;
-
-		return newcharacter;
 }
 
 //Stage music functions
@@ -455,7 +438,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 	{
 		if (playing)
 		{
-			u8 i = ((this->character == stage.opponent) || (this->character2 == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
 			
 			this->pad_held = this->character->pad_held = pad->held;
 			this->pad_press = pad->press;
@@ -490,7 +473,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		//Do perfect note checks
 		if (playing)
 		{
-			u8 i = ((this->character == stage.opponent) || (this->character2 == stage.opponent2)) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
 			
 			u8 hit[4] = {0, 0, 0, 0};
 			for (Note *note = stage.cur_note;; note++)
@@ -2195,7 +2178,7 @@ void Stage_Tick(void)
 				//Bump screen
 				if((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) && (stage.stage_id != StageId_Idk))
 				{
-				if (is_bump_step)
+					if (is_bump_step)
 					{
 						stage.bump = FIXED_DEC(103,100);
 						stage.charbump += FIXED_DEC(15,1000); //0.015
@@ -2212,7 +2195,7 @@ void Stage_Tick(void)
 					Stage_FocusCharacter(stage.opponent, FIXED_UNIT / 24);
 			else
 					Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
-					Stage_ScrollCamera();
+			Stage_ScrollCamera();
 			
 			//Draw Score
 			//colors for score
