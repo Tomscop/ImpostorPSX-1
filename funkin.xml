@@ -187,6 +187,9 @@
 				<!-- Charles assets -->
 				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
 				
+				<!-- Jerma assets -->
+				<file name = "jerma.arc" type = "data" source = "iso/chars/jerma/main.arc"/>
+				
 				<!-- Nuzzus assets -->
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
 				

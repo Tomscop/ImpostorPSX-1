@@ -2,36 +2,36 @@ TARGET = funkin
 TYPE = ps-exe
 
 SRCS = src/main.c \
-       src/intro/intro.c \
-       src/mutil.c \
-       src/random.c \
-       src/archive.c \
-       src/font.c \
-       src/trans.c \
-       src/loadscr.c \
-       src/menu.c \
+	src/intro/intro.c \
+	src/mutil.c \
+	src/random.c \
+	src/archive.c \
+	src/font.c \
+	src/trans.c \
+	src/loadscr.c \
+	src/menu.c \
 	src/events.c \
-       src/stage.c \
-       src/debug.c \
-       src/save.c \
-       src/psx/psx.c \
-       src/psx/io.c \
-       src/psx/gfx.c \
-       src/psx/audio.c \
-       src/psx/pad.c \
-       src/psx/timer.c \
+	src/stage.c \
+	src/debug.c \
+	src/save.c \
+	src/psx/psx.c \
+	src/psx/io.c \
+	src/psx/gfx.c \
+	src/psx/audio.c \
+	src/psx/pad.c \
+	src/psx/timer.c \
 	src/stage/airship.c \
 	src/stage/lobby.c \
-       src/stage/henry.c \
+	src/stage/henry.c \
 	src/stage/idk.c \
 	src/stage/week1.c \
-       src/stage/dummy.c \
-       src/animation.c \
-       src/character.c \
-       src/character/bf.c \
+	src/stage/dummy.c \
+	src/animation.c \
+	src/character.c \
+	src/character/bf.c \
 	src/character/picorc.c \
 	src/character/kid.c \
-       src/character/red.c \
+	src/character/red.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
 	src/character/yellow.c \
@@ -39,18 +39,19 @@ SRCS = src/main.c \
 	src/character/gray.c \
 	src/character/powers.c \
 	src/character/tomongus.c \
-       src/character/tomongush.c \
-       src/character/henry.c \
-       src/character/charles.c \
-       src/character/nuzzus.c \
+	src/character/tomongush.c \
+	src/character/henry.c \
+	src/character/charles.c \
+	src/character/jerma.c \
+	src/character/nuzzus.c \
 	src/character/tobyfox.c \
-       src/character/dad.c \
-       src/character/gf.c \
+	src/character/dad.c \
+	src/character/gf.c \
 	src/character/speaker.c \
-       src/object.c \
-       src/object/combo.c \
-       src/object/splash.c \
-       src/pause.c \
+	src/object.c \
+	src/object/combo.c \
+	src/object/splash.c \
+	src/pause.c \
        mips/common/crt0/crt0.s
 
 CPPFLAGS += -Wall -Wextra -pedantic -mno-check-zero-division

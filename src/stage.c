@@ -63,6 +63,7 @@ static u32 Sounds[10];
 #include "character/tomongush.h"
 #include "character/henry.h"
 #include "character/charles.h"
+#include "character/jerma.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
 #include "character/dad.h"
