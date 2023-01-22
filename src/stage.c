@@ -56,6 +56,7 @@ static u32 Sounds[10];
 #include "character/redmd.h"
 #include "character/greenst.h"
 #include "character/yellow.h"
+#include "character/white.h"
 #include "character/black.h"
 #include "character/gray.h"
 #include "character/powers.h"

@@ -164,7 +164,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(96,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_White_New, FIXED_DEC(141,1),  FIXED_DEC(77,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(279,1),  FIXED_DEC(-10,1)},
 		

@@ -166,6 +166,9 @@
 				<!-- Yellow assets -->
 				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
 				
+				<!-- White assets -->
+				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
+				
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				

@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
 	src/character/yellow.c \
+	src/character/white.c \
 	src/character/black.c \
 	src/character/gray.c \
 	src/character/powers.c \
