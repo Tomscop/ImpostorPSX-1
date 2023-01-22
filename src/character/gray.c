@@ -126,7 +126,7 @@ static const CharFrame char_gray_frame[] = {
 };
 
 static const Animation char_gray_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, ASCR_BACK, 1}}, //CharAnim_Idle
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 27, 27, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{1, (const u8[]){ 28, 29, 30, 31, 32, 33, 34, 32, 33, 34, 32, 33, 34, 32, ASCR_BACK, 1}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{1, (const u8[]){ 35, 36, 37, 38, 39, 40, 41, 39, 40, 41, 39, 40, ASCR_BACK, 1}},         //CharAnim_Down

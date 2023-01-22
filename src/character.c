@@ -127,9 +127,9 @@ void Character_PerformIdle(Character *this)
 		     this->animatable.anim != CharAnim_RightAlt) &&
 		    (stage.song_step & 0x7) == 0)
 			this->set_anim(this, CharAnim_Idle);
-	}
 	
-	if (this->idle2 == 1)
+	
+		if (this->idle2 == 1)
 		{
 			if (Animatable_Ended(&this->animatable) &&
 				(this->animatable.anim != CharAnim_Left &&
@@ -142,4 +142,5 @@ void Character_PerformIdle(Character *this)
 				(stage.song_step & 0x7) == 3)
 				this->set_anim(this, CharAnim_LeftAlt);
 		}
+	}
 }
