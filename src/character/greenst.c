@@ -192,7 +192,6 @@ Character *Char_GreenST_New(fixed_t x, fixed_t y)
 	
 	//Set character information
 	this->character.spec = 0;
-	this->character.idle2 = 0;
 	
 	this->character.health_i = 1;
 

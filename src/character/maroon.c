@@ -74,14 +74,14 @@ typedef struct
 
 //Maroon character definitions
 static const CharFrame char_maroon_frame[] = {
-  {Maroon_ArcMain_Idle0, {  0,  0,141,106}, {199, 97}}, //0 idle 1
-  {Maroon_ArcMain_Idle0, {  0,119,144,119}, {202,110}}, //1 idle 2
-  {Maroon_ArcMain_Idle1, {  0,  0,155,129}, {214,118}}, //2 idle 3
-  {Maroon_ArcMain_Idle2, {  0,  0,151,125}, {209,114}}, //3 idle 4
-  {Maroon_ArcMain_Idle2, {  0,125,150,110}, {209, 97}}, //4 idle 5
-  {Maroon_ArcMain_Idle3, {  0,  0,156,110}, {214, 97}}, //5 idle 6
-  {Maroon_ArcMain_Idle3, {  0,110,147,108}, {204, 98}}, //6 idle 7
-  {Maroon_ArcMain_Idle4, {  0,  0,145,108}, {202, 98}}, //7 idle 8
+  {Maroon_ArcMain_Idle0, {  0,  0,141,106}, {199, 96}}, //0 idle 1
+  {Maroon_ArcMain_Idle0, {  0,119,144,119}, {202,109}}, //1 idle 2
+  {Maroon_ArcMain_Idle1, {  0,  0,155,129}, {212,117}}, //2 idle 3
+  {Maroon_ArcMain_Idle2, {  0,  0,151,125}, {209,113}}, //3 idle 4
+  {Maroon_ArcMain_Idle2, {  0,125,150,110}, {209, 96}}, //4 idle 5
+  {Maroon_ArcMain_Idle3, {  0,  0,156,110}, {214, 96}}, //5 idle 6
+  {Maroon_ArcMain_Idle3, {  0,110,147,108}, {204, 97}}, //6 idle 7
+  {Maroon_ArcMain_Idle4, {  0,  0,145,108}, {202, 97}}, //7 idle 8
   {Maroon_ArcMain_Idle4, {  0,116,148,116}, {205,109}}, //8 idle 9
   {Maroon_ArcMain_Idle5, {  0,  0,158,123}, {214,117}}, //9 idle 10
   {Maroon_ArcMain_Idle5, {  0,123,155,120}, {212,115}}, //10 idle 11
@@ -118,8 +118,8 @@ static const CharFrame char_maroon_frame[] = {
   {Maroon_ArcMain_Right0, {  0,  0,149,100}, {180,111}}, //37 right 1
   {Maroon_ArcMain_Right0, {  0,100,149,100}, {180,111}}, //38 right 2
   {Maroon_ArcMain_Right1, {  0,  0,152,101}, {185,112}}, //39 right 3
-  {Maroon_ArcMain_Right1, {  0,101,152,101}, {186,112}}, //40 right 4
-  {Maroon_ArcMain_Right2, {  0,  0,153,101}, {187,112}}, //41 right 5
+  {Maroon_ArcMain_Right1, {  0,101,152,101}, {185,112}}, //40 right 4
+  {Maroon_ArcMain_Right2, {  0,  0,153,101}, {186,112}}, //41 right 5
   {Maroon_ArcMain_Right2, {  0,101,157,101}, {191,112}}, //42 right 6
   {Maroon_ArcMain_Right3, {  0,  0,151,101}, {184,112}}, //43 right 7
 
@@ -155,7 +155,7 @@ static const CharFrame char_maroon_frame[] = {
 };
 
 static const Animation char_maroon_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, ASCR_BACK, 1}}, //CharAnim_Idle
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ASCR_CHGANI, CharAnim_Special2}}, //CharAnim_Idle
 	{1, (const u8[]){ 14, 15, 16, 17, 18, 19, 20, ASCR_BACK, 1}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{1, (const u8[]){ 21, 22, 23, 24, 25, 26, 27, 28, 29, ASCR_BACK, 1}},         //CharAnim_Down
@@ -166,6 +166,7 @@ static const Animation char_maroon_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 	
 	{1, (const u8[]){ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 52, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Special1
+	{1, (const u8[]){ 10, 11, 12, 13, 10, 11, 12, 13, 10, 11, 12, 13, ASCR_CHGANI, CharAnim_Special2}},         //CharAnim_Special2
 };
 
 //Maroon character functions
@@ -187,9 +188,42 @@ void Char_Maroon_Tick(Character *character)
 {
 	Char_Maroon *this = (Char_Maroon*)character;
 	
-	//Perform idle dance
-	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+	if(character->animatable.anim  != CharAnim_Special1)
+	{
+	//Handle animation updates
+	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
+	    (character->animatable.anim != CharAnim_Left &&
+	     character->animatable.anim != CharAnim_LeftAlt &&
+	     character->animatable.anim != CharAnim_Down &&
+	     character->animatable.anim != CharAnim_DownAlt &&
+	     character->animatable.anim != CharAnim_Up &&
+	     character->animatable.anim != CharAnim_UpAlt &&
+	     character->animatable.anim != CharAnim_Right &&
+	     character->animatable.anim != CharAnim_RightAlt))
+		Character_CheckEndSing(character);
+	
+	if (stage.flag & STAGE_FLAG_JUST_STEP)
+	{
+		//Perform idle dance
+		if ((Animatable_Ended(&character->animatable) &&
+			(character->animatable.anim != CharAnim_Left &&
+		     character->animatable.anim != CharAnim_LeftAlt &&
+		     character->animatable.anim != PlayerAnim_LeftMiss &&
+		     character->animatable.anim != CharAnim_Down &&
+		     character->animatable.anim != CharAnim_DownAlt &&
+		     character->animatable.anim != PlayerAnim_DownMiss &&
+		     character->animatable.anim != CharAnim_Up &&
+		     character->animatable.anim != CharAnim_UpAlt &&
+		     character->animatable.anim != PlayerAnim_UpMiss &&
+		     character->animatable.anim != CharAnim_Right &&
+		     character->animatable.anim != CharAnim_RightAlt &&
+		     character->animatable.anim != PlayerAnim_RightMiss) &&
+			(stage.song_step & 0x7) == 0) || 
+			(character->animatable.anim == CharAnim_Special2 && 
+			(stage.song_step & 0x7) == 0))
+			character->set_anim(character, CharAnim_Idle);
+	}
+	}
 	
 	//Stage specific animations
 		switch (stage.stage_id)
@@ -243,7 +277,6 @@ Character *Char_Maroon_New(fixed_t x, fixed_t y)
 	
 	//Set character information
 	this->character.spec = 0;
-	this->character.idle2 = 0;
 	
 	this->character.health_i = 1;
 

@@ -55,86 +55,124 @@
 			<!-- Week 1 assets -->
 			<dir name = "week1">
 			
-				<file name = "1.1n.cht" type = "data" source = "iso/music/sussus-moogus/sussus-moogus.json.cht"/>
-				<file name = "1.2n.cht" type = "data" source = "iso/music/sabotage/sabotage.json.cht"/>
-				<file name = "1.3n.cht" type = "data" source = "iso/music/meltdown/meltdown.json.cht"/>
-				<file name = "1.4n.cht" type = "data" source = "iso/music/sussus-toogus/sussus-toogus.json.cht"/>
-				<file name = "1.5n.cht" type = "data" source = "iso/music/lights-down/lights-down.json.cht"/>
-				<file name = "1.6n.cht" type = "data" source = "iso/music/reactor/reactor.json.cht"/>
-				<file name = "1.7n.cht" type = "data" source = "iso/music/ejected/ejected.json.cht"/>
-				<file name = "1.8n.cht" type = "data" source = "iso/music/mando/mando.json.cht"/>
-				<file name = "1.9n.cht" type = "data" source = "iso/music/dlow/dlow.json.cht"/>
-				<file name = "1.10n.cht" type = "data" source = "iso/music/oversight/oversight.json.cht"/>
-				<file name = "1.11n.cht" type = "data" source = "iso/music/danger/danger.json.cht"/>
-				<file name = "1.12n.cht" type = "data" source = "iso/music/double-kill/double-kill.json.cht"/>
+				<file name = "1.1n.cht" type = "data" source = "iso/music/sussus-moogus/sussus-moogus-hard.json.cht"/>
+				<file name = "1.1evnt.cht" type = "data" source = "iso/music/sussus-moogus/events.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/music/sabotage/sabotage-hard.json.cht"/>
+				<file name = "1.2evnt.cht" type = "data" source = "iso/music/sabotage/events.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/music/meltdown/meltdown-hard.json.cht"/>
+				<file name = "1.3evnt.cht" type = "data" source = "iso/music/meltdown/events.json.cht"/>
+				<file name = "1.4n.cht" type = "data" source = "iso/music/sussus-toogus/sussus-toogus-hard.json.cht"/>
+				<file name = "1.4evnt.cht" type = "data" source = "iso/music/sussus-toogus/events.json.cht"/>
+				<file name = "1.5n.cht" type = "data" source = "iso/music/lights-down/lights-down-hard.json.cht"/>
+				<file name = "1.5evnt.cht" type = "data" source = "iso/music/lights-down/events.json.cht"/>
+				<file name = "1.6n.cht" type = "data" source = "iso/music/reactor/reactor-hard.json.cht"/>
+				<file name = "1.6evnt.cht" type = "data" source = "iso/music/reactor/events.json.cht"/>
+				<file name = "1.7n.cht" type = "data" source = "iso/music/ejected/ejected-hard.json.cht"/>
+				<file name = "1.7evnt.cht" type = "data" source = "iso/music/ejected/events.json.cht"/>
+				<file name = "1.8n.cht" type = "data" source = "iso/music/mando/mando-hard.json.cht"/>
+				<file name = "1.9n.cht" type = "data" source = "iso/music/dlow/dlow-hard.json.cht"/>
+				<file name = "1.9evnt.cht" type = "data" source = "iso/music/dlow/events.json.cht"/>
+				<file name = "1.10n.cht" type = "data" source = "iso/music/oversight/oversight-hard.json.cht"/>
+				<file name = "1.10evnt.cht" type = "data" source = "iso/music/oversight/events.json.cht"/>
+				<file name = "1.11n.cht" type = "data" source = "iso/music/danger/danger-hard.json.cht"/>
+				<file name = "1.11evnt.cht" type = "data" source = "iso/music/danger/events.json.cht"/>
+				<file name = "1.12n.cht" type = "data" source = "iso/music/double-kill/double-kill-hard.json.cht"/>
+				<file name = "1.12evnt.cht" type = "data" source = "iso/music/double-kill/events.json.cht"/>
 			</dir>
 			
 			<!-- Week 2 assets -->
 			<dir name = "week2">
 			
-				<file name = "2.1n.cht" type = "data" source = "iso/music/defeat/defeat.json.cht"/>
-				<file name = "2.2n.cht" type = "data" source = "iso/music/finale/finale.json.cht"/>
-				<file name = "2.3n.cht" type = "data" source = "iso/music/identity-crisis/identity-crisis.json.cht"/>
-				<file name = "2.4n.cht" type = "data" source = "iso/music/ashes/ashes.json.cht"/>
-				<file name = "2.5n.cht" type = "data" source = "iso/music/magmatic/magmatic.json.cht"/>
-				<file name = "2.6n.cht" type = "data" source = "iso/music/boiling-point/boiling-point.json.cht"/>
-				<file name = "2.7n.cht" type = "data" source = "iso/music/delusion/delusion.json.cht"/>
-				<file name = "2.8n.cht" type = "data" source = "iso/music/blackout/blackout.json.cht"/>
-				<file name = "2.9n.cht" type = "data" source = "iso/music/neurotic/neurotic.json.cht"/>
+				<file name = "2.1n.cht" type = "data" source = "iso/music/defeat/defeat-hard.json.cht"/>
+				<file name = "2.1evnt.cht" type = "data" source = "iso/music/defeat/events.json.cht"/>
+				<file name = "2.2n.cht" type = "data" source = "iso/music/finale/finale-hard.json.cht"/>
+				<file name = "2.2evnt.cht" type = "data" source = "iso/music/finale/events.json.cht"/>
+				<file name = "2.3n.cht" type = "data" source = "iso/music/identity-crisis/identity-crisis-hard.json.cht"/>
+				<file name = "2.3evnt.cht" type = "data" source = "iso/music/identity-crisis/events.json.cht"/>
+				<file name = "2.4n.cht" type = "data" source = "iso/music/ashes/ashes-hard.json.cht"/>
+				<file name = "2.5n.cht" type = "data" source = "iso/music/magmatic/magmatic-hard.json.cht"/>
+				<file name = "2.5evnt.cht" type = "data" source = "iso/music/magmatic/events.json.cht"/>
+				<file name = "2.6n.cht" type = "data" source = "iso/music/boiling-point/boiling-point-hard.json.cht"/>
+				<file name = "2.6evnt.cht" type = "data" source = "iso/music/boiling-point/events.json.cht"/>
+				<file name = "2.7n.cht" type = "data" source = "iso/music/delusion/delusion-hard.json.cht"/>
+				<file name = "2.7evnt.cht" type = "data" source = "iso/music/delusion/events.json.cht"/>
+				<file name = "2.8n.cht" type = "data" source = "iso/music/blackout/blackout-hard.json.cht"/>
+				<file name = "2.8evnt.cht" type = "data" source = "iso/music/blackout/events.json.cht"/>
+				<file name = "2.9n.cht" type = "data" source = "iso/music/neurotic/neurotic-hard.json.cht"/>
 			</dir>
 			
 			<!-- Week 3 assets -->
 			<dir name = "week3">
 				
-				<file name = "3.1n.cht" type = "data" source = "iso/music/heartbeat/heartbeat.json.cht"/>
-				<file name = "3.2n.cht" type = "data" source = "iso/music/pinkwave/pinkwave.json.cht"/>
-				<file name = "3.3n.cht" type = "data" source = "iso/music/pretender/pretender.json.cht"/>
-				<file name = "3.4n.cht" type = "data" source = "iso/music/sauces-moogus/sauces-moogus.json.cht"/>
-				<file name = "3.5n.cht" type = "data" source = "iso/music/o2/o2.json.cht"/>
-				<file name = "3.6n.cht" type = "data" source = "iso/music/voting-time/voting-time.json.cht"/>
-				<file name = "3.7n.cht" type = "data" source = "iso/music/turbulence/turbulence.json.cht"/>
-				<file name = "3.8n.cht" type = "data" source = "iso/music/victory/victory.json.cht"/>
-				<file name = "3.9n.cht" type = "data" source = "iso/music/roomcode/roomcode.json.cht"/>
+				<file name = "3.1n.cht" type = "data" source = "iso/music/heartbeat/heartbeat-hard.json.cht"/>
+				<file name = "3.1evnt.cht" type = "data" source = "iso/music/heartbeat/events.json.cht"/>
+				<file name = "3.2n.cht" type = "data" source = "iso/music/pinkwave/pinkwave-hard.json.cht"/>
+				<file name = "3.2evnt.cht" type = "data" source = "iso/music/pinkwave/events.json.cht"/>
+				<file name = "3.3n.cht" type = "data" source = "iso/music/pretender/pretender-hard.json.cht"/>
+				<file name = "3.4n.cht" type = "data" source = "iso/music/sauces-moogus/sauces-moogus-hard.json.cht"/>
+				<file name = "3.4evnt.cht" type = "data" source = "iso/music/sauces-moogus/events.json.cht"/>
+				<file name = "3.5n.cht" type = "data" source = "iso/music/o2/o2-hard.json.cht"/>
+				<file name = "3.5evnt.cht" type = "data" source = "iso/music/o2/events.json.cht"/>
+				<file name = "3.6n.cht" type = "data" source = "iso/music/voting-time/voting-time-hard.json.cht"/>
+				<file name = "3.6evnt.cht" type = "data" source = "iso/music/voting-time/events.json.cht"/>
+				<file name = "3.7n.cht" type = "data" source = "iso/music/turbulence/turbulence-hard.json.cht"/>
+				<file name = "3.7evnt.cht" type = "data" source = "iso/music/turbulence/events.json.cht"/>
+				<file name = "3.8n.cht" type = "data" source = "iso/music/victory/victory-hard.json.cht"/>
+				<file name = "3.8evnt.cht" type = "data" source = "iso/music/victory/events.json.cht"/>
+				<file name = "3.9n.cht" type = "data" source = "iso/music/roomcode/roomcode-hard.json.cht"/>
 			</dir>
 			
 			<!-- Week 4 assets -->
 			<dir name = "week4">
 				
-				<file name = "4.1n.cht" type = "data" source = "iso/music/sussy-bussy/sussy-bussy.json.cht"/>
-				<file name = "4.2n.cht" type = "data" source = "iso/music/rivals/rivals.json.cht"/>
-				<file name = "4.3n.cht" type = "data" source = "iso/music/chewmate/chewmate.json.cht"/>
-				<file name = "4.4n.cht" type = "data" source = "iso/music/tomongus-tuesday/tomongus-tuesday.json.cht"/>
-				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas.json.cht"/>
-				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor.json.cht"/>
-				<file name = "4.7n.cht" type = "data" source = "iso/music/titular/titular.json.cht"/>
-				<file name = "4.8n.cht" type = "data" source = "iso/music/greatest-plan/greatest-plan.json.cht"/>
-				<file name = "4.9n.cht" type = "data" source = "iso/music/reinforcements/reinforcements.json.cht"/>
-				<file name = "4.10n.cht" type = "data" source = "iso/music/armed/armed.json.cht"/>
+				<file name = "4.1n.cht" type = "data" source = "iso/music/sussy-bussy/sussy-bussy-hard.json.cht"/>
+				<file name = "4.2n.cht" type = "data" source = "iso/music/rivals/rivals-hard.json.cht"/>
+				<file name = "4.2evnt.cht" type = "data" source = "iso/music/rivals/events.json.cht"/>
+				<file name = "4.3n.cht" type = "data" source = "iso/music/chewmate/chewmate-hard.json.cht"/>
+				<file name = "4.4n.cht" type = "data" source = "iso/music/tomongus-tuesday/tomongus-tuesday-hard.json.cht"/>
+				<file name = "4.4evnt.cht" type = "data" source = "iso/music/tomongus-tuesday/events.json.cht"/>
+				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas-hard.json.cht"/>
+				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor-hard.json.cht"/>
+				<file name = "4.7n.cht" type = "data" source = "iso/music/titular/titular-hard.json.cht"/>
+				<file name = "4.8n.cht" type = "data" source = "iso/music/greatest-plan/greatest-plan-hard.json.cht"/>
+				<file name = "4.8evnt.cht" type = "data" source = "iso/music/greatest-plan/events.json.cht"/>
+				<file name = "4.9n.cht" type = "data" source = "iso/music/reinforcements/reinforcements-hard.json.cht"/>
+				<file name = "4.9evnt.cht" type = "data" source = "iso/music/reinforcements/events.json.cht"/>
+				<file name = "4.10n.cht" type = "data" source = "iso/music/armed/armed-hard.json.cht"/>
+				<file name = "4.10evnt.cht" type = "data" source = "iso/music/armed/events.json.cht"/>
 			</dir>
 			
 			<!-- Week 5 assets -->
 			<dir name = "week5">
 				
-				<file name = "5.1n.cht" type = "data" source = "iso/music/alpha-moogus/alpha-moogus.json.cht"/>
-				<file name = "5.2n.cht" type = "data" source = "iso/music/actin-sus/actin-sus.json.cht"/>
-				<file name = "5.3n.cht" type = "data" source = "iso/music/ow/ow.json.cht"/>
-				<file name = "5.4n.cht" type = "data" source = "iso/music/who/who.json.cht"/>
-				<file name = "5.5n.cht" type = "data" source = "iso/music/insane-streamer/insane-streamer.json.cht"/>
-				<file name = "5.6n.cht" type = "data" source = "iso/music/sussus-nuzzus/sussus-nuzzus.json.cht"/>
-				<file name = "5.7n.cht" type = "data" source = "iso/music/idk/idk.json.cht"/>
-				<file name = "5.8n.cht" type = "data" source = "iso/music/esculent/esculent.json.cht"/>
-				<file name = "5.9n.cht" type = "data" source = "iso/music/drippypop/drippypop.json.cht"/>
+				<file name = "5.1n.cht" type = "data" source = "iso/music/alpha-moogus/alpha-moogus-hard.json.cht"/>
+				<file name = "5.2n.cht" type = "data" source = "iso/music/actin-sus/actin-sus-hard.json.cht"/>
+				<file name = "5.3n.cht" type = "data" source = "iso/music/ow/ow-hard.json.cht"/>
+				<file name = "5.4n.cht" type = "data" source = "iso/music/who/who-hard.json.cht"/>
+				<file name = "5.4evnt.cht" type = "data" source = "iso/music/who/events.json.cht"/>
+				<file name = "5.5n.cht" type = "data" source = "iso/music/insane-streamer/insane-streamer-hard.json.cht"/>
+				<file name = "5.6n.cht" type = "data" source = "iso/music/sussus-nuzzus/sussus-nuzzus-hard.json.cht"/>
+				<file name = "5.7n.cht" type = "data" source = "iso/music/idk/idk-hard.json.cht"/>
+				<file name = "5.8n.cht" type = "data" source = "iso/music/esculent/esculent-hard.json.cht"/>
+				<file name = "5.8evnt.cht" type = "data" source = "iso/music/esculent/events.json.cht"/>
+				<file name = "5.9n.cht" type = "data" source = "iso/music/drippypop/drippypop-hard.json.cht"/>
+				<file name = "5.9evnt.cht" type = "data" source = "iso/music/drippypop/events.json.cht"/>
 			</dir>
 			
 			<!-- Week 6 assets -->
 			<dir name = "week6">
 				
-				<file name = "6.1n.cht" type = "data" source = "iso/music/crewicide/crewicide.json.cht"/>
-				<file name = "6.2n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack.json.cht"/>
-				<file name = "6.3n.cht" type = "data" source = "iso/music/top-10/top-10.json.cht"/>
-				<file name = "6.4n.cht" type = "data" source = "iso/music/chippin/chippin.json.cht"/>
-				<file name = "6.5n.cht" type = "data" source = "iso/music/chipping/chipping.json.cht"/>
-				<file name = "6.6n.cht" type = "data" source = "iso/music/torture/torture.json.cht"/>
+				<file name = "6.1n.cht" type = "data" source = "iso/music/crewicide/crewicide-hard.json.cht"/>
+				<file name = "6.1evnt.cht" type = "data" source = "iso/music/crewicide/events.json.cht"/>
+				<file name = "6.2n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-hard.json.cht"/>
+				<file name = "6.2evnt.cht" type = "data" source = "iso/music/monotone-attack/events.json.cht"/>
+				<file name = "6.3n.cht" type = "data" source = "iso/music/top-10/top-10-hard.json.cht"/>
+				<file name = "6.4n.cht" type = "data" source = "iso/music/chippin/chippin-hard.json.cht"/>
+				<file name = "6.4evnt.cht" type = "data" source = "iso/music/chippin/events.json.cht"/>
+				<file name = "6.5n.cht" type = "data" source = "iso/music/chipping/chipping-hard.json.cht"/>
+				<file name = "6.5evnt.cht" type = "data" source = "iso/music/chipping/events.json.cht"/>
+				<file name = "6.6n.cht" type = "data" source = "iso/music/torture/torture-hard.json.cht"/>
+				<file name = "6.6evnt.cht" type = "data" source = "iso/music/torture/events.json.cht"/>
 				<file name = "6.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
 				<file name = "6.8n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-other.json.cht"/>
 			</dir>
