@@ -172,6 +172,9 @@
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				
+				<!-- Maroon assets -->
+				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
+				
 				<!-- Gray assets -->
 				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>
 				

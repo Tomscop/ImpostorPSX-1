@@ -58,6 +58,7 @@ static u32 Sounds[10];
 #include "character/yellow.h"
 #include "character/white.h"
 #include "character/black.h"
+#include "character/maroon.h"
 #include "character/gray.h"
 #include "character/powers.h"
 #include "character/tomongus.h"

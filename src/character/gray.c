@@ -126,15 +126,15 @@ static const CharFrame char_gray_frame[] = {
 };
 
 static const Animation char_gray_anim[CharAnim_Max] = {
-	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 27, 27, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{1, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{1, (const u8[]){ 28, 29, 30, 31, 32, 33, 34, 32, 33, 34, 32, 33, 34, 32, ASCR_BACK, 1}},         //CharAnim_Left
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, ASCR_BACK, 1}},   //CharAnim_LeftAlt
 	{1, (const u8[]){ 35, 36, 37, 38, 39, 40, 41, 39, 40, 41, 39, 40, ASCR_BACK, 1}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{1, (const u8[]){ 42, 43, 44, 45, 46, 47, 48, 46, 47, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{1, (const u8[]){ 49, 50, 51, 52, 53, 54, 55, 53, 54, 55, ASCR_BACK, 1}},         //CharAnim_Right
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+	{1, (const u8[]){ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 27, 27, ASCR_BACK, 1}},   //CharAnim_RightAlt
 };
 
 //Gray character functions
@@ -158,7 +158,20 @@ void Char_Gray_Tick(Character *character)
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+	{
+		Character_CheckEndSing(character);
+		
+		if (stage.flag & STAGE_FLAG_JUST_STEP)
+		{
+			if ((Animatable_Ended(&character->animatable) || character->animatable.anim == CharAnim_LeftAlt || character->animatable.anim == CharAnim_RightAlt) &&
+				(character->animatable.anim != CharAnim_Left &&
+				 character->animatable.anim != CharAnim_Down &&
+				 character->animatable.anim != CharAnim_Up &&
+				 character->animatable.anim != CharAnim_Right) &&
+				(stage.song_step & 0x3) == 0)
+				character->set_anim(character, CharAnim_Idle);
+		}
+	}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Gray_SetFrame);
@@ -168,8 +181,19 @@ void Char_Gray_Tick(Character *character)
 void Char_Gray_SetAnim(Character *character, u8 anim)
 {
 	//Set animation
+	if (anim == CharAnim_Idle)
+	{
+		if (character->animatable.anim == CharAnim_LeftAlt)
+			anim = CharAnim_RightAlt;
+		else
+			anim = CharAnim_LeftAlt;
+		character->sing_end = FIXED_DEC(0x7FFF,1);
+	}
+	else
+	{
+		Character_CheckStartSing(character);
+	}
 	Animatable_SetAnim(&character->animatable, anim);
-	Character_CheckStartSing(character);
 }
 
 void Char_Gray_Free(Character *character)

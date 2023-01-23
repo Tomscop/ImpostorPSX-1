@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/white/white",
-	"outdir": "iso/chars/white/",
-	"charname" : "White",
+	"input":  "iso/chars/maroon/maroon",
+	"outdir": "iso/chars/maroon/",
+	"charname" : "Maroon",
 	"optimize" : false,
-	"optimizename" : "white",
+	"optimizename" : "maroon",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
@@ -39,7 +39,7 @@
 		481
 	],
 
-	"bpp" : 8,
+	"bpp" : 4,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
