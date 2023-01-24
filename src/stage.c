@@ -1310,6 +1310,20 @@ static void Stage_LoadStage(void)
 	stage.back = stage.stage_def->back();
 }
 
+static void GetChart_Values(IO_Data* chart, Section** section, Note** note, Event** event)
+{
+	u8 *chart_byte = (u8*)(*chart);
+
+	u8* section_address = chart_byte + 8; //Get the section (skip the speed bytes (4 bytes) and section size (2 bytes))
+	u16 section_size = *((u16*)(chart_byte + 4)); //Get the section size (2 bytes)
+	u16 note_size = *((u16*)(chart_byte + 6)); //Get the note size (2 bytes)
+
+	//Directly use section, notes and events pointers
+	*section = (Section*)section_address;
+	*note = (Note*)(chart_byte + section_size);
+	*event = (Event*)(chart_byte + section_size + note_size);
+}
+
 static void Stage_LoadChart(void)
 {
 	//Load stage data
@@ -1318,22 +1332,31 @@ static void Stage_LoadChart(void)
 	//Use standard path convention
 	sprintf(chart_path, "\\WEEK%d\\%d.%d%c.CHT;1", stage.stage_def->week, stage.stage_def->week, stage.stage_def->week_song, "ENH"[stage.stage_diff]);
 	
-	
 	if (stage.chart_data != NULL)
 		Mem_Free(stage.chart_data);
 	stage.chart_data = IO_Read(chart_path);
-	u8 *chart_byte = (u8*)stage.chart_data;
-
-		//Directly use section and notes pointers
-		stage.sections = (Section*)(chart_byte + 8);
-		stage.notes = (Note*)(chart_byte + ((u16*)stage.chart_data)[2]);
-		
-		//sorry about that lol,but hey it get the correct address
-		stage.events = (Event*)(chart_byte + ((u16*)stage.chart_data)[2] + ((u16*)stage.chart_data)[3]);
+	
+	//Normal chart
+	GetChart_Values(&stage.chart_data, &stage.sections, &stage.notes, &stage.events);
 		
 		for (Note *note = stage.notes; note->pos != 0xFFFF; note++)
 			stage.num_notes++;
-		
+
+	//Check if should use events.json
+	if (stage.stage_id == StageId_Blackout)
+	{
+		sprintf(chart_path, "\\WEEK%d\\%d.%dEVNT.CHT;1", stage.stage_def->week, stage.stage_def->week, stage.stage_def->week_song);
+		stage.event_chart_data = IO_Read(chart_path);
+		//Events.json chart
+		GetChart_Values(&stage.event_chart_data, &stage.event_sections, &stage.event_notes, &stage.event_events);
+	}
+	else
+	{
+		stage.event_chart_data = NULL;
+		stage.event_events = NULL;
+		stage.event_notes = NULL;
+		stage.event_sections = NULL;
+	}
 	
 	//Count max scores
 	stage.player_state[0].max_score = 0;
@@ -1355,6 +1378,10 @@ static void Stage_LoadChart(void)
 	stage.cur_section = stage.sections;
 	stage.cur_note = stage.notes;
 	stage.cur_event = stage.events;
+
+	stage.event_cur_section = stage.event_sections;
+	stage.event_cur_note = stage.event_notes;
+	stage.event_cur_event = stage.event_events;
 	
 	stage.speed = stage.ogspeed = *((fixed_t*)stage.chart_data); //Get the speed value (4 bytes)
 	strcpy(stage.songname, stage.stage_def->songname);
@@ -1738,6 +1765,11 @@ void Stage_Unload(void)
 	//Unload stage data
 	Mem_Free(stage.chart_data);
 	stage.chart_data = NULL;
+
+	if (stage.event_chart_data != NULL)
+		Mem_Free(stage.event_chart_data);
+
+	stage.event_chart_data = NULL;
 	
 	//Free objects
 	ObjectList_Free(&stage.objlist_splash);
@@ -2476,6 +2508,11 @@ void Stage_Tick(void)
 			//Unload stage data
 			Mem_Free(stage.chart_data);
 			stage.chart_data = NULL;
+
+			if (stage.event_chart_data != NULL)
+				Mem_Free(stage.event_chart_data);
+
+			stage.event_chart_data = NULL;
 			
 			//Free background
 			stage.back->free(stage.back);

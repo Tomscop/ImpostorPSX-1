@@ -263,6 +263,11 @@ typedef struct
 	Note *notes;
 	size_t num_notes;
 	Event* events;
+
+	IO_Data event_chart_data;
+	Section *event_sections;
+	Note *event_notes;
+	Event* event_events;
 	
 	fixed_t speed, ogspeed;
 	fixed_t step_crochet, step_time;
@@ -295,6 +300,11 @@ typedef struct
 	Section *cur_section; //Current section
 	Note *cur_note; //First visible and hittable note, used for drawing and hit detection
 	Event* cur_event; //Current event
+
+	// For event.json
+	Section *event_cur_section; //Current section
+	Note *event_cur_note; //First visible and hittable note, used for drawing and hit detection
+	Event* event_cur_event; //Current event
 	
 	fixed_t note_scroll, song_time, interp_time, interp_ms, interp_speed;
 	
