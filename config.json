@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/maroon/maroon",
-	"outdir": "iso/chars/maroon/",
-	"charname" : "Maroon",
+	"input":  "iso/chars/whitedk/whitedk",
+	"outdir": "iso/chars/whitedk/",
+	"charname" : "WhiteDK",
 	"optimize" : false,
-	"optimizename" : "maroon",
+	"optimizename" : "whitedk",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
@@ -40,7 +40,7 @@
 	],
 
 	"bpp" : 4,
-	"resize" : 0.25,
+	"resize" : 0.2750,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

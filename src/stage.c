@@ -49,14 +49,17 @@ fixed_t fade;
 fixed_t fade, fadespd;
 static u32 Sounds[10];
 
+//Players
 #include "character/bf.h"
 #include "character/picorc.h"
 #include "character/kid.h"
+//Opponents
 #include "character/red.h"
 #include "character/redmd.h"
 #include "character/greenst.h"
 #include "character/yellow.h"
 #include "character/white.h"
+#include "character/whitedk.h"
 #include "character/black.h"
 #include "character/maroon.h"
 #include "character/gray.h"
@@ -69,8 +72,9 @@ static u32 Sounds[10];
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
 #include "character/dad.h"
+//GFs
 #include "character/gf.h"
-
+//Stages
 #include "stage/airship.h"
 #include "stage/lobby.h"
 #include "stage/henry.h"

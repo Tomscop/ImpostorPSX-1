@@ -181,6 +181,7 @@
 			<dir name = "char">
 				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
 				
+				<!-- Players --!>
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
@@ -192,6 +193,7 @@
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
 				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
 				
+				<!-- Opponents --!>
 				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
 				
@@ -206,6 +208,9 @@
 				
 				<!-- White assets -->
 				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
+				
+				<!-- White DK assets -->
+				<file name = "whitedk.arc" type = "data" source = "iso/chars/whitedk/main.arc"/>
 				
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
@@ -242,7 +247,8 @@
 				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
-
+				
+				<!-- GFs --!>
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
