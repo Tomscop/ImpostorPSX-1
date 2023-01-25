@@ -221,6 +221,9 @@
 				<!-- Gray assets -->
 				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>
 				
+				<!-- Pink assets -->
+				<file name = "pink.arc" type = "data" source = "iso/chars/pink/main.arc"/>
+				
 				<!-- Powers assets -->
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
 				
@@ -248,7 +251,7 @@
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 				
-				<!-- GFs --!>
+				<!-- GFs -->
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>

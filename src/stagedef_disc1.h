@@ -381,7 +381,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pink_New, FIXED_DEC(11,1),  FIXED_DEC(138,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -399,7 +399,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Pink_New, FIXED_DEC(11,1),  FIXED_DEC(138,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -653,11 +653,11 @@
 	
 	{ //StageId_Titular (Titular)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
+		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
+		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background
 		Back_Henry_New,
@@ -671,11 +671,11 @@
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
-        {Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
-		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(69,1)},
+		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
+		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
+		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background
 		Back_Henry_New,
@@ -689,11 +689,11 @@
 	},
 	{ //StageId_Reinforcements (Reinforcements)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(115,1),  FIXED_DEC(93,1)},
+		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-85,1),  FIXED_DEC(70,1)},
-        {Char_Charles_New, FIXED_DEC(-185,1),  FIXED_DEC(70,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
+		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
+		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background
 		Back_Henry_New,
@@ -707,11 +707,11 @@
 	},
 	{ //StageId_Armed (Armed)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background
 		Back_Week1_New,
