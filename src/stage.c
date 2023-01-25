@@ -1343,10 +1343,11 @@ static void Stage_LoadChart(void)
 		for (Note *note = stage.notes; note->pos != 0xFFFF; note++)
 			stage.num_notes++;
 
+	sprintf(chart_path, "\\WEEK%d\\%d.%dEVNT.CHT;1", stage.stage_def->week, stage.stage_def->week, stage.stage_def->week_song);
+
 	//Check if should use events.json
-	if (stage.stage_id == StageId_Blackout)
+	if (IO_Check(chart_path))
 	{
-		sprintf(chart_path, "\\WEEK%d\\%d.%dEVNT.CHT;1", stage.stage_def->week, stage.stage_def->week, stage.stage_def->week_song);
 		stage.event_chart_data = IO_Read(chart_path);
 		//Events.json chart
 		GetChart_Values(&stage.event_chart_data, &stage.event_sections, &stage.event_notes, &stage.event_events);

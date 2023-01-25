@@ -37,6 +37,17 @@ void IO_FindFile(CdlFILE *file, const char *path)
 	}
 }
 
+boolean IO_Check(const char* path)
+{
+	printf("[IO_Read] Reading file %s\n", path);
+	
+	//Search for file
+	CdlFILE file;
+	if (!CdSearchFile(&file, (char*)path))
+		return false;
+	return true;
+}
+
 void IO_SeekFile(CdlFILE *file)
 {
 	//Seek to file position
