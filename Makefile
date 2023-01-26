@@ -30,6 +30,7 @@ SRCS = src/main.c \
 	src/character.c \
 	src/character/bf.c \
 	src/character/picorc.c \
+	src/character/bfpixel.c \
 	src/character/kid.c \
 	src/character/red.c \
 	src/character/redmd.c \
@@ -52,6 +53,7 @@ SRCS = src/main.c \
 	src/character/dad.c \
 	src/character/gf.c \
 	src/character/speaker.c \
+	src/character/gfpixel.c \
 	src/object.c \
 	src/object/combo.c \
 	src/object/splash.c \

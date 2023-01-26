@@ -543,14 +543,14 @@
 	
 	{ //StageId_SussyBussy (Sussy Bussy)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Dummy_New,
 		
 		//Song info
 		4, 1,
@@ -561,14 +561,14 @@
 	},
 	{ //StageId_Rivals (Rivals)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
         {Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(104,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Dummy_New,
 		
 		//Song info
 		4, 2,
@@ -579,14 +579,14 @@
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Dummy_New,
 		
 		//Song info
 		4, 3,

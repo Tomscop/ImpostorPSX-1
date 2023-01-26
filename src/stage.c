@@ -52,6 +52,7 @@ static u32 Sounds[10];
 //Players
 #include "character/bf.h"
 #include "character/picorc.h"
+#include "character/bfpixel.h"
 #include "character/kid.h"
 //Opponents
 #include "character/red.h"
@@ -75,6 +76,7 @@ static u32 Sounds[10];
 #include "character/dad.h"
 //GFs
 #include "character/gf.h"
+#include "character/gfpixel.h"
 //Stages
 #include "stage/airship.h"
 #include "stage/lobby.h"
@@ -1443,6 +1445,17 @@ static void Stage_LoadSFX(void)
 		}
     }
 	
+	//tomongus shot sound
+	if (stage.stage_id == StageId_Rivals)
+	{
+		char text[0x80];
+		sprintf(text, "\\SOUNDS\\TOMSHOT.VAG;1");
+		IO_FindFile(&file, text);
+		u32 *data = IO_ReadFile(&file);
+		Sounds[7] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
@@ -1994,6 +2007,10 @@ void Stage_Tick(void)
 						StageTimer_Draw();
 				}
 			}
+			
+			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[7], 0x3fff);
+			
 			if (stage.prefs.debug)
 				Debug_StageDebug();
 			
@@ -2004,7 +2021,12 @@ void Stage_Tick(void)
 			if ((stage.stage_id == StageId_Dlow) && (stage.song_step == 1424))
 			{
 				fade = FIXED_DEC(255,1);
-				fadespd = FIXED_DEC(600,1);
+				fadespd = FIXED_DEC(1000,1);
+			}
+			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034))
+			{
+				fade = FIXED_DEC(255,1);
+				fadespd = FIXED_DEC(1000,1);
 			}
 			if (stage.prefs.flash != 0)
 				if (fade > 0)
@@ -2217,7 +2239,7 @@ void Stage_Tick(void)
 				is_bump_step = (stage.song_step & 0xF) == 0;
 				
 				//Bump screen
-				if((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) && (stage.stage_id != StageId_Idk))
+				if((stage.stage_id != StageId_Idk))
 				{
 					if (is_bump_step)
 					{

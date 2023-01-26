@@ -189,6 +189,9 @@
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				
+				<!-- Boyfriend Pixel assets -->
+				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
+				
 				<!-- Kid assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
 				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
@@ -256,6 +259,9 @@
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
+				
+				<!-- Girlfriend Pixel assets -->
+				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
 			</dir>
 			
 			<!-- Background assets -->
@@ -294,15 +300,17 @@
 				<file name = "intro2p.vag" type = "data" source = "iso/sounds/stage/intro2p.ogg.vag"/>
 				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
 				<!-- Other Sounds -->
-				<file name = "death.vag" type = "data" source = "iso/sounds/stage/death.ogg.vag"/>
-				<file name = "deathe.vag" type = "data" source = "iso/sounds/stage/deathe.ogg.vag"/>
-				<file name = "deathd.vag" type = "data" source = "iso/sounds/stage/deathd.ogg.vag"/>
-				<file name = "deathp.vag" type = "data" source = "iso/sounds/stage/deathp.ogg.vag"/>
-				<file name = "deathh.vag" type = "data" source = "iso/sounds/stage/deathh.ogg.vag"/>
-				<file name = "retry.vag" type = "data" source = "iso/sounds/stage/retry.ogg.vag"/>
-				<file name = "retryj.vag" type = "data" source = "iso/sounds/stage/retryj.ogg.vag"/>
-				<file name = "retryp.vag" type = "data" source = "iso/sounds/stage/retryp.ogg.vag"/>
-				<file name = "retryh.vag" type = "data" source = "iso/sounds/stage/retryh.ogg.vag"/>
+				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
+				<!-- Game Over Sounds -->
+				<file name = "death.vag" type = "data" source = "iso/sounds/gameover/death.ogg.vag"/>
+				<file name = "deathe.vag" type = "data" source = "iso/sounds/gameover/deathe.ogg.vag"/>
+				<file name = "deathd.vag" type = "data" source = "iso/sounds/gameover/deathd.ogg.vag"/>
+				<file name = "deathp.vag" type = "data" source = "iso/sounds/gameover/deathp.ogg.vag"/>
+				<file name = "deathh.vag" type = "data" source = "iso/sounds/gameover/deathh.ogg.vag"/>
+				<file name = "retry.vag" type = "data" source = "iso/sounds/gameover/retry.ogg.vag"/>
+				<file name = "retryj.vag" type = "data" source = "iso/sounds/gameover/retryj.ogg.vag"/>
+				<file name = "retryp.vag" type = "data" source = "iso/sounds/gameover/retryp.ogg.vag"/>
+				<file name = "retryh.vag" type = "data" source = "iso/sounds/gameover/retryh.ogg.vag"/>
 				<!-- Miss Sounds -->
 				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
 				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>

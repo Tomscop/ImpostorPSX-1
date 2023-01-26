@@ -18,6 +18,7 @@ all: \
 	iso/chars/bf/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/picorc/dead.tim \
+	iso/chars/bfpixel/main.arc \
 	iso/chars/kid/main.arc \
 	iso/chars/kid/dead.tim \
 	iso/chars/red/main.arc \
@@ -42,6 +43,7 @@ all: \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
+	iso/chars/gfpixel/main.arc \
 	iso/stages/airship/back.arc \
 	iso/stages/lobby/back.arc \
 	iso/stages/henry/back.arc \
@@ -63,6 +65,9 @@ iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf
 
 # Pico RC
 iso/chars/picorc/main.arc: iso/chars/picorc/idle0.tim iso/chars/picorc/idle1.tim iso/chars/picorc/left0.tim iso/chars/picorc/down0.tim iso/chars/picorc/up0.tim iso/chars/picorc/right0.tim iso/chars/picorc/leftm0.tim iso/chars/picorc/downm0.tim iso/chars/picorc/upm0.tim iso/chars/picorc/upm1.tim iso/chars/picorc/rightm0.tim iso/chars/picorc/rightm1.tim 
+
+# BF Pixel
+iso/chars/bfpixel/main.arc: iso/chars/bfpixel/idle0.tim iso/chars/bfpixel/left0.tim iso/chars/bfpixel/down0.tim iso/chars/bfpixel/up0.tim iso/chars/bfpixel/right0.tim iso/chars/bfpixel/leftm0.tim iso/chars/bfpixel/downm0.tim iso/chars/bfpixel/upm0.tim iso/chars/bfpixel/rightm0.tim iso/chars/bfpixel/idles0.tim iso/chars/bfpixel/lefts0.tim iso/chars/bfpixel/downs0.tim iso/chars/bfpixel/ups0.tim iso/chars/bfpixel/rights0.tim iso/chars/bfpixel/leftsm0.tim iso/chars/bfpixel/downsm0.tim iso/chars/bfpixel/upsm0.tim iso/chars/bfpixel/righsm0.tim iso/chars/bfpixel/shoot0.tim 
 
 # Kid
 iso/chars/kid/main.arc: iso/chars/kid/idle0.tim iso/chars/kid/idle1.tim iso/chars/kid/idle2.tim iso/chars/kid/left0.tim iso/chars/kid/left1.tim iso/chars/kid/down0.tim iso/chars/kid/down1.tim iso/chars/kid/up0.tim iso/chars/kid/up1.tim iso/chars/kid/right0.tim iso/chars/kid/right1.tim 
@@ -129,6 +134,9 @@ iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/char
 # GF
 iso/chars/gf/main.arc: iso/chars/gf/gf0.tim iso/chars/gf/gf1.tim iso/chars/gf/gf2.tim
 iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
+
+# GF Pixel
+iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 
 
 
 # Airship
