@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				59,
+				-294
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "impostor right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				106,
+				-303
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "impostor down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				249,
+				-288
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "imposter left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				161,
+				-161
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "impostor up2",
+			"indices": []
+		},
+		{
+			"offsets": [
+				61,
+				-278
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "danceLeft",
+			"loop": false,
+			"name": "impostor dance left"
+		},
+		{
+			"offsets": [
+				57,
+				-278
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "danceRight",
+			"loop": false,
+			"name": "impostor dance right"
+		},
+		{
+			"offsets": [
+				352,
+				-174
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "liveReaction",
+			"loop": false,
+			"name": "bwomp"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/impostor3",
+	"position": [
+		0,
+		80
+	],
+	"healthicon": "impostor3",
+	"flip_x": false,
+	"healthbar_colors": [
+		31,
+		107,
+		43
+	],
+	"camera_position": [
+		-100,
+		290
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

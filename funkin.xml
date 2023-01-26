@@ -191,6 +191,7 @@
 				
 				<!-- Boyfriend Pixel assets -->
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
+				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
 				
 				<!-- Kid assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
@@ -205,6 +206,9 @@
 				
 				<!-- Green ST assets -->
 				<file name = "greenst.arc" type = "data" source = "iso/chars/greenst/main.arc"/>
+				
+				<!-- Green assets -->
+				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
 				
 				<!-- Yellow assets -->
 				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>

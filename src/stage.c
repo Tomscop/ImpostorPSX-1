@@ -58,6 +58,7 @@ static u32 Sounds[10];
 #include "character/red.h"
 #include "character/redmd.h"
 #include "character/greenst.h"
+#include "character/green.h"
 #include "character/yellow.h"
 #include "character/white.h"
 #include "character/whitedk.h"
@@ -1712,6 +1713,8 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	//Load death screen texture
 	if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Idk)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
 	else
@@ -2587,28 +2590,34 @@ void Stage_Tick(void)
 		{
 			if (stage.stage_id == StageId_Roomcode)
 			{
-				RECT src = { 0, 0, 124, 124};
-				RECT dst = { 98, 58, 124, 124};
+				RECT src = {  0,  0,124,124};
+				RECT dst = { 98, 58,124,124};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+			{
+				RECT src = {  0,  0, 80, 76};
+				RECT dst = { 80, 44,160,152};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if (stage.stage_id == StageId_Idk)
 			{
-				RECT src = { 0, 0, 192, 255};
-				RECT dst = { 112, 56, 96, 128};
+				RECT src = {  0,  0,192,255};
+				RECT dst = {112, 56, 96,128};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else
 			{
 				if (inctimer == false)
 				{
-				RECT src = { 0, 0, 216, 25};
-				RECT dst = { 52,108, 216, 25};
+				RECT src = {  0,  0,216, 25};
+				RECT dst = { 52,108,216, 25};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 				else
 				{
-				RECT src = { 0, 26, 216, 25};
-				RECT dst = { 52,108, 216, 25};
+				RECT src = {  0, 26,216, 25};
+				RECT dst = { 52,108,216, 25};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 			}

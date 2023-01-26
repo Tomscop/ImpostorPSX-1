@@ -19,11 +19,13 @@ all: \
 	iso/chars/picorc/main.arc \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/main.arc \
+	iso/chars/bfpixel/dead.tim \
 	iso/chars/kid/main.arc \
 	iso/chars/kid/dead.tim \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
+	iso/chars/green/main.arc \
 	iso/chars/yellow/main.arc \
 	iso/chars/white/main.arc \
 	iso/chars/whitedk/main.arc \
@@ -81,6 +83,9 @@ iso/chars/redmd/main.arc: iso/chars/redmd/idle0.tim iso/chars/redmd/idle1.tim is
 
 # Green ST
 iso/chars/greenst/main.arc: iso/chars/greenst/idle0.tim iso/chars/greenst/idle1.tim iso/chars/greenst/left0.tim iso/chars/greenst/left1.tim iso/chars/greenst/left2.tim iso/chars/greenst/down0.tim iso/chars/greenst/down1.tim iso/chars/greenst/up0.tim iso/chars/greenst/up1.tim iso/chars/greenst/up2.tim iso/chars/greenst/up3.tim iso/chars/greenst/right0.tim iso/chars/greenst/right1.tim iso/chars/greenst/stiml0.tim iso/chars/greenst/stiml1.tim iso/chars/greenst/stimr0.tim iso/chars/greenst/stimr1.tim 
+
+# Green
+iso/chars/green/main.arc: iso/chars/green/idlel0.tim iso/chars/green/idlel1.tim iso/chars/green/idlel2.tim iso/chars/green/idler0.tim iso/chars/green/idler1.tim iso/chars/green/idler2.tim iso/chars/green/left0.tim iso/chars/green/left1.tim iso/chars/green/down0.tim iso/chars/green/down1.tim iso/chars/green/down2.tim iso/chars/green/up0.tim iso/chars/green/up1.tim iso/chars/green/up2.tim iso/chars/green/up3.tim iso/chars/green/up4.tim iso/chars/green/up5.tim iso/chars/green/up6.tim iso/chars/green/up7.tim iso/chars/green/up8.tim iso/chars/green/right0.tim iso/chars/green/right1.tim iso/chars/green/react0.tim iso/chars/green/react1.tim iso/chars/green/react2.tim iso/chars/green/react3.tim iso/chars/green/react4.tim iso/chars/green/react5.tim iso/chars/green/react6.tim iso/chars/green/react7.tim iso/chars/green/react8.tim iso/chars/green/react9.tim iso/chars/green/react10.tim iso/chars/green/react11.tim iso/chars/green/react12.tim iso/chars/green/react13.tim iso/chars/green/react14.tim iso/chars/green/react15.tim iso/chars/green/react16.tim 
 
 # Yellow
 iso/chars/yellow/main.arc: iso/chars/yellow/idle0.tim iso/chars/yellow/idle1.tim iso/chars/yellow/idle2.tim iso/chars/yellow/left0.tim iso/chars/yellow/left1.tim iso/chars/yellow/down0.tim iso/chars/yellow/down1.tim iso/chars/yellow/down2.tim iso/chars/yellow/down3.tim iso/chars/yellow/up0.tim iso/chars/yellow/up1.tim iso/chars/yellow/right0.tim iso/chars/yellow/right1.tim iso/chars/yellow/death0.tim iso/chars/yellow/death1.tim iso/chars/yellow/death2.tim iso/chars/yellow/death3.tim iso/chars/yellow/death4.tim iso/chars/yellow/death5.tim iso/chars/yellow/death6.tim iso/chars/yellow/death7.tim iso/chars/yellow/death8.tim 

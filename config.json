@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/bfpixel/bfPixel",
-	"outdir": "iso/chars/bfpixel/",
-	"charname" : "BFPixel",
+	"input":  "iso/chars/green/impostor3",
+	"outdir": "iso/chars/green/",
+	"charname" : "Green",
 	"optimize" : false,
-	"optimizename" : "bfpixel",
+	"optimizename" : "green",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768, 
