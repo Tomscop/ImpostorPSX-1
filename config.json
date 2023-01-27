@@ -2,45 +2,70 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
+			"imgname" : "idles",
 			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "left",
+			"imgname" : "lefts",
 			"hname"   : "Left"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "down",
+			"imgname" : "downs",
 			"hname"   : "Down"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "up",
+			"imgname" : "ups",
 			"hname"   : "Up"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
+			"imgname" : "rights",
 			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftsm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downsm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upsm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightsm",
+			"hname"   : "RightM"
+		},
+		{
+			"fnfanim" : "shoot",
+			"imgname" : "shoot",
+			"hname"   : "Shoot"
 		}
 	],
-	"input":  "iso/chars/green/impostor3",
-	"outdir": "iso/chars/green/",
-	"charname" : "Green",
+	"input":  "iso/chars/bfpixel/bfSus",
+	"outdir": "iso/chars/bfpixel/",
+	"charname" : "BFPixel",
 	"optimize" : false,
-	"optimizename" : "green",
+	"optimizename" : "bfpixel",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768, 
+		640, 
 		0, 
 		0, 
-		481
+		480
 	],
 
-	"bpp" : 4,
-	"resize" : 0.25,
+	"bpp" : 8,
+	"resize" : 1.0,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,
