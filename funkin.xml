@@ -217,6 +217,9 @@
 				<!-- Black assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				
+				<!-- Black Parasite (Finale) assets -->
+				<file name = "blackp.arc" type = "data" source = "iso/chars/blackp/main.arc"/>
+				
 				<!-- Maroon assets -->
 				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
 				

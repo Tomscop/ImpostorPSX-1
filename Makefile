@@ -41,6 +41,7 @@ SRCS = src/main.c \
 	src/character/white.c \
 	src/character/whitedk.c \
 	src/character/black.c \
+	src/character/blackp/blackp.c \
 	src/character/maroon.c \
 	src/character/gray.c \
 	src/character/pink.c \

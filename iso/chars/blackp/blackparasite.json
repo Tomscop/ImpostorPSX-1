@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-10,
+				673
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "BLACK UP",
+			"indices": []
+		},
+		{
+			"offsets": [
+				60,
+				-90
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "abomination black idle instance 1"
+		},
+		{
+			"offsets": [
+				-484,
+				100
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right ske instance 1"
+		},
+		{
+			"offsets": [
+				276,
+				479
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "black down instance 1"
+		},
+		{
+			"offsets": [
+				726,
+				330
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left  instance 1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/blackparasite",
+	"position": [
+		-340,
+		-30
+	],
+	"healthicon": "black",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		18,
+		102
+	],
+	"camera_position": [
+		-253,
+		140
+	],
+	"sing_duration": 6,
+	"scale": 2
+}

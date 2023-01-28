@@ -64,6 +64,7 @@ static u32 Sounds[10];
 #include "character/white.h"
 #include "character/whitedk.h"
 #include "character/black.h"
+#include "character/blackp/blackp.h"
 #include "character/maroon.h"
 #include "character/gray.h"
 #include "character/pink.h"

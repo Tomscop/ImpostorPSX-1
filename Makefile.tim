@@ -26,6 +26,7 @@ all: \
 	iso/chars/white/main.arc \
 	iso/chars/whitedk/main.arc \
 	iso/chars/black/main.arc \
+	iso/chars/blackp/main.arc \
 	iso/chars/maroon/main.arc \
 	iso/chars/gray/main.arc \
 	iso/chars/pink/main.arc \
@@ -162,3 +163,7 @@ iso/stages/idk/back.arc: iso/stages/idk/back0.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim
+
+# Black_Parasite_Finale
+iso/chars/blackp/main.arc: iso/chars/blackp/idle0.tim iso/chars/blackp/idle1.tim iso/chars/blackp/idle2.tim iso/chars/blackp/idle3.tim iso/chars/blackp/idle4.tim iso/chars/blackp/left0.tim iso/chars/blackp/left1.tim iso/chars/blackp/left2.tim iso/chars/blackp/left3.tim iso/chars/blackp/down0.tim iso/chars/blackp/down1.tim iso/chars/blackp/down2.tim iso/chars/blackp/down3.tim iso/chars/blackp/up0.tim iso/chars/blackp/up1.tim iso/chars/blackp/up2.tim iso/chars/blackp/up3.tim iso/chars/blackp/right0.tim iso/chars/blackp/right1.tim iso/chars/blackp/right2.tim iso/chars/blackp/right3.tim 
+
