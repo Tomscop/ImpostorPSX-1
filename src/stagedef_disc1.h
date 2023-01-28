@@ -543,50 +543,50 @@
 	
 	{ //StageId_SussyBussy (Sussy Bussy)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
-        {NULL},
-		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
+        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
 		//Stage background
-		Back_Dummy_New,
+		Back_Cafeteria_New,
 		
 		//Song info
 		4, 1,
 		XA_SussyBussy, 0,
 		"Sussy Bussy",
 		
-		StageId_Rivals, 0
+		StageId_Rivals, STAGE_LOAD_FLAG
 	},
 	{ //StageId_Rivals (Rivals)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
-        {Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(104,1)},
-		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
+        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
 		//Stage background
-		Back_Dummy_New,
+		Back_Cafeteria_New,
 		
 		//Song info
 		4, 2,
 		XA_Rivals, 2,
 		"Rivals",
 		
-		StageId_Chewmate, 0
+		StageId_Chewmate, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_OPPONENT2
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
-		{Char_TomongusH_New, FIXED_DEC(-20,1),  FIXED_DEC(100,1)},
+        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
         {NULL},
-		{Char_GFPixel_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
 		//Stage background
-		Back_Dummy_New,
+		Back_Cafeteria_New,
 		
 		//Song info
 		4, 3,

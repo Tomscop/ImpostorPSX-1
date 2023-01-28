@@ -14,14 +14,10 @@ all: \
 	iso/stage/hud1-6.tim \
 	iso/stage/count.tim \
 	iso/stage/countpix.tim \
-	iso/chars/dead.tim \
 	iso/chars/bf/main.arc \
 	iso/chars/picorc/main.arc \
-	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/main.arc \
-	iso/chars/bfpixel/dead.tim \
 	iso/chars/kid/main.arc \
-	iso/chars/kid/dead.tim \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
@@ -46,8 +42,13 @@ all: \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
 	iso/chars/gfpixel/main.arc \
+	iso/chars/dead.tim \
+	iso/chars/picorc/dead.tim \
+	iso/chars/bfpixel/dead.tim \
+	iso/chars/kid/dead.tim \
 	iso/stages/airship/back.arc \
 	iso/stages/lobby/back.arc \
+	iso/stages/cafe/back.arc \
 	iso/stages/henry/back.arc \
 	iso/stages/idk/back.arc \
 	iso/stages/week1/back.arc \
@@ -149,6 +150,9 @@ iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/bac
 
 # Lobby
 iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim
+
+# Cafeteria
+iso/stages/cafe/back.arc: iso/stages/cafe/back0.tim iso/stages/cafe/back1.tim
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim

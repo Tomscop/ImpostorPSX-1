@@ -45,6 +45,7 @@ static const u8 note_anims[4][3] = {
 //Stage definitions
 boolean noteshake;
 boolean show;
+boolean firsthit;
 fixed_t fade;
 fixed_t fade, fadespd;
 static u32 Sounds[10];
@@ -81,6 +82,7 @@ static u32 Sounds[10];
 //Stages
 #include "stage/airship.h"
 #include "stage/lobby.h"
+#include "stage/cafeteria.h"
 #include "stage/henry.h"
 #include "stage/idk.h"
 #include "stage/week1.h"
@@ -1447,7 +1449,7 @@ static void Stage_LoadSFX(void)
     }
 	
 	//tomongus shot sound
-	if (stage.stage_id == StageId_Rivals)
+	if ((stage.stage_id == StageId_SussyBussy) || (stage.stage_id == StageId_Rivals))
 	{
 		char text[0x80];
 		sprintf(text, "\\SOUNDS\\TOMSHOT.VAG;1");
@@ -1563,11 +1565,13 @@ static void Stage_LoadMusic(void)
 	if (stage.stage_id == StageId_Temp) //PLACEHOLDER
 	{
 		stage.intro = true;
+		firsthit = false;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	else
 	{
 		stage.intro = true;
+		firsthit = false;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
@@ -1712,13 +1716,13 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	//Load death screen texture
 	if (stage.stage_id == StageId_Roomcode)
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Idk)
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
 	else
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\CHAR\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 
 	//Load stage background
 	Stage_LoadStage();
@@ -2227,12 +2231,14 @@ void Stage_Tick(void)
 			}
             
 			//Handle bump
-			if ((stage.bump = FIXED_UNIT + FIXED_MUL(stage.bump - FIXED_UNIT, FIXED_DEC(95,100))) <= FIXED_DEC(1003,1000))
-				stage.bump = FIXED_UNIT;
+			if ((firsthit == true) || (stage.song_step <= -1))
+			{
+				if ((stage.bump = FIXED_UNIT + FIXED_MUL(stage.bump - FIXED_UNIT, FIXED_DEC(95,100))) <= FIXED_DEC(1003,1000))
+					stage.bump = FIXED_UNIT;
+				if ((stage.charbump = FIXED_UNIT + FIXED_MUL(stage.charbump - FIXED_UNIT, FIXED_DEC(95,100))) <= FIXED_DEC(1003,1000))
+					stage.charbump = FIXED_UNIT;
+			}
 			stage.sbump = FIXED_UNIT + FIXED_MUL(stage.sbump - FIXED_UNIT, FIXED_DEC(60,100));
-			
-			if ((stage.charbump = FIXED_UNIT + FIXED_MUL(stage.charbump - FIXED_UNIT, FIXED_DEC(95,100))) <= FIXED_DEC(1003,1000))
-				stage.charbump = FIXED_UNIT;
 			
 			if (playing && (stage.flag & STAGE_FLAG_JUST_STEP))
 			{
@@ -2242,12 +2248,15 @@ void Stage_Tick(void)
 				is_bump_step = (stage.song_step & 0xF) == 0;
 				
 				//Bump screen
-				if((stage.stage_id != StageId_Idk))
+				if (firsthit == true)
 				{
-					if (is_bump_step)
+					if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
 					{
-						stage.bump = FIXED_DEC(103,100);
-						stage.charbump += FIXED_DEC(15,1000); //0.015
+						if (is_bump_step)
+						{
+							stage.bump = FIXED_DEC(103,100);
+							stage.charbump += FIXED_DEC(15,1000); //0.015
+						}
 					}
 				}
 
@@ -2381,6 +2390,9 @@ void Stage_Tick(void)
 						//Opponent note hits
 						if (playing && ((note->type ^ stage.note_swap) & NOTE_FLAG_OPPONENT) && !(note->type & NOTE_FLAG_HIT))
 						{
+							if (firsthit == false)
+								firsthit = true;
+							
 							//Opponent hits note
 							stage.player_state[1].arrow_hitan[note->type & 0x3] = stage.step_time;
 							Stage_StartVocal();

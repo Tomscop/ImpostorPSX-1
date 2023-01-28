@@ -85,40 +85,40 @@ static const CharFrame char_bfpixel_frame[] = {
   {BFPixel_ArcMain_RightM0, {  0,  0, 54, 60}, {162,158}}, //19 rightm 1
   {BFPixel_ArcMain_RightM0, { 54,  0, 53, 59}, {162,157}}, //20 rightm 2
   
-  {BFPixel_ArcMain_IdleS0, {  0,  0, 55, 56}, {165,154}}, //21 idles 1
-  {BFPixel_ArcMain_IdleS0, { 55,  0, 53, 56}, {164,154}}, //22 idles 2
-  {BFPixel_ArcMain_IdleS0, {108,  0, 53, 58}, {163,156}}, //23 idles 3
-  {BFPixel_ArcMain_IdleS0, {161,  0, 53, 59}, {163,157}}, //24 idles 4
-  {BFPixel_ArcMain_IdleS0, {  0, 59, 54, 59}, {164,157}}, //25 idles 5
+  {BFPixel_ArcMain_IdleS0, {  0,  0, 55, 56}, {165+2,154}}, //21 idles 1
+  {BFPixel_ArcMain_IdleS0, { 55,  0, 53, 56}, {164+2,154}}, //22 idles 2
+  {BFPixel_ArcMain_IdleS0, {108,  0, 53, 58}, {163+2,156}}, //23 idles 3
+  {BFPixel_ArcMain_IdleS0, {161,  0, 53, 59}, {163+2,157}}, //24 idles 4
+  {BFPixel_ArcMain_IdleS0, {  0, 59, 54, 59}, {164+2,157}}, //25 idles 5
 
-  {BFPixel_ArcMain_LeftS0, {  0,  0, 53, 59}, {166,157}}, //26 lefts 1
-  {BFPixel_ArcMain_LeftS0, { 53,  0, 52, 59}, {165,157}}, //27 lefts 2
+  {BFPixel_ArcMain_LeftS0, {  0,  0, 53, 59}, {166+2,157}}, //26 lefts 1
+  {BFPixel_ArcMain_LeftS0, { 53,  0, 52, 59}, {165+2,157}}, //27 lefts 2
 
-  {BFPixel_ArcMain_DownS0, {  0,  0, 53, 58}, {164,153}}, //28 downs 1
-  {BFPixel_ArcMain_DownS0, { 53,  0, 51, 58}, {163,154}}, //29 downs 2
+  {BFPixel_ArcMain_DownS0, {  0,  0, 53, 58}, {164+2,153}}, //28 downs 1
+  {BFPixel_ArcMain_DownS0, { 53,  0, 51, 58}, {163+2,154}}, //29 downs 2
 
-  {BFPixel_ArcMain_UpS0, {  0,  0, 57, 62}, {164,160}}, //30 ups 1
-  {BFPixel_ArcMain_UpS0, { 57,  0, 58, 61}, {165,159}}, //31 ups 2
+  {BFPixel_ArcMain_UpS0, {  0,  0, 57, 62}, {164+2,160}}, //30 ups 1
+  {BFPixel_ArcMain_UpS0, { 57,  0, 58, 61}, {165+2,159}}, //31 ups 2
 
-  {BFPixel_ArcMain_RightS0, {  0,  0, 50, 59}, {157,156}}, //32 rights 1
-  {BFPixel_ArcMain_RightS0, { 50,  0, 51, 59}, {158,156}}, //33 rights 2
+  {BFPixel_ArcMain_RightS0, {  0,  0, 50, 59}, {157+2,156}}, //32 rights 1
+  {BFPixel_ArcMain_RightS0, { 50,  0, 51, 59}, {158+2,156}}, //33 rights 2
 
-  {BFPixel_ArcMain_LeftSM0, {  0,  0, 51, 59}, {165,157}}, //34 leftsm 1
-  {BFPixel_ArcMain_LeftSM0, { 51,  0, 52, 59}, {165,157}}, //35 leftsm 2
+  {BFPixel_ArcMain_LeftSM0, {  0,  0, 51, 59}, {165+2,157}}, //34 leftsm 1
+  {BFPixel_ArcMain_LeftSM0, { 51,  0, 52, 59}, {165+2,157}}, //35 leftsm 2
 
-  {BFPixel_ArcMain_DownSM0, {  0,  0, 52, 61}, {164,156}}, //36 downsm 1
-  {BFPixel_ArcMain_DownSM0, { 52,  0, 51, 59}, {163,155}}, //37 downsm 2
+  {BFPixel_ArcMain_DownSM0, {  0,  0, 52, 61}, {164+2,156}}, //36 downsm 1
+  {BFPixel_ArcMain_DownSM0, { 52,  0, 51, 59}, {163+2,155}}, //37 downsm 2
 
-  {BFPixel_ArcMain_UpSM0, {  0,  0, 56, 62}, {163,160}}, //38 upsm 1
-  {BFPixel_ArcMain_UpSM0, { 56,  0, 58, 61}, {165,159}}, //39 upsm 2
+  {BFPixel_ArcMain_UpSM0, {  0,  0, 56, 62}, {163+2,160}}, //38 upsm 1
+  {BFPixel_ArcMain_UpSM0, { 56,  0, 58, 61}, {165+2,159}}, //39 upsm 2
 
-  {BFPixel_ArcMain_RighSM0, {  0,  0, 52, 61}, {158,158}}, //40 righsm 1
-  {BFPixel_ArcMain_RighSM0, { 52,  0, 51, 60}, {158,157}}, //41 righsm 2
+  {BFPixel_ArcMain_RighSM0, {  0,  0, 52, 61}, {158+2,158}}, //40 righsm 1
+  {BFPixel_ArcMain_RighSM0, { 52,  0, 51, 60}, {158+2,157}}, //41 righsm 2
 
-  {BFPixel_ArcMain_Shoot0, {  0,  0, 60, 58}, {167,156}}, //42 shoot 1
-  {BFPixel_ArcMain_Shoot0, { 60,  0, 62, 58}, {169,156}}, //43 shoot 2
-  {BFPixel_ArcMain_Shoot0, {122,  0, 63, 58}, {170,156}}, //44 shoot 3
-  {BFPixel_ArcMain_Shoot0, {185,  0, 56, 59}, {166,157}}, //45 shoot 4
+  {BFPixel_ArcMain_Shoot0, {  0,  0, 60, 58}, {167+2,156}}, //42 shoot 1
+  {BFPixel_ArcMain_Shoot0, { 60,  0, 62, 58}, {169+2,156}}, //43 shoot 2
+  {BFPixel_ArcMain_Shoot0, {122,  0, 63, 58}, {170+2,156}}, //44 shoot 3
+  {BFPixel_ArcMain_Shoot0, {185,  0, 56, 59}, {166+2,157}}, //45 shoot 4
 };
 
 static const Animation char_bfpixel_anim[PlayerAnim_Max] = {
@@ -281,9 +281,9 @@ Character *Char_BFPixel_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF7BD6F6;
 
-	this->character.focus_x = FIXED_DEC(-50,1);
-	this->character.focus_y = FIXED_DEC(-65,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-182,1);
+	this->character.focus_y = FIXED_DEC(-148,1);
+	this->character.focus_zoom = FIXED_DEC(511,256);
 	
 	this->character.size = FIXED_DEC(1,1);
 

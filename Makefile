@@ -22,6 +22,7 @@ SRCS = src/main.c \
 	src/psx/timer.c \
 	src/stage/airship.c \
 	src/stage/lobby.c \
+	src/stage/cafeteria.c \
 	src/stage/henry.c \
 	src/stage/idk.c \
 	src/stage/week1.c \

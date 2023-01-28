@@ -97,7 +97,7 @@ void Char_TomongusH_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_TomongusH_SetFrame);
-	if (stage.stage_id != StageId_Rivals)
+	if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals))
 		Character_Draw(character, &this->tex, &char_tomongush_frame[this->frame]);
 	else if ((stage.stage_id == StageId_Rivals) && (stage.song_step >= 1034))
 		Character_Draw(character, &this->tex, &char_tomongush_frame[this->frame]);
@@ -145,9 +145,9 @@ Character *Char_TomongusH_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFF8A572;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-82,1);
+	this->character.focus_y = FIXED_DEC(-155,1);
+	this->character.focus_zoom = FIXED_DEC(511,256);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

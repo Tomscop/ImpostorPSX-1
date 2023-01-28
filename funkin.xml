@@ -179,23 +179,18 @@
 		
 			<!-- Character assets -->
 			<dir name = "char">
-				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
-				
 				<!-- Players -->
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
 				<!-- Pico RC assets -->
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
-				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				
 				<!-- Boyfriend Pixel assets -->
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
-				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
 				
 				<!-- Kid assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
-				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
 				
 				<!-- Opponents -->
 				<!-- Red assets -->
@@ -268,6 +263,18 @@
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
 			</dir>
 			
+			<!-- Dead assets -->
+			<dir name = "dead">
+				<!-- Normal -->
+				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- Pico -->
+				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
+				<!-- Pixel -->
+				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
+				<!-- Idk -->
+				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
+			</dir>
+			
 			<!-- Background assets -->
 			<dir name = "bg">
 				<!-- Airship BG -->
@@ -275,6 +282,9 @@
 				
 				<!-- Lobby BG -->
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
+				
+				<!-- Cafeteria BG -->
+				<file name = "cafe.arc" type = "data" source = "iso/stages/cafe/back.arc"/>
 				
 				<!-- Henry BG -->
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
