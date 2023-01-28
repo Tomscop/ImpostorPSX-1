@@ -54,8 +54,8 @@ void Back_Lobby_DrawBG(StageBack *back)
 	
 	Debug_StageMoveDebug(&back0_dst, 8, fx, fy);
 	Debug_StageMoveDebug(&back1_dst, 9, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 }
 
 void Back_Lobby_Free(StageBack *back)

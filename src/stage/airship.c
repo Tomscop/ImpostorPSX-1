@@ -73,8 +73,8 @@ void Back_Airship_DrawBG(StageBack *back)
 	Debug_StageMoveDebug(&back1_dst, 7, fx, fy);
 	Debug_StageMoveDebug(&floor1_dst, 8, fx, fy);
 	Debug_StageMoveDebug(&floor2_dst, 9, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back2, &floor1_src, &floor1_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back2, &floor2_src, &floor2_dst, stage.camera.bzoom);
 }

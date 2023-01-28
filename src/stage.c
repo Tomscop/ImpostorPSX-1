@@ -64,7 +64,7 @@ static u32 Sounds[10];
 #include "character/white.h"
 #include "character/whitedk.h"
 #include "character/black.h"
-#include "character/blackp/blackp.h"
+#include "character/blackp.h"
 #include "character/maroon.h"
 #include "character/gray.h"
 #include "character/pink.h"
@@ -2255,7 +2255,7 @@ void Stage_Tick(void)
 					{
 						if (is_bump_step)
 						{
-							stage.bump += FIXED_DEC(3,100); //0.03
+							stage.bump = FIXED_DEC(103,100); //0.03
 							stage.charbump += FIXED_DEC(15,1000); //0.015
 						}
 					}
@@ -2398,10 +2398,16 @@ void Stage_Tick(void)
 					So how are notes position are sorted in psxfunkin
 					I'm just going to check if the next note has the same position as the current one
 					*/
-					if (note->pos == next_note->pos)
+					if (firsthit == true)
 					{
-						stage.bump += FIXED_DEC(3,100); //0.03
-						stage.charbump += FIXED_DEC(15,1000); //0.015
+						if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
+						{
+							if (note->pos == next_note->pos)
+							{
+								stage.bump = FIXED_DEC(103,100); //0.03
+								stage.charbump += FIXED_DEC(15,1000); //0.015
+							}
+						}
 					}
 					
 					note->type |= NOTE_FLAG_PLAYED;

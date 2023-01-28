@@ -49,37 +49,6 @@ boolean Obj_Combo_Tick(Object *obj)
 	//Increment hit type timer
 	this->ht += timer_dt;
 	
-	//Tick combo
-	if (this->num[4] != 0xFF && this->ct < (FIXED_DEC(16,1) / 60))
-	{
-		//Get hit src and dst
-		u8 clipp = 16;
-		if (this->ct > 0)
-			clipp = 16 - ((this->ct * 60) >> FIXED_SHIFT);
-		
-		RECT combo_src = {
-			80,
-			128,
-			80,
-			clipp << 1
-		};
-		RECT_FIXED combo_dst = {
-			this->x + FIXED_DEC(48,1),
-			this->cy - FIXED_DEC(16,1),
-			FIXED_DEC(60,1),
-			(FIXED_DEC(24,1) * clipp) >> 4
-		};
-		
-		combo_dst.y += stage.noteshakey;
-		combo_dst.x += stage.noteshakex;
-		
-		Stage_DrawTex(&stage.tex_hud0, &combo_src, &combo_dst, stage.bump);
-		
-		//Apply gravity
-		this->cy += FIXED_MUL(this->cv, timer_dt);
-		this->cv += FIXED_MUL(FIXED_DEC(3,100) * 60 * 60, timer_dt);
-	}
-	
 	//Increment combo timer
 	this->ct += timer_dt;
 	
@@ -164,37 +133,6 @@ boolean Obj_Combo_Tick_Weeb(Object *obj)
 	
 	//Increment hit type timer
 	this->ht += timer_dt;
-	
-	//Tick combo
-	if (this->num[4] != 0xFF && this->ct < (FIXED_DEC(16,1) / 60))
-	{
-		//Get hit src and dst
-		u8 clipp = 16;
-		if (this->ct > 0)
-			clipp = 16 - ((this->ct * 60) >> FIXED_SHIFT);
-		
-		RECT combo_src = {
-			73,
-			129,
-			46,
-			(22 * clipp) >> 4
-		};
-		RECT_FIXED combo_dst = {
-			this->x + FIXED_DEC(48 - 10 - 50,1),
-			this->cy - FIXED_DEC(16 + 7 - 20,1),
-			FIXED_DEC(92 - 10,1),
-			(FIXED_DEC(44 - 10,1) * clipp) >> 4
-		};
-
-		combo_dst.y += stage.noteshakey;
-		combo_dst.x += stage.noteshakex;
-
-		Stage_DrawTex(&stage.tex_hud0, &combo_src, &combo_dst, stage.bump);
-		
-		//Apply gravity
-		this->cy += FIXED_MUL(this->cv, timer_dt) >> 1;
-		this->cv += FIXED_MUL(FIXED_DEC(3,100) * 60 * 60, timer_dt);
-	}
 	
 	//Increment combo timer
 	this->ct += timer_dt;

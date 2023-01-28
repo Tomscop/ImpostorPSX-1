@@ -55,70 +55,70 @@ typedef struct
 
 //Boyfriend Pixel player definitions
 static const CharFrame char_bfpixel_frame[] = {
-  {BFPixel_ArcMain_Idle0, {  0,  0, 55, 56}, {167,154}}, //0 idle 1
-  {BFPixel_ArcMain_Idle0, { 55,  0, 53, 56}, {166,154}}, //1 idle 2
-  {BFPixel_ArcMain_Idle0, {108,  0, 52, 58}, {164,156}}, //2 idle 3
-  {BFPixel_ArcMain_Idle0, {160,  0, 52, 59}, {164,157}}, //3 idle 4
-  {BFPixel_ArcMain_Idle0, {  0, 59, 53, 59}, {165,157}}, //4 idle 5
+  {BFPixel_ArcMain_Idle0, {  0,  0, 54, 55}, {167,154}}, //0 idle 1
+  {BFPixel_ArcMain_Idle0, { 55,  0, 52, 56}, {166,154}}, //1 idle 2
+  {BFPixel_ArcMain_Idle0, {108,  0, 51, 57}, {164,156}}, //2 idle 3
+  {BFPixel_ArcMain_Idle0, {160,  0, 51, 58}, {164,157}}, //3 idle 4
+  {BFPixel_ArcMain_Idle0, {  0, 59, 52, 58}, {165,157}}, //4 idle 5
 
-  {BFPixel_ArcMain_Left0, {  0,  0, 53, 59}, {168,157}}, //5 left 1
-  {BFPixel_ArcMain_Left0, { 53,  0, 52, 59}, {167,157}}, //6 left 2
+  {BFPixel_ArcMain_Left0, {  0,  0, 52, 58}, {168,157}}, //5 left 1
+  {BFPixel_ArcMain_Left0, { 53,  0, 51, 58}, {167,157}}, //6 left 2
 
-  {BFPixel_ArcMain_Down0, {  0,  0, 52, 55}, {165,153}}, //7 down 1
-  {BFPixel_ArcMain_Down0, { 52,  0, 52, 56}, {166,154}}, //8 down 2
+  {BFPixel_ArcMain_Down0, {  0,  0, 51, 54}, {165,153}}, //7 down 1
+  {BFPixel_ArcMain_Down0, { 52,  0, 51, 55}, {166,154}}, //8 down 2
 
-  {BFPixel_ArcMain_Up0, {  0,  0, 54, 62}, {163,160}}, //9 up 1
-  {BFPixel_ArcMain_Up0, { 54,  0, 55, 61}, {164,159}}, //10 up 2
+  {BFPixel_ArcMain_Up0, {  0,  0, 53, 61}, {163,160}}, //9 up 1
+  {BFPixel_ArcMain_Up0, { 54,  0, 54, 60}, {164,159}}, //10 up 2
 
-  {BFPixel_ArcMain_Right0, {  0,  0, 52, 58}, {161,156}}, //11 right 1
-  {BFPixel_ArcMain_Right0, { 52,  0, 53, 58}, {162,156}}, //12 right 2
+  {BFPixel_ArcMain_Right0, {  0,  0, 51, 57}, {161,156}}, //11 right 1
+  {BFPixel_ArcMain_Right0, { 52,  0, 52, 57}, {162,156}}, //12 right 2
 
-  {BFPixel_ArcMain_LeftM0, {  0,  0, 51, 60}, {167,158}}, //13 leftm 1
-  {BFPixel_ArcMain_LeftM0, { 51,  0, 52, 59}, {167,157}}, //14 leftm 2
+  {BFPixel_ArcMain_LeftM0, {  0,  0, 50, 59}, {167,158}}, //13 leftm 1
+  {BFPixel_ArcMain_LeftM0, { 51,  0, 51, 58}, {167,157}}, //14 leftm 2
 
-  {BFPixel_ArcMain_DownM0, {  0,  0, 53, 58}, {167,156}}, //15 downm 1
-  {BFPixel_ArcMain_DownM0, { 53,  0, 52, 57}, {166,155}}, //16 downm 2
+  {BFPixel_ArcMain_DownM0, {  0,  0, 52, 57}, {167,156}}, //15 downm 1
+  {BFPixel_ArcMain_DownM0, { 53,  0, 51, 56}, {166,155}}, //16 downm 2
 
-  {BFPixel_ArcMain_UpM0, {  0,  0, 54, 62}, {163,160}}, //17 upm 1
-  {BFPixel_ArcMain_UpM0, { 54,  0, 55, 61}, {164,159}}, //18 upm 2
+  {BFPixel_ArcMain_UpM0, {  0,  0, 53, 61}, {163,160}}, //17 upm 1
+  {BFPixel_ArcMain_UpM0, { 54,  0, 54, 60}, {164,159}}, //18 upm 2
 
-  {BFPixel_ArcMain_RightM0, {  0,  0, 54, 60}, {162,158}}, //19 rightm 1
-  {BFPixel_ArcMain_RightM0, { 54,  0, 53, 59}, {162,157}}, //20 rightm 2
+  {BFPixel_ArcMain_RightM0, {  0,  0, 53, 59}, {162,158}}, //19 rightm 1
+  {BFPixel_ArcMain_RightM0, { 54,  0, 52, 58}, {162,157}}, //20 rightm 2
   
-  {BFPixel_ArcMain_IdleS0, {  0,  0, 55, 56}, {165+2,154}}, //21 idles 1
-  {BFPixel_ArcMain_IdleS0, { 55,  0, 53, 56}, {164+2,154}}, //22 idles 2
-  {BFPixel_ArcMain_IdleS0, {108,  0, 53, 58}, {163+2,156}}, //23 idles 3
-  {BFPixel_ArcMain_IdleS0, {161,  0, 53, 59}, {163+2,157}}, //24 idles 4
-  {BFPixel_ArcMain_IdleS0, {  0, 59, 54, 59}, {164+2,157}}, //25 idles 5
+  {BFPixel_ArcMain_IdleS0, {  0,  0, 54, 55}, {165+2,154}}, //21 idles 1
+  {BFPixel_ArcMain_IdleS0, { 55,  0, 52, 55}, {164+2,154}}, //22 idles 2
+  {BFPixel_ArcMain_IdleS0, {108,  0, 52, 57}, {163+2,156}}, //23 idles 3
+  {BFPixel_ArcMain_IdleS0, {161,  0, 52, 58}, {163+2,157}}, //24 idles 4
+  {BFPixel_ArcMain_IdleS0, {  0, 59, 53, 58}, {164+2,157}}, //25 idles 5
 
-  {BFPixel_ArcMain_LeftS0, {  0,  0, 53, 59}, {166+2,157}}, //26 lefts 1
-  {BFPixel_ArcMain_LeftS0, { 53,  0, 52, 59}, {165+2,157}}, //27 lefts 2
+  {BFPixel_ArcMain_LeftS0, {  0,  0, 52, 58}, {166+2,157}}, //26 lefts 1
+  {BFPixel_ArcMain_LeftS0, { 53,  0, 51, 58}, {165+2,157}}, //27 lefts 2
 
-  {BFPixel_ArcMain_DownS0, {  0,  0, 53, 58}, {164+2,153}}, //28 downs 1
-  {BFPixel_ArcMain_DownS0, { 53,  0, 51, 58}, {163+2,154}}, //29 downs 2
+  {BFPixel_ArcMain_DownS0, {  0,  0, 52, 57}, {164+2,153}}, //28 downs 1
+  {BFPixel_ArcMain_DownS0, { 53,  0, 50, 57}, {163+2,154}}, //29 downs 2
 
-  {BFPixel_ArcMain_UpS0, {  0,  0, 57, 62}, {164+2,160}}, //30 ups 1
-  {BFPixel_ArcMain_UpS0, { 57,  0, 58, 61}, {165+2,159}}, //31 ups 2
+  {BFPixel_ArcMain_UpS0, {  0,  0, 56, 61}, {164+2,160}}, //30 ups 1
+  {BFPixel_ArcMain_UpS0, { 57,  0, 57, 60}, {165+2,159}}, //31 ups 2
 
-  {BFPixel_ArcMain_RightS0, {  0,  0, 50, 59}, {157+2,156}}, //32 rights 1
-  {BFPixel_ArcMain_RightS0, { 50,  0, 51, 59}, {158+2,156}}, //33 rights 2
+  {BFPixel_ArcMain_RightS0, {  0,  0, 49, 58}, {157+2,156}}, //32 rights 1
+  {BFPixel_ArcMain_RightS0, { 50,  0, 50, 58}, {158+2,156}}, //33 rights 2
 
-  {BFPixel_ArcMain_LeftSM0, {  0,  0, 51, 59}, {165+2,157}}, //34 leftsm 1
-  {BFPixel_ArcMain_LeftSM0, { 51,  0, 52, 59}, {165+2,157}}, //35 leftsm 2
+  {BFPixel_ArcMain_LeftSM0, {  0,  0, 50, 58}, {165+2,157}}, //34 leftsm 1
+  {BFPixel_ArcMain_LeftSM0, { 51,  0, 51, 58}, {165+2,157}}, //35 leftsm 2
 
-  {BFPixel_ArcMain_DownSM0, {  0,  0, 52, 61}, {164+2,156}}, //36 downsm 1
-  {BFPixel_ArcMain_DownSM0, { 52,  0, 51, 59}, {163+2,155}}, //37 downsm 2
+  {BFPixel_ArcMain_DownSM0, {  0,  0, 51, 60}, {164+2,156}}, //36 downsm 1
+  {BFPixel_ArcMain_DownSM0, { 52,  0, 50, 58}, {163+2,155}}, //37 downsm 2
 
-  {BFPixel_ArcMain_UpSM0, {  0,  0, 56, 62}, {163+2,160}}, //38 upsm 1
-  {BFPixel_ArcMain_UpSM0, { 56,  0, 58, 61}, {165+2,159}}, //39 upsm 2
+  {BFPixel_ArcMain_UpSM0, {  0,  0, 55, 61}, {163+2,160}}, //38 upsm 1
+  {BFPixel_ArcMain_UpSM0, { 56,  0, 57, 60}, {165+2,159}}, //39 upsm 2
 
-  {BFPixel_ArcMain_RighSM0, {  0,  0, 52, 61}, {158+2,158}}, //40 righsm 1
-  {BFPixel_ArcMain_RighSM0, { 52,  0, 51, 60}, {158+2,157}}, //41 righsm 2
+  {BFPixel_ArcMain_RighSM0, {  0,  0, 51, 60}, {158+2,158}}, //40 righsm 1
+  {BFPixel_ArcMain_RighSM0, { 52,  0, 50, 59}, {158+2,157}}, //41 righsm 2
 
-  {BFPixel_ArcMain_Shoot0, {  0,  0, 60, 58}, {167+2,156}}, //42 shoot 1
-  {BFPixel_ArcMain_Shoot0, { 60,  0, 62, 58}, {169+2,156}}, //43 shoot 2
-  {BFPixel_ArcMain_Shoot0, {122,  0, 63, 58}, {170+2,156}}, //44 shoot 3
-  {BFPixel_ArcMain_Shoot0, {185,  0, 56, 59}, {166+2,157}}, //45 shoot 4
+  {BFPixel_ArcMain_Shoot0, {  0,  0, 59, 57}, {167+2,156}}, //42 shoot 1
+  {BFPixel_ArcMain_Shoot0, { 60,  0, 61, 57}, {169+2,156}}, //43 shoot 2
+  {BFPixel_ArcMain_Shoot0, {122,  0, 62, 57}, {170+2,156}}, //44 shoot 3
+  {BFPixel_ArcMain_Shoot0, {185,  0, 55, 58}, {166+2,157}}, //45 shoot 4
 };
 
 static const Animation char_bfpixel_anim[PlayerAnim_Max] = {
