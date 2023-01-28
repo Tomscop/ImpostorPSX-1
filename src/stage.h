@@ -189,6 +189,8 @@ typedef struct
 #define NOTE_FLAG_CHAR2SING   (1 << 8) //Note that only the 2 character plays
 #define NOTE_FLAG_BOTHSING    (1 << 9) //Note that only that both the 1 and 2 character sings
 
+#define NOTE_FLAG_PLAYED    (1 << 15) //Note that only used for check if note has been already played
+
 typedef struct
 {
 	u16 pos; //1/12 steps

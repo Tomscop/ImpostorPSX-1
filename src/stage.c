@@ -593,7 +593,7 @@ void Stage_DrawTexRotate(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, f
 	s16 sin = MUtil_Sin(angle);
 	s16 cos = MUtil_Cos(angle);
 	int pw = dst->w / 2000;
-    int ph = dst->h / 2000;
+  int ph = dst->h / 2000;
 
 	//Get rotated points
 	POINT p0 = {-pw, -ph};
@@ -2255,7 +2255,7 @@ void Stage_Tick(void)
 					{
 						if (is_bump_step)
 						{
-							stage.bump = FIXED_DEC(103,100);
+							stage.bump += FIXED_DEC(3,100); //0.03
 							stage.charbump += FIXED_DEC(15,1000); //0.015
 						}
 					}
@@ -2369,6 +2369,44 @@ void Stage_Tick(void)
 			}
 			
 			Events_StartEvents();
+
+			if (playing)
+			{
+				for (Note* note = stage.cur_note;;note++)
+				{
+					if (note->pos > (stage.note_scroll >> FIXED_SHIFT))
+							break;
+
+					if (note->type & NOTE_FLAG_PLAYED)
+						continue;
+
+					if (note->type & NOTE_FLAG_SUSTAIN)
+						continue;
+
+					//Only bump screen when opponent hit the note
+					if (note->type & NOTE_FLAG_OPPONENT && firsthit == false)
+						firsthit = true;
+
+				 	Note* next_note = note + 1;
+				 	//Check if notes types are the same
+				 	if (((next_note->type & NOTE_FLAG_OPPONENT) != 0 && (note->type & NOTE_FLAG_OPPONENT) == 0) || 
+				 		((note->type & NOTE_FLAG_OPPONENT) != 0 && (next_note->type & NOTE_FLAG_OPPONENT) == 0))
+				 		continue;
+
+				 	/*
+					This mod for some reason bump the screen every time it has more than 1 note together
+					So how are notes position are sorted in psxfunkin
+					I'm just going to check if the next note has the same position as the current one
+					*/
+					if (note->pos == next_note->pos)
+					{
+						stage.bump += FIXED_DEC(3,100); //0.03
+						stage.charbump += FIXED_DEC(15,1000); //0.015
+					}
+					
+					note->type |= NOTE_FLAG_PLAYED;
+				}
+			}
 			
 			switch (stage.mode)
 			{
@@ -2391,9 +2429,6 @@ void Stage_Tick(void)
 						//Opponent note hits
 						if (playing && ((note->type ^ stage.note_swap) & NOTE_FLAG_OPPONENT) && !(note->type & NOTE_FLAG_HIT))
 						{
-							if (firsthit == false)
-								firsthit = true;
-							
 							//Opponent hits note
 							stage.player_state[1].arrow_hitan[note->type & 0x3] = stage.step_time;
 							Stage_StartVocal();
