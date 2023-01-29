@@ -156,16 +156,23 @@ static void Stage_ScrollCamera(void)
 		}
 		else
 		{
-			stage.camera.x = lerp(stage.camera.x, stage.camera.tx, FIXED_DEC(5,100));
-			stage.camera.y = lerp(stage.camera.y, stage.camera.ty, FIXED_DEC(5,100));
-			stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
-			
+			if (stage.cam_should_scroll == false)
+			{
+				stage.camera.x = stage.camera.tx;
+				stage.camera.y = stage.camera.ty;
+				stage.camera.zoom = stage.camera.tz;
+			}
+			else
+			{
+				stage.camera.x = lerp(stage.camera.x, stage.camera.tx, FIXED_DEC(5,100));
+				stage.camera.y = lerp(stage.camera.y, stage.camera.ty, FIXED_DEC(5,100));
+				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
+			}
 		}
 	}
 		
 	//Update other camera stuff
 	stage.camera.bzoom = FIXED_MUL(stage.camera.zoom, stage.charbump);
-
 }
 
 //Stage section functions
@@ -1685,6 +1692,12 @@ static void Stage_LoadState(void)
 		note_x[7] = FIXED_DEC(-26,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 	}
 
+	//Check which stage should not have the camera sroll
+	if (stage.stage_id == StageId_VotingTime)
+		stage.cam_should_scroll = false;
+	else
+		stage.cam_should_scroll = true;
+
 	ObjectList_Free(&stage.objlist_splash);
 	ObjectList_Free(&stage.objlist_fg);
 	ObjectList_Free(&stage.objlist_bg);
@@ -1699,7 +1712,6 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.stage_def = &stage_defs[stage.stage_id = id];
 	stage.stage_diff = difficulty;
 	stage.story = story;
-	
 	//Load HUD textures
 	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
@@ -1996,7 +2008,6 @@ void Stage_Tick(void)
 					pad_state.press = 0;
 				}
 			}
-
 			if (stage.paused)
 			{
 				switch (stage.pause_state)
@@ -2378,34 +2389,31 @@ void Stage_Tick(void)
 					if (note->pos > (stage.note_scroll >> FIXED_SHIFT))
 							break;
 
-					if (note->type & NOTE_FLAG_PLAYED)
-						continue;
-
-					if (note->type & NOTE_FLAG_SUSTAIN)
+					if (note->type & (NOTE_FLAG_SUSTAIN | NOTE_FLAG_PLAYED))
 						continue;
 
 					//Only bump screen when opponent hit the note
 					if (note->type & NOTE_FLAG_OPPONENT && firsthit == false)
 						firsthit = true;
 
-				 	Note* next_note = note + 1;
+				 	Note* previous_note = note - 1;
 				 	//Check if notes types are the same
-				 	if (((next_note->type & NOTE_FLAG_OPPONENT) != 0 && (note->type & NOTE_FLAG_OPPONENT) == 0) || 
-				 		((note->type & NOTE_FLAG_OPPONENT) != 0 && (next_note->type & NOTE_FLAG_OPPONENT) == 0))
+				 	if (((previous_note->type & NOTE_FLAG_OPPONENT) != 0 && (note->type & NOTE_FLAG_OPPONENT) == 0) || 
+				 		((note->type & NOTE_FLAG_OPPONENT) != 0 && (previous_note->type & NOTE_FLAG_OPPONENT) == 0))
 				 		continue;
 
 				 	/*
 					This mod for some reason bump the screen every time it has more than 1 note together
 					So how are notes position are sorted in psxfunkin
-					I'm just going to check if the next note has the same position as the current one
+					I'm just going to check if the previous note has the same position as the current one
 					*/
 					if (firsthit == true)
 					{
 						if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
 						{
-							if (note->pos == next_note->pos)
+							if (note->pos == previous_note->pos)
 							{
-								stage.bump = FIXED_DEC(103,100); //0.03
+								stage.bump += FIXED_DEC(3,100); //0.03
 								stage.charbump += FIXED_DEC(15,1000); //0.015
 							}
 						}

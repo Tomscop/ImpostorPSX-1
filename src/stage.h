@@ -292,6 +292,7 @@ typedef struct
 		fixed_t bzoom;
 	} camera;
 	fixed_t bump, sbump, charbump;
+	boolean cam_should_scroll;
 	
 	StageBack *back;
 	
