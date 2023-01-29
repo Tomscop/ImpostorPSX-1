@@ -48,6 +48,7 @@ struct Note
 #define EVENTS_FLAG_CAMZOOM   (1 << 4) //Add Camera Zoom
 #define EVENTS_FLAG_FLASH     (1 << 5) //Flash
 #define EVENTS_FLAG_BEEP      (1 << 6) //Reactor Beep
+#define EVENTS_FLAG_BOP       (1 << 7) //Alter Camera Bop
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -114,6 +115,9 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	if (i[0 + position] == "Reactor Beep")
 		event_src.event |= EVENTS_FLAG_BEEP;
 	
+	if (i[0 + position] == "Alter Camera Bop")
+		event_src.event |= EVENTS_FLAG_BOP;
+	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
 		if (event_src.event & EVENTS_FLAG_SPEED)
@@ -125,7 +129,6 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 			if (i[2 + position] == "")
 				i[2 + position] = "0";
 		}
-
 		if (event_src.event & EVENTS_FLAG_GF)
 		{
 			//Default values
@@ -157,6 +160,15 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 			if (i[1 + position] == "")
 				i[1 + position] = "0.4"; //flash
 			i[2 + position] = "0"; //nothing
+		}
+		if (event_src.event & EVENTS_FLAG_BOP)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "1";
+
+			if (i[2 + position] == "")
+				i[2 + position] = "4";
 		}
 
 		//Get values information

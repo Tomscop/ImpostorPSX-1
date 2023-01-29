@@ -18,6 +18,7 @@
 #define EVENTS_FLAG_CAMZOOM   (1 << 4) //Add Camera Zoom
 #define EVENTS_FLAG_FLASH     (1 << 5) //Flash
 #define EVENTS_FLAG_BEEP      (1 << 6) //Reactor Beep
+#define EVENTS_FLAG_BOP       (1 << 7) //Alter Camera Bop
 
 #define EVENTS_FLAG_PLAYED    (1 << 15) //Event has been already played
 

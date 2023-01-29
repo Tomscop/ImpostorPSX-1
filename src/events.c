@@ -58,6 +58,34 @@ static void Events_Check(Event* event)
 				stage.reactorspd = FIXED_DEC(1000,1);
 			break;
 		}
+		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
+		{
+			if ((event->value2 >> FIXED_SHIFT) == 1)
+			{
+				stage.bop1 = 0x3;
+				stage.bop2 = 0;
+			}
+			if ((event->value2 >> FIXED_SHIFT) == 2)
+			{
+				stage.bop1 = 0x7;
+				stage.bop2 = 0;
+			}
+			if ((event->value2 >> FIXED_SHIFT) == 4)
+			{
+				stage.bop1 = 0xF;
+				stage.bop2 = 0;
+			}
+			if ((event->value2 >> FIXED_SHIFT) == 8)
+			{
+				stage.bop1 = 0x1F;
+				stage.bop2 = 0;
+			}
+			if ((event->value2 >> FIXED_SHIFT) >= 40)
+			{
+				stage.bop2 = 222;
+			}
+			break;
+		}
 		default: //nothing lol
 		break;
 	}

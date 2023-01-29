@@ -1573,6 +1573,8 @@ static void Stage_LoadMusic(void)
 		stage.intro = true;
 		firsthit = false;
 		stage.black = false;
+		stage.bop1 = 0xF;
+		stage.bop2 = 0;
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
@@ -1582,6 +1584,8 @@ static void Stage_LoadMusic(void)
 		stage.intro = true;
 		firsthit = false;
 		stage.black = false;
+		stage.bop1 = 0xF;
+		stage.bop2 = 0;
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
@@ -2274,7 +2278,7 @@ void Stage_Tick(void)
 				//Check if screen should bump
 				if (firsthit == true)
 				{
-					is_bump_step = (stage.song_step & 0xF) == 0;
+					is_bump_step = (stage.song_step & stage.bop1) == stage.bop2;
 				}
 				
 				//Bump screen

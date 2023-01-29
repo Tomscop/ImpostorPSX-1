@@ -277,6 +277,7 @@ typedef struct
 	fixed_t early_safe, late_safe, early_sus_safe, late_sus_safe;
 	fixed_t flash, flashspd;
 	fixed_t reactor, reactorspd;
+	fixed_t bop1, bop2;
 	
 	//if stage have intro or no
 	boolean intro;
