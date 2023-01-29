@@ -32,6 +32,7 @@ struct Section
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
 #define NOTE_FLAG_CHAR2SING   (1 << 8) //Note that only the 2 character plays
 #define NOTE_FLAG_BOTHSING    (1 << 9) //Note that only that both the 1 and 2 character sings
+#define NOTE_FLAG_NO_ANIM     (1 << 10) //Note plays no animation
 
 struct Note
 {
@@ -45,6 +46,7 @@ struct Note
 #define EVENTS_FLAG_SPEED     (1 << 2) //Change Scroll Speed
 #define EVENTS_FLAG_GF        (1 << 3) //Set GF Speed
 #define EVENTS_FLAG_CAMZOOM   (1 << 4) //Add Camera Zoom
+#define EVENTS_FLAG_FLASH     (1 << 5) //Flash
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -105,6 +107,9 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	if (i[0 + position] == "Add Camera Zoom")
 		event_src.event |= EVENTS_FLAG_CAMZOOM;
 	
+	if (i[0 + position] == "flash")
+		event_src.event |= EVENTS_FLAG_FLASH;
+	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
 		if (event_src.event & EVENTS_FLAG_SPEED)
@@ -134,6 +139,13 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 
 			if (i[2 + position] == "")
 				i[2 + position] = "0.03"; //hud zoom
+		}
+		if (event_src.event & EVENTS_FLAG_FLASH)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "1"; //flash
+			i[2 + position] = "0"; //hud zoom
 		}
 
 		//Get values information
@@ -262,6 +274,8 @@ int main(int argc, char *argv[])
 				new_note.type |= NOTE_FLAG_CHAR2SING;
 			if (j[3] == "Both Opponents Sing")
 				new_note.type |= NOTE_FLAG_BOTHSING;
+			if (j[3] == "No Animation")
+				new_note.type |= NOTE_FLAG_NO_ANIM;
 			if (((uint8_t)j[1]) & 8 || j[3] == "Hurt Note")
 				new_note.type |= NOTE_FLAG_MINE;
 			

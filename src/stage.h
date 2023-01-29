@@ -246,6 +246,7 @@ typedef struct
 	fixed_t pause_scroll;
 	u8 pause_select;
 	boolean paused;
+	boolean black;
 	
 	//HUD textures
 	Gfx_Tex tex_hud0, tex_hud1, tex_count;
@@ -274,6 +275,7 @@ typedef struct
 	fixed_t speed, ogspeed;
 	fixed_t step_crochet, step_time;
 	fixed_t early_safe, late_safe, early_sus_safe, late_sus_safe;
+	fixed_t fade, fadespd;
 	
 	//if stage have intro or no
 	boolean intro;

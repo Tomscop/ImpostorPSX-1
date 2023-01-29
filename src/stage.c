@@ -46,8 +46,6 @@ static const u8 note_anims[4][3] = {
 boolean noteshake;
 boolean show;
 boolean firsthit;
-fixed_t fade;
-fixed_t fade, fadespd;
 static u32 Sounds[10];
 
 //Players
@@ -1567,12 +1565,14 @@ static void Stage_LoadMusic(void)
 	{
 		stage.intro = true;
 		firsthit = false;
+		stage.black = false;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	else
 	{
 		stage.intro = true;
 		firsthit = false;
+		stage.black = false;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
@@ -2007,6 +2007,12 @@ void Stage_Tick(void)
 				}
 			}
 			
+			if (stage.black == true)
+			{
+				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+				Gfx_DrawRect(&screen_src, 0, 0, 0);
+			}
+			
 			if (stage.prefs.songtimer)
 			{
 				if (show)
@@ -2026,23 +2032,18 @@ void Stage_Tick(void)
 			//^ makes step show on screen
 			
 			//Draw white fade
-			if ((stage.stage_id == StageId_Dlow) && (stage.song_step == 1424))
+			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
 			{
-				fade = FIXED_DEC(255,1);
-				fadespd = FIXED_DEC(1000,1);
-			}
-			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034))
-			{
-				fade = FIXED_DEC(255,1);
-				fadespd = FIXED_DEC(1000,1);
+				stage.fade = FIXED_DEC(255,1);
+				stage.fadespd = FIXED_DEC(1000,1);
 			}
 			if (stage.prefs.flash != 0)
-				if (fade > 0)
+				if (stage.fade > 0)
 				{
 					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-					u8 flash_col = fade >> FIXED_SHIFT;
+					u8 flash_col = stage.fade >> FIXED_SHIFT;
 					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					fade -= FIXED_MUL(fadespd, timer_dt);
+					stage.fade -= FIXED_MUL(stage.fadespd, timer_dt);
 				}
 			
 			if (stage.intro)

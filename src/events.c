@@ -34,6 +34,23 @@ static void Events_Check(Event* event)
 			stage.bump += event->value2;
 			break;
 		}
+		case EVENTS_FLAG_FLASH: //Flash!!
+		{
+			if((event->value1 == 0) || ((event->value1 >> FIXED_SHIFT) == 1))
+			{
+				stage.fade = FIXED_DEC(255,1);
+				stage.fadespd = FIXED_DEC(1000,1);
+			}
+			if((event->value1 >> FIXED_SHIFT) == 2)
+			{
+				stage.black = true;
+			}
+			if((event->value1 >> FIXED_SHIFT) == 3)
+			{
+				stage.black = false;
+			}
+			break;
+		}
 		default: //nothing lol
 		break;
 	}
@@ -43,7 +60,6 @@ void Events_Tick(void)
 {
 	//Scroll Speed!
 	stage.speed += (FIXED_MUL(stage.ogspeed, event_speed.value1) - stage.speed) / (((event_speed.value2 / 60) + 1));
-
 }
 
 void Events_StartEvents(void)
