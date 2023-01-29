@@ -1573,6 +1573,8 @@ static void Stage_LoadMusic(void)
 		stage.intro = true;
 		firsthit = false;
 		stage.black = false;
+		stage.bump = FIXED_UNIT;
+		stage.charbump = FIXED_UNIT;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	else
@@ -1580,6 +1582,8 @@ static void Stage_LoadMusic(void)
 		stage.intro = true;
 		firsthit = false;
 		stage.black = false;
+		stage.bump = FIXED_UNIT;
+		stage.charbump = FIXED_UNIT;
 		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
@@ -1693,7 +1697,7 @@ static void Stage_LoadState(void)
 	}
 
 	//Check which stage should not have the camera sroll
-	if (stage.stage_id == StageId_VotingTime)
+	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_Who))
 		stage.cam_should_scroll = false;
 	else
 		stage.cam_should_scroll = true;
@@ -2042,19 +2046,29 @@ void Stage_Tick(void)
 			//FntPrint("step is %d", stage.song_step);
 			//^ makes step show on screen
 			
-			//Draw white fade
+			//Draw white flash
 			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
 			{
-				stage.fade = FIXED_DEC(255,1);
-				stage.fadespd = FIXED_DEC(1000,1);
+				stage.flash = FIXED_DEC(255,1);
+				stage.flashspd = FIXED_DEC(1000,1);
 			}
 			if (stage.prefs.flash != 0)
-				if (stage.fade > 0)
+				if (stage.flash > 0)
 				{
 					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-					u8 flash_col = stage.fade >> FIXED_SHIFT;
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
 					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					stage.fade -= FIXED_MUL(stage.fadespd, timer_dt);
+					stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
+				
+			//Draw reactor beep
+			if (stage.reactor != 0)
+				if (stage.reactor > 0)
+				{
+					RECT reactor = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 reactor_col = stage.reactor >> FIXED_SHIFT;
+					Gfx_BlendRect(&reactor, reactor_col, 0, 0, 1);
+					stage.reactor -= FIXED_MUL(stage.reactorspd, timer_dt);
 				}
 			
 			if (stage.intro)
@@ -2244,7 +2258,7 @@ void Stage_Tick(void)
 			}
             
 			//Handle bump
-			if ((firsthit == true) || (stage.song_step <= -1))
+			if (firsthit == true)
 			{
 				if ((stage.bump = FIXED_UNIT + FIXED_MUL(stage.bump - FIXED_UNIT, FIXED_DEC(95,100))) <= FIXED_DEC(1003,1000))
 					stage.bump = FIXED_UNIT;
@@ -2258,19 +2272,16 @@ void Stage_Tick(void)
 				boolean is_bump_step;
 				
 				//Check if screen should bump
-				is_bump_step = (stage.song_step & 0xF) == 0;
-				
-				//Bump screen
 				if (firsthit == true)
 				{
-					if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
-					{
-						if (is_bump_step)
-						{
-							stage.bump = FIXED_DEC(103,100); //0.03
-							stage.charbump += FIXED_DEC(15,1000); //0.015
-						}
-					}
+					is_bump_step = (stage.song_step & 0xF) == 0;
+				}
+				
+				//Bump screen
+				if (is_bump_step)
+				{
+					stage.bump += FIXED_DEC(3,100); //0.03
+					stage.charbump += FIXED_DEC(15,1000); //0.015
 				}
 
 				//Bump health every 4 steps
@@ -2393,8 +2404,11 @@ void Stage_Tick(void)
 						continue;
 
 					//Only bump screen when opponent hit the note
-					if (note->type & NOTE_FLAG_OPPONENT && firsthit == false)
-						firsthit = true;
+					if ((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
+					{
+						if (note->type & NOTE_FLAG_OPPONENT && firsthit == false)
+							firsthit = true;
+					}
 
 				 	Note* previous_note = note - 1;
 				 	//Check if notes types are the same
@@ -2407,15 +2421,12 @@ void Stage_Tick(void)
 					So how are notes position are sorted in psxfunkin
 					I'm just going to check if the previous note has the same position as the current one
 					*/
-					if (firsthit == true)
+					if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
 					{
-						if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
+						if (note->pos == previous_note->pos)
 						{
-							if (note->pos == previous_note->pos)
-							{
-								stage.bump += FIXED_DEC(3,100); //0.03
-								stage.charbump += FIXED_DEC(15,1000); //0.015
-							}
+							stage.bump += FIXED_DEC(3,100); //0.03
+							stage.charbump += FIXED_DEC(15,1000); //0.015
 						}
 					}
 					

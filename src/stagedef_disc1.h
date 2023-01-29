@@ -2,7 +2,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Red_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Red_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -20,7 +20,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Red_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Red_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -38,7 +38,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_RedMeltdown_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_RedMeltdown_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		

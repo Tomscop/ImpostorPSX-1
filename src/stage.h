@@ -275,7 +275,8 @@ typedef struct
 	fixed_t speed, ogspeed;
 	fixed_t step_crochet, step_time;
 	fixed_t early_safe, late_safe, early_sus_safe, late_sus_safe;
-	fixed_t fade, fadespd;
+	fixed_t flash, flashspd;
+	fixed_t reactor, reactorspd;
 	
 	//if stage have intro or no
 	boolean intro;
