@@ -280,6 +280,9 @@
 			
 			<!-- Background assets -->
 			<dir name = "bg">
+				<!-- Polus BG -->
+				<file name = "polus.arc" type = "data" source = "iso/stages/polus/back.arc"/>
+				
 				<!-- Airship BG -->
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
 				

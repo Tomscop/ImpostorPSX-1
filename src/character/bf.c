@@ -215,7 +215,13 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Oversight))
+	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
+	{
+	this->character.focus_x = FIXED_DEC(-54,1);
+	this->character.focus_y = FIXED_DEC(-84,1);
+	this->character.focus_zoom = FIXED_DEC(509,512);
+	}
+	else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Oversight))
 	{
 	this->character.focus_x = FIXED_DEC(-104,1);
 	this->character.focus_y = FIXED_DEC(-85,1);

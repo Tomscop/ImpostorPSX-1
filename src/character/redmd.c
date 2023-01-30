@@ -194,9 +194,9 @@ Character *Char_RedMeltdown_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBB2D30;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-39,1);
+	this->character.focus_y = FIXED_DEC(-76,1);
+	this->character.focus_zoom = FIXED_DEC(509,512);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

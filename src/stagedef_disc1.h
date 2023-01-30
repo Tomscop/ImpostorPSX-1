@@ -1,13 +1,13 @@
 	{ //StageId_SussusMoogus (Sussus Moogus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
         {NULL},
-		{Char_Red_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
+		{Char_Red_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		1, 1,
@@ -18,14 +18,14 @@
 	},
 	{ //StageId_Sabotage (Sabotage)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
         {NULL},
-		{Char_Red_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
+		{Char_Red_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		1, 2,
@@ -36,14 +36,14 @@
 	},
 	{ //StageId_Meltdown (Meltdown)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
         {NULL},
-		{Char_RedMeltdown_New, FIXED_DEC(-7,1),  FIXED_DEC(78,1)},
+		{Char_RedMeltdown_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		1, 3,
@@ -929,10 +929,10 @@
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(276,1),  FIXED_DEC(96,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		6, 3,

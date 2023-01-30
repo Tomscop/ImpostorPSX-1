@@ -79,6 +79,7 @@ static u32 Sounds[10];
 #include "character/gf.h"
 #include "character/gfpixel.h"
 //Stages
+#include "stage/polus.h"
 #include "stage/airship.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
