@@ -2039,15 +2039,6 @@ void Stage_Tick(void)
 			else
 				noteshake = 0;
 			
-			if (stage.prefs.songtimer)
-			{
-				if (show)
-				{
-					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
-						StageTimer_Draw();
-				}
-			}
-			
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			
@@ -2081,6 +2072,15 @@ void Stage_Tick(void)
 					Gfx_BlendRect(&reactor, reactor_col, 0, 0, 1);
 					stage.reactor -= FIXED_MUL(stage.reactorspd, timer_dt);
 				}
+				
+			if (stage.prefs.songtimer)
+			{
+				if (show)
+				{
+					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
+						StageTimer_Draw();
+				}
+			}
 			
 			if (stage.intro)
 				Stage_CountDown();
