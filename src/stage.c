@@ -2280,7 +2280,7 @@ void Stage_Tick(void)
 			
 			if (playing && (stage.flag & STAGE_FLAG_JUST_STEP))
 			{
-				boolean is_bump_step;
+				boolean is_bump_step = false;
 				
 				//Check if screen should bump
 				if (firsthit == true)
