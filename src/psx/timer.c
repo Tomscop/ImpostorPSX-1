@@ -129,8 +129,8 @@ void StageTimer_Draw()
 	//Draw song name
     stage.font_cdr.draw(&stage.font_cdr,
         stage.songname,
-        -141 + stage.noteshakex, 
-        (stage.prefs.downscroll) ? (104 + stage.noteshakey) : (-113 + stage.noteshakey),
+        -141, 
+        (stage.prefs.downscroll) ? 104 : -113,
         FontAlign_Left
     );
 	

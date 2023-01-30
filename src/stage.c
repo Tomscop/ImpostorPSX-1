@@ -169,6 +169,8 @@ static void Stage_ScrollCamera(void)
 				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
 			}
 		}
+		stage.camera.x += (stage.noteshakex - 2);
+		stage.camera.y += (stage.noteshakey - 2);
 	}
 		
 	//Update other camera stuff
@@ -2032,6 +2034,11 @@ void Stage_Tick(void)
 				Gfx_DrawRect(&screen_src, 0, 0, 0);
 			}
 			
+			if (((stage.stage_id == StageId_BoilingPoint) && (((stage.song_step >= 320) && (stage.song_step <= 327)) || ((stage.song_step >= 448) && (stage.song_step <= 463)))))
+				noteshake = 1;
+			else
+				noteshake = 0;
+			
 			if (stage.prefs.songtimer)
 			{
 				if (show)
@@ -2103,10 +2110,10 @@ void Stage_Tick(void)
 				}
 			}
 
-			if (noteshake) 
+			if (noteshake)
 			{
-				stage.noteshakex = RandomRange(FIXED_DEC(-5,1),FIXED_DEC(5,1));
-				stage.noteshakey = RandomRange(FIXED_DEC(-5,1),FIXED_DEC(5,1));
+				stage.noteshakex = RandomRange(FIXED_DEC(-3,1),FIXED_DEC(3,1));
+				stage.noteshakey = RandomRange(FIXED_DEC(-3,1),FIXED_DEC(3,1));
 			}
 			else
 			{
