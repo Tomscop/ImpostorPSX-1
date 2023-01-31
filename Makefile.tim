@@ -49,6 +49,7 @@ all: \
 	iso/chars/kid/dead.tim \
 	iso/stages/polus/back.arc \
 	iso/stages/polus/snow.arc \
+	iso/stages/polus/people.arc \
 	iso/stages/airship/back.arc \
 	iso/stages/lobby/back.arc \
 	iso/stages/cafe/back.arc \
@@ -116,10 +117,7 @@ iso/chars/pink/main.arc: iso/chars/pink/idle0.tim iso/chars/pink/idle1.tim iso/c
 iso/chars/powers/main.arc: iso/chars/powers/idle0.tim iso/chars/powers/idle1.tim iso/chars/powers/idle2.tim iso/chars/powers/idle3.tim iso/chars/powers/idle4.tim iso/chars/powers/idle5.tim iso/chars/powers/idle6.tim iso/chars/powers/left0.tim iso/chars/powers/down0.tim iso/chars/powers/up0.tim iso/chars/powers/up1.tim iso/chars/powers/up2.tim iso/chars/powers/right0.tim iso/chars/powers/right1.tim iso/chars/powers/right2.tim iso/chars/powers/right3.tim iso/chars/powers/lefta0.tim iso/chars/powers/downa0.tim iso/chars/powers/downa1.tim iso/chars/powers/upa0.tim iso/chars/powers/upa1.tim iso/chars/powers/upa2.tim iso/chars/powers/upa3.tim iso/chars/powers/righta0.tim 
 
 # Tomongus
-iso/chars/tomong/main.arc: iso/chars/tomong/idle0.tim iso/chars/tomong/left0.tim iso/chars/tomong/down0.tim iso/chars/tomong/up0.tim iso/chars/tomong/right0.tim iso/chars/tomong/huh0.tim 
-
-# TomongusH
-iso/chars/tomongh/main.arc: iso/chars/tomongh/idle0.tim iso/chars/tomongh/left0.tim iso/chars/tomongh/down0.tim iso/chars/tomongh/up0.tim iso/chars/tomongh/right0.tim 
+iso/chars/tomong/main.arc: iso/chars/tomong/idle0.tim iso/chars/tomong/left0.tim iso/chars/tomong/down0.tim iso/chars/tomong/up0.tim iso/chars/tomong/right0.tim iso/chars/tomong/idleh0.tim iso/chars/tomong/lefth0.tim iso/chars/tomong/downh0.tim iso/chars/tomong/uph0.tim iso/chars/tomong/righth0.tim 
 
 # Henry
 iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim iso/chars/henry/idle2.tim iso/chars/henry/left0.tim iso/chars/henry/left1.tim iso/chars/henry/left2.tim iso/chars/henry/down0.tim iso/chars/henry/down1.tim iso/chars/henry/up0.tim iso/chars/henry/right0.tim 
@@ -149,8 +147,9 @@ iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim 
 
 
 # Polus
-iso/stages/polus/back.arc: iso/stages/polus/back0.tim iso/stages/polus/back1.tim iso/stages/polus/back2.tim
+iso/stages/polus/back.arc: iso/stages/polus/back0.tim iso/stages/polus/back1.tim iso/stages/polus/back2.tim iso/stages/polus/bfdead.tim
 iso/stages/polus/snow.arc: iso/stages/polus/snow0.tim iso/stages/polus/snow1.tim iso/stages/polus/snow2.tim iso/stages/polus/snow3.tim iso/stages/polus/snow4.tim iso/stages/polus/snow5.tim iso/stages/polus/snow6.tim iso/stages/polus/snow7.tim iso/stages/polus/snow8.tim iso/stages/polus/snow9.tim iso/stages/polus/snow10.tim iso/stages/polus/snow11.tim 
+iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/people1.tim iso/stages/polus/people2.tim iso/stages/polus/people3.tim
 
 # Airship
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim iso/stages/airship/back2.tim

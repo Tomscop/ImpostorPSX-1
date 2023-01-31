@@ -48,7 +48,6 @@ SRCS = src/main.c \
 	src/character/pink.c \
 	src/character/powers.c \
 	src/character/tomongus.c \
-	src/character/tomongush.c \
 	src/character/henry.c \
 	src/character/charles.c \
 	src/character/jerma.c \

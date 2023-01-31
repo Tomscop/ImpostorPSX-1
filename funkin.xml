@@ -235,9 +235,6 @@
 				<!-- Tomongus assets -->
 				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
 				
-				<!-- TomongusH assets -->
-				<file name = "tomongh.arc" type = "data" source = "iso/chars/tomongh/main.arc"/>
-				
 				<!-- Henry Stickmin assets -->
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
 
@@ -283,6 +280,7 @@
 				<!-- Polus BG -->
 				<file name = "polus.arc" type = "data" source = "iso/stages/polus/back.arc"/>
 				<file name = "snow.arc" type = "data" source = "iso/stages/polus/snow.arc"/>
+				<file name = "people.arc" type = "data" source = "iso/stages/polus/people.arc"/>
 				
 				<!-- Airship BG -->
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>

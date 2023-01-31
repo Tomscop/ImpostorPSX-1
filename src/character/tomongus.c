@@ -19,7 +19,11 @@ enum
   Tomongus_ArcMain_Down0,
   Tomongus_ArcMain_Up0,
   Tomongus_ArcMain_Right0,
-  Tomongus_ArcMain_Huh0,
+  Tomongus_ArcMain_IdleH0,
+  Tomongus_ArcMain_LeftH0,
+  Tomongus_ArcMain_DownH0,
+  Tomongus_ArcMain_UpH0,
+  Tomongus_ArcMain_RightH0,
 	
 	Tomongus_Arc_Max,
 };
@@ -56,8 +60,26 @@ static const CharFrame char_tomongus_frame[] = {
   {Tomongus_ArcMain_Right0, {  0,  0, 48, 43}, {149,148}}, //10 right 1
   {Tomongus_ArcMain_Right0, { 49,  0, 48, 43}, {150,148}}, //11 right 2
 
-  {Tomongus_ArcMain_Huh0, {  0,  0, 39, 38}, {144,141}}, //12 huh 1
-  {Tomongus_ArcMain_Huh0, { 40,  0, 39, 38}, {144,141}}, //13 huh 2
+  {Tomongus_ArcMain_IdleH0, {  0,  0, 45, 33}, {147,140+4}}, //12 idleh 1
+  {Tomongus_ArcMain_IdleH0, { 46,  0, 41, 34}, {145,141+4}}, //13 idleh 2
+  {Tomongus_ArcMain_IdleH0, { 88,  0, 39, 36}, {144,143+4}}, //14 idleh 3
+  {Tomongus_ArcMain_IdleH0, {128,  0, 39, 38}, {144,145+4}}, //15 idleh 4
+
+  {Tomongus_ArcMain_LeftH0, {  0,  0, 51, 41}, {146,148+4}}, //16 lefth 1
+  {Tomongus_ArcMain_LeftH0, { 52,  0, 51, 41}, {145,148+4}}, //17 lefth 2
+  {Tomongus_ArcMain_LeftH0, {104,  0, 48, 37}, {145,144+4}}, //18 lefth 3
+
+  {Tomongus_ArcMain_DownH0, {  0,  0, 50, 33}, {147,140+4}}, //19 downh 1
+  {Tomongus_ArcMain_DownH0, { 51,  0, 49, 34}, {146,141+4}}, //20 downh 2
+  {Tomongus_ArcMain_DownH0, {101,  0, 43, 34}, {146,141+4}}, //21 downh 3
+
+  {Tomongus_ArcMain_UpH0, {  0,  0, 45, 43}, {143,150+4}}, //22 uph 1
+  {Tomongus_ArcMain_UpH0, { 46,  0, 45, 42}, {143,149+4}}, //23 uph 2
+  {Tomongus_ArcMain_UpH0, { 92,  0, 37, 41}, {143,148+4}}, //24 uph 3
+
+  {Tomongus_ArcMain_RightH0, {  0,  0, 59, 37}, {149,146+4}}, //25 righth 1
+  {Tomongus_ArcMain_RightH0, { 60,  0, 59, 37}, {150,146+4}}, //26 righth 2
+  {Tomongus_ArcMain_RightH0, {120,  0, 46, 37}, {150,146+4}}, //27 righth 3
 };
 
 static const Animation char_tomongus_anim[CharAnim_Max] = {
@@ -69,6 +91,18 @@ static const Animation char_tomongus_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 8, 9, 9, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 10, 11, 11, ASCR_BACK, 1}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+static const Animation char_tomongus_anim2[CharAnim_Max] = {
+	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 16, 17, 18, 18, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 19, 20, 21, 21, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{2, (const u8[]){ 22, 23, 24, 24, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){ 25, 26, 27, 27, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -95,8 +129,11 @@ void Char_Tomongus_Tick(Character *character)
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
-	if ((stage.stage_id == StageId_Rivals) && (stage.song_step >= 1034))
+	if (((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034)) || ((stage.stage_id == StageId_Chewmate) && (stage.song_step == -29)))
+	{
 		this->character.health_bar = 0xFFF8A572;
+		Animatable_Init(&this->character.animatable, char_tomongus_anim2);
+	}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Tomongus_SetFrame);
@@ -137,7 +174,10 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
 	this->character.set_anim = Char_Tomongus_SetAnim;
 	this->character.free = Char_Tomongus_Free;
 	
-	Animatable_Init(&this->character.animatable, char_tomongus_anim);
+	if (stage.stage_id != StageId_Chewmate)
+		Animatable_Init(&this->character.animatable, char_tomongus_anim);
+	else
+		Animatable_Init(&this->character.animatable, char_tomongus_anim2);
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
@@ -146,7 +186,10 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
 	this->character.health_i = 1;
 
 	//health bar color
-	this->character.health_bar = 0xFFFF6770;
+	if (stage.stage_id != StageId_Chewmate)
+		this->character.health_bar = 0xFFFF6770;
+	else
+		this->character.health_bar = 0xFFF8A572;
 	
 	this->character.focus_x = FIXED_DEC(-82,1);
 	this->character.focus_y = FIXED_DEC(-151,1);
@@ -163,7 +206,11 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
   "down0.tim",
   "up0.tim",
   "right0.tim",
-  "huh0.tim",
+  "idleh0.tim",
+  "lefth0.tim",
+  "downh0.tim",
+  "uph0.tim",
+  "righth0.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

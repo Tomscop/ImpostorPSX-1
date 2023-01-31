@@ -21,16 +21,22 @@ typedef struct
 	
 	//Textures
 	IO_Data arc_snow, arc_snow_ptr[12];
+	IO_Data arc_people, arc_people_ptr[4];
 	
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
+	Gfx_Tex tex_bfdead; //bfdead
 	
 	//Snow state
 	Gfx_Tex tex_snow;
 	u8 snow_frame, snow_tex_id;
-
 	Animatable snow_animatable;
+	
+	//People state
+	Gfx_Tex tex_people;
+	u8 people_frame, people_tex_id;
+	Animatable people_animatable;
 
 } Back_Polus;
 
@@ -104,11 +110,74 @@ void Polus_Snow_Draw(Back_Polus *this, fixed_t x, fixed_t y)
 	Stage_DrawTex(&this->tex_snow, &src, &dst, stage.camera.bzoom);
 }
 
+//People animation and rects
+static const CharFrame people_frame[] = {
+  {0, {  0,  0,252, 59}, {  0,  0}}, //0 people 1
+  {0, {  0, 60,252, 59}, {  0,  0}}, //1 people 2
+  {0, {  0,120,252, 59}, {  0,  0}}, //2 people 3
+  {0, {  0,180,252, 59}, {  0,  0}}, //3 people 4
+  {1, {  0,  0,252, 59}, {  0,  0}}, //4 people 5
+  {1, {  0, 60,252, 59}, {  0,  0}}, //5 people 6
+  {1, {  0,120,252, 59}, {  0,  0}}, //6 people 7
+  {1, {  0,180,252, 59}, {  0,  0}}, //7 people 8
+  {2, {  0,  0,252, 59}, {  0,  0}}, //8 people 9
+  {2, {  0, 60,252, 59}, {  0,  0}}, //9 people 10
+  {2, {  0,120,252, 59}, {  0,  0}}, //10 people 11
+  {2, {  0,180,252, 59}, {  0,  0}}, //11 people 12
+  {3, {  0,  0,252, 59}, {  0,  0}}, //12 people 13
+  {3, {  0, 60,252, 59}, {  0,  0}}, //13 people 14
+  {3, {  0,120,252, 59}, {  0,  0}}, //14 people 15
+};
+
+static const Animation people_anim[] = {
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, ASCR_BACK, 1}}, //Idle
+};
+
+//People functions
+void Polus_People_SetFrame(void *user, u8 frame)
+{
+	Back_Polus *this = (Back_Polus*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->people_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &people_frame[this->people_frame = frame];
+		if (cframe->tex != this->people_tex_id)
+			Gfx_LoadTex(&this->tex_people, this->arc_people_ptr[this->people_tex_id = cframe->tex], 0);
+	}
+}
+
+void Polus_People_Draw(Back_Polus *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &people_frame[this->people_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, 526 << FIXED_SHIFT, 123 << FIXED_SHIFT};
+	Debug_StageMoveDebug(&dst, 10, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_people, &src, &dst, stage.camera.bzoom);
+}
+
 void Back_Polus_DrawFG(StageBack *back)
 {
 	Back_Polus *this = (Back_Polus*)back;
 
 	fixed_t fx, fy;
+	
+	//Animate and draw people
+	fx = (stage.camera.x / 2) * 3;
+	fy = (stage.camera.y / 2) * 3;
+	
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0)
+		Animatable_SetAnim(&this->people_animatable, 0);
+	
+	Animatable_Animate(&this->people_animatable, (void*)this, Polus_People_SetFrame);
+	if (stage.stage_id == StageId_Meltdown)
+		Polus_People_Draw(this, FIXED_DEC(24 + 112,1) - fx, FIXED_DEC(125 + 57,1) - fy);
 	
 	//Animate and draw snow
 	fx = stage.camera.x;
@@ -121,6 +190,28 @@ void Back_Polus_DrawFG(StageBack *back)
 	Polus_Snow_Draw(this, FIXED_DEC(-10 + 155,1) - fx, FIXED_DEC(-25 + 155,1) - fy);
 }
 
+void Back_Polus_DrawMG(StageBack *back)
+{
+	Back_Polus *this = (Back_Polus*)back;
+
+	fixed_t fx, fy;
+	
+	//Draw bf dead
+	fx = stage.camera.x;
+	fy = stage.camera.y;
+	
+	RECT bfdead_src = {  0,  0,122, 39};
+	RECT_FIXED bfdead_dst = {
+		FIXED_DEC(266 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(183,1) - fy,
+		FIXED_DEC(122 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(39,1)
+	};
+	
+	Debug_StageMoveDebug(&bfdead_dst, 11, fx, fy);
+	if (stage.stage_id == StageId_Meltdown)
+		Stage_DrawTex(&this->tex_bfdead, &bfdead_src, &bfdead_dst, stage.camera.bzoom);
+}
 void Back_Polus_DrawBG(StageBack *back)
 {
 	Back_Polus *this = (Back_Polus*)back;
@@ -186,6 +277,9 @@ void Back_Polus_Free(StageBack *back)
 	//Free snow archive
 	Mem_Free(this->arc_snow);
 	
+	//Free people archive
+	Mem_Free(this->arc_people);
+	
 	//Free structure
 	Mem_Free(this);
 }
@@ -199,7 +293,7 @@ StageBack *Back_Polus_New(void)
 	
 	//Set background functions
 	this->back.draw_fg = Back_Polus_DrawFG;
-	this->back.draw_md = NULL;
+	this->back.draw_md = Back_Polus_DrawMG;
 	this->back.draw_bg = Back_Polus_DrawBG;
 	this->back.free = Back_Polus_Free;
 	
@@ -208,6 +302,7 @@ StageBack *Back_Polus_New(void)
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
+	Gfx_LoadTex(&this->tex_bfdead, Archive_Find(arc_back, "bfdead.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load snow textures
@@ -229,6 +324,18 @@ StageBack *Back_Polus_New(void)
 	Animatable_Init(&this->snow_animatable, snow_anim);
 	Animatable_SetAnim(&this->snow_animatable, 0);
 	this->snow_frame = this->snow_tex_id = 0xFF; //Force art load
+	
+	//Load people textures
+	this->arc_people = IO_Read("\\BG\\PEOPLE.ARC;1");
+	this->arc_people_ptr[0] = Archive_Find(this->arc_people, "people0.tim");
+	this->arc_people_ptr[1] = Archive_Find(this->arc_people, "people1.tim");
+	this->arc_people_ptr[2] = Archive_Find(this->arc_people, "people2.tim");
+	this->arc_people_ptr[3] = Archive_Find(this->arc_people, "people3.tim");
+	
+	//Initialize people state
+	Animatable_Init(&this->people_animatable, people_anim);
+	Animatable_SetAnim(&this->people_animatable, 0);
+	this->people_frame = this->people_tex_id = 0xFF; //Force art load
 	
 	return (StageBack*)this;
 }

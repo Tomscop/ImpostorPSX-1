@@ -546,7 +546,7 @@
 		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
 		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
-        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+        {NULL},
 		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
 		//Stage background
@@ -564,7 +564,7 @@
 		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
 		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
-        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+        {NULL},
 		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
 		//Stage background
@@ -575,13 +575,13 @@
 		XA_Rivals, 2,
 		"Rivals",
 		
-		StageId_Chewmate, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_OPPONENT2
+		StageId_Chewmate, STAGE_LOAD_FLAG
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
 		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
         {NULL},
-        {Char_TomongusH_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+        {Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
         {NULL},
 		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
 		
