@@ -20,7 +20,7 @@ typedef struct
 	StageBack back;
 	
 	//Textures
-	IO_Data arc_snow, arc_snow_ptr[5];
+	IO_Data arc_snow, arc_snow_ptr[12];
 	
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
@@ -36,39 +36,39 @@ typedef struct
 
 //Snow animation and rects
 static const CharFrame snow_frame[] = {
-  {0, {  0,  0,132, 59}, {152,159}}, //0 snow 1
-  {0, {  0, 59,125, 49}, {154,158}}, //1 snow 2
-  {0, {125, 59,120, 48}, {150,156}}, //2 snow 3
-  {0, {  0,118,124, 48}, {155,155}}, //3 snow 4
-  {0, {124,118,124, 49}, {155,156}}, //4 snow 5
-  {0, {  0,177,123, 48}, {155,156}}, //5 snow 6
-  {0, {123,177,123, 47}, {155,155}}, //6 snow 7
-  {1, {  0,  0,122, 51}, {155,154}}, //7 snow 8
-  {1, {122,  0,123, 51}, {155,154}}, //8 snow 9
-  {1, {  0, 54,124, 54}, {157,153}}, //9 snow 10
-  {1, {124, 54,121, 48}, {155,153}}, //10 snow 11
-  {1, {  0,115,125, 61}, {160,157}}, //11 snow 12
-  {1, {125,115,125, 59}, {160,156}}, //12 snow 13
-  {1, {  0,176,121, 45}, {155,160}}, //13 snow 14
-  {1, {121,176,121, 46}, {155,160}}, //14 snow 15
-  {2, {  0,  0,118, 44}, {153,158}}, //15 snow 16
-  {2, {118,  0,117, 44}, {153,157}}, //16 snow 17
-  {2, {  0, 45,118, 45}, {154,157}}, //17 snow 18
-  {2, {118, 45,118, 45}, {154,157}}, //18 snow 19
-  {2, {  0, 93,117, 48}, {152,156}}, //19 snow 20
-  {2, {117, 93,117, 48}, {152,156}}, //20 snow 21
-  {2, {  0,145,121, 52}, {155,155}}, //21 snow 22
-  {2, {121,145,121, 52}, {155,155}}, //22 snow 23
-  {2, {  0,200,124, 55}, {157,154}}, //23 snow 24
-  {2, {124,200,124, 55}, {157,154}}, //24 snow 25
-  {3, {  0,  0,127, 51}, {160,153}}, //25 snow 26
-  {3, {127,  0,127, 51}, {160,153}}, //26 snow 27
-  {3, {  0, 51,121, 46}, {154,152}}, //27 snow 28
-  {3, {121, 51,122, 46}, {155,152}}, //28 snow 29
-  {3, {  0,102,126, 48}, {156,152}}, //29 snow 30
-  {3, {126,102,128, 49}, {156,151}}, //30 snow 31
-  {3, {  0,153,130, 50}, {156,152}}, //31 snow 32
-  {4, {  0,  0,134, 52}, {156,152}}, //32 snow 33
+  {0, {  0,  0,198, 88}, {149,158}}, //0 snow 1
+  {0, {  0, 88,187, 86}, {150,157}}, //1 snow 2
+  {1, {  0,  0,202, 75}, {151,155}}, //2 snow 3
+  {1, {  0, 75,186, 71}, {152,153}}, //3 snow 4
+  {1, {  0,150,186, 73}, {152,154}}, //4 snow 5
+  {2, {  0,  0,184, 74}, {152,154}}, //5 snow 6
+  {2, {  0, 74,184, 72}, {152,152}}, //6 snow 7
+  {2, {  0,150,183, 76}, {153,151}}, //7 snow 8
+  {3, {  0,  0,183, 76}, {153,151}}, //8 snow 9
+  {3, {  0, 81,185, 81}, {156,150}}, //9 snow 10
+  {3, {  0,162,185, 80}, {156,149}}, //10 snow 11
+  {4, {  0,  0,187, 91}, {160,155}}, //11 snow 12
+  {4, {  0, 91,187, 91}, {160,155}}, //12 snow 13
+  {5, {  0,  0,180, 69}, {152,160}}, //13 snow 14
+  {5, {  0, 69,180, 69}, {152,160}}, //14 snow 15
+  {5, {  0,138,176, 67}, {149,157}}, //15 snow 16
+  {6, {  0,  0,177, 67}, {149,157}}, //16 snow 17
+  {6, {  0, 67,176, 67}, {151,155}}, //17 snow 18
+  {6, {  0,134,176, 67}, {151,155}}, //18 snow 19
+  {7, {  0,  0,178, 72}, {152,154}}, //19 snow 20
+  {7, {  0, 72,178, 72}, {152,154}}, //20 snow 21
+  {7, {  0,149,181, 77}, {153,153}}, //21 snow 22
+  {8, {  0,  0,182, 77}, {153,153}}, //22 snow 23
+  {8, {  0, 81,186, 81}, {156,151}}, //23 snow 24
+  {8, {  0,162,186, 81}, {156,151}}, //24 snow 25
+  {9, {  0,  0,190, 85}, {160,150}}, //25 snow 26
+  {9, {  0, 85,190, 85}, {160,150}}, //26 snow 27
+  {9, {  0,170,183, 68}, {152,148}}, //27 snow 28
+  {10, {  0,  0,183, 62}, {152,142}}, //28 snow 29
+  {10, {  0, 70,188, 70}, {153,147}}, //29 snow 30
+  {10, {  0,142,192, 72}, {154,147}}, //30 snow 31
+  {11, {  0,  0,195, 74}, {154,148}}, //31 snow 32
+  {11, {  0, 77,199, 77}, {153,148}}, //32 snow 33
 };
 
 static const Animation snow_anim[] = {
@@ -99,7 +99,7 @@ void Polus_Snow_Draw(Back_Polus *this, fixed_t x, fixed_t y)
 	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
 	
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
-	RECT_FIXED dst = { ox, oy, (src.w * 4) << FIXED_SHIFT, (src.h * 4) << FIXED_SHIFT};
+	RECT_FIXED dst = { ox, oy, (src.w * 3) << FIXED_SHIFT, (src.h * 3) << FIXED_SHIFT};
 	Debug_StageMoveDebug(&dst, 9, stage.camera.x, stage.camera.y);
 	Stage_DrawTex(&this->tex_snow, &src, &dst, stage.camera.bzoom);
 }
@@ -118,7 +118,7 @@ void Back_Polus_DrawFG(StageBack *back)
 		Animatable_SetAnim(&this->snow_animatable, 0);
 	
 	Animatable_Animate(&this->snow_animatable, (void*)this, Polus_Snow_SetFrame);
-	Polus_Snow_Draw(this, FIXED_DEC(30 + 157,1) - fx, FIXED_DEC(-12 + 157,1) - fy);
+	Polus_Snow_Draw(this, FIXED_DEC(-10 + 155,1) - fx, FIXED_DEC(-25 + 155,1) - fy);
 }
 
 void Back_Polus_DrawBG(StageBack *back)
@@ -217,6 +217,13 @@ StageBack *Back_Polus_New(void)
 	this->arc_snow_ptr[2] = Archive_Find(this->arc_snow, "snow2.tim");
 	this->arc_snow_ptr[3] = Archive_Find(this->arc_snow, "snow3.tim");
 	this->arc_snow_ptr[4] = Archive_Find(this->arc_snow, "snow4.tim");
+	this->arc_snow_ptr[5] = Archive_Find(this->arc_snow, "snow5.tim");
+	this->arc_snow_ptr[6] = Archive_Find(this->arc_snow, "snow6.tim");
+	this->arc_snow_ptr[7] = Archive_Find(this->arc_snow, "snow7.tim");
+	this->arc_snow_ptr[8] = Archive_Find(this->arc_snow, "snow8.tim");
+	this->arc_snow_ptr[9] = Archive_Find(this->arc_snow, "snow9.tim");
+	this->arc_snow_ptr[10] = Archive_Find(this->arc_snow, "snow10.tim");
+	this->arc_snow_ptr[11] = Archive_Find(this->arc_snow, "snow11.tim");
 	
 	//Initialize snow state
 	Animatable_Init(&this->snow_animatable, snow_anim);

@@ -150,7 +150,7 @@ iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim 
 
 # Polus
 iso/stages/polus/back.arc: iso/stages/polus/back0.tim iso/stages/polus/back1.tim iso/stages/polus/back2.tim
-iso/stages/polus/snow.arc: iso/stages/polus/snow0.tim iso/stages/polus/snow1.tim iso/stages/polus/snow2.tim iso/stages/polus/snow3.tim iso/stages/polus/snow4.tim 
+iso/stages/polus/snow.arc: iso/stages/polus/snow0.tim iso/stages/polus/snow1.tim iso/stages/polus/snow2.tim iso/stages/polus/snow3.tim iso/stages/polus/snow4.tim iso/stages/polus/snow5.tim iso/stages/polus/snow6.tim iso/stages/polus/snow7.tim iso/stages/polus/snow8.tim iso/stages/polus/snow9.tim iso/stages/polus/snow10.tim iso/stages/polus/snow11.tim 
 
 # Airship
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim iso/stages/airship/back2.tim
