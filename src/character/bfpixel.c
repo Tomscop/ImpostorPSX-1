@@ -223,7 +223,7 @@ void Char_BFPixel_Tick(Character *character)
 	//Stage specific animations
 		switch (stage.stage_id)
 		{
-			case StageId_Rivals: //Sussy Baka
+			case StageId_Rivals: //Sussy
 				if ((stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 					character->set_anim(character, CharAnim_Special1);
 				break;
@@ -281,11 +281,11 @@ Character *Char_BFPixel_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF7BD6F6;
 
-	this->character.focus_x = FIXED_DEC(-182,1);
-	this->character.focus_y = FIXED_DEC(-148,1);
-	this->character.focus_zoom = FIXED_DEC(511,256);
+	this->character.focus_x = FIXED_DEC(-364,1);
+	this->character.focus_y = FIXED_DEC(-296,1);
+	this->character.focus_zoom = FIXED_DEC(511,512);
 	
-	this->character.size = FIXED_DEC(1,1);
+	this->character.size = FIXED_DEC(2,1);
 
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BFPIXEL.ARC;1");

@@ -40,16 +40,16 @@ void Back_Cafeteria_DrawBG(StageBack *back)
 	RECT_FIXED back0_dst = {
 		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
-		FIXED_DEC(156 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(161,1)
+		FIXED_DEC(312 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(322,1)
 	};
 	
 	RECT back1_src = {  0,  0,156,161};
 	RECT_FIXED back1_dst = {
-		FIXED_DEC(155 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(310 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
-		FIXED_DEC(156 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(161,1)
+		FIXED_DEC(312 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(322,1)
 	};
 	
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);

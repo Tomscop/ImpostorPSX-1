@@ -543,11 +543,11 @@
 	
 	{ //StageId_SussyBussy (Sussy Bussy)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
 		Back_Cafeteria_New,
@@ -561,11 +561,11 @@
 	},
 	{ //StageId_Rivals (Rivals)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-		{Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(229,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
 		Back_Cafeteria_New,
@@ -579,11 +579,11 @@
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
-		{Char_BFPixel_New,    FIXED_DEC(342,1),  FIXED_DEC(226,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-        {Char_Tomongus_New, FIXED_DEC(198,1),  FIXED_DEC(233,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-		{Char_GFPixel_New,     FIXED_DEC(258,1),  FIXED_DEC(174,1)},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
 		Back_Cafeteria_New,

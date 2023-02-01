@@ -60,26 +60,26 @@ static const CharFrame char_tomongus_frame[] = {
   {Tomongus_ArcMain_Right0, {  0,  0, 48, 43}, {149,148}}, //10 right 1
   {Tomongus_ArcMain_Right0, { 49,  0, 48, 43}, {150,148}}, //11 right 2
 
-  {Tomongus_ArcMain_IdleH0, {  0,  0, 45, 33}, {147,140+4}}, //12 idleh 1
-  {Tomongus_ArcMain_IdleH0, { 46,  0, 41, 34}, {145,141+4}}, //13 idleh 2
-  {Tomongus_ArcMain_IdleH0, { 88,  0, 39, 36}, {144,143+4}}, //14 idleh 3
-  {Tomongus_ArcMain_IdleH0, {128,  0, 39, 38}, {144,145+4}}, //15 idleh 4
+  {Tomongus_ArcMain_IdleH0, {  0,  0, 45, 33}, {147,140-4}}, //12 idleh 1
+  {Tomongus_ArcMain_IdleH0, { 46,  0, 41, 34}, {145,141-4}}, //13 idleh 2
+  {Tomongus_ArcMain_IdleH0, { 88,  0, 39, 36}, {144,143-4}}, //14 idleh 3
+  {Tomongus_ArcMain_IdleH0, {128,  0, 39, 38}, {144,145-4}}, //15 idleh 4
 
-  {Tomongus_ArcMain_LeftH0, {  0,  0, 51, 41}, {146,148+4}}, //16 lefth 1
-  {Tomongus_ArcMain_LeftH0, { 52,  0, 51, 41}, {145,148+4}}, //17 lefth 2
-  {Tomongus_ArcMain_LeftH0, {104,  0, 48, 37}, {145,144+4}}, //18 lefth 3
+  {Tomongus_ArcMain_LeftH0, {  0,  0, 51, 41}, {146,148-4}}, //16 lefth 1
+  {Tomongus_ArcMain_LeftH0, { 52,  0, 51, 41}, {145,148-4}}, //17 lefth 2
+  {Tomongus_ArcMain_LeftH0, {104,  0, 48, 37}, {145,144-4}}, //18 lefth 3
 
-  {Tomongus_ArcMain_DownH0, {  0,  0, 50, 33}, {147,140+4}}, //19 downh 1
-  {Tomongus_ArcMain_DownH0, { 51,  0, 49, 34}, {146,141+4}}, //20 downh 2
-  {Tomongus_ArcMain_DownH0, {101,  0, 43, 34}, {146,141+4}}, //21 downh 3
+  {Tomongus_ArcMain_DownH0, {  0,  0, 50, 33}, {147,140-4}}, //19 downh 1
+  {Tomongus_ArcMain_DownH0, { 51,  0, 49, 34}, {146,141-4}}, //20 downh 2
+  {Tomongus_ArcMain_DownH0, {101,  0, 43, 34}, {146,141-4}}, //21 downh 3
 
-  {Tomongus_ArcMain_UpH0, {  0,  0, 45, 43}, {143,150+4}}, //22 uph 1
-  {Tomongus_ArcMain_UpH0, { 46,  0, 45, 42}, {143,149+4}}, //23 uph 2
-  {Tomongus_ArcMain_UpH0, { 92,  0, 37, 41}, {143,148+4}}, //24 uph 3
+  {Tomongus_ArcMain_UpH0, {  0,  0, 45, 43}, {143,150-4}}, //22 uph 1
+  {Tomongus_ArcMain_UpH0, { 46,  0, 45, 42}, {143,149-4}}, //23 uph 2
+  {Tomongus_ArcMain_UpH0, { 92,  0, 37, 41}, {143,148-4}}, //24 uph 3
 
-  {Tomongus_ArcMain_RightH0, {  0,  0, 59, 37}, {149,146+4}}, //25 righth 1
-  {Tomongus_ArcMain_RightH0, { 60,  0, 59, 37}, {150,146+4}}, //26 righth 2
-  {Tomongus_ArcMain_RightH0, {120,  0, 46, 37}, {150,146+4}}, //27 righth 3
+  {Tomongus_ArcMain_RightH0, {  0,  0, 59, 37}, {149,146-4}}, //25 righth 1
+  {Tomongus_ArcMain_RightH0, { 60,  0, 59, 37}, {150,146-4}}, //26 righth 2
+  {Tomongus_ArcMain_RightH0, {120,  0, 46, 37}, {150,146-4}}, //27 righth 3
 };
 
 static const Animation char_tomongus_anim[CharAnim_Max] = {
@@ -104,6 +104,8 @@ static const Animation char_tomongus_anim2[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 25, 26, 27, 27, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+	
+	{2, (const u8[]){ 15, ASCR_BACK, 1}}, //CharAnim_Special1
 };
 
 //Tomongus character functions
@@ -131,16 +133,24 @@ void Char_Tomongus_Tick(Character *character)
 	
 	if (((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034)) || ((stage.stage_id == StageId_Chewmate) && (stage.song_step == -29)))
 	{
-		this->character.health_bar = 0xFFF8A572;
 		Animatable_Init(&this->character.animatable, char_tomongus_anim2);
+		this->character.health_bar = 0xFFF8A572;
 	}
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Rivals: //Baka
+				if ((stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
+					character->set_anim(character, CharAnim_Special1);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Tomongus_SetFrame);
-	if (stage.stage_id != StageId_Rivals)
-		Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
-	else if ((stage.stage_id == StageId_Rivals) && (stage.song_step <= 1033))
-		Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
+	Character_Draw(character, &this->tex, &char_tomongus_frame[this->frame]);
 }
 
 void Char_Tomongus_SetAnim(Character *character, u8 anim)
@@ -191,11 +201,11 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
 	else
 		this->character.health_bar = 0xFFF8A572;
 	
-	this->character.focus_x = FIXED_DEC(-82,1);
-	this->character.focus_y = FIXED_DEC(-151,1);
-	this->character.focus_zoom = FIXED_DEC(511,256);
+	this->character.focus_x = FIXED_DEC(-165,1);
+	this->character.focus_y = FIXED_DEC(-302,1);
+	this->character.focus_zoom = FIXED_DEC(511,512);
 	
-	this->character.size = FIXED_DEC(1,1);
+	this->character.size = FIXED_DEC(2,1);
 	
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\TOMONGUS.ARC;1");
