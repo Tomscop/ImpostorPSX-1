@@ -177,7 +177,7 @@ void Back_Polus_DrawFG(StageBack *back)
 	
 	Animatable_Animate(&this->people_animatable, (void*)this, Polus_People_SetFrame);
 	if (stage.stage_id == StageId_Meltdown)
-		Polus_People_Draw(this, FIXED_DEC(24 + 112,1) - fx, FIXED_DEC(125 + 57,1) - fy);
+		Polus_People_Draw(this, FIXED_DEC(25 + 112,1) - fx, FIXED_DEC(125 + 57,1) - fy);
 	
 	//Animate and draw snow
 	fx = stage.camera.x;

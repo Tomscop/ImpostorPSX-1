@@ -259,6 +259,9 @@
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
 				
+				<!-- Girlfriend Ghost assets -->
+				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
+				
 				<!-- Girlfriend Pixel assets -->
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
 			</dir>

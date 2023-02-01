@@ -76,6 +76,7 @@ static u32 Sounds[10];
 #include "character/dad.h"
 //GFs
 #include "character/gf.h"
+#include "character/speakerghost.h"
 #include "character/gfpixel.h"
 //Stages
 #include "stage/polus.h"
@@ -1761,7 +1762,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	Stage_LoadPlayer();
 	Stage_LoadPlayer2();
 	Stage_LoadOpponent();
-	Stage_LoadOpponent2();	
+	Stage_LoadOpponent2();
 	Stage_LoadGirlfriend();
 	
 	//Load stage chart

@@ -22,7 +22,7 @@
         {NULL},
 		{Char_Red_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
+		{Char_SpeakerGhost_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
 		Back_Polus_New,
@@ -40,7 +40,7 @@
         {NULL},
 		{Char_RedMeltdown_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
+		{Char_SpeakerGhost_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
 		Back_Polus_New,
