@@ -32,7 +32,6 @@ all: \
 	iso/chars/pink/main.arc \
 	iso/chars/powers/main.arc \
 	iso/chars/tomong/main.arc \
-	iso/chars/tomongh/main.arc \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
 	iso/chars/jerma/main.arc \

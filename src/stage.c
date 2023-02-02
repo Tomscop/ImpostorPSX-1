@@ -792,7 +792,44 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		dying = (health <= 2000) * 46;
 	}
 
-	if (i <= 5)
+	if (i == 20)
+	{
+		//Get src and dst
+		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
+		RECT src = {
+			(i % 1) * 114 + dying,
+			52 + ((i - 20) / 1) * 46,
+			46,
+			46,
+		};
+		RECT_FIXED dst = {
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
+			src.w << FIXED_SHIFT,
+			src.h << FIXED_SHIFT
+			};
+		if (stage.prefs.downscroll)
+			dst.y = -dst.y - dst.h;
+
+		dst.y += stage.noteshakey;
+		dst.x += stage.noteshakex;
+
+		//Draw health icon
+		if (stage.mode == StageMode_Swap)
+		{
+			dst.w = -dst.w;
+			dst.x += FIXED_DEC(46,1);
+		}
+		else
+		{
+			dst.w = dst.w;
+			dst.x = dst.x;
+		}
+		
+		if (show)
+			Stage_DrawTex(&stage.tex_ded, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+	}
+	else if (i <= 5)
 	{
 		//Get src and dst
 		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
@@ -803,8 +840,8 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			46,
 		};
 		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(15,1) - FIXED_DEC(21,1),
-			FIXED_DEC(screen.SCREEN_HEIGHT2 - 32 + 4 - 23, 1),
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
 			src.w << FIXED_SHIFT,
 			src.h << FIXED_SHIFT
 			};
@@ -829,7 +866,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		if (show)
 			Stage_DrawTex(&stage.tex_hud1, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
 	}
-	else
+	else if (i >= 6)
 	{
 		//Get src and dst
 		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
@@ -840,8 +877,8 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			46,
 		};
 		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(15,1) - FIXED_DEC(21,1),
-			FIXED_DEC(screen.SCREEN_HEIGHT2 - 32 + 4 - 23, 1),
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
 			src.w << FIXED_SHIFT,
 			src.h << FIXED_SHIFT
 			};
@@ -1735,8 +1772,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
 	}
 	
-	sprintf(iconpath, "\\STAGE\\HUD1-%d.TIM;1", stage.stage_def->week);
-	Gfx_LoadTex(&stage.tex_hud1, IO_Read(iconpath), GFX_LOADTEX_FREE);
+	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-1.TIM;1"), GFX_LOADTEX_FREE);
+	else
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-2.TIM;1"), GFX_LOADTEX_FREE);
 	
 	//Load death screen texture
 	if (stage.stage_id == StageId_Roomcode)
