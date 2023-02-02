@@ -135,6 +135,7 @@ void Char_Tomongus_Tick(Character *character)
 	{
 		Animatable_Init(&this->character.animatable, char_tomongus_anim2);
 		this->character.health_bar = 0xFFF8A572;
+		this->character.health_i = 2;
 	}
 	
 	//Stage specific animations
@@ -193,7 +194,10 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	if (stage.stage_id != StageId_Chewmate)
+		this->character.health_i = 1;
+	else
+		this->character.health_i = 2;
 
 	//health bar color
 	if (stage.stage_id != StageId_Chewmate)

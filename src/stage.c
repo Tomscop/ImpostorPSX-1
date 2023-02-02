@@ -803,7 +803,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			46,
 		};
 		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(21,1),
 			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
 			src.w << FIXED_SHIFT,
 			src.h << FIXED_SHIFT
@@ -824,6 +824,13 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		{
 			dst.w = dst.w;
 			dst.x = dst.x;
+		}
+		if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		{
+			dst.x -= FIXED_DEC(8,1);
+			dst.y -= FIXED_DEC(8,1);
+			dst.w = FIXED_DEC(60,1);
+			dst.h = FIXED_DEC(60,1);
 		}
 		
 		if (show)
@@ -840,7 +847,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			46,
 		};
 		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(21,1),
 			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
 			src.w << FIXED_SHIFT,
 			src.h << FIXED_SHIFT
@@ -861,6 +868,13 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		{
 			dst.w = dst.w;
 			dst.x = dst.x;
+		}
+		if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		{
+			dst.x -= FIXED_DEC(8,1);
+			dst.y -= FIXED_DEC(8,1);
+			dst.w = FIXED_DEC(60,1);
+			dst.h = FIXED_DEC(60,1);
 		}
 		
 		if (show)
@@ -877,7 +891,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			46,
 		};
 		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(20,1),
+			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(21,1),
 			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
 			src.w << FIXED_SHIFT,
 			src.h << FIXED_SHIFT
@@ -898,6 +912,13 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		{
 			dst.w = dst.w;
 			dst.x = dst.x;
+		}
+		if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		{
+			dst.x -= FIXED_DEC(8,1);
+			dst.y -= FIXED_DEC(8,1);
+			dst.w = FIXED_DEC(60,1);
+			dst.h = FIXED_DEC(60,1);
 		}
 			
 		if (show)
@@ -1774,8 +1795,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-1.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
 	else
-		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-2.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-6.TIM;1"), GFX_LOADTEX_FREE);
 	
 	//Load death screen texture
 	if (stage.stage_id == StageId_Roomcode)
