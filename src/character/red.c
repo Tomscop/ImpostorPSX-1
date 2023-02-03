@@ -152,7 +152,7 @@ void Char_Red_Tick(Character *character)
 	//Stage specific animations
 		switch (stage.stage_id)
 		{
-			case StageId_Sabotage: //Stim
+			case StageId_Sabotage: //Uh
 				if (stage.song_step == 816)
 					character->set_anim(character, CharAnim_Special1);
 				break;

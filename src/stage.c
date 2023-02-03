@@ -79,6 +79,7 @@ static u32 Sounds[10];
 #include "character/dad.h"
 //GFs
 #include "character/gf.h"
+#include "character/gfghost.h"
 #include "character/speakerghost.h"
 #include "character/gfpixel.h"
 //Stages

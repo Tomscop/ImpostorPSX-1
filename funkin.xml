@@ -267,6 +267,7 @@
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
 				
 				<!-- Girlfriend Ghost assets -->
+				<file name = "gfghost.arc" type = "data" source = "iso/chars/gfghost/main.arc"/>
 				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
 				
 				<!-- Girlfriend Pixel assets -->

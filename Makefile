@@ -60,6 +60,7 @@ SRCS = src/main.c \
 	src/character/dad.c \
 	src/character/gf.c \
 	src/character/speaker.c \
+	src/character/gfghost.c \
 	src/character/speakerghost.c \
 	src/character/gfpixel.c \
 	src/object.c \

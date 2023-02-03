@@ -242,8 +242,7 @@ void Char_BFGhost_Tick(Character *character)
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
 		//Perform idle dance
-		if (Animatable_Ended(&character->animatable) &&
-			(character->animatable.anim != CharAnim_Left &&
+		if ((character->animatable.anim != CharAnim_Left &&
 		     character->animatable.anim != CharAnim_LeftAlt &&
 		     character->animatable.anim != PlayerAnim_LeftMiss &&
 		     character->animatable.anim != CharAnim_Down &&
@@ -310,7 +309,7 @@ Character *Char_BFGhost_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	this->character.focus_x = FIXED_DEC(-160,1);
-	this->character.focus_y = FIXED_DEC(-84,1);
+	this->character.focus_y = FIXED_DEC(-147,1);
 	this->character.focus_zoom = FIXED_DEC(509,512);
 	
 	this->character.size = FIXED_DEC(1,1);

@@ -1,61 +1,26 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
+			"fnfanim" : "danceLeft",
+			"imgname" : "gfghost",
+			"hname"   : "GFGhost"
 		},
 		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
+			"fnfanim" : "scared",
+			"imgname" : "appear",
+			"hname"   : "Appear"
 		}
 	],
-	"input":  "iso/chars/bfghost/bfghost",
-	"outdir": "iso/chars/bfghost/",
-	"charname" : "BFGhost",
+	"input":  "iso/chars/gfghost/ghostgf",
+	"outdir": "iso/chars/gfghost/",
+	"charname" : "GFGhost",
 	"optimize" : false,
-	"optimizename" : "bfghost",
+	"optimizename" : "gfghost",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		512,
 		0,
-		0,
+		16,
 		480
 	],
 

@@ -14,14 +14,14 @@
 		XA_SussusMoogus, 0,
 		"Sussus Moogus",
 		
-		StageId_Sabotage, STAGE_LOAD_FLAG | STAGE_LOAD_GIRLFRIEND
+		StageId_Sabotage, STAGE_LOAD_FLAG | STAGE_LOAD_GIRLFRIEND | STAGE_LOAD_OPPONENT2
 	},
 	{ //StageId_Sabotage (Sabotage)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
         {NULL},
 		{Char_Red_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
-        {NULL},
+        {Char_GFGhost_New,     FIXED_DEC(399,1),  FIXED_DEC(162,1)},
 		{Char_SpeakerGhost_New,     FIXED_DEC(191,1),  FIXED_DEC(98,1)},
 		
 		//Stage background
@@ -36,10 +36,10 @@
 	},
 	{ //StageId_Meltdown (Meltdown)
 		//Characters
-		{Char_BFGhost_New,    FIXED_DEC(493,1),  FIXED_DEC(198,1)},
+		{Char_BFGhost_New,    FIXED_DEC(493,1),  FIXED_DEC(261,1)},
         {NULL},
 		{Char_RedMeltdown_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
-        {NULL},
+        {Char_GFGhost_New,     FIXED_DEC(399,1),  FIXED_DEC(162,1)},
 		{Char_SpeakerGhost_New,     FIXED_DEC(191,1),  FIXED_DEC(98,1)},
 		
 		//Stage background

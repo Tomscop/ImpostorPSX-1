@@ -44,6 +44,7 @@ all: \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
+	iso/chars/gfghost/main.arc \
 	iso/chars/gfghost/speakerg.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
@@ -152,6 +153,7 @@ iso/chars/gf/main.arc: iso/chars/gf/gf0.tim iso/chars/gf/gf1.tim iso/chars/gf/gf
 iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 
 # GF Ghost
+iso/chars/gfghost/main.arc: iso/chars/gfghost/gfghost0.tim iso/chars/gfghost/gfghost1.tim iso/chars/gfghost/gfghost2.tim iso/chars/gfghost/gfghost3.tim iso/chars/gfghost/appear0.tim 
 iso/chars/gfghost/speakerg.arc: iso/chars/gfghost/speakerg0.tim iso/chars/gfghost/speakerg1.tim iso/chars/gfghost/speakerg2.tim
 
 # GF Pixel

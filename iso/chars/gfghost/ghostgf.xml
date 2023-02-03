@@ -2,19 +2,19 @@
 <TextureAtlas imagePath="ghostgf.png">
 	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0000" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0001" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0002" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0003" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0004" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0005" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0007" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0008" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0009" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0010" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
-	<SubTexture name="gf fade in0006" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0011" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
+	<SubTexture name="gf fade in0012" x="356" y="431" width="326" height="392" frameX="-5" frameY="0" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0013" x="1060" y="431" width="318" height="384" frameX="-7" frameY="-2" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0014" x="1408" y="431" width="318" height="384" frameX="-7" frameY="-2" frameWidth="336" frameHeight="404"/>
 	<SubTexture name="gf fade in0015" x="1408" y="431" width="318" height="384" frameX="-7" frameY="-2" frameWidth="336" frameHeight="404"/>
