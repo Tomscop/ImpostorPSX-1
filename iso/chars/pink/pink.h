@@ -32,8 +32,8 @@ iso/chars/pink/main.arc: iso/chars/pink/idle0.tim iso/chars/pink/idle1.tim iso/c
 
   {Pink_ArcMain_Idle0, {  0,  0,117,121}, {157,153}}, //0 idle 1
   {Pink_ArcMain_Idle0, {117,  0,121,125}, {160,157}}, //1 idle 2
-  {Pink_ArcMain_Idle0, {  0,127,118,127}, {159,159}}, //2 idle 3
-  {Pink_ArcMain_Idle0, {118,127,117,128}, {159,159}}, //3 idle 4
+  {Pink_ArcMain_Idle0, {  0,125,118,127}, {159,159}}, //2 idle 3
+  {Pink_ArcMain_Idle0, {118,125,117,128}, {159,159}}, //3 idle 4
   {Pink_ArcMain_Idle1, {  0,  0,118,128}, {159,160}}, //4 idle 5
   {Pink_ArcMain_Idle1, {118,  0,117,128}, {159,160}}, //5 idle 6
   {Pink_ArcMain_Idle2, {  0,  0,117,128}, {159,160}}, //6 idle 7
@@ -46,7 +46,7 @@ iso/chars/pink/main.arc: iso/chars/pink/idle0.tim iso/chars/pink/idle1.tim iso/c
   {Pink_ArcMain_Left0, {120,126,121,125}, {157,157}}, //12 left 4
 
   {Pink_ArcMain_Down0, {  0,  0,166,114}, {191,147}}, //13 down 1
-  {Pink_ArcMain_Down0, {  0,125,167,125}, {190,158}}, //14 down 2
+  {Pink_ArcMain_Down0, {  0,114,167,125}, {190,158}}, //14 down 2
   {Pink_ArcMain_Down1, {  0,  0,168,124}, {190,157}}, //15 down 3
   {Pink_ArcMain_Down1, {  0,124,168,122}, {190,155}}, //16 down 4
   {Pink_ArcMain_Down2, {  0,  0,168,122}, {190,155}}, //17 down 5

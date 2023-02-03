@@ -206,6 +206,9 @@
 				<!-- Green assets -->
 				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
 				
+				<!-- Green Parasite assets -->
+				<file name = "greenpar.arc" type = "data" source = "iso/chars/greenpar/main.arc"/>
+				
 				<!-- Yellow assets -->
 				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
 				
@@ -338,6 +341,14 @@
 				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
 				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
 				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
+			</dir>
+			
+			<!-- Movies -->
+			<dir name = "str">
+				<!-- Week 1 videos -->
+				<file name = "moogus.str" type = "str" source = "iso/movie/moogus.str"/>
+				<file name = "sabotage.str" type = "str" source = "iso/movie/sabotage.str"/>
+				<file name = "meltdown.str" type = "str" source = "iso/movie/meltdown.str"/>
 			</dir>
 			
 			<!-- Music -->

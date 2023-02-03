@@ -26,7 +26,7 @@ typedef struct
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
-	Gfx_Tex tex_bfdead; //bfdead
+	Gfx_Tex tex_body; //body
 	
 	//Snow state
 	Gfx_Tex tex_snow;
@@ -226,6 +226,25 @@ void Back_Polus_DrawFG(StageBack *back)
 
 	fixed_t fx, fy;
 	
+	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156) && (stage.song_step <= 1157))
+	{
+		RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		Gfx_DrawRect(&screen_src, 0, 0, 0);
+	}
+
+	//Draw body
+	RECT body_src = {  0,  0,255,240};
+	RECT_FIXED body_dst = {
+		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1),
+		FIXED_DEC(-120,1),
+		FIXED_DEC(321 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(241,1)
+	};
+	
+	Debug_StageMoveDebug(&body_dst, 12, 0, 0);
+	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1157))
+		Stage_DrawTex(&this->tex_body, &body_src, &body_dst, FIXED_DEC (1,1));
+	
 	//Animate and draw people
 	fx = (stage.camera.x / 2) * 3;
 	fy = (stage.camera.y / 2) * 3;
@@ -259,17 +278,17 @@ void Back_Polus_DrawMG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-	RECT bfdead_src = {  0,  0,122, 39};
+	RECT bfdead_src = {181,  0, 39,122};
 	RECT_FIXED bfdead_dst = {
-		FIXED_DEC(266 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(183,1) - fy,
-		FIXED_DEC(122 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(39,1)
+		FIXED_DEC(327 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(201,1) - fy,
+		FIXED_DEC(39 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(122,1)
 	};
 	
 	Debug_StageMoveDebug(&bfdead_dst, 11, fx, fy);
 	if (stage.stage_id == StageId_Meltdown)
-		Stage_DrawTex(&this->tex_bfdead, &bfdead_src, &bfdead_dst, stage.camera.bzoom);
+		Stage_DrawTexRotate(&this->tex_back2, &bfdead_src, &bfdead_dst, stage.camera.bzoom, -64);
 }
 void Back_Polus_DrawBG(StageBack *back)
 {
@@ -363,7 +382,7 @@ StageBack *Back_Polus_New(void)
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
-	Gfx_LoadTex(&this->tex_bfdead, Archive_Find(arc_back, "bfdead.tim"), 0);
+	Gfx_LoadTex(&this->tex_body, Archive_Find(arc_back, "body.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load snow textures

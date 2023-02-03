@@ -46,28 +46,28 @@ typedef struct
 
 //Pink character definitions
 static const CharFrame char_pink_frame[] = {
-  {Pink_ArcMain_Idle0, {  0,  0,117,121}, {158-3,153}}, //0 idle 1
-  {Pink_ArcMain_Idle0, {117,  0,121,125}, {161-3,157}}, //1 idle 2
-  {Pink_ArcMain_Idle0, {  0,127,118,127}, {159-3,159}}, //2 idle 3
-  {Pink_ArcMain_Idle0, {118,127,117,128}, {159-3,160}}, //3 idle 4
-  {Pink_ArcMain_Idle1, {  0,  0,118,128}, {160-3,160}}, //4 idle 5
-  {Pink_ArcMain_Idle1, {118,  0,117,128}, {159-3,160}}, //5 idle 6
-  {Pink_ArcMain_Idle2, {  0,  0,117,128}, {159-3,160}}, //6 idle 7
-  {Pink_ArcMain_Idle2, {117,  0,117,127}, {159-3,159}}, //7 idle 8
-  {Pink_ArcMain_Idle3, {  0,  0,117,128}, {159-3,160}}, //8 idle 9
+  {Pink_ArcMain_Idle0, {  0,  0,117,121}, {158,153}}, //0 idle 1
+  {Pink_ArcMain_Idle0, {117,  0,121,125}, {161,157}}, //1 idle 2
+  {Pink_ArcMain_Idle0, {  0,125,118,127}, {159,159}}, //2 idle 3
+  {Pink_ArcMain_Idle0, {118,125,117,128}, {159,160}}, //3 idle 4
+  {Pink_ArcMain_Idle1, {  0,  0,118,128}, {159,160}}, //4 idle 5
+  {Pink_ArcMain_Idle1, {118,  0,117,128}, {159,160}}, //5 idle 6
+  {Pink_ArcMain_Idle2, {  0,  0,117,128}, {159,160}}, //6 idle 7
+  {Pink_ArcMain_Idle2, {117,  0,117,127}, {159,159}}, //7 idle 8
+  {Pink_ArcMain_Idle3, {  0,  0,117,128}, {159,160}}, //8 idle 9
 
   {Pink_ArcMain_Left0, {  0,  0,120,126}, {171,160}}, //9 left 1
   {Pink_ArcMain_Left0, {120,  0,118,124}, {156,157}}, //10 left 2
   {Pink_ArcMain_Left0, {  0,126,120,124}, {156,157}}, //11 left 3
-  {Pink_ArcMain_Left0, {120,126,121,125}, {157,158}}, //12 left 4
+  {Pink_ArcMain_Left0, {120,126,121,125}, {157,157}}, //12 left 4
 
   {Pink_ArcMain_Down0, {  0,  0,166,114}, {191,147}}, //13 down 1
-  {Pink_ArcMain_Down0, {  0,125,167,125}, {190,158}}, //14 down 2
+  {Pink_ArcMain_Down0, {  0,114,167,125}, {190,158}}, //14 down 2
   {Pink_ArcMain_Down1, {  0,  0,168,124}, {190,157}}, //15 down 3
   {Pink_ArcMain_Down1, {  0,124,168,122}, {190,155}}, //16 down 4
   {Pink_ArcMain_Down2, {  0,  0,168,122}, {190,155}}, //17 down 5
 
-  {Pink_ArcMain_Up0, {  0,  0,103,119}, {155,153}}, //18 up 1
+  {Pink_ArcMain_Up0, {  0,  0,103,119}, {155,152}}, //18 up 1
   {Pink_ArcMain_Up0, {103,  0,110,128}, {158,162}}, //19 up 2
   {Pink_ArcMain_Up1, {  0,  0,111,127}, {160,160}}, //20 up 3
   {Pink_ArcMain_Up1, {111,  0,110,126}, {159,159}}, //21 up 4

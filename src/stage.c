@@ -13,6 +13,7 @@
 #include "main.h"
 #include "random.h"
 #include "network.h"
+#include "movie.h"
 #include "mutil.h"
 #include "debug.h"
 #include "save.h"
@@ -58,6 +59,7 @@ static u32 Sounds[10];
 #include "character/redmd.h"
 #include "character/greenst.h"
 #include "character/green.h"
+#include "character/greenparasite.h"
 #include "character/yellow.h"
 #include "character/white.h"
 #include "character/whitedk.h"
@@ -1781,6 +1783,12 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.stage_def = &stage_defs[stage.stage_id = id];
 	stage.stage_diff = difficulty;
 	stage.story = story;
+	
+	//Check movies
+	//Don't play movie if you are retrying the song
+	if (stage.trans != StageTrans_Reload)
+		CheckMovies();
+	
 	//Load HUD textures
 	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
 	{
@@ -1914,6 +1922,9 @@ static boolean Stage_NextLoad(void)
 	{
 		//Get stage definition
 		stage.stage_def = &stage_defs[stage.stage_id = stage.stage_def->next_stage];
+		
+		//Check movies
+		CheckMovies();
 		
 		//Load stage background
 		if (load & STAGE_LOAD_STAGE)
@@ -2148,7 +2159,7 @@ void Stage_Tick(void)
 			if (stage.intro)
 				Stage_CountDown();
 			
-			if (stage.stage_id == StageId_Temp) //PLACEHOLDER
+			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156))
 			{
 				show = false;
 			}

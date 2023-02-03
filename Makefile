@@ -20,6 +20,8 @@ SRCS = src/main.c \
 	src/psx/audio.c \
 	src/psx/pad.c \
 	src/psx/timer.c \
+	src/movie.c \
+	src/psx/strplay.c \
 	src/stage/polus.c \
 	src/stage/airship.c \
 	src/stage/lobby.c \
@@ -38,6 +40,7 @@ SRCS = src/main.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
 	src/character/green.c \
+	src/character/greenparasite.c \
 	src/character/yellow.c \
 	src/character/white.c \
 	src/character/whitedk.c \
