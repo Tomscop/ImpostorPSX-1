@@ -51,6 +51,7 @@ static u32 Sounds[10];
 
 //Players
 #include "character/bf.h"
+#include "character/bfghost.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/kid.h"

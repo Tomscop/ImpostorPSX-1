@@ -184,6 +184,9 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
+				<!-- Boyfriend Ghost assets -->
+				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
+				
 				<!-- Pico RC assets -->
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
 				

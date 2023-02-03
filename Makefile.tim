@@ -16,6 +16,7 @@ all: \
 	iso/stage/count.tim \
 	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
+	iso/chars/bfghost/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
 	iso/chars/kid/main.arc \
@@ -71,6 +72,9 @@ iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu
 
 # BF
 iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf2.tim iso/chars/bf/bf3.tim iso/chars/bf/bf4.tim iso/chars/bf/bf5.tim iso/chars/bf/bf6.tim
+
+# BF Ghost
+iso/chars/bfghost/main.arc: iso/chars/bfghost/idle0.tim iso/chars/bfghost/idle1.tim iso/chars/bfghost/idle2.tim iso/chars/bfghost/left0.tim iso/chars/bfghost/left1.tim iso/chars/bfghost/left2.tim iso/chars/bfghost/down0.tim iso/chars/bfghost/up0.tim iso/chars/bfghost/up1.tim iso/chars/bfghost/up2.tim iso/chars/bfghost/right0.tim iso/chars/bfghost/right1.tim iso/chars/bfghost/right2.tim iso/chars/bfghost/right3.tim iso/chars/bfghost/right4.tim iso/chars/bfghost/right5.tim iso/chars/bfghost/right6.tim iso/chars/bfghost/right7.tim iso/chars/bfghost/right8.tim iso/chars/bfghost/leftm0.tim iso/chars/bfghost/leftm1.tim iso/chars/bfghost/leftm2.tim iso/chars/bfghost/downm0.tim iso/chars/bfghost/downm1.tim iso/chars/bfghost/upm0.tim iso/chars/bfghost/upm1.tim iso/chars/bfghost/rightm0.tim iso/chars/bfghost/rightm1.tim iso/chars/bfghost/rightm2.tim 
 
 # Pico RC
 iso/chars/picorc/main.arc: iso/chars/picorc/idle0.tim iso/chars/picorc/idle1.tim iso/chars/picorc/left0.tim iso/chars/picorc/down0.tim iso/chars/picorc/up0.tim iso/chars/picorc/right0.tim iso/chars/picorc/leftm0.tim iso/chars/picorc/downm0.tim iso/chars/picorc/upm0.tim iso/chars/picorc/upm1.tim iso/chars/picorc/rightm0.tim iso/chars/picorc/rightm1.tim 

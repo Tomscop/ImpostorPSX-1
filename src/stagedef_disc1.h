@@ -36,7 +36,7 @@
 	},
 	{ //StageId_Meltdown (Meltdown)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
+		{Char_BFGhost_New,    FIXED_DEC(493,1),  FIXED_DEC(198,1)},
         {NULL},
 		{Char_RedMeltdown_New, FIXED_DEC(264,1),  FIXED_DEC(190,1)},
         {NULL},
