@@ -346,6 +346,9 @@ void Back_Polus_DrawBG(StageBack *back)
 	Stage_DrawTex(&this->tex_back2, &sky0_src, &sky0_dst, stage.camera.bzoom);
 	Debug_StageMoveDebug(&sky1_dst, 8, fx, fy);
 	Stage_DrawTex(&this->tex_back2, &sky1_src, &sky1_dst, stage.camera.bzoom);
+	
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	Gfx_DrawRect(&screen_src, 36, 25, 50);
 }
 
 void Back_Polus_Free(StageBack *back)

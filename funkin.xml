@@ -230,6 +230,9 @@
 				<!-- Maroon assets -->
 				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
 				
+				<!-- Maroon Parasite assets -->
+				<file name = "maroonp.arc" type = "data" source = "iso/chars/maroonp/main.arc"/>
+				
 				<!-- Gray assets -->
 				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>
 				
@@ -259,7 +262,10 @@
 				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
-				
+			</dir>
+			
+			<!-- Character assets -->
+			<dir name = "char2">
 				<!-- GFs -->
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>

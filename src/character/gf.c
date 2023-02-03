@@ -192,7 +192,7 @@ Character *Char_GF_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\GF.ARC;1");
+	this->arc_main = IO_Read("\\CHAR2\\GF.ARC;1");
 		
 	const char **pathp = (const char *[]){
 		"gf0.tim", //GF_ArcMain_GF0
@@ -209,7 +209,7 @@ Character *Char_GF_New(fixed_t x, fixed_t y)
 	{
 //		case StageId_1_4: //Tutorial
 //		{
-//			this->arc_scene = IO_Read("\\CHAR\\GFTUT.ARC;1");
+//			this->arc_scene = IO_Read("\\CHAR2\\GFTUT.ARC;1");
 //			
 //			const char **pathp = (const char *[]){
 //				"tut0.tim", //GF_ArcScene_0

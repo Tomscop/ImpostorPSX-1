@@ -149,7 +149,7 @@ Character *Char_GFPixel_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(2,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\GFPIXEL.ARC;1");
+	this->arc_main = IO_Read("\\CHAR2\\GFPIXEL.ARC;1");
 	
 	const char **pathp = (const char *[]){
 		"gf0.tim",
