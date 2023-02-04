@@ -77,6 +77,7 @@ static u32 Sounds[10];
 #include "character/jerma.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
+#include "character/amogus.h"
 #include "character/dad.h"
 //GFs
 #include "character/gf.h"
@@ -1337,6 +1338,18 @@ static void Stage_LoadPlayer(void)
 	//Load player character
 	Character_Free(stage.player);
 	stage.player = stage.stage_def->pchar.new(stage.stage_def->pchar.x, stage.stage_def->pchar.y);
+	
+	//Load death screen texture
+	if (stage.stage_id == StageId_Meltdown)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADGHO.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Roomcode)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Idk)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
+	else
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 }
 
 static void Stage_LoadPlayer2(void)
@@ -1810,16 +1823,6 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-6.TIM;1"), GFX_LOADTEX_FREE);
-	
-	//Load death screen texture
-	if (stage.stage_id == StageId_Roomcode)
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
-	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
-	else if (stage.stage_id == StageId_Idk)
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
-	else
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 
 	//Load stage background
 	Stage_LoadStage();
@@ -2750,7 +2753,13 @@ void Stage_Tick(void)
 	//Fallthrough
 		case StageState_DeadLoad:
 		{
-			if (stage.stage_id == StageId_Roomcode)
+			if (stage.stage_id == StageId_Meltdown)
+			{
+				RECT src = {  0,  0,124,124};
+				RECT dst = { 98, 58,124,124};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if (stage.stage_id == StageId_Roomcode)
 			{
 				RECT src = {  0,  0,124,124};
 				RECT dst = { 98, 58,124,124};

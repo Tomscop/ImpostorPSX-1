@@ -217,7 +217,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
+	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown) || (stage.stage_id == StageId_Top10))
 	{
 	this->character.focus_x = FIXED_DEC(-54,1);
 	this->character.focus_y = FIXED_DEC(-84,1);

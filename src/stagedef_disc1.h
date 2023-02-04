@@ -927,7 +927,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Amogus_New, FIXED_DEC(250,1),  FIXED_DEC(142,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
 		

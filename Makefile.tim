@@ -41,6 +41,7 @@ all: \
 	iso/chars/jerma/main.arc \
 	iso/chars/nuzzus/main.arc \
 	iso/chars/tobyfox/main.arc \
+	iso/chars/amogus/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
@@ -49,6 +50,7 @@ all: \
 	iso/chars/gfghost/speakerg.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
+	iso/chars/bfghost/dead.tim \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/dead.tim \
 	iso/chars/kid/dead.tim \
@@ -147,6 +149,9 @@ iso/chars/nuzzus/main.arc: iso/chars/nuzzus/idle0.tim iso/chars/nuzzus/idle1.tim
 
 # Toby Fox
 iso/chars/tobyfox/main.arc: iso/chars/tobyfox/idle0.tim iso/chars/tobyfox/idle1.tim iso/chars/tobyfox/left0.tim iso/chars/tobyfox/down0.tim iso/chars/tobyfox/up0.tim iso/chars/tobyfox/up1.tim iso/chars/tobyfox/right0.tim iso/chars/tobyfox/right1.tim 
+
+# Amogus
+iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim iso/chars/amogus/down0.tim iso/chars/amogus/up0.tim iso/chars/amogus/right0.tim 
 
 # Dad
 iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/chars/dad/left.tim iso/chars/dad/down.tim iso/chars/dad/up.tim iso/chars/dad/right.tim

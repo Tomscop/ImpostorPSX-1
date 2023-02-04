@@ -260,6 +260,9 @@
 				<!-- Toby Fox assets -->
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
 				
+				<!-- Amogus assets -->
+				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
+				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 			</dir>
@@ -284,6 +287,8 @@
 			<dir name = "dead">
 				<!-- Normal -->
 				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- BF Ghost -->
+				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
 				<!-- Pico -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Pixel -->
