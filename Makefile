@@ -51,6 +51,7 @@ SRCS = src/main.c \
 	src/character/maroonparasite.c \
 	src/character/gray.c \
 	src/character/pink.c \
+	src/character/chefogus.c \
 	src/character/powers.c \
 	src/character/tomongus.c \
 	src/character/henry.c \

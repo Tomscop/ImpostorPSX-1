@@ -70,6 +70,7 @@ static u32 Sounds[10];
 #include "character/maroonparasite.h"
 #include "character/gray.h"
 #include "character/pink.h"
+#include "character/chefogus.h"
 #include "character/powers.h"
 #include "character/tomongus.h"
 #include "character/henry.h"

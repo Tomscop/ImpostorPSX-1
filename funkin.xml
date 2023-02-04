@@ -236,6 +236,9 @@
 				<!-- Pink assets -->
 				<file name = "pink.arc" type = "data" source = "iso/chars/pink/main.arc"/>
 				
+				<!-- Chefogus assets -->
+				<file name = "chef.arc" type = "data" source = "iso/chars/chef/main.arc"/>
+				
 				<!-- Powers assets -->
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
 				
