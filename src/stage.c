@@ -848,7 +848,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 		RECT src = {
 			(i % 1) * 114 + dying,
-			16 + (i / 1) * 46,
+			15 + (i / 1) * 46,
 			46,
 			46,
 		};
@@ -892,7 +892,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 		RECT src = {
 			((i % 1) * 114 + dying) + 94,
-			16 + ((i - 6) / 1) * 46,
+			15 + ((i - 6) / 1) * 46,
 			46,
 			46,
 		};
@@ -1821,8 +1821,10 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-1.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id == StageId_SaucesMoogus) || (stage.stage_id == StageId_Roomcode) || (stage.stage_id == StageId_Idk) || (stage.stage_id == StageId_Top10))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-FP0.TIM;1"), GFX_LOADTEX_FREE);
 	else
-		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-6.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-PH.TIM;1"), GFX_LOADTEX_FREE);
 
 	//Load stage background
 	Stage_LoadStage();

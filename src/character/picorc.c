@@ -200,7 +200,9 @@ Character *Char_PicoRC_New(fixed_t x, fixed_t y)
 	
 	//Set character information
 	this->character.spec = CHAR_SPEC_MISSANIM;
-
+	
+	this->character.health_i = 0;
+	
 	//health bar color
 	this->character.health_bar = 0xFFB7D855;
 	

@@ -43,12 +43,9 @@
 				<file name = "hud0.tim" type = "data" source = "iso/stage/hud0.tim"/>
 				<file name = "hud0pix.tim" type = "data" source = "iso/stage/hud0pix.tim"/>
 				<file name = "hud1-1.tim" type = "data" source = "iso/stage/hud1-1.tim"/>
-				<file name = "hud1-2.tim" type = "data" source = "iso/stage/hud1-2.tim"/>
-				<file name = "hud1-3.tim" type = "data" source = "iso/stage/hud1-3.tim"/>
-				<file name = "hud1-4.tim" type = "data" source = "iso/stage/hud1-4.tim"/>
-				<file name = "hud1-5.tim" type = "data" source = "iso/stage/hud1-5.tim"/>
-				<file name = "hud1-6.tim" type = "data" source = "iso/stage/hud1-6.tim"/>
 				<file name = "hud1-t.tim" type = "data" source = "iso/stage/hud1-t.tim"/>
+				<file name = "hud1-fp0.tim" type = "data" source = "iso/stage/hud1-fp0.tim"/>
+				<file name = "hud1-ph.tim" type = "data" source = "iso/stage/hud1-ph.tim"/>
 				<file name = "count.tim" type = "data" source = "iso/stage/count.tim"/>
 				<file name = "countpix.tim" type = "data" source = "iso/stage/countpix.tim"/>
 			</dir>
