@@ -181,6 +181,9 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
+				<!-- Boyfriend Defeat assets -->
+				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
+				
 				<!-- Boyfriend Ghost assets -->
 				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
 				
@@ -289,6 +292,8 @@
 				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- BF Ghost -->
 				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
+				<!-- BF Defeat -->
+				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
 				<!-- Pico -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Pixel -->

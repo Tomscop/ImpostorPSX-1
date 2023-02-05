@@ -303,7 +303,7 @@ Character *Char_BFGhost_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = CHAR_SPEC_MISSANIM;
 	
-	this->character.health_i = 20;
+	this->character.health_i = 2;
 	
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;

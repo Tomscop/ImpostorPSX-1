@@ -52,6 +52,7 @@ static u32 Sounds[10];
 //Players
 #include "character/bf.h"
 #include "character/bfghost.h"
+#include "character/bfdefeat.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/kid.h"
@@ -843,57 +844,13 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		if (show)
 			Stage_DrawTex(&stage.tex_ded, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
 	}
-	else if (i <= 5)
+	else
 	{
 		//Get src and dst
 		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 		RECT src = {
-			(i % 1) * 114 + dying,
-			15 + (i / 1) * 46,
-			46,
-			46,
-		};
-		RECT_FIXED dst = {
-			hx + ox * FIXED_DEC(18,1) - FIXED_DEC(21,1),
-			FIXED_DEC(screen.SCREEN_HEIGHT2 - 34 + 4 - 23, 1),
-			src.w << FIXED_SHIFT,
-			src.h << FIXED_SHIFT
-			};
-		if (stage.prefs.downscroll)
-			dst.y = -dst.y - dst.h;
-
-		dst.y += stage.noteshakey;
-		dst.x += stage.noteshakex;
-
-		//Draw health icon
-		if (stage.mode == StageMode_Swap)
-		{
-			dst.w = -dst.w;
-			dst.x += FIXED_DEC(46,1);
-		}
-		else
-		{
-			dst.w = dst.w;
-			dst.x = dst.x;
-		}
-		if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
-		{
-			dst.x -= FIXED_DEC(8,1);
-			dst.y -= FIXED_DEC(8,1);
-			dst.w = FIXED_DEC(60,1);
-			dst.h = FIXED_DEC(60,1);
-		}
-		
-		if (show)
-			Stage_DrawTex(&stage.tex_hud1, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
-	}
-	else if (i >= 6)
-	{
-		//Get src and dst
-		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
-		RECT src = {
-			((i % 1) * 114 + dying) + 94,
-			15 + ((i - 6) / 1) * 46,
+			i >= 6 ? ((i % 1) * 114 + dying) + 94 : ((i % 1) * 114 + dying),
+			i >= 6 ? 15 + ((i - 6) / 1) * 46 : 15 + (i / 1) * 46,
 			46,
 			46,
 		};
@@ -1343,6 +1300,8 @@ static void Stage_LoadPlayer(void)
 	//Load death screen texture
 	if (stage.stage_id == StageId_Meltdown)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADGHO.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Defeat)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
@@ -2756,22 +2715,22 @@ void Stage_Tick(void)
 	//Fallthrough
 		case StageState_DeadLoad:
 		{
-			if (stage.stage_id == StageId_Meltdown)
+			if ((stage.stage_id == StageId_Meltdown) || (stage.stage_id == StageId_Roomcode))
 			{
-				RECT src = {  0,  0,124,124};
-				RECT dst = { 98, 58,124,124};
+				RECT src = {  0,  0,123,123};
+				RECT dst = { 98, 58,123,123};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
-			else if (stage.stage_id == StageId_Roomcode)
+			else if (stage.stage_id == StageId_Defeat)
 			{
-				RECT src = {  0,  0,124,124};
-				RECT dst = { 98, 58,124,124};
+				RECT src = {  0,  0,130,123};
+				RECT dst = { 95, 58,130,123};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 			{
-				RECT src = {  0,  0, 80, 76};
-				RECT dst = { 80, 44,160,152};
+				RECT src = {  0,  0, 79, 75};
+				RECT dst = { 80, 44,158,150};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if (stage.stage_id == StageId_Idk)
@@ -2784,14 +2743,14 @@ void Stage_Tick(void)
 			{
 				if (inctimer == false)
 				{
-				RECT src = {  0,  0,216, 25};
-				RECT dst = { 52,108,216, 25};
+				RECT src = {  0,  0,215, 25};
+				RECT dst = { 52,108,215, 25};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 				else
 				{
-				RECT src = {  0, 26,216, 25};
-				RECT dst = { 52,108,216, 25};
+				RECT src = {  0, 26,215, 25};
+				RECT dst = { 52,108,215, 25};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 			}

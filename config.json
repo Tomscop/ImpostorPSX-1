@@ -2,51 +2,41 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
+			"imgname" : "idles",
+			"hname"   : "IdleS"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
+			"imgname" : "lefts",
+			"hname"   : "LeftS"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
+			"imgname" : "downs",
+			"hname"   : "DownS"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
+			"imgname" : "ups",
+			"hname"   : "UpS"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singDOWN-alt",
-			"imgname" : "downalt",
-			"hname"   : "DownAlt"
-		},
-		{
-			"fnfanim" : "singUP-alt",
-			"imgname" : "upalt",
-			"hname"   : "UpAlt"
+			"imgname" : "rights",
+			"hname"   : "RightS"
 		}
 	],
-	"input":  "iso/chars/chef/chefogus",
-	"outdir": "iso/chars/chef/",
-	"charname" : "Chefogus",
+	"input":  "iso/chars/bfdefeat/BF_Defeat_Scared",
+	"outdir": "iso/chars/bfdefeat/",
+	"charname" : "BFDefeat",
 	"optimize" : false,
-	"optimizename" : "chefogus",
+	"optimizename" : "bfdefeat",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		640,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 8,
