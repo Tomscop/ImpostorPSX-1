@@ -433,9 +433,9 @@
 	},
 	{ //StageId_SaucesMoogus (Sauces Moogus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFChef_New,    FIXED_DEC(190,1),  FIXED_DEC(146,1)},
         {NULL},
-		{Char_Chefogus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Chefogus_New, FIXED_DEC(-20,1),  FIXED_DEC(116,1)},
         {NULL},
         {NULL},
 		

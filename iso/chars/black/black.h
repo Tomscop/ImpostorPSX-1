@@ -1,4 +1,4 @@
-iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim iso/chars/black/right3.tim 
+iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim 
 
   "idle0.tim",
   "idle1.tim",
@@ -24,7 +24,6 @@ iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim is
   "right0.tim",
   "right1.tim",
   "right2.tim",
-  "right3.tim",
 
 
   Black_ArcMain_Idle0,
@@ -51,7 +50,6 @@ iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim is
   Black_ArcMain_Right0,
   Black_ArcMain_Right1,
   Black_ArcMain_Right2,
-  Black_ArcMain_Right3,
 
 
   {Black_ArcMain_Idle0, {  0,  0,120,120}, {225,154}}, //0 idle 1
@@ -64,16 +62,16 @@ iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim is
   {Black_ArcMain_Idle1, {121,117,121,117}, {222,152}}, //7 idle 8
   {Black_ArcMain_Idle2, {  0,  0,120,117}, {221,152}}, //8 idle 9
   {Black_ArcMain_Idle2, {120,  0,120,117}, {220,152}}, //9 idle 10
-  {Black_ArcMain_Idle2, {  0,118,120,118}, {220,152}}, //10 idle 11
-  {Black_ArcMain_Idle2, {120,118,120,119}, {220,153}}, //11 idle 12
+  {Black_ArcMain_Idle2, {  0,117,120,118}, {220,152}}, //10 idle 11
+  {Black_ArcMain_Idle2, {120,117,120,119}, {220,153}}, //11 idle 12
   {Black_ArcMain_Idle3, {  0,  0,120,121}, {220,155}}, //12 idle 13
   {Black_ArcMain_Idle3, {120,  0,120,122}, {220,156}}, //13 idle 14
   {Black_ArcMain_Idle3, {  0,122,119,121}, {220,156}}, //14 idle 15
   {Black_ArcMain_Idle3, {119,122,119,123}, {221,157}}, //15 idle 16
   {Black_ArcMain_Idle4, {  0,  0,119,123}, {222,157}}, //16 idle 17
   {Black_ArcMain_Idle4, {119,  0,119,123}, {221,157}}, //17 idle 18
-  {Black_ArcMain_Idle4, {  0,124,119,124}, {222,158}}, //18 idle 19
-  {Black_ArcMain_Idle4, {119,124,120,124}, {223,158}}, //19 idle 20
+  {Black_ArcMain_Idle4, {  0,123,119,124}, {222,158}}, //18 idle 19
+  {Black_ArcMain_Idle4, {119,123,120,124}, {223,158}}, //19 idle 20
   {Black_ArcMain_Idle5, {  0,  0,119,123}, {223,157}}, //20 idle 21
   {Black_ArcMain_Idle5, {119,  0,119,123}, {224,157}}, //21 idle 22
   {Black_ArcMain_Idle5, {  0,123,119,122}, {224,157}}, //22 idle 23
@@ -85,7 +83,7 @@ iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim is
   {Black_ArcMain_Left1, {  0,  0,177,105}, {260,139}}, //27 left 3
   {Black_ArcMain_Left1, {  0,105,173,104}, {260,138}}, //28 left 4
   {Black_ArcMain_Left2, {  0,  0,157,104}, {264,138}}, //29 left 5
-  {Black_ArcMain_Left2, {  0,107,117,107}, {229,145}}, //30 left 6
+  {Black_ArcMain_Left2, {  0,104,117,107}, {229,145}}, //30 left 6
 
   {Black_ArcMain_Down0, {  0,  0,167,155}, {253,188}}, //31 down 1
   {Black_ArcMain_Down1, {  0,  0,173,166}, {257,200}}, //32 down 2
@@ -107,4 +105,4 @@ iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim is
   {Black_ArcMain_Right1, {  0,  0,208,116}, {223,145}}, //46 right 3
   {Black_ArcMain_Right1, {  0,116,206,116}, {220,144}}, //47 right 4
   {Black_ArcMain_Right2, {  0,  0,173,120}, {200,142}}, //48 right 5
-  {Black_ArcMain_Right3, {  0,  0, 98,134}, {203,152}}, //49 right 6
+  {Black_ArcMain_Right2, {  0,120, 98,134}, {203,152}}, //49 right 6

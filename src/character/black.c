@@ -60,35 +60,35 @@ static const CharFrame char_black_frame[] = {
   {Black_ArcMain_Idle0, {  0,  0,120,120}, {225,154}}, //0 idle 1
   {Black_ArcMain_Idle0, {120,  0,120,118}, {225,153}}, //1 idle 2
   {Black_ArcMain_Idle0, {  0,120,121,118}, {225,152}}, //2 idle 3
-  {Black_ArcMain_Idle0, {121,120,121,116}, {225,151}}, //3 idle 4
-  {Black_ArcMain_Idle1, {  0,  0,121,117}, {223,152}}, //4 idle 5
+  {Black_ArcMain_Idle0, {121,120,121,116}, {225,150}}, //3 idle 4
+  {Black_ArcMain_Idle1, {  0,  0,121,117}, {223,151}}, //4 idle 5
   {Black_ArcMain_Idle1, {121,  0,121,117}, {222,151}}, //5 idle 6
-  {Black_ArcMain_Idle1, {  0,117,121,117}, {223,152}}, //6 idle 7
-  {Black_ArcMain_Idle1, {121,117,121,117}, {222,152}}, //7 idle 8
-  {Black_ArcMain_Idle2, {  0,  0,120,117}, {221,152}}, //8 idle 9
+  {Black_ArcMain_Idle1, {  0,117,121,117}, {223,151}}, //6 idle 7
+  {Black_ArcMain_Idle1, {121,117,121,117}, {222,151}}, //7 idle 8
+  {Black_ArcMain_Idle2, {  0,  0,120,117}, {221,151}}, //8 idle 9
   {Black_ArcMain_Idle2, {120,  0,120,117}, {220,152}}, //9 idle 10
-  {Black_ArcMain_Idle2, {  0,118,120,118}, {220,152}}, //10 idle 11
-  {Black_ArcMain_Idle2, {120,118,120,119}, {220,153}}, //11 idle 12
+  {Black_ArcMain_Idle2, {  0,117,120,118}, {220,152}}, //10 idle 11
+  {Black_ArcMain_Idle2, {120,117,120,119}, {220,153}}, //11 idle 12
   {Black_ArcMain_Idle3, {  0,  0,120,121}, {220,155}}, //12 idle 13
   {Black_ArcMain_Idle3, {120,  0,120,122}, {220,156}}, //13 idle 14
   {Black_ArcMain_Idle3, {  0,122,119,121}, {220,156}}, //14 idle 15
   {Black_ArcMain_Idle3, {119,122,119,123}, {221,157}}, //15 idle 16
   {Black_ArcMain_Idle4, {  0,  0,119,123}, {222,157}}, //16 idle 17
   {Black_ArcMain_Idle4, {119,  0,119,123}, {221,157}}, //17 idle 18
-  {Black_ArcMain_Idle4, {  0,124,119,124}, {222,158}}, //18 idle 19
-  {Black_ArcMain_Idle4, {119,124,120,124}, {223,158}}, //19 idle 20
+  {Black_ArcMain_Idle4, {  0,123,119,124}, {222,158}}, //18 idle 19
+  {Black_ArcMain_Idle4, {119,123,120,124}, {223,158}}, //19 idle 20
   {Black_ArcMain_Idle5, {  0,  0,119,123}, {223,157}}, //20 idle 21
   {Black_ArcMain_Idle5, {119,  0,119,123}, {224,157}}, //21 idle 22
-  {Black_ArcMain_Idle5, {  0,123,119,122}, {224,157}}, //22 idle 23
+  {Black_ArcMain_Idle5, {  0,123,119,122}, {224,156}}, //22 idle 23
   {Black_ArcMain_Idle5, {119,123,119,122}, {224,156}}, //23 idle 24
-  {Black_ArcMain_Idle6, {  0,  0,120,121}, {224,156}}, //24 idle 25
+  {Black_ArcMain_Idle6, {  0,  0,120,121}, {224,155}}, //24 idle 25
 
   {Black_ArcMain_Left0, {  0,  0,177,115}, {262,149}}, //25 left 1
   {Black_ArcMain_Left0, {  0,115,177,106}, {261,140}}, //26 left 2
   {Black_ArcMain_Left1, {  0,  0,177,105}, {260,139}}, //27 left 3
   {Black_ArcMain_Left1, {  0,105,173,104}, {260,138}}, //28 left 4
   {Black_ArcMain_Left2, {  0,  0,157,104}, {264,138}}, //29 left 5
-  {Black_ArcMain_Left2, {  0,107,117,107}, {229,145}}, //30 left 6
+  {Black_ArcMain_Left2, {  0,104,117,107}, {229,145}}, //30 left 6
 
   {Black_ArcMain_Down0, {  0,  0,167,155}, {253,188}}, //31 down 1
   {Black_ArcMain_Down1, {  0,  0,173,166}, {257,200}}, //32 down 2
@@ -110,7 +110,7 @@ static const CharFrame char_black_frame[] = {
   {Black_ArcMain_Right1, {  0,  0,208,116}, {223,145}}, //46 right 3
   {Black_ArcMain_Right1, {  0,116,206,116}, {220,144}}, //47 right 4
   {Black_ArcMain_Right2, {  0,  0,173,120}, {200,142}}, //48 right 5
-  {Black_ArcMain_Right2, {  0,121, 98,134}, {203,152}}, //49 right 6
+  {Black_ArcMain_Right2, {  0,120, 98,134}, {203,152}}, //49 right 6
 };
 
 static const Animation char_black_anim[CharAnim_Max] = {

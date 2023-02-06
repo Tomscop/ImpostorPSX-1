@@ -53,6 +53,7 @@ static u32 Sounds[10];
 #include "character/bf.h"
 #include "character/bfghost.h"
 #include "character/bfdefeat.h"
+#include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/kid.h"
@@ -2623,13 +2624,14 @@ void Stage_Tick(void)
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
-			stage.player->tick(stage.player);
+			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
+				stage.player->tick(stage.player);
 			stage.opponent->tick(stage.opponent);
-			
-      if (stage.player2 != NULL)
+			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
+				stage.player->tick(stage.player);
+			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-
-      if (stage.opponent2 != NULL)
+			if (stage.opponent2 != NULL)
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle

@@ -15,6 +15,7 @@ all: \
 	iso/chars/bf/main.arc \
 	iso/chars/bfghost/main.arc \
 	iso/chars/bfdefeat/main.arc \
+	iso/chars/bfchef/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
 	iso/chars/kid/main.arc \
@@ -83,6 +84,9 @@ iso/chars/bfghost/main.arc: iso/chars/bfghost/idle0.tim iso/chars/bfghost/idle1.
 # BF Defeat
 iso/chars/bfdefeat/main.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/left0.tim iso/chars/bfdefeat/down0.tim iso/chars/bfdefeat/up0.tim iso/chars/bfdefeat/right0.tim iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
 
+# BF Chef
+iso/chars/bfchef/main.arc: iso/chars/bfchef/idle0.tim iso/chars/bfchef/idle1.tim iso/chars/bfchef/idle2.tim iso/chars/bfchef/left0.tim iso/chars/bfchef/down0.tim iso/chars/bfchef/up0.tim iso/chars/bfchef/right0.tim iso/chars/bfchef/leftm0.tim iso/chars/bfchef/leftm1.tim iso/chars/bfchef/downm0.tim iso/chars/bfchef/upm0.tim iso/chars/bfchef/upm1.tim iso/chars/bfchef/rightm0.tim iso/chars/bfchef/downa0.tim iso/chars/bfchef/upa0.tim iso/chars/bfchef/upa1.tim 
+
 # Pico RC
 iso/chars/picorc/main.arc: iso/chars/picorc/idle0.tim iso/chars/picorc/idle1.tim iso/chars/picorc/left0.tim iso/chars/picorc/down0.tim iso/chars/picorc/up0.tim iso/chars/picorc/right0.tim iso/chars/picorc/leftm0.tim iso/chars/picorc/downm0.tim iso/chars/picorc/upm0.tim iso/chars/picorc/upm1.tim iso/chars/picorc/rightm0.tim iso/chars/picorc/rightm1.tim 
 
@@ -118,7 +122,7 @@ iso/chars/white/main.arc: iso/chars/white/idle0.tim iso/chars/white/idle1.tim is
 iso/chars/whitedk/main.arc: iso/chars/whitedk/idle0.tim iso/chars/whitedk/idle1.tim iso/chars/whitedk/left0.tim iso/chars/whitedk/left1.tim iso/chars/whitedk/down0.tim iso/chars/whitedk/down1.tim iso/chars/whitedk/up0.tim iso/chars/whitedk/up1.tim iso/chars/whitedk/right0.tim iso/chars/whitedk/right1.tim 
 
 # Black
-iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim
+iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim 
 
 # Maroon
 iso/chars/maroon/main.arc: iso/chars/maroon/idle0.tim iso/chars/maroon/idle1.tim iso/chars/maroon/idle2.tim iso/chars/maroon/idle3.tim iso/chars/maroon/idle4.tim iso/chars/maroon/idle5.tim iso/chars/maroon/idle6.tim iso/chars/maroon/idle7.tim iso/chars/maroon/left0.tim iso/chars/maroon/left1.tim iso/chars/maroon/left2.tim iso/chars/maroon/left3.tim iso/chars/maroon/down0.tim iso/chars/maroon/down1.tim iso/chars/maroon/down2.tim iso/chars/maroon/down3.tim iso/chars/maroon/down4.tim iso/chars/maroon/up0.tim iso/chars/maroon/up1.tim iso/chars/maroon/up2.tim iso/chars/maroon/up3.tim iso/chars/maroon/right0.tim iso/chars/maroon/right1.tim iso/chars/maroon/right2.tim iso/chars/maroon/right3.tim iso/chars/maroon/emote0.tim iso/chars/maroon/emote1.tim iso/chars/maroon/emote2.tim iso/chars/maroon/emote3.tim iso/chars/maroon/emote4.tim iso/chars/maroon/emote5.tim iso/chars/maroon/emote6.tim iso/chars/maroon/emote7.tim iso/chars/maroon/emote8.tim iso/chars/maroon/emote9.tim iso/chars/maroon/emote10.tim iso/chars/maroon/emote11.tim iso/chars/maroon/emote12.tim iso/chars/maroon/emote13.tim iso/chars/maroon/emote14.tim 

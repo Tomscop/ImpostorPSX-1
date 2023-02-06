@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character/bf.c \
 	src/character/bfghost.c \
 	src/character/bfdefeat.c \
+	src/character/bfchef.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
 	src/character/kid.c \

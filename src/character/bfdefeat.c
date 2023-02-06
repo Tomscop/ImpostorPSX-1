@@ -76,13 +76,13 @@ static const CharFrame char_bfdefeat_frame[] = {
   {BFDefeat_ArcMain_IdleS0, {106,  0,106,101}, {160,155}}, //17 idles 2
   {BFDefeat_ArcMain_IdleS0, {  0,101,105,102}, {158,156}}, //18 idles 3
   {BFDefeat_ArcMain_IdleS0, {105,101,106,102}, {159,156}}, //19 idles 4
-  {BFDefeat_ArcMain_IdleS1, {  0,  0,104,104}, {158,158}}, //20 idles 5
-  {BFDefeat_ArcMain_IdleS1, {104,  0,104,104}, {158,158}}, //21 idles 6
-  {BFDefeat_ArcMain_IdleS1, {  0,104,104,105}, {159,160}}, //22 idles 7
-  {BFDefeat_ArcMain_IdleS1, {104,104,104,105}, {159,160}}, //23 idles 8
-  {BFDefeat_ArcMain_IdleS2, {  0,  0,104,106}, {159,160}}, //24 idles 9
-  {BFDefeat_ArcMain_IdleS2, {104,  0,104,105}, {159,160}}, //25 idles 10
-  {BFDefeat_ArcMain_IdleS2, {  0,106,105,106}, {159,160}}, //26 idles 11
+  {BFDefeat_ArcMain_IdleS1, {  0,  0,104,104}, {157,158}}, //20 idles 5
+  {BFDefeat_ArcMain_IdleS1, {104,  0,104,104}, {157,158}}, //21 idles 6
+  {BFDefeat_ArcMain_IdleS1, {  0,104,104,105}, {158,159}}, //22 idles 7
+  {BFDefeat_ArcMain_IdleS1, {104,104,104,105}, {158,159}}, //23 idles 8
+  {BFDefeat_ArcMain_IdleS2, {  0,  0,104,106}, {158,159}}, //24 idles 9
+  {BFDefeat_ArcMain_IdleS2, {104,  0,104,105}, {158,159}}, //25 idles 10
+  {BFDefeat_ArcMain_IdleS2, {  0,106,105,106}, {159,159}}, //26 idles 11
 
   {BFDefeat_ArcMain_LeftS0, {  0,  0,117,105}, {161,160}}, //27 lefts 1
   {BFDefeat_ArcMain_LeftS0, {117,  0,113,105}, {162,159}}, //28 lefts 2
@@ -130,7 +130,7 @@ static const Animation char_bfdefeat_anim2[PlayerAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_DownAlt
 	{2, (const u8[]){ 33, 34, 35, 35, 35, 35, ASCR_BACK, 1}},             //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
-	{1, (const u8[]){ 36, 37, 38, ASCR_BACK, 1}},             //CharAnim_Right
+	{2, (const u8[]){ 36, 37, 38, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
     
     {1, (const u8[]){ 25, 26, 24, ASCR_CHGANI, CharAnim_Special1}},   //CharAnim_Special1

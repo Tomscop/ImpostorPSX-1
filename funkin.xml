@@ -184,6 +184,9 @@
 				<!-- Boyfriend Defeat assets -->
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
 				
+				<!-- Boyfriend Chef assets -->
+				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
+				
 				<!-- Boyfriend Ghost assets -->
 				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
 				

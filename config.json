@@ -2,45 +2,45 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idles",
-			"hname"   : "IdleS"
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "lefts",
-			"hname"   : "LeftS"
+			"imgname" : "left",
+			"hname"   : "Left"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "downs",
-			"hname"   : "DownS"
+			"imgname" : "down",
+			"hname"   : "Down"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "ups",
-			"hname"   : "UpS"
+			"imgname" : "up",
+			"hname"   : "Up"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "rights",
-			"hname"   : "RightS"
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/bfdefeat/BF_Defeat_Scared",
-	"outdir": "iso/chars/bfdefeat/",
-	"charname" : "BFDefeat",
+	"input":  "iso/chars/black/black",
+	"outdir": "iso/chars/black/",
+	"charname" : "Black",
 	"optimize" : false,
-	"optimizename" : "bfdefeat",
+	"optimizename" : "black",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
 	"bpp" : 8,
-	"resize" : 0.25,
+	"resize" : 0.1801,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,
