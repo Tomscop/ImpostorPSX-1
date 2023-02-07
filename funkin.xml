@@ -315,6 +315,9 @@
 				<!-- Airship BG -->
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
 				
+				<!-- Defeat BG -->
+				<file name = "defeat.arc" type = "data" source = "iso/stages/defeat/back.arc"/>
+				
 				<!-- Lobby BG -->
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
 				

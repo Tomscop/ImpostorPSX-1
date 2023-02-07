@@ -90,6 +90,7 @@ static u32 Sounds[10];
 //Stages
 #include "stage/polus.h"
 #include "stage/airship.h"
+#include "stage/defeat.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/henry.h"
@@ -804,7 +805,11 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	if (i == 20)
 	{
 		//Get src and dst
-		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
+		fixed_t hx;
+		if (stage.stage_id != StageId_Defeat)
+			hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
+		else
+			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
 		RECT src = {
 			(i % 1) * 114 + dying,
 			52 + ((i - 20) / 1) * 46,
@@ -848,7 +853,11 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	else
 	{
 		//Get src and dst
-		fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
+		fixed_t hx;
+		if (stage.stage_id != StageId_Defeat)
+			hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
+		else
+			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
 		RECT src = {
 			i >= 6 ? ((i % 1) * 114 + dying) + 94 : ((i % 1) * 114 + dying),
 			i >= 6 ? 15 + ((i - 6) / 1) * 46 : 15 + (i / 1) * 46,
@@ -1133,10 +1142,10 @@ static void Stage_DrawNotes(void)
 				//draw for opponent
 				if (show)
 				{
-					if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
-						Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
-					else
-						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
+						else
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 				
 				//Draw note fire
@@ -1157,10 +1166,10 @@ static void Stage_DrawNotes(void)
 				//draw for opponent
 				if (show)
 				{
-					if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
-						Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
-					else
-						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
+						else
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 				
 			}
@@ -1186,10 +1195,10 @@ static void Stage_DrawNotes(void)
 				//draw for opponent
 				if (show)
 				{
-					if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
-						Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
-					else
-						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
+						else
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 			}
 		}
@@ -1713,7 +1722,7 @@ static void Stage_LoadState(void)
 	note_y[7] = FIXED_DEC(32 - screen.SCREEN_HEIGHT2 + 5, 1);
 
 	//middle note x
-	if(stage.prefs.middlescroll)
+	if((stage.prefs.middlescroll) || (stage.stage_id == StageId_Defeat))
 	{
 		//bf
 		note_x[0] = FIXED_DEC(26 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
@@ -1721,7 +1730,7 @@ static void Stage_LoadState(void)
 		note_x[2] = FIXED_DEC(94 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[3] = FIXED_DEC(128 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		//opponent
-	  note_x[4] = FIXED_DEC(-50 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
+		note_x[4] = FIXED_DEC(-50 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[5] = FIXED_DEC(-16 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4); //+34
 		note_x[6] = FIXED_DEC(170 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[7] = FIXED_DEC(204 - 78,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
@@ -1738,6 +1747,13 @@ static void Stage_LoadState(void)
 		note_x[5] = FIXED_DEC(-94,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4); //+34
 		note_x[6] = FIXED_DEC(-60,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[7] = FIXED_DEC(-26,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
+	}
+	if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
+	{
+		note_x[4] = FIXED_DEC(1000,1);
+		note_x[5] = FIXED_DEC(1000,1);
+		note_x[6] = FIXED_DEC(1000,1);
+		note_x[7] = FIXED_DEC(1000,1);
 	}
 
 	//Check which stage should not have the camera sroll
@@ -2562,15 +2578,18 @@ void Stage_Tick(void)
 						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
 					
 						//Draw health bar
-						if (stage.mode == StageMode_Swap)
+						if (stage.stage_id != StageId_Defeat)
 						{
-							Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.player->health_bar);
-							Stage_DrawHealthBar(255, stage.opponent->health_bar);
-						}
-						else
-						{
-							Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
-							Stage_DrawHealthBar(255, stage.player->health_bar);
+							if (stage.mode == StageMode_Swap)
+							{
+								Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.player->health_bar);
+								Stage_DrawHealthBar(255, stage.opponent->health_bar);
+							}
+							else
+							{
+								Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
+								Stage_DrawHealthBar(255, stage.player->health_bar);
+							}
 						}
 					}
 				}

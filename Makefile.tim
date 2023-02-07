@@ -59,6 +59,7 @@ all: \
 	iso/stages/polus/snow.arc \
 	iso/stages/polus/people.arc \
 	iso/stages/airship/back.arc \
+	iso/stages/defeat/back.arc \
 	iso/stages/lobby/back.arc \
 	iso/stages/cafe/back.arc \
 	iso/stages/henry/back.arc \
@@ -186,6 +187,9 @@ iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/peopl
 
 # Airship
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim iso/stages/airship/back2.tim
+
+# Defeat
+iso/stages/defeat/back.arc: iso/stages/defeat/back0.tim
 
 # Lobby
 iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim
