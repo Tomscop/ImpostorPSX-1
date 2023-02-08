@@ -67,8 +67,10 @@ void Character_Free(Character *this);
 void Character_Init(Character *this, fixed_t x, fixed_t y);
 void Character_DrawParallax(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax);
 void Character_DrawParallaxFlipped(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax);
+void Character_DrawParallaxCol(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax, fixed_t r, fixed_t g, fixed_t b);
 void Character_Draw(Character *this, Gfx_Tex *tex, const CharFrame *cframe);
 void Character_DrawFlipped(Character *this, Gfx_Tex *tex, const CharFrame *cframe);
+void Character_DrawCol(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t r, fixed_t g, fixed_t b);
 
 void Character_CheckStartSing(Character *this);
 void Character_CheckEndSing(Character *this);

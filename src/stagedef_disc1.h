@@ -217,7 +217,7 @@
 	{ //StageId_Defeat (Defeat)
 		//Characters
 		{Char_BFDefeat_New,    FIXED_DEC(482,1),  FIXED_DEC(220,1)},
-        {NULL},
+        {Char_BF_New,    FIXED_DEC(-110,1),  FIXED_DEC(100,1)},
 		{Char_Black_New, FIXED_DEC(394,1),  FIXED_DEC(215,1)},
         {NULL},
         {NULL},
