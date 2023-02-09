@@ -144,13 +144,111 @@ void Char_Black_Tick(Character *character)
 {
 	Char_Black *this = (Char_Black*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Defeat)
+	{
+		if (stage.song_step == 128)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(1,1);
+		}
+		if (stage.song_step == 192)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(577,512);
+		}
+		if (stage.song_step == 272)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(177,256);
+		}
+		if (stage.song_step == 400)
+		{
+			this->character.focus_x = FIXED_DEC(-170,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 656)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(177,256);
+		}
+		if (stage.song_step == 776)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 848)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(247,256);
+		}
+		if (stage.song_step == 912)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(281,256);
+		}
+		if (stage.song_step == 976)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(75,64);
+		}
+		if (stage.song_step == 1040)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 1440)
+		{
+			this->character.focus_x = FIXED_DEC(-170,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 1696)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(247,256);
+		}
+		if (stage.song_step == 1824)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(281,256);
+		}
+		if (stage.song_step == 1888)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(75,64);
+		}
+		if (stage.song_step == 1952)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(1875,128);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Black_SetFrame);
-	Character_Draw(character, &this->tex, &char_black_frame[this->frame]);
+	if ((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440)))
+		Character_DrawCol(character, &this->tex, &char_black_frame[this->frame], 200, 128, 128);
+	if ((stage.stage_id == StageId_Finale) && (stage.song_step <= 271))
+		Character_DrawCol(character, &this->tex, &char_black_frame[this->frame], 200, 128, 128);
 }
 
 void Char_Black_SetAnim(Character *character, u8 anim)
@@ -195,9 +293,18 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFD70009;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	if (stage.stage_id == StageId_Defeat)
+	{
+		this->character.focus_x = FIXED_DEC(-138,1);
+		this->character.focus_y = FIXED_DEC(-135,1);
+		this->character.focus_zoom = FIXED_DEC(417,512);
+	}
+	else
+	{
+		this->character.focus_x = FIXED_DEC(65,1);
+		this->character.focus_y = FIXED_DEC(-115,1);
+		this->character.focus_zoom = FIXED_DEC(1,1);
+	}
 	
 	this->character.size = FIXED_DEC(14,10);
 	

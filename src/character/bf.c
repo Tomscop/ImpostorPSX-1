@@ -170,7 +170,8 @@ void Char_BF_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
-	Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
+	if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
+		Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
 }
 
 void Char_BF_SetAnim(Character *character, u8 anim)
@@ -217,7 +218,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown) || (stage.stage_id == StageId_Top10))
+	if (((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown)) || (stage.stage_id == StageId_Top10))
 	{
 	this->character.focus_x = FIXED_DEC(-54,1);
 	this->character.focus_y = FIXED_DEC(-84,1);

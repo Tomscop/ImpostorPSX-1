@@ -86,6 +86,11 @@ static void Events_Check(Event* event)
 			}
 			break;
 		}
+		case EVENTS_FLAG_EXTZOOM: //Extra Camera Zoom!!
+		{
+			stage.camera.zoom += event->value1;
+			break;
+		}
 		default: //nothing lol
 		break;
 	}

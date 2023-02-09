@@ -26,6 +26,41 @@ typedef struct
 
 } Back_Defeat;
 
+void Back_Defeat_DrawFG(StageBack *back)
+{
+	Back_Defeat *this = (Back_Defeat*)back;
+
+	fixed_t fx, fy;
+
+	//Draw fg
+	fx = stage.camera.x / 2;
+	fy = stage.camera.y;
+	
+	RECT bones1_src = {  0,163,226, 86};
+	RECT_FIXED bones1_dst = {
+		FIXED_DEC(-166 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(134,1) - fy,
+		FIXED_DEC(321 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(122,1)
+	};
+	
+	RECT bones2_src = {  0,163,224, 86};
+	RECT_FIXED bones2_dst = {
+		FIXED_DEC(150 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(134,1) - fy,
+		FIXED_DEC(317 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(122,1)
+	};
+	
+	Debug_StageMoveDebug(&bones1_dst, 8, fx, fy);
+	Debug_StageMoveDebug(&bones2_dst,  9, fx, fy);
+	if (((stage.song_step >= 272) && (stage.song_step <= 1167)) || (stage.song_step >= 1440))
+	{
+		Stage_DrawTex(&this->tex_back1, &bones1_src, &bones1_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back2, &bones2_src, &bones2_dst, stage.camera.bzoom);
+	}
+}
+
 void Back_Defeat_DrawBG(StageBack *back)
 {
 	Back_Defeat *this = (Back_Defeat*)back;
@@ -72,18 +107,21 @@ void Back_Defeat_DrawBG(StageBack *back)
 	Debug_StageMoveDebug(&back1_dst, 6, fx, fy);
 	Debug_StageMoveDebug(&back2_dst, 7, fx, fy);
 	Debug_StageMoveDebug(&oops_dst, 10, fx, fy);
-	if (stage.song_step >= 272)
+	if (((stage.song_step >= 272) && (stage.song_step <= 1167)) || (stage.song_step >= 1440))
 	{
 		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back2, &oops_src, &oops_dst, stage.camera.bzoom);
 	}
-	
-	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
+	if ((stage.song_step <= 1167) || (stage.song_step >= 1440))
+		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 	
 	//Draw black
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-	Gfx_DrawRect(&screen_src, 0, 0, 0);
+	if (stage.song_step <= 1953)
+		Gfx_DrawRect(&screen_src, 0, 0, 0);
+	else
+		Gfx_DrawRect(&screen_src, 125, 0, 3);
 }
 
 void Back_Defeat_Free(StageBack *back)
@@ -102,7 +140,7 @@ StageBack *Back_Defeat_New(void)
 		return NULL;
 	
 	//Set background functions
-	this->back.draw_fg = NULL;
+	this->back.draw_fg = Back_Defeat_DrawFG;
 	this->back.draw_md = NULL;
 	this->back.draw_bg = Back_Defeat_DrawBG;
 	this->back.free = Back_Defeat_Free;

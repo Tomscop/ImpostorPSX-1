@@ -50,27 +50,27 @@ typedef struct
 
 //Boyfriend Defeat player definitions
 static const CharFrame char_bfdefeat_frame[] = {
-  {BFDefeat_ArcMain_Idle0, {  0,  0,103,103}, {160,159}}, //0 idle 1
-  {BFDefeat_ArcMain_Idle0, {103,  0,104,103}, {160,159}}, //1 idle 2
-  {BFDefeat_ArcMain_Idle0, {  0,103,104,103}, {160,159}}, //2 idle 3
-  {BFDefeat_ArcMain_Idle0, {104,103,104,104}, {159,160}}, //3 idle 4
-  {BFDefeat_ArcMain_Idle1, {  0,  0,103,104}, {159,160}}, //4 idle 5
+  {BFDefeat_ArcMain_Idle0, {  0,  0,103,103}, {160,159-2}}, //0 idle 1
+  {BFDefeat_ArcMain_Idle0, {103,  0,104,103}, {160,159-2}}, //1 idle 2
+  {BFDefeat_ArcMain_Idle0, {  0,103,104,103}, {160,159-2}}, //2 idle 3
+  {BFDefeat_ArcMain_Idle0, {104,103,104,104}, {159,160-2}}, //3 idle 4
+  {BFDefeat_ArcMain_Idle1, {  0,  0,103,104}, {159,160-2}}, //4 idle 5
 
-  {BFDefeat_ArcMain_Left0, {  0,  0, 90,104}, {148,160}}, //5 left 1
-  {BFDefeat_ArcMain_Left0, { 90,  0, 91,104}, {149,160}}, //6 left 2
+  {BFDefeat_ArcMain_Left0, {  0,  0, 90,104}, {148,160-2}}, //5 left 1
+  {BFDefeat_ArcMain_Left0, { 90,  0, 91,104}, {149,160-2}}, //6 left 2
 
-  {BFDefeat_ArcMain_Down0, {  0,  0, 93,100}, {149,157}}, //7 down 1
-  {BFDefeat_ArcMain_Down0, { 93,  0, 92,101}, {148,157}}, //8 down 2
+  {BFDefeat_ArcMain_Down0, {  0,  0, 93,100}, {149,157-2}}, //7 down 1
+  {BFDefeat_ArcMain_Down0, { 93,  0, 92,101}, {148,157-2}}, //8 down 2
 
-  {BFDefeat_ArcMain_Up0, {  0,  0, 94,106}, {149,162}}, //9 up 1
-  {BFDefeat_ArcMain_Up0, { 94,  0, 94,105}, {148,161}}, //10 up 2
+  {BFDefeat_ArcMain_Up0, {  0,  0, 94,106}, {149,162-2}}, //9 up 1
+  {BFDefeat_ArcMain_Up0, { 94,  0, 94,105}, {148,161-2}}, //10 up 2
 
-  {BFDefeat_ArcMain_Right0, {  0,  0, 95,104}, {148,160}}, //11 right 1
-  {BFDefeat_ArcMain_Right0, { 95,  0, 95,104}, {148,160}}, //12 right 2
+  {BFDefeat_ArcMain_Right0, {  0,  0, 95,104}, {148,160-2}}, //11 right 1
+  {BFDefeat_ArcMain_Right0, { 95,  0, 95,104}, {148,160-2}}, //12 right 2
 
-  {BFDefeat_ArcMain_Miss0, {  0,  0, 93,104}, {151,160}}, //13 miss 1
-  {BFDefeat_ArcMain_Miss0, { 93,  0, 93,104}, {151,159}}, //14 miss 2
-  {BFDefeat_ArcMain_Miss0, {  0,104, 93,104}, {151,159}}, //15 miss 3
+  {BFDefeat_ArcMain_Miss0, {  0,  0, 93,104}, {151,160-2}}, //13 miss 1
+  {BFDefeat_ArcMain_Miss0, { 93,  0, 93,104}, {151,159-2}}, //14 miss 2
+  {BFDefeat_ArcMain_Miss0, {  0,104, 93,104}, {151,159-2}}, //15 miss 3
   
   {BFDefeat_ArcMain_IdleS0, {  0,  0,106,101}, {160,155}}, //16 idles 1
   {BFDefeat_ArcMain_IdleS0, {106,  0,106,101}, {160,155}}, //17 idles 2
@@ -162,6 +162,101 @@ void Char_BFDefeat_Tick(Character *character)
 {
 	Char_BFDefeat *this = (Char_BFDefeat*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Defeat)
+	{
+		if (stage.song_step == 128)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(1,1);
+		}
+		if (stage.song_step == 192)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(577,512);
+		}
+		if (stage.song_step == 272)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(177,256);
+		}
+		if (stage.song_step == 460)
+		{
+			this->character.focus_x = FIXED_DEC(-188,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 656)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(177,256);
+		}
+		if (stage.song_step == 776)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 848)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(247,256);
+		}
+		if (stage.song_step == 912)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(281,256);
+		}
+		if (stage.song_step == 976)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(75,64);
+		}
+		if (stage.song_step == 1040)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 1440)
+		{
+			this->character.focus_x = FIXED_DEC(-188,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+		}
+		if (stage.song_step == 1696)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(247,256);
+		}
+		if (stage.song_step == 1824)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(281,256);
+		}
+		if (stage.song_step == 1888)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(75,64);
+		}
+		if (stage.song_step == 1952)
+		{
+			this->character.focus_x = FIXED_DEC(-226,1);
+			this->character.focus_y = FIXED_DEC(-140,1);
+			this->character.focus_zoom = FIXED_DEC(1875,128);
+		}
+	}
+	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -201,7 +296,14 @@ void Char_BFDefeat_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFDefeat_SetFrame);
-	Character_Draw(character, &this->tex, &char_bfdefeat_frame[this->frame]);
+	if (stage.stage_id == StageId_DoubleKill)
+		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
+	if ((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440)))
+		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
+	if ((stage.stage_id == StageId_Finale) && (stage.song_step <= 271))
+		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
+	if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272))
+		Character_Draw(character, &this->tex, &char_bfdefeat_frame[this->frame]);
 }
 
 void Char_BFDefeat_SetAnim(Character *character, u8 anim)
@@ -251,9 +353,18 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(-160,1);
-	this->character.focus_y = FIXED_DEC(-147,1);
-	this->character.focus_zoom = FIXED_DEC(509,512);
+	if (stage.stage_id == StageId_Defeat)
+	{
+		this->character.focus_x = FIXED_DEC(-226,1);
+		this->character.focus_y = FIXED_DEC(-140,1);
+		this->character.focus_zoom = FIXED_DEC(417,512);
+	}
+	else
+	{
+		this->character.focus_x = FIXED_DEC(-160,1);
+		this->character.focus_y = FIXED_DEC(-147,1);
+		this->character.focus_zoom = FIXED_DEC(509,512);
+	}
 	
 	this->character.size = FIXED_DEC(1,1);
 

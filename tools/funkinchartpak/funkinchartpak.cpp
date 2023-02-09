@@ -48,7 +48,8 @@ struct Note
 #define EVENTS_FLAG_CAMZOOM   (1 << 4) //Add Camera Zoom
 #define EVENTS_FLAG_FLASH     (1 << 5) //Flash
 #define EVENTS_FLAG_BEEP      (1 << 6) //Reactor Beep
-#define EVENTS_FLAG_BOP       (1 << 7) //Alter Camera Bop
+#define EVENTS_FLAG_BOP       (1 << 7) //Alter Camera Bop'
+#define EVENTS_FLAG_EXTZOOM   (1 << 4) //Extra Camera Zoom
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -118,6 +119,9 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	if (i[0 + position] == "Alter Camera Bop")
 		event_src.event |= EVENTS_FLAG_BOP;
 	
+	if (i[0 + position] == "Extra Cam Zoom")
+		event_src.event |= EVENTS_FLAG_EXTZOOM;
+	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
 		if (event_src.event & EVENTS_FLAG_SPEED)
@@ -169,6 +173,15 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 
 			if (i[2 + position] == "")
 				i[2 + position] = "4";
+		}
+		if (event_src.event & EVENTS_FLAG_EXTZOOM)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "0"; //cam zoom
+
+			if (i[2 + position] == "")
+				i[2 + position] = "0"; //hud zoom
 		}
 
 		//Get values information
