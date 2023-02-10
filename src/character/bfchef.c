@@ -222,6 +222,7 @@ Character *Char_BFChef_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-147,1);
 	this->character.focus_zoom = FIXED_DEC(509,512);
 	
+	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
 
 	//Load art

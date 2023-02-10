@@ -174,6 +174,7 @@ Character *Char_BlackP_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-200,1);
 	this->character.focus_zoom = FIXED_DEC(50,100);
 	
+	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(300,100);
 	
 	//Load art

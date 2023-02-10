@@ -1310,15 +1310,13 @@ static void Stage_LoadPlayer(void)
 	//Load death screen texture
 	if (stage.stage_id == StageId_Meltdown)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADGHO.TIM;1"), GFX_LOADTEX_FREE);
-	else if (stage.stage_id == StageId_Defeat)
-		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Idk)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
-	else
+	else if (stage.stage_id != StageId_Defeat)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 }
 
@@ -2710,6 +2708,9 @@ void Stage_Tick(void)
 			//Reset stage state
 			stage.flag = 0;
 			stage.bump = stage.sbump = FIXED_UNIT;
+			
+			if (stage.stage_id == StageId_Defeat)
+				Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 			
 			//Change background colour to black
 			Gfx_SetClear(0, 0, 0);

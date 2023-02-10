@@ -287,6 +287,7 @@ Character *Char_BFPixel_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-296,1);
 	this->character.focus_zoom = FIXED_DEC(511,512);
 	
+	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(2,1);
 
 	//Load art

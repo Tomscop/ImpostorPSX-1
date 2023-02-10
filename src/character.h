@@ -52,7 +52,7 @@ typedef struct Character
 	CharSpec spec;
 	u8 health_i; //hud1.tim
 	u32 health_bar; //hud1.tim
-	fixed_t focus_x, focus_y, focus_zoom;
+	fixed_t focus_x, focus_y, focus_zoom, zoom_save;
 	
 	fixed_t size;
 	

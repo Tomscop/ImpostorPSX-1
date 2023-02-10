@@ -23,6 +23,7 @@ typedef struct
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
+	Gfx_Tex tex_back3; //back3
 
 } Back_Defeat;
 
@@ -36,7 +37,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 	fx = stage.camera.x / 2;
 	fy = stage.camera.y;
 	
-	RECT bones1_src = {  0,163,226, 86};
+	RECT bones1_src = {  0,104,226, 55};
 	RECT_FIXED bones1_dst = {
 		FIXED_DEC(-166 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -44,7 +45,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 		FIXED_DEC(122,1)
 	};
 	
-	RECT bones2_src = {  0,163,224, 86};
+	RECT bones2_src = {  0,104,224, 55};
 	RECT_FIXED bones2_dst = {
 		FIXED_DEC(150 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -71,7 +72,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-	RECT back0_src = {  0,  0,255, 81};
+	RECT back0_src = {  0,  0,159, 81};
 	RECT_FIXED back0_dst = {
 		FIXED_DEC(-60 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-5,1) - fy,
@@ -79,7 +80,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(201,1)
 	};
 	
-	RECT back1_src = {  0,  0,226,160};
+	RECT back1_src = {  0,  0,226,102};
 	RECT_FIXED back1_dst = {
 		FIXED_DEC((0 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -87,7 +88,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(220,1)
 	};
 	
-	RECT back2_src = {  0,  0,224,160};
+	RECT back2_src = {  0,  0,224,102};
 	RECT_FIXED back2_dst = {
 		FIXED_DEC((309 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -95,7 +96,15 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(220,1)
 	};
 	
-	RECT oops_src = { 56,146, 14,  8};
+	RECT back3_src = {  0,  0,232, 46};
+	RECT_FIXED back3_dst = {
+		FIXED_DEC(64 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(41,1) - fy,
+		FIXED_DEC(372 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC( 90,1)
+	};
+	
+	RECT oops_src = { 147, 92, 14,  8};
 	RECT_FIXED oops_dst = {
 		FIXED_DEC(50 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(164,1) - fy,
@@ -106,7 +115,8 @@ void Back_Defeat_DrawBG(StageBack *back)
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
 	Debug_StageMoveDebug(&back1_dst, 6, fx, fy);
 	Debug_StageMoveDebug(&back2_dst, 7, fx, fy);
-	Debug_StageMoveDebug(&oops_dst, 10, fx, fy);
+	Debug_StageMoveDebug(&back3_dst, 10, fx, fy);
+	Debug_StageMoveDebug(&oops_dst, 12, fx, fy);
 	if (((stage.song_step >= 272) && (stage.song_step <= 1167)) || (stage.song_step >= 1440))
 	{
 		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
@@ -115,6 +125,8 @@ void Back_Defeat_DrawBG(StageBack *back)
 	}
 	if ((stage.song_step <= 1167) || (stage.song_step >= 1440))
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
+	if ((stage.song_step >= 1168) && (stage.song_step <= 1439))
+		Stage_DrawTex(&this->tex_back3, &back3_src, &back3_dst, stage.camera.bzoom);
 	
 	//Draw black
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -150,6 +162,7 @@ StageBack *Back_Defeat_New(void)
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
+	Gfx_LoadTex(&this->tex_back3, Archive_Find(arc_back, "back3.tim"), 0);
 	Mem_Free(arc_back);
 
 	Gfx_SetClear(0, 0, 0);

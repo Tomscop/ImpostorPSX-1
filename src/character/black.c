@@ -38,6 +38,18 @@ enum
   Black_ArcMain_Right0,
   Black_ArcMain_Right1,
   Black_ArcMain_Right2,
+  Black_ArcMain_IdleA0,
+  Black_ArcMain_IdleA1,
+  Black_ArcMain_IdleA2,
+  Black_ArcMain_IdleA3,
+  Black_ArcMain_LeftA0,
+  Black_ArcMain_LeftA1,
+  Black_ArcMain_DownA0,
+  Black_ArcMain_DownA1,
+  Black_ArcMain_UpA0,
+  Black_ArcMain_UpA1,
+  Black_ArcMain_RightA0,
+  Black_ArcMain_RightA1,
 	
 	Black_Arc_Max,
 };
@@ -111,6 +123,23 @@ static const CharFrame char_black_frame[] = {
   {Black_ArcMain_Right1, {  0,116,206,116}, {220,144}}, //47 right 4
   {Black_ArcMain_Right2, {  0,  0,173,120}, {200,142}}, //48 right 5
   {Black_ArcMain_Right2, {  0,120, 98,134}, {203,152}}, //49 right 6
+  
+	{Black_ArcMain_IdleA0, {0,   0, 255, 208}, {128, 210}}, //50 idle 1
+	{Black_ArcMain_IdleA1, {0,   0, 211, 199}, {97, 201}}, //51 idle 2
+	{Black_ArcMain_IdleA2, {0,   0, 239, 201}, {114, 202}}, //52 idle 3
+	{Black_ArcMain_IdleA3, {0,   0, 254, 207}, {127, 208}}, //53 idle 4
+
+	{Black_ArcMain_LeftA0, {0,   0, 253, 210}, {148, 211}}, //54 left a 1
+	{Black_ArcMain_LeftA1, {0,   0, 255, 204}, {165, 206}}, //55 left a 2
+
+	{Black_ArcMain_DownA0, {0,   0, 255, 202}, {122, 204}}, //56 down a 1
+	{Black_ArcMain_DownA1, {0,   0, 255, 190}, {126, 192}}, //57 down a 2
+
+	{Black_ArcMain_UpA0, {0,   0, 250, 240}, {122, 241}}, //58 up a 1
+	{Black_ArcMain_UpA1, {0,   0, 255, 186}, {131, 187}}, //59 up a 2
+
+	{Black_ArcMain_RightA0, {0,   0, 196, 193}, {59, 194}}, //60 right a 1
+	{Black_ArcMain_RightA1, {0,   0, 185, 203}, {50, 204}}, //61 right a 2
 };
 
 static const Animation char_black_anim[CharAnim_Max] = {
@@ -122,6 +151,18 @@ static const Animation char_black_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 38, 39, 40, 41, 42, 43, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{1, (const u8[]){ 44, 45, 46, 47, 48, 49, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+static const Animation char_black_anim2[CharAnim_Max] = {
+	{2, (const u8[]){ 50,  51,  52,  53, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{2, (const u8[]){ 54,  55, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 56,  57, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{2, (const u8[]){ 58,  59, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){60, 61, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -207,11 +248,23 @@ void Char_Black_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-135,1);
 			this->character.focus_zoom = FIXED_DEC(427,512);
 		}
+		if (stage.song_step == 1168)
+		{
+			this->character.focus_x = FIXED_DEC(-138,1);
+			this->character.focus_y = FIXED_DEC(-135,1);
+			this->character.focus_zoom = FIXED_DEC(427,512);
+			Animatable_Init(&this->character.animatable, char_black_anim2);
+			this->character.health_i = 9;
+			this->character.health_bar = 0xFFFFFFFF;
+		}
 		if (stage.song_step == 1440)
 		{
 			this->character.focus_x = FIXED_DEC(-170,1);
 			this->character.focus_y = FIXED_DEC(-135,1);
 			this->character.focus_zoom = FIXED_DEC(427,512);
+			Animatable_Init(&this->character.animatable, char_black_anim);
+			this->character.health_i = 1;
+			this->character.health_bar = 0xFFD70009;
 		}
 		if (stage.song_step == 1696)
 		{
@@ -306,6 +359,7 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
 		this->character.focus_zoom = FIXED_DEC(1,1);
 	}
 	
+	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(14,10);
 	
 	//Load art
@@ -336,6 +390,18 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
   "right0.tim",
   "right1.tim",
   "right2.tim",
+	"idlea0.tim",
+	"idlea1.tim",
+	"idlea2.tim",
+	"idlea3.tim",
+	"lefta0.tim", 
+	"lefta1.tim",
+	"downa0.tim",
+	"downa1.tim",
+	"upa0.tim",
+	"upa1.tim",
+	"righta0.tim",
+	"righta1.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

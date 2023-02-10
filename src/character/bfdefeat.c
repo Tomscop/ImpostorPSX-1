@@ -17,10 +17,8 @@ enum
 {
   BFDefeat_ArcMain_Idle0,
   BFDefeat_ArcMain_Idle1,
-  BFDefeat_ArcMain_Left0,
-  BFDefeat_ArcMain_Down0,
-  BFDefeat_ArcMain_Up0,
-  BFDefeat_ArcMain_Right0,
+  BFDefeat_ArcMain_A,
+  BFDefeat_ArcMain_B,
   BFDefeat_ArcMain_Miss0,
   BFDefeat_ArcMain_IdleS0,
   BFDefeat_ArcMain_IdleS1,
@@ -56,17 +54,17 @@ static const CharFrame char_bfdefeat_frame[] = {
   {BFDefeat_ArcMain_Idle0, {104,103,104,104}, {159,160-2}}, //3 idle 4
   {BFDefeat_ArcMain_Idle1, {  0,  0,103,104}, {159,160-2}}, //4 idle 5
 
-  {BFDefeat_ArcMain_Left0, {  0,  0, 90,104}, {148,160-2}}, //5 left 1
-  {BFDefeat_ArcMain_Left0, { 90,  0, 91,104}, {149,160-2}}, //6 left 2
+  {BFDefeat_ArcMain_A, {  0,  0, 90,104}, {148,160-2}}, //5 left 1
+  {BFDefeat_ArcMain_A, { 90,  0, 91,104}, {149,160-2}}, //6 left 2
 
-  {BFDefeat_ArcMain_Down0, {  0,  0, 93,100}, {149,157-2}}, //7 down 1
-  {BFDefeat_ArcMain_Down0, { 93,  0, 92,101}, {148,157-2}}, //8 down 2
+  {BFDefeat_ArcMain_A, {  0,104, 93,100}, {149,157-2}}, //7 down 1
+  {BFDefeat_ArcMain_A, { 93,104, 92,101}, {148,157-2}}, //8 down 2
 
-  {BFDefeat_ArcMain_Up0, {  0,  0, 94,106}, {149,162-2}}, //9 up 1
-  {BFDefeat_ArcMain_Up0, { 94,  0, 94,105}, {148,161-2}}, //10 up 2
+  {BFDefeat_ArcMain_B, {  0,  0, 94,106}, {149,162-2}}, //9 up 1
+  {BFDefeat_ArcMain_B, { 94,  0, 94,105}, {148,161-2}}, //10 up 2
 
-  {BFDefeat_ArcMain_Right0, {  0,  0, 95,104}, {148,160-2}}, //11 right 1
-  {BFDefeat_ArcMain_Right0, { 95,  0, 95,104}, {148,160-2}}, //12 right 2
+  {BFDefeat_ArcMain_B, {  0,106, 95,104}, {148,160-2}}, //11 right 1
+  {BFDefeat_ArcMain_B, { 95,106, 95,104}, {148,160-2}}, //12 right 2
 
   {BFDefeat_ArcMain_Miss0, {  0,  0, 93,104}, {151,160-2}}, //13 miss 1
   {BFDefeat_ArcMain_Miss0, { 93,  0, 93,104}, {151,159-2}}, //14 miss 2
@@ -366,6 +364,7 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 		this->character.focus_zoom = FIXED_DEC(509,512);
 	}
 	
+	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
 
 	//Load art
@@ -374,10 +373,8 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 	const char **pathp = (const char *[]){
   "idle0.tim",
   "idle1.tim",
-  "left0.tim",
-  "down0.tim",
-  "up0.tim",
-  "right0.tim",
+  "a.tim",
+  "b.tim",
   "miss0.tim",
   "idles0.tim",
   "idles1.tim",
