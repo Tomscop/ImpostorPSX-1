@@ -218,7 +218,7 @@
 		//Characters
 		{Char_BFDefeat_New,    FIXED_DEC(482,1),  FIXED_DEC(220,1)},
         {Char_BF_New,    FIXED_DEC(376,1),  FIXED_DEC(159,1)},
-		{Char_Black_New, FIXED_DEC(394,1),  FIXED_DEC(215,1)},
+		{Char_Red_New, FIXED_DEC(394,1),  FIXED_DEC(215,1)},
         {NULL},
         {NULL},
 		

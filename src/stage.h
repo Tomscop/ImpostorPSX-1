@@ -236,7 +236,7 @@ typedef struct
 	int pause_state;
 	struct
 	{
-		boolean ghost, downscroll, middlescroll, expsync, practice, debug, palmode, widescreen, sfxmiss, songtimer, botplay, flash;
+		boolean ghost, downscroll, middlescroll, expsync, practice, debug, palmode, widescreen, sfxmiss, songtimer, botplay, flash, defeat;
 		int savescore[StageId_Max][3];
 	} prefs;
 	s32 mode;
@@ -278,6 +278,7 @@ typedef struct
 	fixed_t flash, flashspd;
 	fixed_t reactor, reactorspd;
 	fixed_t bop1, bop2;
+	int defeatmiss;
 	
 	//if stage have intro or no
 	boolean intro;

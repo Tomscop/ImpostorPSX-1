@@ -1504,9 +1504,7 @@ static void Stage_LoadSFX(void)
 	//tomongus shot sound
 	if ((stage.stage_id == StageId_SussyBussy) || (stage.stage_id == StageId_Rivals))
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\TOMSHOT.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\TOMSHOT.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[7] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1515,45 +1513,35 @@ static void Stage_LoadSFX(void)
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\DEATHE.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\DEATHE.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Defeat)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\DEATHD.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\DEATHD.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\DEATHP.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\DEATHP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\DEATHH.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\DEATHH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\DEATH.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\DEATH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1562,36 +1550,28 @@ static void Stage_LoadSFX(void)
 	//retry sound
 	if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\RETRYJ.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\RETRYJ.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\RETRYP.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\RETRYP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\RETRYH.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\RETRYH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else
 	{
-		char text[0x80];
-		sprintf(text, "\\SOUNDS\\RETRY.VAG;1");
-		IO_FindFile(&file, text);
+		IO_FindFile(&file, "\\SOUNDS\\RETRY.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1785,6 +1765,11 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNTPIX.TIM;1"), GFX_LOADTEX_FREE);
+	}
+	else if (stage.stage_id == StageId_Defeat)
+	{
+		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0OPT.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
 	}
 	else
 	{
@@ -2402,10 +2387,17 @@ void Stage_Tick(void)
 
 				if (this->refresh_miss)
 				{
-					if (this->miss != 0)
-						sprintf(this->miss_text, "Misses: %d", this->miss);
+					if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat))
+					{
+						sprintf(this->miss_text, "Misses: %d / %d", this->miss, stage.defeatmiss);
+					}
 					else
-						strcpy(this->miss_text, "Misses: 0");
+					{
+						if (this->miss != 0)
+							sprintf(this->miss_text, "Misses: %d", this->miss);
+						else
+							strcpy(this->miss_text, "Misses: 0");
+					}
 					this->refresh_miss = false;
 				}
 				
@@ -2562,7 +2554,11 @@ void Stage_Tick(void)
 						{
 							//Player has died
 							stage.player_state[0].health = 0;
-								
+							
+							stage.state = StageState_Dead;
+						}
+						if ((stage.stage_id == StageId_Defeat) && (stage.player_state[0].miss >= (stage.defeatmiss + 1)))
+						{
 							stage.state = StageState_Dead;
 						}
 						if (stage.player_state[0].health > 20000)

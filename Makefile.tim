@@ -6,6 +6,7 @@ all: \
 	iso/font/font.tim \
 	iso/stage/hud0.tim \
 	iso/stage/hud0pix.tim \
+	iso/stage/hud0opt.tim \
 	iso/stage/hud1-1.tim \
 	iso/stage/hud1-t.tim \
 	iso/stage/hud1-fp0.tim \
@@ -73,7 +74,7 @@ iso/%.arc:
 	tools/funkinarcpak/funkinarcpak $@ $^
 
 # Menu
-iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim
+iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/defeat.tim
 
 
 # BF
@@ -123,7 +124,7 @@ iso/chars/white/main.arc: iso/chars/white/idle0.tim iso/chars/white/idle1.tim is
 iso/chars/whitedk/main.arc: iso/chars/whitedk/idle0.tim iso/chars/whitedk/idle1.tim iso/chars/whitedk/left0.tim iso/chars/whitedk/left1.tim iso/chars/whitedk/down0.tim iso/chars/whitedk/down1.tim iso/chars/whitedk/up0.tim iso/chars/whitedk/up1.tim iso/chars/whitedk/right0.tim iso/chars/whitedk/right1.tim 
 
 # Black
-iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim iso/chars/black/idlea0.tim iso/chars/black/idlea1.tim iso/chars/black/idlea2.tim iso/chars/black/idlea3.tim iso/chars/black/lefta0.tim iso/chars/black/lefta1.tim iso/chars/black/downa0.tim iso/chars/black/downa1.tim iso/chars/black/upa0.tim iso/chars/black/upa1.tim iso/chars/black/righta0.tim iso/chars/black/righta1.tim
+iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/down5.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/up3.tim iso/chars/black/up4.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim iso/chars/black/old0.tim iso/chars/black/old1.tim iso/chars/black/old2.tim
 
 # Black Parasite
 iso/chars/blackp/main.arc: iso/chars/blackp/idle0.tim iso/chars/blackp/idle1.tim iso/chars/blackp/idle2.tim iso/chars/blackp/idle3.tim iso/chars/blackp/idle4.tim iso/chars/blackp/left0.tim iso/chars/blackp/left1.tim iso/chars/blackp/left2.tim iso/chars/blackp/left3.tim iso/chars/blackp/down0.tim iso/chars/blackp/down1.tim iso/chars/blackp/down2.tim iso/chars/blackp/down3.tim iso/chars/blackp/up0.tim iso/chars/blackp/up1.tim iso/chars/blackp/up2.tim iso/chars/blackp/up3.tim iso/chars/blackp/right0.tim iso/chars/blackp/right1.tim iso/chars/blackp/right2.tim iso/chars/blackp/right3.tim 

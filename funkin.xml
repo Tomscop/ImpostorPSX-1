@@ -42,6 +42,7 @@
 			<dir name = "stage">
 				<file name = "hud0.tim" type = "data" source = "iso/stage/hud0.tim"/>
 				<file name = "hud0pix.tim" type = "data" source = "iso/stage/hud0pix.tim"/>
+				<file name = "hud0opt.tim" type = "data" source = "iso/stage/hud0opt.tim"/>
 				<file name = "hud1-1.tim" type = "data" source = "iso/stage/hud1-1.tim"/>
 				<file name = "hud1-t.tim" type = "data" source = "iso/stage/hud1-t.tim"/>
 				<file name = "hud1-fp0.tim" type = "data" source = "iso/stage/hud1-fp0.tim"/>
@@ -342,6 +343,9 @@
 				<file name = "cancel.vag" type = "data" source = "iso/sounds/menu/cancel.ogg.vag"/>
 				<file name = "scrollfp.vag" type = "data" source = "iso/sounds/menu/scrollfp.ogg.vag"/>
 				<file name = "confirmf.vag" type = "data" source = "iso/sounds/menu/confirmfp.ogg.vag"/>
+				<file name = "defeat.vag" type = "data" source = "iso/sounds/menu/defeat.ogg.vag"/>
+				<file name = "swap0.vag" type = "data" source = "iso/sounds/menu/swap0.ogg.vag"/>
+				<file name = "swap1.vag" type = "data" source = "iso/sounds/menu/swap1.ogg.vag"/>
 				<!-- Stage Sounds -->
 				<file name = "intro0.vag" type = "data" source = "iso/sounds/stage/intro0.ogg.vag"/>
 				<file name = "intro1.vag" type = "data" source = "iso/sounds/stage/intro1.ogg.vag"/>

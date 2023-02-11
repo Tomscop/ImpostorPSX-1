@@ -27,7 +27,7 @@
 
 #include "stdlib.h"
 
-static u32 Sounds[5];
+static u32 Sounds[8];
 static char scoredisp[30];
 //Menu messages
 static const char *funny_messages[][2] = {
@@ -73,6 +73,7 @@ static struct
 	u8 page, next_page;
 	boolean page_swap;
 	u8 select, next_select;
+	boolean idk;
 	
 	fixed_t scroll;
 	fixed_t trans_time;
@@ -105,11 +106,12 @@ static struct
 		{
 			u8 id, diff;
 			boolean story;
+			boolean last;
 		} stage;
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
+	Gfx_Tex tex_back, tex_ng, tex_story, tex_title, tex_defeat;
 	FontData font_bold, font_arial, font_cdr;
 	
 	Character *gf; //Title Girlfriend
@@ -247,6 +249,81 @@ static void Menu_DrawWeek(const char *week, s32 x, s32 y)
 	}
 }
 
+static void Menu_DrawDefeat(void)
+{
+	//Draw number
+	RECT zero_src = {0, 67, 10, 15};
+	RECT zero_dst = {5 + 15, 42, 16, 24};
+	RECT one_src = {11, 67, 8, 15};
+	RECT one_dst = {5 + 15, 42, 13, 24};
+	RECT two_src = {20, 67, 10, 15};
+	RECT two_dst = {5 + 15, 42, 16, 24};
+	RECT three_src = {31, 67, 10, 15};
+	RECT three_dst = {5 + 15, 42, 16, 24};
+	RECT four_src = {43, 67, 10, 15};
+	RECT four_dst = {5 + 15, 42, 16, 24};
+	RECT five_src = {54, 67, 10, 15};
+	RECT five_dst = {5 + 15, 42, 16, 24};
+	if (menu.select == 5)
+		Gfx_DrawTex(&menu.tex_defeat, &zero_src, &zero_dst);
+	else if (menu.select == 4)
+		Gfx_DrawTex(&menu.tex_defeat, &one_src, &one_dst);
+	else if (menu.select == 3)
+		Gfx_DrawTex(&menu.tex_defeat, &two_src, &two_dst);
+	else if (menu.select == 2)
+		Gfx_DrawTex(&menu.tex_defeat, &three_src, &three_dst);
+	else if (menu.select == 1)
+		Gfx_DrawTex(&menu.tex_defeat, &four_src, &four_dst);
+	else if (menu.select == 0)
+		Gfx_DrawTex(&menu.tex_defeat, &five_src, &five_dst);
+	
+	//Draw text
+	RECT combo_src = {0, 35, 55, 15};
+	RECT combo_dst = {76 + 15, 42, 88, 24};
+	RECT break_src = {0, 51, 66, 15};
+	RECT break_dst = {183 + 15, 42, 107, 24};
+	RECT slash_src = {65, 67, 10, 15};
+	RECT slash_dst = {23 + 15, 42, 16, 24};
+	RECT five2_dst = {41 + 15, 42, 16, 24};
+	Gfx_DrawTex(&menu.tex_defeat, &combo_src, &combo_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &break_src, &break_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &slash_src, &slash_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &five_src, &five2_dst);
+	
+	//Draw dead people
+	RECT ghost_src = {0, 0, 28, 30};
+	RECT ghost_dst = {0 + 41, 150, 28, 30};
+	RECT ghost2_dst = {42 + 41, 150, 28, 30};
+	RECT dead_src = {29, 0, 28, 30};
+	RECT dead_dst = {84 + 41, 150, 28, 30};
+	RECT dead2_dst = {126 + 41, 150, 28, 30};
+	RECT bone_src = {58, 0, 28, 30};
+	RECT bone_dst = {168 + 41, 150, 28, 30};
+	RECT bone2_dst = {210 + 41, 150, 28, 30};
+	Gfx_DrawTex(&menu.tex_defeat, &ghost_src, &ghost_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &ghost_src, &ghost2_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &dead_src, &dead_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &dead_src, &dead2_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &bone_src, &bone_dst);
+	Gfx_DrawTex(&menu.tex_defeat, &bone_src, &bone2_dst);
+	
+	//Draw arrow
+	RECT arrow_src = {0, 31, 28, 3};
+	RECT arrow_dst = {(42 * menu.select) + 41,138, 28, 3};
+	if (menu.select == 0)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+	else if (menu.select == 1)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+	else if (menu.select == 2)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+	else if (menu.select == 3)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+	else if (menu.select == 4)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+	else if (menu.select == 5)
+		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+}
+
 //Menu functions
 void Menu_Load(MenuPage page)
 {
@@ -257,6 +334,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_ng,    Archive_Find(menu_arc, "ng.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
+	Gfx_LoadTex(&menu.tex_defeat, Archive_Find(menu_arc, "defeat.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold, false);
@@ -313,6 +391,21 @@ void Menu_Load(MenuPage page)
 	IO_FindFile(&file, "\\SOUNDS\\CONFIRMF.VAG;1");
     data = IO_ReadFile(&file);
     Sounds[4] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\SWAP0.VAG;1");
+    data = IO_ReadFile(&file);
+    Sounds[5] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\SWAP1.VAG;1");
+    data = IO_ReadFile(&file);
+    Sounds[6] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\DEFEAT.VAG;1");
+    data = IO_ReadFile(&file);
+    Sounds[7] = Audio_LoadVAGData(data, file.size);
     Mem_Free(data);
 
 	//Play menu music
@@ -676,6 +769,7 @@ void Menu_Tick(void)
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
+				menu.page_param.stage.last = true;
 			}
 			
 			//Draw white fade
@@ -697,7 +791,7 @@ void Menu_Tick(void)
 				if (pad_state.press & PAD_UP)
 				{
 					//play scroll sound
-          Audio_PlaySound(Sounds[0], 0x3fff);
+					Audio_PlaySound(Sounds[0], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -716,14 +810,28 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					//play confirm sound
-					Audio_PlaySound(Sounds[1], 0x3fff);
-					menu.next_page = MenuPage_Stage;
-					menu.page_param.stage.id = menu_options[menu.select].stage;
-					menu.page_param.stage.story = true;
-					menu.trans_time = FIXED_UNIT;
-					menu.page_state.title.fade = FIXED_DEC(255,1);
-					menu.page_state.title.fadespd = FIXED_DEC(510,1);
+					if (menu.select != 3)
+					{
+						//play confirm sound
+						Audio_PlaySound(Sounds[1], 0x3fff);
+						menu.next_page = MenuPage_Stage;
+						menu.page_param.stage.id = menu_options[menu.select].stage;
+						menu.page_param.stage.story = true;
+						menu.trans_time = FIXED_UNIT;
+						menu.page_state.title.fade = FIXED_DEC(255,1);
+						menu.page_state.title.fadespd = FIXED_DEC(510,1);
+					}
+					else
+					{
+						//play confirm sound
+						Audio_PlaySound(Sounds[1], 0x3fff);
+						menu.next_page = MenuPage_Defeat;
+						menu.page_param.stage.id = menu_options[menu.select].stage;
+						menu.page_param.stage.story = true;
+						menu.trans_time = FIXED_UNIT;
+						menu.page_state.title.fade = FIXED_DEC(255,1);
+						menu.page_state.title.fadespd = FIXED_DEC(510,1);
+					}
 				}
 				
 				//Return to main menu if circle is pressed
@@ -871,6 +979,7 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.page_param.stage.last = false;
 				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + screen.SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.freeplay.back_r = FIXED_DEC(255,1);
@@ -912,12 +1021,24 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					//play confirm sound
-					Audio_PlaySound(Sounds[4], 0x3fff);
-					menu.next_page = MenuPage_Stage;
-					menu.page_param.stage.id = menu_options[menu.select].stage;
-					menu.page_param.stage.story = false;
-					Trans_Start();
+					if (menu.select != 12)
+					{
+						//play confirm sound
+						Audio_PlaySound(Sounds[4], 0x3fff);
+						menu.next_page = MenuPage_Stage;
+						menu.page_param.stage.id = menu_options[menu.select].stage;
+						menu.page_param.stage.story = false;
+						Trans_Start();
+					}
+					else
+					{
+						//play confirm sound
+						Audio_PlaySound(Sounds[4], 0x3fff);
+						menu.next_page = MenuPage_Defeat;
+						menu.page_param.stage.id = menu_options[menu.select].stage;
+						menu.page_param.stage.story = false;
+						Trans_Start();
+					}
 				}
 				
 				//Return to main menu if circle is pressed
@@ -1116,12 +1237,13 @@ void Menu_Tick(void)
 				{OptType_Boolean, "FLASHING LIGHTS", &stage.prefs.flash, {.spec_boolean = {0}}},
 				{OptType_Boolean, "SHOW SONG TIME", &stage.prefs.songtimer, {.spec_boolean = {0}}},
 				{OptType_Boolean, "MISS SOUNDS", &stage.prefs.sfxmiss, {.spec_boolean = {0}}},
+				{OptType_Boolean, "DEFEAT MISSES", &stage.prefs.defeat, {.spec_boolean = {0}}},
 				{OptType_Boolean, "PAL REFRESH RATE", &stage.prefs.palmode, {.spec_boolean = {0}}},
 				{OptType_Boolean, "BOTPLAY", &stage.prefs.botplay, {.spec_boolean = {0}}},
 				{OptType_Boolean, "PRACTICE MODE", &stage.prefs.practice, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DEBUG MODE", &stage.prefs.debug, {.spec_boolean = {0}}},
 			};
-			if (menu.select == 6 && pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+			if (menu.select == 8 && pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
 				stage.pal_i = 1;
 
 			if (stage.mode == StageMode_2P)
@@ -1248,6 +1370,97 @@ void Menu_Tick(void)
 			Stage_Load(menu.page_param.stage.id, menu.page_param.stage.diff, menu.page_param.stage.story);
 			gameloop = GameLoop_Stage;
 			LoadScr_End();
+			break;
+		}
+		case MenuPage_Defeat:
+		{
+			//Initialize page
+			if (menu.page_swap)
+			{
+				Audio_StopXA();
+				menu.select = 0;
+				menu.idk = false;
+				menu.page_state.title.fade = FIXED_DEC(0,1);
+				menu.page_state.title.fadespd = FIXED_DEC(0,1);
+			}
+			
+			//Handle option and selection
+			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
+				Trans_Start();
+			
+			if (menu.next_page == menu.page && Trans_Idle())
+			{
+				//Change option
+				if (pad_state.press & PAD_LEFT)
+				{
+					//play scroll sound
+					Audio_PlaySound(Sounds[6], 0x3fff);
+					if (menu.select > 0)
+						menu.select--;
+					else
+						menu.select = 6 - 1;
+				}
+				if (pad_state.press & PAD_RIGHT)
+				{
+					//play scroll sound
+                    Audio_PlaySound(Sounds[5], 0x3fff);
+					if (menu.select < 6 - 1)
+						menu.select++;
+					else
+						menu.select = 0;
+				}
+				
+				//Select option if cross is pressed
+				if (pad_state.press & (PAD_START | PAD_CROSS))
+				{
+					//play confirm sound
+					Audio_PlaySound(Sounds[7], 0x3fff);
+					menu.idk = true;
+					menu.page_param.stage.id = StageId_Defeat;
+					menu.next_page = MenuPage_Stage;
+					menu.trans_time = FIXED_UNIT;
+				}
+				
+				//Return to main menu if circle is pressed
+				if (pad_state.press & PAD_CIRCLE)
+				{
+					//play cancel sound
+					Audio_PlaySound(Sounds[2], 0x3fff);
+					if (menu.page_param.stage.last == true)
+					{
+						menu.next_page = MenuPage_Story;
+						menu.next_select = 3; //Story Mode
+					}
+					else
+					{
+						menu.next_page = MenuPage_Freeplay;
+						menu.next_select = 12; //Story Mode
+					}
+					Trans_Start();
+					Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
+					Audio_WaitPlayXA();
+				}
+			}
+			
+			//Draw options
+			if (menu.idk != true)
+				Menu_DrawDefeat();
+			if (menu.select == 0)
+				stage.defeatmiss = 5;
+			else if (menu.select == 1)
+				stage.defeatmiss = 4;
+			else if (menu.select == 2)
+				stage.defeatmiss = 3;
+			else if (menu.select == 3)
+				stage.defeatmiss = 2;
+			else if (menu.select == 4)
+				stage.defeatmiss = 1;
+			else if (menu.select == 5)
+				stage.defeatmiss = 0;
+			
+			//Draw black
+			RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+			Gfx_DrawRect(&screen_src, 0, 0, 0);
 			break;
 		}
 		default:
