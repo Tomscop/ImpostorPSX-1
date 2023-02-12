@@ -35,9 +35,18 @@ enum
   Black_ArcMain_Right0,
   Black_ArcMain_Right1,
   Black_ArcMain_Right2,
-  Black_ArcMain_Old0,
-  Black_ArcMain_Old1,
-  Black_ArcMain_Old2,
+  Black_ArcMain_IdleA0,
+  Black_ArcMain_IdleA1,
+  Black_ArcMain_IdleA2,
+  Black_ArcMain_IdleA3,
+  Black_ArcMain_LeftA0,
+  Black_ArcMain_LeftA1,
+  Black_ArcMain_DownA0,
+  Black_ArcMain_DownA1,
+  Black_ArcMain_UpA0,
+  Black_ArcMain_UpA1,
+  Black_ArcMain_RightA0,
+  Black_ArcMain_RightA1,
 	
 	Black_Arc_Max,
 };
@@ -112,22 +121,22 @@ static const CharFrame char_black_frame[] = {
   {Black_ArcMain_Right2, {  0,  0,144,101}, {192,144}}, //48 right 5
   {Black_ArcMain_Right2, {144,  0, 83,113}, {196,153}}, //49 right 6
   
-	{Black_ArcMain_Old0, {  0,  0,128,104}, {64+160, 105+49}}, //50 idle a 1
-	{Black_ArcMain_Old0, {129,  0,106,100}, {49+160, 101+49}}, //51 idle a 2
-	{Black_ArcMain_Old0, {  0,105,120,101}, {57+160, 101+49}}, //52 idle a 3
-	{Black_ArcMain_Old0, {121,105,127,104}, {64+160, 104+49}}, //53 idle a 4
+	{Black_ArcMain_IdleA0, {0,   0, 255, 208}, {128+320, 210+97}}, //50 idle a 1
+	{Black_ArcMain_IdleA1, {0,   0, 211, 199}, {97+320, 201+97}}, //51 idle a 2
+	{Black_ArcMain_IdleA2, {0,   0, 239, 201}, {114+320, 202+97}}, //52 idle a 3
+	{Black_ArcMain_IdleA3, {0,   0, 254, 207}, {127+320, 208+97}}, //53 idle a 4
 
-	{Black_ArcMain_Old1, {  0,  0,127,106}, {74+160, 106+49}}, //54 left a 1
-	{Black_ArcMain_Old1, {128,  0,127,102}, {83+160, 103+49}}, //55 left a 2
+	{Black_ArcMain_LeftA0, {0,   0, 253, 210}, {148+320, 211+97}}, //54 left a 1
+	{Black_ArcMain_LeftA1, {0,   0, 255, 204}, {165+320, 206+97}}, //55 left a 2
 
-	{Black_ArcMain_Old1, {  0,107,127,102}, {61+160, 102+49}}, //56 down a 1
-	{Black_ArcMain_Old1, {128,107,127, 96}, {63+160, 96+49}}, //57 down a 2
+	{Black_ArcMain_DownA0, {0,   0, 255, 202}, {122+320, 204+97}}, //56 down a 1
+	{Black_ArcMain_DownA1, {0,   0, 255, 190}, {126+320, 192+97}}, //57 down a 2
 
-	{Black_ArcMain_Old2, {  0,  0,125,121}, {61+160, 121+49}}, //58 up a 1
-	{Black_ArcMain_Old2, {126,  0,128, 94}, {66+160, 94+49}}, //59 up a 2
+	{Black_ArcMain_UpA0, {0,   0, 250, 240}, {122+320, 241+97}}, //58 up a 1
+	{Black_ArcMain_UpA1, {0,   0, 255, 186}, {131+320, 187+97}}, //59 up a 2
 
-	{Black_ArcMain_Old2, {  0,122, 98, 97}, {30+160, 97+49}}, //60 right a 1
-	{Black_ArcMain_Old2, { 99,122, 93,102}, {25+160, 102+49}}, //61 right a 2
+	{Black_ArcMain_RightA0, {0,   0, 196, 193}, {59+320, 194+97}}, //60 right a 1
+	{Black_ArcMain_RightA1, {0,   0, 185, 203}, {50+320, 204+97}}, //61 right a 2
 };
 
 static const Animation char_black_anim[CharAnim_Max] = {
@@ -227,7 +236,7 @@ void Char_Black_Tick(Character *character)
 			character->set_anim(character, CharAnim_Up);
 			this->character.health_i = 9;
 			this->character.health_bar = 0xFFFF0000;
-			this->character.size = FIXED_DEC(2,1);
+			this->character.size = FIXED_DEC(1,1);
 		}
 		if (stage.song_step == 1440)
 		{
@@ -356,9 +365,18 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
   "right0.tim",
   "right1.tim",
   "right2.tim",
-	"old0.tim",
-	"old1.tim",
-	"old2.tim",
+	"idlea0.tim",
+	"idlea1.tim",
+	"idlea2.tim",
+	"idlea3.tim",
+	"lefta0.tim",
+	"lefta1.tim",
+	"downa0.tim",
+	"downa1.tim",
+	"upa0.tim",
+	"upa1.tim",
+	"righta0.tim",
+	"righta1.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
