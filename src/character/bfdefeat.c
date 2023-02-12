@@ -216,6 +216,7 @@ void Char_BFDefeat_Tick(Character *character)
 		{
 			this->character.focus_y = FIXED_DEC(-140,1);
 			this->character.focus_zoom = FIXED_DEC(427,512);
+			this->character.health_i = 0;
 		}
 		if (stage.song_step == 1696)
 		{

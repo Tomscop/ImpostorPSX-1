@@ -810,7 +810,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					if (menu.select != 3)
+					if ((menu.select != 3) || ((menu.select == 3) && (stage.prefs.defeat != 1)))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
@@ -821,7 +821,7 @@ void Menu_Tick(void)
 						menu.page_state.title.fade = FIXED_DEC(255,1);
 						menu.page_state.title.fadespd = FIXED_DEC(510,1);
 					}
-					else
+					else if ((menu.select == 3) && (stage.prefs.defeat == 1))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
@@ -1021,7 +1021,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					if (menu.select != 12)
+					if ((menu.select != 12) || ((menu.select == 12) && (stage.prefs.defeat != 1)))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
@@ -1030,7 +1030,7 @@ void Menu_Tick(void)
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
-					else
+					else if ((menu.select == 12) && (stage.prefs.defeat == 1))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);

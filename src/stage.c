@@ -113,6 +113,9 @@ static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 
 	if (this->character2 != NULL && note->type & (NOTE_FLAG_CHAR2SING | NOTE_FLAG_BOTHSING))
 		this->character2->set_anim(this->character2, type);
+	
+	if (((stage.stage_id == StageId_Defeat) && (((stage.song_step >= 1232) && (stage.song_step <= 1295)) || ((stage.song_step >= 1360) && (stage.song_step <= 1439)))))
+		stage.player_state[0].character2->set_anim(stage.player_state[0].character2, type);
 }
 
 //Stage music functions
@@ -1682,7 +1685,7 @@ static void Stage_LoadState(void)
 		timer.timersec = 0;
 		stage.paused = false;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
-		if (stage.stage_id == StageId_Defeat)
+		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
 		else
 			strcpy(stage.player_state[i].miss_text, "Misses: 0");
@@ -1769,19 +1772,16 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNTPIX.TIM;1"), GFX_LOADTEX_FREE);
 	}
-	else if (stage.stage_id == StageId_Defeat)
-	{
-		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0OPT.TIM;1"), GFX_LOADTEX_FREE);
-		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
-	}
 	else
 	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
 	}
 	
-	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown))
-		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-1.TIM;1"), GFX_LOADTEX_FREE);
+	if ((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Ejected))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-1-2.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Defeat))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-3.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id == StageId_SaucesMoogus) || (stage.stage_id == StageId_Roomcode) || (stage.stage_id == StageId_Idk) || (stage.stage_id == StageId_Top10))
@@ -2563,7 +2563,7 @@ void Stage_Tick(void)
 							
 							stage.state = StageState_Dead;
 						}
-						if ((stage.stage_id == StageId_Defeat) && (stage.player_state[0].miss >= (stage.defeatmiss + 1)))
+						if ((stage.stage_id == StageId_Defeat) && (stage.player_state[0].miss >= (stage.defeatmiss + 1)) && (stage.prefs.defeat == 1))
 						{
 							stage.state = StageState_Dead;
 						}

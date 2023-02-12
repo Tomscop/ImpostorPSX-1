@@ -224,7 +224,7 @@ void Char_Black_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-184,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 			Animatable_Init(&this->character.animatable, char_black_anim2);
-			character->set_anim(character, CharAnim_Idle);
+			character->set_anim(character, CharAnim_Up);
 			this->character.health_i = 9;
 			this->character.health_bar = 0xFFFFFFFF;
 			this->character.size = FIXED_DEC(2,1);
@@ -235,7 +235,7 @@ void Char_Black_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-178,1);
 			this->character.focus_zoom = FIXED_DEC(427,512);
 			Animatable_Init(&this->character.animatable, char_black_anim);
-			this->character.health_i = 1;
+			this->character.health_i = 6;
 			this->character.health_bar = 0xFFD70009;
 			this->character.size = FIXED_DEC(166,100);
 		}
@@ -310,7 +310,7 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 6;
 
 	//health bar color
 	this->character.health_bar = 0xFFD70009;
