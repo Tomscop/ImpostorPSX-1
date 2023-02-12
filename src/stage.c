@@ -1682,7 +1682,10 @@ static void Stage_LoadState(void)
 		timer.timersec = 0;
 		stage.paused = false;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
-		strcpy(stage.player_state[i].miss_text, "Misses: 0");
+		if (stage.stage_id == StageId_Defeat)
+			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
+		else
+			strcpy(stage.player_state[i].miss_text, "Misses: 0");
 		strcpy(stage.player_state[i].score_text, "Score: 0");
 		
 		stage.player_state[i].pad_held = stage.player_state[i].pad_press = 0;
@@ -2389,7 +2392,10 @@ void Stage_Tick(void)
 				{
 					if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat))
 					{
-						sprintf(this->miss_text, "Misses: %d / %d", this->miss, stage.defeatmiss);
+						if (this->miss != 0)
+							sprintf(this->miss_text, "Misses: %d / %d", this->miss, stage.defeatmiss);
+						else
+							sprintf(this->miss_text, "Misses: 0 / %d", stage.defeatmiss);
 					}
 					else
 					{

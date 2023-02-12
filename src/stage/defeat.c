@@ -37,7 +37,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 	fx = stage.camera.x / 2;
 	fy = stage.camera.y;
 	
-	RECT bones1_src = {  0,104,226, 55};
+	RECT bones1_src = {  0,163,226, 86};
 	RECT_FIXED bones1_dst = {
 		FIXED_DEC(-166 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -45,7 +45,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 		FIXED_DEC(122,1)
 	};
 	
-	RECT bones2_src = {  0,104,224, 55};
+	RECT bones2_src = {  0,163,224, 86};
 	RECT_FIXED bones2_dst = {
 		FIXED_DEC(150 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -72,7 +72,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-	RECT back0_src = {  0,  0,159, 81};
+	RECT back0_src = {  0,  0,255, 81};
 	RECT_FIXED back0_dst = {
 		FIXED_DEC(-60 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-5,1) - fy,
@@ -80,7 +80,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(201,1)
 	};
 	
-	RECT back1_src = {  0,  0,226,102};
+	RECT back1_src = {  0,  0,226,160};
 	RECT_FIXED back1_dst = {
 		FIXED_DEC((0 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -88,7 +88,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(220,1)
 	};
 	
-	RECT back2_src = {  0,  0,224,102};
+	RECT back2_src = {  0,  0,224,160};
 	RECT_FIXED back2_dst = {
 		FIXED_DEC((309 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -98,13 +98,13 @@ void Back_Defeat_DrawBG(StageBack *back)
 	
 	RECT back3_src = {  0,  0,232, 46};
 	RECT_FIXED back3_dst = {
-		FIXED_DEC(64 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(41,1) - fy,
+		FIXED_DEC(75 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(44,1) - fy,
 		FIXED_DEC(372 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC( 90,1)
 	};
 	
-	RECT oops_src = { 147, 92, 14,  8};
+	RECT oops_src = { 56,146, 14,  8};
 	RECT_FIXED oops_dst = {
 		FIXED_DEC(50 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(164,1) - fy,
