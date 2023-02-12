@@ -210,12 +210,14 @@ void Char_BFDefeat_Tick(Character *character)
 			this->character.focus_x = FIXED_DEC(-188,1);
 			this->character.focus_y = FIXED_DEC(-128,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
-			this->character.health_i = 9;
+			this->character.health_bar = 0xFF5EFF35;
+			this->character.health_i = 8;
 		}
 		if (stage.song_step == 1440)
 		{
 			this->character.focus_y = FIXED_DEC(-140,1);
 			this->character.focus_zoom = FIXED_DEC(427,512);
+			this->character.health_bar = 0xFF29B5D6;
 			this->character.health_i = 0;
 		}
 		if (stage.song_step == 1696)

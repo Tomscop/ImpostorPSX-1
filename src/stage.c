@@ -809,7 +809,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	{
 		//Get src and dst
 		fixed_t hx;
-		if (stage.stage_id != StageId_Defeat)
+		if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
 			hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 		else
 			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
@@ -826,7 +826,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			src.h << FIXED_SHIFT
 			};
 		if (stage.prefs.downscroll)
-			dst.y = -dst.y - dst.h;
+			dst.y = (-dst.y - dst.h) - FIXED_DEC(4,1);
 
 		dst.y += stage.noteshakey;
 		dst.x += stage.noteshakex;
@@ -857,7 +857,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	{
 		//Get src and dst
 		fixed_t hx;
-		if (stage.stage_id != StageId_Defeat)
+		if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
 			hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 		else
 			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
@@ -874,7 +874,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			src.h << FIXED_SHIFT
 			};
 		if (stage.prefs.downscroll)
-			dst.y = -dst.y - dst.h;
+			dst.y = (-dst.y - dst.h) - FIXED_DEC(4,1);
 
 		dst.y += stage.noteshakey;
 		dst.x += stage.noteshakex;
@@ -2373,13 +2373,25 @@ void Stage_Tick(void)
 				
 				if (show)
 				{
-					stage.font_cdr.draw_col(&stage.font_cdr,
-						this->score_text,
-						(stage.mode == StageMode_2P && i == 0) ? 10 : -150,
-						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
-						FontAlign_Left,
-						sred >> 1, sblue >> 1, sgreen >> 1
-					);
+					if ((stage.stage_id == StageId_AlphaMoogus || (stage.stage_id == StageId_ActinSus)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
+					{
+						stage.font_cdr.draw(&stage.font_cdr,
+							this->score_text,
+							14,
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 33) : (screen.SCREEN_HEIGHT2 - 42),
+							FontAlign_Left
+						);
+					}
+					else
+					{
+						stage.font_cdr.draw_col(&stage.font_cdr,
+							this->score_text,
+							(stage.mode == StageMode_2P && i == 0) ? 10 : -150,
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							FontAlign_Left,
+							sred >> 1, sblue >> 1, sgreen >> 1
+						);
+					}
 				}
 			}
 				
@@ -2407,15 +2419,18 @@ void Stage_Tick(void)
 					this->refresh_miss = false;
 				}
 				
-				if (show)
+				if (((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440))) || ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Defeat)))
 				{
-					stage.font_cdr.draw_col(&stage.font_cdr,
-						this->miss_text,
-						(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
-						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
-						FontAlign_Left,
-						sred >> 1, sblue >> 1, sgreen >> 1
-					);
+					if (show)
+					{
+						stage.font_cdr.draw_col(&stage.font_cdr,
+							this->miss_text,
+							(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							FontAlign_Left,
+							sred >> 1, sblue >> 1, sgreen >> 1
+						);
+					}
 				}
 			}
 				
@@ -2445,15 +2460,18 @@ void Stage_Tick(void)
 					this->refresh_accuracy = false;
 				}
 				//sorry for this shit lmao
-				if (show)
+				if (((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440))) || ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Defeat)))
 				{
-					stage.font_cdr.draw_col(&stage.font_cdr,
-						this->accuracy_text,
-						(stage.mode == StageMode_2P && i == 0) ? 50 : (stage.mode == StageMode_2P && i == 1) ? -110 : 39, 
-						(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
-						FontAlign_Left,
-						sred >> 1, sblue >> 1, sgreen >> 1
-					);
+					if (show)
+					{
+						stage.font_cdr.draw_col(&stage.font_cdr,
+							this->accuracy_text,
+							(stage.mode == StageMode_2P && i == 0) ? 50 : (stage.mode == StageMode_2P && i == 1) ? -110 : 39, 
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							FontAlign_Left,
+							sred >> 1, sblue >> 1, sgreen >> 1
+						);
+					}
 				}
 			}
 			
@@ -2567,6 +2585,8 @@ void Stage_Tick(void)
 						{
 							stage.state = StageState_Dead;
 						}
+						if ((stage.stage_id == StageId_Defeat) && (stage.song_step == 1167))
+							stage.player_state[0].health = 10000;
 						if (stage.player_state[0].health > 20000)
 							stage.player_state[0].health = 20000;
 
@@ -2578,7 +2598,7 @@ void Stage_Tick(void)
 						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
 					
 						//Draw health bar
-						if (stage.stage_id != StageId_Defeat)
+						if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
 						{
 							if (stage.mode == StageMode_Swap)
 							{

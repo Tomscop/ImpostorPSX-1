@@ -40,7 +40,6 @@ typedef struct
 
 } Back_Polus;
 
-/*
 //Snow animation and rects
 static const CharFrame snow_frame[] = {
   {0, {  0,  0,198, 88}, {149,158}}, //0 snow 1
@@ -110,7 +109,6 @@ void Polus_Snow_Draw(Back_Polus *this, fixed_t x, fixed_t y)
 	Debug_StageMoveDebug(&dst, 9, stage.camera.x, stage.camera.y);
 	Stage_DrawTex(&this->tex_snow, &src, &dst, stage.camera.bzoom);
 }
-*/
 
 typedef struct 
 {
@@ -260,12 +258,12 @@ void Back_Polus_DrawFG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-//	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == -29))
-//		Animatable_SetAnim(&this->snow_animatable, 0);
-	tickFlakes();
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == -29))
+		Animatable_SetAnim(&this->snow_animatable, 0);
+//	tickFlakes();
 	
-//	Animatable_Animate(&this->snow_animatable, (void*)this, Polus_Snow_SetFrame);
-	//Polus_Snow_Draw(this, FIXED_DEC(-10 + 155,1) - fx, FIXED_DEC(-25 + 155,1) - fy);
+	Animatable_Animate(&this->snow_animatable, (void*)this, Polus_Snow_SetFrame);
+	Polus_Snow_Draw(this, FIXED_DEC(-10 + 155,1) - fx, FIXED_DEC(-25 + 155,1) - fy);
 }
 
 void Back_Polus_DrawMG(StageBack *back)
@@ -404,7 +402,7 @@ StageBack *Back_Polus_New(void)
 	this->arc_snow_ptr[11] = Archive_Find(this->arc_snow, "snow11.tim");
 	
 	//Initialize snow state
-	//Animatable_Init(&this->snow_animatable, snow_anim);
+	Animatable_Init(&this->snow_animatable, snow_anim);
 	Animatable_SetAnim(&this->snow_animatable, 0);
 	this->snow_frame = this->snow_tex_id = 0xFF; //Force art load
 	

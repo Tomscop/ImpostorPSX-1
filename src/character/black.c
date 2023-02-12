@@ -226,7 +226,7 @@ void Char_Black_Tick(Character *character)
 			Animatable_Init(&this->character.animatable, char_black_anim2);
 			character->set_anim(character, CharAnim_Up);
 			this->character.health_i = 9;
-			this->character.health_bar = 0xFFFFFFFF;
+			this->character.health_bar = 0xFFFF0000;
 			this->character.size = FIXED_DEC(2,1);
 		}
 		if (stage.song_step == 1440)
