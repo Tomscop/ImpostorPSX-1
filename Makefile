@@ -44,6 +44,7 @@ SRCS = src/main.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
 	src/character/green.c \
+	src/character/greenreactor.c \
 	src/character/greenparasite.c \
 	src/character/yellow.c \
 	src/character/white.c \

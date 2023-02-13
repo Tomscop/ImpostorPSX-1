@@ -213,6 +213,9 @@
 				<!-- Green assets -->
 				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
 				
+				<!-- Green assets -->
+				<file name = "greenrec.arc" type = "data" source = "iso/chars/greenrec/main.arc"/>
+				
 				<!-- Green Parasite assets -->
 				<file name = "greenpar.arc" type = "data" source = "iso/chars/greenpar/main.arc"/>
 				

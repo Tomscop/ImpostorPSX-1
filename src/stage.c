@@ -62,6 +62,7 @@ static u32 Sounds[10];
 #include "character/redmd.h"
 #include "character/greenst.h"
 #include "character/green.h"
+#include "character/greenreactor.h"
 #include "character/greenparasite.h"
 #include "character/yellow.h"
 #include "character/white.h"

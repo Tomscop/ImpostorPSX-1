@@ -24,6 +24,7 @@ all: \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
 	iso/chars/green/main.arc \
+	iso/chars/greenrec/main.arc \
 	iso/chars/greenpar/main.arc \
 	iso/chars/yellow/main.arc \
 	iso/chars/white/main.arc \
@@ -110,6 +111,9 @@ iso/chars/greenst/main.arc: iso/chars/greenst/idle0.tim iso/chars/greenst/idle1.
 
 # Green
 iso/chars/green/main.arc: iso/chars/green/idlel0.tim iso/chars/green/idlel1.tim iso/chars/green/idlel2.tim iso/chars/green/idler0.tim iso/chars/green/idler1.tim iso/chars/green/idler2.tim iso/chars/green/left0.tim iso/chars/green/left1.tim iso/chars/green/down0.tim iso/chars/green/down1.tim iso/chars/green/down2.tim iso/chars/green/up0.tim iso/chars/green/up1.tim iso/chars/green/up2.tim iso/chars/green/up3.tim iso/chars/green/up4.tim iso/chars/green/up5.tim iso/chars/green/up6.tim iso/chars/green/up7.tim iso/chars/green/up8.tim iso/chars/green/right0.tim iso/chars/green/right1.tim iso/chars/green/react0.tim iso/chars/green/react1.tim iso/chars/green/react2.tim iso/chars/green/react3.tim iso/chars/green/react4.tim iso/chars/green/react5.tim iso/chars/green/react6.tim iso/chars/green/react7.tim iso/chars/green/react8.tim iso/chars/green/react9.tim iso/chars/green/react10.tim iso/chars/green/react11.tim iso/chars/green/react12.tim iso/chars/green/react13.tim iso/chars/green/react14.tim iso/chars/green/react15.tim iso/chars/green/react16.tim 
+
+# Green Reactor
+iso/chars/greenrec/main.arc: iso/chars/greenrec/idle0.tim iso/chars/greenrec/idle1.tim iso/chars/greenrec/idle2.tim iso/chars/greenrec/left0.tim iso/chars/greenrec/left1.tim iso/chars/greenrec/down0.tim iso/chars/greenrec/down1.tim iso/chars/greenrec/down2.tim iso/chars/greenrec/up0.tim iso/chars/greenrec/up1.tim iso/chars/greenrec/up2.tim iso/chars/greenrec/up3.tim iso/chars/greenrec/up4.tim iso/chars/greenrec/up5.tim iso/chars/greenrec/up6.tim iso/chars/greenrec/right0.tim iso/chars/greenrec/right1.tim 
 
 # Green Parasite
 iso/chars/greenpar/main.arc: iso/chars/greenpar/idle0.tim iso/chars/greenpar/idle1.tim iso/chars/greenpar/idle2.tim iso/chars/greenpar/idle3.tim iso/chars/greenpar/idle4.tim iso/chars/greenpar/idle5.tim iso/chars/greenpar/idle6.tim iso/chars/greenpar/idle7.tim iso/chars/greenpar/idle8.tim iso/chars/greenpar/idle9.tim iso/chars/greenpar/idle10.tim iso/chars/greenpar/idle11.tim iso/chars/greenpar/idle12.tim iso/chars/greenpar/idle13.tim iso/chars/greenpar/left0.tim iso/chars/greenpar/left1.tim iso/chars/greenpar/left2.tim iso/chars/greenpar/left3.tim iso/chars/greenpar/left4.tim iso/chars/greenpar/down0.tim iso/chars/greenpar/down1.tim iso/chars/greenpar/down2.tim iso/chars/greenpar/down3.tim iso/chars/greenpar/up0.tim iso/chars/greenpar/up1.tim iso/chars/greenpar/up2.tim iso/chars/greenpar/up3.tim iso/chars/greenpar/right0.tim iso/chars/greenpar/right1.tim iso/chars/greenpar/right2.tim iso/chars/greenpar/right3.tim 
