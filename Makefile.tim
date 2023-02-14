@@ -15,6 +15,7 @@ all: \
 	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
 	iso/chars/bfghost/main.arc \
+	iso/chars/bfreac/main.arc \
 	iso/chars/bfdefeat/main.arc \
 	iso/chars/bfchef/main.arc \
 	iso/chars/picorc/main.arc \
@@ -50,6 +51,7 @@ all: \
 	iso/chars/gf/speaker.tim \
 	iso/chars/gfghost/main.arc \
 	iso/chars/gfghost/speakerg.arc \
+	iso/chars/gfreac/main.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfghost/dead.tim \
@@ -83,6 +85,9 @@ iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf
 
 # BF Ghost
 iso/chars/bfghost/main.arc: iso/chars/bfghost/idle0.tim iso/chars/bfghost/idle1.tim iso/chars/bfghost/idle2.tim iso/chars/bfghost/left0.tim iso/chars/bfghost/left1.tim iso/chars/bfghost/left2.tim iso/chars/bfghost/down0.tim iso/chars/bfghost/up0.tim iso/chars/bfghost/up1.tim iso/chars/bfghost/up2.tim iso/chars/bfghost/right0.tim iso/chars/bfghost/right1.tim iso/chars/bfghost/right2.tim iso/chars/bfghost/right3.tim iso/chars/bfghost/right4.tim iso/chars/bfghost/right5.tim iso/chars/bfghost/right6.tim iso/chars/bfghost/right7.tim iso/chars/bfghost/right8.tim iso/chars/bfghost/leftm0.tim iso/chars/bfghost/leftm1.tim iso/chars/bfghost/leftm2.tim iso/chars/bfghost/downm0.tim iso/chars/bfghost/downm1.tim iso/chars/bfghost/upm0.tim iso/chars/bfghost/upm1.tim iso/chars/bfghost/rightm0.tim iso/chars/bfghost/rightm1.tim iso/chars/bfghost/rightm2.tim 
+
+# BF Reactor
+iso/chars/bfreac/main.arc: iso/chars/bfreac/idle0.tim iso/chars/bfreac/idle1.tim iso/chars/bfreac/left0.tim iso/chars/bfreac/down0.tim iso/chars/bfreac/up0.tim iso/chars/bfreac/right0.tim iso/chars/bfreac/leftm0.tim iso/chars/bfreac/downm0.tim iso/chars/bfreac/upm0.tim iso/chars/bfreac/rightm0.tim 
 
 # BF Defeat
 iso/chars/bfdefeat/main.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/a.tim iso/chars/bfdefeat/b.tim iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
@@ -183,6 +188,9 @@ iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 # GF Ghost
 iso/chars/gfghost/main.arc: iso/chars/gfghost/gfghost0.tim iso/chars/gfghost/gfghost1.tim iso/chars/gfghost/gfghost2.tim iso/chars/gfghost/gfghost3.tim iso/chars/gfghost/appear0.tim 
 iso/chars/gfghost/speakerg.arc: iso/chars/gfghost/speakerg0.tim iso/chars/gfghost/speakerg1.tim iso/chars/gfghost/speakerg2.tim
+
+# GF Reactor
+iso/chars/gfreac/main.arc: iso/chars/gfreac/gfrl0.tim iso/chars/gfreac/gfrl1.tim iso/chars/gfreac/gfrl2.tim iso/chars/gfreac/gfrr0.tim iso/chars/gfreac/gfrr1.tim iso/chars/gfreac/gfrr2.tim 
 
 # GF Pixel
 iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 

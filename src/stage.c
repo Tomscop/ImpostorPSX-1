@@ -52,6 +52,7 @@ static u32 Sounds[10];
 //Players
 #include "character/bf.h"
 #include "character/bfghost.h"
+#include "character/bfreactor.h"
 #include "character/bfdefeat.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
@@ -87,6 +88,7 @@ static u32 Sounds[10];
 #include "character/gf.h"
 #include "character/gfghost.h"
 #include "character/speakerghost.h"
+#include "character/gfreactor.h"
 #include "character/gfpixel.h"
 //Stages
 #include "stage/polus.h"

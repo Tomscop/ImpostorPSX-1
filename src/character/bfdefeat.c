@@ -254,8 +254,7 @@ void Char_BFDefeat_Tick(Character *character)
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
 		//Perform idle dance
-		if ((Animatable_Ended(&character->animatable) &&
-			(character->animatable.anim != CharAnim_Left &&
+		if (((character->animatable.anim != CharAnim_Left &&
 		     character->animatable.anim != CharAnim_LeftAlt &&
 		     character->animatable.anim != PlayerAnim_LeftMiss &&
 		     character->animatable.anim != CharAnim_Down &&

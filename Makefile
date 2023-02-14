@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character.c \
 	src/character/bf.c \
 	src/character/bfghost.c \
+	src/character/bfreactor.c \
 	src/character/bfdefeat.c \
 	src/character/bfchef.c \
 	src/character/picorc.c \
@@ -69,6 +70,7 @@ SRCS = src/main.c \
 	src/character/speaker.c \
 	src/character/gfghost.c \
 	src/character/speakerghost.c \
+	src/character/gfreactor.c \
 	src/character/gfpixel.c \
 	src/object.c \
 	src/object/combo.c \

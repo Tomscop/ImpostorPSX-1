@@ -182,14 +182,17 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				
+				<!-- Boyfriend Ghost assets -->
+				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
+				
+				<!-- Boyfriend Reactor assets -->
+				<file name = "bfreac.arc" type = "data" source = "iso/chars/bfreac/main.arc"/>
+				
 				<!-- Boyfriend Defeat assets -->
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
 				
 				<!-- Boyfriend Chef assets -->
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
-				
-				<!-- Boyfriend Ghost assets -->
-				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
 				
 				<!-- Pico RC assets -->
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
@@ -213,7 +216,7 @@
 				<!-- Green assets -->
 				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
 				
-				<!-- Green assets -->
+				<!-- Green Reactor assets -->
 				<file name = "greenrec.arc" type = "data" source = "iso/chars/greenrec/main.arc"/>
 				
 				<!-- Green Parasite assets -->
@@ -288,6 +291,9 @@
 				<!-- Girlfriend Ghost assets -->
 				<file name = "gfghost.arc" type = "data" source = "iso/chars/gfghost/main.arc"/>
 				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
+				
+				<!-- Girlfriend Reactor assets -->
+				<file name = "gfreac.arc" type = "data" source = "iso/chars/gfreac/main.arc"/>
 				
 				<!-- Girlfriend Pixel assets -->
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
