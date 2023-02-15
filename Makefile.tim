@@ -63,6 +63,7 @@ all: \
 	iso/stages/polus/snow.arc \
 	iso/stages/polus/people.arc \
 	iso/stages/reactor/back.arc \
+	iso/stages/reactor/ball.arc \
 	iso/stages/airship/back.arc \
 	iso/stages/defeat/back.arc \
 	iso/stages/lobby/back.arc \
@@ -204,6 +205,7 @@ iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/peopl
 
 # Reactor
 iso/stages/reactor/back.arc: iso/stages/reactor/back0.tim iso/stages/reactor/back1.tim iso/stages/reactor/back2.tim iso/stages/reactor/bop.tim iso/stages/reactor/fg.tim
+iso/stages/reactor/ball.arc: iso/stages/reactor/ball0.tim iso/stages/reactor/ball1.tim iso/stages/reactor/ball2.tim iso/stages/reactor/ball3.tim iso/stages/reactor/ball4.tim iso/stages/reactor/ball5.tim iso/stages/reactor/ball6.tim 
 
 # Airship
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim iso/stages/airship/back2.tim

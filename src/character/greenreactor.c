@@ -120,6 +120,77 @@ void Char_GreenReactor_Tick(Character *character)
 {
 	Char_GreenReactor *this = (Char_GreenReactor*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Reactor)
+	{
+		if (stage.song_step == 256)
+		{
+			this->character.focus_x = FIXED_DEC(-65,1);
+			this->character.focus_y = FIXED_DEC(-80,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 512)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-93,1);
+			this->character.focus_zoom = FIXED_DEC(957,1024);
+		}
+		if (stage.song_step == 768)
+		{
+			this->character.focus_x = FIXED_DEC(-65,1);
+			this->character.focus_y = FIXED_DEC(-80,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 896)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-93,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 1024)
+		{
+			this->character.focus_x = FIXED_DEC(-65,1);
+			this->character.focus_y = FIXED_DEC(-80,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 1280)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-93,1);
+			this->character.focus_zoom = FIXED_DEC(957,1024);
+		}
+		if (stage.song_step == 1536)
+		{
+			this->character.focus_x = FIXED_DEC(-65,1);
+			this->character.focus_y = FIXED_DEC(-80,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 1916)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-66,1);
+			this->character.focus_zoom = FIXED_DEC(619,512);
+		}
+		if (stage.song_step == 2176)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-93,1);
+			this->character.focus_zoom = FIXED_DEC(69,64);
+		}
+		if (stage.song_step == 2432)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-66,1);
+			this->character.focus_zoom = FIXED_DEC(619,512);
+		}
+		if (stage.song_step == 2688)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-93,1);
+			this->character.focus_zoom = FIXED_DEC(957,1024);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -166,14 +237,14 @@ Character *Char_GreenReactor_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 4;
 
 	//health bar color
 	this->character.health_bar = 0xFF1F6B2B;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(3,1);
+	this->character.focus_y = FIXED_DEC(-93,1);
+	this->character.focus_zoom = FIXED_DEC(957,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

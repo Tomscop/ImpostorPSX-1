@@ -802,11 +802,11 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	s8 dying;
 	if (ox < 0)
 	{
-		dying = (health >= 18000) * 46;
+		dying = (health >= 18000) * 47;
 	}
     else
 	{
-		dying = (health <= 2000) * 46;
+		dying = (health <= 2000) * 47;
 	}
 
 	if (i == 20)
@@ -867,7 +867,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
 		RECT src = {
 			i >= 6 ? ((i % 1) * 114 + dying) + 94 : ((i % 1) * 114 + dying),
-			i >= 6 ? 15 + ((i - 6) / 1) * 46 : 15 + (i / 1) * 46,
+			i >= 6 ? 15 + ((i - 6) / 1) * 47 : 15 + (i / 1) * 47,
 			46,
 			46,
 		};
