@@ -90,14 +90,14 @@
 	},
 	{ //StageId_Reactor (Reactor)
 		//Characters
-		{Char_BFReactor_New,    FIXED_DEC(180,1),  FIXED_DEC(168,1)},
+		{Char_BFReactor_New,    FIXED_DEC(480,1),  FIXED_DEC(306,1)},
         {NULL},
-		{Char_GreenReactor_New, FIXED_DEC(0,1),  FIXED_DEC(100,1)},
+		{Char_GreenReactor_New, FIXED_DEC(265,1),  FIXED_DEC(236,1)},
         {NULL},
-		{Char_GFReactor_New,     FIXED_DEC(110,1),  FIXED_DEC(150,1)},
+		{Char_GFReactor_New,     FIXED_DEC(389,1),  FIXED_DEC(291,1)},
 		
 		//Stage background
-		Back_Idk_New,
+		Back_Reactor_New,
 		
 		//Song info
 		1, 6,

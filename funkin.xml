@@ -322,6 +322,9 @@
 				<file name = "snow.arc" type = "data" source = "iso/stages/polus/snow.arc"/>
 				<file name = "people.arc" type = "data" source = "iso/stages/polus/people.arc"/>
 				
+				<!-- Reactor BG -->
+				<file name = "reactor.arc" type = "data" source = "iso/stages/reactor/back.arc"/>
+				
 				<!-- Airship BG -->
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
 				

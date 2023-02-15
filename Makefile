@@ -22,15 +22,6 @@ SRCS = src/main.c \
 	src/psx/timer.c \
 	src/movie.c \
 	src/psx/strplay.c \
-	src/stage/polus.c \
-	src/stage/airship.c \
-	src/stage/defeat.c \
-	src/stage/lobby.c \
-	src/stage/cafeteria.c \
-	src/stage/henry.c \
-	src/stage/idk.c \
-	src/stage/week1.c \
-	src/stage/dummy.c \
 	src/animation.c \
 	src/character.c \
 	src/character/bf.c \
@@ -72,6 +63,16 @@ SRCS = src/main.c \
 	src/character/speakerghost.c \
 	src/character/gfreactor.c \
 	src/character/gfpixel.c \
+	src/stage/polus.c \
+	src/stage/reactor.c \
+	src/stage/airship.c \
+	src/stage/defeat.c \
+	src/stage/lobby.c \
+	src/stage/cafeteria.c \
+	src/stage/henry.c \
+	src/stage/idk.c \
+	src/stage/week1.c \
+	src/stage/dummy.c \
 	src/object.c \
 	src/object/combo.c \
 	src/object/splash.c \
