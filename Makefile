@@ -65,6 +65,7 @@ SRCS = src/main.c \
 	src/character/gfpixel.c \
 	src/stage/polus.c \
 	src/stage/reactor.c \
+	src/stage/ejected.c \
 	src/stage/airship.c \
 	src/stage/defeat.c \
 	src/stage/lobby.c \

@@ -93,6 +93,7 @@ static u32 Sounds[10];
 //Stages
 #include "stage/polus.h"
 #include "stage/reactor.h"
+#include "stage/ejected.h"
 #include "stage/airship.h"
 #include "stage/defeat.h"
 #include "stage/lobby.h"

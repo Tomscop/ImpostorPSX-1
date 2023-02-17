@@ -246,7 +246,7 @@ Character *Char_GreenParasite_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(63,128);
 	
 	this->character.size = FIXED_DEC(25,10);
 	

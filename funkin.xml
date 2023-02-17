@@ -326,6 +326,9 @@
 				<file name = "reactor.arc" type = "data" source = "iso/stages/reactor/back.arc"/>
 				<file name = "ball.arc" type = "data" source = "iso/stages/reactor/ball.arc"/>
 				
+				<!-- Ejected BG -->
+				<file name = "ejected.arc" type = "data" source = "iso/stages/ejected/back.arc"/>
+				
 				<!-- Airship BG -->
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
 				
