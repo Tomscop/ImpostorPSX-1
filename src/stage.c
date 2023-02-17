@@ -119,8 +119,14 @@ static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 	if (this->character2 != NULL && note->type & (NOTE_FLAG_CHAR2SING | NOTE_FLAG_BOTHSING))
 		this->character2->set_anim(this->character2, type);
 	
-	if (((stage.stage_id == StageId_Defeat) && (((stage.song_step >= 1232) && (stage.song_step <= 1295)) || ((stage.song_step >= 1360) && (stage.song_step <= 1439)))))
-		stage.player_state[0].character2->set_anim(stage.player_state[0].character2, type);
+	if (this->charactersecond != NULL)
+		this->charactersecond->set_anim(this->charactersecond, type);
+}
+
+Character* Stage_ChangeChars(Character* oldcharacter, Character* newcharacter)
+{
+	oldcharacter->pad_held = 0;
+	return newcharacter;
 }
 
 //Stage music functions
@@ -2696,6 +2702,16 @@ void Stage_Tick(void)
 			if (stage.song_step > 0)
 				stage.song_beat = stage.song_step / 4;
 			StageTimer_Tick();
+			
+			//Character Switches
+			if (stage.stage_id == StageId_Defeat)
+			{
+				if (stage.song_step == 0)
+				{
+					stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+					stage.player_state[0].charactersecond = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				}
+			}
 			break;
 		}
 		case StageState_Dead: //Start BREAK animation and reading extra data from CD

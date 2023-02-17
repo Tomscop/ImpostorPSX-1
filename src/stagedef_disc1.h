@@ -110,7 +110,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GreenParasite_New, FIXED_DEC(186,1),  FIXED_DEC(298,1)},
+		{Char_GreenParasite_New, FIXED_DEC(306,1),  FIXED_DEC(298,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		

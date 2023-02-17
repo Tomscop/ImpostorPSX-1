@@ -101,65 +101,65 @@ static const CharFrame char_greenparasite_frame[] = {
   {GreenParasite_ArcMain_Idle13, {  0,  0,139,108}, {210,169}}, //34 idle 35
   {GreenParasite_ArcMain_Idle13, {  0,108,139,108}, {211,168}}, //35 idle 36
 
-  {GreenParasite_ArcMain_Left0, {  0,  0,133,110}, {225,162}}, //36 left 1
-  {GreenParasite_ArcMain_Left0, {  0,110,133,110}, {225,162}}, //37 left 2
-  {GreenParasite_ArcMain_Left1, {  0,  0,133,109}, {224,160}}, //38 left 3
-  {GreenParasite_ArcMain_Left1, {  0,109,133,109}, {224,160}}, //39 left 4
-  {GreenParasite_ArcMain_Left2, {  0,  0,133,108}, {223,159}}, //40 left 5
-  {GreenParasite_ArcMain_Left2, {  0,108,133,109}, {223,160}}, //41 left 6
-  {GreenParasite_ArcMain_Left3, {  0,  0,128,108}, {219,159}}, //42 left 7
-  {GreenParasite_ArcMain_Left3, {128,  0,127,109}, {218,160}}, //43 left 8
-  {GreenParasite_ArcMain_Left3, {  0,109,127,109}, {218,160}}, //44 left 9
-  {GreenParasite_ArcMain_Left3, {127,109,120,113}, {216,159}}, //45 left 10
-  {GreenParasite_ArcMain_Left4, {  0,  0,120,113}, {216,159}}, //46 left 11
-  {GreenParasite_ArcMain_Left4, {120,  0,120,114}, {216,160}}, //47 left 12
-  {GreenParasite_ArcMain_Left4, {  0,114,120,114}, {216,160}}, //48 left 13
-  {GreenParasite_ArcMain_Left4, {120,114,120,114}, {216,160}}, //49 left 14
+  {GreenParasite_ArcMain_Left0, {  0,  0,133,110}, {225-5,162+5}}, //36 left 1
+  {GreenParasite_ArcMain_Left0, {  0,110,133,110}, {225-5,162+5}}, //37 left 2
+  {GreenParasite_ArcMain_Left1, {  0,  0,133,109}, {224-5,160+5}}, //38 left 3
+  {GreenParasite_ArcMain_Left1, {  0,109,133,109}, {224-5,160+5}}, //39 left 4
+  {GreenParasite_ArcMain_Left2, {  0,  0,133,108}, {223-5,159+5}}, //40 left 5
+  {GreenParasite_ArcMain_Left2, {  0,108,133,109}, {223-5,160+5}}, //41 left 6
+  {GreenParasite_ArcMain_Left3, {  0,  0,128,108}, {219-5,159+5}}, //42 left 7
+  {GreenParasite_ArcMain_Left3, {128,  0,127,109}, {218-5,160+5}}, //43 left 8
+  {GreenParasite_ArcMain_Left3, {  0,109,127,109}, {218-5,160+5}}, //44 left 9
+  {GreenParasite_ArcMain_Left3, {127,109,120,113}, {216-5,159+5}}, //45 left 10
+  {GreenParasite_ArcMain_Left4, {  0,  0,120,113}, {216-5,159+5}}, //46 left 11
+  {GreenParasite_ArcMain_Left4, {120,  0,120,114}, {216-5,160+5}}, //47 left 12
+  {GreenParasite_ArcMain_Left4, {  0,114,120,114}, {216-5,160+5}}, //48 left 13
+  {GreenParasite_ArcMain_Left4, {120,114,120,114}, {216-5,160+5}}, //49 left 14
 
-  {GreenParasite_ArcMain_Down0, {  0,  0,116, 94}, {183,137}}, //50 down 1
-  {GreenParasite_ArcMain_Down0, {116,  0,115, 94}, {183,137}}, //51 down 2
-  {GreenParasite_ArcMain_Down0, {  0, 94,115, 95}, {184,140}}, //52 down 3
-  {GreenParasite_ArcMain_Down0, {115, 94,115, 95}, {183,140}}, //53 down 4
-  {GreenParasite_ArcMain_Down1, {  0,  0,116, 95}, {185,141}}, //54 down 5
-  {GreenParasite_ArcMain_Down1, {116,  0,115, 95}, {185,141}}, //55 down 6
-  {GreenParasite_ArcMain_Down1, {  0, 95,116, 95}, {186,142}}, //56 down 7
-  {GreenParasite_ArcMain_Down1, {116, 95,117, 94}, {187,141}}, //57 down 8
-  {GreenParasite_ArcMain_Down2, {  0,  0,120, 95}, {189,142}}, //58 down 9
-  {GreenParasite_ArcMain_Down2, {120,  0,120, 95}, {189,142}}, //59 down 10
-  {GreenParasite_ArcMain_Down2, {  0, 95,116, 95}, {186,142}}, //60 down 11
-  {GreenParasite_ArcMain_Down2, {116, 95,115, 95}, {186,142}}, //61 down 12
-  {GreenParasite_ArcMain_Down3, {  0,  0,114, 95}, {185,142}}, //62 down 13
-  {GreenParasite_ArcMain_Down3, {114,  0,114, 95}, {184,141}}, //63 down 14
+  {GreenParasite_ArcMain_Down0, {  0,  0,116, 94}, {183+9,137+15}}, //50 down 1
+  {GreenParasite_ArcMain_Down0, {116,  0,115, 94}, {183+9,137+15}}, //51 down 2
+  {GreenParasite_ArcMain_Down0, {  0, 94,115, 95}, {184+9,140+15}}, //52 down 3
+  {GreenParasite_ArcMain_Down0, {115, 94,115, 95}, {183+9,140+15}}, //53 down 4
+  {GreenParasite_ArcMain_Down1, {  0,  0,116, 95}, {185+9,141+15}}, //54 down 5
+  {GreenParasite_ArcMain_Down1, {116,  0,115, 95}, {185+9,141+15}}, //55 down 6
+  {GreenParasite_ArcMain_Down1, {  0, 95,116, 95}, {186+9,142+15}}, //56 down 7
+  {GreenParasite_ArcMain_Down1, {116, 95,117, 94}, {187+9,141+15}}, //57 down 8
+  {GreenParasite_ArcMain_Down2, {  0,  0,120, 95}, {189+9,142+15}}, //58 down 9
+  {GreenParasite_ArcMain_Down2, {120,  0,120, 95}, {189+9,142+15}}, //59 down 10
+  {GreenParasite_ArcMain_Down2, {  0, 95,116, 95}, {186+9,142+15}}, //60 down 11
+  {GreenParasite_ArcMain_Down2, {116, 95,115, 95}, {186+9,142+15}}, //61 down 12
+  {GreenParasite_ArcMain_Down3, {  0,  0,114, 95}, {185+9,142+15}}, //62 down 13
+  {GreenParasite_ArcMain_Down3, {114,  0,114, 95}, {184+9,141+15}}, //63 down 14
 
-  {GreenParasite_ArcMain_Up0, {  0,  0,103,113}, {187,175}}, //64 up 1
-  {GreenParasite_ArcMain_Up0, {103,  0,103,116}, {187,178}}, //65 up 2
-  {GreenParasite_ArcMain_Up0, {  0,116,103,111}, {187,173}}, //66 up 3
-  {GreenParasite_ArcMain_Up0, {103,116,103,111}, {187,173}}, //67 up 4
-  {GreenParasite_ArcMain_Up1, {  0,  0,102,107}, {186,170}}, //68 up 5
-  {GreenParasite_ArcMain_Up1, {102,  0,103,107}, {187,170}}, //69 up 6
-  {GreenParasite_ArcMain_Up1, {  0,107,102,104}, {186,167}}, //70 up 7
-  {GreenParasite_ArcMain_Up1, {102,107,103,104}, {187,167}}, //71 up 8
-  {GreenParasite_ArcMain_Up2, {  0,  0,102,102}, {186,166}}, //72 up 9
-  {GreenParasite_ArcMain_Up2, {102,  0,103,102}, {187,166}}, //73 up 10
-  {GreenParasite_ArcMain_Up2, {  0,102,103,102}, {187,165}}, //74 up 11
-  {GreenParasite_ArcMain_Up2, {103,102,103,101}, {187,165}}, //75 up 12
-  {GreenParasite_ArcMain_Up3, {  0,  0,103,102}, {187,165}}, //76 up 13
-  {GreenParasite_ArcMain_Up3, {103,  0,103,101}, {187,165}}, //77 up 14
+  {GreenParasite_ArcMain_Up0, {  0,  0,103,113}, {187+9,175-3}}, //64 up 1
+  {GreenParasite_ArcMain_Up0, {103,  0,103,116}, {187+9,178-3}}, //65 up 2
+  {GreenParasite_ArcMain_Up0, {  0,116,103,111}, {187+9,173-3}}, //66 up 3
+  {GreenParasite_ArcMain_Up0, {103,116,103,111}, {187+9,173-3}}, //67 up 4
+  {GreenParasite_ArcMain_Up1, {  0,  0,102,107}, {186+9,170-3}}, //68 up 5
+  {GreenParasite_ArcMain_Up1, {102,  0,103,107}, {187+9,170-3}}, //69 up 6
+  {GreenParasite_ArcMain_Up1, {  0,107,102,104}, {186+9,167-3}}, //70 up 7
+  {GreenParasite_ArcMain_Up1, {102,107,103,104}, {187+9,167-3}}, //71 up 8
+  {GreenParasite_ArcMain_Up2, {  0,  0,102,102}, {186+9,166-3}}, //72 up 9
+  {GreenParasite_ArcMain_Up2, {102,  0,103,102}, {187+9,166-3}}, //73 up 10
+  {GreenParasite_ArcMain_Up2, {  0,102,103,102}, {187+9,165-3}}, //74 up 11
+  {GreenParasite_ArcMain_Up2, {103,102,103,101}, {187+9,165-3}}, //75 up 12
+  {GreenParasite_ArcMain_Up3, {  0,  0,103,102}, {187+9,165-3}}, //76 up 13
+  {GreenParasite_ArcMain_Up3, {103,  0,103,101}, {187+9,165-3}}, //77 up 14
 
-  {GreenParasite_ArcMain_Right0, {  0,  0,127,107}, {169,158}}, //78 right 1
-  {GreenParasite_ArcMain_Right0, {127,  0,127,107}, {169,158}}, //79 right 2
-  {GreenParasite_ArcMain_Right0, {  0,107,123,107}, {170,158}}, //80 right 3
-  {GreenParasite_ArcMain_Right0, {123,107,123,106}, {170,158}}, //81 right 4
-  {GreenParasite_ArcMain_Right1, {  0,  0,118,106}, {167,158}}, //82 right 5
-  {GreenParasite_ArcMain_Right1, {118,  0,118,106}, {167,159}}, //83 right 6
-  {GreenParasite_ArcMain_Right1, {  0,106,115,105}, {166,158}}, //84 right 7
-  {GreenParasite_ArcMain_Right1, {115,106,115,105}, {166,158}}, //85 right 8
-  {GreenParasite_ArcMain_Right2, {  0,  0,115,106}, {166,159}}, //86 right 9
-  {GreenParasite_ArcMain_Right2, {115,  0,115,105}, {166,158}}, //87 right 10
-  {GreenParasite_ArcMain_Right2, {  0,106,108,106}, {166,159}}, //88 right 11
-  {GreenParasite_ArcMain_Right2, {108,106,109,105}, {166,159}}, //89 right 12
-  {GreenParasite_ArcMain_Right3, {  0,  0,108,105}, {166,158}}, //90 right 13
-  {GreenParasite_ArcMain_Right3, {108,  0,108,104}, {166,158}}, //91 right 14
+  {GreenParasite_ArcMain_Right0, {  0,  0,127,107}, {169+15,158+8}}, //78 right 1
+  {GreenParasite_ArcMain_Right0, {127,  0,127,107}, {169+15,158+8}}, //79 right 2
+  {GreenParasite_ArcMain_Right0, {  0,107,123,107}, {170+15,158+8}}, //80 right 3
+  {GreenParasite_ArcMain_Right0, {123,107,123,106}, {170+15,158+8}}, //81 right 4
+  {GreenParasite_ArcMain_Right1, {  0,  0,118,106}, {167+15,158+8}}, //82 right 5
+  {GreenParasite_ArcMain_Right1, {118,  0,118,106}, {167+15,159+8}}, //83 right 6
+  {GreenParasite_ArcMain_Right1, {  0,106,115,105}, {166+15,158+8}}, //84 right 7
+  {GreenParasite_ArcMain_Right1, {115,106,115,105}, {166+15,158+8}}, //85 right 8
+  {GreenParasite_ArcMain_Right2, {  0,  0,115,106}, {166+15,159+8}}, //86 right 9
+  {GreenParasite_ArcMain_Right2, {115,  0,115,105}, {166+15,158+8}}, //87 right 10
+  {GreenParasite_ArcMain_Right2, {  0,106,108,106}, {166+15,159+8}}, //88 right 11
+  {GreenParasite_ArcMain_Right2, {108,106,109,105}, {166+15,159+8}}, //89 right 12
+  {GreenParasite_ArcMain_Right3, {  0,  0,108,105}, {166+15,158+8}}, //90 right 13
+  {GreenParasite_ArcMain_Right3, {108,  0,108,104}, {166+15,158+8}}, //91 right 14
 };
 
 static const Animation char_greenparasite_anim[CharAnim_Max] = {

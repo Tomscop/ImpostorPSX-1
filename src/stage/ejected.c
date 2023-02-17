@@ -177,16 +177,16 @@ void Back_Ejected_DrawFG(StageBack *back)
 	Stage_DrawTex(&this->tex_lines, &lines_src, &lines32_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_lines, &lines_src, &lines41_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_lines, &lines_src, &lines42_dst, stage.camera.bzoom);
-	Stage_BlendTex(&this->tex_back2, &cloud0_src, &cloud0_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud1_src, &cloud1_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud2_src, &cloud2_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud3_src, &cloud3_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud0_src, &cloud4_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud0_src, &cloud5_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud2_src, &cloud6_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud3_src, &cloud7_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud3_src, &cloud8_dst, stage.camera.bzoom, 1);
-	Stage_BlendTex(&this->tex_back2, &cloud3_src, &cloud9_dst, stage.camera.bzoom, 1);
+	Stage_DrawTex(&this->tex_back2, &cloud0_src, &cloud0_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud1_src, &cloud1_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud2_src, &cloud2_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud3_src, &cloud3_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud0_src, &cloud4_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud0_src, &cloud5_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud2_src, &cloud6_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud3_src, &cloud7_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud3_src, &cloud8_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back2, &cloud3_src, &cloud9_dst, stage.camera.bzoom);
 }
 
 void Back_Ejected_DrawBG(StageBack *back)
@@ -253,7 +253,7 @@ void Back_Ejected_DrawBG(StageBack *back)
 	
 	//move da funni
 	if (stage.paused == false)
-		bgy -= 55;
+		bgy -= 52;
 	if (bgy <= -3546)
 		bgy = -120;
 }

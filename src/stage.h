@@ -201,6 +201,7 @@ typedef struct
 {
 	Character *character;
 	Character *character2;
+	Character *charactersecond;
 	
 	fixed_t arrow_hitan[4]; //Arrow hit animation for presses
 
