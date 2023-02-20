@@ -20,13 +20,11 @@ enum
   Black_ArcMain_Idle3,
   Black_ArcMain_Idle4,
   Black_ArcMain_Idle5,
-  Black_ArcMain_Idle6,
   Black_ArcMain_Left0,
   Black_ArcMain_Left1,
   Black_ArcMain_Left2,
   Black_ArcMain_Down0,
   Black_ArcMain_Down1,
-  Black_ArcMain_Down2,
   Black_ArcMain_Down3,
   Black_ArcMain_Down4,
   Black_ArcMain_Up0,
@@ -90,7 +88,7 @@ static const CharFrame char_black_frame[] = {
   {Black_ArcMain_Idle5, {100,  0, 99,102}, {213,159}}, //21 idle 22
   {Black_ArcMain_Idle5, {  0,103, 99,101}, {213,158}}, //22 idle 23
   {Black_ArcMain_Idle5, {100,103, 99,101}, {212,157}}, //23 idle 24
-  {Black_ArcMain_Idle6, {  0,  0, 99,101}, {213,157}}, //24 idle 25
+  {Black_ArcMain_Idle5, {100,103, 99,101}, {212,157}}, //24 idle 25
 
   {Black_ArcMain_Left0, {  0,  0,148, 96}, {245,149}}, //25 left 1
   {Black_ArcMain_Left0, {  0, 96,149, 89}, {245,142}}, //26 left 2
@@ -101,7 +99,7 @@ static const CharFrame char_black_frame[] = {
 
   {Black_ArcMain_Down0, {  0,  0,139,131}, {237,185}}, //31 down 1
   {Black_ArcMain_Down1, {  0,  0,143,138}, {239,193}}, //32 down 2
-  {Black_ArcMain_Down2, {  0,  0,144,144}, {240,194}}, //33 down 3
+  {Black_ArcMain_Down1, {  0,  0,143,138}, {239,193}}, //33 down 3
   {Black_ArcMain_Down3, {  0,  0,142,142}, {239,193}}, //34 down 4
   {Black_ArcMain_Down4, {  0,  0,122,125}, {228,179}}, //35 down 5
   {Black_ArcMain_Down4, {122,  0, 85,109}, {210,164}}, //36 down 6
@@ -341,7 +339,7 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(166,100);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\BLACK.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\BLACK.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idle0.tim",
@@ -350,13 +348,11 @@ Character *Char_Black_New(fixed_t x, fixed_t y)
   "idle3.tim",
   "idle4.tim",
   "idle5.tim",
-  "idle6.tim",
   "left0.tim",
   "left1.tim",
   "left2.tim",
   "down0.tim",
   "down1.tim",
-  "down2.tim",
   "down3.tim",
   "down4.tim",
   "up0.tim",

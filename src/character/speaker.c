@@ -17,7 +17,7 @@ void Speaker_Init(Speaker *this)
 	this->bump = 0;
 	
 	//Load speaker graphics
-	Gfx_LoadTex(&this->tex, IO_Read("\\CHAR2\\SPEAKER.TIM;1"), GFX_LOADTEX_FREE);
+	Gfx_LoadTex(&this->tex, IO_Read("\\GF\\SPEAKER.TIM;1"), GFX_LOADTEX_FREE);
 }
 
 void Speaker_Bump(Speaker *this)

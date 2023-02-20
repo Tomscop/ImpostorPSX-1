@@ -206,7 +206,7 @@ Character *Char_Chefogus_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\CHEF.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\CHEF.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idle0.tim",

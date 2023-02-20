@@ -28,6 +28,17 @@ static const struct {
   {"\\STR\\MOOGUS.STR;1", 205, StageId_SussusMoogus},
   {"\\STR\\SABOTAGE.STR;1", 375, StageId_Sabotage},
   {"\\STR\\MELTDOWN.STR;1", 302, StageId_Meltdown},
+  {"\\STR\\WEEK1END.STR;1", 536, StageId_Temp},
+  {"\\STR\\TOOGUS.STR;1", 500, StageId_SussusToogus},
+  {"\\STR\\MANDO.STR;1", 353, StageId_Mando},
+  {"\\STR\\OVERSIGT.STR;1", 265, StageId_Oversight},
+  {"\\STR\\DANGER.STR;1", 192, StageId_Danger},
+  {"\\STR\\BOILING.STR;1", 866, StageId_BoilingPoint},
+  {"\\STR\\DELUSION.STR;1", 1428, StageId_Delusion},
+  {"\\STR\\VOTING.STR;1", 171, StageId_VotingTime},
+  {"\\STR\\TURBULEN.STR;1", 107, StageId_Turbulence},
+  {"\\STR\\TITULAR.STR;1", 372, StageId_Titular},
+  {"\\STR\\HENRYEND.STR;1", 480, StageId_Temp},
 };
 
 //Prepare to do movie

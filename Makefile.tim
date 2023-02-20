@@ -52,6 +52,7 @@ all: \
 	iso/chars/gfghost/main.arc \
 	iso/chars/gfghost/speakerg.arc \
 	iso/chars/gfreac/main.arc \
+	iso/chars/gfeject/main.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfghost/dead.tim \
@@ -91,6 +92,8 @@ iso/chars/bfghost/main.arc: iso/chars/bfghost/idle0.tim iso/chars/bfghost/idle1.
 
 # BF Reactor
 iso/chars/bfreac/main.arc: iso/chars/bfreac/idle0.tim iso/chars/bfreac/idle1.tim iso/chars/bfreac/left0.tim iso/chars/bfreac/down0.tim iso/chars/bfreac/up0.tim iso/chars/bfreac/right0.tim iso/chars/bfreac/leftm0.tim iso/chars/bfreac/downm0.tim iso/chars/bfreac/upm0.tim iso/chars/bfreac/rightm0.tim 
+
+# BF Ejected
 
 # BF Defeat
 iso/chars/bfdefeat/main.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/a.tim iso/chars/bfdefeat/b.tim iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
@@ -136,7 +139,7 @@ iso/chars/white/main.arc: iso/chars/white/idle0.tim iso/chars/white/idle1.tim is
 iso/chars/whitedk/main.arc: iso/chars/whitedk/idle0.tim iso/chars/whitedk/idle1.tim iso/chars/whitedk/left0.tim iso/chars/whitedk/left1.tim iso/chars/whitedk/down0.tim iso/chars/whitedk/down1.tim iso/chars/whitedk/up0.tim iso/chars/whitedk/up1.tim iso/chars/whitedk/right0.tim iso/chars/whitedk/right1.tim 
 
 # Black
-iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/idle6.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down2.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim iso/chars/black/idlea0.tim iso/chars/black/idlea1.tim iso/chars/black/idlea2.tim iso/chars/black/idlea3.tim iso/chars/black/lefta0.tim iso/chars/black/lefta1.tim iso/chars/black/downa0.tim iso/chars/black/downa1.tim iso/chars/black/upa0.tim iso/chars/black/upa1.tim iso/chars/black/righta0.tim iso/chars/black/righta1.tim
+iso/chars/black/main.arc: iso/chars/black/idle0.tim iso/chars/black/idle1.tim iso/chars/black/idle2.tim iso/chars/black/idle3.tim iso/chars/black/idle4.tim iso/chars/black/idle5.tim iso/chars/black/left0.tim iso/chars/black/left1.tim iso/chars/black/left2.tim iso/chars/black/down0.tim iso/chars/black/down1.tim iso/chars/black/down3.tim iso/chars/black/down4.tim iso/chars/black/up0.tim iso/chars/black/up1.tim iso/chars/black/up2.tim iso/chars/black/right0.tim iso/chars/black/right1.tim iso/chars/black/right2.tim iso/chars/black/idlea0.tim iso/chars/black/idlea1.tim iso/chars/black/idlea2.tim iso/chars/black/idlea3.tim iso/chars/black/lefta0.tim iso/chars/black/lefta1.tim iso/chars/black/downa0.tim iso/chars/black/downa1.tim iso/chars/black/upa0.tim iso/chars/black/upa1.tim iso/chars/black/righta0.tim iso/chars/black/righta1.tim
 
 # Black Parasite
 iso/chars/blackp/main.arc: iso/chars/blackp/idle0.tim iso/chars/blackp/idle1.tim iso/chars/blackp/idle2.tim iso/chars/blackp/idle3.tim iso/chars/blackp/idle4.tim iso/chars/blackp/left0.tim iso/chars/blackp/left1.tim iso/chars/blackp/left2.tim iso/chars/blackp/left3.tim iso/chars/blackp/down0.tim iso/chars/blackp/down1.tim iso/chars/blackp/down2.tim iso/chars/blackp/down3.tim iso/chars/blackp/up0.tim iso/chars/blackp/up1.tim iso/chars/blackp/up2.tim iso/chars/blackp/up3.tim iso/chars/blackp/right0.tim iso/chars/blackp/right1.tim iso/chars/blackp/right2.tim iso/chars/blackp/right3.tim 
@@ -194,6 +197,9 @@ iso/chars/gfghost/speakerg.arc: iso/chars/gfghost/speakerg0.tim iso/chars/gfghos
 
 # GF Reactor
 iso/chars/gfreac/main.arc: iso/chars/gfreac/gfrl0.tim iso/chars/gfreac/gfrl1.tim iso/chars/gfreac/gfrl2.tim iso/chars/gfreac/gfrr0.tim iso/chars/gfreac/gfrr1.tim iso/chars/gfreac/gfrr2.tim 
+
+# GF Ejected
+iso/chars/gfeject/main.arc: iso/chars/gfeject/gf0.tim iso/chars/gfeject/gf1.tim iso/chars/gfeject/gf2.tim iso/chars/gfeject/gf3.tim iso/chars/gfeject/gf4.tim iso/chars/gfeject/gf5.tim iso/chars/gfeject/gf6.tim iso/chars/gfeject/gf7.tim iso/chars/gfeject/gf8.tim iso/chars/gfeject/gf9.tim 
 
 # GF Pixel
 iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 

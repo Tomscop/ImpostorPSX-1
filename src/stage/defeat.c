@@ -37,7 +37,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 	fx = stage.camera.x / 2;
 	fy = stage.camera.y;
 	
-	RECT bones1_src = {  0,163,226, 86};
+	RECT bones1_src = {  0,  0,226, 55};
 	RECT_FIXED bones1_dst = {
 		FIXED_DEC(-166 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -45,7 +45,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 		FIXED_DEC(122,1)
 	};
 	
-	RECT bones2_src = {  0,163,224, 86};
+	RECT bones2_src = {  0, 56,224, 55};
 	RECT_FIXED bones2_dst = {
 		FIXED_DEC(150 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(134,1) - fy,
@@ -57,7 +57,7 @@ void Back_Defeat_DrawFG(StageBack *back)
 	Debug_StageMoveDebug(&bones2_dst,  9, fx, fy);
 	if (((stage.song_step >= 272) && (stage.song_step <= 1167)) || (stage.song_step >= 1440))
 	{
-		Stage_DrawTex(&this->tex_back1, &bones1_src, &bones1_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back2, &bones1_src, &bones1_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back2, &bones2_src, &bones2_dst, stage.camera.bzoom);
 	}
 }
@@ -80,7 +80,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(201,1)
 	};
 	
-	RECT back1_src = {  0,  0,226,160};
+	RECT back1_src = {  0,  0,226,102};
 	RECT_FIXED back1_dst = {
 		FIXED_DEC((0 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -88,7 +88,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC(220,1)
 	};
 	
-	RECT back2_src = {  0,  0,224,160};
+	RECT back2_src = {  0,103,224,102};
 	RECT_FIXED back2_dst = {
 		FIXED_DEC((309 - 62) - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(-38,1) - fy,
@@ -104,7 +104,7 @@ void Back_Defeat_DrawBG(StageBack *back)
 		FIXED_DEC( 90,1)
 	};
 	
-	RECT oops_src = { 56,146, 14,  8};
+	RECT oops_src = { 76,186, 14,  8};
 	RECT_FIXED oops_dst = {
 		FIXED_DEC(50 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(164,1) - fy,
@@ -120,8 +120,8 @@ void Back_Defeat_DrawBG(StageBack *back)
 	if (((stage.song_step >= 272) && (stage.song_step <= 1167)) || (stage.song_step >= 1440))
 	{
 		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
-		Stage_DrawTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom);
-		Stage_DrawTex(&this->tex_back2, &oops_src, &oops_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back1, &back2_src, &back2_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back1, &oops_src, &oops_dst, stage.camera.bzoom);
 	}
 	if ((stage.song_step <= 1167) || (stage.song_step >= 1440))
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);

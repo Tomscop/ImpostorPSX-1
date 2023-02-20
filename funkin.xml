@@ -177,126 +177,118 @@
 			</dir>
 		
 			<!-- Character assets -->
-			<dir name = "char">
+			<dir name = "player">
 				<!-- Players -->
-				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
-				
-				<!-- Boyfriend Ghost assets -->
 				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
-				
-				<!-- Boyfriend Reactor assets -->
+				<!-- Boyfriend Lights assets -->
 				<file name = "bfreac.arc" type = "data" source = "iso/chars/bfreac/main.arc"/>
-				
-				<!-- Boyfriend Defeat assets -->
+				<!-- Boyfriend Ejected assets -->
+				<!-- Boyfriend Danger assets -->
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
-				
-				<!-- Boyfriend Chef assets -->
+				<!-- Boyfriend Polus assets -->
+				<!-- Boyfriend Lava assets -->
+				<!-- Boyfriend Airship assets -->
+				<!-- Boyfriend Mira assets -->
+				<!-- Pink Pretender assets -->
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
-				
-				<!-- Pico RC assets -->
+				<!-- Boyfriend Turbulence assets -->
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
-				
-				<!-- Boyfriend Pixel assets -->
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
-				
-				<!-- Kid assets -->
+				<!-- Boyfriend Tuesday assets -->
+				<!-- Boyfriend Christmas assets -->
+				<!-- Henry Phone assets -->
+				<!-- Boyfriend V1 assets -->
+				<!-- Cyan assets -->
+				<!-- Going2KillEvery1 assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
-				
+				<!-- Boyfriend Drip assets -->
+				<!-- Pico Drip assets -->
+				<!-- Clowfoe assets -->
+				<!-- Biddle assets -->
+				<!-- Pip assets -->
+				<!-- Ziffy assets -->
+			</dir>
+			
+			<dir name = "opponent">
 				<!-- Opponents -->
-				<!-- Red assets -->
 				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
-				
-				<!-- Red Meltdown assets -->
 				<file name = "redmd.arc" type = "data" source = "iso/chars/redmd/main.arc"/>
-				
-				<!-- Green ST assets -->
 				<file name = "greenst.arc" type = "data" source = "iso/chars/greenst/main.arc"/>
-				
-				<!-- Green assets -->
 				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
-				
-				<!-- Green Reactor assets -->
 				<file name = "greenrec.arc" type = "data" source = "iso/chars/greenrec/main.arc"/>
-				
-				<!-- Green Parasite assets -->
 				<file name = "greenpar.arc" type = "data" source = "iso/chars/greenpar/main.arc"/>
-				
-				<!-- Yellow assets -->
 				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
-				
-				<!-- White assets -->
 				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
-				
-				<!-- White DK assets -->
+				<!-- Black Danger assets -->
 				<file name = "whitedk.arc" type = "data" source = "iso/chars/whitedk/main.arc"/>
-				
-				<!-- Black assets -->
+				<!-- Black DK assets -->
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
-				
-				<!-- Black Parasite assets -->
 				<file name = "blackp.arc" type = "data" source = "iso/chars/blackp/main.arc"/>
-				
-				<!-- Maroon assets -->
+				<!-- Boyfriend Evil assets -->
+				<!-- Monotone assets -->
 				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
-				
-				<!-- Maroon Parasite assets -->
 				<file name = "maroonp.arc" type = "data" source = "iso/chars/maroonp/main.arc"/>
-				
-				<!-- Gray assets -->
 				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>
-				
-				<!-- Pink assets -->
 				<file name = "pink.arc" type = "data" source = "iso/chars/pink/main.arc"/>
-				
-				<!-- Chefogus assets -->
 				<file name = "chef.arc" type = "data" source = "iso/chars/chef/main.arc"/>
-				
-				<!-- Powers assets -->
+				<!-- Jorsawsee assets -->
+				<!-- Redmungus assets -->
+				<!-- Warchief assets -->
+				<!-- Jelqer assets -->
+				<!-- Redmungus VT assets -->
+				<!-- Redmungus Parasite assets -->
+				<!-- Jorsawsee Ghost assets -->
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
-				
-				<!-- Tomongus assets -->
 				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
+				<!-- Tomongus HD assets -->
+				<!-- Loggo assets -->
+				<!-- Loggo Spook assets -->
 				
-				<!-- Henry Stickmin assets -->
+			</dir>
+			
+			<dir name = "opponet2">
+				
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
-
-				<!-- Charles assets -->
 				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
-				
-				<!-- Jerma assets -->
+				<!-- Ellie assets -->
+				<!-- RHM assets -->
+				<!-- Reginald assets -->
+				<!-- Red V1 assets -->
+				<!-- Killer assets -->
+				<!-- Y Fronts assets -->
 				<file name = "jerma.arc" type = "data" source = "iso/chars/jerma/main.arc"/>
-				
-				<!-- Nuzzus assets -->
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
-				
-				<!-- Toby Fox assets -->
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
-				
-				<!-- Amogus assets -->
+				<!-- Brown assets -->
+				<!-- Drippostor assets -->
+				<!-- Dave assets -->
+				<!-- Monotone Doc assets -->
+				<!-- Fabs assets -->
 				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
-				
-				<!-- Dad assets -->
+				<!-- Cval assets -->
+				<!-- Pip Torture assets -->
+				<!-- Cval Torture assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 			</dir>
 			
-			<!-- Character assets -->
-			<dir name = "char2">
+			<dir name = "gf">
 				<!-- GFs -->
-				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
-				
-				<!-- Girlfriend Ghost assets -->
 				<file name = "gfghost.arc" type = "data" source = "iso/chars/gfghost/main.arc"/>
 				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
-				
-				<!-- Girlfriend Reactor assets -->
 				<file name = "gfreac.arc" type = "data" source = "iso/chars/gfreac/main.arc"/>
-				
-				<!-- Girlfriend Pixel assets -->
+				<file name = "gfeject.arc" type = "data" source = "iso/chars/gfeject/main.arc"/>
+				<!-- GF Danger assets -->
+				<!-- GF Polus assets -->
+				<!-- GF Airship assets -->
+				<!-- GF Mira assets -->
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
+				<!-- GF Tuesday assets -->
+				<!-- GF V1 assets -->
+				<!-- Loggo MA assets -->
 			</dir>
 			
 			<!-- Dead assets -->
@@ -395,6 +387,24 @@
 				<file name = "moogus.str" type = "str" source = "iso/movie/moogus.str"/>
 				<file name = "sabotage.str" type = "str" source = "iso/movie/sabotage.str"/>
 				<file name = "meltdown.str" type = "str" source = "iso/movie/meltdown.str"/>
+				<file name = "week1end.str" type = "str" source = "iso/movie/week1end.str"/>
+				<!-- Week 2 videos -->
+				<file name = "toogus.str" type = "str" source = "iso/movie/toogus.str"/>
+				<!-- ejected will go here lmao -->
+				<!-- Week 3 videos -->
+				<file name = "mando.str" type = "str" source = "iso/movie/mando.str"/>
+				<file name = "oversigt.str" type = "str" source = "iso/movie/oversigt.str"/>
+				<file name = "danger.str" type = "str" source = "iso/movie/danger.str"/>
+				<!-- Week 5 videos -->
+				<file name = "boiling.str" type = "str" source = "iso/movie/boiling.str"/>
+				<!-- Week 6 videos -->
+				<file name = "delusion.str" type = "str" source = "iso/movie/delusion.str"/>
+				<!-- Week J videos -->
+				<file name = "voting.str" type = "str" source = "iso/movie/voting.str"/>
+				<file name = "turbulen.str" type = "str" source = "iso/movie/turbulen.str"/>
+				<!-- Week H videos -->
+				<file name = "titular.str" type = "str" source = "iso/movie/titular.str"/>
+				<file name = "henryend.str" type = "str" source = "iso/movie/henryend.str"/>
 			</dir>
 			
 			<!-- Music -->

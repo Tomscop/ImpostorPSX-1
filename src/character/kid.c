@@ -193,7 +193,7 @@ Character *Char_Kid_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(8,10);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\KID.ARC;1");
+	this->arc_main = IO_Read("\\PLAYER\\KID.ARC;1");
 		
 	const char **pathp = (const char *[]){
   "idle0.tim",

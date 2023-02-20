@@ -1,26 +1,26 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "ball",
-			"hname"   : "Ball"
+			"fnfanim" : "danceLeft",
+			"imgname" : "gf",
+			"hname"   : "GF"
 		}
 	],
-	"input":  "iso/stages/reactor/BALLS",
-	"outdir": "iso/stages/reactor/",
-	"charname" : "Ball",
+	"input":  "iso/chars/gfeject/gffall",
+	"outdir": "iso/chars/gfeject/",
+	"charname" : "GFEject",
 	"optimize" : false,
-	"optimizename" : "ball",
+	"optimizename" : "gfeject",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		896,
+		512,
 		0,
 		0,
-		488
+		489
 	],
 
-	"bpp" : 8,
-	"resize" : 0.11,
+	"bpp" : 4,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

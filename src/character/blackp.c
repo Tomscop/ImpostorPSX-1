@@ -178,7 +178,7 @@ Character *Char_BlackP_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(300,100);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\BLACKP.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\BLACKP.ARC;1");
 	
 	const char **pathp = (const char *[]){
 		"idle0.tim",

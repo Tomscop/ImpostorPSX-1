@@ -212,7 +212,7 @@ Character *Char_Tomongus_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(2,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\TOMONGUS.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\TOMONGUS.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idle0.tim",

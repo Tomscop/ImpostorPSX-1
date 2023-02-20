@@ -285,7 +285,7 @@ Character *Char_Green_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\GREEN.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\GREEN.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idlel0.tim",

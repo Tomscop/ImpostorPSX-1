@@ -215,7 +215,7 @@ Character *Char_MaroonParasite_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(16664,10000);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\MAROONP.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\MAROONP.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idle0.tim",
