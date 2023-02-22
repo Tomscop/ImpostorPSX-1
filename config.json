@@ -1,22 +1,62 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "gf",
-			"hname"   : "GF"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/gfeject/gffall",
-	"outdir": "iso/chars/gfeject/",
-	"charname" : "GFEject",
+	"input":  "iso/chars/bfeject/bfFly",
+	"outdir": "iso/chars/bfeject/",
+	"charname" : "BFEjected",
 	"optimize" : false,
-	"optimizename" : "gfeject",
+	"optimizename" : "bfejected",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
+		640,
 		0,
 		0,
-		489
+		480
 	],
 
 	"bpp" : 4,

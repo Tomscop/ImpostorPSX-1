@@ -53,6 +53,7 @@ static u32 Sounds[10];
 #include "character/bf.h"
 #include "character/bfghost.h"
 #include "character/bfreactor.h"
+#include "character/bfejected.h"
 #include "character/bfdefeat.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
