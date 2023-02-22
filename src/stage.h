@@ -314,7 +314,9 @@ typedef struct
 	Section *event_cur_section; //Current section
 	Note *event_cur_note; //First visible and hittable note, used for drawing and hit detection
 	Event* event_cur_event; //Current event
-	
+
+	fixed_t event_step_crochet;
+	fixed_t event_note_scroll;
 	fixed_t note_scroll, song_time, interp_time, interp_ms, interp_speed;
 	
 	u16 last_bpm;

@@ -1467,6 +1467,9 @@ static void Stage_LoadChart(void)
 	stage.step_base = 0;
 	stage.section_base = stage.cur_section;
 	Stage_ChangeBPM(stage.cur_section->flag & SECTION_FLAG_BPM_MASK, 0);
+
+	//BPM for events.json
+	stage.event_step_crochet = ((stage.event_cur_section->flag & SECTION_FLAG_BPM_MASK) << FIXED_SHIFT) * 8 / 240; //15/12/24
 	
 	//Initialize events
 	Events_Load();
@@ -1620,7 +1623,7 @@ static void Stage_LoadMusic(void)
 		stage.bop2 = 0;
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
-		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
+		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	else
 	{
@@ -1631,7 +1634,7 @@ static void Stage_LoadMusic(void)
 		stage.bop2 = 0;
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
-		stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
+		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
 	stage.interp_time = 0;
@@ -1845,6 +1848,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	//Load music
 	stage.note_scroll = 0;
+	stage.event_note_scroll = 0;
 	Stage_LoadMusic();
 	
 	//Test offset
@@ -2185,6 +2189,7 @@ void Stage_Tick(void)
 			//Get song position
 			boolean playing;
 			fixed_t next_scroll;
+			fixed_t event_next_scroll;
 			
 			const fixed_t interp_int = FIXED_UNIT * 8 / 75;
 			
@@ -2219,6 +2224,7 @@ void Stage_Tick(void)
 					
 					//Update scroll
 					next_scroll = FIXED_MUL(stage.song_time, stage.step_crochet);
+					event_next_scroll = FIXED_MUL(stage.song_time, stage.event_step_crochet);
 				}
 				else if (Audio_PlayingXA())
 				{
@@ -2268,6 +2274,7 @@ void Stage_Tick(void)
 					
 					//Update scroll
 					next_scroll = ((fixed_t)stage.step_base << FIXED_SHIFT) + FIXED_MUL(stage.song_time - stage.time_base, stage.step_crochet);
+					event_next_scroll = FIXED_MUL(stage.song_time, stage.event_step_crochet);
 				}
 				else
 				{
@@ -2277,6 +2284,7 @@ void Stage_Tick(void)
 						
 					//Update scroll
 					next_scroll = ((fixed_t)stage.step_base << FIXED_SHIFT) + FIXED_MUL(stage.song_time - stage.time_base, stage.step_crochet);
+					event_next_scroll = FIXED_MUL(stage.song_time, stage.event_step_crochet);
 					
 					//Transition to menu or next song
 					if (stage.story && stage.stage_def->next_stage != stage.stage_id)
@@ -2303,6 +2311,9 @@ void Stage_Tick(void)
 						stage.song_step -= 11;
 					stage.song_step /= 12;
 				}
+
+				if (event_next_scroll > stage.event_note_scroll)
+					stage.event_note_scroll = event_next_scroll;
 				
 				//Update section
 				if (stage.note_scroll >= 0)

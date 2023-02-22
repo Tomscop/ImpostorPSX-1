@@ -135,7 +135,7 @@ void Events_StartEvents(void)
 		for (Event *event = stage.event_cur_event; event->pos != 0xFFFF; event++)
 		{
 			//Update event pointer
-			if (event->pos > (stage.note_scroll >> FIXED_SHIFT))
+			if (event->pos > (stage.event_note_scroll >> FIXED_SHIFT))
 				break;
 
 			else
