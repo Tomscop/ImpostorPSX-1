@@ -108,11 +108,11 @@
 	},
 	{ //StageId_Ejected (Ejected)
 		//Characters
-		{Char_BFEjected_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFEjected_New,    FIXED_DEC(542,1),  FIXED_DEC(399,1)},
         {NULL},
-		{Char_GreenParasite_New, FIXED_DEC(320,1),  FIXED_DEC(476,1)},
+		{Char_GreenParasite_New, FIXED_DEC(490,1),  FIXED_DEC(626,1)},
         {NULL},
-		{Char_GFEjected_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFEjected_New,     FIXED_DEC(317,1),  FIXED_DEC(208,1)},
 		
 		//Stage background
 		Back_Ejected_New,

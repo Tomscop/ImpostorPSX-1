@@ -37,40 +37,40 @@ iso/chars/greenpar/main.arc: iso/chars/greenpar/idle0.tim iso/chars/greenpar/idl
 
 
   {GreenParasite_ArcMain_Idle0, {  0,  0,100, 81}, {204,171}}, //0 idle 1
-  {GreenParasite_ArcMain_Idle0, {100,  0,101, 82}, {205,172}}, //1 idle 2
-  {GreenParasite_ArcMain_Idle0, {  0, 82,101, 80}, {205,170}}, //2 idle 3
-  {GreenParasite_ArcMain_Idle0, {101, 82,101, 82}, {204,171}}, //3 idle 4
-  {GreenParasite_ArcMain_Idle0, {  0,164,107, 80}, {208,170}}, //4 idle 5
-  {GreenParasite_ArcMain_Idle0, {107,164,107, 81}, {208,171}}, //5 idle 6
+  {GreenParasite_ArcMain_Idle0, {100,  0,101, 80}, {205,170}}, //1 idle 2
+  {GreenParasite_ArcMain_Idle0, {  0, 81,101, 80}, {205,170}}, //2 idle 3
+  {GreenParasite_ArcMain_Idle0, {101, 81,101, 82}, {204,171}}, //3 idle 4
+  {GreenParasite_ArcMain_Idle0, {  0,163,107, 80}, {208,170}}, //4 idle 5
+  {GreenParasite_ArcMain_Idle0, {107,163,107, 79}, {208,169}}, //5 idle 6
   {GreenParasite_ArcMain_Idle1, {  0,  0,102, 80}, {203,170}}, //6 idle 7
-  {GreenParasite_ArcMain_Idle1, {102,  0,103, 80}, {204,170}}, //7 idle 8
-  {GreenParasite_ArcMain_Idle1, {  0, 80, 94, 80}, {200,170}}, //8 idle 9
-  {GreenParasite_ArcMain_Idle1, { 94, 80, 94, 80}, {201,170}}, //9 idle 10
+  {GreenParasite_ArcMain_Idle1, {102,  0,103, 79}, {204,169}}, //7 idle 8
+  {GreenParasite_ArcMain_Idle1, {  0, 80, 94, 79}, {200,169}}, //8 idle 9
+  {GreenParasite_ArcMain_Idle1, { 94, 80, 94, 78}, {201,168}}, //9 idle 10
   {GreenParasite_ArcMain_Idle1, {  0,160, 90, 80}, {200,170}}, //10 idle 11
   {GreenParasite_ArcMain_Idle1, { 90,160, 91, 80}, {200,170}}, //11 idle 12
   {GreenParasite_ArcMain_Idle2, {  0,  0, 91, 80}, {201,170}}, //12 idle 13
-  {GreenParasite_ArcMain_Idle2, { 91,  0, 91, 81}, {201,171}}, //13 idle 14
-  {GreenParasite_ArcMain_Idle2, {  0, 81, 95, 80}, {204,170}}, //14 idle 15
-  {GreenParasite_ArcMain_Idle2, { 95, 81, 95, 81}, {204,171}}, //15 idle 16
-  {GreenParasite_ArcMain_Idle2, {  0,162,101, 82}, {207,172}}, //16 idle 17
-  {GreenParasite_ArcMain_Idle2, {101,162,100, 81}, {207,171}}, //17 idle 18
+  {GreenParasite_ArcMain_Idle2, { 91,  0, 91, 79}, {201,169}}, //13 idle 14
+  {GreenParasite_ArcMain_Idle2, {  0, 80, 95, 80}, {204,170}}, //14 idle 15
+  {GreenParasite_ArcMain_Idle2, { 95, 80, 95, 81}, {204,171}}, //15 idle 16
+  {GreenParasite_ArcMain_Idle2, {  0,161,101, 80}, {207,170}}, //16 idle 17
+  {GreenParasite_ArcMain_Idle2, {101,161,100, 79}, {207,169}}, //17 idle 18
   {GreenParasite_ArcMain_Idle3, {  0,  0,102, 82}, {204,172}}, //18 idle 19
-  {GreenParasite_ArcMain_Idle3, {102,  0,102, 82}, {204,172}}, //19 idle 20
-  {GreenParasite_ArcMain_Idle3, {  0, 82,100, 82}, {204,172}}, //20 idle 21
-  {GreenParasite_ArcMain_Idle3, {100, 82, 99, 81}, {204,171}}, //21 idle 22
-  {GreenParasite_ArcMain_Idle3, {  0,164,101, 81}, {207,171}}, //22 idle 23
+  {GreenParasite_ArcMain_Idle3, {102,  0,102, 81}, {204,171}}, //19 idle 20
+  {GreenParasite_ArcMain_Idle3, {  0, 82,100, 81}, {204,171}}, //20 idle 21
+  {GreenParasite_ArcMain_Idle3, {100, 82, 99, 80}, {204,170}}, //21 idle 22
+  {GreenParasite_ArcMain_Idle3, {  0,164,101, 80}, {207,170}}, //22 idle 23
   {GreenParasite_ArcMain_Idle3, {101,164,101, 81}, {208,171}}, //23 idle 24
-  {GreenParasite_ArcMain_Idle4, {  0,  0, 90, 81}, {200,171}}, //24 idle 25
+  {GreenParasite_ArcMain_Idle4, {  0,  0, 90, 79}, {200,169}}, //24 idle 25
   {GreenParasite_ArcMain_Idle4, { 90,  0, 91, 81}, {200,171}}, //25 idle 26
-  {GreenParasite_ArcMain_Idle4, {  0, 81, 90, 81}, {200,171}}, //26 idle 27
+  {GreenParasite_ArcMain_Idle4, {  0, 81, 90, 79}, {200,169}}, //26 idle 27
   {GreenParasite_ArcMain_Idle4, { 90, 81, 90, 80}, {200,170}}, //27 idle 28
-  {GreenParasite_ArcMain_Idle4, {  0,162, 89, 81}, {200,171}}, //28 idle 29
-  {GreenParasite_ArcMain_Idle4, { 89,162, 90, 81}, {200,171}}, //29 idle 30
-  {GreenParasite_ArcMain_Idle5, {  0,  0, 94, 81}, {200,171}}, //30 idle 31
+  {GreenParasite_ArcMain_Idle4, {  0,162, 89, 80}, {200,170}}, //28 idle 29
+  {GreenParasite_ArcMain_Idle4, { 89,162, 90, 80}, {200,170}}, //29 idle 30
+  {GreenParasite_ArcMain_Idle5, {  0,  0, 94, 80}, {200,170}}, //30 idle 31
   {GreenParasite_ArcMain_Idle5, { 94,  0, 93, 81}, {200,171}}, //31 idle 32
-  {GreenParasite_ArcMain_Idle5, {  0, 81,103, 81}, {204,172}}, //32 idle 33
+  {GreenParasite_ArcMain_Idle5, {  0, 81,103, 79}, {204,170}}, //32 idle 33
   {GreenParasite_ArcMain_Idle5, {103, 81,102, 81}, {203,171}}, //33 idle 34
-  {GreenParasite_ArcMain_Idle5, {  0,162,104, 82}, {208,172}}, //34 idle 35
+  {GreenParasite_ArcMain_Idle5, {  0,162,104, 80}, {208,170}}, //34 idle 35
   {GreenParasite_ArcMain_Idle5, {104,162,104, 81}, {207,171}}, //35 idle 36
 
   {GreenParasite_ArcMain_Left0, {  0,  0,100, 81}, {221,162}}, //36 left 1
@@ -130,5 +130,5 @@ iso/chars/greenpar/main.arc: iso/chars/greenpar/idle0.tim iso/chars/greenpar/idl
   {GreenParasite_ArcMain_Right1, { 87, 80, 86, 78}, {167,158}}, //87 right 10
   {GreenParasite_ArcMain_Right1, {173, 80, 81, 77}, {166,157}}, //88 right 11
   {GreenParasite_ArcMain_Right1, {  0,160, 81, 78}, {166,158}}, //89 right 12
-  {GreenParasite_ArcMain_Right1, { 81,160, 81, 79}, {167,159}}, //90 right 13
+  {GreenParasite_ArcMain_Right1, { 81,160, 81, 78}, {167,158}}, //90 right 13
   {GreenParasite_ArcMain_Right1, {162,160, 81, 78}, {167,158}}, //91 right 14
