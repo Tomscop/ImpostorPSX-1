@@ -24,43 +24,23 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/bfeject/bfFly",
-	"outdir": "iso/chars/bfeject/",
-	"charname" : "BFEjected",
+	"input":  "iso/chars/greenpar/parasite",
+	"outdir": "iso/chars/greenpar/",
+	"charname" : "GreenParasite",
 	"optimize" : false,
-	"optimizename" : "bfejected",
+	"optimizename" : "greenparasite",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
-	"bpp" : 4,
-	"resize" : 0.25,
+	"bpp" : 8,
+	"resize" : 0.15,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

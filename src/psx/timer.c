@@ -10,8 +10,8 @@
 
 #define TIMER_BITS (3)
 
-int bgx = -318;
-int bgx2 = -320;
+int blockx = -318;
+int blockx2 = -320;
 
 //Timer state
 Timer timer;
@@ -164,20 +164,20 @@ void StageInfo_Draw()
 	//Draw song name
     stage.font_cdr.draw(&stage.font_cdr,
         stage.songname,
-        bgx, 
+        blockx, 
         -58,
         FontAlign_Left
     );
 	//Draw composor name
     stage.font_cdr.draw(&stage.font_cdr,
         stage.composer,
-        bgx, 
+        blockx, 
         -48,
         FontAlign_Left
     );
 	stage.font_cdr.draw(&stage.font_cdr,
         stage.composer2,
-        bgx, 
+        blockx, 
         -38,
         FontAlign_Left
     );
@@ -185,7 +185,7 @@ void StageInfo_Draw()
 	//draw block
 	RECT block_src = { 2, 250, 20, 4};
 	RECT_FIXED block_dst = {
-	FIXED_DEC(bgx2,1),
+	FIXED_DEC(blockx2,1),
 	FIXED_DEC(-60,1),
 	FIXED_DEC(120,1),
 	FIXED_DEC(32,1)
@@ -198,15 +198,15 @@ void StageInfo_Draw()
 	if((stage.stage_id == StageId_Magmatic) || (stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Torture))
 		block_dst.w += FIXED_DEC(9,1);
 	
-	if((stage.song_step >= -15) && (stage.song_step <= 15) && (bgx != -158) && (FIXED_DEC(bgx2,1) != FIXED_DEC(-160,1)))
+	if((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
 	{
-		bgx += 5;
-		bgx2 += 5;
+		blockx += 5;
+		blockx2 += 5;
 	}
-	if((stage.song_step >= 24) && (stage.song_step <= 39) && (bgx != -318) && (FIXED_DEC(bgx2,1) != FIXED_DEC(-320,1)))
+	if((stage.song_step >= 24) && (stage.song_step <= 39) && (blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)))
 	{
-		bgx -= 5;
-		bgx2 -= 5;
+		blockx -= 5;
+		blockx2 -= 5;
 	}
 	
 	Stage_BlendTex(&stage.tex_hud1, &block_src, &block_dst, stage.bump, 1);
