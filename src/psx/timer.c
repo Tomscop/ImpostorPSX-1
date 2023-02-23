@@ -10,6 +10,9 @@
 
 #define TIMER_BITS (3)
 
+int bgx = -318;
+int bgx2 = -320;
+
 //Timer state
 Timer timer;
 u32 frame_count, animf_count;
@@ -154,4 +157,57 @@ void StageTimer_Draw()
 	
 	square_dst.w = square_black.w << FIXED_SHIFT;
 	Stage_DrawTexCol(&stage.tex_hud1, &square_black, &square_dst, stage.bump, 54, 64, 54);
+}
+
+void StageInfo_Draw()
+{
+	//Draw song name
+    stage.font_cdr.draw(&stage.font_cdr,
+        stage.songname,
+        bgx, 
+        -58,
+        FontAlign_Left
+    );
+	//Draw composor name
+    stage.font_cdr.draw(&stage.font_cdr,
+        stage.composer,
+        bgx, 
+        -48,
+        FontAlign_Left
+    );
+	stage.font_cdr.draw(&stage.font_cdr,
+        stage.composer2,
+        bgx, 
+        -38,
+        FontAlign_Left
+    );
+	
+	//draw block
+	RECT block_src = { 2, 250, 20, 4};
+	RECT_FIXED block_dst = {
+	FIXED_DEC(bgx2,1),
+	FIXED_DEC(-60,1),
+	FIXED_DEC(120,1),
+	FIXED_DEC(32,1)
+	};
+	
+	if((stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Drippypop) || (stage.stage_id == StageId_Torture))
+		block_dst.h += FIXED_DEC(6,1);
+	if((stage.stage_id == StageId_SussusMoogus) || (stage.stage_id == StageId_Sabotage) || (stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Pretender) || (stage.stage_id == StageId_Titular) || (stage.stage_id == StageId_GreatestPlan) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_Who) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Drippypop) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Dlow) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Top10) || (stage.stage_id == StageId_Torture))
+		block_dst.w += FIXED_DEC(26,1);
+	if((stage.stage_id == StageId_Magmatic) || (stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Torture))
+		block_dst.w += FIXED_DEC(9,1);
+	
+	if((stage.song_step >= -15) && (stage.song_step <= 15) && (bgx != -158) && (FIXED_DEC(bgx2,1) != FIXED_DEC(-160,1)))
+	{
+		bgx += 5;
+		bgx2 += 5;
+	}
+	if((stage.song_step >= 24) && (stage.song_step <= 39) && (bgx != -318) && (FIXED_DEC(bgx2,1) != FIXED_DEC(-320,1)))
+	{
+		bgx -= 5;
+		bgx2 -= 5;
+	}
+	
+	Stage_BlendTex(&stage.tex_hud1, &block_src, &block_dst, stage.bump, 1);
 }

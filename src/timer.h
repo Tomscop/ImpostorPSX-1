@@ -33,5 +33,6 @@ void Timer_Reset(void);
 void StageTimer_Calculate();
 void StageTimer_Tick();
 void StageTimer_Draw();
+void StageInfo_Draw();
 
 #endif

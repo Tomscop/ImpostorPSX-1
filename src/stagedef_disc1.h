@@ -12,7 +12,7 @@
 		//Song info
 		1, 1,
 		XA_SussusMoogus, 0,
-		"Sussus Moogus",
+		"Sussus Moogus", "Composer: EthanTheDoodler", "",
 		
 		StageId_Sabotage, STAGE_LOAD_FLAG | STAGE_LOAD_GIRLFRIEND | STAGE_LOAD_OPPONENT2
 	},
@@ -30,7 +30,7 @@
 		//Song info
 		1, 2,
 		XA_Sabotage, 2,
-		"Sabotage",
+		"Sabotage", "Composer: EthanTheDoodler", "",
 		
 		StageId_Meltdown, STAGE_LOAD_FLAG | STAGE_LOAD_PLAYER | STAGE_LOAD_OPPONENT
 	},
@@ -48,7 +48,7 @@
 		//Song info
 		1, 3,
 		XA_Meltdown, 0,
-		"Meltdown",
+		"Meltdown", "Composer: Punkett", "",
 		
 		StageId_Meltdown, 0
 	},
@@ -66,7 +66,7 @@
 		//Song info
 		1, 4,
 		XA_SussusToogus, 2,
-		"Sussus Toogus",
+		"Sussus Toogus", "Composer: EthanTheDoodler,", "                  Fabs",
 		
 		StageId_LightsDown, 0
 	},
@@ -84,7 +84,7 @@
 		//Song info
 		1, 5,
 		XA_LightsDown, 0,
-		"Lights Down",
+		"Lights Down", "Composer: Rareblin", "",
 		
 		StageId_Reactor, 0
 	},
@@ -102,7 +102,7 @@
 		//Song info
 		1, 6,
 		XA_Reactor, 2,
-		"Reactor",
+		"Reactor", "Composer: EthanTheDoodler,", "                  Rareblin",
 		
 		StageId_Ejected, 0
 	},
@@ -120,7 +120,7 @@
 		//Song info
 		1, 7,
 		XA_Ejected, 0,
-		"Ejected",
+		"Ejected", "Composer: Rareblin", "",
 		
 		StageId_Ejected, 0
 	},
@@ -138,7 +138,7 @@
 		//Song info
 		1, 8,
 		XA_Mando, 2,
-		"Mando",
+		"Mando", "Composer: Rareblin", "",
 		
 		StageId_Dlow, 0
 	},
@@ -156,7 +156,7 @@
 		//Song info
 		1, 9,
 		XA_Dlow, 0,
-		"D'low",
+		"D'low", "Composer: Punkett, Rareblin", "",
 		
 		StageId_Oversight, 0
 	},
@@ -174,7 +174,7 @@
 		//Song info
 		1, 10,
 		XA_Oversight, 2,
-		"Oversight",
+		"Oversight", "Composer: Rareblin", "",
 		
 		StageId_Danger, 0,
 	},
@@ -192,7 +192,7 @@
 		//Song info
 		1, 11,
 		XA_Danger, 0,
-		"Danger",
+		"Danger", "Composer: Rareblin", "",
 		
 		StageId_DoubleKill, 0
 	},
@@ -210,7 +210,7 @@
 		//Song info
 		1, 12,
 		XA_DoubleKill, 2,
-		"Double Kill",
+		"Double Kill", "Composer: Rareblin", "",
 		
 		StageId_DoubleKill, 0
 	},
@@ -228,7 +228,7 @@
 		//Song info
 		2, 1,
 		XA_Defeat, 0,
-		"Defeat",
+		"Defeat", "Composer: Rareblin", "",
 		
 		StageId_Defeat, 0
 	},
@@ -246,7 +246,7 @@
 		//Song info
 		2, 2,
 		XA_Finale, 2,
-		"Finale",
+		"Finale", "Composer: Vruzzen, Punkett", "",
 		
 		StageId_Finale, 0
 	},
@@ -264,7 +264,7 @@
 		//Song info
 		2, 3,
 		XA_IdentityCrisis, 0,
-		"Identity Crisis",
+		"Identity Crisis", "Composer: Vruzzen, Rareblin,", "                  Doguy",
 		
 		StageId_IdentityCrisis, 0
 	},
@@ -283,7 +283,7 @@
 		//Song info
 		2, 4,
 		XA_Ashes, 0,
-		"Ashes",
+		"Ashes", "Composer: EthanTheDoodler,", "                  Renyar",
 		
 		StageId_Magmatic, 0
 	},
@@ -301,7 +301,7 @@
 		//Song info
 		2, 5,
 		XA_Magmatic, 2,
-		"Magmatic",
+		"Magmatic", "Composer: Rozebud, Cval", "",
 		
 		StageId_BoilingPoint, 0
 	},
@@ -319,7 +319,7 @@
 		//Song info
 		2, 6,
 		XA_BoilingPoint, 0,
-		"Boiling Point",
+		"Boiling Point", "Composer: EthanTheDoodler,", "                  Rareblin",
 		
 		StageId_BoilingPoint, 0
 	},
@@ -337,7 +337,7 @@
 		//Song info
 		2, 7,
 		XA_Delusion, 2,
-		"Delusion",
+		"Delusion", "Composer: Fluffyhairs", "",
 		
 		StageId_Blackout, 0
 	},
@@ -355,7 +355,7 @@
 		//Song info
 		2, 8,
 		XA_Blackout, 0,
-		"Blackout",
+		"Blackout", "Composer: Cval", "",
 		
 		StageId_Neurotic, 0
 	},
@@ -373,7 +373,7 @@
 		//Song info
 		2, 9,
 		XA_Neurotic, 2,
-		"Neurotic",
+		"Neurotic", "Composer: Nii-san", "",
 		
 		StageId_Neurotic, 0
 	},
@@ -391,7 +391,7 @@
 		//Song info
 		3, 1,
 		XA_Heartbeat, 0,
-		"Heartbeat",
+		"Heartbeat", "Composer: Saster", "",
 		
 		StageId_Pinkwave, 0
 	},
@@ -409,7 +409,7 @@
 		//Song info
 		3, 2,
 		XA_Pinkwave, 2,
-		"Pinkwave",
+		"Pinkwave", "Composer: Fluffyhairs", "",
 		
 		StageId_Pretender, 0
 	},
@@ -427,7 +427,7 @@
 		//Song info
 		3, 3,
 		XA_Pretender, 0,
-		"Pretender",
+		"Pretender", "Composer: EthanTheDoodler", "",
 		
 		StageId_Pretender, 0
 	},
@@ -445,7 +445,7 @@
 		//Song info
 		3, 4,
 		XA_SaucesMoogus, 2,
-		"Sauces Moogus",
+		"Sauces Moogus", "Composer: Saster", "",
 		
 		StageId_SaucesMoogus, 0
 	},
@@ -464,7 +464,7 @@
 		//Song info
 		3, 5,
 		XA_O2, 0,
-		"O2",
+		"O2", "Composer: Punkett", "",
 		
 		StageId_VotingTime, 0
 	},
@@ -482,7 +482,7 @@
 		//Song info
 		3, 6,
 		XA_VotingTime, 2,
-		"Voting Time",
+		"Voting Time", "Composer: punkett, JADS", "",
 		
 		StageId_Turbulence, 0
 	},
@@ -500,7 +500,7 @@
 		//Song info
 		3, 7,
 		XA_Turbulence, 0,
-		"Turbulence",
+		"Turbulence", "Composer: Keegan", "",
 		
 		StageId_Victory, 0
 	},
@@ -518,7 +518,7 @@
 		//Song info
 		3, 8,
 		XA_Victory, 2,
-		"Victory",
+		"Victory", "Composer: punkett", "",
 		
 		StageId_Victory, 0
 	},
@@ -536,7 +536,7 @@
 		//Song info
 		3, 9,
 		XA_Roomcode, 0,
-		"Roomcode",
+		"Roomcode", "Composer: Keegan", "",
 		
 		StageId_Roomcode, 0
 	},
@@ -555,7 +555,7 @@
 		//Song info
 		4, 1,
 		XA_SussyBussy, 0,
-		"Sussy Bussy",
+		"Sussy Bussy", "Composer: Saruky", "",
 		
 		StageId_Rivals, STAGE_LOAD_FLAG
 	},
@@ -573,7 +573,7 @@
 		//Song info
 		4, 2,
 		XA_Rivals, 2,
-		"Rivals",
+		"Rivals", "Composer: Keoni", "",
 		
 		StageId_Chewmate, STAGE_LOAD_FLAG
 	},
@@ -591,7 +591,7 @@
 		//Song info
 		4, 3,
 		XA_Chewmate, 0,
-		"Chewmate",
+		"Chewmate", "Composer: Moonmistt", "",
 		
 		StageId_Chewmate, 0
 	},
@@ -609,7 +609,7 @@
 		//Song info
 		4, 4,
 		XA_TomongusTuesday, 2,
-		"Tomongus Tuesday",
+		"Tomongus Tuesday", "Composer: Emihead", "",
 		
 		StageId_TomongusTuesday, 0
 	},
@@ -628,7 +628,7 @@
 		//Song info
 		4, 5,
 		XA_Christmas, 0,
-		"Christmas",
+		"Christmas", "Composer: emihead", "",
 		
 		StageId_Spookpostor, 0
 	},
@@ -646,7 +646,7 @@
 		//Song info
 		4, 6,
 		XA_Spookpostor, 2,
-		"Spookpostor",
+		"Spookpostor", "Composer: Rareblin", "",
 		
 		StageId_Spookpostor, 0
 	},
@@ -665,7 +665,7 @@
 		//Song info
 		4, 7,
 		XA_Titular, 0,
-		"Titular",
+		"Titular", "Composer: EthanTheDoodler", "",
 		
 		StageId_GreatestPlan, 0
 	},
@@ -683,7 +683,7 @@
 		//Song info
 		4, 8,
 		XA_GreatestPlan, 2,
-		"Greatest Plan",
+		"Greatest Plan", "Composer: EthanTheDoodler", "",
 		
 		StageId_Reinforcements, 0
 	},
@@ -701,7 +701,7 @@
 		//Song info
 		4, 9,
 		XA_Reinforcements, 0,
-		"Reinforcements",
+		"Reinforcements", "Composer: EthanTheDoodler,", "                  Philplol",
 		
 		StageId_Armed, 0
 	},
@@ -719,7 +719,7 @@
 		//Song info
 		4, 10,
 		XA_Armed, 2,
-		"Armed",
+		"Armed", "Composer: Punkett,", "                  EthanTheDoodler",
 		
 		StageId_Armed, 0
 	},
@@ -738,7 +738,7 @@
 		//Song info
 		5, 1,
 		XA_AlphaMoogus, 0,
-		"Alpha Moogus",
+		"Alpha Moogus", "Composer: idk", "",
 		
 		StageId_AlphaMoogus, 0
 	},
@@ -756,7 +756,7 @@
 		//Song info
 		5, 2,
 		XA_ActinSus, 2,
-		"Actin' Sus",
+		"Actin' Sus", "Composer: Clowfoe,", "   Beat produced by 'Be-Twiin'",
 		
 		StageId_ActinSus, 0
 	},
@@ -775,7 +775,7 @@
 		//Song info
 		5, 3,
 		XA_Ow, 0,
-		"Ow",
+		"Ow", "Composer: Fabs", "",
 		
 		StageId_Ow, 0
 	},
@@ -793,7 +793,7 @@
 		//Song info
 		5, 4,
 		XA_Who, 2,
-		"Who",
+		"Who", "Composer: EthanTheDoodler", "",
 		
 		StageId_Who, 0
 	},
@@ -811,7 +811,7 @@
 		//Song info
 		5, 5,
 		XA_InsaneStreamer, 0,
-		"Insane Streamer",
+		"Insane Streamer", "Composer: EthanTheDoodler,", "                  NeatoNG",
 		
 		StageId_InsaneStreamer, 0
 	},
@@ -829,7 +829,7 @@
 		//Song info
 		5, 6,
 		XA_SussusNuzzus, 2,
-		"Sussus Nuzzus",
+		"Sussus Nuzzus", "Composer: Lunaxis", "(Creator of 'No More Nuzzles'!)",
 		
 		StageId_SussusNuzzus, 0
 	},
@@ -847,7 +847,7 @@
 		//Song info
 		5, 7,
 		XA_Idk, 0,
-		"Idk",
+		"Idk", "Composer: Sherri/Kiwiquest", "",
 		
 		StageId_Idk, 0
 	},
@@ -865,7 +865,7 @@
 		//Song info
 		5, 8,
 		XA_Esculent, 2,
-		"Esculent",
+		"Esculent", "Composer: Nii-san", "",
 		
 		StageId_Esculent, 0
 	},
@@ -883,7 +883,7 @@
 		//Song info
 		5, 9,
 		XA_Drippypop, 0,
-		"Drippypop",
+		"Drippypop", "Composer: EthanTheDoodler,", "                  NeatoNG, Lil Nas X",
 		
 		StageId_Drippypop, 0
 	},
@@ -901,7 +901,7 @@
 		//Song info
 		6, 1,
 		XA_Crewicide, 2,
-		"Crewicide",
+		"Crewicide", "Composer: Punkett", "",
 		
 		StageId_Crewicide, 0
 	},
@@ -919,7 +919,7 @@
 		//Song info
 		6, 2,
 		XA_MonotoneAttack, 0,
-		"Monotone Attack",
+		"Monotone Attack", "Composer: Biddle3", "",
 		
 		StageId_MonotoneAttack, 0
 	},
@@ -937,7 +937,7 @@
 		//Song info
 		6, 3,
 		XA_Top10, 2,
-		"Top 10",
+		"Top 10", "Composer: Top 10 Awesome", "",
 		
 		StageId_Top10, 0
 	},
@@ -956,7 +956,7 @@
 		//Song info
 		6, 4,
 		XA_Chippin, 0,
-		"Chippin'",
+		"Chippin'", "Composer: Ziffy", "",
 		
 		StageId_Chippin, 0
 	},
@@ -974,7 +974,7 @@
 		//Song info
 		6, 5,
 		XA_Chipping, 2,
-		"Chipping",
+		"Chipping", "Composer: Ziffy", "",
 		
 		StageId_Chipping, 0
 	},
@@ -992,7 +992,7 @@
 		//Song info
 		6, 6,
 		XA_Torture, 0,
-		"Torture",
+		"Torture", "Composer: Cval, JADS,", "                  Fluffyhairs, Ziffy",
 		
 		StageId_Torture, 0
 	},

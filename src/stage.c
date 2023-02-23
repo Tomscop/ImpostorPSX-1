@@ -1461,6 +1461,8 @@ static void Stage_LoadChart(void)
 	
 	stage.speed = stage.ogspeed = *((fixed_t*)stage.chart_data); //Get the speed value (4 bytes)
 	strcpy(stage.songname, stage.stage_def->songname);
+	strcpy(stage.composer, stage.stage_def->composer);
+	strcpy(stage.composer2, stage.stage_def->composer2);
 	
 	stage.step_crochet = 0;
 	stage.time_base = 0;
@@ -2146,6 +2148,8 @@ void Stage_Tick(void)
 			
 			if (stage.intro)
 				Stage_CountDown();
+			
+			StageInfo_Draw();
 			
 			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156))
 			{
