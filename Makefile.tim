@@ -57,6 +57,7 @@ all: \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfghost/dead.tim \
+	iso/chars/bfeject/dead.tim \
 	iso/chars/bfdefeat/dead.tim \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/dead.tim \

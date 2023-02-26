@@ -115,6 +115,9 @@ Debug debug;
 
 static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 {
+	if (note->type & NOTE_FLAG_NO_ANIM)
+		return;
+	
 	if ((note->type & NOTE_FLAG_CHAR2SING) == false)
 		this->character->set_anim(this->character, type);
 
@@ -1326,13 +1329,17 @@ static void Stage_LoadPlayer(void)
 	//Load death screen texture
 	if (stage.stage_id == StageId_Meltdown)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADGHO.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Ejected)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADEJCT.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Defeat)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Idk)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
-	else if (stage.stage_id != StageId_Defeat)
+	else
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEAD.TIM;1"), GFX_LOADTEX_FREE);
 }
 
@@ -2769,9 +2776,6 @@ void Stage_Tick(void)
 			stage.flag = 0;
 			stage.bump = stage.sbump = FIXED_UNIT;
 			
-			if (stage.stage_id == StageId_Defeat)
-				Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
-			
 			//Change background colour to black
 			Gfx_SetClear(0, 0, 0);
 			
@@ -2803,6 +2807,12 @@ void Stage_Tick(void)
 				RECT dst = { 98, 58,123,123};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
+			else if (stage.stage_id == StageId_Ejected)
+			{
+				RECT src = {  0,  0,255, 83};
+				RECT dst = { 33, 120,255, 83};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
 			else if (stage.stage_id == StageId_Defeat)
 			{
 				RECT src = {  0,  0,130,123};
@@ -2825,15 +2835,15 @@ void Stage_Tick(void)
 			{
 				if (inctimer == false)
 				{
-				RECT src = {  0,  0,215, 25};
-				RECT dst = { 52,108,215, 25};
-				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+					RECT src = {  0,  0,215, 25};
+					RECT dst = { 52,108,215, 25};
+					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 				else
 				{
-				RECT src = {  0, 26,215, 25};
-				RECT dst = { 52,108,215, 25};
-				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+					RECT src = {  0, 26,215, 25};
+					RECT dst = { 52,108,215, 25};
+					Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 				}
 			}
 			break;

@@ -190,6 +190,7 @@ typedef struct
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
 #define NOTE_FLAG_CHAR2SING   (1 << 8) //Note that only the 2 character plays
 #define NOTE_FLAG_BOTHSING    (1 << 9) //Note that only that both the 1 and 2 character sings
+#define NOTE_FLAG_NO_ANIM    (1 << 10) //Note plays no animation
 
 #define NOTE_FLAG_PLAYED    (1 << 15) //Note that only used for check if note has been already played
 

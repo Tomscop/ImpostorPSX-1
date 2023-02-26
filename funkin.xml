@@ -297,6 +297,8 @@
 				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- BF Ghost -->
 				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
+				<!-- BF Ghost -->
+				<file name = "deadejct.tim" type = "data" source = "iso/chars/bfeject/dead.tim"/>
 				<!-- BF Defeat -->
 				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
 				<!-- Pico -->
