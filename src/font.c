@@ -162,6 +162,47 @@ void Font_CDR_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, Fon
 	}
 }
 
+//Font_Sus
+#include "font_susmap.h"
+s32 Font_Sus_GetWidth(struct FontData *this, const char *text)
+{
+	(void)this;
+	return strlen(text) * 7;
+}
+
+void Font_Sus_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align, u8 r, u8 g, u8 b)
+{
+	//Offset position based off alignment
+	switch (align)
+	{
+		case FontAlign_Left:
+			break;
+		case FontAlign_Center:
+			x -= Font_Sus_GetWidth(this, text) >> 1;
+			break;
+		case FontAlign_Right:
+			x -= Font_Sus_GetWidth(this, text);
+			break;
+	}
+	
+	//Draw string character by character
+	u8 c;
+	while ((c = *text++) != '\0')
+	{
+		//Draw character
+		//Shift and validate character
+		if ((c -= 0x20) >= 0x60)
+			continue;
+
+		RECT src = {font_susmap[c].charX, font_susmap[c].charY + 198, font_susmap[c].charW, font_susmap[c].charL};
+
+		Font_DrawTex(this, &src, x, y, r, g, b);
+
+		//Increment X
+		x += (font_susmap[c].charW - 1);
+	}
+}
+
 //Common font functions
 void Font_Draw(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align)
 {
@@ -191,6 +232,12 @@ void FontData_Load(FontData *this, Font font, boolean is_stage)
 			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
 			this->get_width = Font_CDR_GetWidth;
 			this->draw_col = Font_CDR_DrawCol;
+			break;
+	case Font_Sus:
+			//Load texture and set functions
+			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+			this->get_width = Font_Sus_GetWidth;
+			this->draw_col = Font_Sus_DrawCol;
 			break;
 	}
 	this->draw = Font_Draw;

@@ -556,27 +556,39 @@ void Menu_Tick(void)
 				menu.next_select = 0;
 			}
 			
+			//Draw "Press Start to Begin"
+			if (menu.next_page == menu.page)
+			{
+				RECT press_src = {0, 165, 256, 32};
+				Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48);
+			}
+			else
+			{
+				//Flash white
+				RECT press_src = {0, (animf_count & 1) ? 197 : 165, 256, 32};
+				Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48);
+			}
+			
 			//Draw Friday Night Funkin' logo
 			if ((stage.flag & STAGE_FLAG_JUST_STEP) && (stage.song_step & 0x3) == 0 && menu.page_state.title.logo_bump == 0)
-				menu.page_state.title.logo_bump = (FIXED_DEC(7,1) / 24) - 1;
+				menu.page_state.title.logo_bump = (FIXED_DEC(6,1) / 24) - 1;
 			
 			static const fixed_t logo_scales[] = {
-				FIXED_DEC(1,1),
-				FIXED_DEC(101,100),
-				FIXED_DEC(102,100),
-				FIXED_DEC(103,100),
-				FIXED_DEC(105,100),
-				FIXED_DEC(110,100),
-				FIXED_DEC(97,100),
+				FIXED_DEC(13,10),
+				FIXED_DEC(131,100),
+				FIXED_DEC(132,100),
+				FIXED_DEC(133,100),
+				FIXED_DEC(135,100),
+				FIXED_DEC(136,100),
 			};
 			fixed_t logo_scale = logo_scales[(menu.page_state.title.logo_bump * 24) >> FIXED_SHIFT];
-			u32 x_rad = (logo_scale * (176 >> 1)) >> FIXED_SHIFT;
-			u32 y_rad = (logo_scale * (112 >> 1)) >> FIXED_SHIFT;
+			u32 x_rad = (logo_scale * (191 >> 1)) >> FIXED_SHIFT;
+			u32 y_rad = (logo_scale * (164 >> 1)) >> FIXED_SHIFT;
 			
-			RECT logo_src = {0, 0, 176, 112};
+			RECT logo_src = {  0,  0,191,164};
 			RECT logo_dst = {
-				100 - x_rad + (screen.SCREEN_WIDEADD2 >> 1),
-				68 - y_rad,
+				160 - x_rad + (screen.SCREEN_WIDEADD2 >> 1),
+				110 - y_rad,
 				x_rad << 1,
 				y_rad << 1
 			};
@@ -585,28 +597,6 @@ void Menu_Tick(void)
 			if (menu.page_state.title.logo_bump > 0)
 				if ((menu.page_state.title.logo_bump -= timer_dt) < 0)
 					menu.page_state.title.logo_bump = 0;
-			
-			//Draw "Press Start to Begin"
-			if (menu.next_page == menu.page)
-			{
-				//Blinking blue
-				s16 press_lerp = (MUtil_Cos(animf_count << 3) + 0x100) >> 1;
-				u8 press_r = 51 >> 1;
-				u8 press_g = (58  + ((press_lerp * (255 - 58))  >> 8)) >> 1;
-				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
-				
-				RECT press_src = {0, 112, 256, 32};
-				Gfx_BlitTexCol(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48, press_r, press_g, press_b);
-			}
-			else
-			{
-				//Flash white
-				RECT press_src = {0, (animf_count & 1) ? 144 : 112, 256, 32};
-				Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48);
-			}
-			
-			//Draw Girlfriend
-			menu.gf->tick(menu.gf);
 			break;
 		}
 		case MenuPage_Main:
