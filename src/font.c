@@ -194,12 +194,12 @@ void Font_Sus_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, Fon
 		if ((c -= 0x20) >= 0x60)
 			continue;
 
-		RECT src = {font_susmap[c].charX, font_susmap[c].charY + 198, font_susmap[c].charW, font_susmap[c].charL};
+		RECT src = {font_susmap[c].charX, font_susmap[c].charY, font_susmap[c].charW, font_susmap[c].charL};
 
 		Font_DrawTex(this, &src, x, y, r, g, b);
 
 		//Increment X
-		x += (font_susmap[c].charW - 1);
+		x += (font_susmap[c].charW + 1);
 	}
 }
 

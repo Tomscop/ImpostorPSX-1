@@ -112,7 +112,7 @@ static struct
 	
 	//Menu assets
 	Gfx_Tex tex_back, tex_ng, tex_story, tex_title, tex_defeat;
-	FontData font_bold, font_arial, font_cdr;
+	FontData font_bold, font_arial, font_cdr, font_sus;
 	
 	Character *gf; //Title Girlfriend
 } menu;
@@ -140,6 +140,36 @@ static const char *Menu_LowerIf(const char *text, boolean lower)
 		{
 			if (*srcp >= 'a' && *srcp <= 'z')
 				*dstp++ = *srcp & ~0x20;
+			else
+				*dstp++ = *srcp;
+		}
+	}
+	
+	//Terminate text
+	*dstp++ = '\0';
+	return menu_text_buffer;
+}
+
+static const char *Menu_LowerIf2(const char *text, boolean lower)
+{
+	//Copy text
+	char *dstp = menu_text_buffer;
+	if (lower)
+	{
+		for (const char *srcp = text; *srcp != '\0'; srcp++)
+		{
+			if (*srcp >= 'A' && *srcp <= 'Z')
+				*dstp++ = *srcp;
+			else
+				*dstp++ = *srcp;
+		}
+	}
+	else
+	{
+		for (const char *srcp = text; *srcp != '\0'; srcp++)
+		{
+			if (*srcp >= 'a' && *srcp <= 'z')
+				*dstp++ = *srcp;
 			else
 				*dstp++ = *srcp;
 		}
@@ -340,6 +370,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold, false);
 	FontData_Load(&menu.font_arial, Font_Arial, false);
 	FontData_Load(&menu.font_cdr, Font_CDR, false);
+	FontData_Load(&menu.font_sus, Font_Sus, false);
 	
 	menu.gf = Char_GF_New(FIXED_DEC(62,1), FIXED_DEC(-12,1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0,1);
@@ -892,79 +923,79 @@ void Menu_Tick(void)
 				u32 col;
 				const char *text;
 			} menu_options[] = {
-				{StageId_SussusMoogus, 0xFF9271FD, "SUSSUS MOOGUS"},
-				{StageId_Sabotage, 0xFF9271FD, "SABOTAGE"},
-				{StageId_Meltdown, 0xFF9271FD, "MELTDOWN"},
-				{StageId_SussusToogus, 0xFF9271FD, "SUSSUS TOOGUS"},
-				{StageId_LightsDown, 0xFF9271FD, "LIGHTS DOWN"},
-				{StageId_Reactor, 0xFF9271FD, "REACTOR"},
-				{StageId_Ejected, 0xFF9271FD, "EJECTED"},
-				{StageId_Mando, 0xFF9271FD, "MANDO"},
-				{StageId_Dlow, 0xFF9271FD, "DLOW"},
-				{StageId_Oversight, 0xFF9271FD, "OVERSIGHT"},
-				{StageId_Danger, 0xFF9271FD, "DANGER"},
-				{StageId_DoubleKill, 0xFF9271FD, "DOUBLE KILL"},
-				{StageId_Defeat, 0xFF9271FD, "DEFEAT"},
-				{StageId_Finale, 0xFF9271FD, "FINALE"},
-				{StageId_IdentityCrisis, 0xFF9271FD, "IDENTITY CRISIS"},
+				{StageId_SussusMoogus, 0xFF9271FD, "Sussus Moogus"},
+				{StageId_Sabotage, 0xFF9271FD, "Sabotage"},
+				{StageId_Meltdown, 0xFF9271FD, "Meltdown"},
+				{StageId_SussusToogus, 0xFF9271FD, "Sussus Toogus"},
+				{StageId_LightsDown, 0xFF9271FD, "Lights Down"},
+				{StageId_Reactor, 0xFF9271FD, "Reactor"},
+				{StageId_Ejected, 0xFF9271FD, "Ejected"},
+				{StageId_Mando, 0xFF9271FD, "Mando"},
+				{StageId_Dlow, 0xFF9271FD, "Dlow"},
+				{StageId_Oversight, 0xFF9271FD, "Oversight"},
+				{StageId_Danger, 0xFF9271FD, "Danger"},
+				{StageId_DoubleKill, 0xFF9271FD, "Double Kill"},
+				{StageId_Defeat, 0xFF9271FD, "Defeat"},
+				{StageId_Finale, 0xFF9271FD, "Finale"},
+				{StageId_IdentityCrisis, 0xFF9271FD, "Identity Crisis"},
 				
-				{StageId_Ashes, 0xFF9271FD, "ASHES"},
-				{StageId_Magmatic, 0xFF9271FD, "MAGMATIC"},
-				{StageId_BoilingPoint, 0xFF9271FD, "BOILING POINT"},
-				{StageId_Delusion, 0xFF9271FD, "DELUSION"},
-				{StageId_Blackout, 0xFF9271FD, "BLACKOUT"},
-				{StageId_Neurotic, 0xFF9271FD, "NEUROTIC"},
-				{StageId_Heartbeat, 0xFF9271FD, "HEARTBEAT"},
-				{StageId_Pinkwave, 0xFF9271FD, "PINKWAVE"},
-				{StageId_Pretender, 0xFF9271FD, "PRETENDER"},
-				{StageId_SaucesMoogus, 0xFF9271FD, "SAUCES MOOGUS"},
+				{StageId_Ashes, 0xFF9271FD, "Ashes"},
+				{StageId_Magmatic, 0xFF9271FD, "Magmatic"},
+				{StageId_BoilingPoint, 0xFF9271FD, "Boiling Point"},
+				{StageId_Delusion, 0xFF9271FD, "Delusion"},
+				{StageId_Blackout, 0xFF9271FD, "Blackout"},
+				{StageId_Neurotic, 0xFF9271FD, "Neurotic"},
+				{StageId_Heartbeat, 0xFF9271FD, "Heartbeat"},
+				{StageId_Pinkwave, 0xFF9271FD, "Pinkwave"},
+				{StageId_Pretender, 0xFF9271FD, "Pretender"},
+				{StageId_SaucesMoogus, 0xFF9271FD, "Sauces Moogus"},
 				
-				{StageId_O2, 0xFF9271FD, "OTWO"},
-				{StageId_VotingTime, 0xFF9271FD, "VOTING TIME"},
-				{StageId_Turbulence, 0xFF9271FD, "TURBULENCE"},
-				{StageId_Victory, 0xFF9271FD, "VICTORY"},
+				{StageId_O2, 0xFF9271FD, "O2"},
+				{StageId_VotingTime, 0xFF9271FD, "Voting Time"},
+				{StageId_Turbulence, 0xFF9271FD, "Turbulence"},
+				{StageId_Victory, 0xFF9271FD, "Victory"},
 				{StageId_Roomcode, 0xFF9271FD, "ROOMCODE"},
 				
-				{StageId_SussyBussy, 0xFF9271FD, "SUSSY BUSSY"},
-				{StageId_Rivals, 0xFF9271FD, "RIVALS"},
-				{StageId_Chewmate, 0xFF9271FD, "CHEWMATE"},
-				{StageId_TomongusTuesday, 0xFF9271FD, "TOMONGUS TUESDAY"},
+				{StageId_SussyBussy, 0xFF9271FD, "Sussy Bussy"},
+				{StageId_Rivals, 0xFF9271FD, "Rivals"},
+				{StageId_Chewmate, 0xFF9271FD, "Chewmate"},
+				{StageId_TomongusTuesday, 0xFF9271FD, "Tomongus Tuesday"},
 				
-				{StageId_Christmas, 0xFF9271FD, "CHRISTMAS"},
-				{StageId_Spookpostor, 0xFF9271FD, "SPOOKPOSTOR"},
+				{StageId_Christmas, 0xFF9271FD, "Christmas"},
+				{StageId_Spookpostor, 0xFF9271FD, "Spookpostor"},
 				
-				{StageId_Titular, 0xFF9271FD, "TITULAR"},
-				{StageId_GreatestPlan, 0xFF9271FD, "GREATEST PLAN"},
-				{StageId_Reinforcements, 0xFF9271FD, "REINFORCEMENTS"},
-				{StageId_Armed, 0xFF9271FD, "ARMED"},
+				{StageId_Titular, 0xFF9271FD, "Titular"},
+				{StageId_GreatestPlan, 0xFF9271FD, "Greatest Plan"},
+				{StageId_Reinforcements, 0xFF9271FD, "Reinforcements"},
+				{StageId_Armed, 0xFF9271FD, "Armed"},
 				
-				{StageId_AlphaMoogus, 0xFF9271FD, "ALPHA MOOGUS"},
-				{StageId_ActinSus, 0xFF9271FD, "ACTIN SUS"},
+				{StageId_AlphaMoogus, 0xFF9271FD, "Alpha Moogus"},
+				{StageId_ActinSus, 0xFF9271FD, "Actin Sus"},
 				
-				{StageId_Ow, 0xFF9271FD, "OW"},
-				{StageId_Who, 0xFF9271FD, "WHO"},
-				{StageId_InsaneStreamer, 0xFF9271FD, "INSANE STREAMER"},
-				{StageId_SussusNuzzus, 0xFF9271FD, "SUSSUS NUZZUS"},
-				{StageId_Idk, 0xFF9271FD, "IDK"},
-				{StageId_Esculent, 0xFF9271FD, "ESCULENT"},
-				{StageId_Drippypop, 0xFF9271FD, "DRIPPYPOP"},
-				{StageId_Crewicide, 0xFF9271FD, "CREWICIDE"},
-				{StageId_MonotoneAttack, 0xFF9271FD, "MONOTONE ATTACK"},
-				{StageId_Top10, 0xFF9271FD, "TOP TEN"},
+				{StageId_Ow, 0xFF9271FD, "Ow"},
+				{StageId_Who, 0xFF9271FD, "Who"},
+				{StageId_InsaneStreamer, 0xFF9271FD, "Insane Streamer"},
+				{StageId_SussusNuzzus, 0xFF9271FD, "Sussus Nuzzus"},
+				{StageId_Idk, 0xFF9271FD, "Idk"},
+				{StageId_Esculent, 0xFF9271FD, "Esculent"},
+				{StageId_Drippypop, 0xFF9271FD, "Drippypop"},
+				{StageId_Crewicide, 0xFF9271FD, "Crewicide"},
+				{StageId_MonotoneAttack, 0xFF9271FD, "Monotone Attack"},
+				{StageId_Top10, 0xFF9271FD, "Top 10"},
 				
-				{StageId_Chippin, 0xFF9271FD, "CHIPPIN"},
-				{StageId_Chipping, 0xFF9271FD, "CHIPPING"},
-				{StageId_Torture, 0xFF9271FD, "TORTURE"},
+				{StageId_Chippin, 0xFF9271FD, "Chippin"},
+				{StageId_Chipping, 0xFF9271FD, "Chipping"},
+				{StageId_Torture, 0xFF9271FD, "Torture"},
 			};
 
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
-				150,
-				screen.SCREEN_HEIGHT / 2 - 75,
-				FontAlign_Left
+				0,
+				50,
+				FontAlign_Right
 			);
 
-			sprintf(scoredisp, "PERSONAL BEST: %d", (stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
 
 			//Initialize page
 			if (menu.page_swap)
@@ -976,14 +1007,6 @@ void Menu_Tick(void)
 				menu.page_state.freeplay.back_g = FIXED_DEC(255,1);
 				menu.page_state.freeplay.back_b = FIXED_DEC(255,1);
 			}
-
-			//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"FREEPLAY",
-				16,
-				screen.SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
 			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
@@ -1041,46 +1064,55 @@ void Menu_Tick(void)
 					Trans_Start();
 				}
 			}
-	
+			
+			//Draw upperbar
+			RECT upperbar_src = {  0, 93,255, 17};
+			RECT upperbar_dst = {
+				0,
+				0,
+				320,
+				21
+			};
+			Gfx_DrawTex(&menu.tex_story, &upperbar_src, &upperbar_dst);
+			
 			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(24,1);
+			s32 next_scroll = menu.select * FIXED_DEC(32,1);
 			menu.scroll += (next_scroll - menu.scroll) >> 4;
 			
 			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-			{
-				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
-				if (y <= -screen.SCREEN_HEIGHT2 - 8)
-					continue;
-				if (y >= screen.SCREEN_HEIGHT2 + 8)
-					break;
-				
-				//Draw text
-				menu.font_bold.draw(&menu.font_bold,
-					Menu_LowerIf(menu_options[i].text, menu.select != i),
-					48 + (y >> 2),
-					screen.SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
-				);
-			}
+            {
+                //Get position on screen
+                s32 y = (i * 32) - 8 - (menu.scroll >> FIXED_SHIFT);
+                if (y <= -screen.SCREEN_HEIGHT2 - 8)
+                    continue;
+                if (y >= screen.SCREEN_HEIGHT2 + 8)
+                    break;
+
+                //Draw text
+                menu.font_sus.draw(&menu.font_sus,
+                    Menu_LowerIf2(menu_options[i].text, menu.select != i),
+                    36 + (y >> 2),
+                    screen.SCREEN_HEIGHT2 + y - 8,
+                    FontAlign_Left
+                );
+
+                //Draw thing
+                RECT thing_src = {  0, 67,130, 25};
+                RECT thing_dst = {
+                    29 + (y >> 2),
+                    screen.SCREEN_HEIGHT2 + y - 13,
+                    130,
+                    25
+                };
+				if (i == menu.select)
+					Gfx_DrawTex(&menu.tex_story, &thing_src, &thing_dst);
+				else
+					Gfx_BlendTex(&menu.tex_story, &thing_src, &thing_dst, 1);
+            }
 			
 			//Draw background
-			fixed_t tgt_r = (fixed_t)((menu_options[menu.select].col >> 16) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_g = (fixed_t)((menu_options[menu.select].col >>  8) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_b = (fixed_t)((menu_options[menu.select].col >>  0) & 0xFF) << FIXED_SHIFT;
-			
-			menu.page_state.freeplay.back_r += (tgt_r - menu.page_state.freeplay.back_r) >> 4;
-			menu.page_state.freeplay.back_g += (tgt_g - menu.page_state.freeplay.back_g) >> 4;
-			menu.page_state.freeplay.back_b += (tgt_b - menu.page_state.freeplay.back_b) >> 4;
-			
-			Menu_DrawBack(
-				true,
-				8,
-				menu.page_state.freeplay.back_r >> (FIXED_SHIFT + 1),
-				menu.page_state.freeplay.back_g >> (FIXED_SHIFT + 1),
-				menu.page_state.freeplay.back_b >> (FIXED_SHIFT + 1),
-				0, 0, 0
-			);
+			RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+			Gfx_DrawRect(&screen_src, 0, 0, 0);
 			break;
 		}
 		case MenuPage_Credits:
