@@ -83,7 +83,7 @@ iso/%.arc:
 	tools/funkinarcpak/funkinarcpak $@ $^
 
 # Menu
-iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/defeat.tim
+iso/menu/menu.arc: iso/menu/starbg.tim iso/menu/starfg.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/defeat.tim
 
 
 # BF
