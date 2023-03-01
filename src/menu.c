@@ -70,11 +70,12 @@ static const char *funny_messages[][2] = {
 static struct
 {
 	//Menu state
-	u8 page, next_page;
+	u8 page, next_page, freeplayoptions;
 	boolean page_swap;
 	u8 select, next_select;
 	boolean idk;
 	
+	fixed_t freeplaypage;
 	fixed_t scroll;
 	fixed_t trans_time;
 	
@@ -922,7 +923,7 @@ void Menu_Tick(void)
 				StageId stage;
 				u32 col;
 				const char *text;
-			} menu_options[] = {
+			} menu_options0[] = {
 				{StageId_SussusMoogus, 0xFF9271FD, "Sussus Moogus"},
 				{StageId_Sabotage, 0xFF9271FD, "Sabotage"},
 				{StageId_Meltdown, 0xFF9271FD, "Meltdown"},
@@ -938,7 +939,14 @@ void Menu_Tick(void)
 				{StageId_Defeat, 0xFF9271FD, "Defeat"},
 				{StageId_Finale, 0xFF9271FD, "Finale"},
 				{StageId_IdentityCrisis, 0xFF9271FD, "Identity Crisis"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options1[] = {
 				{StageId_Ashes, 0xFF9271FD, "Ashes"},
 				{StageId_Magmatic, 0xFF9271FD, "Magmatic"},
 				{StageId_BoilingPoint, 0xFF9271FD, "Boiling Point"},
@@ -949,29 +957,71 @@ void Menu_Tick(void)
 				{StageId_Pinkwave, 0xFF9271FD, "Pinkwave"},
 				{StageId_Pretender, 0xFF9271FD, "Pretender"},
 				{StageId_SaucesMoogus, 0xFF9271FD, "Sauces Moogus"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options2[] = {
 				{StageId_O2, 0xFF9271FD, "O2"},
 				{StageId_VotingTime, 0xFF9271FD, "Voting Time"},
 				{StageId_Turbulence, 0xFF9271FD, "Turbulence"},
 				{StageId_Victory, 0xFF9271FD, "Victory"},
 				{StageId_Roomcode, 0xFF9271FD, "ROOMCODE"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options3[] = {
 				{StageId_SussyBussy, 0xFF9271FD, "Sussy Bussy"},
 				{StageId_Rivals, 0xFF9271FD, "Rivals"},
 				{StageId_Chewmate, 0xFF9271FD, "Chewmate"},
 				{StageId_TomongusTuesday, 0xFF9271FD, "Tomongus Tuesday"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options4[] = {
 				{StageId_Christmas, 0xFF9271FD, "Christmas"},
 				{StageId_Spookpostor, 0xFF9271FD, "Spookpostor"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options5[] = {
 				{StageId_Titular, 0xFF9271FD, "Titular"},
 				{StageId_GreatestPlan, 0xFF9271FD, "Greatest Plan"},
 				{StageId_Reinforcements, 0xFF9271FD, "Reinforcements"},
 				{StageId_Armed, 0xFF9271FD, "Armed"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options6[] = {
 				{StageId_AlphaMoogus, 0xFF9271FD, "Alpha Moogus"},
 				{StageId_ActinSus, 0xFF9271FD, "Actin Sus"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options7[] = {
 				{StageId_Ow, 0xFF9271FD, "Ow"},
 				{StageId_Who, 0xFF9271FD, "Who"},
 				{StageId_InsaneStreamer, 0xFF9271FD, "Insane Streamer"},
@@ -982,26 +1032,70 @@ void Menu_Tick(void)
 				{StageId_Crewicide, 0xFF9271FD, "Crewicide"},
 				{StageId_MonotoneAttack, 0xFF9271FD, "Monotone Attack"},
 				{StageId_Top10, 0xFF9271FD, "Top 10"},
-				
+			};
+			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options8[] = {
 				{StageId_Chippin, 0xFF9271FD, "Chippin"},
 				{StageId_Chipping, 0xFF9271FD, "Chipping"},
 				{StageId_Torture, 0xFF9271FD, "Torture"},
 			};
-
+			
+			if (menu.freeplaypage == 0)
+				menu.freeplayoptions = COUNT_OF(menu_options0);
+			else if (menu.freeplaypage == 1)
+				menu.freeplayoptions = COUNT_OF(menu_options1);
+			else if (menu.freeplaypage == 2)
+				menu.freeplayoptions = COUNT_OF(menu_options2);
+			else if (menu.freeplaypage == 3)
+				menu.freeplayoptions = COUNT_OF(menu_options3);
+			else if (menu.freeplaypage == 4)
+				menu.freeplayoptions = COUNT_OF(menu_options4);
+			else if (menu.freeplaypage == 5)
+				menu.freeplayoptions = COUNT_OF(menu_options5);
+			else if (menu.freeplaypage == 6)
+				menu.freeplayoptions = COUNT_OF(menu_options6);
+			else if (menu.freeplaypage == 7)
+				menu.freeplayoptions = COUNT_OF(menu_options7);
+			else if (menu.freeplaypage == 8)
+				menu.freeplayoptions = COUNT_OF(menu_options8);
+			
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
-				0,
-				50,
-				FontAlign_Right
+				230,
+				23,
+				FontAlign_Left
 			);
-
-			sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
-
+			
+			if (menu.freeplaypage == 0)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options0[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options0[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 1)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options1[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options1[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 2)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options2[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options2[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 3)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options3[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options3[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 4)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options4[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options4[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 5)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options5[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options5[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 6)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options6[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options6[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 7)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options7[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options7[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 8)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options8[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options8[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.freeplaypage = 0;
 				menu.page_param.stage.last = false;
-				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + screen.SCREEN_HEIGHT2,1);
+				menu.scroll = menu.freeplayoptions * FIXED_DEC(24 + screen.SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.freeplay.back_r = FIXED_DEC(255,1);
 				menu.page_state.freeplay.back_g = FIXED_DEC(255,1);
@@ -1019,16 +1113,68 @@ void Menu_Tick(void)
 					if (menu.select > 0)
 						menu.select--;
 					else
-						menu.select = COUNT_OF(menu_options) - 1;
+					{
+						if (menu.freeplaypage >= 1)
+							menu.freeplaypage -= 1;
+						else
+							menu.freeplaypage = 8;
+						if (menu.freeplaypage == 0)
+							menu.select = 14;
+						else if (menu.freeplaypage == 1)
+							menu.select = 9;
+						else if (menu.freeplaypage == 2)
+							menu.select = 4;
+						else if (menu.freeplaypage == 3)
+							menu.select = 3;
+						else if (menu.freeplaypage == 4)
+							menu.select = 1;
+						else if (menu.freeplaypage == 5)
+							menu.select = 3;
+						else if (menu.freeplaypage == 6)
+							menu.select = 1;
+						else if (menu.freeplaypage == 7)
+							menu.select = 9;
+						else if (menu.freeplaypage == 8)
+							menu.select = 2;
+					}
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[3], 0x3fff);
-					if (menu.select < COUNT_OF(menu_options) - 1)
+					if (menu.select < menu.freeplayoptions - 1)
 						menu.select++;
 					else
+					{
+						if (menu.freeplaypage <= 7)
+							menu.freeplaypage += 1;
+						else
+							menu.freeplaypage = 0;
 						menu.select = 0;
+						menu.scroll = 0;
+					}
+				}
+				if (pad_state.press & PAD_RIGHT)
+				{
+					//play scroll sound
+                    Audio_PlaySound(Sounds[5], 0x3fff);
+					if (menu.freeplaypage <= 7)
+						menu.freeplaypage += 1;
+					else
+						menu.freeplaypage = 0;
+					menu.select = 0;
+					menu.scroll = 0;
+				}
+				if (pad_state.press & PAD_LEFT)
+				{
+					//play scroll sound
+                    Audio_PlaySound(Sounds[6], 0x3fff);
+					if (menu.freeplaypage >= 1)
+						menu.freeplaypage -= 1;
+					else
+						menu.freeplaypage = 8;
+					menu.select = 0;
+					menu.scroll = 0;
 				}
 				
 				//Select option if cross is pressed
@@ -1039,7 +1185,24 @@ void Menu_Tick(void)
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
 						menu.next_page = MenuPage_Stage;
-						menu.page_param.stage.id = menu_options[menu.select].stage;
+						if (menu.freeplaypage == 0)
+							menu.page_param.stage.id = menu_options0[menu.select].stage;
+						else if (menu.freeplaypage == 1)
+							menu.page_param.stage.id = menu_options1[menu.select].stage;
+						else if (menu.freeplaypage == 2)
+							menu.page_param.stage.id = menu_options2[menu.select].stage;
+						else if (menu.freeplaypage == 3)
+							menu.page_param.stage.id = menu_options3[menu.select].stage;
+						else if (menu.freeplaypage == 4)
+							menu.page_param.stage.id = menu_options4[menu.select].stage;
+						else if (menu.freeplaypage == 5)
+							menu.page_param.stage.id = menu_options5[menu.select].stage;
+						else if (menu.freeplaypage == 6)
+							menu.page_param.stage.id = menu_options6[menu.select].stage;
+						else if (menu.freeplaypage == 7)
+							menu.page_param.stage.id = menu_options7[menu.select].stage;
+						else if (menu.freeplaypage == 8)
+							menu.page_param.stage.id = menu_options8[menu.select].stage;
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
@@ -1048,7 +1211,24 @@ void Menu_Tick(void)
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
 						menu.next_page = MenuPage_Defeat;
-						menu.page_param.stage.id = menu_options[menu.select].stage;
+						if (menu.freeplaypage == 0)
+							menu.page_param.stage.id = menu_options0[menu.select].stage;
+						else if (menu.freeplaypage == 1)
+							menu.page_param.stage.id = menu_options1[menu.select].stage;
+						else if (menu.freeplaypage == 2)
+							menu.page_param.stage.id = menu_options2[menu.select].stage;
+						else if (menu.freeplaypage == 3)
+							menu.page_param.stage.id = menu_options3[menu.select].stage;
+						else if (menu.freeplaypage == 4)
+							menu.page_param.stage.id = menu_options4[menu.select].stage;
+						else if (menu.freeplaypage == 5)
+							menu.page_param.stage.id = menu_options5[menu.select].stage;
+						else if (menu.freeplaypage == 6)
+							menu.page_param.stage.id = menu_options6[menu.select].stage;
+						else if (menu.freeplaypage == 7)
+							menu.page_param.stage.id = menu_options7[menu.select].stage;
+						else if (menu.freeplaypage == 8)
+							menu.page_param.stage.id = menu_options8[menu.select].stage;
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
@@ -1079,7 +1259,7 @@ void Menu_Tick(void)
 			s32 next_scroll = menu.select * FIXED_DEC(32,1);
 			menu.scroll += (next_scroll - menu.scroll) >> 4;
 			
-			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
+			for (u8 i = 0; i < menu.freeplayoptions; i++)
             {
                 //Get position on screen
                 s32 y = (i * 32) - 8 - (menu.scroll >> FIXED_SHIFT);
@@ -1087,14 +1267,97 @@ void Menu_Tick(void)
                     continue;
                 if (y >= screen.SCREEN_HEIGHT2 + 8)
                     break;
-
-                //Draw text
-                menu.font_sus.draw(&menu.font_sus,
-                    Menu_LowerIf2(menu_options[i].text, menu.select != i),
-                    36 + (y >> 2),
-                    screen.SCREEN_HEIGHT2 + y - 8,
-                    FontAlign_Left
-                );
+				
+				if (menu.freeplaypage == 0)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options0[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 1)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options1[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 2)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options2[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 3)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options3[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 4)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options4[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 5)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options5[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 6)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options6[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 7)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options7[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 8)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options8[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
 
                 //Draw thing
                 RECT thing_src = {  0, 67,130, 25};
