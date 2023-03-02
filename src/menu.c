@@ -115,7 +115,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_starbg, tex_starfg, tex_ng, tex_story, tex_title, tex_defeat;
+	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_defeat;
 	FontData font_bold, font_arial, font_cdr, font_sus;
 	
 	Character *gf; //Title Girlfriend
@@ -197,13 +197,12 @@ static void Menu_DrawBack()
 	Gfx_DrawTex(&menu.tex_starfg, &starfg_src, &starfg2_dst);
 	Gfx_DrawTex(&menu.tex_starbg, &starbg_src, &starbg2_dst);
 	
-	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-	Gfx_DrawRect(&screen_src, 0, 0, 0);
+	Gfx_SetClear(0, 0, 0);;
 	
 	starmove += 1;
-	if (starmove == 3)
+	if (starmove == 5)
 		starfgx -= 1;
-	if (starmove == 6)
+	if (starmove == 10)
 	{
 		starfgx -= 1;
 		starbgx -= 1;
@@ -212,7 +211,7 @@ static void Menu_DrawBack()
 		starfgx = 0;
 	if (starbgx <= -405)
 		starbgx = 20;
-	if (starmove == 6)
+	if (starmove == 10)
 		starmove = 0;
 }
 
@@ -346,6 +345,7 @@ void Menu_Load(MenuPage page)
 	IO_Data menu_arc = IO_Read("\\MENU\\MENU.ARC;1");
 	Gfx_LoadTex(&menu.tex_starbg,  Archive_Find(menu_arc, "starbg.tim"),  0);
 	Gfx_LoadTex(&menu.tex_starfg,  Archive_Find(menu_arc, "starfg.tim"),  0);
+	Gfx_LoadTex(&menu.tex_border,  Archive_Find(menu_arc, "border.tim"),  0);
 	Gfx_LoadTex(&menu.tex_ng,    Archive_Find(menu_arc, "ng.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
@@ -573,17 +573,8 @@ void Menu_Tick(void)
 			}
 			
 			//Draw "Press Start to Begin"
-			if (menu.next_page == menu.page)
-			{
-				RECT press_src = {0, 165, 256, 32};
-				Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48);
-			}
-			else
-			{
-				//Flash white
-				RECT press_src = {0, (animf_count & 1) ? 197 : 165, 256, 32};
-				Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 48);
-			}
+			RECT press_src = {0, 165, 256, 32};
+			Gfx_BlitTex(&menu.tex_title, &press_src, (screen.SCREEN_WIDTH - 256) / 2, screen.SCREEN_HEIGHT - 33);
 			
 			//Draw Friday Night Funkin' logo
 			if ((stage.flag & STAGE_FLAG_JUST_STEP) && (stage.song_step & 0x3) == 0 && menu.page_state.title.logo_bump == 0)
@@ -630,6 +621,7 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.freeplaypage = 0;
 				menu.scroll = menu.select * FIXED_DEC(12,1);
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
@@ -763,14 +755,14 @@ void Menu_Tick(void)
 			};
 	
 			//Draw week name and tracks
-			menu.font_arial.draw(&menu.font_arial,
+			menu.font_sus.draw(&menu.font_sus,
 				scoredisp,
 				0,
 				7,
 				FontAlign_Left
 			);
 
-			sprintf(scoredisp, "PERSONAL BEST: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
+			sprintf(scoredisp, "HIGH SCORE: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
 			
 			//Initialize page
 			if (menu.page_swap)
@@ -856,7 +848,7 @@ void Menu_Tick(void)
 			}
 			
 			//Draw week name and tracks
-			menu.font_bold.draw(&menu.font_bold,
+			menu.font_sus.draw(&menu.font_sus,
 				menu_options[menu.select].name,
 				screen.SCREEN_WIDTH - 16,
 				24,
@@ -867,7 +859,7 @@ void Menu_Tick(void)
 			for (size_t i = 0; i < COUNT_OF(menu_options[menu.select].tracks); i++, trackp++)
 			{
 				if (*trackp != NULL)
-					menu.font_bold.draw(&menu.font_bold,
+					menu.font_sus.draw(&menu.font_sus,
 						*trackp,
 						screen.SCREEN_WIDTH - 16,
 						screen.SCREEN_HEIGHT - (4 * 24) + (i * 24),
@@ -897,6 +889,11 @@ void Menu_Tick(void)
 				//Draw selected option
 				Menu_DrawWeek(menu_options[menu.select].week, 48, 64 + (menu.select * 48) - (menu.scroll >> FIXED_SHIFT));
 			}
+			
+			//Draw border
+			RECT border_src = {  0,  0,255,191};
+			RECT border_dst = {  0,  0,320,240};
+			Gfx_DrawTex(&menu.tex_border, &border_src, &border_dst);
 			
 			//Draw background
 			Menu_DrawBack();
@@ -1079,7 +1076,6 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
-				menu.freeplaypage = 0;
 				menu.page_param.stage.last = false;
 				menu.scroll = menu.freeplayoptions * FIXED_DEC(24 + screen.SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
