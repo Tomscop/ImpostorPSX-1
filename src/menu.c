@@ -233,31 +233,47 @@ static int increase_Story(int length, int thesong)
 	return result * 10;
 }
 
-static void Menu_DrawWeek(const char *week, s32 x, s32 y)
+static void Menu_DrawWeek(const char *week, s32 y)
 {
 	//Draw label
-	if (week == NULL)
+	if (week == "11")
 	{
-		//Tutorial
-		RECT label_src = {0, 0, 112, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, x, y);
+		//Tomongus
+		RECT label_src = {0, 0, 98, 32};
+		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (98 / 2), y);
+	}
+	else if (week == "12")
+	{
+		//Boo!
+		RECT label_src = {102, 0, 36, 32};
+		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (36 / 2), y);
+	}
+	else if (week == "13")
+	{
+		//Henry
+		RECT label_src = {46, 32, 46, 32};
+		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (46 / 2), y);
+	}
+	else if (week == "10")
+	{
+		//Defeat
+		RECT label_src = {142, 0, 22, 32};
+		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (22 / 2), y);
 	}
 	else
 	{
 		//Week
-		RECT label_src = {0, 32, 80, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, x, y);
+		RECT label_src = {0, 32, 42, 32};
+		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (66 / 2), y);
 		
 		//Number
-		x += 80;
 		for (; *week != '\0'; week++)
 		{
 			//Draw number
 			u8 i = *week - '0';
 			
-			RECT num_src = {128 + ((i & 3) << 5), ((i >> 2) << 5), 32, 32};
-			Gfx_BlitTex(&menu.tex_story, &num_src, x, y);
-			x += 32;
+			RECT num_src = {(174 + (i * 12)) - 12, 0, 10, 32};
+			Gfx_BlitTex(&menu.tex_story, &num_src, (160 - (66 / 2)) + 56, y);
 		}
 	}
 }
@@ -741,24 +757,24 @@ void Menu_Tick(void)
 				const char *tracks[5];
 				int length;
 			} menu_options[] = {
-				{"1", StageId_SussusMoogus, "POLUS PROBLEMS", {"SUSSUS MOOGUS", "SABOTAGE", "MELTDOWN", NULL, NULL}, 3},
-				{"2", StageId_SussusToogus, "MIRA MANIA", {"SUSSUS TOOGUS", "LIGHTS DOWN", "REACTOR", "EJECTED", NULL}, 4},
-				{"3", StageId_Mando, "AIRSHIP ATROCITIES", {"MANDO", "DLOW", "OVERSIGHT", "DANGER", "DOUBLE KILL"}, 5},
-				{"4", StageId_Defeat, "DEFEAT", {NULL, NULL, NULL, NULL, NULL}, 1},
-				{"5", StageId_Ashes, "MAGMATIC MONSTROSITY", {"ASHES", "MAGMATIC", "BOILING POINT", NULL, NULL}, 3},
-				{"6", StageId_Delusion, "DEADLY DELUSION", {"DELUSION", "BLACKOUT", "NEUROTIC", NULL, NULL}, 3},
-				{"7", StageId_Heartbeat, "HUMANE HEARTBEAT", {"HEARTBEAT", "PINKWAVE", "PRETENDER", NULL, NULL}, 3},
-				{NULL, StageId_O2, "JORSAWSEES JAMS", {"OTWO", "VOTING TIME", "TURBULENCE", "VICTORY", NULL}, 4},
-				{NULL, StageId_SussyBussy, "ROUSEY RIVAL", {"SUSSY BUSSY", "RIVALS", "CHEWMATE", NULL, NULL}, 3},
-				{NULL, StageId_Christmas, "LOGGOS HALLOWEEN", {"CHRISTMAS", "SPOOKPOSTOR", NULL, NULL, NULL}, 2},
-				{NULL, StageId_Titular, "BATTLING THE BOYFRIEND", {"TITULAR", "GREATEST PLAN", "REINFORCEMENTS", "ARMED", NULL}, 4},
+				{"1", StageId_SussusMoogus,">POLUS PROBLEMS", {"SUSSUS MOOGUS","SABOTAGE","MELTDOWN", NULL, NULL}, 3},
+				{"2", StageId_SussusToogus,"MIRA MANIA<", {"SUSSUS TOOGUS","LIGHTS DOWN","REACTOR","EJECTED", NULL}, 4},
+				{"3", StageId_Mando,">AIRSHIP ATROCITIES", {"MANDO","DLOW","OVERSIGHT","DANGER","DOUBLE KILL"}, 5},
+				{"10", StageId_Defeat,">DEFEAT", {NULL, NULL, NULL, NULL, NULL}, 1},
+				{"5", StageId_Ashes,"MAGMATIC MONSTROSITY<<<<", {"ASHES","MAGMATIC","BOILING POINT", NULL, NULL}, 3},
+				{"6", StageId_Delusion,"DEADLY DELUSION", {"DELUSION","BLACKOUT","NEUROTIC", NULL, NULL}, 3},
+				{"7", StageId_Heartbeat,"HUMANE HEARTBEAT<", {"HEARTBEAT","PINKWAVE","PRETENDER", NULL, NULL}, 3},
+				{"4", StageId_O2,"JORSAWSEES JAMS<", {"OTWO","VOTING TIME","TURBULENCE","VICTORY", NULL}, 4},
+				{"11", StageId_SussyBussy,"ROUSEY RIVAL", {"SUSSY BUSSY","RIVALS","CHEWMATE", NULL, NULL}, 3},
+				{"12", StageId_Christmas,"LOGGOS HALLOWEEN<", {"CHRISTMAS","SPOOKPOSTOR", NULL, NULL, NULL}, 2},
+				{"13", StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
 			};
 	
-			//Draw week name and tracks
-			menu.font_sus.draw(&menu.font_sus,
+			//Draw score
+			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
-				0,
-				7,
+				26,
+				22,
 				FontAlign_Left
 			);
 
@@ -772,15 +788,6 @@ void Menu_Tick(void)
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
 				menu.page_param.stage.last = true;
-			}
-			
-			//Draw white fade
-			if (menu.page_state.title.fade > 0)
-			{
-				RECT flash2 = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
-				Gfx_BlendRect(&flash2, flash_col, flash_col, flash_col, 1);
-				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
 			}
 			
 			//Handle option and selection
@@ -820,8 +827,6 @@ void Menu_Tick(void)
 						menu.page_param.stage.id = menu_options[menu.select].stage;
 						menu.page_param.stage.story = true;
 						menu.trans_time = FIXED_UNIT;
-						menu.page_state.title.fade = FIXED_DEC(255,1);
-						menu.page_state.title.fadespd = FIXED_DEC(510,1);
 					}
 					else if ((menu.select == 3) && (stage.prefs.defeat == 1))
 					{
@@ -831,8 +836,6 @@ void Menu_Tick(void)
 						menu.page_param.stage.id = menu_options[menu.select].stage;
 						menu.page_param.stage.story = true;
 						menu.trans_time = FIXED_UNIT;
-						menu.page_state.title.fade = FIXED_DEC(255,1);
-						menu.page_state.title.fadespd = FIXED_DEC(510,1);
 					}
 				}
 				
@@ -850,19 +853,19 @@ void Menu_Tick(void)
 			//Draw week name and tracks
 			menu.font_sus.draw(&menu.font_sus,
 				menu_options[menu.select].name,
-				screen.SCREEN_WIDTH - 16,
-				24,
-				FontAlign_Right
+				160,
+				61,
+				FontAlign_Center
 			);
 			
 			const char * const *trackp = menu_options[menu.select].tracks;
 			for (size_t i = 0; i < COUNT_OF(menu_options[menu.select].tracks); i++, trackp++)
 			{
 				if (*trackp != NULL)
-					menu.font_sus.draw(&menu.font_sus,
+					menu.font_arial.draw(&menu.font_arial,
 						*trackp,
-						screen.SCREEN_WIDTH - 16,
-						screen.SCREEN_HEIGHT - (4 * 24) + (i * 24),
+						295,
+						22 + (i * 11),
 						FontAlign_Right
 					);
 			}
@@ -871,24 +874,8 @@ void Menu_Tick(void)
 			s32 next_scroll = menu.select * FIXED_DEC(48,1);
 			menu.scroll += (next_scroll - menu.scroll) >> 3;
 			
-			if (menu.next_page == menu.page || menu.next_page == MenuPage_Main)
-			{
-				//Draw all options
-				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-				{
-					s32 y = 64 + (i * 48) - (menu.scroll >> FIXED_SHIFT);
-					if (y <= 16)
-						continue;
-					if (y >= screen.SCREEN_HEIGHT)
-						break;
-					Menu_DrawWeek(menu_options[i].week, 48, y);
-				}
-			}
-			else if (animf_count & 2)
-			{
-				//Draw selected option
-				Menu_DrawWeek(menu_options[menu.select].week, 48, 64 + (menu.select * 48) - (menu.scroll >> FIXED_SHIFT));
-			}
+			//Draw selected option
+			Menu_DrawWeek(menu_options[menu.select].week, 31);
 			
 			//Draw border
 			RECT border_src = {  0,  0,255,191};

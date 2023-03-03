@@ -167,7 +167,7 @@ void Font_CDR_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, Fon
 s32 Font_Sus_GetWidth(struct FontData *this, const char *text)
 {
 	(void)this;
-	return strlen(text) * 7;
+	return strlen(text) * 5;
 }
 
 void Font_Sus_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align, u8 r, u8 g, u8 b)
