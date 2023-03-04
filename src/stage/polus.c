@@ -37,6 +37,9 @@ typedef struct
 	Gfx_Tex tex_people;
 	u8 people_frame, people_tex_id;
 	Animatable people_animatable;
+	
+	//fade stuff
+	fixed_t fade, fadespd;
 
 } Back_Polus;
 
@@ -223,6 +226,24 @@ void Back_Polus_DrawFG(StageBack *back)
 	Back_Polus *this = (Back_Polus*)back;
 
 	fixed_t fx, fy;
+	
+	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step == 1155))
+	{
+		this->fade = FIXED_DEC(255,1);
+		this->fadespd = FIXED_DEC(120,1);
+	}
+	
+	//end fade
+	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step == 1190))
+		this->fade = 0;
+	
+	if (this->fade > 0)
+	{
+		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		u8 flash_col = this->fade >> FIXED_SHIFT;
+		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+	}
 	
 	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156) && (stage.song_step <= 1157))
 	{
@@ -417,6 +438,9 @@ StageBack *Back_Polus_New(void)
 	Animatable_Init(&this->people_animatable, people_anim);
 	Animatable_SetAnim(&this->people_animatable, 0);
 	this->people_frame = this->people_tex_id = 0xFF; //Force art load
+	
+	//Initialize Fade
+	this->fade = this->fadespd = 0;
 	
 	return (StageBack*)this;
 }

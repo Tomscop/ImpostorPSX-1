@@ -2158,7 +2158,7 @@ void Stage_Tick(void)
 			
 			StageInfo_Draw();
 			
-			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156))
+			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
 			{
 				show = false;
 			}

@@ -29,9 +29,18 @@
 
 static u32 Sounds[8];
 static char scoredisp[30];
+//move stuff
 int starmove = 0;
 int starfgx = 0;
 int starbgx = 20;
+int storymove1 = 0;
+int storymove2 = 0;
+int storymove3 = 0;
+int storymove4 = 0;
+int storymove = 0;
+int storyx = 152;
+int storyy = 132;
+int ship = 0;
 //Menu messages
 static const char *funny_messages[][2] = {
 	{"TRUST THE", "FUCKING PLAN"},
@@ -115,7 +124,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_defeat;
+	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_stuff;
 	FontData font_bold, font_arial, font_cdr, font_sus;
 	
 	Character *gf; //Title Girlfriend
@@ -236,7 +245,11 @@ static int increase_Story(int length, int thesong)
 static void Menu_DrawWeek(const char *week, s32 y)
 {
 	//Draw label
-	if (week == "11")
+	if (week == NULL)
+	{
+		return;
+	}
+	else if (week == "11")
 	{
 		//Tomongus
 		RECT label_src = {0, 0, 98, 32};
@@ -278,6 +291,96 @@ static void Menu_DrawWeek(const char *week, s32 y)
 	}
 }
 
+static void Menu_DrawShip(void)
+{
+	//Draw ship
+	if (ship == 0) //Right
+	{
+		RECT ship_src = {  0, 84, 52, 38};
+		RECT ship_dst = {126,121, 52, 38};
+		Gfx_DrawTex(&menu.tex_stuff, &ship_src, &ship_dst);
+	}
+	if (ship == 1) //Left
+	{
+		RECT ship_src = { 42,140, 52, 38};
+		RECT ship_dst = {142,121, 52, 38};
+		Gfx_DrawTex(&menu.tex_stuff, &ship_src, &ship_dst);
+	}
+	if (ship == 2) //Up
+	{
+		RECT ship_src = { 56, 84, 38, 52};
+		RECT ship_dst = {141,122, 38, 52};
+		Gfx_DrawTex(&menu.tex_stuff, &ship_src, &ship_dst);
+	}
+	if (ship == 3) //Down
+	{
+		RECT ship_src = {  0,126, 38, 52};
+		RECT ship_dst = {141,106, 38, 52};
+		Gfx_DrawTex(&menu.tex_stuff, &ship_src, &ship_dst);
+	}
+}
+
+static void Menu_DrawStory(void)
+{
+	//Draw circles
+	RECT circle_src = { 95,167, 16, 16};
+	RECT circle0_dst = {storyx + 0,storyy + 0, 16, 16};
+	RECT circle1_dst = {storyx + 98,storyy + 0, 16, 16};
+	RECT circle2_dst = {storyx + 196,storyy + 0, 16, 16};
+	RECT circle3_dst = {storyx + 294,storyy + 0, 16, 16};
+	RECT circle4_dst = {storyx + 392,storyy + 0, 16, 16};
+	RECT circle5_dst = {storyx + 0,storyy + 98, 16, 16};
+	RECT circle6_dst = {storyx + -98,storyy + 98, 16, 16};
+	RECT circle7_dst = {storyx + -196,storyy + 98, 16, 16};
+	RECT circle8_dst = {storyx + 0,storyy + -98, 16, 16};
+	RECT circle9_dst = {storyx + 196,storyy + -98, 16, 16};
+	RECT circle10_dst = {storyx + 196,storyy + 98, 16, 16};
+	RECT circle11_dst = {storyx + 294,storyy + 98, 16, 16};
+	
+	//Draw horizontal lines
+	RECT horiline_src = {  0,179, 82,  4};
+	RECT horiline0_dst = {storyx + 16,storyy + 6, 82,  4};
+	RECT horiline1_dst = {storyx + 114,storyy + 6, 82,  4};
+	RECT horiline2_dst = {storyx + 212,storyy + 6, 82,  4};
+	RECT horiline3_dst = {storyx + 310,storyy + 6, 82,  4};
+	RECT horiline4_dst = {storyx + -82,storyy + 104, 82,  4};
+	RECT horiline5_dst = {storyx + -180,storyy + 104, 82,  4};
+	
+	//Draw vertical lines
+	RECT vertline_src = { 97, 76,  4, 82};
+	RECT vertline0_dst = {storyx + 6,storyy + -82,  4, 82};
+	RECT vertline1_dst = {storyx + 6,storyy + 16,  4, 82};
+	RECT vertline2_dst = {storyx + 202,storyy + -82,  4, 82};
+	RECT vertline3_dst = {storyx + 202,storyy + 16,  4, 82};
+	RECT vertline4_dst = {storyx + 300,storyy + 16,  4, 82};
+	
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle0_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle1_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle3_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle4_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle5_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle6_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle7_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle8_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle9_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle10_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &circle_src, &circle11_dst);
+	
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline0_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline1_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline3_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline4_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &horiline_src, &horiline5_dst);
+	
+	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline0_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline1_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline3_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline4_dst);
+}
+
 static void Menu_DrawDefeat(void)
 {
 	//Draw number
@@ -294,17 +397,17 @@ static void Menu_DrawDefeat(void)
 	RECT five_src = {54, 67, 10, 15};
 	RECT five_dst = {5 + 15, 42, 16, 24};
 	if (menu.select == 5)
-		Gfx_DrawTex(&menu.tex_defeat, &zero_src, &zero_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &zero_src, &zero_dst);
 	else if (menu.select == 4)
-		Gfx_DrawTex(&menu.tex_defeat, &one_src, &one_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &one_src, &one_dst);
 	else if (menu.select == 3)
-		Gfx_DrawTex(&menu.tex_defeat, &two_src, &two_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &two_src, &two_dst);
 	else if (menu.select == 2)
-		Gfx_DrawTex(&menu.tex_defeat, &three_src, &three_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &three_src, &three_dst);
 	else if (menu.select == 1)
-		Gfx_DrawTex(&menu.tex_defeat, &four_src, &four_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &four_src, &four_dst);
 	else if (menu.select == 0)
-		Gfx_DrawTex(&menu.tex_defeat, &five_src, &five_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &five_src, &five_dst);
 	
 	//Draw text
 	RECT combo_src = {0, 35, 55, 15};
@@ -314,10 +417,10 @@ static void Menu_DrawDefeat(void)
 	RECT slash_src = {65, 67, 10, 15};
 	RECT slash_dst = {23 + 15, 42, 16, 24};
 	RECT five2_dst = {41 + 15, 42, 16, 24};
-	Gfx_DrawTex(&menu.tex_defeat, &combo_src, &combo_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &break_src, &break_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &slash_src, &slash_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &five_src, &five2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &combo_src, &combo_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &break_src, &break_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &slash_src, &slash_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &five_src, &five2_dst);
 	
 	//Draw dead people
 	RECT ghost_src = {0, 0, 28, 30};
@@ -329,28 +432,28 @@ static void Menu_DrawDefeat(void)
 	RECT bone_src = {58, 0, 28, 30};
 	RECT bone_dst = {168 + 41, 150, 28, 30};
 	RECT bone2_dst = {210 + 41, 150, 28, 30};
-	Gfx_DrawTex(&menu.tex_defeat, &ghost_src, &ghost_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &ghost_src, &ghost2_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &dead_src, &dead_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &dead_src, &dead2_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &bone_src, &bone_dst);
-	Gfx_DrawTex(&menu.tex_defeat, &bone_src, &bone2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead2_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst);
+	Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone2_dst);
 	
 	//Draw arrow
 	RECT arrow_src = {0, 31, 28, 3};
 	RECT arrow_dst = {(42 * menu.select) + 41,138, 28, 3};
 	if (menu.select == 0)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 	else if (menu.select == 1)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 	else if (menu.select == 2)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 	else if (menu.select == 3)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 	else if (menu.select == 4)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 	else if (menu.select == 5)
-		Gfx_DrawTex(&menu.tex_defeat, &arrow_src, &arrow_dst);
+		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 }
 
 //Menu functions
@@ -365,7 +468,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_ng,    Archive_Find(menu_arc, "ng.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
-	Gfx_LoadTex(&menu.tex_defeat, Archive_Find(menu_arc, "defeat.tim"), 0);
+	Gfx_LoadTex(&menu.tex_stuff, Archive_Find(menu_arc, "stuff.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold, false);
@@ -638,6 +741,9 @@ void Menu_Tick(void)
 			if (menu.page_swap)
 			{
 				menu.freeplaypage = 0;
+				storymove = 0;
+				storyx = 152;
+				storyy = 132;
 				menu.scroll = menu.select * FIXED_DEC(12,1);
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
@@ -757,6 +863,7 @@ void Menu_Tick(void)
 				const char *tracks[5];
 				int length;
 			} menu_options[] = {
+				{NULL, StageId_Temp, NULL, { NULL, NULL, NULL, NULL, NULL}, 3},
 				{"1", StageId_SussusMoogus,">POLUS PROBLEMS", {"SUSSUS MOOGUS","SABOTAGE","MELTDOWN", NULL, NULL}, 3},
 				{"2", StageId_SussusToogus,"MIRA MANIA<", {"SUSSUS TOOGUS","LIGHTS DOWN","REACTOR","EJECTED", NULL}, 4},
 				{"3", StageId_Mando,">AIRSHIP ATROCITIES", {"MANDO","DLOW","OVERSIGHT","DANGER","DOUBLE KILL"}, 5},
@@ -769,7 +876,7 @@ void Menu_Tick(void)
 				{"12", StageId_Christmas,"LOGGOS HALLOWEEN<", {"CHRISTMAS","SPOOKPOSTOR", NULL, NULL, NULL}, 2},
 				{"13", StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
 			};
-	
+			
 			//Draw score
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
@@ -777,13 +884,13 @@ void Menu_Tick(void)
 				22,
 				FontAlign_Left
 			);
-
-			sprintf(scoredisp, "HIGH SCORE: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
+			
+			if (menu.select != 0)
+				sprintf(scoredisp, "HIGH SCORE: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
 			
 			//Initialize page
 			if (menu.page_swap)
 			{
-				menu.scroll = 0;
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
@@ -799,27 +906,134 @@ void Menu_Tick(void)
 				//Change option
 				if (pad_state.press & PAD_UP)
 				{
-					//play scroll sound
-					Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select > 0)
-						menu.select--;
-					else
-						menu.select = COUNT_OF(menu_options) - 1;
+					if ((menu.select == 0) || (menu.select == 2) || (menu.select == 5) || (menu.select == 9) || (menu.select == 11))
+					{
+						Audio_PlaySound(Sounds[0], 0x3fff);
+						storymove1 = 1;
+						ship = 2;
+					}
+					
+					if (menu.select == 0)
+						menu.select = 8;
+					else if (menu.select == 2)
+						menu.select = 10;
+					else if (menu.select == 5)
+						menu.select = 0;
+					else if (menu.select == 9)
+						menu.select = 2;
+					else if (menu.select == 11)
+						menu.select = 3;
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select < COUNT_OF(menu_options) - 1)
-						menu.select++;
-					else
+					if ((menu.select == 0) || (menu.select == 2) || (menu.select == 3) || (menu.select == 8) || (menu.select == 10))
+					{
+						Audio_PlaySound(Sounds[0], 0x3fff);
+						storymove2 = 1;
+						ship = 3;
+					}
+					
+					if (menu.select == 0)
+						menu.select = 5;
+					else if (menu.select == 2)
+						menu.select = 9;
+					else if (menu.select == 3)
+						menu.select = 11;
+					else if (menu.select == 8)
 						menu.select = 0;
+					else if (menu.select == 10)
+						menu.select = 2;
+				}
+				if (pad_state.press & PAD_LEFT)
+				{
+					if ((menu.select == 1) || (menu.select == 2) || (menu.select == 3) || (menu.select == 4) || (menu.select == 5) || (menu.select == 6))
+					{
+						Audio_PlaySound(Sounds[0], 0x3fff);
+						storymove3 = 1;
+						ship = 1;
+					}
+					
+					if (menu.select == 1)
+						menu.select = 0;
+					else if (menu.select == 2)
+						menu.select = 1;
+					else if (menu.select == 3)
+						menu.select = 2;
+					else if (menu.select == 4)
+						menu.select = 3;
+					else if (menu.select == 5)
+						menu.select = 6;
+					else if (menu.select == 6)
+						menu.select = 7;
+				}
+				if (pad_state.press & PAD_RIGHT)
+				{
+					if ((menu.select == 0) || (menu.select == 1) || (menu.select == 2) || (menu.select == 3) || (menu.select == 6) || (menu.select == 7))
+					{
+						Audio_PlaySound(Sounds[0], 0x3fff);
+						storymove4 = 1;
+						ship = 0;
+					}
+					
+					if (menu.select == 0)
+						menu.select = 1;
+					else if (menu.select == 1)
+						menu.select = 2;
+					else if (menu.select == 2)
+						menu.select = 3;
+					else if (menu.select == 3)
+						menu.select = 4;
+					else if (menu.select == 6)
+						menu.select = 5;
+					else if (menu.select == 7)
+						menu.select = 6;
+				}
+				
+				if (storymove1 == 1)
+				{
+					if (storymove <= 97)
+					{
+						storymove += 7;
+						storyy += 7;
+					}
+				}
+				if (storymove2 == 1)
+				{
+					if (storymove <= 97)
+					{
+						storymove += 7;
+						storyy -= 7;
+					}
+				}
+				if (storymove3 == 1)
+				{
+					if (storymove <= 97)
+					{
+						storymove += 7;
+						storyx += 7;
+					}
+				}
+				if (storymove4 == 1)
+				{
+					if (storymove <= 97)
+					{
+						storymove += 7;
+						storyx -= 7;
+					}
+				}
+				if (storymove >= 98)
+				{
+					storymove = 0;
+					storymove1 = 0;
+					storymove2 = 0;
+					storymove3 = 0;
+					storymove4 = 0;
 				}
 				
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					if ((menu.select != 3) || ((menu.select == 3) && (stage.prefs.defeat != 1)))
+					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
@@ -828,7 +1042,7 @@ void Menu_Tick(void)
 						menu.page_param.stage.story = true;
 						menu.trans_time = FIXED_UNIT;
 					}
-					else if ((menu.select == 3) && (stage.prefs.defeat == 1))
+					else if ((menu.select == 4) && (stage.prefs.defeat == 1))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
@@ -882,8 +1096,13 @@ void Menu_Tick(void)
 			RECT border_dst = {  0,  0,320,240};
 			Gfx_DrawTex(&menu.tex_border, &border_src, &border_dst);
 			
+			//Draw map
+			Menu_DrawShip();
+			Menu_DrawStory();
+			
 			//Draw background
 			Menu_DrawBack();
+			
 			break;
 		}
 		case MenuPage_Freeplay:
