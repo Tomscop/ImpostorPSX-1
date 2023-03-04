@@ -84,7 +84,7 @@ static struct
 	//Menu state
 	u8 page, next_page, freeplayoptions;
 	boolean page_swap;
-	u8 select, next_select;
+	u8 select, next_select, last_select;
 	boolean idk;
 	
 	fixed_t freeplaypage;
@@ -740,6 +740,7 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.last_select = 0;
 				menu.freeplaypage = 0;
 				storymove = 0;
 				storyx = 152;
@@ -887,10 +888,13 @@ void Menu_Tick(void)
 			
 			if (menu.select != 0)
 				sprintf(scoredisp, "HIGH SCORE: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
+			else
+				sprintf(scoredisp, "", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
 			
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.select = menu.last_select;
 				menu.page_param.stage.diff = StageDiff_Normal;
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
@@ -1037,6 +1041,7 @@ void Menu_Tick(void)
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
+						menu.last_select = menu.select;
 						menu.next_page = MenuPage_Stage;
 						menu.page_param.stage.id = menu_options[menu.select].stage;
 						menu.page_param.stage.story = true;
@@ -1046,6 +1051,7 @@ void Menu_Tick(void)
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[1], 0x3fff);
+						menu.last_select = menu.select;
 						menu.next_page = MenuPage_Defeat;
 						menu.page_param.stage.id = menu_options[menu.select].stage;
 						menu.page_param.stage.story = true;
@@ -1282,6 +1288,7 @@ void Menu_Tick(void)
 			//Initialize page
 			if (menu.page_swap)
 			{
+				menu.select = menu.last_select;
 				menu.page_param.stage.last = false;
 				menu.scroll = menu.freeplayoptions * FIXED_DEC(24 + screen.SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
@@ -1372,6 +1379,7 @@ void Menu_Tick(void)
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
+						menu.last_select = menu.select;
 						menu.next_page = MenuPage_Stage;
 						if (menu.freeplaypage == 0)
 							menu.page_param.stage.id = menu_options0[menu.select].stage;
@@ -1398,6 +1406,7 @@ void Menu_Tick(void)
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
+						menu.last_select = menu.select;
 						menu.next_page = MenuPage_Defeat;
 						if (menu.freeplaypage == 0)
 							menu.page_param.stage.id = menu_options0[menu.select].stage;
@@ -1887,7 +1896,7 @@ void Menu_Tick(void)
 					if (menu.page_param.stage.last == true)
 					{
 						menu.next_page = MenuPage_Story;
-						menu.next_select = 3; //Story Mode
+						menu.next_select = 4; //Story Mode
 					}
 					else
 					{

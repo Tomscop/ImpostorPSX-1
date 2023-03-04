@@ -2540,11 +2540,14 @@ void Stage_Tick(void)
 					So how are notes position are sorted in psxfunkin
 					I'm just going to check if the previous note has the same position as the current one
 					*/
-					if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk))
+					if((stage.stage_id != StageId_VotingTime) && (stage.stage_id != StageId_Who) && (stage.stage_id != StageId_Idk) && (stage.stage_id != StageId_SussusNuzzus))
 					{
 						if (note->pos == previous_note->pos)
 						{
-							stage.bump += FIXED_DEC(3,100); //0.03
+							if ((stage.stage_id == StageId_DoubleKill) || (stage.stage_id == StageId_Finale))
+								stage.bump += FIXED_DEC(15,1000); //0.015
+							else
+								stage.bump += FIXED_DEC(3,100); //0.03
 							stage.charbump += FIXED_DEC(15,1000); //0.015
 						}
 					}
