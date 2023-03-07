@@ -2,25 +2,50 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "aaaaaa",
+			"imgname" : "idle",
 			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "die",
+			"imgname" : "jump",
+			"hname"   : "Jump"
 		}
 	],
-	"input":  "iso/stages/jerma/jermaSCARY",
-	"outdir": "iso/stages/jerma/",
-	"charname" : "GreenParasite",
+	"input":  "iso/chars/dave/Dave",
+	"outdir": "iso/chars/dave/",
+	"charname" : "Dave",
 	"optimize" : false,
-	"optimizename" : "greenparasite",
+	"optimizename" : "dave",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		768,
 		0,
 		0,
-		487
+		481
 	],
 
 	"bpp" : 4,
-	"resize" : 0.20,
+	"resize" : 0.225,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

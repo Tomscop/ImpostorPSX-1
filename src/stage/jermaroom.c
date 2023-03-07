@@ -77,7 +77,7 @@ static const CharFrame aaaaaa_frame[] = {
 
 static const Animation aaaaaa_anim[] = {
 	{1, (const u8[]){ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, ASCR_CHGANI, 1}}, //Idle
-	{1, (const u8[]){ 30, ASCR_BACK, 1}}, //Hide
+	{1, (const u8[]){ 39, ASCR_BACK, 1}}, //Hide
 };
 
 //AAAAAA functions
@@ -105,8 +105,8 @@ void JermaRoom_AAAAAA_Draw(Back_JermaRoom *this, fixed_t x, fixed_t y)
 	
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = { ox, oy, src.w * FIXED_DEC(2,1), src.h * FIXED_DEC(2,1)};
-	Debug_StageMoveDebug(&dst, 7, stage.camera.x, stage.camera.y);
-	Stage_DrawTex(&this->tex_aaaaaa, &src, &dst, FIXED_DEC(1,1));
+	Debug_StageMoveDebug(&dst, 8, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_aaaaaa, &src, &dst, stage.camera.bzoom);
 }
 
 void Back_JermaRoom_DrawFG(StageBack *back)
@@ -120,7 +120,8 @@ void Back_JermaRoom_DrawFG(StageBack *back)
 		Animatable_SetAnim(&this->aaaaaa_animatable, 0);
 	
 	Animatable_Animate(&this->aaaaaa_animatable, (void*)this, JermaRoom_AAAAAA_SetFrame);
-		JermaRoom_AAAAAA_Draw(this, FIXED_DEC(213 + 75,1), FIXED_DEC(88 + 123,1));
+	if ((stage.song_step >= 996) && (stage.song_step <= 1023))
+		JermaRoom_AAAAAA_Draw(this, FIXED_DEC(34,1), FIXED_DEC(20+52,1));
 }
 
 void Back_JermaRoom_DrawBG(StageBack *back)

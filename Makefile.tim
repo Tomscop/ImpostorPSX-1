@@ -46,6 +46,7 @@ all: \
 	iso/chars/jerma/main.arc \
 	iso/chars/nuzzus/main.arc \
 	iso/chars/tobyfox/main.arc \
+	iso/chars/dave/main.arc \
 	iso/chars/amogus/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
@@ -271,6 +272,7 @@ iso/chars/tobyfox/main.arc: iso/chars/tobyfox/idle0.tim iso/chars/tobyfox/idle1.
 # Drippostor
 
 # Dave
+iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/chars/dave/idle2.tim iso/chars/dave/idle3.tim iso/chars/dave/left0.tim iso/chars/dave/left1.tim iso/chars/dave/down0.tim iso/chars/dave/down1.tim iso/chars/dave/up0.tim iso/chars/dave/up1.tim iso/chars/dave/right0.tim iso/chars/dave/jump0.tim iso/chars/dave/jump1.tim iso/chars/dave/jump2.tim iso/chars/dave/jump3.tim iso/chars/dave/jump4.tim iso/chars/dave/jump5.tim iso/chars/dave/jump6.tim iso/chars/dave/jump7.tim iso/chars/dave/jump8.tim iso/chars/dave/jump9.tim iso/chars/dave/jump10.tim 
 
 # Monotone Doc
 

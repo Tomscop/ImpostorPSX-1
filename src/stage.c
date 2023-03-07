@@ -83,6 +83,7 @@ static u32 Sounds[10];
 #include "character/jerma.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
+#include "character/dave.h"
 #include "character/amogus.h"
 #include "character/dad.h"
 //GFs
@@ -200,8 +201,16 @@ static void Stage_ScrollCamera(void)
 				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
 			}
 		}
-		stage.camera.x += (stage.noteshakex - 2);
-		stage.camera.y += (stage.noteshakey - 2);
+		if (stage.stage_id != StageId_Crewicide)
+		{
+			stage.camera.x += (stage.noteshakex - 2);
+			stage.camera.y += (stage.noteshakey - 2);
+		}
+		else
+		{
+			stage.camera.x += stage.noteshakex;
+			stage.camera.y += stage.noteshakey;
+		}
 	}
 		
 	//Update other camera stuff
@@ -1539,6 +1548,15 @@ static void Stage_LoadSFX(void)
 		Mem_Free(data);
 	}
 	
+	//dave window sound
+	if (stage.stage_id == StageId_Crewicide)
+	{
+		IO_FindFile(&file, "\\SOUNDS\\DAVEDIE.VAG;1");
+		u32 *data = IO_ReadFile(&file);
+		Sounds[7] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
@@ -1644,6 +1662,8 @@ static void Stage_LoadMusic(void)
 		stage.black = false;
 		stage.bop1 = 0xF;
 		stage.bop2 = 0;
+		stage.bopintense1 = FIXED_DEC(30,1000);
+		stage.bopintense2 = FIXED_DEC(15,1000);
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
@@ -1814,7 +1834,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id == StageId_SaucesMoogus) || (stage.stage_id == StageId_Roomcode) || (stage.stage_id == StageId_Idk) || (stage.stage_id == StageId_Top10))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-FP0.TIM;1"), GFX_LOADTEX_FREE);
-	else if ((stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Crewicide))
+	else if ((stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Crewicide) || (stage.stage_id == StageId_Esculent))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-FP1.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-PH.TIM;1"), GFX_LOADTEX_FREE);
@@ -2115,7 +2135,10 @@ void Stage_Tick(void)
 			else
 				noteshake = 0;
 			
+			//sounds
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[7], 0x3fff);
+			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step == 2064) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			
 			if (stage.prefs.debug)
@@ -2197,6 +2220,12 @@ void Stage_Tick(void)
 			{
 				stage.noteshakex = 0;
 				stage.noteshakey = 0;
+			}
+			
+			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step >= 2064) && (stage.song_step <= 2072))
+			{
+				stage.noteshakex = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
+				stage.noteshakey = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
 			}
 
 			//Clear per-frame flags

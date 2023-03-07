@@ -180,16 +180,7 @@ static void Events_Check(Event* event)
 		}
 		case EVENTS_FLAG_EXTZOOM: //Extra Camera Zoom!!
 		{
-			if (event->value1 == 0)
-			{
-				stage.player->focus_zoom = stage.player->zoom_save;
-				stage.opponent->focus_zoom = stage.opponent->zoom_save;
-			}
-			else
-			{
-				stage.player->focus_zoom += event->value1;
-				stage.opponent->focus_zoom += event->value1;
-			}
+			return;
 			break;
 		}
 		default: //nothing lol

@@ -263,7 +263,7 @@
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
 				<!-- Brown assets -->
 				<!-- Drippostor assets -->
-				<!-- Dave assets -->
+				<file name = "dave.arc" type = "data" source = "iso/chars/dave/main.arc"/>
 				<!-- Monotone Doc assets -->
 				<!-- Fabs assets -->
 				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
@@ -372,6 +372,7 @@
 				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
 				<!-- Other Sounds -->
 				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
+				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
 				<!-- Game Over Sounds -->
 				<file name = "death.vag" type = "data" source = "iso/sounds/gameover/death.ogg.vag"/>
 				<file name = "deathe.vag" type = "data" source = "iso/sounds/gameover/deathe.ogg.vag"/>
