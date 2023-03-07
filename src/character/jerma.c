@@ -44,8 +44,8 @@ typedef struct
 
 //Jerma character definitions
 static const CharFrame char_jerma_frame[] = {
-  {Jerma_ArcMain_Idle0, {  2,  0,100,219}, { 91,119}}, //0 idle 1
-  {Jerma_ArcMain_Idle0, {102,  0,100,217}, { 91,117}}, //1 idle 2
+  {Jerma_ArcMain_Idle0, {  0,  0,100,219}, { 93,119}}, //0 idle 1
+  {Jerma_ArcMain_Idle0, {102,  0,100,218}, { 91,118}}, //1 idle 2
   {Jerma_ArcMain_Idle1, {  0,  0, 95,221}, { 91,121}}, //2 idle 3
   {Jerma_ArcMain_Idle1, { 97,  0, 93,222}, { 92,122}}, //3 idle 4
   {Jerma_ArcMain_Idle2, {  0,  0, 91,222}, { 91,122}}, //4 idle 5
@@ -140,14 +140,14 @@ Character *Char_Jerma_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 0;
 
 	//health bar color
 	this->character.health_bar = 0xFF5EC2C6;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(5,1);
+	this->character.focus_y = FIXED_DEC(-50,1);
+	this->character.focus_zoom = FIXED_DEC(155,128);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

@@ -799,14 +799,14 @@
 	},
 	{ //StageId_InsaneStreamer (Insane Streamer)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(308,1),  FIXED_DEC(251,1)},
         {NULL},
-		{Char_Jerma_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jerma_New, FIXED_DEC(153,1),  FIXED_DEC(156,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_JermaRoom_New,
 		
 		//Song info
 		5, 5,

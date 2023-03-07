@@ -73,6 +73,7 @@ SRCS = src/main.c \
 	src/stage/lobby.c \
 	src/stage/cafeteria.c \
 	src/stage/henry.c \
+	src/stage/jermaroom.c \
 	src/stage/idk.c \
 	src/stage/week1.c \
 	src/stage/dummy.c \

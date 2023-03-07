@@ -230,6 +230,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-85,1);
 	this->character.focus_zoom = FIXED_DEC(191,256);
 	}
+	else if (stage.stage_id == StageId_InsaneStreamer)
+	{
+	this->character.focus_x = FIXED_DEC(-96,1);
+	this->character.focus_y = FIXED_DEC(-108,1);
+	this->character.focus_zoom = FIXED_DEC(275,256);
+	}
 	else
 	{
 	this->character.focus_x = FIXED_DEC(-50,1);

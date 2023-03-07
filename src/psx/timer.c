@@ -183,7 +183,7 @@ void StageInfo_Draw()
     );
 	
 	//draw block
-	RECT block_src = { 2, 250, 20, 4};
+	RECT block_src = { 2, 250, 2, 2};
 	RECT_FIXED block_dst = {
 	FIXED_DEC(blockx2,1),
 	FIXED_DEC(-60,1),

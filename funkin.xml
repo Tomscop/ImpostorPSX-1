@@ -46,6 +46,7 @@
 				<file name = "hud1-3.tim" type = "data" source = "iso/stage/hud1-3.tim"/>
 				<file name = "hud1-t.tim" type = "data" source = "iso/stage/hud1-t.tim"/>
 				<file name = "hud1-fp0.tim" type = "data" source = "iso/stage/hud1-fp0.tim"/>
+				<file name = "hud1-fp1.tim" type = "data" source = "iso/stage/hud1-fp1.tim"/>
 				<file name = "hud1-ph.tim" type = "data" source = "iso/stage/hud1-ph.tim"/>
 				<file name = "count.tim" type = "data" source = "iso/stage/count.tim"/>
 				<file name = "countpix.tim" type = "data" source = "iso/stage/countpix.tim"/>
@@ -337,6 +338,10 @@
 				
 				<!-- Henry BG -->
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
+				
+				<!-- Jerma Room BG -->
+				<file name = "jerma.arc" type = "data" source = "iso/stages/jerma/back.arc"/>
+				<file name = "aaaaaa.arc" type = "data" source = "iso/stages/jerma/aaaaaa.arc"/>
 				
 				<!-- Idk BG -->
 				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>

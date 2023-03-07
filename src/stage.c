@@ -101,6 +101,7 @@ static u32 Sounds[10];
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/henry.h"
+#include "stage/jermaroom.h"
 #include "stage/idk.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
@@ -1630,6 +1631,8 @@ static void Stage_LoadMusic(void)
 		stage.black = false;
 		stage.bop1 = 0xF;
 		stage.bop2 = 0;
+		stage.bopintense1 = FIXED_DEC(30,1000);
+		stage.bopintense2 = FIXED_DEC(15,1000);
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
@@ -1811,6 +1814,8 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-T.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id == StageId_SaucesMoogus) || (stage.stage_id == StageId_Roomcode) || (stage.stage_id == StageId_Idk) || (stage.stage_id == StageId_Top10))
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-FP0.TIM;1"), GFX_LOADTEX_FREE);
+	else if ((stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Crewicide))
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-FP1.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1-PH.TIM;1"), GFX_LOADTEX_FREE);
 
@@ -2371,8 +2376,8 @@ void Stage_Tick(void)
 				//Bump screen
 				if (is_bump_step)
 				{
-					stage.bump += FIXED_DEC(3,100); //0.03
-					stage.charbump += FIXED_DEC(15,1000); //0.015
+					stage.bump += stage.bopintense1; //0.03
+					stage.charbump += stage.bopintense2; //0.015
 				}
 
 				//Bump health every 4 steps

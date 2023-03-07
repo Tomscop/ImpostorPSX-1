@@ -60,6 +60,98 @@ static void Events_Check(Event* event)
 		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
 		{
+			//Value 1
+			if ((event->value1 >> FIXED_SHIFT) == 1)
+			{
+				stage.bopintense1 = FIXED_DEC(30,1000);
+				stage.bopintense2 = FIXED_DEC(15,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 11)
+			{
+				stage.bopintense1 = FIXED_DEC(33,1000);
+				stage.bopintense2 = FIXED_DEC(17,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 115)
+			{
+				stage.bopintense1 = FIXED_DEC(35,1000);
+				stage.bopintense2 = FIXED_DEC(17,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 12)
+			{
+				stage.bopintense1 = FIXED_DEC(36,1000);
+				stage.bopintense2 = FIXED_DEC(18,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 124)
+			{
+				stage.bopintense1 = FIXED_DEC(37,1000);
+				stage.bopintense2 = FIXED_DEC(19,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 128)
+			{
+				stage.bopintense1 = FIXED_DEC(38,1000);
+				stage.bopintense2 = FIXED_DEC(19,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 13)
+			{
+				stage.bopintense1 = FIXED_DEC(39,1000);
+				stage.bopintense2 = FIXED_DEC(20,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 132)
+			{
+				stage.bopintense1 = FIXED_DEC(39,1000);
+				stage.bopintense2 = FIXED_DEC(20,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 136)
+			{
+				stage.bopintense1 = FIXED_DEC(40,1000);
+				stage.bopintense2 = FIXED_DEC(20,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 14)
+			{
+				stage.bopintense1 = FIXED_DEC(42,1000);
+				stage.bopintense2 = FIXED_DEC(21,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 142)
+			{
+				stage.bopintense1 = FIXED_DEC(42,1000);
+				stage.bopintense2 = FIXED_DEC(21,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 3)
+			{
+				stage.bopintense1 = FIXED_DEC(9,1000);
+				stage.bopintense2 = FIXED_DEC(5,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 4)
+			{
+				stage.bopintense1 = FIXED_DEC(12,1000);
+				stage.bopintense2 = FIXED_DEC(6,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 5)
+			{
+				stage.bopintense1 = FIXED_DEC(15,1000);
+				stage.bopintense2 = FIXED_DEC(8,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 6)
+			{
+				stage.bopintense1 = FIXED_DEC(18,1000);
+				stage.bopintense2 = FIXED_DEC(9,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 8)
+			{
+				stage.bopintense1 = FIXED_DEC(24,1000);
+				stage.bopintense2 = FIXED_DEC(12,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 0)
+			{
+				stage.bopintense1 = FIXED_DEC(0,1000);
+				stage.bopintense2 = FIXED_DEC(0,1000);
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 100)
+			{
+				stage.bopintense1 = FIXED_DEC(0,1000);
+				stage.bopintense2 = FIXED_DEC(0,1000);
+			}
+			//Value 2
 			if ((event->value2 >> FIXED_SHIFT) == 1)
 			{
 				stage.bop1 = 0x3;

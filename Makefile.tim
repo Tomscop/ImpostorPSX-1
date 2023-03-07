@@ -10,6 +10,7 @@ all: \
 	iso/stage/hud1-3.tim \
 	iso/stage/hud1-t.tim \
 	iso/stage/hud1-fp0.tim \
+	iso/stage/hud1-fp1.tim \
 	iso/stage/hud1-ph.tim \
 	iso/stage/count.tim \
 	iso/stage/countpix.tim \
@@ -73,6 +74,8 @@ all: \
 	iso/stages/lobby/back.arc \
 	iso/stages/cafe/back.arc \
 	iso/stages/henry/back.arc \
+	iso/stages/jerma/back.arc \
+	iso/stages/jerma/aaaaaa.arc \
 	iso/stages/idk/back.arc \
 	iso/stages/week1/back.arc \
 
@@ -346,6 +349,10 @@ iso/stages/cafe/back.arc: iso/stages/cafe/back0.tim iso/stages/cafe/back1.tim
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
+
+# Jerma Room
+iso/stages/jerma/back.arc: iso/stages/jerma/back0.tim iso/stages/jerma/back1.tim
+iso/stages/jerma/aaaaaa.arc: iso/stages/jerma/aaaaaa0.tim iso/stages/jerma/aaaaaa1.tim iso/stages/jerma/aaaaaa2.tim iso/stages/jerma/aaaaaa3.tim iso/stages/jerma/aaaaaa4.tim iso/stages/jerma/aaaaaa5.tim iso/stages/jerma/aaaaaa6.tim iso/stages/jerma/aaaaaa7.tim 
 
 # Idk
 iso/stages/idk/back.arc: iso/stages/idk/back0.tim
