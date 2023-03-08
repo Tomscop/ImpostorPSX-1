@@ -78,6 +78,7 @@ all: \
 	iso/stages/jerma/back.arc \
 	iso/stages/jerma/aaaaaa.arc \
 	iso/stages/idk/back.arc \
+	iso/stages/office/back.arc \
 	iso/stages/week1/back.arc \
 
 iso/%.tim: iso/%.png
@@ -358,6 +359,9 @@ iso/stages/jerma/aaaaaa.arc: iso/stages/jerma/aaaaaa0.tim iso/stages/jerma/aaaaa
 
 # Idk
 iso/stages/idk/back.arc: iso/stages/idk/back0.tim
+
+# Dave Office
+iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim

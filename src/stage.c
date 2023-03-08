@@ -104,6 +104,7 @@ static u32 Sounds[10];
 #include "stage/henry.h"
 #include "stage/jermaroom.h"
 #include "stage/idk.h"
+#include "stage/daveoffice.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
 

@@ -138,6 +138,29 @@ void Char_Dave_Tick(Character *character)
 {
 	Char_Dave *this = (Char_Dave*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Crewicide)
+	{
+		if (stage.song_step == 16)
+		{
+			this->character.focus_x = FIXED_DEC(-47,1);
+			this->character.focus_y = FIXED_DEC(-85,1);
+			this->character.focus_zoom = FIXED_DEC(549,512);
+		}
+		if (stage.song_step == 2032)
+		{
+			this->character.focus_x = FIXED_DEC(-61,1);
+			this->character.focus_y = FIXED_DEC(-78,1);
+			this->character.focus_zoom = FIXED_DEC(617,512);
+		}
+		if (stage.song_step == 2064)
+		{
+			this->character.focus_x = FIXED_DEC(-69,1);
+			this->character.focus_y = FIXED_DEC(-85,1);
+			this->character.focus_zoom = FIXED_DEC(549,512);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2) && (character->animatable.anim != CharAnim_Special3))
 	{
@@ -207,9 +230,9 @@ Character *Char_Dave_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF4C52B4;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-51,1);
+	this->character.focus_y = FIXED_DEC(-83,1);
+	this->character.focus_zoom = FIXED_DEC(153,128);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

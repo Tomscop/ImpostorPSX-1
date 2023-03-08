@@ -345,6 +345,9 @@
 				
 				<!-- Idk BG -->
 				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
+				
+				<!-- Dave Office BG -->
+				<file name = "office.arc" type = "data" source = "iso/stages/office/back.arc"/>
 			
 				<!-- Week 1 BG -->
 				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
