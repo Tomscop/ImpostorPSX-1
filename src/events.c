@@ -178,11 +178,6 @@ static void Events_Check(Event* event)
 			}
 			break;
 		}
-		case EVENTS_FLAG_EXTZOOM: //Extra Camera Zoom!!
-		{
-			return;
-			break;
-		}
 		default: //nothing lol
 		break;
 	}

@@ -46,6 +46,7 @@ all: \
 	iso/chars/jerma/main.arc \
 	iso/chars/nuzzus/main.arc \
 	iso/chars/tobyfox/main.arc \
+	iso/chars/brown/main.arc \
 	iso/chars/dave/main.arc \
 	iso/chars/amogus/main.arc \
 	iso/chars/dad/main.arc \
@@ -78,6 +79,7 @@ all: \
 	iso/stages/jerma/back.arc \
 	iso/stages/jerma/aaaaaa.arc \
 	iso/stages/idk/back.arc \
+	iso/stages/electric/back.arc \
 	iso/stages/office/back.arc \
 	iso/stages/week1/back.arc \
 
@@ -269,6 +271,7 @@ iso/chars/nuzzus/main.arc: iso/chars/nuzzus/idle0.tim iso/chars/nuzzus/idle1.tim
 iso/chars/tobyfox/main.arc: iso/chars/tobyfox/idle0.tim iso/chars/tobyfox/idle1.tim iso/chars/tobyfox/left0.tim iso/chars/tobyfox/down0.tim iso/chars/tobyfox/up0.tim iso/chars/tobyfox/up1.tim iso/chars/tobyfox/right0.tim iso/chars/tobyfox/right1.tim 
 
 # Brown
+iso/chars/brown/main.arc: iso/chars/brown/idle0.tim iso/chars/brown/idle1.tim iso/chars/brown/idle2.tim iso/chars/brown/idle3.tim iso/chars/brown/idle4.tim iso/chars/brown/idle5.tim iso/chars/brown/left0.tim iso/chars/brown/left1.tim iso/chars/brown/down0.tim iso/chars/brown/down1.tim iso/chars/brown/up0.tim iso/chars/brown/up1.tim iso/chars/brown/up2.tim iso/chars/brown/right0.tim 
 
 # Drippostor
 
@@ -359,6 +362,9 @@ iso/stages/jerma/aaaaaa.arc: iso/stages/jerma/aaaaaa0.tim iso/stages/jerma/aaaaa
 
 # Idk
 iso/stages/idk/back.arc: iso/stages/idk/back0.tim
+
+# Electrical
+iso/stages/electric/back.arc: iso/stages/electric/back0.tim iso/stages/electric/back1.tim
 
 # Dave Office
 iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim

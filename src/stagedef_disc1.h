@@ -853,14 +853,14 @@
 	},
 	{ //StageId_Esculent (Esculent)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(1000,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Brown_New, FIXED_DEC(543,1),  FIXED_DEC(289,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Electrical_New,
 		
 		//Song info
 		5, 8,

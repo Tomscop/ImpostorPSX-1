@@ -261,7 +261,7 @@
 				<file name = "jerma.arc" type = "data" source = "iso/chars/jerma/main.arc"/>
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
-				<!-- Brown assets -->
+				<file name = "brown.arc" type = "data" source = "iso/chars/brown/main.arc"/>
 				<!-- Drippostor assets -->
 				<file name = "dave.arc" type = "data" source = "iso/chars/dave/main.arc"/>
 				<!-- Monotone Doc assets -->
@@ -345,6 +345,9 @@
 				
 				<!-- Idk BG -->
 				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
+				
+				<!-- Electrical BG -->
+				<file name = "electric.arc" type = "data" source = "iso/stages/electric/back.arc"/>
 				
 				<!-- Dave Office BG -->
 				<file name = "office.arc" type = "data" source = "iso/stages/office/back.arc"/>
