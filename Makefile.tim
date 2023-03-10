@@ -342,7 +342,7 @@ iso/stages/reactor/ball.arc: iso/stages/reactor/ball0.tim iso/stages/reactor/bal
 iso/stages/ejected/back.arc: iso/stages/ejected/back0.tim iso/stages/ejected/back1.tim iso/stages/ejected/back2.tim iso/stages/ejected/lines.tim
 
 # Airship
-iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim iso/stages/airship/back2.tim
+iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim
 
 # Defeat
 iso/stages/defeat/back.arc: iso/stages/defeat/back0.tim iso/stages/defeat/back1.tim iso/stages/defeat/back2.tim iso/stages/defeat/back3.tim
