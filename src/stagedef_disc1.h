@@ -140,7 +140,7 @@
 		XA_Mando, 2,
 		"Mando", "Composer: Rareblin", "",
 		
-		StageId_Dlow, 0
+		StageId_Dlow, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
 	},
 	{ //StageId_Dlow (Dlow)
 		//Characters
@@ -158,11 +158,11 @@
 		XA_Dlow, 0,
 		"D'low", "Composer: Punkett, Rareblin", "",
 		
-		StageId_Oversight, 0
+		StageId_Oversight, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
 	},
 	{ //StageId_Oversight (Oversight)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(93,1)},
+		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(96,1)},
         {NULL},
 		{Char_White_New, FIXED_DEC(238,1),  FIXED_DEC(94,1)},
         {NULL},

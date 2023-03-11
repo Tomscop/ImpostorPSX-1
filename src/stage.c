@@ -2593,6 +2593,8 @@ void Stage_Tick(void)
 					{
 						if (note->pos == previous_note->pos)
 						{
+							if (note->type & NOTE_FLAG_NO_ANIM)
+								return;
 							if ((stage.stage_id == StageId_DoubleKill) || (stage.stage_id == StageId_Finale))
 								stage.bump += FIXED_DEC(15,1000); //0.015
 							else

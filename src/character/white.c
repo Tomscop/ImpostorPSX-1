@@ -98,6 +98,97 @@ void Char_White_Tick(Character *character)
 {
 	Char_White *this = (Char_White*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Oversight)
+	{
+		if (stage.song_step == 0)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 384)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 387)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 390)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 392)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 400)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 419)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 422)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 424)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 432)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 448)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 451)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 454)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 456)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 464)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 480)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 483)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 486)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 488)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 496)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 511)
+			this->character.focus_zoom = FIXED_DEC(912,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 896)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 899)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 902)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 904)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 912)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 928)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 931)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 934)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 936)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 944)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 960)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 963)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 966)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 968)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 976)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 992)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 995)
+			this->character.focus_zoom = FIXED_DEC(875,1024);
+		if (stage.song_step == 998)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1000)
+			this->character.focus_zoom = FIXED_DEC(936,1024);
+		if (stage.song_step == 1008)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -149,9 +240,9 @@ Character *Char_White_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFD1D2F8;
 	
-	this->character.focus_x = FIXED_DEC(30,1);
-	this->character.focus_y = FIXED_DEC(-85,1);
-	this->character.focus_zoom = FIXED_DEC(191,256);
+	this->character.focus_x = FIXED_DEC(14,1);
+	this->character.focus_y = FIXED_DEC(-79,1);
+	this->character.focus_zoom = FIXED_DEC(59,64);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
