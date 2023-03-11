@@ -193,7 +193,7 @@ Character *Char_Chefogus_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 6;
+	this->character.health_i = 4;
 
 	//health bar color
 	this->character.health_bar = 0xFFC75E52;

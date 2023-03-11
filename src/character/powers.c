@@ -172,7 +172,7 @@ Character *Char_Powers_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 7;
 
 	//health bar color
 	this->character.health_bar = 0xFF89D7FF;

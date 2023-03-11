@@ -277,7 +277,7 @@ Character *Char_Maroon_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 0;
 
 	//health bar color
 	this->character.health_bar = 0xFF52232F;

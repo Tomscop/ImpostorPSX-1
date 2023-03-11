@@ -156,7 +156,7 @@ Character *Char_Pink_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 3;
 
 	//health bar color
 	this->character.health_bar = 0xFFEE64CC;

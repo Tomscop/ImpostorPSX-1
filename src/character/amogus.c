@@ -126,7 +126,7 @@ Character *Char_Amogus_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 4;
+	this->character.health_i = 0;
 
 	//health bar color
 	this->character.health_bar = 0xFF87FB83;
