@@ -198,14 +198,14 @@
 	},
 	{ //StageId_DoubleKill (Double Kill)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_BFDefeat_New,    FIXED_DEC(60+106,1),  FIXED_DEC(100+61,1)},
-		{Char_WhiteDK_New, FIXED_DEC(122,1),  FIXED_DEC(137,1)},
-        {Char_BlackDK_New, FIXED_DEC(122,1),  FIXED_DEC(137,1)},
+		{Char_BF_New,    FIXED_DEC(392,1),  FIXED_DEC(204,1)},
+		{Char_BFDefeat_New,    FIXED_DEC(392+106,1),  FIXED_DEC(204+61,1)},
+		{Char_WhiteDK_New, FIXED_DEC(272,1),  FIXED_DEC(252,1)},
+        {Char_BlackDK_New, FIXED_DEC(286,1),  FIXED_DEC(289,1)},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Cargo_New,
 		
 		//Song info
 		1, 12,

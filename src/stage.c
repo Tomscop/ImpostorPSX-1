@@ -100,6 +100,7 @@ static u32 Sounds[10];
 #include "stage/reactor.h"
 #include "stage/ejected.h"
 #include "stage/airship.h"
+#include "stage/cargo.h"
 #include "stage/defeat.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
@@ -2192,7 +2193,7 @@ void Stage_Tick(void)
 			{
 				if (show)
 				{
-					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
+					if (((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
 						StageTimer_Draw();
 				}
 			}
@@ -2687,11 +2688,14 @@ void Stage_Tick(void)
 							stage.player_state[0].health = 0;
 
 						//Draw health heads
-						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
-						Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
+						if ((stage.stage_id != StageId_DoubleKill) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
+						{
+							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
+							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
+						}
 					
 						//Draw health bar
-						if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
+						if (((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id != StageId_DoubleKill) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407))))
 						{
 							if (stage.mode == StageMode_Swap)
 							{

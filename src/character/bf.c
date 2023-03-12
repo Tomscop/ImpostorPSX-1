@@ -265,6 +265,25 @@ void Char_BF_Tick(Character *character)
 		if (stage.song_step == 1008)
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 	}
+	if (stage.stage_id == StageId_DoubleKill)
+	{
+		if (stage.song_beat == 356)
+		{
+			this->character.focus_x = FIXED_DEC(-5,1);
+			this->character.focus_y = FIXED_DEC(-54,1);
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		}
+		if (stage.song_beat == 420)
+		{
+			this->character.focus_x = FIXED_DEC(-92,1);
+			this->character.focus_y = FIXED_DEC(-84,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 552)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_beat == 556)
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+	}
 	
 	if(character->animatable.anim  != CharAnim_Special1)
 	{
@@ -373,6 +392,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-96,1);
 	this->character.focus_y = FIXED_DEC(-81,1);
 	this->character.focus_zoom = FIXED_DEC(814,1024);
+	}
+	else if (stage.stage_id == StageId_DoubleKill)
+	{
+	this->character.focus_x = FIXED_DEC(-92,1);
+	this->character.focus_y = FIXED_DEC(-84,1);
+	this->character.focus_zoom = FIXED_DEC(1086,1024);
 	}
 	else if (stage.stage_id == StageId_InsaneStreamer)
 	{

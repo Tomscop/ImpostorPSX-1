@@ -72,6 +72,7 @@ SRCS = src/main.c \
 	src/stage/reactor.c \
 	src/stage/ejected.c \
 	src/stage/airship.c \
+	src/stage/cargo.c \
 	src/stage/defeat.c \
 	src/stage/lobby.c \
 	src/stage/cafeteria.c \

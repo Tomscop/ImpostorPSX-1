@@ -101,6 +101,31 @@ void Char_WhiteDK_Tick(Character *character)
 {
 	Char_WhiteDK *this = (Char_WhiteDK*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_DoubleKill)
+	{
+		if ((stage.song_step >= 0) && (stage.song_step <= 8))
+			this->character.focus_zoom = FIXED_DEC(1306,1024);
+		if (stage.song_beat == 4)
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		if (stage.song_beat == 356)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_beat == 420)
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		if (stage.song_beat == 552)
+		{
+			this->character.focus_x = FIXED_DEC(-172,1);
+			this->character.focus_y = FIXED_DEC(-96,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 556)
+		{
+			this->character.focus_x = FIXED_DEC(-100,1);
+			this->character.focus_y = FIXED_DEC(-132,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -153,9 +178,9 @@ Character *Char_WhiteDK_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFD1D2F8;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-100,1);
+	this->character.focus_y = FIXED_DEC(-132,1);
+	this->character.focus_zoom = FIXED_DEC(1086,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
