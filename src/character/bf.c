@@ -12,6 +12,7 @@
 #include "../random.h"
 #include "../main.h"
 
+int zoomout = 0;
 //Boyfriend player types
 enum
 {
@@ -283,6 +284,20 @@ void Char_BF_Tick(Character *character)
 			this->character.focus_zoom = FIXED_DEC(1628,1024);
 		if (stage.song_beat == 556)
 			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		if ((stage.song_beat >= 916) && (this->character.focus_zoom != FIXED_DEC(542,1024)))
+		{
+			zoomout += 1;
+			if (zoomout == 2)
+			{
+				this->character.focus_zoom -= FIXED_DEC(1,1024);
+				zoomout = 0;
+			}
+		}
+		if (stage.song_step == 3791)
+		{
+			this->character.focus_x = FIXED_DEC(-132,1);
+			this->character.focus_y = FIXED_DEC(-84,1);
+		}
 	}
 	
 	if(character->animatable.anim  != CharAnim_Special1)
@@ -333,8 +348,10 @@ void Char_BF_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
-	if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407))))
+	if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
 		Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
+	if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407)))
+		Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 128, 125, 126);
 }
 
 void Char_BF_SetAnim(Character *character, u8 anim)

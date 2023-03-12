@@ -209,9 +209,9 @@ static void Menu_DrawBack()
 	Gfx_SetClear(0, 0, 0);;
 	
 	starmove += 1;
-	if (starmove == 5)
+	if (starmove == 7)
 		starfgx -= 1;
-	if (starmove == 10)
+	if (starmove == 14)
 	{
 		starfgx -= 1;
 		starbgx -= 1;
@@ -220,7 +220,7 @@ static void Menu_DrawBack()
 		starfgx = 0;
 	if (starbgx <= -405)
 		starbgx = 20;
-	if (starmove == 10)
+	if (starmove == 14)
 		starmove = 0;
 }
 

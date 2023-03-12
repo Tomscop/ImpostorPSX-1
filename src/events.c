@@ -39,12 +39,8 @@ static void Events_Check(Event* event)
 			if((event->value1 == 0) || ((event->value1 >> FIXED_SHIFT) == 1))
 			{
 				stage.flash = FIXED_DEC(255,1);
-				stage.flashspd = FIXED_DEC(1000,1);
+				stage.flashspd = FIXED_DEC(1024,1);
 			}
-			if((event->value1 >> FIXED_SHIFT) == 2)
-				stage.black = true;
-			if((event->value1 >> FIXED_SHIFT) == 3)
-				stage.black = false;
 			break;
 		}
 		case EVENTS_FLAG_BEEP: //Reactor Beep!!
@@ -55,7 +51,7 @@ static void Events_Check(Event* event)
 			if (event->value1 == 409)
 				stage.reactorspd = FIXED_DEC(875,1);
 			if ((event->value1 >> FIXED_SHIFT) == 1)
-				stage.reactorspd = FIXED_DEC(1000,1);
+				stage.reactorspd = FIXED_DEC(1024,1);
 			break;
 		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!

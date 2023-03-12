@@ -159,7 +159,7 @@ void Char_BlackDK_Tick(Character *character)
 	if (stage.song_step >= 3408)
 		Character_DrawCol(character, &this->tex, &char_blackdk_frame[this->frame], 200, 128, 128);
 	else
-		Character_Draw(character, &this->tex, &char_blackdk_frame[this->frame]);
+		Character_DrawCol(character, &this->tex, &char_blackdk_frame[this->frame], 128, 126, 128);
 }
 
 void Char_BlackDK_SetAnim(Character *character, u8 anim)

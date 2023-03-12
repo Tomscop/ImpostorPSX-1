@@ -124,6 +124,15 @@ void Char_WhiteDK_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-132,1);
 			this->character.focus_zoom = FIXED_DEC(1086,1024);
 		}
+		if ((stage.song_beat >= 916) && (this->character.focus_zoom != FIXED_DEC(542,1024)))
+		{
+			this->character.focus_zoom = stage.player->focus_zoom;
+		}
+		if (stage.song_step == 3792)
+		{
+			this->character.focus_x = FIXED_DEC(-12,1);
+			this->character.focus_y = FIXED_DEC(-132,1);
+		}
 	}
 	
 	//Perform idle dance
@@ -133,7 +142,7 @@ void Char_WhiteDK_Tick(Character *character)
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_WhiteDK_SetFrame);
 	if (stage.song_step <= 3407)
-		Character_Draw(character, &this->tex, &char_whitedk_frame[this->frame]);
+		Character_DrawCol(character, &this->tex, &char_whitedk_frame[this->frame], 128, 128, 128);
 }
 
 void Char_WhiteDK_SetAnim(Character *character, u8 anim)

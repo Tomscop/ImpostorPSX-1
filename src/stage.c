@@ -2207,6 +2207,10 @@ void Stage_Tick(void)
 			{
 				show = false;
 			}
+			else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 15) || (stage.song_step >= 3920)))
+			{
+				show = false;
+			}
 			else
 			{
 				show = true;
@@ -2695,7 +2699,7 @@ void Stage_Tick(void)
 						}
 					
 						//Draw health bar
-						if (((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id != StageId_DoubleKill) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407))))
+						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
 						{
 							if (stage.mode == StageMode_Swap)
 							{
@@ -2767,7 +2771,7 @@ void Stage_Tick(void)
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if (stage.opponent2 != NULL)
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
@@ -2777,6 +2781,8 @@ void Stage_Tick(void)
 			//Tick girlfriend
 			if (stage.gf != NULL)
 				stage.gf->tick(stage.gf);
+			if ((stage.opponent2 != NULL) && (stage.stage_id == StageId_DoubleKill))
+				stage.opponent2->tick(stage.opponent2);
 			
 			//Tick background objects
 			ObjectList_Tick(&stage.objlist_bg);
