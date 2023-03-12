@@ -107,7 +107,8 @@ void Char_WhiteDK_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_WhiteDK_SetFrame);
-	Character_Draw(character, &this->tex, &char_whitedk_frame[this->frame]);
+	if (stage.song_step <= 3407)
+		Character_Draw(character, &this->tex, &char_whitedk_frame[this->frame]);
 }
 
 void Char_WhiteDK_SetAnim(Character *character, u8 anim)

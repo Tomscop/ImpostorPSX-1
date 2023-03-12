@@ -199,9 +199,9 @@
 	{ //StageId_DoubleKill (Double Kill)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_BFDefeat_New,    FIXED_DEC(60+106,1),  FIXED_DEC(100+61,1)},
 		{Char_WhiteDK_New, FIXED_DEC(122,1),  FIXED_DEC(137,1)},
-        {NULL},
+        {Char_BlackDK_New, FIXED_DEC(122,1),  FIXED_DEC(137,1)},
         {NULL},
 		
 		//Stage background

@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/brown/esculent",
-	"outdir": "iso/chars/brown/",
-	"charname" : "Brown",
+	"input":  "iso/chars/blackdk/blackdk",
+	"outdir": "iso/chars/blackdk/",
+	"charname" : "BlackDK",
 	"optimize" : false,
-	"optimizename" : "brown",
+	"optimizename" : "blackdk",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768,
@@ -40,7 +40,7 @@
 	],
 
 	"bpp" : 8,
-	"resize" : 0.15,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

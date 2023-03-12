@@ -314,7 +314,7 @@ void Char_BF_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
-	if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
+	if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407))))
 		Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
 }
 

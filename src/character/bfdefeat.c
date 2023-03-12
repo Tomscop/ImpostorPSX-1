@@ -15,18 +15,18 @@
 //Boyfriend Defeat player types
 enum
 {
-  BFDefeat_ArcMain_Idle0,
-  BFDefeat_ArcMain_Idle1,
-  BFDefeat_ArcMain_A,
-  BFDefeat_ArcMain_B,
-  BFDefeat_ArcMain_Miss0,
-  BFDefeat_ArcMain_IdleS0,
-  BFDefeat_ArcMain_IdleS1,
-  BFDefeat_ArcMain_IdleS2,
-  BFDefeat_ArcMain_LeftS0,
-  BFDefeat_ArcMain_DownS0,
-  BFDefeat_ArcMain_UpS0,
-  BFDefeat_ArcMain_RightS0,
+  BFDefeat_Arc1_Idle0,
+  BFDefeat_Arc1_Idle1,
+  BFDefeat_Arc1_A,
+  BFDefeat_Arc1_B,
+  BFDefeat_Arc1_Miss0,
+  BFDefeat_Arc2_IdleS0,
+  BFDefeat_Arc2_IdleS1,
+  BFDefeat_Arc2_IdleS2,
+  BFDefeat_Arc2_LeftS0,
+  BFDefeat_Arc2_DownS0,
+  BFDefeat_Arc2_UpS0,
+  BFDefeat_Arc2_RightS0,
 	
 	BFDefeat_ArcMain_Max,
 };
@@ -39,7 +39,7 @@ typedef struct
 	Character character;
 	
 	//Render data and state
-	IO_Data arc_main;
+	IO_Data arc_main, arc_1, arc_2;
 	IO_Data arc_ptr[BFDefeat_Arc_Max];
 	
 	Gfx_Tex tex, tex_retry;
@@ -48,55 +48,55 @@ typedef struct
 
 //Boyfriend Defeat player definitions
 static const CharFrame char_bfdefeat_frame[] = {
-  {BFDefeat_ArcMain_Idle0, {  0,  0,103,103}, {160,159-2}}, //0 idle 1
-  {BFDefeat_ArcMain_Idle0, {103,  0,104,103}, {160,159-2}}, //1 idle 2
-  {BFDefeat_ArcMain_Idle0, {  0,103,104,103}, {160,159-2}}, //2 idle 3
-  {BFDefeat_ArcMain_Idle0, {104,103,104,104}, {159,160-2}}, //3 idle 4
-  {BFDefeat_ArcMain_Idle1, {  0,  0,103,104}, {159,160-2}}, //4 idle 5
+  {BFDefeat_Arc1_Idle0, {  0,  0,103,103}, {160,159-2}}, //0 idle 1
+  {BFDefeat_Arc1_Idle0, {103,  0,104,103}, {160,159-2}}, //1 idle 2
+  {BFDefeat_Arc1_Idle0, {  0,103,104,103}, {160,159-2}}, //2 idle 3
+  {BFDefeat_Arc1_Idle0, {104,103,104,104}, {159,160-2}}, //3 idle 4
+  {BFDefeat_Arc1_Idle1, {  0,  0,103,104}, {159,160-2}}, //4 idle 5
 
-  {BFDefeat_ArcMain_A, {  0,  0, 90,104}, {148,160-2}}, //5 left 1
-  {BFDefeat_ArcMain_A, { 90,  0, 91,104}, {149,160-2}}, //6 left 2
+  {BFDefeat_Arc1_A, {  0,  0, 90,104}, {148,160-2}}, //5 left 1
+  {BFDefeat_Arc1_A, { 90,  0, 91,104}, {149,160-2}}, //6 left 2
 
-  {BFDefeat_ArcMain_A, {  0,104, 93,100}, {149,157-2}}, //7 down 1
-  {BFDefeat_ArcMain_A, { 93,104, 92,101}, {148,157-2}}, //8 down 2
+  {BFDefeat_Arc1_A, {  0,104, 93,100}, {149,157-2}}, //7 down 1
+  {BFDefeat_Arc1_A, { 93,104, 92,101}, {148,157-2}}, //8 down 2
 
-  {BFDefeat_ArcMain_B, {  0,  0, 94,106}, {149,162-2}}, //9 up 1
-  {BFDefeat_ArcMain_B, { 94,  0, 94,105}, {148,161-2}}, //10 up 2
+  {BFDefeat_Arc1_B, {  0,  0, 94,106}, {149,162-2}}, //9 up 1
+  {BFDefeat_Arc1_B, { 94,  0, 94,105}, {148,161-2}}, //10 up 2
 
-  {BFDefeat_ArcMain_B, {  0,106, 95,104}, {148,160-2}}, //11 right 1
-  {BFDefeat_ArcMain_B, { 95,106, 95,104}, {148,160-2}}, //12 right 2
+  {BFDefeat_Arc1_B, {  0,106, 95,104}, {148,160-2}}, //11 right 1
+  {BFDefeat_Arc1_B, { 95,106, 95,104}, {148,160-2}}, //12 right 2
 
-  {BFDefeat_ArcMain_Miss0, {  0,  0, 93,104}, {151,160-2}}, //13 miss 1
-  {BFDefeat_ArcMain_Miss0, { 93,  0, 93,104}, {151,159-2}}, //14 miss 2
-  {BFDefeat_ArcMain_Miss0, {  0,104, 93,104}, {151,159-2}}, //15 miss 3
+  {BFDefeat_Arc1_Miss0, {  0,  0, 93,104}, {151,160-2}}, //13 miss 1
+  {BFDefeat_Arc1_Miss0, { 93,  0, 93,104}, {151,159-2}}, //14 miss 2
+  {BFDefeat_Arc1_Miss0, {  0,104, 93,104}, {151,159-2}}, //15 miss 3
   
-  {BFDefeat_ArcMain_IdleS0, {  0,  0,106,101}, {160,155}}, //16 idles 1
-  {BFDefeat_ArcMain_IdleS0, {106,  0,106,101}, {160,155}}, //17 idles 2
-  {BFDefeat_ArcMain_IdleS0, {  0,101,105,102}, {158,156}}, //18 idles 3
-  {BFDefeat_ArcMain_IdleS0, {105,101,106,102}, {159,156}}, //19 idles 4
-  {BFDefeat_ArcMain_IdleS1, {  0,  0,104,104}, {157,158}}, //20 idles 5
-  {BFDefeat_ArcMain_IdleS1, {104,  0,104,104}, {157,158}}, //21 idles 6
-  {BFDefeat_ArcMain_IdleS1, {  0,104,104,105}, {158,159}}, //22 idles 7
-  {BFDefeat_ArcMain_IdleS1, {104,104,104,105}, {158,159}}, //23 idles 8
-  {BFDefeat_ArcMain_IdleS2, {  0,  0,104,106}, {158,159}}, //24 idles 9
-  {BFDefeat_ArcMain_IdleS2, {104,  0,104,105}, {158,159}}, //25 idles 10
-  {BFDefeat_ArcMain_IdleS2, {  0,106,105,106}, {159,159}}, //26 idles 11
+  {BFDefeat_Arc2_IdleS0, {  0,  0,106,101}, {160,155}}, //16 idles 1
+  {BFDefeat_Arc2_IdleS0, {106,  0,106,101}, {160,155}}, //17 idles 2
+  {BFDefeat_Arc2_IdleS0, {  0,101,105,102}, {158,156}}, //18 idles 3
+  {BFDefeat_Arc2_IdleS0, {105,101,106,102}, {159,156}}, //19 idles 4
+  {BFDefeat_Arc2_IdleS1, {  0,  0,104,104}, {157,158}}, //20 idles 5
+  {BFDefeat_Arc2_IdleS1, {104,  0,104,104}, {157,158}}, //21 idles 6
+  {BFDefeat_Arc2_IdleS1, {  0,104,104,105}, {158,159}}, //22 idles 7
+  {BFDefeat_Arc2_IdleS1, {104,104,104,105}, {158,159}}, //23 idles 8
+  {BFDefeat_Arc2_IdleS2, {  0,  0,104,106}, {158,159}}, //24 idles 9
+  {BFDefeat_Arc2_IdleS2, {104,  0,104,105}, {158,159}}, //25 idles 10
+  {BFDefeat_Arc2_IdleS2, {  0,106,105,106}, {159,159}}, //26 idles 11
 
-  {BFDefeat_ArcMain_LeftS0, {  0,  0,117,105}, {161,160}}, //27 lefts 1
-  {BFDefeat_ArcMain_LeftS0, {117,  0,113,105}, {162,159}}, //28 lefts 2
-  {BFDefeat_ArcMain_LeftS0, {  0,105,112,105}, {162,159}}, //29 lefts 3
+  {BFDefeat_Arc2_LeftS0, {  0,  0,117,105}, {161,160}}, //27 lefts 1
+  {BFDefeat_Arc2_LeftS0, {117,  0,113,105}, {162,159}}, //28 lefts 2
+  {BFDefeat_Arc2_LeftS0, {  0,105,112,105}, {162,159}}, //29 lefts 3
 
-  {BFDefeat_ArcMain_DownS0, {  0,  0, 94, 95}, {153,147}}, //30 downs 1
-  {BFDefeat_ArcMain_DownS0, { 94,  0, 91, 96}, {151,149}}, //31 downs 2
-  {BFDefeat_ArcMain_DownS0, {  0, 96, 90, 96}, {151,149}}, //32 downs 3
+  {BFDefeat_Arc2_DownS0, {  0,  0, 94, 95}, {153,147}}, //30 downs 1
+  {BFDefeat_Arc2_DownS0, { 94,  0, 91, 96}, {151,149}}, //31 downs 2
+  {BFDefeat_Arc2_DownS0, {  0, 96, 90, 96}, {151,149}}, //32 downs 3
 
-  {BFDefeat_ArcMain_UpS0, {  0,  0,102,124}, {154,178}}, //33 ups 1
-  {BFDefeat_ArcMain_UpS0, {102,  0,105,121}, {156,175}}, //34 ups 2
-  {BFDefeat_ArcMain_UpS0, {  0,124,105,121}, {156,175}}, //35 ups 3
+  {BFDefeat_Arc2_UpS0, {  0,  0,102,124}, {154,178}}, //33 ups 1
+  {BFDefeat_Arc2_UpS0, {102,  0,105,121}, {156,175}}, //34 ups 2
+  {BFDefeat_Arc2_UpS0, {  0,124,105,121}, {156,175}}, //35 ups 3
 
-  {BFDefeat_ArcMain_RightS0, {  0,  0, 98,100}, {142,154}}, //36 rights 1
-  {BFDefeat_ArcMain_RightS0, { 98,  0, 96,102}, {142,156}}, //37 rights 2
-  {BFDefeat_ArcMain_RightS0, {  0,102, 95,102}, {142,156}}, //38 rights 3
+  {BFDefeat_Arc2_RightS0, {  0,  0, 98,100}, {142,154}}, //36 rights 1
+  {BFDefeat_Arc2_RightS0, { 98,  0, 96,102}, {142,156}}, //37 rights 2
+  {BFDefeat_Arc2_RightS0, {  0,102, 95,102}, {142,156}}, //38 rights 3
 };
 
 static const Animation char_bfdefeat_anim[PlayerAnim_Max] = {
@@ -277,7 +277,7 @@ void Char_BFDefeat_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFDefeat_SetFrame);
-	if (stage.stage_id == StageId_DoubleKill)
+	if ((stage.stage_id == StageId_DoubleKill) && (stage.song_step >= 3408))
 		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
 	if ((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440)))
 		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
@@ -302,6 +302,8 @@ void Char_BFDefeat_Free(Character *character)
 	
 	//Free art
 	Mem_Free(this->arc_main);
+	Mem_Free(this->arc_1);
+	Mem_Free(this->arc_2);
 }
 
 Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
@@ -351,26 +353,76 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 
 	//Load art
-	this->arc_main = IO_Read("\\PLAYER\\BFDEFEAT.ARC;1");
-		
-	const char **pathp = (const char *[]){
-  "idle0.tim",
-  "idle1.tim",
-  "a.tim",
-  "b.tim",
-  "miss0.tim",
-  "idles0.tim",
-  "idles1.tim",
-  "idles2.tim",
-  "lefts0.tim",
-  "downs0.tim",
-  "ups0.tim",
-  "rights0.tim",
-		NULL
-	};
-	IO_Data *arc_ptr = this->arc_ptr;
-	for (; *pathp != NULL; pathp++)
-		*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+	//Load scene specific art
+	switch (stage.stage_id)
+	{
+		case StageId_DoubleKill: //Double Kill
+		{
+			this->arc_1 = IO_Read("\\PLAYER\\BFDEFET1.ARC;1");
+			
+			const char **pathp = (const char *[]){
+				"idle0.tim",
+				"idle1.tim",
+				"a.tim",
+				"b.tim",
+				"miss0.tim",
+				NULL
+			};
+			IO_Data *arc_ptr = &this->arc_ptr[BFDefeat_Arc1_Idle0];
+			for (; *pathp != NULL; pathp++)
+				*arc_ptr++ = Archive_Find(this->arc_1, *pathp);
+			this->arc_2 = NULL;
+			break;
+		}
+		case StageId_Defeat: //Defeat
+		{
+			this->arc_main = IO_Read("\\PLAYER\\BFDEFEAT.ARC;1");
+			
+			const char **pathp = (const char *[]){
+				"idle0.tim",
+				"idle1.tim",
+				"a.tim",
+				"b.tim",
+				"miss0.tim",
+				"idles0.tim",
+				"idles1.tim",
+				"idles2.tim",
+				"lefts0.tim",
+				"downs0.tim",
+				"ups0.tim",
+				"rights0.tim",
+				NULL
+			};
+			IO_Data *arc_ptr = &this->arc_ptr[BFDefeat_Arc1_Idle0];
+			for (; *pathp != NULL; pathp++)
+				*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+			break;
+		}
+		case StageId_Finale: //Finale
+		{
+			this->arc_2 = IO_Read("\\PLAYER\\BFDEFET2.ARC;1");
+			
+			const char **pathp = (const char *[]){
+				"miss0.tim",
+				"idles0.tim",
+				"idles1.tim",
+				"idles2.tim",
+				"lefts0.tim",
+				"downs0.tim",
+				"ups0.tim",
+				"rights0.tim",
+				NULL
+			};
+			IO_Data *arc_ptr = &this->arc_ptr[BFDefeat_Arc1_Miss0];
+			for (; *pathp != NULL; pathp++)
+				*arc_ptr++ = Archive_Find(this->arc_2, *pathp);
+			this->arc_1 = NULL;
+			break;
+		}
+		default:
+			this->arc_1 = NULL;
+			break;
+	}
 	
 	//Initialize render state
 	this->tex_id = this->frame = 0xFF;

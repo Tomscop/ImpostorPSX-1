@@ -193,6 +193,8 @@
 				<file name = "bfeject.arc" type = "data" source = "iso/chars/bfeject/main.arc"/>
 				<!-- Boyfriend Danger assets -->
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
+				<file name = "bfdefet1.arc" type = "data" source = "iso/chars/bfdefeat/main1.arc"/>
+				<file name = "bfdefet2.arc" type = "data" source = "iso/chars/bfdefeat/main2.arc"/>
 				<!-- Boyfriend Polus assets -->
 				<!-- Boyfriend Lava assets -->
 				<!-- Boyfriend Airship assets -->
@@ -229,7 +231,7 @@
 				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
 				<!-- Black Danger assets -->
 				<file name = "whitedk.arc" type = "data" source = "iso/chars/whitedk/main.arc"/>
-				<!-- Black DK assets -->
+				<file name = "blackdk.arc" type = "data" source = "iso/chars/blackdk/main.arc"/>
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				<file name = "blackp.arc" type = "data" source = "iso/chars/blackp/main.arc"/>
 				<!-- Boyfriend Evil assets -->
