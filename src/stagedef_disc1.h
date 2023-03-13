@@ -158,7 +158,7 @@
 		XA_Dlow, 0,
 		"D'low", "Composer: Punkett, Rareblin", "",
 		
-		StageId_Oversight, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
+		StageId_Oversight, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_PLAYER
 	},
 	{ //StageId_Oversight (Oversight)
 		//Characters
@@ -616,32 +616,32 @@
 	
 	{ //StageId_Christmas (Christmas)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFChristmas_New,    FIXED_DEC(408,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Loggo_New, FIXED_DEC(192,1),  FIXED_DEC(182,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Christmas_New,
 		
 		//Song info
 		4, 5,
 		XA_Christmas, 0,
 		"Christmas", "Composer: emihead", "",
 		
-		StageId_Spookpostor, 0
+		StageId_Spookpostor, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_PLAYER
 	},
 	{ //StageId_Spookpostor (Spookpostor)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFChristmas_New,    FIXED_DEC(408,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Spooker_New, FIXED_DEC(167,1),  FIXED_DEC(134,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Christmas_New,
 		
 		//Song info
 		4, 6,

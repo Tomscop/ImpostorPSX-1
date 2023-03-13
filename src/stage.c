@@ -13,7 +13,6 @@
 #include "main.h"
 #include "random.h"
 #include "network.h"
-#include "movie.h"
 #include "mutil.h"
 #include "debug.h"
 #include "save.h"
@@ -58,6 +57,7 @@ static u32 Sounds[10];
 #include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
+#include "character/bfchristmas.h"
 #include "character/kid.h"
 //Opponents
 #include "character/red.h"
@@ -79,6 +79,8 @@ static u32 Sounds[10];
 #include "character/chefogus.h"
 #include "character/powers.h"
 #include "character/tomongus.h"
+#include "character/loggo.h"
+#include "character/spooker.h"
 #include "character/henry.h"
 #include "character/charles.h"
 #include "character/jerma.h"
@@ -104,6 +106,7 @@ static u32 Sounds[10];
 #include "stage/defeat.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
+#include "stage/christmas.h"
 #include "stage/henry.h"
 #include "stage/jermaroom.h"
 #include "stage/idk.h"
@@ -1650,27 +1653,11 @@ static void Stage_LoadMusic(void)
 	if (stage.stage_id == StageId_Temp) //PLACEHOLDER
 	{
 		stage.intro = true;
-		firsthit = false;
-		stage.black = false;
-		stage.bop1 = 0xF;
-		stage.bop2 = 0;
-		stage.bopintense1 = FIXED_DEC(30,1000);
-		stage.bopintense2 = FIXED_DEC(15,1000);
-		stage.bump = FIXED_UNIT;
-		stage.charbump = FIXED_UNIT;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	else
 	{
 		stage.intro = true;
-		firsthit = false;
-		stage.black = false;
-		stage.bop1 = 0xF;
-		stage.bop2 = 0;
-		stage.bopintense1 = FIXED_DEC(30,1000);
-		stage.bopintense2 = FIXED_DEC(15,1000);
-		stage.bump = FIXED_UNIT;
-		stage.charbump = FIXED_UNIT;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.note_scroll, stage.step_crochet);
@@ -1737,6 +1724,17 @@ static void Stage_LoadState(void)
 		timer.timermin = 0;
 		timer.timersec = 0;
 		stage.paused = false;
+		firsthit = false;
+		stage.black = false;
+		stage.bop1 = 0xF;
+		stage.bop2 = 0;
+		stage.bopintense1 = FIXED_DEC(30,1000);
+		stage.bopintense2 = FIXED_DEC(15,1000);
+		stage.bump = FIXED_UNIT;
+		stage.charbump = FIXED_UNIT;
+		stage.camera.x = stage.camera.tx;
+		stage.camera.y = stage.camera.ty;
+		stage.camera.zoom = stage.camera.tz;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
@@ -1813,11 +1811,6 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.stage_def = &stage_defs[stage.stage_id = id];
 	stage.stage_diff = difficulty;
 	stage.story = story;
-	
-	//Check movies
-	//Don't play movie if you are retrying the song
-	if (stage.trans != StageTrans_Reload)
-		CheckMovies();
 	
 	//Load HUD textures
 	if ((stage.stage_id >= StageId_SussyBussy && stage.stage_id <= StageId_Chewmate) || (stage.stage_id == StageId_Idk))
@@ -1961,9 +1954,6 @@ static boolean Stage_NextLoad(void)
 	{
 		//Get stage definition
 		stage.stage_def = &stage_defs[stage.stage_id = stage.stage_def->next_stage];
-		
-		//Check movies
-		CheckMovies();
 		
 		//Load stage background
 		if (load & STAGE_LOAD_STAGE)

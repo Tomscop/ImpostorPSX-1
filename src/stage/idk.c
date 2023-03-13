@@ -66,14 +66,17 @@ void Back_Idk_DrawBG(StageBack *back)
 		FIXED_DEC(34,1)
 	};
 	
-	Debug_StageMoveDebug(&vs_dst, 5, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &vs_src, &vs_dst, stage.camera.bzoom);
-	Debug_StageMoveDebug(&tobyfox_dst, 6, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &tobyfox_src, &tobyfox_dst, stage.camera.bzoom);
-	Debug_StageMoveDebug(&thekid_dst, 7, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &thekid_src, &thekid_dst, stage.camera.bzoom);
-	Debug_StageMoveDebug(&memory_dst, 8, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &memory_src, &memory_dst, stage.camera.bzoom);
+	if (stage.stage_id == StageId_Idk)
+	{
+		Debug_StageMoveDebug(&vs_dst, 5, fx, fy);
+		Stage_DrawTex(&this->tex_back0, &vs_src, &vs_dst, stage.camera.bzoom);
+		Debug_StageMoveDebug(&tobyfox_dst, 6, fx, fy);
+		Stage_DrawTex(&this->tex_back0, &tobyfox_src, &tobyfox_dst, stage.camera.bzoom);
+		Debug_StageMoveDebug(&thekid_dst, 7, fx, fy);
+		Stage_DrawTex(&this->tex_back0, &thekid_src, &thekid_dst, stage.camera.bzoom);
+		Debug_StageMoveDebug(&memory_dst, 8, fx, fy);
+		Stage_DrawTex(&this->tex_back0, &memory_src, &memory_dst, stage.camera.bzoom);
+	}
 	
 	//Draw white
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -103,7 +106,7 @@ StageBack *Back_Idk_New(void)
 	this->back.free = Back_Idk_Free;
 
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG\\IDK.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG2\\IDK.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Mem_Free(arc_back);
 

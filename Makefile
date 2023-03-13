@@ -20,7 +20,6 @@ SRCS = src/main.c \
 	src/psx/audio.c \
 	src/psx/pad.c \
 	src/psx/timer.c \
-	src/movie.c \
 	src/psx/strplay.c \
 	src/animation.c \
 	src/character.c \
@@ -32,6 +31,7 @@ SRCS = src/main.c \
 	src/character/bfchef.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
+	src/character/bfchristmas.c \
 	src/character/kid.c \
 	src/character/red.c \
 	src/character/redmd.c \
@@ -52,6 +52,8 @@ SRCS = src/main.c \
 	src/character/chefogus.c \
 	src/character/powers.c \
 	src/character/tomongus.c \
+	src/character/loggo.c \
+	src/character/spooker.c \
 	src/character/henry.c \
 	src/character/charles.c \
 	src/character/jerma.c \
@@ -76,6 +78,7 @@ SRCS = src/main.c \
 	src/stage/defeat.c \
 	src/stage/lobby.c \
 	src/stage/cafeteria.c \
+	src/stage/christmas.c \
 	src/stage/henry.c \
 	src/stage/jermaroom.c \
 	src/stage/idk.c \
