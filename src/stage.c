@@ -107,6 +107,7 @@ static u32 Sounds[10];
 #include "stage/airship.h"
 #include "stage/cargo.h"
 #include "stage/defeat.h"
+#include "stage/polusmaroon.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"

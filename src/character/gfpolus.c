@@ -111,14 +111,10 @@ void Char_GFPolus_Tick(Character *character)
 				character->set_anim(character, CharAnim_LeftAlt);
 		}
 	}
-
-	//Get parallax
-	fixed_t parallax;
-	parallax = FIXED_UNIT;
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_GFPolus_SetFrame);
-	Character_DrawParallax(character, &this->tex, &char_gfpolus_frame[this->frame], parallax);
+	Character_DrawCol(character, &this->tex, &char_gfpolus_frame[this->frame], 196, 137, 153);
 }
 
 void Char_GFPolus_SetAnim(Character *character, u8 anim)

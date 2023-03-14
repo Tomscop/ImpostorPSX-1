@@ -89,6 +89,8 @@ all: \
 	iso/stages/airship/back.arc \
 	iso/stages/cargo/back.arc \
 	iso/stages/defeat/back.arc \
+	iso/stages/polusmrn/back.arc \
+	iso/stages/polusmrn/snowf.arc \
 	iso/stages/lobby/back.arc \
 	iso/stages/cafe/back.arc \
 	iso/stages/christms/back.arc \
@@ -378,6 +380,10 @@ iso/stages/cargo/back.arc: iso/stages/cargo/back0.tim iso/stages/cargo/back1.tim
 
 # Defeat
 iso/stages/defeat/back.arc: iso/stages/defeat/back0.tim iso/stages/defeat/back1.tim iso/stages/defeat/back2.tim iso/stages/defeat/back3.tim
+
+# Polus Maroon
+iso/stages/polusmrn/back.arc: iso/stages/polusmrn/back0.tim iso/stages/polusmrn/back1.tim
+iso/stages/polusmrn/snowf.arc: iso/stages/polusmrn/snowf0.tim iso/stages/polusmrn/snowf1.tim iso/stages/polusmrn/snowf2.tim iso/stages/polusmrn/snowf3.tim iso/stages/polusmrn/snowf4.tim iso/stages/polusmrn/snowf5.tim iso/stages/polusmrn/snowf6.tim iso/stages/polusmrn/snowf7.tim iso/stages/polusmrn/snowf8.tim iso/stages/polusmrn/snowf9.tim iso/stages/polusmrn/snowf10.tim 
 
 # Lobby
 iso/stages/lobby/back.arc: iso/stages/lobby/back0.tim iso/stages/lobby/back1.tim

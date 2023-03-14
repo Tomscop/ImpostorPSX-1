@@ -271,14 +271,14 @@
 	
 	{ //StageId_Ashes (Ashes)
 		//Characters
-		{Char_BFPolus_New,    FIXED_DEC(178,1),  FIXED_DEC(162,1)},
+		{Char_BFPolus_New,    FIXED_DEC(466,1),  FIXED_DEC(273,1)},
         {NULL},
-		{Char_Maroon_New, FIXED_DEC(0,1),  FIXED_DEC(110,1)},
+		{Char_Maroon_New, FIXED_DEC(248,1),  FIXED_DEC(228,1)},
         {NULL},
-		{Char_GFPolus_New,     FIXED_DEC(40,1),  FIXED_DEC(58,1)},
+		{Char_GFPolus_New,     FIXED_DEC(317,1),  FIXED_DEC(180,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_PolusMaroon_New,
 		
 		//Song info
 		2, 4,
@@ -289,14 +289,14 @@
 	},
 	{ //StageId_Magmatic (Magmatic)
 		//Characters
-		{Char_BFPolus_New,    FIXED_DEC(178,1),  FIXED_DEC(162,1)},
+		{Char_BFPolus_New,    FIXED_DEC(466,1),  FIXED_DEC(273,1)},
         {NULL},
-		{Char_Maroon_New, FIXED_DEC(0,1),  FIXED_DEC(110,1)},
+		{Char_Maroon_New, FIXED_DEC(248,1),  FIXED_DEC(228,1)},
         {NULL},
-		{Char_GFPolus_New,     FIXED_DEC(40,1),  FIXED_DEC(58,1)},
+		{Char_GFPolus_New,     FIXED_DEC(317,1),  FIXED_DEC(180,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_PolusMaroon_New,
 		
 		//Song info
 		2, 5,

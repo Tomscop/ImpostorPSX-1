@@ -113,62 +113,6 @@ void Polus_Snow_Draw(Back_Polus *this, fixed_t x, fixed_t y)
 	Stage_DrawTex(&this->tex_snow, &src, &dst, stage.camera.bzoom);
 }
 
-typedef struct 
-{
-    int x[2];
-    int y[2];
-
-} Flake;
-
-#define flakexInitMin 0
-#define flakexInitMax 500
-#define flakeyInitMin -100
-#define flakeyInitMax -180
-#define snowscale 2
-#define flakecount 80
-
-Flake flakes[flakecount]; //draw 80 snowflakes
-
-void drawflake(int x, int y)
-{
-    RECT r = {x-1 * snowscale, y * snowscale, 6 * snowscale, 6 * snowscale};
-    Gfx_BlendRect(&r, 255, 255, 255, 0);
-    r.x += 1;
-    r.y += 1 * snowscale;
-    r.w = 3 * snowscale;
-    r.h = 1 * snowscale;
-    Gfx_DrawRect(&r, 255, 255, 255);
-    r.x += 1 * snowscale;
-    r.y -= 1 * snowscale;
-    r.w = 1 * snowscale;
-    r.h = 3 * snowscale;
-    Gfx_DrawRect(&r, 255, 255, 255);
-}
-
-void initFlakes(void)
-{
-    for (int i = 0; i < flakecount; i++)    
-    {
-        flakes[i].x[0] = RandomRange(flakexInitMin, flakexInitMax);
-        flakes[i].y[0] = RandomRange(flakeyInitMin, flakeyInitMax);
-    }
-}
-
-void tickFlakes(void)
-{
-    for (int i = 0; i < flakecount; i++)    
-    {
-        if (flakes[i].x[1] != 0 || flakes[i].x[1] != 0)
-        {
-            flakes[i].x[0] = flakes[i].x[1];
-            flakes[i].y[0] = flakes[i].y[1];
-        }
-        flakes[i].x[1] = RandomRange(flakes[i].x[0], flakes[i].x[0] + RandomRange(-1, 1));
-        flakes[i].y[1] += RandomRange(1, 5);
-        drawflake(flakes[i].x[1]-stage.camera.x, flakes[i].y[1]-stage.camera.y);
-    }
-} 
-
 //People animation and rects
 static const CharFrame people_frame[] = {
   {0, {  0,  0,252, 59}, {  0,  0}}, //0 people 1
@@ -281,7 +225,6 @@ void Back_Polus_DrawFG(StageBack *back)
 	
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == -29))
 		Animatable_SetAnim(&this->snow_animatable, 0);
-//	tickFlakes();
 	
 	Animatable_Animate(&this->snow_animatable, (void*)this, Polus_Snow_SetFrame);
 	Polus_Snow_Draw(this, FIXED_DEC(-10 + 155,1) - fx, FIXED_DEC(-25 + 155,1) - fy);
@@ -390,8 +333,6 @@ StageBack *Back_Polus_New(void)
 	Back_Polus *this = (Back_Polus*)Mem_Alloc(sizeof(Back_Polus));
 	if (this == NULL)
 		return NULL;
-	
-	initFlakes();	
 	
 	//Set background functions
 	this->back.draw_fg = Back_Polus_DrawFG;

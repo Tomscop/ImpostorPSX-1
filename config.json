@@ -1,26 +1,26 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "gf",
-			"hname"   : "GF"
+			"fnfanim" : "snow",
+			"imgname" : "snowf",
+			"hname"   : "SnowF"
 		}
 	],
-	"input":  "iso/chars/gfpolus/gfpolus",
-	"outdir": "iso/chars/gfpolus/",
-	"charname" : "GFPolus",
+	"input":  "iso/stages/polusmrn/snowfront",
+	"outdir": "iso/stages/polusmrn/",
+	"charname" : "SnowF",
 	"optimize" : false,
-	"optimizename" : "gfpolus",
+	"optimizename" : "snowf",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
+		320,
 		0,
-		32,
-		482
+		0,
+		485
 	],
 
 	"bpp" : 4,
-	"resize" : 0.25,
+	"resize" : 0.15,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

@@ -344,9 +344,9 @@
 				
 				<!-- Identity Crisis -->
 				
-				<!-- Polus Maroon BG -->
+				<file name = "polusmrn.arc" type = "data" source = "iso/stages/polusmrn/back.arc"/>
 				<!-- SnowB -->
-				<!-- SnowF -->
+				<file name = "snowf.arc" type = "data" source = "iso/stages/polusmrn/snowf.arc"/>
 				
 				<!-- Boiling BG -->
 				<!-- Lava -->

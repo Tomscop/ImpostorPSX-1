@@ -178,7 +178,7 @@ void Char_BFPolus_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFPolus_SetFrame);
-	Character_Draw(character, &this->tex, &char_bfpolus_frame[this->frame]);
+	Character_DrawCol(character, &this->tex, &char_bfpolus_frame[this->frame], 250, 137, 153+50);
 }
 
 void Char_BFPolus_SetAnim(Character *character, u8 anim)

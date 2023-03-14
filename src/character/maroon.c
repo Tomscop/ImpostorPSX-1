@@ -237,7 +237,7 @@ void Char_Maroon_Tick(Character *character)
 		
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Maroon_SetFrame);
-	Character_Draw(character, &this->tex, &char_maroon_frame[this->frame]);
+	Character_DrawCol(character, &this->tex, &char_maroon_frame[this->frame], 250, 137, 153+50);
 }
 
 void Char_Maroon_SetAnim(Character *character, u8 anim)
