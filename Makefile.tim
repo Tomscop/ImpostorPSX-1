@@ -27,6 +27,8 @@ all: \
 	iso/chars/bfdefeat/main.arc \
 	iso/chars/bfdefeat/main1.arc \
 	iso/chars/bfdefeat/main2.arc \
+	iso/chars/bfpolus/main.arc \
+	iso/chars/bflava/main.arc \
 	iso/chars/bfchef/main.arc \
 	iso/chars/bfchrist/main.arc \
 	iso/chars/picorc/main.arc \
@@ -132,8 +134,10 @@ iso/chars/bfdefeat/main1.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/id
 iso/chars/bfdefeat/main2.arc: iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
 
 # BF Polus
+iso/chars/bfpolus/main.arc: iso/chars/bfpolus/idle0.tim iso/chars/bfpolus/idle1.tim iso/chars/bfpolus/idle2.tim iso/chars/bfpolus/left0.tim iso/chars/bfpolus/left1.tim iso/chars/bfpolus/down0.tim iso/chars/bfpolus/down1.tim iso/chars/bfpolus/up0.tim iso/chars/bfpolus/up1.tim iso/chars/bfpolus/right0.tim iso/chars/bfpolus/right1.tim iso/chars/bfpolus/leftm0.tim iso/chars/bfpolus/downm0.tim iso/chars/bfpolus/upm0.tim iso/chars/bfpolus/rightm0.tim 
 
 # BF Lava
+iso/chars/bflava/main.arc: iso/chars/bflava/idle0.tim iso/chars/bflava/idle1.tim iso/chars/bflava/left0.tim iso/chars/bflava/down0.tim iso/chars/bflava/up0.tim iso/chars/bflava/right0.tim iso/chars/bflava/leftm0.tim iso/chars/bflava/downm0.tim iso/chars/bflava/upm0.tim iso/chars/bflava/rightm0.tim 
 
 # BF Airship
 

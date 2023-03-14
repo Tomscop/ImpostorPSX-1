@@ -271,7 +271,7 @@
 	
 	{ //StageId_Ashes (Ashes)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPolus_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Maroon_New, FIXED_DEC(0,1),  FIXED_DEC(100,1)},
         {NULL},
@@ -289,7 +289,7 @@
 	},
 	{ //StageId_Magmatic (Magmatic)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPolus_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Maroon_New, FIXED_DEC(0,1),  FIXED_DEC(100,1)},
         {NULL},
@@ -307,7 +307,7 @@
 	},
 	{ //StageId_BoilingPoint (Boiling Point)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFLava_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_MaroonParasite_New, FIXED_DEC(55,1),  FIXED_DEC(178,1)},
         {NULL},

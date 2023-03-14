@@ -54,6 +54,8 @@ static u32 Sounds[10];
 #include "character/bfreactor.h"
 #include "character/bfejected.h"
 #include "character/bfdefeat.h"
+#include "character/bfpolus.h"
+#include "character/bflava.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
@@ -1732,9 +1734,6 @@ static void Stage_LoadState(void)
 		stage.bopintense2 = FIXED_DEC(15,1000);
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
-		stage.camera.x = stage.camera.tx;
-		stage.camera.y = stage.camera.ty;
-		stage.camera.zoom = stage.camera.tz;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
@@ -1792,7 +1791,7 @@ static void Stage_LoadState(void)
 	}
 
 	//Check which stage should not have the camera sroll
-	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_Who))
+	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_Who) || (stage.song_step <= -1))
 		stage.cam_should_scroll = false;
 	else
 		stage.cam_should_scroll = true;

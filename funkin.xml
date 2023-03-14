@@ -195,8 +195,8 @@
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
 				<file name = "bfdefet1.arc" type = "data" source = "iso/chars/bfdefeat/main1.arc"/>
 				<file name = "bfdefet2.arc" type = "data" source = "iso/chars/bfdefeat/main2.arc"/>
-				<!-- Boyfriend Polus assets -->
-				<!-- Boyfriend Lava assets -->
+				<file name = "bfpolus.arc" type = "data" source = "iso/chars/bfpolus/main.arc"/>
+				<file name = "bflava.arc" type = "data" source = "iso/chars/bflava/main.arc"/>
 				<!-- Boyfriend Airship assets -->
 				<!-- Boyfriend Mira assets -->
 				<!-- Pink Pretender assets -->

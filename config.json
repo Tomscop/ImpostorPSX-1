@@ -24,19 +24,39 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/blackdk/blackdk",
-	"outdir": "iso/chars/blackdk/",
-	"charname" : "BlackDK",
+	"input":  "iso/chars/bflava/bflava",
+	"outdir": "iso/chars/bflava/",
+	"charname" : "BFLava",
 	"optimize" : false,
-	"optimizename" : "blackdk",
+	"optimizename" : "bflava",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		640,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 8,
