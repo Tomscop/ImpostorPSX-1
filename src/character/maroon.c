@@ -187,6 +187,18 @@ void Char_Maroon_Tick(Character *character)
 {
 	Char_Maroon *this = (Char_Maroon*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Ashes)
+	{
+		if (stage.song_step == 0)
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+	}
+	if (stage.stage_id == StageId_Magmatic)
+	{
+		if (stage.song_beat == 8)
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+	}
+	
 	if(character->animatable.anim  != CharAnim_Special1)
 	{
 	//Handle animation updates
@@ -282,9 +294,9 @@ Character *Char_Maroon_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF52232F;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-54,1);
+	this->character.focus_y = FIXED_DEC(-98,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

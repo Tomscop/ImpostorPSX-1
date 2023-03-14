@@ -36,8 +36,8 @@ typedef struct
 #define flakexInitMax 500
 #define flakeyInitMin -100
 #define flakeyInitMax -180
-#define snowscale 2
-#define flakecount 80
+#define snowscale 1
+#define flakecount 120
 
 Flake flakes[flakecount]; //draw 80 snowflakes
 

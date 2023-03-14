@@ -145,6 +145,20 @@ void Char_BFPolus_Tick(Character *character)
 {
 	Char_BFPolus *this = (Char_BFPolus*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Ashes)
+	{
+		if (stage.song_beat == 0)
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+	}
+	if (stage.stage_id == StageId_Magmatic)
+	{
+		if (stage.song_beat == 8)
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		if (stage.song_step == 1182)
+			this->character.focus_x = FIXED_DEC(-241,1);
+	}
+	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -226,9 +240,9 @@ Character *Char_BFPolus_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	
-	this->character.focus_x = FIXED_DEC(-212,1);
-	this->character.focus_y = FIXED_DEC(-163,1);
-	this->character.focus_zoom = FIXED_DEC(957,1024);
+	this->character.focus_x = FIXED_DEC(-189,1);
+	this->character.focus_y = FIXED_DEC(-143,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

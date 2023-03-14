@@ -285,7 +285,7 @@
 		XA_Ashes, 0,
 		"Ashes", "Composer: EthanTheDoodler,", "                  Renyar",
 		
-		StageId_Magmatic, 0
+		StageId_Magmatic, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
 	},
 	{ //StageId_Magmatic (Magmatic)
 		//Characters
