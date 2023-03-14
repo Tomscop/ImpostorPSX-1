@@ -73,20 +73,20 @@ typedef struct
 
 //Maroon character definitions
 static const CharFrame char_maroon_frame[] = {
-  {Maroon_ArcMain_Idle0, {  0,  0,141,106}, {199, 97}}, //0 idle 1
-  {Maroon_ArcMain_Idle0, {  0,106,144,119}, {202,110}}, //1 idle 2
-  {Maroon_ArcMain_Idle1, {  0,  0,155,129}, {213,118}}, //2 idle 3
-  {Maroon_ArcMain_Idle2, {  0,  0,151,125}, {209,114}}, //3 idle 4
-  {Maroon_ArcMain_Idle2, {  0,125,150,110}, {209, 97}}, //4 idle 5
-  {Maroon_ArcMain_Idle3, {  0,  0,157,110}, {214, 97}}, //5 idle 6
-  {Maroon_ArcMain_Idle3, {  0,110,148,108}, {204, 98}}, //6 idle 7
-  {Maroon_ArcMain_Idle4, {  0,  0,144,108}, {202, 98}}, //7 idle 8
-  {Maroon_ArcMain_Idle4, {  0,108,148,116}, {205,110}}, //8 idle 9
-  {Maroon_ArcMain_Idle5, {  0,  0,158,123}, {214,118}}, //9 idle 10
-  {Maroon_ArcMain_Idle5, {  0,123,155,120}, {212,116}}, //10 idle 11
-  {Maroon_ArcMain_Idle6, {  0,  0,155,103}, {211, 99}}, //11 idle 12
-  {Maroon_ArcMain_Idle6, {  0,103,160,103}, {216, 99}}, //12 idle 13
-  {Maroon_ArcMain_Idle7, {  0,  0,147,103}, {204, 99}}, //13 idle 14
+  {Maroon_ArcMain_Idle0, {  0,  0,140,106}, {199, 97}}, //0 idle 1
+  {Maroon_ArcMain_Idle0, {  0,106,143,119}, {202,110}}, //1 idle 2
+  {Maroon_ArcMain_Idle1, {  0,  0,154,129}, {213,118}}, //2 idle 3
+  {Maroon_ArcMain_Idle2, {  0,  0,150,125}, {209,114}}, //3 idle 4
+  {Maroon_ArcMain_Idle2, {  0,125,149,110}, {209, 97}}, //4 idle 5
+  {Maroon_ArcMain_Idle3, {  0,  0,156,110}, {214, 97}}, //5 idle 6
+  {Maroon_ArcMain_Idle3, {  0,110,147,108}, {204, 98}}, //6 idle 7
+  {Maroon_ArcMain_Idle4, {  0,  0,143,108}, {202, 98}}, //7 idle 8
+  {Maroon_ArcMain_Idle4, {  0,108,147,116}, {205,110}}, //8 idle 9
+  {Maroon_ArcMain_Idle5, {  0,  0,157,123}, {214,118}}, //9 idle 10
+  {Maroon_ArcMain_Idle5, {  0,123,154,120}, {212,116}}, //10 idle 11
+  {Maroon_ArcMain_Idle6, {  0,  0,154,103}, {211, 99}}, //11 idle 12
+  {Maroon_ArcMain_Idle6, {  0,103,159,103}, {216, 99}}, //12 idle 13
+  {Maroon_ArcMain_Idle7, {  0,  0,146,103}, {204, 99}}, //13 idle 14
 
   {Maroon_ArcMain_Left0, {  0,  0,138,124}, {210,103}}, //14 left 1
   {Maroon_ArcMain_Left0, {  0,124,143,124}, {215,103}}, //15 left 2

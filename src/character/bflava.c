@@ -46,10 +46,10 @@ typedef struct
 
 //Boyfriend Lava player definitions
 static const CharFrame char_bflava_frame[] = {
-  {BFLava_ArcMain_Idle0, {  0,  0, 95,103}, {158,155}}, //0 idle 1
-  {BFLava_ArcMain_Idle0, { 95,  0, 95,103}, {159,156}}, //1 idle 2
-  {BFLava_ArcMain_Idle0, {  0,103, 93,105}, {158,157}}, //2 idle 3
-  {BFLava_ArcMain_Idle0, { 93,103, 94,107}, {159,160}}, //3 idle 4
+  {BFLava_ArcMain_Idle0, {  0,  0, 95,103}, {157,155}}, //0 idle 1
+  {BFLava_ArcMain_Idle0, { 95,  0, 95,103}, {158,156}}, //1 idle 2
+  {BFLava_ArcMain_Idle0, {  0,103, 93,105}, {157,157}}, //2 idle 3
+  {BFLava_ArcMain_Idle0, { 93,103, 94,107}, {158,160}}, //3 idle 4
   {BFLava_ArcMain_Idle1, {  0,  0, 94,107}, {157,160}}, //4 idle 5
 
   {BFLava_ArcMain_Left0, {  0,  0, 96,105}, {161,157}}, //5 left 1

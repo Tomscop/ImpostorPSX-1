@@ -98,6 +98,7 @@ static u32 Sounds[10];
 #include "character/speakerghost.h"
 #include "character/gfreactor.h"
 #include "character/gfejected.h"
+#include "character/gfpolus.h"
 #include "character/gfpixel.h"
 //Stages
 #include "stage/polus.h"

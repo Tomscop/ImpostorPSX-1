@@ -51,16 +51,16 @@ typedef struct
 
 //Boyfriend Polus player definitions
 static const CharFrame char_bfpolus_frame[] = {
-  {BFPolus_ArcMain_Idle0, {  0,  0, 95,103}, {160,155}}, //0 idle 1
-  {BFPolus_ArcMain_Idle0, { 95,  0, 95,103}, {160,155}}, //1 idle 2
-  {BFPolus_ArcMain_Idle0, {  0,103, 95,103}, {160,156}}, //2 idle 3
-  {BFPolus_ArcMain_Idle0, { 95,103, 95,103}, {160,156}}, //3 idle 4
-  {BFPolus_ArcMain_Idle1, {  0,  0, 94,104}, {159,157}}, //4 idle 5
-  {BFPolus_ArcMain_Idle1, { 94,  0, 93,104}, {158,157}}, //5 idle 6
-  {BFPolus_ArcMain_Idle1, {  0,104, 94,107}, {160,160}}, //6 idle 7
-  {BFPolus_ArcMain_Idle1, { 94,104, 94,107}, {160,160}}, //7 idle 8
-  {BFPolus_ArcMain_Idle2, {  0,  0, 94,107}, {159,160}}, //8 idle 9
-  {BFPolus_ArcMain_Idle2, { 94,  0, 94,107}, {159,160}}, //9 idle 10
+  {BFPolus_ArcMain_Idle0, {  0,  0, 95,103}, {158,156}}, //0 idle 1
+  {BFPolus_ArcMain_Idle0, { 95,  0, 95,103}, {159,156}}, //1 idle 2
+  {BFPolus_ArcMain_Idle0, {  0,103, 95,103}, {159,157}}, //2 idle 3
+  {BFPolus_ArcMain_Idle0, { 95,103, 95,103}, {159,156}}, //3 idle 4
+  {BFPolus_ArcMain_Idle1, {  0,  0, 94,104}, {158,157}}, //4 idle 5
+  {BFPolus_ArcMain_Idle1, { 94,  0, 93,104}, {157,157}}, //5 idle 6
+  {BFPolus_ArcMain_Idle1, {  0,104, 94,107}, {158,160}}, //6 idle 7
+  {BFPolus_ArcMain_Idle1, { 94,104, 94,107}, {158,160}}, //7 idle 8
+  {BFPolus_ArcMain_Idle2, {  0,  0, 94,107}, {158,160}}, //8 idle 9
+  {BFPolus_ArcMain_Idle2, { 94,  0, 94,107}, {158,160}}, //9 idle 10
   {BFPolus_ArcMain_Idle2, {  0,107, 94,107}, {158,160}}, //10 idle 11
   {BFPolus_ArcMain_Idle2, { 94,107, 94,107}, {159,160}}, //11 idle 12
 

@@ -71,6 +71,7 @@ all: \
 	iso/chars/gfghost/speakerg.arc \
 	iso/chars/gfreac/main.arc \
 	iso/chars/gfeject/main.arc \
+	iso/chars/gfpolus/main.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfghost/dead.tim \
@@ -341,6 +342,7 @@ iso/chars/gfeject/main.arc: iso/chars/gfeject/gf0.tim iso/chars/gfeject/gf1.tim 
 # GF Danger
 
 # GF Polus
+iso/chars/gfpolus/main.arc: iso/chars/gfpolus/gf0.tim iso/chars/gfpolus/gf2.tim iso/chars/gfpolus/gf4.tim iso/chars/gfpolus/gf6.tim iso/chars/gfpolus/gf8.tim iso/chars/gfpolus/gf10.tim iso/chars/gfpolus/gf12.tim iso/chars/gfpolus/gf14.tim iso/chars/gfpolus/gf16.tim iso/chars/gfpolus/gf18.tim
 
 # GF Airship
 

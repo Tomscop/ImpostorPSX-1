@@ -291,7 +291,7 @@
 				<file name = "gfreac.arc" type = "data" source = "iso/chars/gfreac/main.arc"/>
 				<file name = "gfeject.arc" type = "data" source = "iso/chars/gfeject/main.arc"/>
 				<!-- GF Danger assets -->
-				<!-- GF Polus assets -->
+				<file name = "gfpolus.arc" type = "data" source = "iso/chars/gfpolus/main.arc"/>
 				<!-- GF Airship assets -->
 				<!-- GF Mira assets -->
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
@@ -454,32 +454,6 @@
 				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
 				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
 				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
-			</dir>
-			
-			<!-- Movies -->
-			<dir name = "str">
-				<!-- Week 1 videos -->
-				<file name = "moogus.str" type = "str" source = "iso/movie/moogus.str"/>
-				<file name = "sabotage.str" type = "str" source = "iso/movie/sabotage.str"/>
-				<file name = "meltdown.str" type = "str" source = "iso/movie/meltdown.str"/>
-				<file name = "week1end.str" type = "str" source = "iso/movie/week1end.str"/>
-				<!-- Week 2 videos -->
-				<file name = "toogus.str" type = "str" source = "iso/movie/toogus.str"/>
-				<!-- ejected will go here lmao -->
-				<!-- Week 3 videos -->
-				<file name = "mando.str" type = "str" source = "iso/movie/mando.str"/>
-				<file name = "oversigt.str" type = "str" source = "iso/movie/oversigt.str"/>
-				<file name = "danger.str" type = "str" source = "iso/movie/danger.str"/>
-				<!-- Week 5 videos -->
-				<file name = "boiling.str" type = "str" source = "iso/movie/boiling.str"/>
-				<!-- Week 6 videos -->
-				<file name = "delusion.str" type = "str" source = "iso/movie/delusion.str"/>
-				<!-- Week J videos -->
-				<file name = "voting.str" type = "str" source = "iso/movie/voting.str"/>
-				<file name = "turbulen.str" type = "str" source = "iso/movie/turbulen.str"/>
-				<!-- Week H videos -->
-				<file name = "titular.str" type = "str" source = "iso/movie/titular.str"/>
-				<file name = "henryend.str" type = "str" source = "iso/movie/henryend.str"/>
 			</dir>
 			
 			<!-- Music -->

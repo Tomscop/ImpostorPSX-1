@@ -1,65 +1,25 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
+			"fnfanim" : "danceLeft",
+			"imgname" : "gf",
+			"hname"   : "GF"
 		}
 	],
-	"input":  "iso/chars/bflava/bflava",
-	"outdir": "iso/chars/bflava/",
-	"charname" : "BFLava",
+	"input":  "iso/chars/gfpolus/gfpolus",
+	"outdir": "iso/chars/gfpolus/",
+	"charname" : "GFPolus",
 	"optimize" : false,
-	"optimizename" : "bflava",
+	"optimizename" : "gfpolus",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		512,
 		0,
-		0,
-		480
+		32,
+		482
 	],
 
-	"bpp" : 8,
+	"bpp" : 4,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
