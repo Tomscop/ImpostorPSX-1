@@ -46,20 +46,21 @@ typedef struct
 static const CharFrame char_gfpolus_frame[] = {
   {GFPolus_ArcMain_GF0, {  0,  0,175,163}, {159,145}}, //0 gf 1
   {GFPolus_ArcMain_GF0, {  0,  0,175,163}, {159,145}}, //0 gf 1
-  {GFPolus_ArcMain_GF2, {  0,  0,177,162}, {160,144}}, //2 gf 3
-  {GFPolus_ArcMain_GF2, {  0,  0,177,162}, {160,144}}, //2 gf 3
+  {GFPolus_ArcMain_GF2, {  0,  0,177,162}, {160,145}}, //2 gf 3
+  {GFPolus_ArcMain_GF2, {  0,  0,177,162}, {160,145}}, //2 gf 3
   {GFPolus_ArcMain_GF4, {  0,  0,176,163}, {159,145}}, //4 gf 5
   {GFPolus_ArcMain_GF4, {  0,  0,176,163}, {159,145}}, //4 gf 5
   {GFPolus_ArcMain_GF6, {  0,  0,175,164}, {159,146}}, //6 gf 7
   {GFPolus_ArcMain_GF6, {  0,  0,175,164}, {159,146}}, //6 gf 7
   {GFPolus_ArcMain_GF8, {  0,  0,175,168}, {159,150}}, //8 gf 9
   {GFPolus_ArcMain_GF8, {  0,  0,175,168}, {159,150}}, //8 gf 9
-  {GFPolus_ArcMain_GF10, {  0,  0,175,166}, {159,148}}, //10 gf 11
-  {GFPolus_ArcMain_GF10, {  0,  0,175,166}, {159,148}}, //10 gf 11
-  {GFPolus_ArcMain_GF12, {  0,  0,177,166}, {160,148}}, //12 gf 13
-  {GFPolus_ArcMain_GF12, {  0,  0,177,166}, {160,148}}, //12 gf 13
-  {GFPolus_ArcMain_GF14, {  0,  0,176,167}, {159,148}}, //14 gf 15
-  {GFPolus_ArcMain_GF14, {  0,  0,176,167}, {159,148}}, //14 gf 15
+  
+  {GFPolus_ArcMain_GF10, {  0,  0,175,166}, {159,149}}, //10 gf 11
+  {GFPolus_ArcMain_GF10, {  0,  0,175,166}, {159,149}}, //10 gf 11
+  {GFPolus_ArcMain_GF12, {  0,  0,177,166}, {160,149}}, //12 gf 13
+  {GFPolus_ArcMain_GF12, {  0,  0,177,166}, {160,149}}, //12 gf 13
+  {GFPolus_ArcMain_GF14, {  0,  0,176,167}, {159,149}}, //14 gf 15
+  {GFPolus_ArcMain_GF14, {  0,  0,176,167}, {159,149}}, //14 gf 15
   {GFPolus_ArcMain_GF16, {  0,  0,175,166}, {159,149}}, //16 gf 17
   {GFPolus_ArcMain_GF16, {  0,  0,175,166}, {159,149}}, //16 gf 17
   {GFPolus_ArcMain_GF18, {  0,  0,175,167}, {159,150}}, //18 gf 19
