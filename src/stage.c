@@ -108,6 +108,7 @@ static u32 Sounds[10];
 #include "stage/cargo.h"
 #include "stage/defeat.h"
 #include "stage/polusmaroon.h"
+#include "stage/lava.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
@@ -2222,7 +2223,9 @@ void Stage_Tick(void)
 						Stage_DrawTex(&stage.tex_hud0, &bot_src, &bot_dst, stage.bump);
 				}
 			}
-
+			
+			if (stage.paused == false)
+			{
 			if (noteshake)
 			{
 				stage.noteshakex = RandomRange(FIXED_DEC(-3,1),FIXED_DEC(3,1));
@@ -2239,7 +2242,8 @@ void Stage_Tick(void)
 				stage.noteshakex = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
 				stage.noteshakey = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
 			}
-
+			}
+			
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);
 			

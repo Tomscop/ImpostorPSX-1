@@ -345,11 +345,9 @@
 				<!-- Identity Crisis -->
 				
 				<file name = "polusmrn.arc" type = "data" source = "iso/stages/polusmrn/back.arc"/>
-				<!-- SnowB -->
-				<file name = "snowf.arc" type = "data" source = "iso/stages/polusmrn/snowf.arc"/>
 				
-				<!-- Boiling BG -->
-				<!-- Lava -->
+				<file name = "lava.arc" type = "data" source = "iso/stages/lava/back.arc"/>
+				<file name = "bubbles.arc" type = "data" source = "iso/stages/lava/bubbles.arc"/>
 				
 				<!-- Power Room BG -->
 				<!-- Thing -->

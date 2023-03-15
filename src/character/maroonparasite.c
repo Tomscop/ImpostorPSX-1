@@ -156,13 +156,52 @@ void Char_MaroonParasite_Tick(Character *character)
 {
 	Char_MaroonParasite *this = (Char_MaroonParasite*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_BoilingPoint)
+	{
+		if (stage.song_step == 0)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 1088)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1116)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 1120)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1132)
+			this->character.focus_zoom = FIXED_DEC(855,1024);
+		if (stage.song_step == 1136)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1149)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 1214)
+			this->character.focus_zoom = FIXED_DEC(804,1024);
+		if (stage.song_step == 1218)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 1278)
+			this->character.focus_zoom = FIXED_DEC(804,1024);
+		if (stage.song_step == 1282)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 1296)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1341)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if (stage.song_step == 1424)
+			this->character.focus_zoom = FIXED_DEC(895,1024);
+		if (stage.song_step == 1552)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_MaroonParasite_SetFrame);
-	Character_Draw(character, &this->tex, &char_maroonparasite_frame[this->frame]);
+	Character_DrawCol(character, &this->tex, &char_maroonparasite_frame[this->frame], 255, 137, 128);
 }
 
 void Char_MaroonParasite_SetAnim(Character *character, u8 anim)
@@ -207,9 +246,9 @@ Character *Char_MaroonParasite_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF6C0F32;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-137,1);
+	this->character.focus_y = FIXED_DEC(-175,1);
+	this->character.focus_zoom = FIXED_DEC(950,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(16664,10000);

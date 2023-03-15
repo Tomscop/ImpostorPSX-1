@@ -2,15 +2,15 @@
 	"animations": [
 		{
 			"fnfanim" : "snow",
-			"imgname" : "snowf",
-			"hname"   : "SnowF"
+			"imgname" : "bubbles",
+			"hname"   : "Bubbles"
 		}
 	],
-	"input":  "iso/stages/polusmrn/snowfront",
-	"outdir": "iso/stages/polusmrn/",
-	"charname" : "SnowF",
+	"input":  "iso/stages/lava/bubbles",
+	"outdir": "iso/stages/lava/",
+	"charname" : "Bubbles",
 	"optimize" : false,
-	"optimizename" : "snowf",
+	"optimizename" : "bubbles",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		320,
@@ -20,7 +20,7 @@
 	],
 
 	"bpp" : 4,
-	"resize" : 0.15,
+	"resize" : 0.10,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

@@ -307,14 +307,14 @@
 	},
 	{ //StageId_BoilingPoint (Boiling Point)
 		//Characters
-		{Char_BFLava_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFLava_New,    FIXED_DEC(480,1),  FIXED_DEC(308,1)},
         {NULL},
-		{Char_MaroonParasite_New, FIXED_DEC(55,1),  FIXED_DEC(178,1)},
+		{Char_MaroonParasite_New, FIXED_DEC(360,1),  FIXED_DEC(331,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Lava_New,
 		
 		//Song info
 		2, 6,

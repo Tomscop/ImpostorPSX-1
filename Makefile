@@ -80,6 +80,7 @@ SRCS = src/main.c \
 	src/stage/cargo.c \
 	src/stage/defeat.c \
 	src/stage/polusmaroon.c \
+	src/stage/lava.c \
 	src/stage/lobby.c \
 	src/stage/cafeteria.c \
 	src/stage/christmas.c \
