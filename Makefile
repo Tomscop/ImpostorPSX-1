@@ -34,6 +34,7 @@ SRCS = src/main.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
 	src/character/bfchristmas.c \
+	src/character/blueow.c \
 	src/character/kid.c \
 	src/character/red.c \
 	src/character/redmd.c \
@@ -58,6 +59,7 @@ SRCS = src/main.c \
 	src/character/spooker.c \
 	src/character/henry.c \
 	src/character/charles.c \
+	src/character/redow.c \
 	src/character/jerma.c \
 	src/character/nuzzus.c \
 	src/character/tobyfox.c \

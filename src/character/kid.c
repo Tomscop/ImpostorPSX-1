@@ -75,15 +75,6 @@ static const Animation char_kid_anim[PlayerAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
 	{3, (const u8[]){ 10, 11, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
-    
-    {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special1
-    {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
-    {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special3
-	
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},     //PlayerAnim_LeftMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},     //PlayerAnim_DownMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},     //PlayerAnim_UpMiss
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},     //PlayerAnim_RightMiss
 };
 
 //Kid player functions
@@ -123,16 +114,12 @@ void Char_Kid_Tick(Character *character)
 		if (Animatable_Ended(&character->animatable) &&
 			(character->animatable.anim != CharAnim_Left &&
 		     character->animatable.anim != CharAnim_LeftAlt &&
-		     character->animatable.anim != PlayerAnim_LeftMiss &&
 		     character->animatable.anim != CharAnim_Down &&
 		     character->animatable.anim != CharAnim_DownAlt &&
-		     character->animatable.anim != PlayerAnim_DownMiss &&
 		     character->animatable.anim != CharAnim_Up &&
 		     character->animatable.anim != CharAnim_UpAlt &&
-		     character->animatable.anim != PlayerAnim_UpMiss &&
 		     character->animatable.anim != CharAnim_Right &&
-		     character->animatable.anim != CharAnim_RightAlt &&
-		     character->animatable.anim != PlayerAnim_RightMiss) &&
+		     character->animatable.anim != CharAnim_RightAlt) &&
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
 	}
@@ -179,7 +166,7 @@ Character *Char_Kid_New(fixed_t x, fixed_t y)
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
-	this->character.spec = CHAR_SPEC_MISSANIM;
+	this->character.spec = 0;
 	
 	this->character.health_i = 8;
 	

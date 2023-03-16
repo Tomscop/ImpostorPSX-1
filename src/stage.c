@@ -60,6 +60,7 @@ static u32 Sounds[10];
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
+#include "character/blueow.h"
 #include "character/kid.h"
 //Opponents
 #include "character/red.h"
@@ -85,6 +86,7 @@ static u32 Sounds[10];
 #include "character/spooker.h"
 #include "character/henry.h"
 #include "character/charles.h"
+#include "character/redow.h"
 #include "character/jerma.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
@@ -141,6 +143,18 @@ static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 	
 	if (this->charactersecond != NULL)
 		this->charactersecond->set_anim(this->charactersecond, type);
+	
+	if ((stage.stage_id == StageId_Ow) && (note->type & NOTE_FLAG_OPPONENT))
+	{
+		if (stage.opponent->animatable.anim == CharAnim_Left)
+			stage.player->set_anim(stage.player, CharAnim_LeftAlt);
+		if (stage.opponent->animatable.anim == CharAnim_Down)
+			stage.player->set_anim(stage.player, CharAnim_DownAlt);
+		if (stage.opponent->animatable.anim == CharAnim_Up)
+			stage.player->set_anim(stage.player, CharAnim_UpAlt);
+		if (stage.opponent->animatable.anim == CharAnim_Right)
+			stage.player->set_anim(stage.player, CharAnim_RightAlt);
+	}
 }
 
 Character* Stage_ChangeChars(Character* oldcharacter, Character* newcharacter)
@@ -2899,7 +2913,7 @@ void Stage_Tick(void)
 			
 			stage.song_time = 0;
 			
-			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) && (stage.stage_id != StageId_Ejected))
+			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 			{
 				Audio_PlaySound(Sounds[8], 0x3fff);
 				if (VAG_IsPlaying(8) == false)
@@ -2910,7 +2924,7 @@ void Stage_Tick(void)
 						Audio_PlayXA_Track(XA_GameOverP, 0x40, 1, true);
 					else if (stage.stage_id == StageId_GreatestPlan)
 						Audio_PlayXA_Track(XA_GameOverH, 0x40, 2, true);
-					else	
+					else if (stage.stage_id != StageId_Ejected)
 						Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);	
 				}
 			}

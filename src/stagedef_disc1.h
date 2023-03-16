@@ -763,14 +763,14 @@
 	
 	{ //StageId_Ow (Ow)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BlueOw_New,    FIXED_DEC(-39,1),  FIXED_DEC(101,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_RedOw_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Idk_New,
 		
 		//Song info
 		5, 3,

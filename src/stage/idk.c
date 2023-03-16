@@ -21,6 +21,7 @@ typedef struct
 	
 	//Textures
 	Gfx_Tex tex_back0; //back0
+	Gfx_Tex tex_back1; //back1
 
 } Back_Idk;
 
@@ -66,6 +67,14 @@ void Back_Idk_DrawBG(StageBack *back)
 		FIXED_DEC(34,1)
 	};
 	
+	RECT back1_src = {  0,  0,255, 50};
+	RECT_FIXED back1_dst = {
+		FIXED_DEC(-540 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-64,1) - fy,
+		FIXED_DEC(583 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(114,1)
+	};
+	
 	if (stage.stage_id == StageId_Idk)
 	{
 		Debug_StageMoveDebug(&vs_dst, 5, fx, fy);
@@ -76,6 +85,11 @@ void Back_Idk_DrawBG(StageBack *back)
 		Stage_DrawTex(&this->tex_back0, &thekid_src, &thekid_dst, stage.camera.bzoom);
 		Debug_StageMoveDebug(&memory_dst, 8, fx, fy);
 		Stage_DrawTex(&this->tex_back0, &memory_src, &memory_dst, stage.camera.bzoom);
+	}
+	if (stage.stage_id == StageId_Ow)
+	{
+		Debug_StageMoveDebug(&back1_dst, 5, fx, fy);
+		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
 	}
 	
 	//Draw white
@@ -108,6 +122,7 @@ StageBack *Back_Idk_New(void)
 	//Load background textures
 	IO_Data arc_back = IO_Read("\\BG2\\IDK.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
+	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Mem_Free(arc_back);
 
 	Gfx_SetClear(0, 0, 0);

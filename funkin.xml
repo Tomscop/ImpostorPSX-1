@@ -208,7 +208,7 @@
 				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
 				<!-- Henry Phone assets -->
 				<!-- Boyfriend V1 assets -->
-				<!-- Cyan assets -->
+				<file name = "blueow.arc" type = "data" source = "iso/chars/blueow/main.arc"/>
 				<!-- Going2KillEvery1 assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
 				<!-- Boyfriend Drip assets -->
@@ -264,7 +264,7 @@
 				<!-- RHM assets -->
 				<!-- Reginald assets -->
 				<!-- Red V1 assets -->
-				<!-- Killer assets -->
+				<file name = "redow.arc" type = "data" source = "iso/chars/redow/main.arc"/>
 				<!-- Y Fronts assets -->
 				<file name = "jerma.arc" type = "data" source = "iso/chars/jerma/main.arc"/>
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
@@ -361,6 +361,10 @@
 				
 				<!-- Pretender BG -->
 				<!-- Snappy Dead -->
+				
+				<!-- Chef BG -->
+				<!-- GreyChef -->
+				<!-- Saster -->
 			</dir>
 				
 				
