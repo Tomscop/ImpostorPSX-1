@@ -2,25 +2,45 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "battle",
-			"hname"   : "Battle"
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/stages/earthbnd/nuzzus",
-	"outdir": "iso/stages/earthbnd/",
-	"charname" : "Battle",
+	"input":  "iso/chars/redv1/oldpostor",
+	"outdir": "iso/chars/redv1/",
+	"charname" : "RedV1",
 	"optimize" : false,
-	"optimizename" : "battle",
+	"optimizename" : "redv1",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		768,
 		0,
 		0,
-		485
+		481
 	],
 
-	"bpp" : 8,
-	"resize" : 0.48,
+	"bpp" : 4,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

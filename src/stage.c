@@ -86,6 +86,7 @@ static u32 Sounds[10];
 #include "character/spooker.h"
 #include "character/henry.h"
 #include "character/charles.h"
+#include "character/redv1.h"
 #include "character/redow.h"
 #include "character/jerma.h"
 #include "character/nuzzus.h"

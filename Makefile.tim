@@ -58,6 +58,7 @@ all: \
 	iso/chars/spooker/main.arc \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
+	iso/chars/redv1/main.arc \
 	iso/chars/redow/main.arc \
 	iso/chars/jerma/main.arc \
 	iso/chars/nuzzus/main.arc \
@@ -291,6 +292,7 @@ iso/chars/charles/main.arc: iso/chars/charles/idle0.tim iso/chars/charles/idle1.
 # Reginald
 
 # Red V1
+iso/chars/redv1/main.arc: iso/chars/redv1/idle0.tim iso/chars/redv1/idle1.tim iso/chars/redv1/idle2.tim iso/chars/redv1/idle3.tim iso/chars/redv1/left0.tim iso/chars/redv1/down0.tim iso/chars/redv1/up0.tim iso/chars/redv1/right0.tim 
 
 # Red Ow
 iso/chars/redow/main.arc: iso/chars/redow/idle0.tim iso/chars/redow/left0.tim iso/chars/redow/down0.tim iso/chars/redow/up0.tim iso/chars/redow/right0.tim iso/chars/redow/right1.tim 
