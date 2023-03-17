@@ -422,6 +422,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-108,1);
 	this->character.focus_zoom = FIXED_DEC(275,256);
 	}
+	else if (stage.stage_id == StageId_SussusNuzzus)
+	{
+	this->character.focus_x = FIXED_DEC(-886,1);
+	this->character.focus_y = FIXED_DEC(604,1);
+	this->character.focus_zoom = FIXED_DEC(324,1024);
+	}
 	else if (stage.stage_id == StageId_Esculent)
 	{
 	this->character.focus_x = FIXED_DEC(-710,1);

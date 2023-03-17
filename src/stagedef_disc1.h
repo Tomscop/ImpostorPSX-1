@@ -817,14 +817,14 @@
 	},
 	{ //StageId_SussusNuzzus (Sussus Nuzzus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(1512,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Nuzzus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Nuzzus_New, FIXED_DEC(355,1),  FIXED_DEC(535,1)},
         {NULL},
 		{NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Earthbound_New,
 		
 		//Song info
 		5, 6,

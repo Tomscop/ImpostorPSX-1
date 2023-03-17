@@ -103,6 +103,7 @@ all: \
 	iso/stages/henry/back.arc \
 	iso/stages/jerma/back.arc \
 	iso/stages/jerma/aaaaaa.arc \
+	iso/stages/earthbnd/back.arc \
 	iso/stages/idk/back.arc \
 	iso/stages/electric/back.arc \
 	iso/stages/office/back.arc \
@@ -412,6 +413,9 @@ iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim
 # Jerma Room
 iso/stages/jerma/back.arc: iso/stages/jerma/back0.tim iso/stages/jerma/back1.tim
 iso/stages/jerma/aaaaaa.arc: iso/stages/jerma/aaaaaa0.tim iso/stages/jerma/aaaaaa1.tim iso/stages/jerma/aaaaaa2.tim iso/stages/jerma/aaaaaa3.tim iso/stages/jerma/aaaaaa4.tim iso/stages/jerma/aaaaaa5.tim iso/stages/jerma/aaaaaa6.tim iso/stages/jerma/aaaaaa7.tim 
+
+# Earthbound
+iso/stages/earthbnd/back.arc: iso/stages/earthbnd/battle0.tim iso/stages/earthbnd/battle1.tim iso/stages/earthbnd/battle2.tim iso/stages/earthbnd/battle3.tim iso/stages/earthbnd/battle4.tim iso/stages/earthbnd/battle5.tim iso/stages/earthbnd/battle6.tim iso/stages/earthbnd/battle7.tim iso/stages/earthbnd/battle8.tim iso/stages/earthbnd/battle9.tim iso/stages/earthbnd/battle10.tim iso/stages/earthbnd/battle11.tim iso/stages/earthbnd/battle12.tim iso/stages/earthbnd/battle13.tim iso/stages/earthbnd/battle14.tim iso/stages/earthbnd/battle15.tim iso/stages/earthbnd/battle16.tim iso/stages/earthbnd/battle17.tim iso/stages/earthbnd/battle18.tim iso/stages/earthbnd/battle19.tim 
 
 # Idk
 iso/stages/idk/back.arc: iso/stages/idk/back0.tim iso/stages/idk/back1.tim

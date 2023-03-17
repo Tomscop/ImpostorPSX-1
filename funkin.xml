@@ -395,7 +395,7 @@
 				<file name = "jerma.arc" type = "data" source = "iso/stages/jerma/back.arc"/>
 				<file name = "aaaaaa.arc" type = "data" source = "iso/stages/jerma/aaaaaa.arc"/>
 				
-				<!-- Earthbound BG -->
+				<file name = "earthbnd.arc" type = "data" source = "iso/stages/earthbnd/back.arc"/>
 				
 				<file name = "idk.arc" type = "data" source = "iso/stages/idk/back.arc"/>
 				

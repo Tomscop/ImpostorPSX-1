@@ -116,6 +116,7 @@ static u32 Sounds[10];
 #include "stage/christmas.h"
 #include "stage/henry.h"
 #include "stage/jermaroom.h"
+#include "stage/earthbound.h"
 #include "stage/idk.h"
 #include "stage/electrical.h"
 #include "stage/daveoffice.h"

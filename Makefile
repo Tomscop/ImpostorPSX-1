@@ -88,6 +88,7 @@ SRCS = src/main.c \
 	src/stage/christmas.c \
 	src/stage/henry.c \
 	src/stage/jermaroom.c \
+	src/stage/earthbound.c \
 	src/stage/idk.c \
 	src/stage/electrical.c \
 	src/stage/daveoffice.c \
