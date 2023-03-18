@@ -24,19 +24,39 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/redv1/oldpostor",
-	"outdir": "iso/chars/redv1/",
-	"charname" : "RedV1",
+	"input":  "iso/chars/bfv1/susfriend",
+	"outdir": "iso/chars/bfv1/",
+	"charname" : "BFV1",
 	"optimize" : false,
-	"optimizename" : "redv1",
+	"optimizename" : "bfv1",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		640,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 4,

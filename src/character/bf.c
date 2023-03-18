@@ -393,10 +393,20 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = CHAR_SPEC_MISSANIM;
 	
+	if ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
+	{
 	this->character.health_i = 20;
 	
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
+	}
+	else
+	{
+	this->character.health_i = 10;
+	
+	//health bar color
+	this->character.health_bar = 0xFF5EFF35;
+	}
 	
 	if (((stage.stage_id >= StageId_SussusMoogus) && (stage.stage_id <= StageId_Meltdown)) || (stage.stage_id == StageId_Top10))
 	{
@@ -415,6 +425,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-92,1);
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(1086,1024);
+	}
+	else if (stage.stage_id == StageId_AlphaMoogus)
+	{
+	this->character.focus_x = FIXED_DEC(-96,1);
+	this->character.focus_y = FIXED_DEC(-108,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	}
 	else if (stage.stage_id == StageId_InsaneStreamer)
 	{

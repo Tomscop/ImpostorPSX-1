@@ -34,6 +34,7 @@ SRCS = src/main.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
 	src/character/bfchristmas.c \
+	src/character/bfv1.c \
 	src/character/blueow.c \
 	src/character/kid.c \
 	src/character/red.c \
@@ -76,6 +77,7 @@ SRCS = src/main.c \
 	src/character/gfejected.c \
 	src/character/gfpolus.c \
 	src/character/gfpixel.c \
+	src/character/gfv1.c \
 	src/stage/polus.c \
 	src/stage/reactor.c \
 	src/stage/ejected.c \

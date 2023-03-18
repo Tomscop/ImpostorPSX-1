@@ -60,6 +60,7 @@ static u32 Sounds[10];
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
+#include "character/bfv1.h"
 #include "character/blueow.h"
 #include "character/kid.h"
 //Opponents
@@ -103,6 +104,7 @@ static u32 Sounds[10];
 #include "character/gfejected.h"
 #include "character/gfpolus.h"
 #include "character/gfpixel.h"
+#include "character/gfv1.h"
 //Stages
 #include "stage/polus.h"
 #include "stage/reactor.h"
@@ -1671,10 +1673,10 @@ static void Stage_LoadMusic(void)
 	
 	//Initialize music state
 	//added more steps and disable intro
-	if (stage.stage_id == StageId_Temp) //PLACEHOLDER
+	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus)) //PLACEHOLDER
 	{
-		stage.intro = true;
-		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
+		stage.intro = false;
+		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
 	}
 	else
 	{
@@ -1835,6 +1837,11 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0PIX.TIM;1"), GFX_LOADTEX_FREE);
 		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNTPIX.TIM;1"), GFX_LOADTEX_FREE);
+	}
+	else if ((stage.stage_id >= StageId_AlphaMoogus && stage.stage_id <= StageId_ActinSus))
+	{
+		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0OLD.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_count, IO_Read("\\STAGE\\COUNT.TIM;1"), GFX_LOADTEX_FREE);
 	}
 	else
 	{
