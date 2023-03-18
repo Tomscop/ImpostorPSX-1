@@ -726,14 +726,14 @@
 	
 	{ //StageId_AlphaMoogus (Alpha Moogus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(343,1),  FIXED_DEC(177,1)},
         {NULL},
-		{Char_RedV1_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_RedV1_New, FIXED_DEC(281,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_GFV1_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFV1_New,     FIXED_DEC(355,1),  FIXED_DEC(161,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_V1_New,
 		
 		//Song info
 		5, 1,
@@ -744,14 +744,14 @@
 	},
 	{ //StageId_ActinSus (Actin Sus)
 		//Characters
-		{Char_BFV1_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFV1_New,    FIXED_DEC(447,1),  FIXED_DEC(241,1)},
         {NULL},
-		{Char_RedV1_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_RedV1_New, FIXED_DEC(281,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_GFV1_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFV1_New,     FIXED_DEC(355,1),  FIXED_DEC(161,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_V1_New,
 		
 		//Song info
 		5, 2,

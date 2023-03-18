@@ -389,7 +389,7 @@
 				
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
 				
-				<!-- V1 BG -->
+				<file name = "v1.arc" type = "data" source = "iso/stages/v1/back.arc"/>
 				
 				<!-- Who BG -->
 				

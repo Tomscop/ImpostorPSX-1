@@ -118,6 +118,7 @@ static u32 Sounds[10];
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
 #include "stage/henry.h"
+#include "stage/v1.h"
 #include "stage/jermaroom.h"
 #include "stage/earthbound.h"
 #include "stage/idk.h"
@@ -225,11 +226,22 @@ static void Stage_ScrollCamera(void)
 				stage.camera.y = stage.camera.ty;
 				stage.camera.zoom = stage.camera.tz;
 			}
-			else
+			else if ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
 			{
 				stage.camera.x = lerp(stage.camera.x, stage.camera.tx, FIXED_DEC(5,100));
 				stage.camera.y = lerp(stage.camera.y, stage.camera.ty, FIXED_DEC(5,100));
 				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
+			}
+			else
+			{
+				//Get delta position
+				fixed_t dx = stage.camera.tx - stage.camera.x;
+				fixed_t dy = stage.camera.ty - stage.camera.y;
+				fixed_t dz = stage.camera.tz - stage.camera.zoom;
+			
+				stage.camera.x += FIXED_MUL(dx, stage.camera.td);
+				stage.camera.y += FIXED_MUL(dy, stage.camera.td);
+				stage.camera.zoom += FIXED_MUL(dz, stage.camera.td);
 			}
 		}
 		if (stage.stage_id != StageId_Crewicide)
@@ -2140,10 +2152,18 @@ void Stage_Tick(void)
 			{
 				if (stage.paused == false && pad_state.press & PAD_START)
 				{
-					stage.pause_scroll = -1;
-					Audio_PauseXA();
-					stage.paused = true;
-					pad_state.press = 0;
+					if ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus))
+					{
+						stage.pause_scroll = -1;
+						Audio_PauseXA();
+						stage.paused = true;
+						pad_state.press = 0;
+					}
+					else
+					{
+						stage.trans = (stage.state == StageState_Play) ? StageTrans_Menu : StageTrans_Reload;
+						Trans_Start();
+					}
 				}
 			}
 			if (stage.paused)

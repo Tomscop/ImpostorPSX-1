@@ -198,8 +198,8 @@ Character *Char_BFV1_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF5EFF35;
 	
-	this->character.focus_x = FIXED_DEC(-185,1);
-	this->character.focus_y = FIXED_DEC(-140,1);
+	this->character.focus_x = FIXED_DEC(-141,1);
+	this->character.focus_y = FIXED_DEC(-131,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

@@ -428,8 +428,8 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	}
 	else if (stage.stage_id == StageId_AlphaMoogus)
 	{
-	this->character.focus_x = FIXED_DEC(-96,1);
-	this->character.focus_y = FIXED_DEC(-108,1);
+	this->character.focus_x = FIXED_DEC(-57,1);
+	this->character.focus_y = FIXED_DEC(-76,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	}
 	else if (stage.stage_id == StageId_InsaneStreamer)

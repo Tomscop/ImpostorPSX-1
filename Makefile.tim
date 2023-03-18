@@ -105,6 +105,7 @@ all: \
 	iso/stages/christms/person.arc \
 	iso/stages/christms/fire.arc \
 	iso/stages/henry/back.arc \
+	iso/stages/v1/back.arc \
 	iso/stages/jerma/back.arc \
 	iso/stages/jerma/aaaaaa.arc \
 	iso/stages/earthbnd/back.arc \
@@ -416,6 +417,9 @@ iso/stages/christms/fire.arc: iso/stages/christms/fire.tim
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
+
+# V1
+iso/stages/v1/back.arc: iso/stages/v1/back0.tim iso/stages/v1/back1.tim
 
 # Jerma Room
 iso/stages/jerma/back.arc: iso/stages/jerma/back0.tim iso/stages/jerma/back1.tim
