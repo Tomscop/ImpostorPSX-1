@@ -1,26 +1,26 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "grey",
-			"hname"   : "Grey"
+			"fnfanim" : "danceLeft",
+			"imgname" : "gf",
+			"hname"   : "GF"
 		}
 	],
-	"input":  "iso/stages/kitchen/grey",
-	"outdir": "iso/stages/kitchen/",
-	"charname" : "Grey",
+	"input":  "iso/chars/gfairshp/gfdead",
+	"outdir": "iso/chars/gfairshp/",
+	"charname" : "GFAirship",
 	"optimize" : false,
-	"optimizename" : "grey",
+	"optimizename" : "gfairship",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		512,
 		0,
-		0,
-		485
+		16,
+		480
 	],
 
 	"bpp" : 4,
-	"resize" : 0.2002,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

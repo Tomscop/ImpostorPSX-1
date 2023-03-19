@@ -30,6 +30,7 @@ SRCS = src/main.c \
 	src/character/bfdefeat.c \
 	src/character/bfpolus.c \
 	src/character/bflava.c \
+	src/character/bfairship.c \
 	src/character/bfchef.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
@@ -76,6 +77,7 @@ SRCS = src/main.c \
 	src/character/gfreactor.c \
 	src/character/gfejected.c \
 	src/character/gfpolus.c \
+	src/character/gfairship.c \
 	src/character/gfpixel.c \
 	src/character/gfv1.c \
 	src/stage/polus.c \

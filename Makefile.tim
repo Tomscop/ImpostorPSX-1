@@ -30,6 +30,7 @@ all: \
 	iso/chars/bfdefeat/main2.arc \
 	iso/chars/bfpolus/main.arc \
 	iso/chars/bflava/main.arc \
+	iso/chars/bfairshp/main.arc \
 	iso/chars/bfchef/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
@@ -77,6 +78,7 @@ all: \
 	iso/chars/gfreac/main.arc \
 	iso/chars/gfeject/main.arc \
 	iso/chars/gfpolus/main.arc \
+	iso/chars/gfairshp/main.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/gfv1/main.arc \
 	iso/chars/dead.tim \
@@ -155,6 +157,7 @@ iso/chars/bfpolus/main.arc: iso/chars/bfpolus/idle0.tim iso/chars/bfpolus/idle1.
 iso/chars/bflava/main.arc: iso/chars/bflava/idle0.tim iso/chars/bflava/idle1.tim iso/chars/bflava/left0.tim iso/chars/bflava/down0.tim iso/chars/bflava/up0.tim iso/chars/bflava/right0.tim iso/chars/bflava/leftm0.tim iso/chars/bflava/downm0.tim iso/chars/bflava/upm0.tim iso/chars/bflava/rightm0.tim 
 
 # BF Airship
+iso/chars/bfairshp/main.arc: iso/chars/bfairshp/idle0.tim iso/chars/bfairshp/idle1.tim iso/chars/bfairshp/idle2.tim iso/chars/bfairshp/left0.tim iso/chars/bfairshp/down0.tim iso/chars/bfairshp/up0.tim iso/chars/bfairshp/right0.tim iso/chars/bfairshp/leftm0.tim iso/chars/bfairshp/downm0.tim iso/chars/bfairshp/upm0.tim iso/chars/bfairshp/rightm0.tim 
 
 # BF Mira
 
@@ -363,6 +366,7 @@ iso/chars/gfeject/main.arc: iso/chars/gfeject/gf0.tim iso/chars/gfeject/gf1.tim 
 iso/chars/gfpolus/main.arc: iso/chars/gfpolus/gf0.tim iso/chars/gfpolus/gf2.tim iso/chars/gfpolus/gf4.tim iso/chars/gfpolus/gf6.tim iso/chars/gfpolus/gf8.tim iso/chars/gfpolus/gf10.tim iso/chars/gfpolus/gf12.tim iso/chars/gfpolus/gf14.tim iso/chars/gfpolus/gf16.tim iso/chars/gfpolus/gf18.tim
 
 # GF Airship
+iso/chars/gfairshp/main.arc: iso/chars/gfairshp/gf0.tim iso/chars/gfairshp/gf1.tim 
 
 # GF Mira
 

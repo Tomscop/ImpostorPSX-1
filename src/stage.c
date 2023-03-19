@@ -56,6 +56,7 @@ static u32 Sounds[10];
 #include "character/bfdefeat.h"
 #include "character/bfpolus.h"
 #include "character/bflava.h"
+#include "character/bfairship.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
@@ -103,6 +104,7 @@ static u32 Sounds[10];
 #include "character/gfreactor.h"
 #include "character/gfejected.h"
 #include "character/gfpolus.h"
+#include "character/gfairship.h"
 #include "character/gfpixel.h"
 #include "character/gfv1.h"
 //Stages
@@ -2647,6 +2649,30 @@ void Stage_Tick(void)
 							else
 								stage.bump += FIXED_DEC(3,100); //0.03
 							stage.charbump += FIXED_DEC(15,1000); //0.015
+							}
+						}
+					}
+					if (stage.stage_id == StageId_Delusion)
+					{
+						if (note->type & NOTE_FLAG_OPPONENT)
+						{
+							if ((stage.song_step >= 928) && (stage.song_step <= 934))
+							{
+								stage.bump += FIXED_DEC(3,100); //0.03
+								stage.charbump += FIXED_DEC(15,1000); //0.015
+							}
+						}
+						if ((note->type & NOTE_FLAG_OPPONENT) == false)
+						{
+							if ((stage.song_step >= 992) && (stage.song_step <= 1055))
+							{
+								stage.bump += FIXED_DEC(3,100); //0.03
+								stage.charbump += FIXED_DEC(15,1000); //0.015
+							}
+							if ((stage.song_step >= 288) && (stage.song_step <= 351))
+							{
+								stage.bump += FIXED_DEC(3,100); //0.03
+								stage.charbump += FIXED_DEC(15,1000); //0.015
 							}
 						}
 					}
