@@ -53,22 +53,22 @@ typedef struct
 //Boyfriend Chef player definitions
 static const CharFrame char_bfchef_frame[] = {
   {BFChef_ArcMain_Idle0, {  0,  0, 99,133}, {159,156}}, //0 idle 1
-  {BFChef_ArcMain_Idle0, { 99,  0, 98,133}, {159,157}}, //1 idle 2
+  {BFChef_ArcMain_Idle0, { 99,  0, 98,133}, {159,156}}, //1 idle 2
   {BFChef_ArcMain_Idle1, {  0,  0, 99,134}, {158,157}}, //2 idle 3
   {BFChef_ArcMain_Idle1, { 99,  0,101,137}, {157,160}}, //3 idle 4
   {BFChef_ArcMain_Idle2, {  0,  0,101,137}, {157,160}}, //4 idle 5
 
   {BFChef_ArcMain_Left0, {  0,  0,105,132}, {168,155}}, //5 left 1
-  {BFChef_ArcMain_Left0, {105,  0,105,132}, {167,156}}, //6 left 2
+  {BFChef_ArcMain_Left0, {105,  0,105,132}, {168,155}}, //6 left 2
 
-  {BFChef_ArcMain_Down0, {  0,  0, 98,124}, {161,148}}, //7 down 1
-  {BFChef_ArcMain_Down0, { 98,  0,100,124}, {162,149}}, //8 down 2
+  {BFChef_ArcMain_Down0, {  0,  0, 98,124}, {162,147}}, //7 down 1
+  {BFChef_ArcMain_Down0, { 98,  0,100,124}, {162,147}}, //8 down 2
 
-  {BFChef_ArcMain_Up0, {  0,  0,114,132}, {155,155}}, //9 up 1
-  {BFChef_ArcMain_Up0, {114,  0,114,132}, {155,154}}, //10 up 2
+  {BFChef_ArcMain_Up0, {  0,  0,114,132}, {155,156}}, //9 up 1
+  {BFChef_ArcMain_Up0, {114,  0,114,132}, {155,155}}, //10 up 2
 
-  {BFChef_ArcMain_Right0, {  0,  0,106,136}, {154,160}}, //11 right 1
-  {BFChef_ArcMain_Right0, {106,  0,108,136}, {155,160}}, //12 right 2
+  {BFChef_ArcMain_Right0, {  0,  0,106,136}, {153,159}}, //11 right 1
+  {BFChef_ArcMain_Right0, {106,  0,108,136}, {155,159}}, //12 right 2
 
   {BFChef_ArcMain_LeftM0, {  0,  0,105,132}, {166,156}}, //13 leftm 1
   {BFChef_ArcMain_LeftM0, {105,  0,105,128}, {166,152}}, //14 leftm 2
@@ -86,8 +86,8 @@ static const CharFrame char_bfchef_frame[] = {
 
   {BFChef_ArcMain_DownA0, {  0,  0,100,122}, {164,146}}, //23 downa 1
   {BFChef_ArcMain_DownA0, {100,  0, 98,124}, {163,148}}, //24 downa 2
-  {BFChef_ArcMain_DownA0, {  0,124, 98,124}, {162,149}}, //25 downa 3
-  {BFChef_ArcMain_DownA0, { 98,124, 98,124}, {162,149}}, //26 downa 4
+  {BFChef_ArcMain_DownA0, {  0,124, 98,124}, {162,148}}, //25 downa 3
+  {BFChef_ArcMain_DownA0, { 98,124, 98,124}, {162,148}}, //26 downa 4
 
   {BFChef_ArcMain_UpA0, {  0,  0,110,136}, {157,159}}, //27 upa 1
   {BFChef_ArcMain_UpA0, {110,  0,110,136}, {157,159}}, //28 upa 2
@@ -219,8 +219,8 @@ Character *Char_BFChef_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	this->character.focus_x = FIXED_DEC(-160,1);
-	this->character.focus_y = FIXED_DEC(-147,1);
-	this->character.focus_zoom = FIXED_DEC(509,512);
+	this->character.focus_y = FIXED_DEC(-126,1);
+	this->character.focus_zoom = FIXED_DEC(1130,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

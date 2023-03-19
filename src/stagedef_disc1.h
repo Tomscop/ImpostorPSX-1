@@ -433,14 +433,14 @@
 	},
 	{ //StageId_SaucesMoogus (Sauces Moogus)
 		//Characters
-		{Char_BFChef_New,    FIXED_DEC(190,1),  FIXED_DEC(146,1)},
+		{Char_BFChef_New,    FIXED_DEC(465,1),  FIXED_DEC(275,1)},
         {NULL},
-		{Char_Chefogus_New, FIXED_DEC(-20,1),  FIXED_DEC(116,1)},
+		{Char_Chefogus_New, FIXED_DEC(240,1),  FIXED_DEC(240,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Kitchen_New,
 		
 		//Song info
 		3, 4,

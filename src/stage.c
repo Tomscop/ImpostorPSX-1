@@ -114,6 +114,7 @@ static u32 Sounds[10];
 #include "stage/defeat.h"
 #include "stage/polusmaroon.h"
 #include "stage/lava.h"
+#include "stage/kitchen.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"

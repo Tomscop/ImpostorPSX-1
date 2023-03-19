@@ -355,7 +355,7 @@
 				<!-- BlackGray -->
 				
 				<!-- Plantroom BG -->
-				<!-- Grey -->
+				<!-- GreyP -->
 				<!-- Long and Tomato -->
 				<!-- Snappy -->
 				<!-- Cyborg -->
@@ -363,9 +363,9 @@
 				<!-- Pretender BG -->
 				<!-- Snappy Dead -->
 				
-				<!-- Chef BG -->
-				<!-- GreyChef -->
-				<!-- Saster -->
+				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>
+				<file name = "greyc.arc" type = "data" source = "iso/stages/kitchen/grey.arc"/>
+				<file name = "saster.arc" type = "data" source = "iso/stages/kitchen/saster.arc"/>
 			</dir>
 				
 				
