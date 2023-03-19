@@ -147,6 +147,117 @@ void Char_Chefogus_Tick(Character *character)
 {
 	Char_Chefogus *this = (Char_Chefogus*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_SaucesMoogus)
+	{
+		if (stage.song_step == 171)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_beat == 44)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_beat == 112)
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-84,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 113)
+		{
+			this->character.focus_x = FIXED_DEC(-69,1);
+			this->character.focus_y = FIXED_DEC(-81,1);
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		}
+		if (stage.song_beat == 114)
+		{
+			this->character.focus_x = FIXED_DEC(-81,1);
+			this->character.focus_y = FIXED_DEC(-76,1);
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		}
+		if (stage.song_beat == 115)
+		{
+			this->character.focus_x = FIXED_DEC(-83,1);
+			this->character.focus_y = FIXED_DEC(-72,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 116)
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-91,1);
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		}
+		if (stage.song_step == 206)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 208)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_step == 399)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 404)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_step == 1164)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1172)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_beat == 304)
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-84,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 305)
+		{
+			this->character.focus_x = FIXED_DEC(-69,1);
+			this->character.focus_y = FIXED_DEC(-81,1);
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		}
+		if (stage.song_beat == 306)
+		{
+			this->character.focus_x = FIXED_DEC(-81,1);
+			this->character.focus_y = FIXED_DEC(-76,1);
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		}
+		if (stage.song_beat == 307)
+		{
+			this->character.focus_x = FIXED_DEC(-83,1);
+			this->character.focus_y = FIXED_DEC(-72,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 308)
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-91,1);
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		}
+		if (stage.song_beat == 320)
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-84,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 321)
+		{
+			this->character.focus_x = FIXED_DEC(-69,1);
+			this->character.focus_y = FIXED_DEC(-81,1);
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		}
+		if (stage.song_beat == 322)
+		{
+			this->character.focus_x = FIXED_DEC(-81,1);
+			this->character.focus_y = FIXED_DEC(-76,1);
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		}
+		if (stage.song_beat == 323)
+		{
+			this->character.focus_x = FIXED_DEC(-83,1);
+			this->character.focus_y = FIXED_DEC(-72,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 324)
+		{
+			this->character.focus_x = FIXED_DEC(3,1);
+			this->character.focus_y = FIXED_DEC(-111,1);
+			this->character.focus_zoom = FIXED_DEC(960,1024);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -198,7 +309,7 @@ Character *Char_Chefogus_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFC75E52;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
+	this->character.focus_x = FIXED_DEC(-51,1);
 	this->character.focus_y = FIXED_DEC(-91,1);
 	this->character.focus_zoom = FIXED_DEC(1130,1024);
 	

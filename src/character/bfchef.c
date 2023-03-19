@@ -135,6 +135,61 @@ void Char_BFChef_Tick(Character *character)
 {
 	Char_BFChef *this = (Char_BFChef*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_SaucesMoogus)
+	{
+		if (stage.song_step == 171)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_beat == 44)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_beat == 112)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_beat == 113)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_beat == 114)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_beat == 115)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_beat == 116)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_step == 206)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 208)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_step == 399)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 404)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_step == 1164)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1172)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_beat == 304)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_beat == 305)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_beat == 306)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_beat == 307)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_beat == 308)
+			this->character.focus_zoom = FIXED_DEC(1130,1024);
+		if (stage.song_beat == 320)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_beat == 321)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_beat == 322)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_beat == 323)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_beat == 324)
+		{
+			this->character.focus_x = FIXED_DEC(-222,1);
+			this->character.focus_y = FIXED_DEC(-146,1);
+			this->character.focus_zoom = FIXED_DEC(960,1024);
+		}
+	}
+	
 	if(character->animatable.anim  != CharAnim_Special1)
 	{
 	//Handle animation updates
@@ -218,7 +273,7 @@ Character *Char_BFChef_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(-160,1);
+	this->character.focus_x = FIXED_DEC(-184,1);
 	this->character.focus_y = FIXED_DEC(-126,1);
 	this->character.focus_zoom = FIXED_DEC(1130,1024);
 	
