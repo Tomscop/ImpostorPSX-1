@@ -350,9 +350,8 @@
 				<file name = "lava.arc" type = "data" source = "iso/stages/lava/back.arc"/>
 				<file name = "bubbles.arc" type = "data" source = "iso/stages/lava/bubbles.arc"/>
 				
-				<!-- Power Room BG -->
-				<!-- Thing -->
-				<!-- BlackGray -->
+				<file name = "poweroom.arc" type = "data" source = "iso/stages/poweroom/back.arc"/>
+				<file name = "blackg.arc" type = "data" source = "iso/stages/poweroom/black.arc"/>
 				
 				<!-- Plantroom BG -->
 				<!-- GreyP -->

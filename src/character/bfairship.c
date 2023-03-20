@@ -210,9 +210,9 @@ Character *Char_BFAirship_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	
-	this->character.focus_x = FIXED_DEC(-189,1);
-	this->character.focus_y = FIXED_DEC(-143,1);
-	this->character.focus_zoom = FIXED_DEC(1357,1024);
+	this->character.focus_x = FIXED_DEC(-170,1);
+	this->character.focus_y = FIXED_DEC(-147,1);
+	this->character.focus_zoom = FIXED_DEC(1086,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

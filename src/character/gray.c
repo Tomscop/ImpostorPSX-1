@@ -231,9 +231,18 @@ Character *Char_Gray_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF625773;
 	
+	if ((stage.stage_id >= StageId_Delusion) && (stage.stage_id <= StageId_Neurotic))
+	{
+	this->character.focus_x = FIXED_DEC(-41,1);
+	this->character.focus_y = FIXED_DEC(-124,1);
+	this->character.focus_zoom = FIXED_DEC(1086,1024);
+	}
+	else
+	{
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
+	}
 	
 	this->character.size = FIXED_DEC(1,1);
 	

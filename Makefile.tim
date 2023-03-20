@@ -100,6 +100,8 @@ all: \
 	iso/stages/polusmrn/back.arc \
 	iso/stages/lava/back.arc \
 	iso/stages/lava/bubbles.arc \
+	iso/stages/poweroom/back.arc \
+	iso/stages/poweroom/black.arc \
 	iso/stages/kitchen/back.arc \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
@@ -409,6 +411,10 @@ iso/stages/polusmrn/snowf.arc: iso/stages/polusmrn/snowf0.tim iso/stages/polusmr
 # Lava
 iso/stages/lava/back.arc: iso/stages/lava/back0.tim iso/stages/lava/back1.tim
 iso/stages/lava/bubbles.arc: iso/stages/lava/bubbles0.tim iso/stages/lava/bubbles1.tim 
+
+# Power Room
+iso/stages/poweroom/back.arc: iso/stages/poweroom/back0.tim iso/stages/poweroom/back1.tim iso/stages/poweroom/back2.tim iso/stages/poweroom/back3.tim
+iso/stages/poweroom/black.arc: iso/stages/poweroom/black0.tim iso/stages/poweroom/black1.tim iso/stages/poweroom/black2.tim iso/stages/poweroom/black3.tim iso/stages/poweroom/black4.tim 
 
 # Kitchen
 iso/stages/kitchen/back.arc: iso/stages/kitchen/back0.tim iso/stages/kitchen/back1.tim iso/stages/kitchen/back2.tim

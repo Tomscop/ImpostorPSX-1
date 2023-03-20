@@ -325,50 +325,50 @@
 	},
 	{ //StageId_Delusion (Delusion)
 		//Characters
-		{Char_BFAirship_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFAirship_New,    FIXED_DEC(512,1),  FIXED_DEC(264,1)},
         {NULL},
-		{Char_Gray_New, FIXED_DEC(-36,1),  FIXED_DEC(100,1)},
+		{Char_Gray_New, FIXED_DEC(223,1),  FIXED_DEC(241,1)},
         {NULL},
-		{Char_GFAirship_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFAirship_New,     FIXED_DEC(373,1),  FIXED_DEC(279,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_PowerRoom_New,
 		
 		//Song info
 		2, 7,
 		XA_Delusion, 2,
 		"Delusion", "Composer: Fluffyhairs", "",
 		
-		StageId_Blackout, 0
+		StageId_Blackout, STAGE_LOAD_FLAG
 	},
 	{ //StageId_Blackout (Blackout)
 		//Characters
-		{Char_BFAirship_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFAirship_New,    FIXED_DEC(512,1),  FIXED_DEC(264,1)},
         {NULL},
-		{Char_Gray_New, FIXED_DEC(-36,1),  FIXED_DEC(100,1)},
+		{Char_Gray_New, FIXED_DEC(223,1),  FIXED_DEC(241,1)},
         {NULL},
-		{Char_GFAirship_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFAirship_New,     FIXED_DEC(373,1),  FIXED_DEC(279,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_PowerRoom_New,
 		
 		//Song info
 		2, 8,
 		XA_Blackout, 0,
 		"Blackout", "Composer: Cval", "",
 		
-		StageId_Neurotic, 0
+		StageId_Neurotic, STAGE_LOAD_FLAG
 	},
 	{ //StageId_Neurotic (Neurotic)
 		//Characters
-		{Char_BFAirship_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFAirship_New,    FIXED_DEC(512,1),  FIXED_DEC(264,1)},
         {NULL},
-		{Char_Gray_New, FIXED_DEC(-36,1),  FIXED_DEC(100,1)},
+		{Char_Gray_New, FIXED_DEC(223,1),  FIXED_DEC(241,1)},
         {NULL},
-		{Char_GFAirship_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFAirship_New,     FIXED_DEC(373,1),  FIXED_DEC(279,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_PowerRoom_New,
 		
 		//Song info
 		2, 9,
