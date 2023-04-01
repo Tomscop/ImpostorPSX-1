@@ -1240,6 +1240,18 @@ void Menu_Tick(void)
 				{StageId_Torture, 0xFF9271FD, "Torture"},
 			};
 			
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options9[] = {
+				{StageId_LemonLime, 0xFF9271FD, "Lemon Lime"},
+				{StageId_Chlorophyll, 0xFF9271FD, "Chlorophyll"},
+				{StageId_Inflorescence, 0xFF9271FD, "Inflorescence"},
+				{StageId_Stargazer, 0xFF9271FD, "Stargazer"},
+			};
+			
 			if (menu.freeplaypage == 0)
 				menu.freeplayoptions = COUNT_OF(menu_options0);
 			else if (menu.freeplaypage == 1)
@@ -1258,6 +1270,8 @@ void Menu_Tick(void)
 				menu.freeplayoptions = COUNT_OF(menu_options7);
 			else if (menu.freeplaypage == 8)
 				menu.freeplayoptions = COUNT_OF(menu_options8);
+			else if (menu.freeplaypage == 9)
+				menu.freeplayoptions = COUNT_OF(menu_options9);
 			
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
@@ -1284,6 +1298,8 @@ void Menu_Tick(void)
 				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options7[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options7[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
 			else if (menu.freeplaypage == 8)
 				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options8[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options8[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
+			else if (menu.freeplaypage == 9)
+				sprintf(scoredisp, "SCORE: %d", (stage.prefs.savescore[menu_options9[menu.select].stage][menu.page_param.stage.diff] > 0) ? stage.prefs.savescore[menu_options9[menu.select].stage][menu.page_param.stage.diff] * 10 : 0);
 			
 			//Initialize page
 			if (menu.page_swap)
@@ -1312,7 +1328,7 @@ void Menu_Tick(void)
 						if (menu.freeplaypage >= 1)
 							menu.freeplaypage -= 1;
 						else
-							menu.freeplaypage = 8;
+							menu.freeplaypage = 9;
 						if (menu.freeplaypage == 0)
 							menu.select = 14;
 						else if (menu.freeplaypage == 1)
@@ -1331,6 +1347,8 @@ void Menu_Tick(void)
 							menu.select = 9;
 						else if (menu.freeplaypage == 8)
 							menu.select = 2;
+						else if (menu.freeplaypage == 9)
+							menu.select = 3;
 					}
 				}
 				if (pad_state.press & PAD_DOWN)
@@ -1341,7 +1359,7 @@ void Menu_Tick(void)
 						menu.select++;
 					else
 					{
-						if (menu.freeplaypage <= 7)
+						if (menu.freeplaypage <= 8)
 							menu.freeplaypage += 1;
 						else
 							menu.freeplaypage = 0;
@@ -1353,7 +1371,7 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[5], 0x3fff);
-					if (menu.freeplaypage <= 7)
+					if (menu.freeplaypage <= 8)
 						menu.freeplaypage += 1;
 					else
 						menu.freeplaypage = 0;
@@ -1367,7 +1385,7 @@ void Menu_Tick(void)
 					if (menu.freeplaypage >= 1)
 						menu.freeplaypage -= 1;
 					else
-						menu.freeplaypage = 8;
+						menu.freeplaypage = 9;
 					menu.select = 0;
 					menu.scroll = 0;
 				}
@@ -1399,6 +1417,8 @@ void Menu_Tick(void)
 							menu.page_param.stage.id = menu_options7[menu.select].stage;
 						else if (menu.freeplaypage == 8)
 							menu.page_param.stage.id = menu_options8[menu.select].stage;
+						else if (menu.freeplaypage == 9)
+							menu.page_param.stage.id = menu_options9[menu.select].stage;
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
@@ -1426,6 +1446,8 @@ void Menu_Tick(void)
 							menu.page_param.stage.id = menu_options7[menu.select].stage;
 						else if (menu.freeplaypage == 8)
 							menu.page_param.stage.id = menu_options8[menu.select].stage;
+						else if (menu.freeplaypage == 9)
+							menu.page_param.stage.id = menu_options9[menu.select].stage;
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
@@ -1550,6 +1572,16 @@ void Menu_Tick(void)
 					//Draw text
 					menu.font_sus.draw(&menu.font_sus,
 						Menu_LowerIf2(menu_options8[i].text, menu.select != i),
+						36 + (y >> 2),
+						screen.SCREEN_HEIGHT2 + y - 8,
+						FontAlign_Left
+					);
+				}
+				else if (menu.freeplaypage == 9)
+				{
+					//Draw text
+					menu.font_sus.draw(&menu.font_sus,
+						Menu_LowerIf2(menu_options9[i].text, menu.select != i),
 						36 + (y >> 2),
 						screen.SCREEN_HEIGHT2 + y - 8,
 						FontAlign_Left
