@@ -482,7 +482,7 @@
 		//Song info
 		3, 6,
 		XA_VotingTime, 2,
-		"Voting Time", "Composer: punkett, JADS", "",
+		"Voting Time", "Composer: Punkett, JADS", "",
 		
 		StageId_Turbulence, 0
 	},
@@ -518,7 +518,7 @@
 		//Song info
 		3, 8,
 		XA_Victory, 2,
-		"Victory", "Composer: punkett", "",
+		"Victory", "Composer: Punkett", "",
 		
 		StageId_Victory, 0
 	},
@@ -995,4 +995,76 @@
 		"Torture", "Composer: Cval, JADS,", "                  Fluffyhairs, Ziffy",
 		
 		StageId_Torture, 0
+	},
+	{ //StageId_LemonLime (Lemon Lime)
+		//Characters
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+        {NULL},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
+		
+		//Stage background
+		Back_Week1_New,
+		
+		//Song info
+		6, 9,
+		XA_LemonLime, 0,
+		"Lemon Lime", "Composer: Rozebud", "",
+		
+		StageId_LemonLime, 0
+	},
+	{ //StageId_Chlorophyll (Chlorophyll)
+		//Characters
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+        {NULL},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
+		
+		//Stage background
+		Back_Week1_New,
+		
+		//Song info
+		6, 10,
+		XA_Chlorophyll, 2,
+		"Chlorophyll", "Composer: JADS", "",
+		
+		StageId_Chlorophyll, 0
+	},
+	{ //StageId_Inflorescence (Inflorescence)
+		//Characters
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+        {NULL},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
+		
+		//Stage background
+		Back_Week1_New,
+		
+		//Song info
+		6, 11,
+		XA_Inflorescence, 0,
+		"Inflorescence", "Composer: Rozebud", "",
+		
+		StageId_Inflorescence, 0
+	},
+	{ //StageId_Stargazer (Stargazer)
+		//Characters
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+        {NULL},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
+		
+		//Stage background
+		Back_Week1_New,
+		
+		//Song info
+		6, 12,
+		XA_Stargazer, 2,
+		"Stargazer", "Composer: Punkett", "",
+		
+		StageId_Stargazer, 0
 	},

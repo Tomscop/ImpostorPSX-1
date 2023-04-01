@@ -108,12 +108,17 @@ typedef enum
 	StageId_Chipping, //Chipping
 	StageId_Torture, //Torture
 	
+	StageId_LemonLime, //Lemon Lime
+	StageId_Chlorophyll, //Chlorophyll
+	StageId_Inflorescence, //Inflorescence
+	StageId_Stargazer, //Stargazer
+	
 	StageId_Temp, //Placeholder
 	
 	StageId_Max
 } StageId;
 
-#define StageId_LastVanilla StageId_Torture
+#define StageId_LastVanilla StageId_Stargazer
 
 typedef enum
 {

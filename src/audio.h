@@ -43,6 +43,8 @@ typedef enum
 	XA_27, //27
 	XA_28, //28
 	XA_29, //29
+	XA_30, //30
+	XA_31, //31
 	
 	XA_Max,
 } XA_File;
@@ -140,6 +142,12 @@ typedef enum
 	XA_Chipping, //Chipping
 	//29.XA
 	XA_Torture, //Torture
+	//30.XA
+	XA_LemonLime, //Lemon Lime
+	XA_Chlorophyll, //Chlorophyll
+	//31.XA
+	XA_Inflorescence, //Inflorescence
+	XA_Stargazer, //Stargazer
 	
 	XA_TrackMax,
 } XA_Track;

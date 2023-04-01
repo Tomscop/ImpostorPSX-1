@@ -182,6 +182,10 @@
 				<file name = "6.6evnt.cht" type = "data" source = "iso/music/torture/events.json.cht"/>
 				<file name = "6.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
 				<file name = "6.8n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-other.json.cht"/>
+				<file name = "6.9n.cht" type = "data" source = "iso/music/lemon-lime/lemon-lime-hard.json.cht"/>
+				<file name = "6.10n.cht" type = "data" source = "iso/music/chlorophyll/chlorophyll-hard.json.cht"/>
+				<file name = "6.11n.cht" type = "data" source = "iso/music/inflorescence/inflorescence-hard.json.cht"/>
+				<file name = "6.12n.cht" type = "data" source = "iso/music/stargazer/stargazer-hard.json.cht"/>
 			</dir>
 		
 			<!-- Character assets -->
@@ -279,6 +283,7 @@
 				<!-- Cval assets -->
 				<!-- Pip Torture assets -->
 				<!-- Cval Torture assets -->
+				<!-- Lime assets -->
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 			</dir>
 			
@@ -416,6 +421,8 @@
 				<!-- Rozebud -->
 				<!-- Kill!! -->
 				
+				<!-- O2 BG -->
+				
 				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 		    
@@ -521,6 +528,10 @@
 				<file name = "28.xa" type = "xa" source = "iso/music/28.xa"/>
 				<dummy sectors="128"/>
 				<file name = "29.xa" type = "xa" source = "iso/music/29.xa"/>
+				<dummy sectors="128"/>
+				<file name = "30.xa" type = "xa" source = "iso/music/30.xa"/>
+				<dummy sectors="128"/>
+				<file name = "31.xa" type = "xa" source = "iso/music/31.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

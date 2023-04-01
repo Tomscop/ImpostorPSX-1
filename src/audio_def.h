@@ -98,6 +98,12 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_28, XA_LENGTH(7909)}, //XA_Chipping
 	//29.XA
 	{XA_29, XA_LENGTH(12254)}, //XA_Torture
+	//30.XA
+	{XA_30, XA_LENGTH(9965)}, //XA_LemonLime
+	{XA_30, XA_LENGTH(13714)}, //XA_Chlorophyll
+	//31.XA
+	{XA_31, XA_LENGTH(12745)}, //XA_Inflorescence
+	{XA_31, XA_LENGTH(14000)}, //XA_Stargazer
 };
 
 static const char *xa_paths[] = {
@@ -132,6 +138,8 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\27.XA;1", //XA_27
 	"\\MUSIC\\28.XA;1", //XA_28
 	"\\MUSIC\\29.XA;1", //XA_29
+	"\\MUSIC\\30.XA;1", //XA_30
+	"\\MUSIC\\31.XA;1", //XA_31
 	NULL,
 };
 
@@ -233,6 +241,12 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"chipping", true}, //XA_Chipping
 	//29.XA
 	{"torture", true}, //XA_Torture
+	//30.XA
+	{"lemonlime", true}, //XA_LemonLime
+	{"chlorophyll", true}, //XA_Chlorophyll
+	//31.XA
+	{"inflorescence", true}, //XA_Inflorescence
+	{"stargazer", true}, //XA_Stargazer
 	
 	{NULL, false}
 };
