@@ -283,7 +283,7 @@
 				<!-- Cval assets -->
 				<!-- Pip Torture assets -->
 				<!-- Cval Torture assets -->
-				<!-- Lime assets -->
+				<file name = "jads.arc" type = "data" source = "iso/chars/jads/main.arc"/>
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 			</dir>
 			

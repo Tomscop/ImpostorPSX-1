@@ -2,25 +2,45 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "black",
-			"hname"   : "Black"
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/stages/poweroom/grayblack",
-	"outdir": "iso/stages/poweroom/",
-	"charname" : "Black",
+	"input":  "iso/chars/jads/LIME_GRTEEN",
+	"outdir": "iso/chars/jads/",
+	"charname" : "Jads",
 	"optimize" : false,
-	"optimizename" : "black",
+	"optimizename" : "jads",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		768,
 		0,
 		0,
-		485
+		481
 	],
 
 	"bpp" : 8,
-	"resize" : 0.18,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

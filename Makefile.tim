@@ -69,6 +69,7 @@ all: \
 	iso/chars/brown/main.arc \
 	iso/chars/dave/main.arc \
 	iso/chars/amogus/main.arc \
+	iso/chars/jads/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
@@ -343,6 +344,9 @@ iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim
 # Pip Torture
 
 # Cval Torture
+
+# Jads
+iso/chars/jads/main.arc: iso/chars/jads/idle0.tim iso/chars/jads/idle1.tim iso/chars/jads/idle2.tim iso/chars/jads/left0.tim iso/chars/jads/left1.tim iso/chars/jads/down0.tim iso/chars/jads/down1.tim iso/chars/jads/up0.tim iso/chars/jads/right0.tim iso/chars/jads/right1.tim 
 
 # Dad
 iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/chars/dad/left.tim iso/chars/dad/down.tim iso/chars/dad/up.tim iso/chars/dad/right.tim
