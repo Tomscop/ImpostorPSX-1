@@ -998,14 +998,14 @@
 	},
 	{ //StageId_LemonLime (Lemon Lime)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_O2_New,
 		
 		//Song info
 		6, 9,
@@ -1016,14 +1016,14 @@
 	},
 	{ //StageId_Chlorophyll (Chlorophyll)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_O2_New,
 		
 		//Song info
 		6, 10,
@@ -1034,14 +1034,14 @@
 	},
 	{ //StageId_Inflorescence (Inflorescence)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_O2_New,
 		
 		//Song info
 		6, 11,
@@ -1052,14 +1052,14 @@
 	},
 	{ //StageId_Stargazer (Stargazer)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_O2_New,
 		
 		//Song info
 		6, 12,

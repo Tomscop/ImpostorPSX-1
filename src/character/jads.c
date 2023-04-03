@@ -53,9 +53,9 @@ static const CharFrame char_jads_frame[] = {
   {Jads_ArcMain_Left0, {  0, 94,152, 96}, {217-39, 87+2}}, //6 left 2
   {Jads_ArcMain_Left1, {  0,  0,150, 96}, {215-39, 88+2}}, //7 left 3
 
-  {Jads_ArcMain_Down0, {  0,  0,151, 88}, {186-8, 81-4}}, //8 down 1
-  {Jads_ArcMain_Down0, {  0, 88,143, 90}, {182-8, 85-4}}, //9 down 2
-  {Jads_ArcMain_Down1, {  0,  0,143, 90}, {182-8, 85-4}}, //10 down 3
+  {Jads_ArcMain_Down0, {  0,  0,151, 88}, {186-12, 81-4}}, //8 down 1
+  {Jads_ArcMain_Down0, {  0, 88,143, 90}, {182-12, 85-4}}, //9 down 2
+  {Jads_ArcMain_Down1, {  0,  0,143, 90}, {182-12, 85-4}}, //10 down 3
 
   {Jads_ArcMain_Up0, {  0,  0,122,104}, {199-40,120-20}}, //11 up 1
   {Jads_ArcMain_Up0, {122,  0,120,102}, {198-40,118-20}}, //12 up 2
@@ -96,6 +96,214 @@ void Char_Jads_SetFrame(void *user, u8 frame)
 void Char_Jads_Tick(Character *character)
 {
 	Char_Jads *this = (Char_Jads*)character;
+	
+	//Camera Stuff
+	if (stage.stage_id == StageId_LemonLime)
+	{
+		if (stage.song_step == 120)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 270)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 280)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 334)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 344)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 384)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 448)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_step == 472)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 504)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 508)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+	}
+	if (stage.stage_id == StageId_Chlorophyll)
+	{
+		if (stage.song_step == 22)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 32)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 54)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 64)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 86)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 96)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 118)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 160)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 184)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 192)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 216)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 224)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 260)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 272)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 288)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 336)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 352)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 384)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 388)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 496)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 528)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 544)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 560)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 570)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 576)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 656)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 672)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 688)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 698)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 704)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 772)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 896)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 900)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1008)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1024)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1046)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1056)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1078)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1088)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1110)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1120)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1142)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1152)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1176)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1184)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1208)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1216)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1240)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1248)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1272)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+	}
+	if (stage.stage_id == StageId_Inflorescence)
+	{
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 200)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 216)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 232)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(1289,1024);
+		if (stage.song_step == 430)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 896)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1408)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+	}
+	if (stage.stage_id == StageId_Stargazer)
+	{
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 516)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 646)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1024)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1264)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1272)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1280)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1408)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1414)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1536)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1600)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_step == 1656)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+	}
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -143,14 +351,14 @@ Character *Char_Jads_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 4;
 
 	//health bar color
-	this->character.health_bar = 0xFFAD63D6;
+	this->character.health_bar = 0xFF66FF66;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-48,1);
+	this->character.focus_y = FIXED_DEC(-59,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

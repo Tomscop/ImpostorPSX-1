@@ -299,6 +299,212 @@ void Char_BF_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-84,1);
 		}
 	}
+	if (stage.stage_id == StageId_LemonLime)
+	{
+		if (stage.song_step == 120)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 270)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 280)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 334)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 344)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 384)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 448)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_step == 472)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 504)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 508)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+	}
+	if (stage.stage_id == StageId_Chlorophyll)
+	{
+		if (stage.song_step == 22)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 32)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 54)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 64)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 86)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 96)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 118)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 160)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 184)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 192)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 216)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 224)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1493,1024);
+		if (stage.song_step == 260)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 272)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 288)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 336)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 352)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 384)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 388)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 496)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 528)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 544)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 560)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 570)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 576)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 656)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 672)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 688)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 698)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 704)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 772)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 896)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 900)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1008)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1024)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1046)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1056)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1078)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1088)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1110)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1120)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1142)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1152)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1176)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1184)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1208)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1216)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1240)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1248)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1272)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+	}
+	if (stage.stage_id == StageId_Inflorescence)
+	{
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 200)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 216)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 232)
+			this->character.focus_zoom = FIXED_DEC(1153,1024);
+		if (stage.song_step == 248)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(1289,1024);
+		if (stage.song_step == 430)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 896)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1408)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+	}
+	if (stage.stage_id == StageId_Stargazer)
+	{
+		if (stage.song_step == 128)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 256)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 512)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 516)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 646)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 768)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1024)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1264)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1272)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1280)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1408)
+			this->character.focus_zoom = FIXED_DEC(1090,1024);
+		if (stage.song_step == 1414)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 1536)
+			this->character.focus_zoom = FIXED_DEC(1357,1024);
+		if (stage.song_step == 1600)
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		if (stage.song_step == 1656)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+	}
 	
 	if(character->animatable.anim  != CharAnim_Special1)
 	{
@@ -455,6 +661,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-85,1);
 	this->character.focus_y = FIXED_DEC(-95,1);
 	this->character.focus_zoom = FIXED_DEC(549,512);
+	}
+	else if ((stage.stage_id >= StageId_LemonLime) && (stage.stage_id <= StageId_Stargazer))
+	{
+	this->character.focus_x = FIXED_DEC(-34,1);
+	this->character.focus_y = FIXED_DEC(-68,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	}
 	else
 	{

@@ -120,6 +120,7 @@ all: \
 	iso/stages/idk/back.arc \
 	iso/stages/electric/back.arc \
 	iso/stages/office/back.arc \
+	iso/stages/o2/back.arc \
 	iso/stages/week1/back.arc \
 
 iso/%.tim: iso/%.png
@@ -458,6 +459,9 @@ iso/stages/electric/back.arc: iso/stages/electric/back0.tim iso/stages/electric/
 
 # Dave Office
 iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
+
+# O2
+iso/stages/o2/back.arc: iso/stages/o2/back0.tim iso/stages/o2/back1.tim
 
 # Week 1
 iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim

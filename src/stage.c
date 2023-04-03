@@ -129,6 +129,7 @@ static u32 Sounds[10];
 #include "stage/idk.h"
 #include "stage/electrical.h"
 #include "stage/daveoffice.h"
+#include "stage/o2.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
 
@@ -1772,6 +1773,7 @@ static void Stage_LoadState(void)
 		stage.bopintense2 = FIXED_DEC(15,1000);
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
+		stage.sbump = FIXED_UNIT;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
@@ -1827,7 +1829,13 @@ static void Stage_LoadState(void)
 		note_x[6] = FIXED_DEC(1000,1);
 		note_x[7] = FIXED_DEC(1000,1);
 	}
-
+	
+	//Initialize camera
+	if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
+			Stage_FocusCharacter(stage.opponent, FIXED_UNIT);
+	else
+			Stage_FocusCharacter(stage.player, FIXED_UNIT);
+	
 	//Check which stage should not have the camera sroll
 	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_Who) || (stage.song_step <= -1))
 		stage.cam_should_scroll = false;
@@ -1918,9 +1926,9 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	
 	//Initialize camera
 	if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
-			Stage_FocusCharacter(stage.opponent, FIXED_UNIT);
+		Stage_FocusCharacter(stage.opponent, FIXED_UNIT);
 	else
-			Stage_FocusCharacter(stage.player, FIXED_UNIT);
+		Stage_FocusCharacter(stage.player, FIXED_UNIT);
 
 	stage.camera.x = stage.camera.tx;
 	stage.camera.y = stage.camera.ty;
@@ -2468,6 +2476,13 @@ void Stage_Tick(void)
 				
 				//Bump screen
 				if (is_bump_step)
+				{
+					stage.bump += stage.bopintense1; //0.03
+					stage.charbump += stage.bopintense2; //0.015
+				}
+				//Inflorescence bop thing
+				//66-91,98-123,
+				if (((stage.stage_id == StageId_Inflorescence) && (firsthit == false) && ((stage.song_step & 0x3) == 0)) && (((stage.song_step >= 66) && (stage.song_step <= 91)) || ((stage.song_step >= 98) && (stage.song_step <= 123))))
 				{
 					stage.bump += stage.bopintense1; //0.03
 					stage.charbump += stage.bopintense2; //0.015
