@@ -82,6 +82,7 @@ SRCS = src/main.c \
 	src/character/gfpixel.c \
 	src/character/gfv1.c \
 	src/stage/polus.c \
+	src/stage/mira.c \
 	src/stage/reactor.c \
 	src/stage/ejected.c \
 	src/stage/airship.c \

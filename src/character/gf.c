@@ -135,7 +135,8 @@ void Char_GF_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_GF_SetFrame);
-	Character_DrawParallax(character, &this->tex, &char_gf_frame[this->frame], parallax);
+	if (stage.lights != 1)
+		Character_DrawParallax(character, &this->tex, &char_gf_frame[this->frame], parallax);
 	
 	//Tick speakers
 	Speaker_Tick(&this->speaker, character->x, character->y, parallax);

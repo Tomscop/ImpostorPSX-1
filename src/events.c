@@ -54,6 +54,26 @@ static void Events_Check(Event* event)
 				stage.reactorspd = FIXED_DEC(1024,1);
 			break;
 		}
+		case EVENTS_FLAG_LIGHTS1: //Lights out!!
+		{
+			stage.lights = 1;
+			stage.flash = FIXED_DEC(255,1);
+			stage.flashspd = FIXED_DEC(1024,1);
+			stage.player->health_bar = 0xFFFFFFFF;
+			stage.opponent->health_bar = 0xFF000000;
+			stage.player->health_i = 7;
+			stage.opponent->health_i = 8;
+			break;
+		}
+		case EVENTS_FLAG_LIGHTS2: //Lights on!!
+		{
+			stage.lights = 2;
+			stage.player->health_bar = 0xFF29B5D6;
+			stage.opponent->health_bar = 0xFF1F6B2B;
+			stage.player->health_i = 20;
+			stage.opponent->health_i = 4;
+			break;
+		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
 		{
 			//Value 1

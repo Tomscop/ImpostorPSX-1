@@ -330,7 +330,7 @@
 				<file name = "snow.arc" type = "data" source = "iso/stages/polus/snow.arc"/>
 				<file name = "people.arc" type = "data" source = "iso/stages/polus/people.arc"/>
 				
-				<!-- Mira BG -->
+				<file name = "mira.arc" type = "data" source = "iso/stages/mira/back.arc"/>
 				<!-- Sax -->
 				
 				<file name = "reactor.arc" type = "data" source = "iso/stages/reactor/back.arc"/>

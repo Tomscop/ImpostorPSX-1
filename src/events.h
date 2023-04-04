@@ -19,6 +19,8 @@
 #define EVENTS_FLAG_FLASH     (1 << 5) //Flash
 #define EVENTS_FLAG_BEEP      (1 << 6) //Reactor Beep
 #define EVENTS_FLAG_BOP       (1 << 7) //Alter Camera Bop
+#define EVENTS_FLAG_LIGHTS1   (1 << 8) //Lights off
+#define EVENTS_FLAG_LIGHTS2   (1 << 9) //Lights on
 
 #define EVENTS_FLAG_PLAYED    (1 << 15) //Event has been already played
 

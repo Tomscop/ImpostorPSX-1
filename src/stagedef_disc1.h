@@ -61,7 +61,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Mira_New,
 		
 		//Song info
 		1, 4,
@@ -79,7 +79,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Mira_New,
 		
 		//Song info
 		1, 5,

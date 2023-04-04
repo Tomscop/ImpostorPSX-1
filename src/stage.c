@@ -110,6 +110,7 @@ static u32 Sounds[10];
 #include "character/gfv1.h"
 //Stages
 #include "stage/polus.h"
+#include "stage/mira.h"
 #include "stage/reactor.h"
 #include "stage/ejected.h"
 #include "stage/airship.h"
@@ -1767,6 +1768,7 @@ static void Stage_LoadState(void)
 		stage.paused = false;
 		firsthit = false;
 		stage.black = false;
+		stage.lights = 0;
 		stage.bop1 = 0xF;
 		stage.bop2 = 0;
 		stage.bopintense1 = FIXED_DEC(30,1000);
@@ -2252,17 +2254,16 @@ void Stage_Tick(void)
 			StageInfo_Draw();
 			
 			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
-			{
 				show = false;
-			}
 			else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 15) || (stage.song_step >= 3920)))
-			{
 				show = false;
-			}
+			else if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1600))
+				show = false;
 			else
-			{
 				show = true;
-			}
+			
+			if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1632))
+				stage.black = true;
 			
 			if (stage.prefs.botplay)
 			{
