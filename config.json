@@ -6,21 +6,21 @@
 			"hname"   : "Powers"
 		}
 	],
-	"input":  "iso/stages/mira/cyan_toogus",
-	"outdir": "iso/stages/mira/",
+	"input":  "iso/chars/mira/cyan_toogus",
+	"outdir": "iso/chars/mira/",
 	"charname" : "Powers",
 	"optimize" : false,
 	"optimizename" : "powers",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		768,
 		0,
 		0,
-		486
+		481
 	],
 
 	"bpp" : 4,
-	"resize" : 0.15,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

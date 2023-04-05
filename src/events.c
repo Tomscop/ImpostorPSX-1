@@ -74,6 +74,18 @@ static void Events_Check(Event* event)
 			stage.opponent->health_i = 4;
 			break;
 		}
+		case EVENTS_FLAG_HUDFADE: //HUD Fade!!
+		{
+			if ((event->value1 >> FIXED_SHIFT) == 0)
+			{
+				stage.hudfade = 0;
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 1)
+			{
+				stage.hudfade = 1;
+			}
+			break;
+		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
 		{
 			//Value 1

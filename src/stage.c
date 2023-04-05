@@ -1163,7 +1163,12 @@ static void Stage_DrawNotes(void)
 							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							{
+								if (stage.opacity == 100)
+									Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+								else
+									Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+							}
 						}
 					}
 				}
@@ -1194,7 +1199,12 @@ static void Stage_DrawNotes(void)
 							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							{
+								if (stage.opacity == 100)
+									Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+								else
+									Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+							}
 						}
 					}
 				}
@@ -1224,7 +1234,12 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						{
+							if (stage.opacity == 100)
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							else
+								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+						}
 				}
 				
 				//Draw note fire
@@ -1248,7 +1263,12 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						{
+							if (stage.opacity == 100)
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							else
+								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+						}
 				}
 				
 			}
@@ -1277,7 +1297,12 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						{
+							if (stage.opacity == 100)
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							else
+								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+						}
 				}
 			}
 		}
@@ -1776,6 +1801,8 @@ static void Stage_LoadState(void)
 		stage.bump = FIXED_UNIT;
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
+		stage.opacity = 100;
+		stage.hudfade = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
@@ -2268,6 +2295,15 @@ void Stage_Tick(void)
 				stage.black = true;
 			else
 				stage.black = false;
+			
+			//HUD Fade stuff
+			if (stage.paused == false)
+			{
+				if ((stage.hudfade == 0) && (stage.opacity <= 99))
+					stage.opacity++;
+				else if ((stage.hudfade == 1) && (stage.opacity >= 1))
+					stage.opacity--;
+			}
 			
 			if (stage.prefs.botplay)
 			{
@@ -2841,7 +2877,12 @@ void Stage_Tick(void)
 						if (stage.prefs.middlescroll)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						{
+							if (stage.opacity == 100)
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+							else
+								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
+						}
 					}
 				}
 			}

@@ -289,7 +289,8 @@ typedef struct
 	fixed_t flash, flashspd;
 	fixed_t reactor, reactorspd;
 	fixed_t bop1, bop2, bopintense1, bopintense2;
-	int defeatmiss, lights;
+	int defeatmiss, lights, hudfade;
+	u16 opacity;
 	
 	//if stage have intro or no
 	boolean intro;
