@@ -54,11 +54,11 @@
 	},
 	{ //StageId_SussusToogus (Sussus Toogus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(356,1),  FIXED_DEC(177,1)},
         {NULL},
-		{Char_GreenST_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_GreenST_New, FIXED_DEC(208,1),  FIXED_DEC(175,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(246,1),  FIXED_DEC(77,1)},
 		
 		//Stage background
 		Back_Mira_New,
@@ -72,11 +72,11 @@
 	},
 	{ //StageId_LightsDown (Lights Down)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(356,1),  FIXED_DEC(177,1)},
         {NULL},
 		{Char_Green_New, FIXED_DEC(-18,1),  FIXED_DEC(95,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(246,1),  FIXED_DEC(77,1)},
 		
 		//Stage background
 		Back_Mira_New,

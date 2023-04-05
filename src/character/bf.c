@@ -544,6 +544,10 @@ void Char_BF_Tick(Character *character)
 	//Stage specific animations
 		switch (stage.stage_id)
 		{
+			case StageId_SussusToogus: //Beep Bap Bo
+				if (stage.song_step == 1546)
+					character->set_anim(character, PlayerAnim_Peace);
+				break;
 			case StageId_Dlow: //WHAT THE FUCK
 				if (stage.song_step == 1424)
 					character->set_anim(character, CharAnim_Special1);
@@ -619,6 +623,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-54,1);
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(509,512);
+	}
+	if (stage.stage_id == StageId_SussusToogus)
+	{
+	this->character.focus_x = FIXED_DEC(-64,1);
+	this->character.focus_y = FIXED_DEC(-77,1);
+	this->character.focus_zoom = FIXED_DEC(1228,1024);
 	}
 	else if ((stage.stage_id >= StageId_Mando) && (stage.stage_id <= StageId_Oversight))
 	{

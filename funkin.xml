@@ -331,7 +331,7 @@
 				<file name = "people.arc" type = "data" source = "iso/stages/polus/people.arc"/>
 				
 				<file name = "mira.arc" type = "data" source = "iso/stages/mira/back.arc"/>
-				<!-- Sax -->
+				<file name = "powerss.arc" type = "data" source = "iso/stages/mira/powers.arc"/>
 				
 				<file name = "reactor.arc" type = "data" source = "iso/stages/reactor/back.arc"/>
 				<file name = "ball.arc" type = "data" source = "iso/stages/reactor/ball.arc"/>

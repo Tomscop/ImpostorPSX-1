@@ -2253,6 +2253,7 @@ void Stage_Tick(void)
 			
 			StageInfo_Draw();
 			
+			//Show hud stuff
 			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
 				show = false;
 			else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 15) || (stage.song_step >= 3920)))
@@ -2262,8 +2263,11 @@ void Stage_Tick(void)
 			else
 				show = true;
 			
+			//Complete black screen stuff
 			if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1632))
 				stage.black = true;
+			else
+				stage.black = false;
 			
 			if (stage.prefs.botplay)
 			{

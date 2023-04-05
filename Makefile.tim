@@ -93,6 +93,7 @@ all: \
 	iso/stages/polus/snow.arc \
 	iso/stages/polus/people.arc \
 	iso/stages/mira/back.arc \
+	iso/stages/mira/powers.arc \
 	iso/stages/reactor/back.arc \
 	iso/stages/reactor/ball.arc \
 	iso/stages/ejected/back.arc \
@@ -399,7 +400,8 @@ iso/stages/reactor/back.arc: iso/stages/reactor/back0.tim iso/stages/reactor/bac
 iso/stages/reactor/ball.arc: iso/stages/reactor/ball0.tim iso/stages/reactor/ball1.tim iso/stages/reactor/ball2.tim iso/stages/reactor/ball3.tim iso/stages/reactor/ball4.tim iso/stages/reactor/ball5.tim iso/stages/reactor/ball6.tim 
 
 # Mira
-iso/stages/mira/back.arc: iso/stages/mira/back0.tim iso/stages/mira/back1.tim iso/stages/mira/back2.tim
+iso/stages/mira/back.arc: iso/stages/mira/back0.tim iso/stages/mira/back1.tim iso/stages/mira/back2.tim iso/stages/mira/back3.tim
+iso/stages/mira/powers.arc: iso/stages/mira/powers0.tim iso/stages/mira/powers1.tim iso/stages/mira/powers2.tim iso/stages/mira/powers3.tim iso/stages/mira/powers4.tim iso/stages/mira/powers5.tim iso/stages/mira/powers6.tim iso/stages/mira/powers7.tim iso/stages/mira/powers8.tim iso/stages/mira/powers9.tim 
 
 # Ejected
 iso/stages/ejected/back.arc: iso/stages/ejected/back0.tim iso/stages/ejected/back1.tim iso/stages/ejected/back2.tim iso/stages/ejected/lines.tim

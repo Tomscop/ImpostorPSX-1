@@ -131,6 +131,19 @@ void Char_GreenST_Tick(Character *character)
 {
 	Char_GreenST *this = (Char_GreenST*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_SussusToogus)
+	{
+		if (stage.song_step == 1000)
+		{
+			this->character.focus_x = FIXED_DEC(84,1);
+		}
+		if (stage.song_step == 1024)
+		{
+			this->character.focus_x = FIXED_DEC(-25,1);
+		}
+	}
+	
 	if((character->animatable.anim  != CharAnim_Special1) && (character->animatable.anim  != CharAnim_Special2))
 	{
 	   //Perform idle dance
@@ -198,9 +211,9 @@ Character *Char_GreenST_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF1F6B2B;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-25,1);
+	this->character.focus_y = FIXED_DEC(-75,1);
+	this->character.focus_zoom = FIXED_DEC(1228,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	
