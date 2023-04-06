@@ -1,16 +1,41 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "powers",
-			"hname"   : "Powers"
+			"fnfanim" : "danceLeft",
+			"imgname" : "idlell",
+			"hname"   : "IdleLL"
+		},
+		{
+			"fnfanim" : "danceRight",
+			"imgname" : "idlerr",
+			"hname"   : "IdleRL"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "leftl",
+			"hname"   : "LeftL"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "downl",
+			"hname"   : "DownL"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "upl",
+			"hname"   : "UpL"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "rightl",
+			"hname"   : "RightL"
 		}
 	],
-	"input":  "iso/chars/mira/cyan_toogus",
-	"outdir": "iso/chars/mira/",
-	"charname" : "Powers",
+	"input":  "iso/chars/green/whitegreen",
+	"outdir": "iso/chars/green/",
+	"charname" : "Green",
 	"optimize" : false,
-	"optimizename" : "powers",
+	"optimizename" : "green",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768,

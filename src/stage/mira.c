@@ -203,6 +203,10 @@ void Back_Mira_DrawFG(StageBack *back)
 				powersmove = 0;
 			}
 		}
+		if (stage.song_step == 896)
+			stage.hudfade = 1;
+		if (stage.song_step == 1024)
+			stage.hudfade = 0;
 	}
 }
 

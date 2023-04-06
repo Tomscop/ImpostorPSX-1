@@ -193,7 +193,7 @@
 				<!-- Players -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
-				<!-- Boyfriend Lights assets -->
+				<file name = "bflights.arc" type = "data" source = "iso/chars/bflights/main.arc"/>
 				<file name = "bfreac.arc" type = "data" source = "iso/chars/bfreac/main.arc"/>
 				<file name = "bfeject.arc" type = "data" source = "iso/chars/bfeject/main.arc"/>
 				<!-- Boyfriend Danger assets -->

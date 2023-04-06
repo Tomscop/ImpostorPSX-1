@@ -624,7 +624,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(509,512);
 	}
-	if (stage.stage_id == StageId_SussusToogus)
+	else if (stage.stage_id == StageId_SussusToogus)
 	{
 	this->character.focus_x = FIXED_DEC(-64,1);
 	this->character.focus_y = FIXED_DEC(-77,1);

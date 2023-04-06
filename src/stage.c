@@ -51,6 +51,7 @@ static u32 Sounds[10];
 //Players
 #include "character/bf.h"
 #include "character/bfghost.h"
+#include "character/bflights.h"
 #include "character/bfreactor.h"
 #include "character/bfejected.h"
 #include "character/bfdefeat.h"
@@ -1163,12 +1164,7 @@ static void Stage_DrawNotes(void)
 							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
-							{
-								if (stage.opacity == 100)
-									Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-								else
-									Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-							}
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 						}
 					}
 				}
@@ -1199,12 +1195,7 @@ static void Stage_DrawNotes(void)
 							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
-							{
-								if (stage.opacity == 100)
-									Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-								else
-									Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-							}
+								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 						}
 					}
 				}
@@ -1234,12 +1225,7 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-						{
-							if (stage.opacity == 100)
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-							else
-								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-						}
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 				
 				//Draw note fire
@@ -1263,12 +1249,7 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-						{
-							if (stage.opacity == 100)
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-							else
-								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-						}
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 				
 			}
@@ -1297,12 +1278,7 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-						{
-							if (stage.opacity == 100)
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-							else
-								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-						}
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 			}
 		}
@@ -2281,7 +2257,11 @@ void Stage_Tick(void)
 			StageInfo_Draw();
 			
 			//Show hud stuff
-			if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
+			if (stage.hudfade == 0)
+				show = true;
+			else if (stage.hudfade == 1)
+				show = false;
+			else if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
 				show = false;
 			else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 15) || (stage.song_step >= 3920)))
 				show = false;
@@ -2295,15 +2275,6 @@ void Stage_Tick(void)
 				stage.black = true;
 			else
 				stage.black = false;
-			
-			//HUD Fade stuff
-			if (stage.paused == false)
-			{
-				if ((stage.hudfade == 0) && (stage.opacity <= 99))
-					stage.opacity++;
-				else if ((stage.hudfade == 1) && (stage.opacity >= 1))
-					stage.opacity--;
-			}
 			
 			if (stage.prefs.botplay)
 			{
@@ -2877,12 +2848,7 @@ void Stage_Tick(void)
 						if (stage.prefs.middlescroll)
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
-						{
-							if (stage.opacity == 100)
-								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
-							else
-								Stage_BlendTexV2(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 0, stage.opacity);
-						}
+							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 					}
 				}
 			}
