@@ -68,6 +68,7 @@ all: \
 	iso/chars/nuzzus/main.arc \
 	iso/chars/tobyfox/main.arc \
 	iso/chars/brown/main.arc \
+	iso/chars/dripostr/main.arc \
 	iso/chars/dave/main.arc \
 	iso/chars/amogus/main.arc \
 	iso/chars/jads/main.arc \
@@ -143,7 +144,7 @@ iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf
 iso/chars/bfghost/main.arc: iso/chars/bfghost/idle0.tim iso/chars/bfghost/idle1.tim iso/chars/bfghost/idle2.tim iso/chars/bfghost/left0.tim iso/chars/bfghost/left1.tim iso/chars/bfghost/left2.tim iso/chars/bfghost/down0.tim iso/chars/bfghost/up0.tim iso/chars/bfghost/up1.tim iso/chars/bfghost/up2.tim iso/chars/bfghost/right0.tim iso/chars/bfghost/right1.tim iso/chars/bfghost/right2.tim iso/chars/bfghost/right3.tim iso/chars/bfghost/right4.tim iso/chars/bfghost/right5.tim iso/chars/bfghost/right6.tim iso/chars/bfghost/right7.tim iso/chars/bfghost/right8.tim iso/chars/bfghost/leftm0.tim iso/chars/bfghost/leftm1.tim iso/chars/bfghost/leftm2.tim iso/chars/bfghost/downm0.tim iso/chars/bfghost/downm1.tim iso/chars/bfghost/upm0.tim iso/chars/bfghost/upm1.tim iso/chars/bfghost/rightm0.tim iso/chars/bfghost/rightm1.tim iso/chars/bfghost/rightm2.tim 
 
 # BF Lights
-iso/chars/bflights/main.arc: iso/chars/bflights/bf0.tim iso/chars/bflights/bf1.tim iso/chars/bflights/bf2.tim iso/chars/bflights/bf3.tim iso/chars/bflights/bf4.tim iso/chars/bflights/bf5.tim iso/chars/bflights/bf6.tim iso/chars/bflights/idle0.tim iso/chars/bflights/idle1.tim iso/chars/bflights/left0.tim iso/chars/bflights/down0.tim iso/chars/bflights/up0.tim iso/chars/bflights/right0.tim iso/chars/bflights/leftm0.tim iso/chars/bflights/downm0.tim iso/chars/bflights/upm0.tim iso/chars/bflights/rightm0.tim 
+iso/chars/bflights/main.arc: iso/chars/bflights/bf3.tim iso/chars/bflights/bf4.tim iso/chars/bflights/idle0.tim iso/chars/bflights/idle1.tim iso/chars/bflights/left0.tim iso/chars/bflights/down0.tim iso/chars/bflights/up0.tim iso/chars/bflights/right0.tim iso/chars/bflights/leftm0.tim iso/chars/bflights/downm0.tim iso/chars/bflights/upm0.tim iso/chars/bflights/rightm0.tim 
 
 # BF Reactor
 iso/chars/bfreac/main.arc: iso/chars/bfreac/idle0.tim iso/chars/bfreac/idle1.tim iso/chars/bfreac/left0.tim iso/chars/bfreac/down0.tim iso/chars/bfreac/up0.tim iso/chars/bfreac/right0.tim iso/chars/bfreac/leftm0.tim iso/chars/bfreac/downm0.tim iso/chars/bfreac/upm0.tim iso/chars/bfreac/rightm0.tim 
@@ -331,6 +332,7 @@ iso/chars/tobyfox/main.arc: iso/chars/tobyfox/idle0.tim iso/chars/tobyfox/idle1.
 iso/chars/brown/main.arc: iso/chars/brown/idle0.tim iso/chars/brown/idle1.tim iso/chars/brown/idle2.tim iso/chars/brown/idle3.tim iso/chars/brown/idle4.tim iso/chars/brown/idle5.tim iso/chars/brown/left0.tim iso/chars/brown/left1.tim iso/chars/brown/down0.tim iso/chars/brown/down1.tim iso/chars/brown/up0.tim iso/chars/brown/up1.tim iso/chars/brown/up2.tim iso/chars/brown/right0.tim 
 
 # Drippostor
+iso/chars/dripostr/main.arc: iso/chars/dripostr/idle0.tim iso/chars/dripostr/idle1.tim iso/chars/dripostr/idle2.tim iso/chars/dripostr/idle3.tim iso/chars/dripostr/idle4.tim iso/chars/dripostr/left0.tim iso/chars/dripostr/left1.tim iso/chars/dripostr/left2.tim iso/chars/dripostr/left3.tim iso/chars/dripostr/down0.tim iso/chars/dripostr/down1.tim iso/chars/dripostr/up0.tim iso/chars/dripostr/up1.tim iso/chars/dripostr/right0.tim iso/chars/dripostr/right1.tim iso/chars/dripostr/right2.tim iso/chars/dripostr/right3.tim iso/chars/dripostr/right4.tim 
 
 # Dave
 iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/chars/dave/idle2.tim iso/chars/dave/idle3.tim iso/chars/dave/left0.tim iso/chars/dave/left1.tim iso/chars/dave/down0.tim iso/chars/dave/down1.tim iso/chars/dave/up0.tim iso/chars/dave/up1.tim iso/chars/dave/right0.tim iso/chars/dave/jump0.tim iso/chars/dave/jump1.tim iso/chars/dave/jump2.tim iso/chars/dave/jump3.tim iso/chars/dave/jump4.tim iso/chars/dave/jump5.tim iso/chars/dave/jump6.tim iso/chars/dave/jump7.tim iso/chars/dave/jump8.tim iso/chars/dave/jump9.tim iso/chars/dave/jump10.tim 

@@ -72,8 +72,8 @@
 	},
 	{ //StageId_LightsDown (Lights Down)
 		//Characters
+		{Char_BF_New,    FIXED_DEC(356,1),  FIXED_DEC(177,1)},
 		{Char_BFLights_New,    FIXED_DEC(356,1),  FIXED_DEC(177,1)},
-        {NULL},
 		{Char_Green_New, FIXED_DEC(215,1),  FIXED_DEC(174,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(246,1),  FIXED_DEC(77,1)},
@@ -873,7 +873,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Drippostor_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		

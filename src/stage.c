@@ -95,6 +95,7 @@ static u32 Sounds[10];
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
 #include "character/brown.h"
+#include "character/drippostor.h"
 #include "character/dave.h"
 #include "character/amogus.h"
 #include "character/jads.h"
@@ -2257,9 +2258,7 @@ void Stage_Tick(void)
 			StageInfo_Draw();
 			
 			//Show hud stuff
-			if (stage.hudfade == 0)
-				show = true;
-			else if (stage.hudfade == 1)
+			if (stage.hudfade == 1)
 				show = false;
 			else if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1155))
 				show = false;
@@ -2893,7 +2892,13 @@ void Stage_Tick(void)
 			StageTimer_Tick();
 			
 			//Character Switches
-			if (stage.stage_id == StageId_DoubleKill)
+			if (stage.stage_id == StageId_LightsDown)
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+			}
+			else if (stage.stage_id == StageId_DoubleKill)
 			{
 				if ((stage.song_step == 271) || (stage.song_step == 527) || (stage.song_step == 1071) || (stage.song_step == 1135) || (stage.song_step == 1695) || (stage.song_step == 2607) || (stage.song_step == 2799) || (stage.song_step == 2943) || (stage.song_step == 3071)) //white
 				{

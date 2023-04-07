@@ -68,6 +68,7 @@ SRCS = src/main.c \
 	src/character/nuzzus.c \
 	src/character/tobyfox.c \
 	src/character/brown.c \
+	src/character/drippostor.c \
 	src/character/dave.c \
 	src/character/amogus.c \
 	src/character/jads.c \

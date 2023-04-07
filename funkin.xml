@@ -275,7 +275,7 @@
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>
 				<file name = "brown.arc" type = "data" source = "iso/chars/brown/main.arc"/>
-				<!-- Drippostor assets -->
+				<file name = "dripostr.arc" type = "data" source = "iso/chars/dripostr/main.arc"/>
 				<file name = "dave.arc" type = "data" source = "iso/chars/dave/main.arc"/>
 				<!-- Monotone Doc assets -->
 				<!-- Fabs assets -->

@@ -12,16 +12,12 @@
 #include "../random.h"
 #include "../main.h"
 
+boolean lights;
 //Boyfriend Lights player types
 enum
 {
-	BFLights_ArcMain_BFLights0,
-	BFLights_ArcMain_BFLights1,
-	BFLights_ArcMain_BFLights2,
 	BFLights_ArcMain_BFLights3,
 	BFLights_ArcMain_BFLights4,
-	BFLights_ArcMain_BFLights5,
-	BFLights_ArcMain_BFLights6,
   BFLights_ArcMain_Idle0,
   BFLights_ArcMain_Idle1,
   BFLights_ArcMain_Left0,
@@ -53,44 +49,6 @@ typedef struct
 
 //Boyfriend Lights player definitions
 static const CharFrame char_bflights_frame[] = {
-	{BFLights_ArcMain_BFLights0, {  0,   0, 102,  99}, { 53,  92}}, //0 idle 1
-	{BFLights_ArcMain_BFLights0, {103,   0, 102,  99}, { 53,  92}}, //1 idle 2
-	{BFLights_ArcMain_BFLights0, {  0, 100, 102, 101}, { 53,  94}}, //2 idle 3
-	{BFLights_ArcMain_BFLights0, {103, 100, 103, 104}, { 53,  97}}, //3 idle 4
-	{BFLights_ArcMain_BFLights1, {  0,   0, 103, 104}, { 53,  97}}, //4 idle 5
-	
-	{BFLights_ArcMain_BFLights1, {104,   0,  96, 102}, { 56,  95}}, //5 left 1
-	{BFLights_ArcMain_BFLights1, {  0, 105,  94, 102}, { 54,  95}}, //6 left 2
-	
-	{BFLights_ArcMain_BFLights1, { 95, 103,  94,  89}, { 52,  82}}, //7 down 1
-	{BFLights_ArcMain_BFLights2, {  0,   0,  94,  90}, { 52,  83}}, //8 down 2
-	
-	{BFLights_ArcMain_BFLights2, { 95,   0,  93, 112}, { 41, 104}}, //9 up 1
-	{BFLights_ArcMain_BFLights2, {  0,  91,  94, 111}, { 42, 103}}, //10 up 2
-	
-	{BFLights_ArcMain_BFLights2, { 95, 113, 102, 102}, { 41,  95}}, //11 right 1
-	{BFLights_ArcMain_BFLights3, {  0,   0, 102, 102}, { 41,  95}}, //12 right 2
-	
-	{BFLights_ArcMain_BFLights3, {103,   0,  99, 105}, { 54,  98}}, //13 peace 1
-	{BFLights_ArcMain_BFLights3, {  0, 103, 104, 103}, { 54,  96}}, //14 peace 2
-	{BFLights_ArcMain_BFLights3, {105, 106, 104, 104}, { 54,  97}}, //15 peace 3
-	
-	{BFLights_ArcMain_BFLights4, {  0,  0,102,103}, { 53,  96}}, //16 shock
-	
-	{BFLights_ArcMain_BFLights5, {  0,   0,  93, 108}, { 52, 101}}, //17 left miss 1
-	{BFLights_ArcMain_BFLights5, { 94,   0,  93, 108}, { 52, 101}}, //18 left miss 2
-	
-	{BFLights_ArcMain_BFLights5, {  0, 109,  95,  98}, { 50,  90}}, //19 down miss 1
-	{BFLights_ArcMain_BFLights5, { 96, 109,  95,  97}, { 50,  89}}, //20 down miss 2
-	
-	{BFLights_ArcMain_BFLights6, {  0,   0,  90, 107}, { 44,  99}}, //21 up miss 1
-	{BFLights_ArcMain_BFLights6, { 91,   0,  89, 108}, { 44, 100}}, //22 up miss 2
-	
-	{BFLights_ArcMain_BFLights6, {  0, 108,  99, 108}, { 42, 101}}, //23 right miss 1
-	{BFLights_ArcMain_BFLights6, {100, 109, 101, 108}, { 43, 101}}, //24 right miss 2
-};
-
-static const CharFrame char_bflights_frame2[] = {
   {BFLights_ArcMain_Idle0, {  0,  0,102, 99}, {159-105,155-63}}, //0 idle 1
   {BFLights_ArcMain_Idle0, {102,  0,103,100}, {159-105,155-63}}, //1 idle 2
   {BFLights_ArcMain_Idle0, {  0,100,103,100}, {158-105,155-63}}, //2 idle 3
@@ -159,20 +117,10 @@ void Char_BFLights_SetFrame(void *user, u8 frame)
 	//Check if this is a new frame
 	if (frame != this->frame)
 	{
-		if (stage.lights != 1)
-		{
 		//Check if new art shall be loaded
 		const CharFrame *cframe = &char_bflights_frame[this->frame = frame];
 		if (cframe->tex != this->tex_id)
 			Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe->tex], 0);
-		}
-		else
-		{
-		//Check if new art shall be loaded
-		const CharFrame *cframe = &char_bflights_frame2[this->frame = frame];
-		if (cframe->tex != this->tex_id)
-			Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe->tex], 0);
-		}
 	}
 }
 
@@ -219,10 +167,8 @@ void Char_BFLights_Tick(Character *character)
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFLights_SetFrame);
 	if (stage.song_step <= 1599)
 	{
-		if (stage.lights != 1)
+		if (stage.lights == 1)
 			Character_Draw(character, &this->tex, &char_bflights_frame[this->frame]);
-		else
-			Character_Draw(character, &this->tex, &char_bflights_frame2[this->frame]);
 	}
 }
 
@@ -281,13 +227,8 @@ Character *Char_BFLights_New(fixed_t x, fixed_t y)
 	this->arc_main = IO_Read("\\PLAYER\\BFLIGHTS.ARC;1");
 		
 	const char **pathp = (const char *[]){
-		"bf0.tim",   //BFLights_ArcMain_BFLights0
-		"bf1.tim",   //BFLights_ArcMain_BFLights1
-		"bf2.tim",   //BFLights_ArcMain_BFLights2
-		"bf3.tim",   //BFLights_ArcMain_BFLights3
-		"bf4.tim",   //BFLights_ArcMain_BFLights4
-		"bf5.tim",   //BFLights_ArcMain_BFLights5
-		"bf6.tim",   //BFLights_ArcMain_BFLights6
+	"bf3.tim",   //BFLights_ArcMain_BFLights3
+	"bf4.tim",   //BFLights_ArcMain_BFLights4
   "idle0.tim",
   "idle1.tim",
   "left0.tim",

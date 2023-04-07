@@ -558,8 +558,9 @@ void Char_BF_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
-	if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
-		Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
+	if (stage.lights != 1)
+		if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
+			Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
 	if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407)))
 		Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 128, 125, 126);
 }
@@ -624,7 +625,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(509,512);
 	}
-	else if (stage.stage_id == StageId_SussusToogus)
+	else if ((stage.stage_id >= StageId_SussusToogus) && (stage.stage_id <= StageId_LightsDown))
 	{
 	this->character.focus_x = FIXED_DEC(-64,1);
 	this->character.focus_y = FIXED_DEC(-77,1);

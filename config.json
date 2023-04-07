@@ -1,41 +1,36 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "idlell",
-			"hname"   : "IdleLL"
-		},
-		{
-			"fnfanim" : "danceRight",
-			"imgname" : "idlerr",
-			"hname"   : "IdleRL"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "leftl",
-			"hname"   : "LeftL"
+			"imgname" : "left",
+			"hname"   : "Left"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "downl",
-			"hname"   : "DownL"
+			"imgname" : "down",
+			"hname"   : "Down"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "upl",
-			"hname"   : "UpL"
+			"imgname" : "up",
+			"hname"   : "Up"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "rightl",
-			"hname"   : "RightL"
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/green/whitegreen",
-	"outdir": "iso/chars/green/",
-	"charname" : "Green",
+	"input":  "iso/chars/dripostr/drippy",
+	"outdir": "iso/chars/dripostr/",
+	"charname" : "Dripostor",
 	"optimize" : false,
-	"optimizename" : "green",
+	"optimizename" : "dripostor",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768,
@@ -44,7 +39,7 @@
 		481
 	],
 
-	"bpp" : 4,
+	"bpp" : 8,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
