@@ -39,6 +39,7 @@ all: \
 	iso/chars/bfv1/main.arc \
 	iso/chars/blueow/main.arc \
 	iso/chars/kid/main.arc \
+	iso/chars/bfdrip/main.arc \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
@@ -202,6 +203,7 @@ iso/chars/blueow/main.arc: iso/chars/blueow/idle0.tim iso/chars/blueow/left0.tim
 iso/chars/kid/main.arc: iso/chars/kid/idle0.tim iso/chars/kid/idle1.tim iso/chars/kid/idle2.tim iso/chars/kid/left0.tim iso/chars/kid/left1.tim iso/chars/kid/down0.tim iso/chars/kid/down1.tim iso/chars/kid/up0.tim iso/chars/kid/up1.tim iso/chars/kid/right0.tim iso/chars/kid/right1.tim 
 
 # BF Drip
+iso/chars/bfdrip/main.arc: iso/chars/bfdrip/idle0.tim iso/chars/bfdrip/idle1.tim iso/chars/bfdrip/left0.tim iso/chars/bfdrip/left1.tim iso/chars/bfdrip/down0.tim iso/chars/bfdrip/down1.tim iso/chars/bfdrip/up0.tim iso/chars/bfdrip/up1.tim iso/chars/bfdrip/right0.tim iso/chars/bfdrip/right1.tim iso/chars/bfdrip/leftm0.tim iso/chars/bfdrip/leftm1.tim iso/chars/bfdrip/downm0.tim iso/chars/bfdrip/downm1.tim iso/chars/bfdrip/upm0.tim iso/chars/bfdrip/upm1.tim iso/chars/bfdrip/rightm0.tim iso/chars/bfdrip/rightm1.tim 
 
 # Pico Drip
 

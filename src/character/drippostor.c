@@ -59,9 +59,9 @@ static const CharFrame char_drippostor_frame[] = {
   {Drippostor_ArcMain_Idle4, {  0,  0,124,141}, {153,137}}, //5 idle 6
 
   {Drippostor_ArcMain_Left0, {  0,  0,168,144}, {196,139+1}}, //6 left 1
-  {Drippostor_ArcMain_Left1, {  0,  0,163,144}, {187,139+1}}, //7 left 2
-  {Drippostor_ArcMain_Left2, {  0,  0,163,144}, {187,139+1}}, //8 left 3
-  {Drippostor_ArcMain_Left3, {  0,  0,163,144}, {187,139+1}}, //9 left 4
+  {Drippostor_ArcMain_Left1, {  0,  0,163,144}, {188,139+1}}, //7 left 2
+  {Drippostor_ArcMain_Left2, {  0,  0,163,144}, {188,139+1}}, //8 left 3
+  {Drippostor_ArcMain_Left3, {  0,  0,163,144}, {188,139+1}}, //9 left 4
 
   {Drippostor_ArcMain_Down0, {  0,  0,124,134}, {152,131}}, //10 down 1
   {Drippostor_ArcMain_Down0, {124,  0,122,136}, {152,133}}, //11 down 2
@@ -74,10 +74,10 @@ static const CharFrame char_drippostor_frame[] = {
   {Drippostor_ArcMain_Up1, {126,  0,126,162}, {165+2,157+1}}, //17 up 4
 
   {Drippostor_ArcMain_Right0, {  0,  0,140,144}, {149,139+1}}, //18 right 1
-  {Drippostor_ArcMain_Right1, {  0,  0,129,144}, {152,139+1}}, //19 right 2
-  {Drippostor_ArcMain_Right2, {  0,  0,129,144}, {152,139+1}}, //20 right 3
-  {Drippostor_ArcMain_Right3, {  0,  0,130,144}, {152,139+1}}, //21 right 4
-  {Drippostor_ArcMain_Right4, {  0,  0,130,144}, {152,139+1}}, //22 right 5
+  {Drippostor_ArcMain_Right1, {  0,  0,129,144}, {151,139+1}}, //19 right 2
+  {Drippostor_ArcMain_Right2, {  0,  0,129,144}, {151,139+1}}, //20 right 3
+  {Drippostor_ArcMain_Right3, {  0,  0,130,144}, {151,139+1}}, //21 right 4
+  {Drippostor_ArcMain_Right4, {  0,  0,130,144}, {151,139+1}}, //22 right 5
 };
 
 static const Animation char_drippostor_anim[CharAnim_Max] = {
@@ -164,7 +164,7 @@ Character *Char_Drippostor_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
