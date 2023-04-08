@@ -1,7 +1,7 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
+			"fnfanim" : "idle-alt",
 			"imgname" : "idle",
 			"hname"   : "Idle"
 		},
@@ -26,41 +26,31 @@
 			"hname"   : "Right"
 		},
 		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
+			"fnfanim" : "kill",
+			"imgname" : "kill",
+			"hname"   : "Kill"
 		},
 		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
+			"fnfanim" : "idle",
+			"imgname" : "mongo",
+			"hname"   : "Mongo"
 		}
 	],
-	"input":  "iso/chars/bfdrip/DrippyBF",
-	"outdir": "iso/chars/bfdrip/",
-	"charname" : "BFDrip",
+	"input":  "iso/chars/picodrip/drippico",
+	"outdir": "iso/chars/picodrip/",
+	"charname" : "PicoDrip",
 	"optimize" : false,
-	"optimizename" : "bfdrip",
+	"optimizename" : "picodrip",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		896,
 		0,
 		0,
-		480
+		487
 	],
 
-	"bpp" : 8,
-	"resize" : 0.275,
+	"bpp" : 4,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

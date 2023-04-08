@@ -217,7 +217,7 @@
 				<!-- Going2KillEvery1 assets -->
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
 				<file name = "bfdrip.arc" type = "data" source = "iso/chars/bfdrip/main.arc"/>
-				<!-- Pico Drip assets -->
+				<file name = "picodrip.arc" type = "data" source = "iso/chars/picodrip/main.arc"/>
 				<!-- Clowfoe assets -->
 				<!-- Biddle assets -->
 				<!-- Pip assets -->

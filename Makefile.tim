@@ -40,6 +40,7 @@ all: \
 	iso/chars/blueow/main.arc \
 	iso/chars/kid/main.arc \
 	iso/chars/bfdrip/main.arc \
+	iso/chars/picodrip/main.arc \
 	iso/chars/red/main.arc \
 	iso/chars/redmd/main.arc \
 	iso/chars/greenst/main.arc \
@@ -206,6 +207,7 @@ iso/chars/kid/main.arc: iso/chars/kid/idle0.tim iso/chars/kid/idle1.tim iso/char
 iso/chars/bfdrip/main.arc: iso/chars/bfdrip/idle0.tim iso/chars/bfdrip/idle1.tim iso/chars/bfdrip/left0.tim iso/chars/bfdrip/left1.tim iso/chars/bfdrip/down0.tim iso/chars/bfdrip/down1.tim iso/chars/bfdrip/up0.tim iso/chars/bfdrip/up1.tim iso/chars/bfdrip/right0.tim iso/chars/bfdrip/right1.tim iso/chars/bfdrip/leftm0.tim iso/chars/bfdrip/leftm1.tim iso/chars/bfdrip/downm0.tim iso/chars/bfdrip/downm1.tim iso/chars/bfdrip/upm0.tim iso/chars/bfdrip/upm1.tim iso/chars/bfdrip/rightm0.tim iso/chars/bfdrip/rightm1.tim 
 
 # Pico Drip
+iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idle1.tim iso/chars/picodrip/left0.tim iso/chars/picodrip/left1.tim iso/chars/picodrip/down0.tim iso/chars/picodrip/down1.tim iso/chars/picodrip/down2.tim iso/chars/picodrip/up0.tim iso/chars/picodrip/up1.tim iso/chars/picodrip/right0.tim iso/chars/picodrip/right1.tim iso/chars/picodrip/kill0.tim iso/chars/picodrip/kill1.tim iso/chars/picodrip/kill2.tim iso/chars/picodrip/kill3.tim iso/chars/picodrip/mongo0.tim 
 
 # Clowfoe
 

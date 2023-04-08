@@ -172,7 +172,8 @@ void Char_BFDrip_Tick(Character *character)
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
 		//Perform idle dance
-		if ((character->animatable.anim != CharAnim_Left &&
+		if (Animatable_Ended(&character->animatable) &&
+			(character->animatable.anim != CharAnim_Left &&
 		     character->animatable.anim != CharAnim_LeftAlt &&
 		     character->animatable.anim != PlayerAnim_LeftMiss &&
 		     character->animatable.anim != CharAnim_Down &&

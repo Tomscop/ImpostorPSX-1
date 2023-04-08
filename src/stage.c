@@ -66,6 +66,7 @@ static u32 Sounds[10];
 #include "character/blueow.h"
 #include "character/kid.h"
 #include "character/bfdrip.h"
+#include "character/picodrip.h"
 //Opponents
 #include "character/red.h"
 #include "character/redmd.h"

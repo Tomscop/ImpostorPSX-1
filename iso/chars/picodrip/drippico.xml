@@ -57,53 +57,6 @@
 	<SubTexture name="picomongo0010" x="4044" y="1015" width="699" height="735" frameX="-294" frameY="-260" frameWidth="1577" frameHeight="995"/>
 	<SubTexture name="picomongo0011" x="4044" y="1015" width="699" height="735" frameX="-294" frameY="-260" frameWidth="1577" frameHeight="995"/>
 	<SubTexture name="picomongo0012" x="4044" y="1015" width="699" height="735" frameX="-294" frameY="-260" frameWidth="1577" frameHeight="995"/>
-	<SubTexture name="shootleft0000" x="4763" y="1015" width="813" height="661" frameX="-303" frameY="-66" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0001" x="5596" y="1015" width="811" height="661" frameX="-303" frameY="-66" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0002" x="6427" y="1015" width="952" height="652" frameX="-162" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0003" x="0" y="1810" width="1114" height="727" frameX="0" frameY="0" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0004" x="1134" y="1810" width="699" height="652" frameX="-415" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0005" x="1853" y="1810" width="731" height="652" frameX="-383" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0006" x="1853" y="1810" width="731" height="652" frameX="-383" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0007" x="2604" y="1810" width="718" height="652" frameX="-396" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0008" x="2604" y="1810" width="718" height="652" frameX="-396" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0009" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0010" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0011" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0012" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0013" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0014" x="4067" y="1810" width="707" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0015" x="4067" y="1810" width="707" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0016" x="4794" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0017" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0018" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0019" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootleft0020" x="3342" y="1810" width="705" height="652" frameX="-409" frameY="-75" frameWidth="1116" frameHeight="727"/>
-	<SubTexture name="shootright0000" x="5519" y="1810" width="876" height="653" frameX="0" frameY="-51" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0001" x="6415" y="1810" width="874" height="653" frameX="-2" frameY="-51" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0002" x="0" y="2557" width="1154" height="663" frameX="-2" frameY="-41" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0003" x="1174" y="2557" width="1273" height="663" frameX="-2" frameY="-41" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0004" x="2467" y="2557" width="699" height="663" frameX="-2" frameY="-41" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0005" x="3186" y="2557" width="699" height="704" frameX="-2" frameY="0" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0006" x="3186" y="2557" width="699" height="704" frameX="-2" frameY="0" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0007" x="3905" y="2557" width="699" height="701" frameX="-2" frameY="-3" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0008" x="3905" y="2557" width="699" height="701" frameX="-2" frameY="-3" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0009" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0010" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0011" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0012" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0013" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0014" x="5343" y="2557" width="703" height="696" frameX="0" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0015" x="5343" y="2557" width="703" height="696" frameX="0" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0016" x="6066" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0017" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0018" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0019" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0020" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0021" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0022" x="4624" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0023" x="6066" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0024" x="5343" y="2557" width="703" height="696" frameX="0" frameY="-8" frameWidth="1275" frameHeight="704"/>
-	<SubTexture name="shootright0025" x="6066" y="2557" width="699" height="696" frameX="-2" frameY="-8" frameWidth="1275" frameHeight="704"/>
 	<SubTexture name="singDOWN0000" x="1491" y="3288" width="783" height="648" frameX="0" frameY="-4" frameWidth="789" frameHeight="652"/>
 	<SubTexture name="singDOWN0001" x="2294" y="3288" width="781" height="648" frameX="-2" frameY="-4" frameWidth="789" frameHeight="652"/>
 	<SubTexture name="singDOWN0002" x="3095" y="3288" width="787" height="652" frameX="-2" frameY="0" frameWidth="789" frameHeight="652"/>

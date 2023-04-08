@@ -872,7 +872,7 @@
 	{ //StageId_Drippypop (Drippypop)
 		//Characters
 		{Char_BFDrip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_PicoDrip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_Drippostor_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
