@@ -133,6 +133,7 @@ static u32 Sounds[10];
 #include "stage/earthbound.h"
 #include "stage/idk.h"
 #include "stage/electrical.h"
+#include "stage/drip.h"
 #include "stage/daveoffice.h"
 #include "stage/o2.h"
 #include "stage/week1.h"

@@ -111,6 +111,53 @@ void Char_Drippostor_Tick(Character *character)
 {
 	Char_Drippostor *this = (Char_Drippostor*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Drippypop)
+	{
+		if (stage.song_step == -29)
+		{
+			this->character.focus_x = FIXED_DEC(-43,1);
+			this->character.focus_y = FIXED_DEC(-95,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 286)
+		{
+			this->character.focus_x = FIXED_DEC(-9,1);
+			this->character.focus_y = FIXED_DEC(-157,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 304)
+		{
+			this->character.focus_x = FIXED_DEC(-43,1);
+			this->character.focus_y = FIXED_DEC(-95,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 318)
+		{
+			this->character.focus_x = FIXED_DEC(-9,1);
+			this->character.focus_y = FIXED_DEC(-157,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 336)
+		{
+			this->character.focus_x = FIXED_DEC(-43,1);
+			this->character.focus_y = FIXED_DEC(-95,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 384)
+		{
+			this->character.focus_x = FIXED_DEC(-9,1);
+			this->character.focus_y = FIXED_DEC(-157,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 401)
+		{
+			this->character.focus_x = FIXED_DEC(-43,1);
+			this->character.focus_y = FIXED_DEC(-95,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -162,8 +209,8 @@ Character *Char_Drippostor_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBD69DE;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_x = FIXED_DEC(-43,1);
+	this->character.focus_y = FIXED_DEC(-95,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

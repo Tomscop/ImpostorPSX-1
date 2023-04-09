@@ -406,7 +406,7 @@
 				
 				<file name = "electric.arc" type = "data" source = "iso/stages/electric/back.arc"/>
 				
-				<!-- Drip BG -->
+				<file name = "drip.arc" type = "data" source = "iso/stages/drip/back.arc"/>
 				
 				<file name = "office.arc" type = "data" source = "iso/stages/office/back.arc"/>
 				

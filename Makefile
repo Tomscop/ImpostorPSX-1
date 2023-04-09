@@ -105,6 +105,7 @@ SRCS = src/main.c \
 	src/stage/earthbound.c \
 	src/stage/idk.c \
 	src/stage/electrical.c \
+	src/stage/drip.c \
 	src/stage/daveoffice.c \
 	src/stage/o2.c \
 	src/stage/week1.c \

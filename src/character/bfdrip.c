@@ -55,37 +55,37 @@ typedef struct
 //Boyfriend Drip player definitions
 static const CharFrame char_bfdrip_frame[] = {
   {BFDrip_ArcMain_Idle0, {  0,  0, 98,113}, {159,153}}, //0 idle 1
-  {BFDrip_ArcMain_Idle0, { 98,  0, 97,114}, {159,154}}, //1 idle 2
-  {BFDrip_ArcMain_Idle0, {  0,114, 97,118}, {158,158}}, //2 idle 3
-  {BFDrip_ArcMain_Idle0, { 97,114, 98,120}, {158,160}}, //3 idle 4
-  {BFDrip_ArcMain_Idle1, {  0,  0, 98,120}, {158,160}}, //4 idle 5
-  {BFDrip_ArcMain_Idle1, { 98,  0, 98,120}, {158,160}}, //5 idle 6
+  {BFDrip_ArcMain_Idle0, { 98,  0, 97,114}, {158,154}}, //1 idle 2
+  {BFDrip_ArcMain_Idle0, {  0,114, 97,118}, {158,157}}, //2 idle 3
+  {BFDrip_ArcMain_Idle0, { 97,114, 98,120}, {158,159}}, //3 idle 4
+  {BFDrip_ArcMain_Idle1, {  0,  0, 98,120}, {158,159}}, //4 idle 5
+  {BFDrip_ArcMain_Idle1, { 98,  0, 98,120}, {158,159}}, //5 idle 6
   {BFDrip_ArcMain_Idle1, {  0,120, 98,118}, {158,158}}, //6 idle 7
 
   {BFDrip_ArcMain_Left0, {  0,  0, 90,120}, {160,160}}, //7 left 1
   {BFDrip_ArcMain_Left0, { 90,  0, 91,119}, {159,159}}, //8 left 2
   {BFDrip_ArcMain_Left0, {  0,120, 92,120}, {159,159}}, //9 left 3
-  {BFDrip_ArcMain_Left0, { 92,120, 92,120}, {158,159}}, //10 left 4
+  {BFDrip_ArcMain_Left0, { 92,120, 92,120}, {159,159}}, //10 left 4
   {BFDrip_ArcMain_Left1, {  0,  0, 95,120}, {159,159}}, //11 left 5
 
-  {BFDrip_ArcMain_Down0, {  0,  0,100,106}, {161,147}}, //12 down 1
+  {BFDrip_ArcMain_Down0, {  0,  0,100,106}, {161,146}}, //12 down 1
   {BFDrip_ArcMain_Down0, {100,  0,100,109}, {160,149}}, //13 down 2
-  {BFDrip_ArcMain_Down0, {  0,109,100,111}, {160,151}}, //14 down 3
-  {BFDrip_ArcMain_Down0, {100,109, 99,111}, {159,151}}, //15 down 4
-  {BFDrip_ArcMain_Down1, {  0,  0, 99,113}, {159,153}}, //16 down 5
+  {BFDrip_ArcMain_Down0, {  0,109,100,111}, {160,150}}, //14 down 3
+  {BFDrip_ArcMain_Down0, {100,109, 99,111}, {159,150}}, //15 down 4
+  {BFDrip_ArcMain_Down1, {  0,  0, 99,113}, {159,152}}, //16 down 5
 
   {BFDrip_ArcMain_Up0, {  0,  0, 98,124}, {155,164}}, //17 up 1
   {BFDrip_ArcMain_Up0, { 98,  0, 98,123}, {155,163}}, //18 up 2
   {BFDrip_ArcMain_Up0, {  0,124, 97,122}, {155,162}}, //19 up 3
-  {BFDrip_ArcMain_Up0, { 97,124, 97,122}, {156,162}}, //20 up 4
-  {BFDrip_ArcMain_Up1, {  0,  0, 98,122}, {156,162}}, //21 up 5
-  {BFDrip_ArcMain_Up1, { 98,  0, 96,121}, {155,161}}, //22 up 6
+  {BFDrip_ArcMain_Up0, { 97,124, 97,122}, {155,162}}, //20 up 4
+  {BFDrip_ArcMain_Up1, {  0,  0, 98,122}, {155,162}}, //21 up 5
+  {BFDrip_ArcMain_Up1, { 98,  0, 96,121}, {155,160}}, //22 up 6
 
-  {BFDrip_ArcMain_Right0, {  0,  0,103,115}, {155,155}}, //23 right 1
-  {BFDrip_ArcMain_Right0, {103,  0,102,117}, {155,157}}, //24 right 2
-  {BFDrip_ArcMain_Right0, {  0,117,102,118}, {155,158}}, //25 right 3
-  {BFDrip_ArcMain_Right0, {102,117,103,118}, {156,158}}, //26 right 4
-  {BFDrip_ArcMain_Right1, {  0,  0,102,118}, {157,158}}, //27 right 5
+  {BFDrip_ArcMain_Right0, {  0,  0,103,115}, {154,155}}, //23 right 1
+  {BFDrip_ArcMain_Right0, {103,  0,102,117}, {154,157}}, //24 right 2
+  {BFDrip_ArcMain_Right0, {  0,117,102,118}, {154,158}}, //25 right 3
+  {BFDrip_ArcMain_Right0, {102,117,103,118}, {154,158}}, //26 right 4
+  {BFDrip_ArcMain_Right1, {  0,  0,102,118}, {155,157}}, //27 right 5
 
   {BFDrip_ArcMain_LeftM0, {  0,  0, 93,119}, {160,159}}, //28 leftm 1
   {BFDrip_ArcMain_LeftM0, { 93,  0, 96,119}, {161,159}}, //29 leftm 2
@@ -156,6 +156,53 @@ void Char_BFDrip_SetFrame(void *user, u8 frame)
 void Char_BFDrip_Tick(Character *character)
 {
 	Char_BFDrip *this = (Char_BFDrip*)character;
+	
+	//Camera stuff
+	if (stage.stage_id == StageId_Drippypop)
+	{
+		if (stage.song_step == -29)
+		{
+			this->character.focus_x = FIXED_DEC(-172,1);
+			this->character.focus_y = FIXED_DEC(-141,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 286)
+		{
+			this->character.focus_x = FIXED_DEC(-185,1);
+			this->character.focus_y = FIXED_DEC(-203,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 304)
+		{
+			this->character.focus_x = FIXED_DEC(-172,1);
+			this->character.focus_y = FIXED_DEC(-141,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 318)
+		{
+			this->character.focus_x = FIXED_DEC(-185,1);
+			this->character.focus_y = FIXED_DEC(-203,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 336)
+		{
+			this->character.focus_x = FIXED_DEC(-172,1);
+			this->character.focus_y = FIXED_DEC(-141,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 384)
+		{
+			this->character.focus_x = FIXED_DEC(-185,1);
+			this->character.focus_y = FIXED_DEC(-203,1);
+			this->character.focus_zoom = FIXED_DEC(1516,1024);
+		}
+		if (stage.song_beat == 401)
+		{
+			this->character.focus_x = FIXED_DEC(-172,1);
+			this->character.focus_y = FIXED_DEC(-141,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+	}
 	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -239,8 +286,8 @@ Character *Char_BFDrip_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	
-	this->character.focus_x = FIXED_DEC(-170,1);
-	this->character.focus_y = FIXED_DEC(-147,1);
+	this->character.focus_x = FIXED_DEC(-172,1);
+	this->character.focus_y = FIXED_DEC(-141,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

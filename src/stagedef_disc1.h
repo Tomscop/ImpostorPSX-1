@@ -871,14 +871,14 @@
 	},
 	{ //StageId_Drippypop (Drippypop)
 		//Characters
-		{Char_BFDrip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_PicoDrip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Drippostor_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BFDrip_New,    FIXED_DEC(390,1),  FIXED_DEC(285,1)},
+		{Char_PicoDrip_New,    FIXED_DEC(204,1),  FIXED_DEC(119,1)},
+		{Char_Drippostor_New, FIXED_DEC(214,1),  FIXED_DEC(239,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Drip_New,
 		
 		//Song info
 		5, 9,
