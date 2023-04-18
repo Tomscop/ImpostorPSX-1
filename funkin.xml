@@ -358,7 +358,7 @@
 				<file name = "poweroom.arc" type = "data" source = "iso/stages/poweroom/back.arc"/>
 				<file name = "blackg.arc" type = "data" source = "iso/stages/poweroom/black.arc"/>
 				
-				<!-- Plantroom BG -->
+				<file name = "plantrom.arc" type = "data" source = "iso/stages/plantrom/back.arc"/>
 				<!-- GreyP -->
 				<!-- Long and Tomato -->
 				<!-- Snappy -->

@@ -109,6 +109,7 @@ all: \
 	iso/stages/lava/bubbles.arc \
 	iso/stages/poweroom/back.arc \
 	iso/stages/poweroom/black.arc \
+	iso/stages/plantrom/back.arc \
 	iso/stages/kitchen/back.arc \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
@@ -435,6 +436,9 @@ iso/stages/lava/bubbles.arc: iso/stages/lava/bubbles0.tim iso/stages/lava/bubble
 # Power Room
 iso/stages/poweroom/back.arc: iso/stages/poweroom/back0.tim iso/stages/poweroom/back1.tim iso/stages/poweroom/back2.tim iso/stages/poweroom/back3.tim
 iso/stages/poweroom/black.arc: iso/stages/poweroom/black0.tim iso/stages/poweroom/black1.tim iso/stages/poweroom/black2.tim iso/stages/poweroom/black3.tim iso/stages/poweroom/black4.tim 
+
+# Plantroom
+iso/stages/plantrom/back.arc: iso/stages/plantrom/back0.tim iso/stages/plantrom/back1.tim iso/stages/plantrom/vine0.tim iso/stages/plantrom/vine1.tim iso/stages/plantrom/pot.tim
 
 # Kitchen
 iso/stages/kitchen/back.arc: iso/stages/kitchen/back0.tim iso/stages/kitchen/back1.tim iso/stages/kitchen/back2.tim

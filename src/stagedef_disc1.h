@@ -386,7 +386,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Plantroom_New,
 		
 		//Song info
 		3, 1,
@@ -404,7 +404,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Plantroom_New,
 		
 		//Song info
 		3, 2,
