@@ -24,6 +24,8 @@ typedef struct
 	//Textures
 	IO_Data arc_grey, arc_grey_ptr[2];
 	IO_Data arc_longtomato, arc_longtomato_ptr[4];
+	IO_Data arc_snapper, arc_snapper_ptr[2];
+	IO_Data arc_cyborg, arc_cyborg_ptr[4];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_vine0; //vine0
@@ -39,6 +41,16 @@ typedef struct
 	Gfx_Tex tex_longtomato;
 	u8 longtomato_frame, longtomato_tex_id;
 	Animatable longtomato_animatable;
+	
+	//Snapper state
+	Gfx_Tex tex_snapper;
+	u8 snapper_frame, snapper_tex_id;
+	Animatable snapper_animatable;
+	
+	//Cyborg state
+	Gfx_Tex tex_cyborg;
+	u8 cyborg_frame, cyborg_tex_id;
+	Animatable cyborg_animatable;
 
 } Back_Plantroom;
 
@@ -130,6 +142,92 @@ void Plantroom_LongTomato_Draw(Back_Plantroom *this, fixed_t x, fixed_t y)
 	Stage_DrawTex(&this->tex_longtomato, &src, &dst, stage.camera.bzoom);
 }
 
+//Snapper animation and rects
+static const CharFrame snapper_frame[] = {
+  {0, {  0,  0,139,116}, {160,155}}, //0 snapper 1
+  {0, {  0,116,138,116}, {160,155}}, //1 snapper 2
+  {1, {  0,  0,133,115}, {160,156}}, //2 snapper 3
+  {1, {133,  0,117,118}, {160,159}}, //3 snapper 4
+  {1, {  0,118,115,119}, {159,160}}, //4 snapper 5
+};
+
+static const Animation snapper_anim[] = {
+	{2, (const u8[]){ 0, 1, 2, 3, 4, ASCR_BACK, 1}}, //Idle
+};
+
+//Snapper functions
+void Plantroom_Snapper_SetFrame(void *user, u8 frame)
+{
+	Back_Plantroom *this = (Back_Plantroom*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->snapper_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &snapper_frame[this->snapper_frame = frame];
+		if (cframe->tex != this->snapper_tex_id)
+			Gfx_LoadTex(&this->tex_snapper, this->arc_snapper_ptr[this->snapper_tex_id = cframe->tex], 0);
+	}
+}
+
+void Plantroom_Snapper_Draw(Back_Plantroom *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &snapper_frame[this->snapper_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w * FIXED_DEC(1667,1000),src.h * FIXED_DEC(1667,1000)};
+	Debug_StageMoveDebug(&dst, 9, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_snapper, &src, &dst, stage.camera.bzoom);
+}
+
+//Cyborg animation and rects
+static const CharFrame cyborg_frame[] = {
+  {0, {  0,  0, 98,147}, {149,157}}, //0 cyborg 1
+  {0, { 98,  0, 99,148}, {151,156}}, //1 cyborg 2
+  {1, {  0,  0, 98,147}, {150,157}}, //2 cyborg 3
+  {1, { 98,  0, 97,147}, {150,159}}, //3 cyborg 4
+  {2, {  0,  0, 98,148}, {150,160}}, //4 cyborg 5
+  {2, { 98,  0, 97,148}, {149,160}}, //5 cyborg 6
+  {3, {  0,  0, 98,148}, {150,160}}, //6 cyborg 7
+};
+
+static const Animation cyborg_anim[] = {
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, ASCR_BACK, 1}}, //Idle
+};
+
+//Cyborg functions
+void Plantroom_Cyborg_SetFrame(void *user, u8 frame)
+{
+	Back_Plantroom *this = (Back_Plantroom*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->cyborg_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &cyborg_frame[this->cyborg_frame = frame];
+		if (cframe->tex != this->cyborg_tex_id)
+			Gfx_LoadTex(&this->tex_cyborg, this->arc_cyborg_ptr[this->cyborg_tex_id = cframe->tex], 0);
+	}
+}
+
+void Plantroom_Cyborg_Draw(Back_Plantroom *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &cyborg_frame[this->cyborg_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w * FIXED_DEC(1667,1000), src.h * FIXED_DEC(1667,1000)};
+	Debug_StageMoveDebug(&dst, 10, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_cyborg, &src, &dst, stage.camera.bzoom);
+}
+
 void Back_Plantroom_DrawFG(StageBack *back)
 {
 	Back_Plantroom *this = (Back_Plantroom*)back;
@@ -173,6 +271,18 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	Stage_DrawTex(&this->tex_vine1, &vine1_src, &vine1_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_pot, &pot_src, &pot_dst, stage.camera.bzoom);
 	
+	//Animate and draw snapper
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x3) == 0)
+		Animatable_SetAnim(&this->snapper_animatable, 0);
+	Animatable_Animate(&this->snapper_animatable, (void*)this, Plantroom_Snapper_SetFrame);
+	Plantroom_Snapper_Draw(this, FIXED_DEC(0 + 159,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	
+	//Animate and draw cyborg
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7 )== 0)
+		Animatable_SetAnim(&this->cyborg_animatable, 0);
+	Animatable_Animate(&this->cyborg_animatable, (void*)this, Plantroom_Cyborg_SetFrame);
+	Plantroom_Cyborg_Draw(this, FIXED_DEC(0 + 150,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	
 	//Vine move
 	if ((stage.song_step & 0x7 )== 2)
 		vine = -1;
@@ -200,13 +310,13 @@ void Back_Plantroom_DrawBG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0)
 		Animatable_SetAnim(&this->grey_animatable, 0);
 	Animatable_Animate(&this->grey_animatable, (void*)this, Plantroom_Grey_SetFrame);
-	Plantroom_Grey_Draw(this, FIXED_DEC(0 - 159,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	Plantroom_Grey_Draw(this, FIXED_DEC(233 + 159,1) - fx, FIXED_DEC(113 + 160,1) - fy);
 	
 	//Animate and draw longtomato
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7 )== 0)
 		Animatable_SetAnim(&this->longtomato_animatable, 0);
 	Animatable_Animate(&this->longtomato_animatable, (void*)this, Plantroom_LongTomato_SetFrame);
-	Plantroom_LongTomato_Draw(this, FIXED_DEC(0 - 156,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	Plantroom_LongTomato_Draw(this, FIXED_DEC(484 + 156,1) - fx, FIXED_DEC(121 + 160,1) - fy);
 	
 	RECT back0_src = {  0,  0,254,255};
 	RECT_FIXED back0_dst = {
@@ -239,6 +349,12 @@ void Back_Plantroom_Free(StageBack *back)
 	
 	//Free longtomato archive
 	Mem_Free(this->arc_longtomato);
+	
+	//Free snapper archive
+	Mem_Free(this->arc_snapper);
+	
+	//Free cyborg archive
+	Mem_Free(this->arc_cyborg);
 	
 	//Free structure
 	Mem_Free(this);
@@ -278,6 +394,18 @@ StageBack *Back_Plantroom_New(void)
 	this->arc_longtomato_ptr[2] = Archive_Find(this->arc_longtomato, "longtoma2.tim");
 	this->arc_longtomato_ptr[3] = Archive_Find(this->arc_longtomato, "longtoma3.tim");
 	
+	//Load snapper textures
+	this->arc_snapper = IO_Read("\\BG\\SNAPPER.ARC;1");
+	this->arc_snapper_ptr[0] = Archive_Find(this->arc_snapper, "snapper0.tim");
+	this->arc_snapper_ptr[1] = Archive_Find(this->arc_snapper, "snapper1.tim");
+	
+	//Load cyborg textures
+	this->arc_cyborg = IO_Read("\\BG\\CYBORG.ARC;1");
+	this->arc_cyborg_ptr[0] = Archive_Find(this->arc_cyborg, "cyborg0.tim");
+	this->arc_cyborg_ptr[1] = Archive_Find(this->arc_cyborg, "cyborg1.tim");
+	this->arc_cyborg_ptr[2] = Archive_Find(this->arc_cyborg, "cyborg2.tim");
+	this->arc_cyborg_ptr[3] = Archive_Find(this->arc_cyborg, "cyborg3.tim");
+	
 	//Initialize grey state
 	Animatable_Init(&this->grey_animatable, grey_anim);
 	Animatable_SetAnim(&this->grey_animatable, 0);
@@ -287,6 +415,16 @@ StageBack *Back_Plantroom_New(void)
 	Animatable_Init(&this->longtomato_animatable, longtomato_anim);
 	Animatable_SetAnim(&this->longtomato_animatable, 0);
 	this->longtomato_frame = this->longtomato_tex_id = 0xFF; //Force art load
+	
+	//Initialize snapper state
+	Animatable_Init(&this->snapper_animatable, snapper_anim);
+	Animatable_SetAnim(&this->snapper_animatable, 0);
+	this->snapper_frame = this->snapper_tex_id = 0xFF; //Force art load
+	
+	//Initialize cyborg state
+	Animatable_Init(&this->cyborg_animatable, cyborg_anim);
+	Animatable_SetAnim(&this->cyborg_animatable, 0);
+	this->cyborg_frame = this->cyborg_tex_id = 0xFF; //Force art load
 	
 	return (StageBack*)this;
 }

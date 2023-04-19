@@ -361,8 +361,8 @@
 				<file name = "plantrom.arc" type = "data" source = "iso/stages/plantrom/back.arc"/>
 				<file name = "greyp.arc" type = "data" source = "iso/stages/plantrom/grey.arc"/>
 				<file name = "longtoma.arc" type = "data" source = "iso/stages/plantrom/longtoma.arc"/>
-				<!-- Snappy -->
-				<!-- Cyborg -->
+				<file name = "snapper.arc" type = "data" source = "iso/stages/plantrom/snapper.arc"/>
+				<file name = "cyborg.arc" type = "data" source = "iso/stages/plantrom/cyborg.arc"/>
 				
 				<!-- Pretender BG -->
 				<!-- Snappy Dead -->

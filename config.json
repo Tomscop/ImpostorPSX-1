@@ -2,21 +2,21 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "longtoma",
-			"hname"   : "LongTomato"
+			"imgname" : "cyborg",
+			"hname"   : "Cyborg"
 		}
 	],
-	"input":  "iso/stages/plantrom/crew",
-	"outdir": "iso/stages/plantrom/",
-	"charname" : "LongTomato",
+	"input":  "iso/chars/plantrom/crew",
+	"outdir": "iso/chars/plantrom/",
+	"charname" : "Cyborg",
 	"optimize" : false,
-	"optimizename" : "longtomato",
+	"optimizename" : "cyborg",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		896,
+		768,
 		0,
-		16,
-		486
+		0,
+		481
 	],
 
 	"bpp" : 4,

@@ -381,7 +381,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Pink_New, FIXED_DEC(11,1),  FIXED_DEC(138,1)},
+		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
@@ -399,7 +399,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Pink_New, FIXED_DEC(11,1),  FIXED_DEC(138,1)},
+		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
