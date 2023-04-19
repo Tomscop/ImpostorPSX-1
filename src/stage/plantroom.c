@@ -189,7 +189,7 @@ void Back_Plantroom_DrawFG(StageBack *back)
 void Back_Plantroom_DrawBG(StageBack *back)
 {
 	Back_Plantroom *this = (Back_Plantroom*)back;
-
+	
 	fixed_t fx, fy;
 	
 	//Draw plantroom
