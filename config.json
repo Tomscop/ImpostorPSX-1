@@ -1,52 +1,22 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle-alt",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "kill",
-			"imgname" : "kill",
-			"hname"   : "Kill"
-		},
-		{
 			"fnfanim" : "idle",
-			"imgname" : "mongo",
-			"hname"   : "Mongo"
+			"imgname" : "longtoma",
+			"hname"   : "LongTomato"
 		}
 	],
-	"input":  "iso/chars/picodrip/drippico",
-	"outdir": "iso/chars/picodrip/",
-	"charname" : "PicoDrip",
+	"input":  "iso/stages/plantrom/crew",
+	"outdir": "iso/stages/plantrom/",
+	"charname" : "LongTomato",
 	"optimize" : false,
-	"optimizename" : "picodrip",
+	"optimizename" : "longtomato",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		896,
 		0,
-		0,
-		487
+		16,
+		486
 	],
 
 	"bpp" : 4,

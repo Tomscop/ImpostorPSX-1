@@ -110,6 +110,8 @@ all: \
 	iso/stages/poweroom/back.arc \
 	iso/stages/poweroom/black.arc \
 	iso/stages/plantrom/back.arc \
+	iso/stages/plantrom/grey.arc \
+	iso/stages/plantrom/longtoma.arc \
 	iso/stages/kitchen/back.arc \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
@@ -439,6 +441,8 @@ iso/stages/poweroom/black.arc: iso/stages/poweroom/black0.tim iso/stages/poweroo
 
 # Plantroom
 iso/stages/plantrom/back.arc: iso/stages/plantrom/back0.tim iso/stages/plantrom/back1.tim iso/stages/plantrom/vine0.tim iso/stages/plantrom/vine1.tim iso/stages/plantrom/pot.tim
+iso/stages/plantrom/grey.arc: iso/stages/plantrom/grey0.tim iso/stages/plantrom/grey1.tim 
+iso/stages/plantrom/longtoma.arc: iso/stages/plantrom/longtoma0.tim iso/stages/plantrom/longtoma1.tim iso/stages/plantrom/longtoma2.tim iso/stages/plantrom/longtoma3.tim 
 
 # Kitchen
 iso/stages/kitchen/back.arc: iso/stages/kitchen/back0.tim iso/stages/kitchen/back1.tim iso/stages/kitchen/back2.tim

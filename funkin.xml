@@ -359,8 +359,8 @@
 				<file name = "blackg.arc" type = "data" source = "iso/stages/poweroom/black.arc"/>
 				
 				<file name = "plantrom.arc" type = "data" source = "iso/stages/plantrom/back.arc"/>
-				<!-- GreyP -->
-				<!-- Long and Tomato -->
+				<file name = "greyp.arc" type = "data" source = "iso/stages/plantrom/grey.arc"/>
+				<file name = "longtoma.arc" type = "data" source = "iso/stages/plantrom/longtoma.arc"/>
 				<!-- Snappy -->
 				<!-- Cyborg -->
 				
