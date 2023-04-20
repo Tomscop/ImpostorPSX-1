@@ -52,6 +52,7 @@ struct Note
 #define EVENTS_FLAG_LIGHTS1   (1 << 8) //Lights out
 #define EVENTS_FLAG_LIGHTS2   (1 << 9) //Lights on
 #define EVENTS_FLAG_HUDFADE   (1 << 10) //HUD Fade
+#define EVENTS_FLAG_PINK      (1 << 11) //pink toggle
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -130,6 +131,9 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	if (i[0 + position] == "HUD Fade")
 		event_src.event |= EVENTS_FLAG_HUDFADE;
 	
+	if (i[0 + position] == "pink toggle")
+		event_src.event |= EVENTS_FLAG_PINK;
+	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
 		if (event_src.event & EVENTS_FLAG_SPEED)
@@ -201,6 +205,15 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 				i[2 + position] = "4";
 		}
 		if (event_src.event & EVENTS_FLAG_HUDFADE)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "0";
+			
+			if (i[2 + position] == "")
+				i[2 + position] = "0";
+		}
+		if (event_src.event & EVENTS_FLAG_PINK)
 		{
 			//Default values
 			if (i[1 + position] == "")

@@ -116,6 +116,7 @@ all: \
 	iso/stages/plantrom/longtoma.arc \
 	iso/stages/plantrom/snapper.arc \
 	iso/stages/plantrom/cyborg.arc \
+	iso/stages/pretendr/back.arc \
 	iso/stages/kitchen/back.arc \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
@@ -451,6 +452,9 @@ iso/stages/plantrom/grey.arc: iso/stages/plantrom/grey0.tim iso/stages/plantrom/
 iso/stages/plantrom/longtoma.arc: iso/stages/plantrom/longtoma0.tim iso/stages/plantrom/longtoma1.tim iso/stages/plantrom/longtoma2.tim iso/stages/plantrom/longtoma3.tim 
 iso/stages/plantrom/snapper.arc: iso/stages/plantrom/snapper0.tim iso/stages/plantrom/snapper1.tim 
 iso/stages/plantrom/cyborg.arc: iso/stages/plantrom/cyborg0.tim iso/stages/plantrom/cyborg1.tim iso/stages/plantrom/cyborg2.tim iso/stages/plantrom/cyborg3.tim 
+
+# Pretender
+iso/stages/pretendr/back.arc: iso/stages/pretendr/back0.tim iso/stages/pretendr/back1.tim
 
 # Kitchen
 iso/stages/kitchen/back.arc: iso/stages/kitchen/back0.tim iso/stages/kitchen/back1.tim iso/stages/kitchen/back2.tim

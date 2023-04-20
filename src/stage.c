@@ -126,6 +126,7 @@ static u32 Sounds[10];
 #include "stage/lava.h"
 #include "stage/powerroom.h"
 #include "stage/plantroom.h"
+#include "stage/pretender.h"
 #include "stage/kitchen.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
@@ -1776,6 +1777,8 @@ static void Stage_LoadState(void)
 		stage.paused = false;
 		firsthit = false;
 		stage.black = false;
+		stage.pinkstuff = false;
+		stage.pink = 0;
 		stage.lights = 0;
 		stage.bop1 = 0xF;
 		stage.bop2 = 0;

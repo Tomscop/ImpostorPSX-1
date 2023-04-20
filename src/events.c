@@ -74,6 +74,20 @@ static void Events_Check(Event* event)
 			stage.opponent->health_i = 4;
 			break;
 		}
+		case EVENTS_FLAG_PINK: //pink toggle!!
+		{
+			if (stage.pinkstuff == false)
+			{
+				stage.pink = 185;
+				stage.pinkstuff = true;
+			}
+			else
+			{
+				stage.pink = 0;
+				stage.pinkstuff = false;
+			}
+			break;
+		}
 		case EVENTS_FLAG_HUDFADE: //HUD Fade!!
 		{
 			if ((event->value1 >> FIXED_SHIFT) == 0)

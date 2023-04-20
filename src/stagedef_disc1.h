@@ -422,7 +422,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Pretender_New,
 		
 		//Song info
 		3, 3,

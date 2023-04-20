@@ -364,7 +364,7 @@
 				<file name = "snapper.arc" type = "data" source = "iso/stages/plantrom/snapper.arc"/>
 				<file name = "cyborg.arc" type = "data" source = "iso/stages/plantrom/cyborg.arc"/>
 				
-				<!-- Pretender BG -->
+				<file name = "pretendr.arc" type = "data" source = "iso/stages/pretendr/back.arc"/>
 				<!-- Snappy Dead -->
 				
 				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>

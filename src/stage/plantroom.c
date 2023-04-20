@@ -231,7 +231,19 @@ void Plantroom_Cyborg_Draw(Back_Plantroom *this, fixed_t x, fixed_t y)
 void Back_Plantroom_DrawFG(StageBack *back)
 {
 	Back_Plantroom *this = (Back_Plantroom*)back;
-
+	
+	//Pink filter thing
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	if (stage.pinkstuff)
+	{
+		if ((stage.song_step & 0x7 )== 4)
+			Gfx_BlendRect(&screen_src, 107, 38, 78, 1);
+		else if ((stage.song_step & 0x7 )== 5)
+			Gfx_BlendRect(&screen_src, 70, 25, 51, 1);
+		else
+			Gfx_BlendRect(&screen_src, 35, 12, 26, 1);
+	}
+	
 	fixed_t fx, fy;
 
 	//Draw plantroom

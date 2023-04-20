@@ -287,9 +287,10 @@ typedef struct
 	fixed_t step_crochet, step_time;
 	fixed_t early_safe, late_safe, early_sus_safe, late_sus_safe;
 	fixed_t flash, flashspd;
-	fixed_t reactor, reactorspd;
+	fixed_t reactor, reactorspd, pink, pinkspd;
 	fixed_t bop1, bop2, bopintense1, bopintense2;
 	int defeatmiss, lights, hudfade;
+	boolean pinkstuff;
 	u16 opacity;
 	
 	//if stage have intro or no
