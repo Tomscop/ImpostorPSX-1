@@ -383,7 +383,7 @@
         {NULL},
 		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
-		{Char_GFMira_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFMira_New,     FIXED_DEC(456,1),  FIXED_DEC(292,1)},
 		
 		//Stage background
 		Back_Plantroom_New,
@@ -401,7 +401,7 @@
         {NULL},
 		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
-		{Char_GFMira_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFMira_New,     FIXED_DEC(456,1),  FIXED_DEC(292,1)},
 		
 		//Stage background
 		Back_Plantroom_New,

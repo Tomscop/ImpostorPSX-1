@@ -47,19 +47,19 @@ typedef struct
 
 //GFMira character definitions
 static const CharFrame char_gfmira_frame[] = {
-  {GFMira_ArcMain_GF0, {  0,  0,176,159}, {159,154}}, //0 gf 1
-  {GFMira_ArcMain_GF1, {  0,  0,176,159}, {160,154}}, //1 gf 2
+  {GFMira_ArcMain_GF0, {  0,  0,176,159}, {159,155}}, //0 gf 1
+  {GFMira_ArcMain_GF1, {  0,  0,176,159}, {159,154}}, //1 gf 2
   {GFMira_ArcMain_GF2, {  0,  0,176,160}, {159,155}}, //2 gf 3
-  {GFMira_ArcMain_GF3, {  0,  0,176,160}, {159,155}}, //3 gf 4
+  {GFMira_ArcMain_GF3, {  0,  0,176,160}, {159,156}}, //3 gf 4
   {GFMira_ArcMain_GF4, {  0,  0,176,163}, {159,158}}, //4 gf 5
   {GFMira_ArcMain_GF5, {  0,  0,175,163}, {159,158}}, //5 gf 6
   {GFMira_ArcMain_GF6, {  0,  0,176,163}, {159,158}}, //6 gf 7
   {GFMira_ArcMain_GF7, {  0,  0,177,160}, {160,155}}, //7 gf 8
   {GFMira_ArcMain_GF8, {  0,  0,175,160}, {159,155}}, //8 gf 9
-  {GFMira_ArcMain_GF9, {  0,  0,176,161}, {159,155}}, //9 gf 10
-  {GFMira_ArcMain_GF10, {  0,  0,176,162}, {159,157}}, //10 gf 11
-  {GFMira_ArcMain_GF11, {  0,  0,175,162}, {159,156}}, //11 gf 12
-  {GFMira_ArcMain_GF12, {  0,  0,176,162}, {159,156}}, //12 gf 13
+  {GFMira_ArcMain_GF9, {  0,  0,176,161}, {160,156}}, //9 gf 10
+  {GFMira_ArcMain_GF10, {  0,  0,176,162}, {160,157}}, //10 gf 11
+  {GFMira_ArcMain_GF11, {  0,  0,175,162}, {159,157}}, //11 gf 12
+  {GFMira_ArcMain_GF12, {  0,  0,176,162}, {159,157}}, //12 gf 13
 };
 
 static const Animation char_gfmira_anim[CharAnim_Max] = {
