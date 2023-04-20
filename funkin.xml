@@ -203,7 +203,7 @@
 				<file name = "bfpolus.arc" type = "data" source = "iso/chars/bfpolus/main.arc"/>
 				<file name = "bflava.arc" type = "data" source = "iso/chars/bflava/main.arc"/>
 				<file name = "bfairshp.arc" type = "data" source = "iso/chars/bfairshp/main.arc"/>
-				<!-- Boyfriend Mira assets -->
+				<file name = "bfmira.arc" type = "data" source = "iso/chars/bfmira/main.arc"/>
 				<!-- Pink Pretender assets -->
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
 				<!-- Boyfriend Turbulence assets -->
@@ -299,7 +299,7 @@
 				<!-- GF Danger assets -->
 				<file name = "gfpolus.arc" type = "data" source = "iso/chars/gfpolus/main.arc"/>
 				<file name = "gfairshp.arc" type = "data" source = "iso/chars/gfairshp/main.arc"/>
-				<!-- GF Mira assets -->
+				<file name = "gfmira.arc" type = "data" source = "iso/chars/gfmira/main.arc"/>
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
 				<!-- GF Tuesday assets -->
 				<file name = "gfv1.arc" type = "data" source = "iso/chars/gfv1/main.arc"/>

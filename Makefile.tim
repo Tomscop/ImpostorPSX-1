@@ -32,6 +32,7 @@ all: \
 	iso/chars/bfpolus/main.arc \
 	iso/chars/bflava/main.arc \
 	iso/chars/bfairshp/main.arc \
+	iso/chars/bfmira/main.arc \
 	iso/chars/bfchef/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
@@ -84,6 +85,7 @@ all: \
 	iso/chars/gfeject/main.arc \
 	iso/chars/gfpolus/main.arc \
 	iso/chars/gfairshp/main.arc \
+	iso/chars/gfmira/main.arc \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/gfv1/main.arc \
 	iso/chars/dead.tim \
@@ -177,6 +179,7 @@ iso/chars/bflava/main.arc: iso/chars/bflava/idle0.tim iso/chars/bflava/idle1.tim
 iso/chars/bfairshp/main.arc: iso/chars/bfairshp/idle0.tim iso/chars/bfairshp/idle1.tim iso/chars/bfairshp/idle2.tim iso/chars/bfairshp/left0.tim iso/chars/bfairshp/down0.tim iso/chars/bfairshp/up0.tim iso/chars/bfairshp/right0.tim iso/chars/bfairshp/leftm0.tim iso/chars/bfairshp/downm0.tim iso/chars/bfairshp/upm0.tim iso/chars/bfairshp/rightm0.tim 
 
 # BF Mira
+iso/chars/bfmira/main.arc: iso/chars/bfmira/idle0.tim iso/chars/bfmira/idle1.tim iso/chars/bfmira/left0.tim iso/chars/bfmira/down0.tim iso/chars/bfmira/up0.tim iso/chars/bfmira/right0.tim iso/chars/bfmira/leftm0.tim iso/chars/bfmira/downm0.tim iso/chars/bfmira/upm0.tim iso/chars/bfmira/rightm0.tim 
 
 # Pink Pretender
 
@@ -392,6 +395,7 @@ iso/chars/gfpolus/main.arc: iso/chars/gfpolus/gf0.tim iso/chars/gfpolus/gf2.tim 
 iso/chars/gfairshp/main.arc: iso/chars/gfairshp/gf0.tim iso/chars/gfairshp/gf1.tim 
 
 # GF Mira
+iso/chars/gfmira/main.arc: iso/chars/gfmira/gf0.tim iso/chars/gfmira/gf1.tim iso/chars/gfmira/gf2.tim iso/chars/gfmira/gf3.tim iso/chars/gfmira/gf4.tim iso/chars/gfmira/gf5.tim iso/chars/gfmira/gf6.tim iso/chars/gfmira/gf7.tim iso/chars/gfmira/gf8.tim iso/chars/gfmira/gf9.tim iso/chars/gfmira/gf10.tim iso/chars/gfmira/gf11.tim iso/chars/gfmira/gf12.tim 
 
 # GF Pixel
 iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 

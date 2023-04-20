@@ -58,6 +58,7 @@ static u32 Sounds[10];
 #include "character/bfpolus.h"
 #include "character/bflava.h"
 #include "character/bfairship.h"
+#include "character/bfmira.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
@@ -110,6 +111,7 @@ static u32 Sounds[10];
 #include "character/gfejected.h"
 #include "character/gfpolus.h"
 #include "character/gfairship.h"
+#include "character/gfmira.h"
 #include "character/gfpixel.h"
 #include "character/gfv1.h"
 //Stages
@@ -2222,21 +2224,6 @@ void Stage_Tick(void)
 			//FntPrint("step is %d", stage.song_step);
 			//^ makes step show on screen
 			
-			//Draw white flash
-			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
-			{
-				stage.flash = FIXED_DEC(255,1);
-				stage.flashspd = FIXED_DEC(1000,1);
-			}
-			if (stage.prefs.flash != 0)
-				if (stage.flash > 0)
-				{
-					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-					u8 flash_col = stage.flash >> FIXED_SHIFT;
-					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
-				}
-				
 			//Draw reactor beep
 			if (stage.reactor != 0)
 				if (stage.reactor > 0)
@@ -2855,6 +2842,21 @@ void Stage_Tick(void)
 					}
 				}
 			}
+			
+			//Draw white flash
+			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
+			{
+				stage.flash = FIXED_DEC(255,1);
+				stage.flashspd = FIXED_DEC(1000,1);
+			}
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
 			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)

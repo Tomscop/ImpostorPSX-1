@@ -1,22 +1,22 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "cyborg",
-			"hname"   : "Cyborg"
+			"fnfanim" : "danceLeft",
+			"imgname" : "gf",
+			"hname"   : "GF"
 		}
 	],
-	"input":  "iso/chars/plantrom/crew",
-	"outdir": "iso/chars/plantrom/",
-	"charname" : "Cyborg",
+	"input":  "iso/chars/gfmira/gfmira",
+	"outdir": "iso/chars/gfmira/",
+	"charname" : "GFMira",
 	"optimize" : false,
-	"optimizename" : "cyborg",
+	"optimizename" : "gfmira",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		512,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 4,

@@ -379,11 +379,11 @@
 	},
 	{ //StageId_Heartbeat (Heartbeat)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFMira_New,    FIXED_DEC(606,1),  FIXED_DEC(374,1)},
         {NULL},
 		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFMira_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
 		Back_Plantroom_New,
@@ -397,11 +397,11 @@
 	},
 	{ //StageId_Pinkwave (Pinkwave)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFMira_New,    FIXED_DEC(606,1),  FIXED_DEC(374,1)},
         {NULL},
 		{Char_Pink_New, FIXED_DEC(362,1),  FIXED_DEC(348,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFMira_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
 		Back_Plantroom_New,
@@ -419,7 +419,7 @@
         {NULL},
 		{Char_Gray_New, FIXED_DEC(-36,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+        {NULL},
 		
 		//Stage background
 		Back_Week1_New,

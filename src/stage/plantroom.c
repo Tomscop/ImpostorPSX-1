@@ -241,7 +241,7 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	fx = (stage.camera.x * 7) / 5;
 	RECT vine0_src = {  0,  0,171,175};
 	RECT_FIXED vine0_dst = {
-		FIXED_DEC(0 + vine - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(174 + vine - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
 		FIXED_DEC(171 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(175,1)
@@ -249,7 +249,7 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	
 	RECT vine1_src = {  0,  0,189,203};
 	RECT_FIXED vine1_dst = {
-		FIXED_DEC(458 + vine - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(632 + vine - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
 		FIXED_DEC(189 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(203,1)
@@ -258,8 +258,8 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	fx = (stage.camera.x * 6) / 5;
 	RECT pot_src = {  0,  0,239,91};
 	RECT_FIXED pot_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-14 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(296,1) - fy,
 		FIXED_DEC(239 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(91,1)
 	};
@@ -275,13 +275,13 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x3) == 0)
 		Animatable_SetAnim(&this->snapper_animatable, 0);
 	Animatable_Animate(&this->snapper_animatable, (void*)this, Plantroom_Snapper_SetFrame);
-	Plantroom_Snapper_Draw(this, FIXED_DEC(0 + 159,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	Plantroom_Snapper_Draw(this, FIXED_DEC(65 + 159,1) - fx, FIXED_DEC(134 + 160,1) - fy);
 	
 	//Animate and draw cyborg
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7 )== 0)
 		Animatable_SetAnim(&this->cyborg_animatable, 0);
 	Animatable_Animate(&this->cyborg_animatable, (void*)this, Plantroom_Cyborg_SetFrame);
-	Plantroom_Cyborg_Draw(this, FIXED_DEC(0 + 150,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	Plantroom_Cyborg_Draw(this, FIXED_DEC(654 + 150,1) - fx, FIXED_DEC(166 + 160,1) - fy);
 	
 	//Vine move
 	if ((stage.song_step & 0x7 )== 2)

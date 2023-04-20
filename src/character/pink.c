@@ -110,6 +110,78 @@ void Char_Pink_Tick(Character *character)
 {
 	Char_Pink *this = (Char_Pink*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Heartbeat)
+	{
+		if (stage.song_step == 32)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 272)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 279)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 283)
+			this->character.focus_zoom = FIXED_DEC(781,1024);
+		if (stage.song_step == 286)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 287)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 288)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 412)
+			this->character.focus_zoom = FIXED_DEC(727,1024);
+		if (stage.song_step == 416)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 528)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 535)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 539)
+			this->character.focus_zoom = FIXED_DEC(781,1024);
+		if (stage.song_step == 542)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 604)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 608)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 612)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 616)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 620)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 640)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 644)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 647)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 652)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 665)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 672)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 736)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		if (stage.song_step == 784)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 788)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 791)
+			this->character.focus_zoom = FIXED_DEC(747,1024);
+		if (stage.song_step == 795)
+			this->character.focus_zoom = FIXED_DEC(781,1024);
+		if (stage.song_step == 798)
+			this->character.focus_zoom = FIXED_DEC(713,1024);
+		if (stage.song_step == 800)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+	}
+	if (stage.stage_id == StageId_Pinkwave)
+	{
+		if (stage.song_step == 8)
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -161,9 +233,9 @@ Character *Char_Pink_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFEE64CC;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-41,1);
+	this->character.focus_y = FIXED_DEC(-166,1);
+	this->character.focus_zoom = FIXED_DEC(950,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
