@@ -78,12 +78,12 @@ static void Events_Check(Event* event)
 		{
 			if (stage.pinkstuff == false)
 			{
-				stage.pink = 185;
+				stage.pink = 0;
 				stage.pinkstuff = true;
 			}
 			else
 			{
-				stage.pink = 0;
+				stage.pink = 2;
 				stage.pinkstuff = false;
 			}
 			break;

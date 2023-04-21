@@ -245,10 +245,10 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	RECT heart12_src = { 44, 93, 36, 35};
 	RECT heart21_src = {  0,129, 43, 35};
 	RECT heart22_src = { 44,129, 36, 34};
-	RECT_FIXED heart11_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(43 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
-	RECT_FIXED heart12_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(36 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
-	RECT_FIXED heart21_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(43 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
-	RECT_FIXED heart22_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(36 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(34,1)};
+	RECT_FIXED heart11_dst = {FIXED_DEC(-159,1),FIXED_DEC(40,1),FIXED_DEC(65 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(53,1)};
+	RECT_FIXED heart12_dst = {FIXED_DEC(105,1),FIXED_DEC(40-1,1),FIXED_DEC(54 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(53,1)};
+	RECT_FIXED heart21_dst = {FIXED_DEC(-159,1),FIXED_DEC(40,1),FIXED_DEC(65 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(53,1)};
+	RECT_FIXED heart22_dst = {FIXED_DEC(105,1),FIXED_DEC(40,1),FIXED_DEC(54 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(51,1)};
 	
 	if (stage.pinkstuff)
 	{
@@ -270,14 +270,14 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	
 	//Moving hearts
 	RECT dot_src = { 81, 93, 11, 11};
-	RECT_FIXED dot1_dst = {FIXED_DEC(hx1,1) - fx,FIXED_DEC(hy1,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot2_dst = {FIXED_DEC(hx2,1) - fx,FIXED_DEC(hy2,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot3_dst = {FIXED_DEC(hx3,1) - fx,FIXED_DEC(hy3,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot4_dst = {FIXED_DEC(hx4,1) - fx,FIXED_DEC(hy4,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot5_dst = {FIXED_DEC(hx5,1) - fx,FIXED_DEC(hy5,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot6_dst = {FIXED_DEC(hx6,1) - fx,FIXED_DEC(hy6,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot7_dst = {FIXED_DEC(hx7,1) - fx,FIXED_DEC(hy7,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
-	RECT_FIXED dot8_dst = {FIXED_DEC(hx8,1) - fx,FIXED_DEC(hy8,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot1_dst = {FIXED_DEC(hx1,1) - fx,FIXED_DEC(hy1,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot2_dst = {FIXED_DEC(hx2,1) - fx,FIXED_DEC(hy2,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot3_dst = {FIXED_DEC(hx3,1) - fx,FIXED_DEC(hy3,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot4_dst = {FIXED_DEC(hx4,1) - fx,FIXED_DEC(hy4,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot5_dst = {FIXED_DEC(hx5,1) - fx,FIXED_DEC(hy5,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot6_dst = {FIXED_DEC(hx6,1) - fx,FIXED_DEC(hy6,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot7_dst = {FIXED_DEC(hx7,1) - fx,FIXED_DEC(hy7,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
+	RECT_FIXED dot8_dst = {FIXED_DEC(hx8,1) - fx,FIXED_DEC(hy8,1) - fy,FIXED_DEC(17 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(17,1)};
 	
 	if (stage.pinkstuff)
 	{
@@ -356,6 +356,12 @@ void Back_Plantroom_DrawFG(StageBack *back)
 			Gfx_BlendRect(&screen_src, 70, 25, 51, 1);
 		else
 			Gfx_BlendRect(&screen_src, 35, 12, 26, 1);
+	}
+	if (stage.pink == 2)
+	{
+		Gfx_BlendRect(&screen_src, 164, 58, 119, 1);
+		if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x3)== 0)
+			stage.pink = 0;
 	}
 	
 	fx = (stage.camera.x * 7) / 5;
@@ -546,22 +552,22 @@ StageBack *Back_Plantroom_New(void)
 	Animatable_SetAnim(&this->cyborg_animatable, 0);
 	this->cyborg_frame = this->cyborg_tex_id = 0xFF; //Force art load
 	
-	hx1 = -1;
-	hx2 = -1;
-	hx3 = -1;
-	hx4 = -1;
-	hx5 = -1;
-	hx6 = -1;
-	hx7 = -1;
-	hx8 = -1;
-	hy1 = 365;
-	hy2 = 365;
-	hy3 = 365;
-	hy4 = 365;
-	hy5 = 365;
-	hy6 = 365;
-	hy7 = 365;
-	hy8 = 365;
+	hx1 = RandomRange(83,612);
+	hx2 = RandomRange(83,612);
+	hx3 = RandomRange(83,612);
+	hx4 = RandomRange(83,612);
+	hx5 = RandomRange(83,612);
+	hx6 = RandomRange(83,612);
+	hx7 = RandomRange(83,612);
+	hx8 = RandomRange(83,612);
+	hy1 = RandomRange(365,400);
+	hy2 = RandomRange(365,400);
+	hy3 = RandomRange(365,400);
+	hy4 = RandomRange(365,400);
+	hy5 = RandomRange(365,400);
+	hy6 = RandomRange(365,400);
+	hy7 = RandomRange(365,400);
+	hy8 = RandomRange(365,400);
 	
 	return (StageBack*)this;
 }
