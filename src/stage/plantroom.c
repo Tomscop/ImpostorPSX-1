@@ -14,6 +14,8 @@
 #include "../animation.h"
 
 int vine = 0;
+int hx1, hx2, hx3, hx4, hx5, hx6, hx7, hx8 = -1;
+int hy1, hy2, hy3, hy4, hy5, hy6, hy7, hy8 = 365;
 
 //Plantroom background structure
 typedef struct
@@ -232,23 +234,129 @@ void Back_Plantroom_DrawFG(StageBack *back)
 {
 	Back_Plantroom *this = (Back_Plantroom*)back;
 	
-	//Pink filter thing
-	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-	if (stage.pinkstuff)
-	{
-		if ((stage.song_step & 0x7 )== 4)
-			Gfx_BlendRect(&screen_src, 107, 38, 78, 1);
-		else if ((stage.song_step & 0x7 )== 5)
-			Gfx_BlendRect(&screen_src, 70, 25, 51, 1);
-		else
-			Gfx_BlendRect(&screen_src, 35, 12, 26, 1);
-	}
-	
 	fixed_t fx, fy;
 
 	//Draw plantroom
 	fx = stage.camera.x;
 	fy = stage.camera.y;
+	
+	//Heart things
+	RECT heart11_src = {  0, 93, 43, 35};
+	RECT heart12_src = { 44, 93, 36, 35};
+	RECT heart21_src = {  0,129, 43, 35};
+	RECT heart22_src = { 44,129, 36, 34};
+	RECT_FIXED heart11_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(43 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
+	RECT_FIXED heart12_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(36 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
+	RECT_FIXED heart21_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(43 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(35,1)};
+	RECT_FIXED heart22_dst = {FIXED_DEC(0,1),FIXED_DEC(0,1),FIXED_DEC(36 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(34,1)};
+	
+	if (stage.pinkstuff)
+	{
+	if (((stage.song_step & 0x3 )== 0) || ((stage.song_step & 0x3 )== 2))
+	{
+		Stage_DrawTex(&this->tex_pot, &heart11_src, &heart11_dst, FIXED_DEC(1,1));
+		Stage_DrawTex(&this->tex_pot, &heart12_src, &heart12_dst, FIXED_DEC(1,1));
+	}
+	else if (((stage.song_step & 0x3 )== 1) || ((stage.song_step & 0x3 )== 3))
+	{
+		Stage_DrawTex(&this->tex_pot, &heart21_src, &heart21_dst, FIXED_DEC(1,1));
+		Stage_DrawTex(&this->tex_pot, &heart22_src, &heart22_dst, FIXED_DEC(1,1));
+	}
+	}
+	Debug_StageMoveDebug(&heart11_dst, 14, heart11_dst.x, heart11_dst.y);
+	Debug_StageMoveDebug(&heart12_dst, 15, heart12_dst.x, heart12_dst.y);
+	Debug_StageMoveDebug(&heart21_dst, 14, heart21_dst.x, heart21_dst.y);
+	Debug_StageMoveDebug(&heart22_dst, 15, heart22_dst.x, heart22_dst.y);
+	
+	//Moving hearts
+	RECT dot_src = { 81, 93, 11, 11};
+	RECT_FIXED dot1_dst = {FIXED_DEC(hx1,1) - fx,FIXED_DEC(hy1,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot2_dst = {FIXED_DEC(hx2,1) - fx,FIXED_DEC(hy2,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot3_dst = {FIXED_DEC(hx3,1) - fx,FIXED_DEC(hy3,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot4_dst = {FIXED_DEC(hx4,1) - fx,FIXED_DEC(hy4,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot5_dst = {FIXED_DEC(hx5,1) - fx,FIXED_DEC(hy5,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot6_dst = {FIXED_DEC(hx6,1) - fx,FIXED_DEC(hy6,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot7_dst = {FIXED_DEC(hx7,1) - fx,FIXED_DEC(hy7,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	RECT_FIXED dot8_dst = {FIXED_DEC(hx8,1) - fx,FIXED_DEC(hy8,1) - fy,FIXED_DEC(11 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(11,1)};
+	
+	if (stage.pinkstuff)
+	{
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot1_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot2_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot3_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot4_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot5_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot6_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot7_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_pot, &dot_src, &dot8_dst, stage.camera.bzoom);
+	}
+	
+	if (stage.paused == false)
+	{
+	if (hy1 <= -20)
+	{
+		hx1 = RandomRange(83,612);
+		hy1 = 365;
+	}
+	if (hy2 <= -20)
+	{
+		hx2 = RandomRange(83,612);
+		hy2 = 365;
+	}
+	if (hy3 <= -20)
+	{
+		hx3 = RandomRange(83,612);
+		hy3 = 365;
+	}
+	if (hy4 <= -20)
+	{
+		hx4 = RandomRange(83,612);
+		hy4 = 365;
+	}
+	if (hy5 <= -20)
+	{
+		hx5 = RandomRange(83,612);
+		hy5 = 365;
+	}
+	if (hy6 <= -20)
+	{
+		hx6 = RandomRange(83,612);
+		hy6 = 365;
+	}
+	if (hy7 <= -20)
+	{
+		hx7 = RandomRange(83,612);
+		hy7 = 365;
+	}
+	if (hy8 <= -20)
+	{
+		hx8 = RandomRange(83,612);
+		hy8 = 365;
+	}
+	if (stage.pinkstuff)
+	{
+		hy1 -= RandomRange(1,3);
+		hy2 -= RandomRange(1,3);
+		hy3 -= RandomRange(1,3);
+		hy4 -= RandomRange(1,3);
+		hy5 -= RandomRange(1,3);
+		hy6 -= RandomRange(1,3);
+		hy7 -= RandomRange(1,3);
+		hy8 -= RandomRange(1,3);
+	}
+	}
+	
+	//Pink filter thing
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	if (stage.pinkstuff)
+	{
+		if ((stage.song_step & 0x7 )== 4)
+			Gfx_BlendRect(&screen_src, 164, 58, 119, 1);
+		else if ((stage.song_step & 0x7 )== 5)
+			Gfx_BlendRect(&screen_src, 70, 25, 51, 1);
+		else
+			Gfx_BlendRect(&screen_src, 35, 12, 26, 1);
+	}
 	
 	fx = (stage.camera.x * 7) / 5;
 	RECT vine0_src = {  0,  0,171,175};
@@ -437,6 +545,23 @@ StageBack *Back_Plantroom_New(void)
 	Animatable_Init(&this->cyborg_animatable, cyborg_anim);
 	Animatable_SetAnim(&this->cyborg_animatable, 0);
 	this->cyborg_frame = this->cyborg_tex_id = 0xFF; //Force art load
+	
+	hx1 = -1;
+	hx2 = -1;
+	hx3 = -1;
+	hx4 = -1;
+	hx5 = -1;
+	hx6 = -1;
+	hx7 = -1;
+	hx8 = -1;
+	hy1 = 365;
+	hy2 = 365;
+	hy3 = 365;
+	hy4 = 365;
+	hy5 = 365;
+	hy6 = 365;
+	hy7 = 365;
+	hy8 = 365;
 	
 	return (StageBack*)this;
 }

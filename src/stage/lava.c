@@ -115,25 +115,21 @@ void Back_Lava_DrawFG(StageBack *back)
 	RECT_FIXED dot3_dst = {FIXED_DEC(x3,1) - fx,FIXED_DEC(y3,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
 	RECT_FIXED dot4_dst = {FIXED_DEC(x4,1) - fx,FIXED_DEC(y4,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
 	RECT_FIXED dot5_dst = {FIXED_DEC(x5,1) - fx,FIXED_DEC(y5,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
+	RECT_FIXED dot6_dst = {FIXED_DEC(x6,1) - fx,FIXED_DEC(y6,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
+	RECT_FIXED dot7_dst = {FIXED_DEC(x7,1) - fx,FIXED_DEC(y7,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
+	RECT_FIXED dot8_dst = {FIXED_DEC(x8,1) - fx,FIXED_DEC(y8,1) - fy,FIXED_DEC(5 + screen.SCREEN_WIDEOADD,1),FIXED_DEC(5,1)};
 	
 	Stage_DrawTex(&this->tex_back1, &dot_src, &dot1_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &dot_src, &dot2_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &dot_src, &dot3_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &dot_src, &dot4_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &dot_src, &dot5_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back1, &dot_src, &dot6_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back1, &dot_src, &dot7_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back1, &dot_src, &dot8_dst, stage.camera.bzoom);
 	
 	if (stage.paused == false)
 	{
-	if (stage.song_step >= rs1)
-		y1 -= RandomRange(1,3);
-	if (stage.song_step >= rs2)
-		y2 -= RandomRange(1,3);
-	if (stage.song_step >= rs3)
-		y3 -= RandomRange(1,3);
-	if (stage.song_step >= rs4)
-		y4 -= RandomRange(1,3);
-	if (stage.song_step >= rs5)
-		y5 -= RandomRange(1,3);
 	if ((y1 <= -20) || ((stage.song_step == rs1) && stage.flag & STAGE_FLAG_JUST_STEP))
 	{
 		x1 = RandomRange(6,462);
@@ -174,7 +170,6 @@ void Back_Lava_DrawFG(StageBack *back)
 		x8 = RandomRange(6,462);
 		y8 = RandomRange(295,308);
 	}
-	
 	if ((stage.song_step == -25) && stage.flag & STAGE_FLAG_JUST_STEP)
 	{
 		rs1 = RandomRange(-24,15);
@@ -186,6 +181,22 @@ void Back_Lava_DrawFG(StageBack *back)
 		rs7 = RandomRange(-24,15);
 		rs8 = RandomRange(-24,15);
 	}
+	if (stage.song_step >= rs1)
+		y1 -= RandomRange(1,3);
+	if (stage.song_step >= rs2)
+		y2 -= RandomRange(1,3);
+	if (stage.song_step >= rs3)
+		y3 -= RandomRange(1,3);
+	if (stage.song_step >= rs4)
+		y4 -= RandomRange(1,3);
+	if (stage.song_step >= rs5)
+		y5 -= RandomRange(1,3);
+	if (stage.song_step >= rs6)
+		y6 -= RandomRange(1,3);
+	if (stage.song_step >= rs7)
+		y7 -= RandomRange(1,3);
+	if (stage.song_step >= rs8)
+		y8 -= RandomRange(1,3);
 	}
 }
 	
