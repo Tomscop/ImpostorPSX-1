@@ -365,7 +365,7 @@
 				<file name = "cyborg.arc" type = "data" source = "iso/stages/plantrom/cyborg.arc"/>
 				
 				<file name = "pretendr.arc" type = "data" source = "iso/stages/pretendr/back.arc"/>
-				<!-- Snappy Dead -->
+				<file name = "snapperd.arc" type = "data" source = "iso/stages/pretendr/snapperd.arc"/>
 				
 				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>
 				<file name = "greyc.arc" type = "data" source = "iso/stages/kitchen/grey.arc"/>
@@ -447,6 +447,7 @@
 				<file name = "intro2p.vag" type = "data" source = "iso/sounds/stage/intro2p.ogg.vag"/>
 				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
 				<!-- Other Sounds -->
+				<file name = "pretendr.vag" type = "data" source = "iso/sounds/stage/pretendr.ogg.vag"/>
 				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
 				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
 				<!-- Game Over Sounds -->

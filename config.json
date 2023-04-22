@@ -1,26 +1,26 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "gf",
-			"hname"   : "GF"
+			"fnfanim" : "idle",
+			"imgname" : "snapperd",
+			"hname"   : "SnapperD"
 		}
 	],
-	"input":  "iso/chars/gfmira/gfmira",
-	"outdir": "iso/chars/gfmira/",
-	"charname" : "GFMira",
+	"input":  "iso/stages/pretendr/blued",
+	"outdir": "iso/stages/pretendr/",
+	"charname" : "SnapperD",
 	"optimize" : false,
-	"optimizename" : "gfmira",
+	"optimizename" : "snapperd",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
+		896,
 		0,
 		0,
-		480
+		487
 	],
 
 	"bpp" : 4,
-	"resize" : 0.25,
+	"resize" : 0.15,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,
