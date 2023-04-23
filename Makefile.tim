@@ -93,6 +93,7 @@ all: \
 	iso/chars/bfghost/dead.tim \
 	iso/chars/bfeject/dead.tim \
 	iso/chars/bfdefeat/dead.tim \
+	iso/chars/pinkpret/dead.tim \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/dead.tim \
 	iso/chars/kid/dead.tim \
@@ -457,7 +458,7 @@ iso/stages/plantrom/snapper.arc: iso/stages/plantrom/snapper0.tim iso/stages/pla
 iso/stages/plantrom/cyborg.arc: iso/stages/plantrom/cyborg0.tim iso/stages/plantrom/cyborg1.tim iso/stages/plantrom/cyborg2.tim iso/stages/plantrom/cyborg3.tim 
 
 # Pretender
-iso/stages/pretendr/back.arc: iso/stages/pretendr/back0.tim iso/stages/pretendr/back1.tim iso/stages/pretendr/vines.tim iso/stages/pretendr/pot.tim iso/stages/pretendr/border.tim
+iso/stages/pretendr/back.arc: iso/stages/pretendr/back0.tim iso/stages/pretendr/back1.tim iso/stages/pretendr/vines.tim iso/stages/pretendr/pot.tim iso/stages/pretendr/border.tim iso/stages/pretendr/ok.tim
 iso/stages/pretendr/snapperd.arc: iso/stages/pretendr/snapperd0.tim 
 
 # Kitchen

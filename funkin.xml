@@ -316,6 +316,8 @@
 				<file name = "deadejct.tim" type = "data" source = "iso/chars/bfeject/dead.tim"/>
 				<!-- BF Defeat -->
 				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
+				<!-- Pink Pretender -->
+				<file name = "deadpink.tim" type = "data" source = "iso/chars/pinkpret/dead.tim"/>
 				<!-- Pico -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Pixel -->

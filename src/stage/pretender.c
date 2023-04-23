@@ -27,6 +27,7 @@ typedef struct
 	Gfx_Tex tex_vines; //vines
 	Gfx_Tex tex_pot; //pot
 	Gfx_Tex tex_border; //border
+	Gfx_Tex tex_ok; //ok
 	
 	//SnapperD state
 	Gfx_Tex tex_snapperd;
@@ -193,9 +194,19 @@ void Back_Pretender_DrawBG(StageBack *back)
 		FIXED_DEC(361,1)
 	};
 	
+	RECT ok_src = {  0,  0, 77,  5};
+	RECT_FIXED ok_dst = {
+		FIXED_DEC(359 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(109 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(7,1)
+	};
+	
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
 	Debug_StageMoveDebug(&back1_dst, 6, fx, fy);
+	Debug_StageMoveDebug(&ok_dst, 6, fx, fy);
 	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_ok, &ok_src, &ok_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
 }
 
@@ -230,6 +241,7 @@ StageBack *Back_Pretender_New(void)
 	Gfx_LoadTex(&this->tex_vines, Archive_Find(arc_back, "vines.tim"), 0);
 	Gfx_LoadTex(&this->tex_pot, Archive_Find(arc_back, "pot.tim"), 0);
 	Gfx_LoadTex(&this->tex_border, Archive_Find(arc_back, "border.tim"), 0);
+	Gfx_LoadTex(&this->tex_ok, Archive_Find(arc_back, "ok.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load snapperd textures

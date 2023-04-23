@@ -246,7 +246,7 @@ Character *Char_PinkPretender_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(33,1);
 	this->character.focus_y = FIXED_DEC(-140,1);
-	this->character.focus_zoom = FIXED_DEC(682,1024);
+	this->character.focus_zoom = FIXED_DEC(688,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

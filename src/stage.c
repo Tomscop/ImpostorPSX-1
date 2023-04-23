@@ -43,9 +43,7 @@ static const u8 note_anims[4][3] = {
 
 
 //Stage definitions
-boolean noteshake;
-boolean show;
-boolean firsthit;
+boolean noteshake, show, firsthit, prtndr;
 static u32 Sounds[10];
 
 //Players
@@ -1403,6 +1401,8 @@ static void Stage_LoadPlayer(void)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADEJCT.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Defeat)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Pretender)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPINK.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
@@ -1599,15 +1599,6 @@ static void Stage_LoadSFX(void)
 		}
     }
 	
-	//pretender opening sound
-	if ((stage.stage_id == StageId_Pretender) && (stage.story))
-	{
-		IO_FindFile(&file, "\\SOUNDS\\PRETENDR.VAG;1");
-		u32 *data = IO_ReadFile(&file);
-		Sounds[7] = Audio_LoadVAGData(data, file.size);
-		Mem_Free(data);
-	}
-	
 	//tomongus shot sound
 	if ((stage.stage_id == StageId_SussyBussy) || (stage.stage_id == StageId_Rivals))
 	{
@@ -1641,6 +1632,13 @@ static void Stage_LoadSFX(void)
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
+	else if ((stage.stage_id == StageId_Pretender) && (stage.story == true))
+	{
+		IO_FindFile(&file, "\\SOUNDS\\PRETENDR.VAG;1");
+		u32 *data = IO_ReadFile(&file);
+		Sounds[8] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
 		IO_FindFile(&file, "\\SOUNDS\\DEATHP.VAG;1");
@@ -1655,7 +1653,7 @@ static void Stage_LoadSFX(void)
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
-	else if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
+	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 	{
 		IO_FindFile(&file, "\\SOUNDS\\DEATH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
@@ -1716,7 +1714,7 @@ static void Stage_LoadMusic(void)
 		stage.intro = false;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
 	}
-	else if ((stage.stage_id == StageId_Pretender) && (stage.story))
+	else if (prtndr == true)
 	{
 		stage.intro = true;
 		stage.event_note_scroll = stage.note_scroll = FIXED_DEC(-5 * 28 * 12,1);
@@ -1791,10 +1789,16 @@ static void Stage_LoadState(void)
 		timer.timersec = 0;
 		stage.paused = false;
 		firsthit = false;
-		if ((stage.stage_id == StageId_Pretender) && (stage.story))
+		if ((stage.stage_id == StageId_Pretender) && (stage.story == true))
+		{
 			stage.black = true;
+			prtndr = true;
+		}
 		else
+		{
 			stage.black = false;
+			prtndr = false;
+		}
 		stage.pinkstuff = false;
 		stage.pink = 0;
 		stage.lights = 0;
@@ -2121,7 +2125,7 @@ void Stage_Tick(void)
 		{
 			inctimer = true;
 			Audio_StopXA();
-			if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
+			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 				Audio_PlaySound(Sounds[9], 0x3fff);
 			else
 				deadtimer = 175; //FIX THIS IDIOT
@@ -2236,8 +2240,8 @@ void Stage_Tick(void)
 				noteshake = 0;
 			
 			//sounds
-			if ((stage.stage_id == StageId_Pretender) && (stage.story) && (stage.song_step == -134) && stage.flag & STAGE_FLAG_JUST_STEP)
-				Audio_PlaySound(Sounds[7], 0x3fff);
+			if ((prtndr == true) && (stage.song_step == -135) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[8], 0x3fff);
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step == 2064) && stage.flag & STAGE_FLAG_JUST_STEP)
@@ -2288,7 +2292,7 @@ void Stage_Tick(void)
 			//Complete black screen stuff
 			if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1632))
 				stage.black = true;
-			else if ((stage.stage_id == StageId_Pretender) && (stage.song_step <= -31) && (stage.story))
+			else if ((prtndr == true) && (stage.song_step <= -31))
 				stage.black = true;
 			else
 				stage.black = false;
@@ -3039,9 +3043,10 @@ void Stage_Tick(void)
 			
 			stage.song_time = 0;
 			
-			if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
+			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 			{
-				Audio_PlaySound(Sounds[8], 0x3fff);
+				if (prtndr == false)
+					Audio_PlaySound(Sounds[8], 0x3fff);
 				if (VAG_IsPlaying(8) == false)
 				{
 					if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
@@ -3075,6 +3080,12 @@ void Stage_Tick(void)
 			{
 				RECT src = {  0,  0,130,123};
 				RECT dst = { 95, 58,130,123};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if (stage.stage_id == StageId_Pretender)
+			{
+				RECT src = {  0,  0,157,127};
+				RECT dst = { 82, 56,157,127};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))

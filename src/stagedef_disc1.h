@@ -393,7 +393,7 @@
 		XA_Heartbeat, 0,
 		"Heartbeat", "Composer: Saster", "",
 		
-		StageId_Pinkwave, 0
+		StageId_Pinkwave, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
 	},
 	{ //StageId_Pinkwave (Pinkwave)
 		//Characters

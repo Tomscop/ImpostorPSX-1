@@ -163,7 +163,7 @@ void Char_Gray_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(-30,1);
 			this->character.focus_y = FIXED_DEC(-173,1);
-			this->character.focus_zoom = FIXED_DEC(682,1024);
+			this->character.focus_zoom = FIXED_DEC(688,1024);
 		}
 	}
 	
@@ -251,7 +251,7 @@ Character *Char_Gray_New(fixed_t x, fixed_t y)
 	else if (stage.stage_id == StageId_Pretender)
 	{
 	this->character.focus_x = FIXED_DEC(44,1);
-	this->character.focus_y = FIXED_DEC(-123,1);
+	this->character.focus_y = FIXED_DEC(-124,1);
 	this->character.focus_zoom = FIXED_DEC(950,1024);
 	}
 	
