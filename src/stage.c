@@ -59,6 +59,7 @@ static u32 Sounds[10];
 #include "character/bflava.h"
 #include "character/bfairship.h"
 #include "character/bfmira.h"
+#include "character/pinkpretender.h"
 #include "character/bfchef.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
@@ -1654,7 +1655,7 @@ static void Stage_LoadSFX(void)
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
-	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) || ((stage.stage_id != StageId_Pretender) && (stage.story)))
+	else if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
 	{
 		IO_FindFile(&file, "\\SOUNDS\\DEATH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
@@ -2120,10 +2121,10 @@ void Stage_Tick(void)
 		{
 			inctimer = true;
 			Audio_StopXA();
-			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) || ((stage.stage_id != StageId_Pretender) && (stage.story)))
+			if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
 				Audio_PlaySound(Sounds[9], 0x3fff);
 			else
-				deadtimer = 200;
+				deadtimer = 175; //FIX THIS IDIOT
 		}
 	}
 	else if (pad_state.press & PAD_CIRCLE && stage.state != StageState_Play)
@@ -3038,7 +3039,7 @@ void Stage_Tick(void)
 			
 			stage.song_time = 0;
 			
-			if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate) || ((stage.stage_id != StageId_Pretender) && (stage.story)))
+			if (((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate)) || ((stage.stage_id != StageId_Pretender) && (stage.story == false)))
 			{
 				Audio_PlaySound(Sounds[8], 0x3fff);
 				if (VAG_IsPlaying(8) == false)

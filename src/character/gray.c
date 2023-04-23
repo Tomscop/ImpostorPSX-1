@@ -160,7 +160,11 @@ void Char_Gray_Tick(Character *character)
 	if (stage.stage_id == StageId_Pretender)
 	{
 		if (stage.song_step == 4)
-			this->character.focus_zoom = FIXED_DEC(679,1024);
+		{
+			this->character.focus_x = FIXED_DEC(-30,1);
+			this->character.focus_y = FIXED_DEC(-173,1);
+			this->character.focus_zoom = FIXED_DEC(682,1024);
+		}
 	}
 	
 	//Perform idle dance
@@ -246,8 +250,8 @@ Character *Char_Gray_New(fixed_t x, fixed_t y)
 	}
 	else if (stage.stage_id == StageId_Pretender)
 	{
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_x = FIXED_DEC(44,1);
+	this->character.focus_y = FIXED_DEC(-123,1);
 	this->character.focus_zoom = FIXED_DEC(950,1024);
 	}
 	

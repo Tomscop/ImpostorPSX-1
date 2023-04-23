@@ -33,6 +33,7 @@ all: \
 	iso/chars/bflava/main.arc \
 	iso/chars/bfairshp/main.arc \
 	iso/chars/bfmira/main.arc \
+	iso/chars/pinkpret/main.arc \
 	iso/chars/bfchef/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
@@ -184,6 +185,7 @@ iso/chars/bfairshp/main.arc: iso/chars/bfairshp/idle0.tim iso/chars/bfairshp/idl
 iso/chars/bfmira/main.arc: iso/chars/bfmira/idle0.tim iso/chars/bfmira/idle1.tim iso/chars/bfmira/left0.tim iso/chars/bfmira/down0.tim iso/chars/bfmira/up0.tim iso/chars/bfmira/right0.tim iso/chars/bfmira/leftm0.tim iso/chars/bfmira/downm0.tim iso/chars/bfmira/upm0.tim iso/chars/bfmira/rightm0.tim 
 
 # Pink Pretender
+iso/chars/pinkpret/main.arc: iso/chars/pinkpret/idle0.tim iso/chars/pinkpret/idle1.tim iso/chars/pinkpret/idle2.tim iso/chars/pinkpret/idle3.tim iso/chars/pinkpret/idle4.tim iso/chars/pinkpret/idle5.tim iso/chars/pinkpret/idle6.tim iso/chars/pinkpret/left0.tim iso/chars/pinkpret/left1.tim iso/chars/pinkpret/left2.tim iso/chars/pinkpret/left3.tim iso/chars/pinkpret/left4.tim iso/chars/pinkpret/left5.tim iso/chars/pinkpret/down0.tim iso/chars/pinkpret/down1.tim iso/chars/pinkpret/down2.tim iso/chars/pinkpret/up0.tim iso/chars/pinkpret/up1.tim iso/chars/pinkpret/right0.tim iso/chars/pinkpret/right1.tim iso/chars/pinkpret/right2.tim iso/chars/pinkpret/right3.tim iso/chars/pinkpret/right4.tim iso/chars/pinkpret/leftm0.tim iso/chars/pinkpret/downm0.tim iso/chars/pinkpret/upm0.tim iso/chars/pinkpret/rightm0.tim 
 
 # BF Chef
 iso/chars/bfchef/main.arc: iso/chars/bfchef/idle0.tim iso/chars/bfchef/idle1.tim iso/chars/bfchef/idle2.tim iso/chars/bfchef/left0.tim iso/chars/bfchef/down0.tim iso/chars/bfchef/up0.tim iso/chars/bfchef/right0.tim iso/chars/bfchef/leftm0.tim iso/chars/bfchef/leftm1.tim iso/chars/bfchef/downm0.tim iso/chars/bfchef/upm0.tim iso/chars/bfchef/upm1.tim iso/chars/bfchef/rightm0.tim iso/chars/bfchef/downa0.tim iso/chars/bfchef/upa0.tim iso/chars/bfchef/upa1.tim 

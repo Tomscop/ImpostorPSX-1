@@ -12,6 +12,7 @@
 #include "../random.h"
 #include "../timer.h"
 #include "../animation.h"
+#include "../character/speaker.h"
 
 //Pretender background structure
 typedef struct
@@ -31,6 +32,9 @@ typedef struct
 	Gfx_Tex tex_snapperd;
 	u8 snapperd_frame, snapperd_tex_id;
 	Animatable snapperd_animatable;
+	
+	//Speaker
+	Speaker speaker;
 	
 } Back_Pretender;
 
@@ -96,24 +100,24 @@ void Back_Pretender_DrawFG(StageBack *back)
 	
 	RECT vine0_src = {  0,  0,115,233};
 	RECT_FIXED vine0_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(2,1) - fy,
+		FIXED_DEC(23 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-8,1) - fy,
 		FIXED_DEC(169 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(343,1)
 	};
 	
 	RECT vine1_src = {116,  0,132,252};
 	RECT_FIXED vine1_dst = {
-		FIXED_DEC(0+549 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(2,1) - fy,
+		FIXED_DEC(23+549 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-8,1) - fy,
 		FIXED_DEC(194 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(371,1)
 	};
 	
 	RECT pot_src = {  0,  0,239, 91};
 	RECT_FIXED pot_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-2 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(293,1) - fy,
 		FIXED_DEC(239 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(91,1)
 	};
@@ -130,7 +134,37 @@ void Back_Pretender_DrawFG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0)
 		Animatable_SetAnim(&this->snapperd_animatable, 0);
 	Animatable_Animate(&this->snapperd_animatable, (void*)this, Pretender_SnapperD_SetFrame);
-	Pretender_SnapperD_Draw(this, FIXED_DEC(65 + 159,1) - fx, FIXED_DEC(134 + 160,1) - fy);
+	Pretender_SnapperD_Draw(this, FIXED_DEC(36 + 224,1) - fx, FIXED_DEC(229 + 160,1) - fy);
+}
+
+void Back_Pretender_DrawMG(StageBack *back)
+{
+	Back_Pretender *this = (Back_Pretender*)back;
+
+	fixed_t fx, fy;
+
+	//Draw pretender
+	fx = stage.camera.x;
+	fy = stage.camera.y;
+	
+	RECT deadgf_src = {  0,113, 67, 64};
+	RECT_FIXED deadgf_dst = {
+		FIXED_DEC(342 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(150,1) - fy,
+		FIXED_DEC(74 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(70,1)
+	};
+	
+	Debug_StageMoveDebug(&deadgf_dst, 11, fx, fy);
+	Stage_DrawTex(&this->tex_border, &deadgf_src, &deadgf_dst, stage.camera.bzoom);
+	
+	if ((stage.song_step % stage.gf_speed) == 0)
+	{
+		//Bump speakers
+		Speaker_Bump(&this->speaker);
+	}
+	//Tick speakers
+	Speaker_Tick(&this->speaker, FIXED_DEC(373,1) - fx, FIXED_DEC(183,1) - fy, 0);
 }
 
 void Back_Pretender_DrawBG(StageBack *back)
@@ -185,7 +219,7 @@ StageBack *Back_Pretender_New(void)
 	
 	//Set background functions
 	this->back.draw_fg = Back_Pretender_DrawFG;
-	this->back.draw_md = NULL;
+	this->back.draw_md = Back_Pretender_DrawMG;
 	this->back.draw_bg = Back_Pretender_DrawBG;
 	this->back.free = Back_Pretender_Free;
 	
@@ -206,6 +240,9 @@ StageBack *Back_Pretender_New(void)
 	Animatable_Init(&this->snapperd_animatable, snapperd_anim);
 	Animatable_SetAnim(&this->snapperd_animatable, 0);
 	this->snapperd_frame = this->snapperd_tex_id = 0xFF; //Force art load
+	
+	//Initialize speaker
+	Speaker_Init(&this->speaker);
 	
 	return (StageBack*)this;
 }

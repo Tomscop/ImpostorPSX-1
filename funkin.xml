@@ -204,7 +204,7 @@
 				<file name = "bflava.arc" type = "data" source = "iso/chars/bflava/main.arc"/>
 				<file name = "bfairshp.arc" type = "data" source = "iso/chars/bfairshp/main.arc"/>
 				<file name = "bfmira.arc" type = "data" source = "iso/chars/bfmira/main.arc"/>
-				<!-- Pink Pretender assets -->
+				<file name = "pinkpret.arc" type = "data" source = "iso/chars/pinkpret/main.arc"/>
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
 				<!-- Boyfriend Turbulence assets -->
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>

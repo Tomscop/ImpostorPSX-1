@@ -2,25 +2,65 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "snapperd",
-			"hname"   : "SnapperD"
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/stages/pretendr/blued",
-	"outdir": "iso/stages/pretendr/",
-	"charname" : "SnapperD",
+	"input":  "iso/chars/pinkpret/pretender",
+	"outdir": "iso/chars/pinkpret/",
+	"charname" : "PinkPretender",
 	"optimize" : false,
-	"optimizename" : "snapperd",
+	"optimizename" : "pinkpretender",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		896,
+		640,
 		0,
 		0,
-		487
+		480
 	],
 
 	"bpp" : 4,
-	"resize" : 0.15,
+	"resize" : 0.225,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

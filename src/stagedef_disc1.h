@@ -415,9 +415,9 @@
 	},
 	{ //StageId_Pretender (Pretender)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_PinkPretender_New,    FIXED_DEC(347,1),  FIXED_DEC(320,1)},
         {NULL},
-		{Char_Gray_New, FIXED_DEC(-36,1),  FIXED_DEC(100,1)},
+		{Char_Gray_New, FIXED_DEC(352,1),  FIXED_DEC(353,1)},
         {NULL},
         {NULL},
 		
