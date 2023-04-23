@@ -111,10 +111,10 @@ void Speaker_Tick(Speaker *this, fixed_t x, fixed_t y, fixed_t parallax)
 		//Draw piece
 		RECT piece_src = {piece->rect[0], piece->rect[1], piece->rect[2], piece->rect[3]};
 		RECT_FIXED piece_dst = {
-			x - FIXED_DEC(88,1) + FIXED_MUL(((fixed_t)piece->ox << FIXED_SHIFT), FIXED_DEC(11,10)) - FIXED_MUL(stage.camera.x, parallax),
-			y + ((fixed_t)piece->oy << FIXED_SHIFT) - FIXED_MUL(stage.camera.y, parallax),
-			FIXED_MUL((fixed_t)piece->rect[2] << FIXED_SHIFT, FIXED_DEC(11,10)),
-			FIXED_MUL((fixed_t)piece->rect[3] << FIXED_SHIFT, FIXED_DEC(11,10)),
+			x - FIXED_DEC(88,1) + FIXED_MUL(piece->ox << FIXED_SHIFT, FIXED_DEC(11,10)) - FIXED_MUL(stage.camera.x, parallax),
+			y + FIXED_MUL(piece->oy << FIXED_SHIFT, FIXED_DEC(11,10)) - FIXED_MUL(stage.camera.y, parallax),
+			FIXED_MUL(piece->rect[2] << FIXED_SHIFT, FIXED_DEC(11,10)),
+			FIXED_MUL(piece->rect[3] << FIXED_SHIFT, FIXED_DEC(11,10))
 		};
 		
 		if (stage.lights != 1)
