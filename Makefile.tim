@@ -68,6 +68,7 @@ all: \
 	iso/chars/charles/main.arc \
 	iso/chars/redv1/main.arc \
 	iso/chars/redow/main.arc \
+	iso/chars/yfronts/main.arc \
 	iso/chars/jerma/main.arc \
 	iso/chars/nuzzus/main.arc \
 	iso/chars/tobyfox/main.arc \
@@ -337,6 +338,7 @@ iso/chars/redv1/main.arc: iso/chars/redv1/idle0.tim iso/chars/redv1/idle1.tim is
 iso/chars/redow/main.arc: iso/chars/redow/idle0.tim iso/chars/redow/left0.tim iso/chars/redow/down0.tim iso/chars/redow/up0.tim iso/chars/redow/right0.tim iso/chars/redow/right1.tim 
 
 # Y Fronts
+iso/chars/yfronts/main.arc: iso/chars/yfronts/idle0.tim iso/chars/yfronts/idle1.tim iso/chars/yfronts/left0.tim iso/chars/yfronts/down0.tim iso/chars/yfronts/up0.tim iso/chars/yfronts/right0.tim iso/chars/yfronts/right1.tim iso/chars/yfronts/idlem0.tim iso/chars/yfronts/idlem1.tim iso/chars/yfronts/leftm0.tim iso/chars/yfronts/leftm1.tim iso/chars/yfronts/downm0.tim iso/chars/yfronts/upm0.tim iso/chars/yfronts/upm1.tim iso/chars/yfronts/rightm0.tim iso/chars/yfronts/rightm1.tim 
 
 # Jerma
 iso/chars/jerma/main.arc: iso/chars/jerma/idle0.tim iso/chars/jerma/idle1.tim iso/chars/jerma/idle2.tim iso/chars/jerma/left0.tim iso/chars/jerma/left1.tim iso/chars/jerma/down0.tim iso/chars/jerma/down1.tim iso/chars/jerma/up0.tim iso/chars/jerma/up1.tim iso/chars/jerma/right0.tim iso/chars/jerma/right1.tim 

@@ -270,7 +270,7 @@
 				<!-- Reginald assets -->
 				<file name = "redv1.arc" type = "data" source = "iso/chars/redv1/main.arc"/>
 				<file name = "redow.arc" type = "data" source = "iso/chars/redow/main.arc"/>
-				<!-- Y Fronts assets -->
+				<file name = "yfronts.arc" type = "data" source = "iso/chars/yfronts/main.arc"/>
 				<file name = "jerma.arc" type = "data" source = "iso/chars/jerma/main.arc"/>
 				<file name = "nuzzus.arc" type = "data" source = "iso/chars/nuzzus/main.arc"/>
 				<file name = "tobyfox.arc" type = "data" source = "iso/chars/tobyfox/main.arc"/>

@@ -2,61 +2,41 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
+			"imgname" : "idlem",
+			"hname"   : "IdleM"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
 			"imgname" : "leftm",
 			"hname"   : "LeftM"
 		},
 		{
-			"fnfanim" : "singDOWNmiss",
+			"fnfanim" : "singDOWN",
 			"imgname" : "downm",
 			"hname"   : "DownM"
 		},
 		{
-			"fnfanim" : "singUPmiss",
+			"fnfanim" : "singUP",
 			"imgname" : "upm",
 			"hname"   : "UpM"
 		},
 		{
-			"fnfanim" : "singRIGHTmiss",
+			"fnfanim" : "singRIGHT",
 			"imgname" : "rightm",
 			"hname"   : "RightM"
 		}
 	],
-	"input":  "iso/chars/pinkpret/pretender",
-	"outdir": "iso/chars/pinkpret/",
-	"charname" : "PinkPretender",
+	"input":  "iso/chars/yfronts/bluewho",
+	"outdir": "iso/chars/yfronts/",
+	"charname" : "YFronts",
 	"optimize" : false,
-	"optimizename" : "pinkpretender",
+	"optimizename" : "yfronts",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
 	"bpp" : 4,

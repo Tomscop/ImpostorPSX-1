@@ -93,6 +93,7 @@ static u32 Sounds[10];
 #include "character/charles.h"
 #include "character/redv1.h"
 #include "character/redow.h"
+#include "character/yfronts.h"
 #include "character/jerma.h"
 #include "character/nuzzus.h"
 #include "character/tobyfox.h"
