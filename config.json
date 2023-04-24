@@ -60,7 +60,7 @@
 	],
 
 	"bpp" : 4,
-	"resize" : 0.225,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

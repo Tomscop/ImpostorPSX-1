@@ -322,6 +322,8 @@
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Pixel -->
 				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
+				<!-- Blue Ow -->
+				<file name = "deadow.tim" type = "data" source = "iso/chars/blueow/dead.tim"/>
 				<!-- Idk -->
 				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
 			</dir>
