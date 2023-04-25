@@ -40,6 +40,7 @@ all: \
 	iso/chars/bfchrist/main.arc \
 	iso/chars/bfv1/main.arc \
 	iso/chars/blueow/main.arc \
+	iso/chars/going2ki/main.arc \
 	iso/chars/kid/main.arc \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
@@ -215,6 +216,7 @@ iso/chars/bfv1/main.arc: iso/chars/bfv1/idle0.tim iso/chars/bfv1/left0.tim iso/c
 iso/chars/blueow/main.arc: iso/chars/blueow/idle0.tim iso/chars/blueow/left0.tim iso/chars/blueow/down0.tim iso/chars/blueow/up0.tim iso/chars/blueow/right0.tim iso/chars/blueow/lefth0.tim iso/chars/blueow/downh0.tim iso/chars/blueow/uph0.tim iso/chars/blueow/righth0.tim 
 
 # Going2KillEvery1
+iso/chars/going2ki/main.arc: iso/chars/going2ki/idle0.tim iso/chars/going2ki/idle1.tim iso/chars/going2ki/left0.tim iso/chars/going2ki/left1.tim iso/chars/going2ki/down0.tim iso/chars/going2ki/up0.tim iso/chars/going2ki/up1.tim iso/chars/going2ki/up2.tim iso/chars/going2ki/right0.tim iso/chars/going2ki/leftm0.tim iso/chars/going2ki/leftm1.tim iso/chars/going2ki/downm0.tim iso/chars/going2ki/upm0.tim iso/chars/going2ki/upm1.tim iso/chars/going2ki/rightm0.tim iso/chars/going2ki/idlemad0.tim iso/chars/going2ki/idlemad1.tim iso/chars/going2ki/leftmad0.tim iso/chars/going2ki/leftmad1.tim iso/chars/going2ki/downmad0.tim iso/chars/going2ki/downmad1.tim iso/chars/going2ki/downmad2.tim iso/chars/going2ki/upmad0.tim iso/chars/going2ki/rightma0.tim iso/chars/going2ki/rightma1.tim iso/chars/going2ki/leftmam0.tim iso/chars/going2ki/downmam0.tim iso/chars/going2ki/downmam1.tim iso/chars/going2ki/upmadm0.tim iso/chars/going2ki/rightmm0.tim 
 
 # Kid
 iso/chars/kid/main.arc: iso/chars/kid/idle0.tim iso/chars/kid/idle1.tim iso/chars/kid/idle2.tim iso/chars/kid/left0.tim iso/chars/kid/left1.tim iso/chars/kid/down0.tim iso/chars/kid/down1.tim iso/chars/kid/up0.tim iso/chars/kid/up1.tim iso/chars/kid/right0.tim iso/chars/kid/right1.tim 

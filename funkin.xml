@@ -214,7 +214,7 @@
 				<!-- Henry Phone assets -->
 				<file name = "bfv1.arc" type = "data" source = "iso/chars/bfv1/main.arc"/>
 				<file name = "blueow.arc" type = "data" source = "iso/chars/blueow/main.arc"/>
-				<!-- Going2KillEvery1 assets -->
+				<file name = "going2ki.arc" type = "data" source = "iso/chars/going2ki/main.arc"/>
 				<file name = "kid.arc" type = "data" source = "iso/chars/kid/main.arc"/>
 				<file name = "bfdrip.arc" type = "data" source = "iso/chars/bfdrip/main.arc"/>
 				<file name = "picodrip.arc" type = "data" source = "iso/chars/picodrip/main.arc"/>

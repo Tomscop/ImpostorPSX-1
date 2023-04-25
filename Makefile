@@ -40,6 +40,7 @@ SRCS = src/main.c \
 	src/character/bfchristmas.c \
 	src/character/bfv1.c \
 	src/character/blueow.c \
+	src/character/going2killevery1.c \
 	src/character/kid.c \
 	src/character/bfdrip.c \
 	src/character/picodrip.c \

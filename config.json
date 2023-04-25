@@ -2,41 +2,61 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idlem",
-			"hname"   : "IdleM"
+			"imgname" : "idlemad",
+			"hname"   : "IdleMad"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
+			"imgname" : "leftmad",
+			"hname"   : "LeftMad"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "downm",
-			"hname"   : "DownM"
+			"imgname" : "downmad",
+			"hname"   : "DownMad"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "upm",
-			"hname"   : "UpM"
+			"imgname" : "upmad",
+			"hname"   : "UpMad"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
+			"imgname" : "rightmad",
+			"hname"   : "RightMad"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftmadm",
+			"hname"   : "LeftMadM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downmadm",
+			"hname"   : "DownMadM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upmadm",
+			"hname"   : "UpMadM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightmadm",
+			"hname"   : "RightMadM"
 		}
 	],
-	"input":  "iso/chars/yfronts/bluewho",
-	"outdir": "iso/chars/yfronts/",
-	"charname" : "YFronts",
+	"input":  "iso/chars/going2ki/whitemad",
+	"outdir": "iso/chars/going2ki/",
+	"charname" : "Going2KillEvery1",
 	"optimize" : false,
-	"optimizename" : "yfronts",
+	"optimizename" : "going2killevery1",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		640,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 4,

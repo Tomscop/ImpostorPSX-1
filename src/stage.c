@@ -64,6 +64,7 @@ static u32 Sounds[10];
 #include "character/bfchristmas.h"
 #include "character/bfv1.h"
 #include "character/blueow.h"
+#include "character/going2killevery1.h"
 #include "character/kid.h"
 #include "character/bfdrip.h"
 #include "character/picodrip.h"
