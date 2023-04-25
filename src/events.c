@@ -100,6 +100,39 @@ static void Events_Check(Event* event)
 			}
 			break;
 		}
+		case EVENTS_FLAG_WHOCAM: //Cam lock in Who!!
+		{
+			if (stage.song_step >= 450)
+			{
+			if ((event->value1 >> FIXED_SHIFT) == 0)
+			{
+				stage.camswitch = 0;
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 1)
+			{
+				if ((event->value2 >> FIXED_SHIFT) == 0)
+					stage.camswitch = 1;
+				if ((event->value2 >> FIXED_SHIFT) == 1)
+					stage.camswitch = 2;
+			}
+			}
+			break;
+		}
+		case EVENTS_FLAG_VTCAM: //Cam lock in Who!!
+		{
+			if ((event->value1 >> FIXED_SHIFT) == 0)
+			{
+				stage.camswitch = 0;
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 1)
+			{
+				if ((event->value2 >> FIXED_SHIFT) == 0)
+					stage.camswitch = 1;
+				if ((event->value2 >> FIXED_SHIFT) == 1)
+					stage.camswitch = 2;
+			}
+			break;
+		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
 		{
 			//Value 1

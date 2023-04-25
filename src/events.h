@@ -23,6 +23,8 @@
 #define EVENTS_FLAG_LIGHTS2   (1 << 9) //Lights on
 #define EVENTS_FLAG_HUDFADE   (1 << 10) //HUD Fade
 #define EVENTS_FLAG_PINK      (1 << 11) //pink toggle
+#define EVENTS_FLAG_WHOCAM    (1 << 12) //Cam lock in Who
+#define EVENTS_FLAG_VTCAM     (1 << 13) //Cam lock in Voting Time
 
 #define EVENTS_FLAG_PLAYED    (1 << 15) //Event has been already played
 

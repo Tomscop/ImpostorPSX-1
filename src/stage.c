@@ -134,6 +134,7 @@ static u32 Sounds[10];
 #include "stage/christmas.h"
 #include "stage/henry.h"
 #include "stage/v1.h"
+#include "stage/shields.h"
 #include "stage/jermaroom.h"
 #include "stage/earthbound.h"
 #include "stage/idk.h"
@@ -1815,6 +1816,7 @@ static void Stage_LoadState(void)
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
 		stage.hudfade = 0;
+		stage.camswitch = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);

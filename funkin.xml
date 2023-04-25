@@ -399,7 +399,7 @@
 				
 				<file name = "v1.arc" type = "data" source = "iso/stages/v1/back.arc"/>
 				
-				<!-- Who BG -->
+				<file name = "shields.arc" type = "data" source = "iso/stages/shields/back.arc"/>
 				
 				<file name = "jerma.arc" type = "data" source = "iso/stages/jerma/back.arc"/>
 				<file name = "aaaaaa.arc" type = "data" source = "iso/stages/jerma/aaaaaa.arc"/>

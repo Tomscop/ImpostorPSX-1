@@ -872,7 +872,7 @@ void Menu_Tick(void)
 				{"5", StageId_Ashes,"MAGMATIC MONSTROSITY<<<<", {"ASHES","MAGMATIC","BOILING POINT", NULL, NULL}, 3},
 				{"6", StageId_Delusion,"DEADLY DELUSION", {"DELUSION","BLACKOUT","NEUROTIC", NULL, NULL}, 3},
 				{"7", StageId_Heartbeat,"HUMANE HEARTBEAT<", {"HEARTBEAT","PINKWAVE","PRETENDER", NULL, NULL}, 3},
-				{"4", StageId_O2,"JORSAWSEES JAMS<", {"OTWO","VOTING TIME","TURBULENCE","VICTORY", NULL}, 4},
+				{"4", StageId_O2,"JORSAWSEES JAMS<", {"O2","VOTING TIME","TURBULENCE","VICTORY", NULL}, 4},
 				{"11", StageId_SussyBussy,"ROUSEY RIVAL", {"SUSSY BUSSY","RIVALS","CHEWMATE", NULL, NULL}, 3},
 				{"12", StageId_Christmas,"LOGGOS HALLOWEEN<", {"CHRISTMAS","SPOOKPOSTOR", NULL, NULL, NULL}, 2},
 				{"13", StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
@@ -1032,6 +1032,66 @@ void Menu_Tick(void)
 					storymove2 = 0;
 					storymove3 = 0;
 					storymove4 = 0;
+					if (menu.select == 0)
+					{
+						storyx = 152;
+						storyy = 132;
+					}
+					if (menu.select == 1)
+					{
+						storyx = 54;
+						storyy = 132;
+					}
+					if (menu.select == 2)
+					{
+						storyx = -44;
+						storyy = 132;
+					}
+					if (menu.select == 3)
+					{
+						storyx = -142;
+						storyy = 132;
+					}
+					if (menu.select == 4)
+					{
+						storyx = -240;
+						storyy = 132;
+					}
+					if (menu.select == 5)
+					{
+						storyx = 152;
+						storyy = 34;
+					}
+					if (menu.select == 6)
+					{
+						storyx = 250;
+						storyy = 34;
+					}
+					if (menu.select == 7)
+					{
+						storyx = 348;
+						storyy = 34;
+					}
+					if (menu.select == 8)
+					{
+						storyx = 152;
+						storyy = 230;
+					}
+					if (menu.select == 9)
+					{
+						storyx = -44;
+						storyy = 34;
+					}
+					if (menu.select == 10)
+					{
+						storyx = -44;
+						storyy = 230;
+					}
+					if (menu.select == 11)
+					{
+						storyx = -142;
+						storyy = 34;
+					}
 				}
 				
 				//Select option if cross is pressed

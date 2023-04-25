@@ -53,6 +53,8 @@ struct Note
 #define EVENTS_FLAG_LIGHTS2   (1 << 9) //Lights on
 #define EVENTS_FLAG_HUDFADE   (1 << 10) //HUD Fade
 #define EVENTS_FLAG_PINK      (1 << 11) //pink toggle
+#define EVENTS_FLAG_WHOCAM    (1 << 12) //Cam lock in Who
+#define EVENTS_FLAG_VTCAM     (1 << 13) //Cam lock in Voting Time
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -133,6 +135,12 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	
 	if (i[0 + position] == "pink toggle")
 		event_src.event |= EVENTS_FLAG_PINK;
+	
+	if (i[0 + position] == "Cam lock in Who")
+		event_src.event |= EVENTS_FLAG_WHOCAM;
+	
+	if (i[0 + position] == "Cam lock in Voting Time")
+		event_src.event |= EVENTS_FLAG_VTCAM;
 	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
@@ -221,6 +229,34 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 			
 			if (i[2 + position] == "")
 				i[2 + position] = "0";
+		}
+		if (event_src.event & EVENTS_FLAG_WHOCAM)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "0";
+			if (i[1 + position] == "in")
+				i[1 + position] = "1";
+			
+			if (i[2 + position] == "")
+				i[2 + position] = "0";
+			if (i[2 + position] == "dad")
+				i[2 + position] = "1";
+		}
+		if (event_src.event & EVENTS_FLAG_VTCAM)
+		{
+			//Default values
+			if (i[1 + position] == "")
+				i[1 + position] = "0";
+			if (i[1 + position] == "in")
+				i[1 + position] = "1";
+			if (i[1 + position] == "close")
+				i[1 + position] = "2";
+			
+			if (i[2 + position] == "")
+				i[2 + position] = "0";
+			if (i[2 + position] == "dad")
+				i[2 + position] = "1";
 		}
 
 		//Get values information

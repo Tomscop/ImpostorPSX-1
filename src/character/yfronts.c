@@ -140,6 +140,41 @@ void Char_YFronts_Tick(Character *character)
 {
 	Char_YFronts *this = (Char_YFronts*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Who)
+	{
+		if (stage.camswitch == 0)
+		{
+			this->character.focus_x = FIXED_DEC(31,1);
+			this->character.focus_y = FIXED_DEC(-95,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.camswitch == 1)
+		{
+			this->character.focus_x = FIXED_DEC(122,1);
+			this->character.focus_y = FIXED_DEC(-65,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.camswitch == 2)
+		{
+			this->character.focus_x = FIXED_DEC(-65,1);
+			this->character.focus_y = FIXED_DEC(-65,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_step == 384)
+			stage.camswitch = 1;
+		if (stage.song_step == 396)
+			stage.camswitch = 2;
+		if (stage.song_step == 402)
+			stage.camswitch = 1;
+		if (stage.song_step == 411)
+			stage.camswitch = 2;
+		if (stage.song_step == 424)
+			stage.camswitch = 1;
+		if (stage.song_step == 448)
+			stage.camswitch = 0;
+	}
+	
 	//Mad switch thing
 	if (stage.stage_id == StageId_Who)
 	{
@@ -204,9 +239,9 @@ Character *Char_YFronts_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF6066FF;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(31,1);
+	this->character.focus_y = FIXED_DEC(-95,1);
+	this->character.focus_zoom = FIXED_DEC(950,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

@@ -14,7 +14,7 @@
 		XA_SussusMoogus, 0,
 		"Sussus Moogus", "Composer: EthanTheDoodler", "",
 		
-		StageId_Sabotage, STAGE_LOAD_FLAG | STAGE_LOAD_GIRLFRIEND | STAGE_LOAD_OPPONENT2
+		StageId_Sabotage, 0
 	},
 	{ //StageId_Sabotage (Sabotage)
 		//Characters
@@ -32,7 +32,7 @@
 		XA_Sabotage, 2,
 		"Sabotage", "Composer: EthanTheDoodler", "",
 		
-		StageId_Meltdown, STAGE_LOAD_FLAG | STAGE_LOAD_PLAYER | STAGE_LOAD_OPPONENT
+		StageId_Meltdown, 0
 	},
 	{ //StageId_Meltdown (Meltdown)
 		//Characters
@@ -140,7 +140,7 @@
 		XA_Mando, 2,
 		"Mando", "Composer: Rareblin", "",
 		
-		StageId_Dlow, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
+		StageId_Dlow, 0
 	},
 	{ //StageId_Dlow (Dlow)
 		//Characters
@@ -158,7 +158,7 @@
 		XA_Dlow, 0,
 		"D'low", "Composer: Punkett, Rareblin", "",
 		
-		StageId_Oversight, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_PLAYER
+		StageId_Oversight, 0
 	},
 	{ //StageId_Oversight (Oversight)
 		//Characters
@@ -285,7 +285,7 @@
 		XA_Ashes, 0,
 		"Ashes", "Composer: EthanTheDoodler,", "                  Renyar",
 		
-		StageId_Magmatic, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
+		StageId_Magmatic, 0
 	},
 	{ //StageId_Magmatic (Magmatic)
 		//Characters
@@ -339,7 +339,7 @@
 		XA_Delusion, 2,
 		"Delusion", "Composer: Fluffyhairs", "",
 		
-		StageId_Blackout, STAGE_LOAD_FLAG
+		StageId_Blackout, 0
 	},
 	{ //StageId_Blackout (Blackout)
 		//Characters
@@ -357,7 +357,7 @@
 		XA_Blackout, 0,
 		"Blackout", "Composer: Cval", "",
 		
-		StageId_Neurotic, STAGE_LOAD_FLAG
+		StageId_Neurotic, 0
 	},
 	{ //StageId_Neurotic (Neurotic)
 		//Characters
@@ -393,7 +393,7 @@
 		XA_Heartbeat, 0,
 		"Heartbeat", "Composer: Saster", "",
 		
-		StageId_Pinkwave, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
+		StageId_Pinkwave, 0
 	},
 	{ //StageId_Pinkwave (Pinkwave)
 		//Characters
@@ -557,7 +557,7 @@
 		XA_SussyBussy, 0,
 		"Sussy Bussy", "Composer: Saruky", "",
 		
-		StageId_Rivals, STAGE_LOAD_FLAG
+		StageId_Rivals, 0
 	},
 	{ //StageId_Rivals (Rivals)
 		//Characters
@@ -575,7 +575,7 @@
 		XA_Rivals, 2,
 		"Rivals", "Composer: Keoni", "",
 		
-		StageId_Chewmate, STAGE_LOAD_FLAG
+		StageId_Chewmate, 0
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
@@ -630,7 +630,7 @@
 		XA_Christmas, 0,
 		"Christmas", "Composer: emihead", "",
 		
-		StageId_Spookpostor, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT | STAGE_LOAD_PLAYER
+		StageId_Spookpostor, 0
 	},
 	{ //StageId_Spookpostor (Spookpostor)
 		//Characters
@@ -781,14 +781,14 @@
 	},
 	{ //StageId_Who (Who)
 		//Characters
-		{Char_Going2KillEvery1_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Going2KillEvery1_New,    FIXED_DEC(477,1),  FIXED_DEC(216,1)},
         {NULL},
-		{Char_YFronts_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_YFronts_New, FIXED_DEC(206,1),  FIXED_DEC(226,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Shields_New,
 		
 		//Song info
 		5, 4,

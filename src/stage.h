@@ -289,7 +289,7 @@ typedef struct
 	fixed_t flash, flashspd;
 	fixed_t reactor, reactorspd, pink, pinkspd;
 	fixed_t bop1, bop2, bopintense1, bopintense2;
-	int defeatmiss, lights, hudfade;
+	int defeatmiss, lights, hudfade, camswitch;
 	boolean pinkstuff;
 	u16 opacity;
 	

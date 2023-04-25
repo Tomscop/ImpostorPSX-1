@@ -101,13 +101,13 @@ static const CharFrame char_going2killevery1_frame[] = {
   {Going2KillEvery1_ArcMain_RightM0, {  0,  0, 95,124}, {157,102}}, //24 rightm 1
   {Going2KillEvery1_ArcMain_RightM0, { 95,  0, 92,124}, {160,102}}, //25 rightm 2
 
-  {Going2KillEvery1_ArcMain_IdleMad0, {  0,  0,114,112}, {174+3, 85+4}}, //26 idlemad 1
-  {Going2KillEvery1_ArcMain_IdleMad0, {114,  0,122,110}, {175+3, 83+4}}, //27 idlemad 2
-  {Going2KillEvery1_ArcMain_IdleMad0, {  0,112,120,110}, {171+3, 83+4}}, //28 idlemad 3
-  {Going2KillEvery1_ArcMain_IdleMad0, {120,112,116,114}, {170+3, 87+4}}, //29 idlemad 4
+  {Going2KillEvery1_ArcMain_IdleMad0, {  0,  0,114,112}, {174+3, 84+4}}, //26 idlemad 1
+  {Going2KillEvery1_ArcMain_IdleMad0, {114,  0,122,110}, {175+3, 82+4}}, //27 idlemad 2
+  {Going2KillEvery1_ArcMain_IdleMad0, {  0,112,120,110}, {171+3, 82+4}}, //28 idlemad 3
+  {Going2KillEvery1_ArcMain_IdleMad0, {120,112,116,114}, {170+3, 86+4}}, //29 idlemad 4
   {Going2KillEvery1_ArcMain_IdleMad1, {  0,  0,125,118}, {175+3, 90+4}}, //30 idlemad 5
-  {Going2KillEvery1_ArcMain_IdleMad1, {125,  0,115,118}, {177+3, 90+4}}, //31 idlemad 6
-  {Going2KillEvery1_ArcMain_IdleMad1, {  0,118,116,118}, {176+3, 90+4}}, //32 idlemad 7
+  {Going2KillEvery1_ArcMain_IdleMad1, {125,  0,115,118}, {176+3, 90+4}}, //31 idlemad 6
+  {Going2KillEvery1_ArcMain_IdleMad1, {  0,118,116,118}, {175+3, 90+4}}, //32 idlemad 7
   {Going2KillEvery1_ArcMain_IdleMad1, {116,118,116,118}, {175+3, 90+4}}, //33 idlemad 8
 
   {Going2KillEvery1_ArcMain_LeftMad0, {  0,  0,187,112}, {244+3, 84+4}}, //34 leftmad 1
@@ -199,6 +199,29 @@ void Char_Going2KillEvery1_SetFrame(void *user, u8 frame)
 void Char_Going2KillEvery1_Tick(Character *character)
 {
 	Char_Going2KillEvery1 *this = (Char_Going2KillEvery1*)character;
+	
+	//Camera stuff
+	if (stage.stage_id == StageId_Who)
+	{
+		if (stage.camswitch == 0)
+		{
+			this->character.focus_x = FIXED_DEC(-240,1);
+			this->character.focus_y = FIXED_DEC(-85,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.camswitch == 1)
+		{
+			this->character.focus_x = FIXED_DEC(-149,1);
+			this->character.focus_y = FIXED_DEC(-55,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.camswitch == 2)
+		{
+			this->character.focus_x = FIXED_DEC(-336,1);
+			this->character.focus_y = FIXED_DEC(-55,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+	}
 	
 	//Mad switch thing
 	if (stage.stage_id == StageId_Who)
@@ -299,8 +322,8 @@ Character *Char_Going2KillEvery1_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFFEAEAF5;
 	
 	
-	this->character.focus_x = FIXED_DEC(-226,1);
-	this->character.focus_y = FIXED_DEC(-192,1);
+	this->character.focus_x = FIXED_DEC(-240,1);
+	this->character.focus_y = FIXED_DEC(-85,1);
 	this->character.focus_zoom = FIXED_DEC(950,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
