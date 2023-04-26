@@ -33,14 +33,11 @@ static char scoredisp[30];
 int starmove = 0;
 int starfgx = 0;
 int starbgx = 20;
-int storymove1 = 0;
-int storymove2 = 0;
-int storymove3 = 0;
-int storymove4 = 0;
-int storymove = 0;
+int storymove, storymove1, storymove2, storymove3, storymove4, storymove1l, storymove2l, storymove3l, storymove4l = 0;
 int storyx = 152;
 int storyy = 132;
 int ship = 0;
+int main1, main2, main3, main4 = 0;
 //Menu messages
 static const char *funny_messages[][2] = {
 	{"TRUST THE", "FUCKING PLAN"},
@@ -124,7 +121,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_stuff;
+	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_stuff, tex_buttons;
 	FontData font_bold, font_arial, font_cdr, font_sus;
 	
 	Character *gf; //Title Girlfriend
@@ -456,6 +453,69 @@ static void Menu_DrawDefeat(void)
 		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 }
 
+void idk()
+{
+	if (menu.select == 0)
+	{
+		storyx = 152;
+		storyy = 132;
+	}
+	if (menu.select == 1)
+	{
+		storyx = 54;
+		storyy = 132;
+	}
+	if (menu.select == 2)
+	{
+		storyx = -44;
+		storyy = 132;
+	}
+	if (menu.select == 3)
+	{
+		storyx = -142;
+		storyy = 132;
+	}
+	if (menu.select == 4)
+	{
+		storyx = -240;
+		storyy = 132;
+	}
+	if (menu.select == 5)
+	{
+		storyx = 152;
+		storyy = 34;
+	}
+	if (menu.select == 6)
+	{
+		storyx = 250;
+		storyy = 34;
+	}
+	if (menu.select == 7)
+	{
+		storyx = 348;
+		storyy = 34;
+	}
+	if (menu.select == 8)
+	{
+		storyx = 152;
+		storyy = 230;
+	}
+	if (menu.select == 9)
+	{
+		storyx = -44;
+		storyy = 34;
+	}
+	if (menu.select == 10)
+	{
+		storyx = -44;
+		storyy = 230;
+	}
+	if (menu.select == 11)
+	{
+		storyx = -142;
+		storyy = 34;
+	}
+}
 //Menu functions
 void Menu_Load(MenuPage page)
 {
@@ -469,6 +529,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Gfx_LoadTex(&menu.tex_stuff, Archive_Find(menu_arc, "stuff.tim"), 0);
+	Gfx_LoadTex(&menu.tex_buttons, Archive_Find(menu_arc, "buttons.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold, false);
@@ -733,8 +794,8 @@ void Menu_Tick(void)
 			static const char *menu_options[] = {
 				"STORY MODE",
 				"FREEPLAY",
-				"CREDITS",
 				"OPTIONS",
+				"CREDITS",
 			};
 			
 			//Initialize page
@@ -770,19 +831,53 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select > 0)
-						menu.select--;
-					else
-						menu.select = COUNT_OF(menu_options) - 1;
+					if (menu.select == 0)
+						menu.select = 2;
+					else if (menu.select == 1)
+						menu.select = 3;
+					else if (menu.select == 2)
+						menu.select = 0;
+					else if (menu.select == 3)
+						menu.select = 1;
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select < COUNT_OF(menu_options) - 1)
-						menu.select++;
-					else
+					if (menu.select == 0)
+						menu.select = 2;
+					else if (menu.select == 1)
+						menu.select = 3;
+					else if (menu.select == 2)
 						menu.select = 0;
+					else if (menu.select == 3)
+						menu.select = 1;
+				}
+				if (pad_state.press & PAD_LEFT)
+				{
+					//play scroll sound
+                    Audio_PlaySound(Sounds[0], 0x3fff);
+					if (menu.select == 0)
+						menu.select = 1;
+					else if (menu.select == 1)
+						menu.select = 0;
+					else if (menu.select == 2)
+						menu.select = 3;
+					else if (menu.select == 3)
+						menu.select = 2;
+				}
+				if (pad_state.press & PAD_RIGHT)
+				{
+					//play scroll sound
+                    Audio_PlaySound(Sounds[0], 0x3fff);
+					if (menu.select == 0)
+						menu.select = 1;
+					else if (menu.select == 1)
+						menu.select = 0;
+					else if (menu.select == 2)
+						menu.select = 3;
+					else if (menu.select == 3)
+						menu.select = 2;
 				}
 				
 				//Select option if cross is pressed
@@ -798,11 +893,11 @@ void Menu_Tick(void)
 						case 1: //Freeplay
 							menu.next_page = MenuPage_Freeplay;
 							break;
-						case 2: //Credits
-							menu.next_page = MenuPage_Credits;
-							break;
-						case 3: //Options
+						case 2: //Options
 							menu.next_page = MenuPage_Options;
+							break;
+						case 3: //Credits
+							menu.next_page = MenuPage_Credits;
 							break;
 					}
 					menu.next_select = 0;
@@ -821,34 +916,45 @@ void Menu_Tick(void)
 				}
 			}
 			
-			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(12,1);
-
-			menu.scroll += (next_scroll - menu.scroll) >> 2;
+			//Draw logo
+			RECT logo_src = {  0,  0,191,164};
+			RECT logo_dst = {
+				74,
+				2,
+				172,
+				148
+			};
+			Gfx_DrawTex(&menu.tex_title, &logo_src, &logo_dst);
 			
-			if (menu.next_page == menu.page || menu.next_page == MenuPage_Title)
-			{
-				//Draw all options
-				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-				{
-					menu.font_bold.draw(&menu.font_bold,
-						Menu_LowerIf(menu_options[i], menu.select != i),
-						screen.SCREEN_WIDTH2,
-						screen.SCREEN_HEIGHT2 + (i << 5) - 48 - (menu.scroll >> FIXED_SHIFT),
-						FontAlign_Center
-					);
-				}
-			}
-			else if (animf_count & 2)
-			{
-				//Draw selected option
-				menu.font_bold.draw(&menu.font_bold,
-					menu_options[menu.select],
-					screen.SCREEN_WIDTH2,
-					screen.SCREEN_HEIGHT2 + (menu.select << 5) - 48 - (menu.scroll >> FIXED_SHIFT),
-					FontAlign_Center
-				);
-			}
+			//Draw menu options
+			RECT story_src = {main1, 85, 88, 36};
+			RECT story_dst = {71,155, 88, 36};
+			RECT freeplay_src = {main2, 24, 88, 36};
+			RECT freeplay_dst = {71+91,155, 88, 36};
+			RECT options_src = {main3, 61, 88, 23};
+			RECT options_dst = {71,155+40, 88, 23};
+			RECT credits_src = {main4,  0, 88, 23};
+			RECT credits_dst = {71+91,155+40, 88, 23};
+			if (menu.select == 0)
+				main1 = 89;
+			else
+				main1 = 0;
+			if (menu.select == 1)
+				main2 = 89;
+			else
+				main2 = 0;
+			if (menu.select == 2)
+				main3 = 89;
+			else
+				main3 = 0;
+			if (menu.select == 3)
+				main4 = 89;
+			else
+				main4 = 0;
+			Gfx_DrawTex(&menu.tex_buttons, &story_src, &story_dst);
+			Gfx_DrawTex(&menu.tex_buttons, &freeplay_src, &freeplay_dst);
+			Gfx_DrawTex(&menu.tex_buttons, &options_src, &options_dst);
+			Gfx_DrawTex(&menu.tex_buttons, &credits_src, &credits_dst);
 			
 			//Draw background
 			Menu_DrawBack();
@@ -915,6 +1021,7 @@ void Menu_Tick(void)
 						Audio_PlaySound(Sounds[0], 0x3fff);
 						storymove1 = 1;
 						ship = 2;
+						storymove1l += 1;
 					}
 					
 					if (menu.select == 0)
@@ -935,6 +1042,7 @@ void Menu_Tick(void)
 						Audio_PlaySound(Sounds[0], 0x3fff);
 						storymove2 = 1;
 						ship = 3;
+						storymove2l += 1;
 					}
 					
 					if (menu.select == 0)
@@ -955,6 +1063,7 @@ void Menu_Tick(void)
 						Audio_PlaySound(Sounds[0], 0x3fff);
 						storymove3 = 1;
 						ship = 1;
+						storymove3l += 1;
 					}
 					
 					if (menu.select == 1)
@@ -977,6 +1086,7 @@ void Menu_Tick(void)
 						Audio_PlaySound(Sounds[0], 0x3fff);
 						storymove4 = 1;
 						ship = 0;
+						storymove4l += 1;
 					}
 					
 					if (menu.select == 0)
@@ -995,107 +1105,79 @@ void Menu_Tick(void)
 				
 				if (storymove1 == 1)
 				{
-					if (storymove <= 97)
+					if (storymove <= ((98 * storymove1l)-1))
 					{
 						storymove += 7;
 						storyy += 7;
 					}
 				}
-				if (storymove2 == 1)
+				else if (storymove2 == 1)
 				{
-					if (storymove <= 97)
+					if (storymove <= ((98 * storymove2l)-1))
 					{
 						storymove += 7;
 						storyy -= 7;
 					}
 				}
-				if (storymove3 == 1)
+				else if (storymove3 == 1)
 				{
-					if (storymove <= 97)
+					if (storymove <= ((98 * storymove3l)-1))
 					{
 						storymove += 7;
 						storyx += 7;
 					}
 				}
-				if (storymove4 == 1)
+				else if (storymove4 == 1)
 				{
-					if (storymove <= 97)
+					if (storymove <= ((98 * storymove4l)-1))
 					{
 						storymove += 7;
 						storyx -= 7;
 					}
 				}
-				if (storymove >= 98)
+				if ((storymove1 == 1) && (storymove >= (98 * storymove1l)))
 				{
-					storymove = 0;
 					storymove1 = 0;
+					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
+					{
+						idk();
+					}
+					storymove = 0;
+					storymove1l = 0;
+				}
+				else if ((storymove2 == 1) && (storymove >= (98 * storymove2l)))
+				{
 					storymove2 = 0;
+					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
+					{
+						idk();
+					}
+					storymove = 0;
+					storymove2l = 0;
+				}
+				else if ((storymove3 == 1) && (storymove >= (98 * storymove3l)))
+				{
 					storymove3 = 0;
+					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
+					{
+						idk();
+					}
+					storymove = 0;
+					storymove3l = 0;
+				}
+				else if ((storymove4 == 1) && (storymove >= (98 * storymove4l)))
+				{
 					storymove4 = 0;
-					if (menu.select == 0)
+					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
 					{
-						storyx = 152;
-						storyy = 132;
+						idk();
 					}
-					if (menu.select == 1)
-					{
-						storyx = 54;
-						storyy = 132;
-					}
-					if (menu.select == 2)
-					{
-						storyx = -44;
-						storyy = 132;
-					}
-					if (menu.select == 3)
-					{
-						storyx = -142;
-						storyy = 132;
-					}
-					if (menu.select == 4)
-					{
-						storyx = -240;
-						storyy = 132;
-					}
-					if (menu.select == 5)
-					{
-						storyx = 152;
-						storyy = 34;
-					}
-					if (menu.select == 6)
-					{
-						storyx = 250;
-						storyy = 34;
-					}
-					if (menu.select == 7)
-					{
-						storyx = 348;
-						storyy = 34;
-					}
-					if (menu.select == 8)
-					{
-						storyx = 152;
-						storyy = 230;
-					}
-					if (menu.select == 9)
-					{
-						storyx = -44;
-						storyy = 34;
-					}
-					if (menu.select == 10)
-					{
-						storyx = -44;
-						storyy = 230;
-					}
-					if (menu.select == 11)
-					{
-						storyx = -142;
-						storyy = 34;
-					}
+					storymove = 0;
+					storymove4l = 0;
 				}
 				
 				//Select option if cross is pressed
-				if (pad_state.press & (PAD_START | PAD_CROSS))
+				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))
 				{
 					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
 					{
@@ -1777,7 +1859,7 @@ void Menu_Tick(void)
 					//play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
 					menu.next_page = MenuPage_Main;
-					menu.next_select = 2; //Credits
+					menu.next_select = 3; //Credits
 					Trans_Start();
 				}
 			}
@@ -1917,7 +1999,7 @@ void Menu_Tick(void)
 					//play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
 					menu.next_page = MenuPage_Main;
-					menu.next_select = 3; //Options
+					menu.next_select = 2; //Options
 					Trans_Start();
 				}
 			}

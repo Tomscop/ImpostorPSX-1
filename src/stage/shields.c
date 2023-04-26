@@ -14,6 +14,7 @@
 #include "../animation.h"
 
 int eject = -207;
+u8 sprite_angle = 0;
 
 //Shields background structure
 typedef struct
@@ -44,14 +45,14 @@ void Back_Shields_DrawFG(StageBack *back)
 	RECT eject_src = {104,135, 63, 84};
 	RECT_FIXED eject_dst = {
 		FIXED_DEC(eject - screen.SCREEN_WIDEOADD2,1),
-		FIXED_DEC(-32,1),
+		FIXED_DEC(0,1),
 		FIXED_DEC(47 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(63,1)
 	};
 	
 	RECT stars_src = {  0,  0,241,134};
 	RECT_FIXED stars_dst = {
-		FIXED_DEC(-169 - screen.SCREEN_WIDEOADD2,1),
+		FIXED_DEC(-175 - screen.SCREEN_WIDEOADD2,1),
 		FIXED_DEC(-120,1),
 		FIXED_DEC(432 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(240,1)
@@ -91,7 +92,7 @@ void Back_Shields_DrawFG(StageBack *back)
 		Stage_DrawTex(&this->tex_ending, &emergency_src, &emergency_dst, FIXED_DEC(1,1));
 	if (stage.song_step >= 1168)
 	{
-		Stage_DrawTex(&this->tex_ending, &eject_src, &eject_dst, FIXED_DEC(1,1));
+		Stage_DrawTexRotate(&this->tex_ending, &eject_src, &eject_dst, FIXED_DEC(1,1), sprite_angle);
 		Stage_DrawTex(&this->tex_ending, &stars_src, &stars_dst, FIXED_DEC(1,1));
 	}
 	if (stage.song_step == 1152)
@@ -104,7 +105,10 @@ void Back_Shields_DrawFG(StageBack *back)
 		Stage_DrawTex(&this->tex_alert, &alert1_src, &alert1_dst, FIXED_DEC(1,1));
 	
 	if (stage.song_step >= 1168)
+	{
 		eject += 1;
+		sprite_angle += 1;
+	}
 }
 
 void Back_Shields_DrawBG(StageBack *back)
