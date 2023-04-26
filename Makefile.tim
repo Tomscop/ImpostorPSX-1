@@ -491,7 +491,7 @@ iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim
 iso/stages/v1/back.arc: iso/stages/v1/back0.tim iso/stages/v1/back1.tim
 
 # Shields
-iso/stages/shields/back.arc: iso/stages/shields/back0.tim iso/stages/shields/back1.tim
+iso/stages/shields/back.arc: iso/stages/shields/back0.tim iso/stages/shields/back1.tim iso/stages/shields/ending.tim iso/stages/shields/alert.tim
 
 # Jerma Room
 iso/stages/jerma/back.arc: iso/stages/jerma/back0.tim iso/stages/jerma/back1.tim

@@ -2292,6 +2292,8 @@ void Stage_Tick(void)
 				show = false;
 			else if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1600))
 				show = false;
+			else if ((stage.stage_id == StageId_Who) && (stage.song_step >= 1152))
+				show = false;
 			else
 				show = true;
 			
