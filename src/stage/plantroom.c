@@ -350,14 +350,14 @@ void Back_Plantroom_DrawFG(StageBack *back)
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 	if (stage.pinkstuff)
 	{
-		if ((stage.song_step & 0x7 )== 4)
+		if (((stage.song_step & 0x7 )== 4) && (stage.prefs.flash != 0))
 			Gfx_BlendRect(&screen_src, 164, 58, 119, 1);
-		else if ((stage.song_step & 0x7 )== 5)
+		else if (((stage.song_step & 0x7 )== 5) && (stage.prefs.flash != 0))
 			Gfx_BlendRect(&screen_src, 70, 25, 51, 1);
 		else
 			Gfx_BlendRect(&screen_src, 35, 12, 26, 1);
 	}
-	if (stage.pink == 2)
+	if ((stage.pink == 2) && (stage.prefs.flash != 0))
 	{
 		Gfx_BlendRect(&screen_src, 164, 58, 119, 1);
 		if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x3)== 0)

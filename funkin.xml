@@ -251,7 +251,7 @@
 				<!-- Warchief assets -->
 				<!-- Jelqer assets -->
 				<!-- Redmungus VT assets -->
-				<!-- Redmungus Parasite assets -->
+				<file name = "redmungp.arc" type = "data" source = "iso/chars/redmungp/main.arc"/>
 				<!-- Jorsawsee Ghost assets -->
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
 				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
@@ -310,20 +310,22 @@
 			<dir name = "dead">
 				<!-- Normal -->
 				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
-				<!-- BF Ghost -->
+				<!-- Meltdown -->
 				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
-				<!-- BF Ghost -->
+				<!-- Ejected -->
 				<file name = "deadejct.tim" type = "data" source = "iso/chars/bfeject/dead.tim"/>
-				<!-- BF Defeat -->
+				<!-- Defeat -->
 				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
-				<!-- Pink Pretender -->
+				<!-- Pretender -->
 				<file name = "deadpink.tim" type = "data" source = "iso/chars/pinkpret/dead.tim"/>
-				<!-- Pico -->
+				<!-- Roomcode -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
-				<!-- Pixel -->
+				<!-- Tomongus -->
 				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
-				<!-- Blue Ow -->
+				<!-- Ow -->
 				<file name = "deadow.tim" type = "data" source = "iso/chars/blueow/dead.tim"/>
+				<!-- Who -->
+				<file name = "deadwho.tim" type = "data" source = "iso/chars/going2ki/dead.tim"/>
 				<!-- Idk -->
 				<file name = "deadkid.tim" type = "data" source = "iso/chars/kid/dead.tim"/>
 			</dir>

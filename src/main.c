@@ -48,7 +48,7 @@ void ErrorLock(void)
 #undef MEM_IMPLEMENTATION
 
 #ifndef PSXF_STDMEM
-static u8 malloc_heap[0x182500];
+static u8 malloc_heap[0x182000];
 #endif
 
 //Entry point                                                                             

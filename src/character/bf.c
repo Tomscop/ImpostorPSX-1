@@ -13,6 +13,7 @@
 #include "../main.h"
 
 int zoomout = 0;
+
 //Boyfriend player types
 enum
 {
@@ -559,10 +560,14 @@ void Char_BF_Tick(Character *character)
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
 	if (stage.lights != 1)
+	{
 		if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
 			Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
-	if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407)))
-		Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 128, 125, 126);
+		else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407)))
+			Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 128, 125, 126);
+		else if (stage.stage_id == StageId_Turbulence)
+			Character_DrawRotate(character, &this->tex, &char_bf_frame[this->frame], 200);
+	}
 }
 
 void Char_BF_SetAnim(Character *character, u8 anim)

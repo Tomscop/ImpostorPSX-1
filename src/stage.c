@@ -87,6 +87,7 @@ static u32 Sounds[10];
 #include "character/pink.h"
 #include "character/chefogus.h"
 #include "character/powers.h"
+#include "character/redmungusparasite.h"
 #include "character/tomongus.h"
 #include "character/loggo.h"
 #include "character/spooker.h"
@@ -1412,6 +1413,8 @@ static void Stage_LoadPlayer(void)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Ow)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADOW.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Who)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADWHO.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Idk)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADKID.TIM;1"), GFX_LOADTEX_FREE);
 	else
@@ -2260,6 +2263,8 @@ void Stage_Tick(void)
 			//^ makes step show on screen
 			
 			//Draw reactor beep
+			if (stage.prefs.flash != 0)
+			{
 			if (stage.reactor != 0)
 				if (stage.reactor > 0)
 				{
@@ -2268,7 +2273,8 @@ void Stage_Tick(void)
 					Gfx_BlendRect(&reactor, reactor_col, 0, 0, 1);
 					stage.reactor -= FIXED_MUL(stage.reactorspd, timer_dt);
 				}
-				
+			}
+			
 			if (stage.prefs.songtimer)
 			{
 				if (show)
@@ -3072,7 +3078,7 @@ void Stage_Tick(void)
 	//Fallthrough
 		case StageState_DeadLoad:
 		{
-			if ((stage.stage_id == StageId_Meltdown) || (stage.stage_id == StageId_Roomcode))
+			if ((stage.stage_id == StageId_Meltdown) || (stage.stage_id == StageId_Roomcode) || (stage.stage_id == StageId_Who))
 			{
 				RECT src = {  0,  0,123,123};
 				RECT dst = { 98, 58,123,123};

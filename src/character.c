@@ -63,6 +63,21 @@ void Character_DrawParallaxFlipped(Character *this, Gfx_Tex *tex, const CharFram
 	Stage_DrawTex(tex, &src, &dst, stage.camera.bzoom);
 }
 
+void Character_DrawParallaxRotate(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax, u8 angle)
+{
+	//Draw character
+	fixed_t x = this->x - FIXED_MUL(stage.camera.x, parallax) - FIXED_MUL(cframe->off[0] << FIXED_SHIFT, this->size);
+	fixed_t y = this->y - FIXED_MUL(stage.camera.y, parallax) - FIXED_MUL(cframe->off[1] << FIXED_SHIFT, this->size);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = {x, y, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+	
+	dst.w = FIXED_MUL(dst.w, this->size);
+	dst.h = FIXED_MUL(dst.h, this->size);
+	
+	Stage_DrawTexRotate(tex, &src, &dst, stage.camera.bzoom, angle);
+}
+
 void Character_DrawParallaxCol(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax, fixed_t r, fixed_t g, fixed_t b)
 {
 	//Draw character
@@ -86,6 +101,11 @@ void Character_Draw(Character *this, Gfx_Tex *tex, const CharFrame *cframe)
 void Character_DrawFlipped(Character *this, Gfx_Tex *tex, const CharFrame *cframe)
 {
 	Character_DrawParallaxFlipped(this, tex, cframe, FIXED_UNIT);
+}
+
+void Character_DrawRotate(Character *this, Gfx_Tex *tex, const CharFrame *cframe, u8 angle)
+{
+	Character_DrawParallaxRotate(this, tex, cframe, FIXED_UNIT, angle);
 }
 
 void Character_DrawCol(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t r, fixed_t g, fixed_t b)

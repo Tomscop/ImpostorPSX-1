@@ -61,6 +61,7 @@ all: \
 	iso/chars/gray/main.arc \
 	iso/chars/pink/main.arc \
 	iso/chars/chef/main.arc \
+	iso/chars/redmungp/main.arc \
 	iso/chars/powers/main.arc \
 	iso/chars/tomong/main.arc \
 	iso/chars/loggo/main.arc \
@@ -99,6 +100,7 @@ all: \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/dead.tim \
 	iso/chars/blueow/dead.tim \
+	iso/chars/going2ki/dead.tim \
 	iso/chars/kid/dead.tim \
 	iso/stages/polus/back.arc \
 	iso/stages/polus/snow.arc \
@@ -305,6 +307,7 @@ iso/chars/chef/main.arc: iso/chars/chef/idle0.tim iso/chars/chef/idle1.tim iso/c
 # Redmungus VT
 
 # Redmungus Parasite
+iso/chars/redmungp/main.arc: iso/chars/redmungp/idle0.tim iso/chars/redmungp/idle1.tim iso/chars/redmungp/idle2.tim iso/chars/redmungp/idle3.tim iso/chars/redmungp/idle4.tim iso/chars/redmungp/idle5.tim iso/chars/redmungp/idle6.tim iso/chars/redmungp/left0.tim iso/chars/redmungp/left1.tim iso/chars/redmungp/left2.tim iso/chars/redmungp/down0.tim iso/chars/redmungp/down1.tim iso/chars/redmungp/down2.tim iso/chars/redmungp/down3.tim iso/chars/redmungp/up0.tim iso/chars/redmungp/up1.tim iso/chars/redmungp/up2.tim iso/chars/redmungp/right0.tim iso/chars/redmungp/right1.tim iso/chars/redmungp/right2.tim iso/chars/redmungp/right3.tim 
 
 # Jorsawsee Ghost
 

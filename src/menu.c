@@ -729,12 +729,15 @@ void Menu_Tick(void)
 			}
 			
 			//Draw white fade
+			if (stage.prefs.flash != 0)
+			{
 			if (menu.page_state.title.fade > 0)
 			{
 				RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
 				Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
 				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
+			}
 			}
 			
 			//Go to main menu when start is pressed
@@ -812,12 +815,15 @@ void Menu_Tick(void)
 			}
 			
 			//Draw white fade
+			if (stage.prefs.flash != 0)
+			{
 			if (menu.page_state.title.fade > 0)
 			{
 				RECT flash2 = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
 				Gfx_BlendRect(&flash2, flash_col, flash_col, flash_col, 1);
 				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
+			}
 			}
 			
 			//Handle option and selection
@@ -1766,6 +1772,7 @@ void Menu_Tick(void)
 				{StageId_Temp, "PSXFUNKIN CREATOR", false},
 				{StageId_Temp, "    CUCKYDEV", false},
                 {StageId_Temp, "SPECIAL THANKS", false},
+				{StageId_Temp, "    LORD SCOUT", false},
 				{StageId_Temp, "    SPICYJPEG", false},
                 {StageId_Temp, "    MAFURICK", false},
                 {StageId_Temp, "    NINTENDOBRO", false},
