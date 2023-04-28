@@ -33,18 +33,6 @@ typedef enum
 	XA_17, //17
 	XA_18, //18
 	XA_19, //19
-	XA_20, //20
-	XA_21, //21
-	XA_22, //22
-	XA_23, //23
-	XA_24, //24
-	XA_25, //25
-	XA_26, //26
-	XA_27, //27
-	XA_28, //28
-	XA_29, //29
-	XA_30, //30
-	XA_31, //31
 	
 	XA_Max,
 } XA_File;
@@ -113,41 +101,6 @@ typedef enum
 	//19.XA
 	XA_Christmas, //Christmas
 	XA_Spookpostor, //Spookpostor
-	//20.XA
-	XA_Titular, //Titular
-	XA_GreatestPlan, //Greatest Plan
-	//21.XA
-	XA_Reinforcements, //Reinforcements
-	XA_Armed, //Armed
-	//22.XA
-	XA_AlphaMoogus, //Alpha Moogus
-	XA_ActinSus, //Actin Sus
-	//23.XA
-	XA_Ow, //Ow
-	XA_Who, //Who
-	//24.XA
-	XA_InsaneStreamer, //Insane Streamer
-	XA_SussusNuzzus, //Sussus Nuzzus
-	//25.XA
-	XA_Idk, //Idk
-	XA_Esculent, //Esculent
-	//26.XA
-	XA_Drippypop, //Drippypop
-	XA_Crewicide, //Crewicide
-	//27.XA
-	XA_MonotoneAttack, //Monotone Attack
-	XA_Top10, //Top 10
-	//28.XA
-	XA_Chippin, //Chippin
-	XA_Chipping, //Chipping
-	//29.XA
-	XA_Torture, //Torture
-	//30.XA
-	XA_LemonLime, //Lemon Lime
-	XA_Chlorophyll, //Chlorophyll
-	//31.XA
-	XA_Inflorescence, //Inflorescence
-	XA_Stargazer, //Stargazer
 	
 	XA_TrackMax,
 } XA_Track;

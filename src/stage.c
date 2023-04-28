@@ -133,7 +133,7 @@ static u32 Sounds[10];
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
-#include "stage/henry.h"
+#include "stage/henrybg.h"
 #include "stage/v1.h"
 #include "stage/shields.h"
 #include "stage/jermaroom.h"

@@ -653,72 +653,72 @@
 	
 	{ //StageId_Titular (Titular)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
+        {NULL},
 		
 		//Stage background
-		Back_Henry_New,
+		Back_Week1_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Titular", "Composer: EthanTheDoodler", "",
 		
 		StageId_GreatestPlan, 0
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
-		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
-		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
 		
 		//Stage background
-		Back_Henry_New,
+		Back_Week1_New,
 		
 		//Song info
-		4, 8,
-		XA_GreatestPlan, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Greatest Plan", "Composer: EthanTheDoodler", "",
 		
 		StageId_Reinforcements, 0
 	},
 	{ //StageId_Reinforcements (Reinforcements)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
-		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
-		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+        {NULL},
+        {NULL},
 		
 		//Stage background
-		Back_Henry_New,
+		Back_Week1_New,
 		
 		//Song info
-		4, 9,
-		XA_Reinforcements, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Reinforcements", "Composer: EthanTheDoodler,", "                  Philplol",
 		
 		StageId_Armed, 0
 	},
 	{ //StageId_Armed (Armed)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
+        {NULL},
 		
 		//Stage background
 		Back_Week1_New,
 		
 		//Song info
-		4, 10,
-		XA_Armed, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Armed", "Composer: Punkett,", "                  EthanTheDoodler",
 		
 		StageId_Armed, 0
@@ -726,36 +726,36 @@
 	
 	{ //StageId_AlphaMoogus (Alpha Moogus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(343,1),  FIXED_DEC(177,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_RedV1_New, FIXED_DEC(281,1),  FIXED_DEC(168,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GFV1_New,     FIXED_DEC(355,1),  FIXED_DEC(161,1)},
+        {NULL},
 		
 		//Stage background
-		Back_V1_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 1,
-		XA_AlphaMoogus, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Alpha Moogus", "Composer: idk", "",
 		
 		StageId_AlphaMoogus, 0
 	},
 	{ //StageId_ActinSus (Actin Sus)
 		//Characters
-		{Char_BFV1_New,    FIXED_DEC(447,1),  FIXED_DEC(241,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_RedV1_New, FIXED_DEC(281,1),  FIXED_DEC(168,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GFV1_New,     FIXED_DEC(355,1),  FIXED_DEC(161,1)},
+        {NULL},
 		
 		//Stage background
-		Back_V1_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 2,
-		XA_ActinSus, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Actin' Sus", "Composer: Clowfoe,", "   Beat produced by 'Be-Twiin'",
 		
 		StageId_ActinSus, 0
@@ -763,144 +763,144 @@
 	
 	{ //StageId_Ow (Ow)
 		//Characters
-		{Char_BlueOw_New,    FIXED_DEC(-39,1),  FIXED_DEC(101,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_RedOw_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Idk_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 3,
-		XA_Ow, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Ow", "Composer: Fabs", "",
 		
 		StageId_Ow, 0
 	},
 	{ //StageId_Who (Who)
 		//Characters
-		{Char_Going2KillEvery1_New,    FIXED_DEC(477,1),  FIXED_DEC(216,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_YFronts_New, FIXED_DEC(206,1),  FIXED_DEC(226,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Shields_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 4,
-		XA_Who, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Who", "Composer: EthanTheDoodler", "",
 		
 		StageId_Who, 0
 	},
 	{ //StageId_InsaneStreamer (Insane Streamer)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(308,1),  FIXED_DEC(251,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Jerma_New, FIXED_DEC(153,1),  FIXED_DEC(156,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_JermaRoom_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 5,
-		XA_InsaneStreamer, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Insane Streamer", "Composer: EthanTheDoodler,", "                  NeatoNG",
 		
 		StageId_InsaneStreamer, 0
 	},
 	{ //StageId_SussusNuzzus (Sussus Nuzzus)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(1512,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Nuzzus_New, FIXED_DEC(355,1),  FIXED_DEC(535,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{NULL},
+        {NULL},
 		
 		//Stage background
-		Back_Earthbound_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 6,
-		XA_SussusNuzzus, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Sussus Nuzzus", "Composer: Lunaxis", "(Creator of 'No More Nuzzles'!)",
 		
 		StageId_SussusNuzzus, 0
 	},
 	{ //StageId_Idk (Idk)
 		//Characters
-		{Char_Kid_New,    FIXED_DEC(584,1),  FIXED_DEC(73,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_TobyFox_New, FIXED_DEC(204,1),  FIXED_DEC(117,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{NULL},
+        {NULL},
 		
 		//Stage background
-		Back_Idk_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 7,
-		XA_Idk, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Idk", "Composer: Sherri/Kiwiquest", "",
 		
 		StageId_Idk, 0
 	},
 	{ //StageId_Esculent (Esculent)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(1000,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Brown_New, FIXED_DEC(543,1),  FIXED_DEC(289,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Electrical_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 8,
-		XA_Esculent, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Esculent", "Composer: Nii-san", "",
 		
 		StageId_Esculent, 0
 	},
 	{ //StageId_Drippypop (Drippypop)
 		//Characters
-		{Char_BFDrip_New,    FIXED_DEC(390,1),  FIXED_DEC(285,1)},
-		{Char_PicoDrip_New,    FIXED_DEC(204,1),  FIXED_DEC(119,1)},
-		{Char_Drippostor_New, FIXED_DEC(214,1),  FIXED_DEC(239,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+        {NULL},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Drip_New,
+		Back_Week1_New,
 		
 		//Song info
-		5, 9,
-		XA_Drippypop, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Drippypop", "Composer: EthanTheDoodler,", "                  NeatoNG, Lil Nas X",
 		
 		StageId_Drippypop, 0
 	},
 	{ //StageId_Crewicide (Crewicide)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(355,1),  FIXED_DEC(238,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dave_New, FIXED_DEC(221,1),  FIXED_DEC(224,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_DaveOffice_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 1,
-		XA_Crewicide, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Crewicide", "Composer: Punkett", "",
 		
 		StageId_Crewicide, 0
@@ -911,32 +911,32 @@
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+        {NULL},
 		
 		//Stage background
 		Back_Week1_New,
 		
 		//Song info
-		6, 2,
-		XA_MonotoneAttack, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Monotone Attack", "Composer: Biddle3", "",
 		
 		StageId_MonotoneAttack, 0
 	},
 	{ //StageId_Top10 (Top 10)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(198,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Amogus_New, FIXED_DEC(251,1),  FIXED_DEC(142,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(278,1),  FIXED_DEC(98,1)},
+        {NULL},
 		
 		//Stage background
-		Back_Polus_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 3,
-		XA_Top10, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Top 10", "Composer: Top 10 Awesome", "",
 		
 		StageId_Top10, 0
@@ -954,8 +954,8 @@
 		Back_Week1_New,
 		
 		//Song info
-		6, 4,
-		XA_Chippin, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Chippin'", "Composer: Ziffy", "",
 		
 		StageId_Chippin, 0
@@ -972,8 +972,8 @@
 		Back_Week1_New,
 		
 		//Song info
-		6, 5,
-		XA_Chipping, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Chipping", "Composer: Ziffy", "",
 		
 		StageId_Chipping, 0
@@ -990,80 +990,80 @@
 		Back_Week1_New,
 		
 		//Song info
-		6, 6,
-		XA_Torture, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Torture", "Composer: Cval, JADS,", "                  Fluffyhairs, Ziffy",
 		
 		StageId_Torture, 0
 	},
 	{ //StageId_LemonLime (Lemon Lime)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_O2_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 9,
-		XA_LemonLime, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Lemon Lime", "Composer: Rozebud", "",
 		
 		StageId_LemonLime, 0
 	},
 	{ //StageId_Chlorophyll (Chlorophyll)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_O2_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 10,
-		XA_Chlorophyll, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Chlorophyll", "Composer: JADS", "",
 		
 		StageId_Chlorophyll, 0
 	},
 	{ //StageId_Inflorescence (Inflorescence)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_O2_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 11,
-		XA_Inflorescence, 0,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Inflorescence", "Composer: Rozebud", "",
 		
 		StageId_Inflorescence, 0
 	},
 	{ //StageId_Stargazer (Stargazer)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(371,1),  FIXED_DEC(181,1)},
+		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Jads_New, FIXED_DEC(254,1),  FIXED_DEC(172,1)},
+		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_O2_New,
+		Back_Week1_New,
 		
 		//Song info
-		6, 12,
-		XA_Stargazer, 2,
+		1, 1,
+		XA_SussusMoogus, 0,
 		"Stargazer", "Composer: Punkett", "",
 		
 		StageId_Stargazer, 0

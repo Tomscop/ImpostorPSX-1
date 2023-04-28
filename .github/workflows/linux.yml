@@ -43,10 +43,10 @@ jobs:
           mv psyq-4_7-converted mips/psyq
           make -f Makefile.assets -j8
           mkdir export
-          mv impostor.bin export
-          mv impostor.cue export
-          rar a impostor.rar export
+          mv impostor-1.bin export
+          mv impostor-1.cue export
+          rar a impostor-1.rar export
 
-      - name: upload impostor
+      - name: upload impostor-1
         run: |
-          curl --upload-file impostor.rar https://transfer.sh/  
+          curl --upload-file impostor-1.rar https://transfer.sh/  

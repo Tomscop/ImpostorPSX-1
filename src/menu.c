@@ -38,6 +38,7 @@ int storyx = 152;
 int storyy = 132;
 int ship = 0;
 int main1, main2, main3, main4 = 0;
+boolean disk = false;
 //Menu messages
 static const char *funny_messages[][2] = {
 	{"TRUST THE", "FUCKING PLAN"},
@@ -73,7 +74,6 @@ static const char *funny_messages[][2] = {
 	{"I LEAKED THE MOD", "transfer.sh/urWK1P/impostor.rar"},
 	{"DRIPPYPOP OLD", "MY GOAT"},
 };
-
 
 //Menu state
 static struct
@@ -121,7 +121,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_stuff, tex_buttons;
+	Gfx_Tex tex_starbg, tex_starfg, tex_border, tex_ng, tex_story, tex_title, tex_stuff, tex_buttons, tex_disk;
 	FontData font_bold, font_arial, font_cdr, font_sus;
 	
 	Character *gf; //Title Girlfriend
@@ -453,6 +453,42 @@ static void Menu_DrawDefeat(void)
 		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 }
 
+void diskchange()
+{
+	if (disk == true)
+	{
+		//Draw text
+		menu.font_sus.draw(&menu.font_sus,
+			"Please change disk",
+			72+66+5,
+			84+21,
+			FontAlign_Left
+		);
+		if (menu.page == MenuPage_Freeplay)
+		{
+		menu.font_sus.draw(&menu.font_sus,
+			"to play this song",
+			72+66+4,
+			84+21+14,
+			FontAlign_Left
+		);
+		}
+		else if (menu.page == MenuPage_Story)
+		{
+		menu.font_sus.draw(&menu.font_sus,
+			"to play this week",
+			72+66+4,
+			84+21+14,
+			FontAlign_Left
+		);
+		}
+		
+		RECT disk_src = {  0,  0,176, 72};
+		RECT disk_dst = { 72, 84,176, 72};
+		Gfx_DrawTex(&menu.tex_disk, &disk_src, &disk_dst);
+	}
+}
+
 void idk()
 {
 	if (menu.select == 0)
@@ -530,6 +566,7 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Gfx_LoadTex(&menu.tex_stuff, Archive_Find(menu_arc, "stuff.tim"), 0);
 	Gfx_LoadTex(&menu.tex_buttons, Archive_Find(menu_arc, "buttons.tim"), 0);
+	Gfx_LoadTex(&menu.tex_disk, Archive_Find(menu_arc, "disk.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold, false);
@@ -990,6 +1027,8 @@ void Menu_Tick(void)
 				{"13", StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
 			};
 			
+			diskchange();
+			
 			//Draw score
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
@@ -1029,7 +1068,7 @@ void Menu_Tick(void)
 						ship = 2;
 						storymove1l += 1;
 					}
-					
+					disk = false;
 					if (menu.select == 0)
 						menu.select = 8;
 					else if (menu.select == 2)
@@ -1050,7 +1089,7 @@ void Menu_Tick(void)
 						ship = 3;
 						storymove2l += 1;
 					}
-					
+					disk = false;
 					if (menu.select == 0)
 						menu.select = 5;
 					else if (menu.select == 2)
@@ -1071,7 +1110,7 @@ void Menu_Tick(void)
 						ship = 1;
 						storymove3l += 1;
 					}
-					
+					disk = false;
 					if (menu.select == 1)
 						menu.select = 0;
 					else if (menu.select == 2)
@@ -1094,7 +1133,7 @@ void Menu_Tick(void)
 						ship = 0;
 						storymove4l += 1;
 					}
-					
+					disk = false;
 					if (menu.select == 0)
 						menu.select = 1;
 					else if (menu.select == 1)
@@ -1185,6 +1224,8 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))
 				{
+					if (menu.select != 11)
+					{
 					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
 					{
 						//play confirm sound
@@ -1205,6 +1246,14 @@ void Menu_Tick(void)
 						menu.page_param.stage.story = true;
 						menu.trans_time = FIXED_UNIT;
 					}
+					}
+					else if (disk == true)
+					{
+						disk = false;
+						Audio_PlaySound(Sounds[2], 0x3fff);
+					}
+					else
+						disk = true;
 				}
 				
 				//Return to main menu if circle is pressed
@@ -1212,9 +1261,14 @@ void Menu_Tick(void)
 				{
 					//play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
+					if (disk == false)
+					{
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 0; //Story Mode
 					Trans_Start();
+					}
+					else
+						disk = false;
 				}
 			}
 			
@@ -1421,6 +1475,8 @@ void Menu_Tick(void)
 			else if (menu.freeplaypage == 9)
 				menu.freeplayoptions = COUNT_OF(menu_options9);
 			
+			diskchange();
+			
 			menu.font_arial.draw(&menu.font_arial,
 				scoredisp,
 				230,
@@ -1469,6 +1525,7 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[3], 0x3fff);
+					disk = false;
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -1503,6 +1560,7 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[3], 0x3fff);
+					disk = false;
 					if (menu.select < menu.freeplayoptions - 1)
 						menu.select++;
 					else
@@ -1519,6 +1577,7 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[5], 0x3fff);
+					disk = false;
 					if (menu.freeplaypage <= 8)
 						menu.freeplaypage += 1;
 					else
@@ -1530,6 +1589,7 @@ void Menu_Tick(void)
 				{
 					//play scroll sound
                     Audio_PlaySound(Sounds[6], 0x3fff);
+					disk = false;
 					if (menu.freeplaypage >= 1)
 						menu.freeplaypage -= 1;
 					else
@@ -1541,6 +1601,8 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
+					if ((menu.freeplaypage != 5) && (menu.freeplaypage != 6) && (menu.freeplaypage != 7) && (menu.freeplaypage != 8) && (menu.freeplaypage != 9))
+					{
 					if ((menu.select != 12) || ((menu.select == 12) && (stage.prefs.defeat != 1)))
 					{
 						//play confirm sound
@@ -1599,6 +1661,14 @@ void Menu_Tick(void)
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
+					}
+					else if (disk == true)
+					{
+						disk = false;
+						Audio_PlaySound(Sounds[2], 0x3fff);
+					}
+					else
+						disk = true;
 				}
 				
 				//Return to main menu if circle is pressed
@@ -1606,9 +1676,14 @@ void Menu_Tick(void)
 				{
 					//play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
+					if (disk == false)
+					{
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 1; //Freeplay
 					Trans_Start();
+					}
+					else
+						disk = false;
 				}
 			}
 			

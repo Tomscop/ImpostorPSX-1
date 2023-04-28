@@ -38,12 +38,6 @@ SRCS = src/main.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
 	src/character/bfchristmas.c \
-	src/character/bfv1.c \
-	src/character/blueow.c \
-	src/character/going2killevery1.c \
-	src/character/kid.c \
-	src/character/bfdrip.c \
-	src/character/picodrip.c \
 	src/character/red.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
@@ -66,19 +60,6 @@ SRCS = src/main.c \
 	src/character/tomongus.c \
 	src/character/loggo.c \
 	src/character/spooker.c \
-	src/character/henry.c \
-	src/character/charles.c \
-	src/character/redv1.c \
-	src/character/redow.c \
-	src/character/yfronts.c \
-	src/character/jerma.c \
-	src/character/nuzzus.c \
-	src/character/tobyfox.c \
-	src/character/brown.c \
-	src/character/drippostor.c \
-	src/character/dave.c \
-	src/character/amogus.c \
-	src/character/jads.c \
 	src/character/dad.c \
 	src/character/gf.c \
 	src/character/speaker.c \
@@ -90,7 +71,6 @@ SRCS = src/main.c \
 	src/character/gfairship.c \
 	src/character/gfmira.c \
 	src/character/gfpixel.c \
-	src/character/gfv1.c \
 	src/stage/polus.c \
 	src/stage/mira.c \
 	src/stage/reactor.c \
@@ -107,16 +87,6 @@ SRCS = src/main.c \
 	src/stage/lobby.c \
 	src/stage/cafeteria.c \
 	src/stage/christmas.c \
-	src/stage/henry.c \
-	src/stage/v1.c \
-	src/stage/shields.c \
-	src/stage/jermaroom.c \
-	src/stage/earthbound.c \
-	src/stage/idk.c \
-	src/stage/electrical.c \
-	src/stage/drip.c \
-	src/stage/daveoffice.c \
-	src/stage/o2.c \
 	src/stage/week1.c \
 	src/stage/dummy.c \
 	src/object.c \
