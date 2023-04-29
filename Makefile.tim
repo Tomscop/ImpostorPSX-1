@@ -55,6 +55,8 @@ all: \
 	iso/chars/gray/main.arc \
 	iso/chars/pink/main.arc \
 	iso/chars/chef/main.arc \
+	iso/chars/warchief/main.arc \
+	iso/chars/jelqer/main.arc \
 	iso/chars/redmungp/main.arc \
 	iso/chars/powers/main.arc \
 	iso/chars/tomong/main.arc \
@@ -239,8 +241,10 @@ iso/chars/chef/main.arc: iso/chars/chef/idle0.tim iso/chars/chef/idle1.tim iso/c
 # Redmungus
 
 # Warchief
+iso/chars/warchief/main.arc: iso/chars/warchief/idle0.tim iso/chars/warchief/idle1.tim iso/chars/warchief/left0.tim iso/chars/warchief/left1.tim iso/chars/warchief/down0.tim iso/chars/warchief/up0.tim iso/chars/warchief/up1.tim iso/chars/warchief/right0.tim iso/chars/warchief/right1.tim 
 
 # Jelqer
+iso/chars/jelqer/main.arc: iso/chars/jelqer/idlel0.tim iso/chars/jelqer/idlel1.tim iso/chars/jelqer/idlel2.tim iso/chars/jelqer/idlel3.tim iso/chars/jelqer/idler0.tim iso/chars/jelqer/idler1.tim iso/chars/jelqer/idler2.tim iso/chars/jelqer/left0.tim iso/chars/jelqer/left1.tim iso/chars/jelqer/down0.tim iso/chars/jelqer/down1.tim iso/chars/jelqer/up0.tim iso/chars/jelqer/up1.tim iso/chars/jelqer/right0.tim iso/chars/jelqer/right1.tim 
 
 # Redmungus VT
 

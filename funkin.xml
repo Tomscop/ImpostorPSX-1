@@ -192,8 +192,8 @@
 				<file name = "chef.arc" type = "data" source = "iso/chars/chef/main.arc"/>
 				<!-- Jorsawsee assets -->
 				<!-- Redmungus assets -->
-				<!-- Warchief assets -->
-				<!-- Jelqer assets -->
+				<file name = "warchief.arc" type = "data" source = "iso/chars/warchief/main.arc"/>
+				<file name = "jelqer.arc" type = "data" source = "iso/chars/jelqer/main.arc"/>
 				<!-- Redmungus VT assets -->
 				<file name = "redmungp.arc" type = "data" source = "iso/chars/redmungp/main.arc"/>
 				<!-- Jorsawsee Ghost assets -->

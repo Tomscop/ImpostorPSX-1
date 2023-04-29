@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-153
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "jelqer dance left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-23,
+				-153
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "jelqer dance right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-85,
+				-213
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "jelqer down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-122,
+				-116
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "jelqer up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-67,
+				-188
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "jelqer right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				-150
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "jelqer left",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/jelqer",
+	"position": [
+		-110,
+		160
+	],
+	"healthicon": "thejelqer",
+	"flip_x": false,
+	"healthbar_colors": [
+		233,
+		180,
+		215
+	],
+	"camera_position": [
+		10,
+		230
+	],
+	"sing_duration": 6.1,
+	"scale": 1.1
+}

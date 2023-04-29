@@ -87,6 +87,8 @@ static u32 Sounds[10];
 #include "character/pink.h"
 #include "character/chefogus.h"
 #include "character/powers.h"
+#include "character/warchief.h"
+#include "character/jelqer.h"
 #include "character/redmungusparasite.h"
 #include "character/tomongus.h"
 #include "character/loggo.h"
