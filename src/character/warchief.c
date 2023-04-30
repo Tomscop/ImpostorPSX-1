@@ -103,13 +103,31 @@ void Char_Warchief_Tick(Character *character)
 {
 	Char_Warchief *this = (Char_Warchief*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Victory)
+	{
+		if (stage.song_step == -29)
+			this->character.health_bar = 0xFF663093;
+		if (stage.song_step == 464)
+			this->character.health_bar = 0xFFFFC8E2;
+		if (stage.song_step == 720)
+			this->character.health_bar = 0xFF277FE7;
+		if (stage.song_step == 992)
+			this->character.health_bar = 0xFF663093;
+		if (stage.song_step == 1056)
+			this->character.health_bar = 0xFFFFC8E2;
+		if (stage.song_step == 1120)
+			this->character.health_bar = 0xFF277FE7;
+	}
+		
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Warchief_SetFrame);
-	Character_Draw(character, &this->tex, &char_warchief_frame[this->frame]);
+	if ((stage.stage_id == StageId_VotingTime) || (stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
+		Character_Draw(character, &this->tex, &char_warchief_frame[this->frame]);
 }
 
 void Char_Warchief_SetAnim(Character *character, u8 anim)

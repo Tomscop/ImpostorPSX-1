@@ -307,7 +307,7 @@
 				
 				<!-- Sky BG -->
 				
-				<!-- Victory BG -->
+				<file name = "victory.arc" type = "data" source = "iso/stages/victory/back.arc"/>
 				
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
 				

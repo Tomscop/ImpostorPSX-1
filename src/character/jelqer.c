@@ -131,7 +131,8 @@ void Char_Jelqer_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Jelqer_SetFrame);
-	Character_Draw(character, &this->tex, &char_jelqer_frame[this->frame]);
+	if ((stage.stage_id == StageId_VotingTime) || (stage.camswitch == 2) || (stage.camswitch == 5))
+		Character_Draw(character, &this->tex, &char_jelqer_frame[this->frame]);
 }
 
 void Char_Jelqer_SetAnim(Character *character, u8 anim)

@@ -507,13 +507,13 @@
 	{ //StageId_Victory (Victory)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_Red_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Warchief_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Victory_New,
 		
 		//Song info
 		3, 8,

@@ -132,6 +132,7 @@ static u32 Sounds[10];
 #include "stage/plantroom.h"
 #include "stage/pretender.h"
 #include "stage/kitchen.h"
+#include "stage/victory.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
@@ -3003,6 +3004,17 @@ void Stage_Tick(void)
 				stage.player_state[0].charactersecond = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
 				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				stage.player_state[1].charactersecond = NULL;
+			}
+			else if (stage.stage_id == StageId_Victory)
+			{
+				if ((stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				if ((stage.camswitch == 2) || (stage.camswitch == 5))
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				if (stage.camswitch == 3)
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.player2);
+				stage.player_state[1].character2 = NULL;
 				stage.player_state[1].charactersecond = NULL;
 			}
 			else
