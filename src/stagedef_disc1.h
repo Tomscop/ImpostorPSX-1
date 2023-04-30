@@ -507,9 +507,9 @@
 	{ //StageId_Victory (Victory)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(176,1)},
-		{Char_Red_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Warchief_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_JorsawseeGhost_New, FIXED_DEC(270,1),  FIXED_DEC(160,1)},
+		{Char_Warchief_New, FIXED_DEC(204,1),  FIXED_DEC(202,1)},
+		{Char_Jelqer_New, FIXED_DEC(209,1),  FIXED_DEC(185,1)},
         {NULL},
 		
 		//Stage background

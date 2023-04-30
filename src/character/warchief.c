@@ -106,6 +106,11 @@ void Char_Warchief_Tick(Character *character)
 	//Camera stuff
 	if (stage.stage_id == StageId_Victory)
 	{
+		if (stage.song_step == 129)
+		{
+			this->character.focus_x = FIXED_DEC(21,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
 		if (stage.song_step == -29)
 			this->character.health_bar = 0xFF663093;
 		if (stage.song_step == 464)
@@ -126,8 +131,10 @@ void Char_Warchief_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Warchief_SetFrame);
-	if ((stage.stage_id == StageId_VotingTime) || (stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
+	if (stage.stage_id == StageId_VotingTime)
 		Character_Draw(character, &this->tex, &char_warchief_frame[this->frame]);
+	else if ((stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
+		Character_DrawCol(character, &this->tex, &char_warchief_frame[this->frame], 175, 175, 175);
 }
 
 void Char_Warchief_SetAnim(Character *character, u8 anim)
@@ -172,9 +179,18 @@ Character *Char_Warchief_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF663093;
 	
+	if (stage.stage_id == StageId_VotingTime)
+	{
 	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_y = FIXED_DEC(-118,1);
+	this->character.focus_zoom = FIXED_DEC(1018,1024);
+	}
+	else if (stage.stage_id == StageId_Victory)
+	{
+	this->character.focus_x = FIXED_DEC(57,1);
+	this->character.focus_y = FIXED_DEC(-118,1);
+	this->character.focus_zoom = FIXED_DEC(1000,1024);
+	}
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

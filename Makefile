@@ -58,6 +58,7 @@ SRCS = src/main.c \
 	src/character/warchief.c \
 	src/character/jelqer.c \
 	src/character/redmungusparasite.c \
+	src/character/jorsawseeghost.c \
 	src/character/powers.c \
 	src/character/tomongus.c \
 	src/character/loggo.c \

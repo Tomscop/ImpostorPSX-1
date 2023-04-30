@@ -196,7 +196,7 @@
 				<file name = "jelqer.arc" type = "data" source = "iso/chars/jelqer/main.arc"/>
 				<!-- Redmungus VT assets -->
 				<file name = "redmungp.arc" type = "data" source = "iso/chars/redmungp/main.arc"/>
-				<!-- Jorsawsee Ghost assets -->
+				<file name = "jorsawsg.arc" type = "data" source = "iso/chars/jorsawsg/main.arc"/>
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
 				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
 				<!-- Tomongus HD assets -->

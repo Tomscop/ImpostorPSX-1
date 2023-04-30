@@ -300,6 +300,14 @@ void Char_BF_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-84,1);
 		}
 	}
+	if (stage.stage_id == StageId_Victory)
+	{
+		if (stage.song_step == 129)
+		{
+			this->character.focus_x = FIXED_DEC(-103,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+	}
 	if (stage.stage_id == StageId_LemonLime)
 	{
 		if (stage.song_step == 120)
@@ -649,6 +657,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-92,1);
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(1086,1024);
+	}
+	else if (stage.stage_id == StageId_Victory)
+	{
+	this->character.focus_x = FIXED_DEC(-127,1);
+	this->character.focus_y = FIXED_DEC(-92,1);
+	this->character.focus_zoom = FIXED_DEC(1000,1024);
 	}
 	else if (stage.stage_id == StageId_AlphaMoogus)
 	{

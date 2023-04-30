@@ -1,14 +1,9 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "idlel",
-			"hname"   : "IdleL"
-		},
-		{
-			"fnfanim" : "danceRight",
-			"imgname" : "idler",
-			"hname"   : "IdleR"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
@@ -31,21 +26,21 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/jelqer/jelqer",
-	"outdir": "iso/chars/jelqer/",
-	"charname" : "Jelqer",
+	"input":  "iso/chars/jorsawsg/jorsawdead",
+	"outdir": "iso/chars/jorsawsg/",
+	"charname" : "JorsawseeGhost",
 	"optimize" : false,
-	"optimizename" : "jelqer",
+	"optimizename" : "jorsawseeghost",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		832,
+		704,
 		0,
-		16,
+		32,
 		481
 	],
 
 	"bpp" : 4,
-	"resize" : 0.275,
+	"resize" : 0.225,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

@@ -58,6 +58,7 @@ all: \
 	iso/chars/warchief/main.arc \
 	iso/chars/jelqer/main.arc \
 	iso/chars/redmungp/main.arc \
+	iso/chars/jorsawsg/main.arc \
 	iso/chars/powers/main.arc \
 	iso/chars/tomong/main.arc \
 	iso/chars/loggo/main.arc \
@@ -253,6 +254,7 @@ iso/chars/jelqer/main.arc: iso/chars/jelqer/idlel0.tim iso/chars/jelqer/idlel1.t
 iso/chars/redmungp/main.arc: iso/chars/redmungp/idle0.tim iso/chars/redmungp/idle1.tim iso/chars/redmungp/idle2.tim iso/chars/redmungp/idle3.tim iso/chars/redmungp/idle4.tim iso/chars/redmungp/idle5.tim iso/chars/redmungp/idle6.tim iso/chars/redmungp/left0.tim iso/chars/redmungp/left1.tim iso/chars/redmungp/left2.tim iso/chars/redmungp/down0.tim iso/chars/redmungp/down1.tim iso/chars/redmungp/down2.tim iso/chars/redmungp/down3.tim iso/chars/redmungp/up0.tim iso/chars/redmungp/up1.tim iso/chars/redmungp/up2.tim iso/chars/redmungp/right0.tim iso/chars/redmungp/right1.tim iso/chars/redmungp/right2.tim iso/chars/redmungp/right3.tim 
 
 # Jorsawsee Ghost
+iso/chars/jorsawsg/main.arc: iso/chars/jorsawsg/idle0.tim iso/chars/jorsawsg/idle1.tim iso/chars/jorsawsg/left0.tim iso/chars/jorsawsg/left1.tim iso/chars/jorsawsg/down0.tim iso/chars/jorsawsg/down1.tim iso/chars/jorsawsg/up0.tim iso/chars/jorsawsg/up1.tim iso/chars/jorsawsg/right0.tim iso/chars/jorsawsg/right1.tim 
 
 # Powers
 iso/chars/powers/main.arc: iso/chars/powers/idle0.tim iso/chars/powers/idle1.tim iso/chars/powers/idle2.tim iso/chars/powers/idle3.tim iso/chars/powers/idle4.tim iso/chars/powers/idle5.tim iso/chars/powers/idle6.tim iso/chars/powers/left0.tim iso/chars/powers/down0.tim iso/chars/powers/up0.tim iso/chars/powers/up1.tim iso/chars/powers/up2.tim iso/chars/powers/right0.tim iso/chars/powers/right1.tim iso/chars/powers/right2.tim iso/chars/powers/right3.tim iso/chars/powers/lefta0.tim iso/chars/powers/downa0.tim iso/chars/powers/downa1.tim iso/chars/powers/upa0.tim iso/chars/powers/upa1.tim iso/chars/powers/upa2.tim iso/chars/powers/upa3.tim iso/chars/powers/righta0.tim 

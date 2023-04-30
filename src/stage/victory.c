@@ -45,14 +45,14 @@ void Back_Victory_DrawFG(StageBack *back)
 	
 	RECT fogfront_src = {  0,175,255, 35};
 	RECT_FIXED fogfront_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-118 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(137,1) - fy,
 		FIXED_DEC(949 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(131,1)
 	};
 	
 	Debug_StageMoveDebug(&fogfront_dst, 13, fx, fy);
-	//Stage_BlendTex(&this->tex_back1, &fogfront_src, &fogfront_dst, stage.camera.bzoom, 1);
+	Stage_BlendTex(&this->tex_back1, &fogfront_src, &fogfront_dst, stage.camera.bzoom, 1);
 	
 	fx = stage.camera.x;
 	
