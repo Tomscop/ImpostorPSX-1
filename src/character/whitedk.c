@@ -142,7 +142,7 @@ void Char_WhiteDK_Tick(Character *character)
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_WhiteDK_SetFrame);
 	if (stage.song_step <= 3407)
-		Character_DrawCol(character, &this->tex, &char_whitedk_frame[this->frame], 128, 128, 128);
+		Character_DrawCol(character, &this->tex, &char_whitedk_frame[this->frame], 150, 150, 150);
 }
 
 void Char_WhiteDK_SetAnim(Character *character, u8 anim)

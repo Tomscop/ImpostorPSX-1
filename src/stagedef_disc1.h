@@ -506,7 +506,7 @@
 	},
 	{ //StageId_Victory (Victory)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(388,1),  FIXED_DEC(176,1)},
 		{Char_Red_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Warchief_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},

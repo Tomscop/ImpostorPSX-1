@@ -58,20 +58,20 @@ void Back_Victory_DrawFG(StageBack *back)
 	
 	RECT lights_src = {  0,  0,114,209};
 	RECT_FIXED light1_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(61 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-45,1) - fy,
 		FIXED_DEC(143 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(261,1)
 	};
 	RECT_FIXED light2_dst = {
-		FIXED_DEC(0+252 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(61+252 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-45,1) - fy,
 		FIXED_DEC(143 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(261,1)
 	};
 	
 	Debug_StageMoveDebug(&light1_dst, 10, fx, fy);
-	Debug_StageMoveDebug(&light2_dst, 10, fx, fy);
+	Debug_StageMoveDebug(&light2_dst, 15, fx, fy);
 	Stage_BlendTex(&this->tex_back2, &lights_src, &light1_dst, stage.camera.bzoom, 1);
 	Stage_BlendTex(&this->tex_back2, &lights_src, &light2_dst, stage.camera.bzoom, 1);
 }

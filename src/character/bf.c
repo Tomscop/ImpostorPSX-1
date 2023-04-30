@@ -561,12 +561,14 @@ void Char_BF_Tick(Character *character)
 	Animatable_Animate(&character->animatable, (void*)this, Char_BF_SetFrame);
 	if (stage.lights != 1)
 	{
-		if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
+		if (((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Victory)) || ((stage.stage_id == StageId_Defeat) && ((stage.song_step >= 1168) && (stage.song_step <= 1439))))
 			Character_Draw(character, &this->tex, &char_bf_frame[this->frame]);
 		else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 3407)))
-			Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 128, 125, 126);
+			Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 150, 150, 150);
 		else if (stage.stage_id == StageId_Turbulence)
-			Character_DrawRotate(character, &this->tex, &char_bf_frame[this->frame], 200);
+			Character_DrawRotate(character, &this->tex, &char_bf_frame[this->frame], 192);
+		else if (stage.stage_id == StageId_Victory)
+			Character_DrawCol(character, &this->tex, &char_bf_frame[this->frame], 175, 175, 175);
 	}
 }
 

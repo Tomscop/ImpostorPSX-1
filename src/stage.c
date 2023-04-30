@@ -3016,6 +3016,10 @@ void Stage_Tick(void)
 					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.player2);
 				stage.player_state[1].character2 = NULL;
 				stage.player_state[1].charactersecond = NULL;
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				if (stage.camswitch != 3)
+					stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
 			}
 			else
 			{
