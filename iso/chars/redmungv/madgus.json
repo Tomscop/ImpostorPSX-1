@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				90,
+				50
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				50,
+				50
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "DANCELEFT"
+		},
+		{
+			"offsets": [
+				39,
+				50
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "DANCERIGHT"
+		},
+		{
+			"offsets": [
+				169,
+				50
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				85,
+				22
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				128,
+				64
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				156,
+				59
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "bwah",
+			"indices": [],
+			"name": "scream"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/madgus",
+	"position": [
+		210,
+		430
+	],
+	"healthicon": "redmungus",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		40,
+		60
+	],
+	"camera_position": [
+		200,
+		-200
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

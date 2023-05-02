@@ -26,11 +26,11 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/jorsawsg/jorsawdead",
-	"outdir": "iso/chars/jorsawsg/",
-	"charname" : "JorsawseeGhost",
+	"input":  "iso/chars/redmungv/mungus",
+	"outdir": "iso/chars/redmungv/",
+	"charname" : "RedmungusVT",
 	"optimize" : false,
-	"optimizename" : "jorsawseeghost",
+	"optimizename" : "redmungusvt",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		704,
@@ -40,7 +40,7 @@
 	],
 
 	"bpp" : 4,
-	"resize" : 0.225,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,
