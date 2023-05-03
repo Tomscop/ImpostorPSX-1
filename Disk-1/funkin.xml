@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Defines the ISO project -->
+<iso_project image_name="impostor-1.bin" cue_sheet="impostor-1.cue" no_xa="0">
+	<!-- Data track -->
+	<track type="data">
+		<!-- Identifiers -->
+		<identifiers
+			system        = "PLAYSTATION"
+			application   = "PLAYSTATION"
+			volume        = "PSXFUNKIN"
+			volume_set    = "PSXFUNKIN"
+			publisher     = "CUCKYDEV"
+			copyright     = "NINJAMUFFIN99"
+		/>
+		<license file="licensea.dat"/>
+		
+		<!-- Data directory tree -->
+		<directory_tree>
+			<!-- System -->
+			<file name = "system.cnf" type = "data" source = "iso/system.cnf"/>
+			<file name = "SCUS_615.18" type = "data" source = "funkin.ps-exe"/>
+			
+			<!-- Menu assets -->
+			<dir name = "menu">
+				<file name = "loading.tim" type = "data" source = "iso/menu/loading.tim"/>
+				<file name = "menu.arc" type = "data" source = "iso/menu/menu.arc"/>
+			</dir>
+			
+			<!-- Intro assets -->
+			<dir name = "intro">
+				<file name = "intro.tim" type = "data" source = "iso/intro/intro.tim"/>
+				<file name = "intro.vag" type = "data" source = "iso/sounds/intro/intro.wav.vag"/>
+			</dir>
+			
+			<!-- Fonts -->
+			<dir name = "font">
+				<file name = "font.tim" type = "data" source = "iso/font/font.tim"/>
+			</dir>
+			
+			<!-- Stage assets -->
+			<dir name = "stage">
+				<file name = "hud0.tim" type = "data" source = "iso/stage/hud0.tim"/>
+				<file name = "hud0pix.tim" type = "data" source = "iso/stage/hud0pix.tim"/>
+				<file name = "hud0old.tim" type = "data" source = "iso/stage/hud0old.tim"/>
+				<file name = "hud1-1-2.tim" type = "data" source = "iso/stage/hud1-1-2.tim"/>
+				<file name = "hud1-3.tim" type = "data" source = "iso/stage/hud1-3.tim"/>
+				<file name = "hud1-ic.tim" type = "data" source = "iso/stage/hud1-ic.tim"/>
+				<file name = "hud1-tt.tim" type = "data" source = "iso/stage/hud1-tt.tim"/>
+				<file name = "hud1-jj.tim" type = "data" source = "iso/stage/hud1-jj.tim"/>
+				<file name = "hud1-tom.tim" type = "data" source = "iso/stage/hud1-tom.tim"/>
+				<file name = "hud1-log.tim" type = "data" source = "iso/stage/hud1-log.tim"/>
+				<file name = "hud1-hen.tim" type = "data" source = "iso/stage/hud1-hen.tim"/>
+				<file name = "hud1-fp0.tim" type = "data" source = "iso/stage/hud1-fp0.tim"/>
+				<file name = "hud1-fp1.tim" type = "data" source = "iso/stage/hud1-fp1.tim"/>
+				<file name = "hud1-fp2.tim" type = "data" source = "iso/stage/hud1-fp2.tim"/>
+				<file name = "hud1-ph.tim" type = "data" source = "iso/stage/hud1-ph.tim"/>
+				<file name = "count.tim" type = "data" source = "iso/stage/count.tim"/>
+				<file name = "countpix.tim" type = "data" source = "iso/stage/countpix.tim"/>
+			</dir>
+			
+			<!-- Week 1 assets -->
+			<dir name = "week1">
+			
+				<file name = "1.1n.cht" type = "data" source = "iso/music/sussus-moogus/sussus-moogus-hard.json.cht"/>
+				<file name = "1.1evnt.cht" type = "data" source = "iso/music/sussus-moogus/events.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/music/sabotage/sabotage-hard.json.cht"/>
+				<file name = "1.2evnt.cht" type = "data" source = "iso/music/sabotage/events.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/music/meltdown/meltdown-hard.json.cht"/>
+				<file name = "1.3evnt.cht" type = "data" source = "iso/music/meltdown/events.json.cht"/>
+				<file name = "1.4n.cht" type = "data" source = "iso/music/sussus-toogus/sussus-toogus-hard.json.cht"/>
+				<file name = "1.4evnt.cht" type = "data" source = "iso/music/sussus-toogus/events.json.cht"/>
+				<file name = "1.5n.cht" type = "data" source = "iso/music/lights-down/lights-down-hard.json.cht"/>
+				<file name = "1.5evnt.cht" type = "data" source = "iso/music/lights-down/events.json.cht"/>
+				<file name = "1.6n.cht" type = "data" source = "iso/music/reactor/reactor-hard.json.cht"/>
+				<file name = "1.6evnt.cht" type = "data" source = "iso/music/reactor/events.json.cht"/>
+				<file name = "1.7n.cht" type = "data" source = "iso/music/ejected/ejected-hard.json.cht"/>
+				<file name = "1.7evnt.cht" type = "data" source = "iso/music/ejected/events.json.cht"/>
+				<file name = "1.8n.cht" type = "data" source = "iso/music/mando/mando-hard.json.cht"/>
+				<file name = "1.9n.cht" type = "data" source = "iso/music/dlow/dlow-hard.json.cht"/>
+				<file name = "1.9evnt.cht" type = "data" source = "iso/music/dlow/events.json.cht"/>
+				<file name = "1.10n.cht" type = "data" source = "iso/music/oversight/oversight-hard.json.cht"/>
+				<file name = "1.10evnt.cht" type = "data" source = "iso/music/oversight/events.json.cht"/>
+				<file name = "1.11n.cht" type = "data" source = "iso/music/danger/danger-hard.json.cht"/>
+				<file name = "1.11evnt.cht" type = "data" source = "iso/music/danger/events.json.cht"/>
+				<file name = "1.12n.cht" type = "data" source = "iso/music/double-kill/double-kill-hard.json.cht"/>
+				<file name = "1.12evnt.cht" type = "data" source = "iso/music/double-kill/events.json.cht"/>
+			</dir>
+			
+			<!-- Week 2 assets -->
+			<dir name = "week2">
+			
+				<file name = "2.1n.cht" type = "data" source = "iso/music/defeat/defeat-hard.json.cht"/>
+				<file name = "2.1evnt.cht" type = "data" source = "iso/music/defeat/events.json.cht"/>
+				<file name = "2.2n.cht" type = "data" source = "iso/music/finale/finale-hard.json.cht"/>
+				<file name = "2.2evnt.cht" type = "data" source = "iso/music/finale/events.json.cht"/>
+				<file name = "2.3n.cht" type = "data" source = "iso/music/identity-crisis/identity-crisis-hard.json.cht"/>
+				<file name = "2.3evnt.cht" type = "data" source = "iso/music/identity-crisis/events.json.cht"/>
+				<file name = "2.4n.cht" type = "data" source = "iso/music/ashes/ashes-hard.json.cht"/>
+				<file name = "2.5n.cht" type = "data" source = "iso/music/magmatic/magmatic-hard.json.cht"/>
+				<file name = "2.5evnt.cht" type = "data" source = "iso/music/magmatic/events.json.cht"/>
+				<file name = "2.6n.cht" type = "data" source = "iso/music/boiling-point/boiling-point-hard.json.cht"/>
+				<file name = "2.6evnt.cht" type = "data" source = "iso/music/boiling-point/events.json.cht"/>
+				<file name = "2.7n.cht" type = "data" source = "iso/music/delusion/delusion-hard.json.cht"/>
+				<file name = "2.7evnt.cht" type = "data" source = "iso/music/delusion/events.json.cht"/>
+				<file name = "2.8n.cht" type = "data" source = "iso/music/blackout/blackout-hard.json.cht"/>
+				<file name = "2.8evnt.cht" type = "data" source = "iso/music/blackout/events.json.cht"/>
+				<file name = "2.9n.cht" type = "data" source = "iso/music/neurotic/neurotic-hard.json.cht"/>
+			</dir>
+			
+			<!-- Week 3 assets -->
+			<dir name = "week3">
+				
+				<file name = "3.1n.cht" type = "data" source = "iso/music/heartbeat/heartbeat-hard.json.cht"/>
+				<file name = "3.1evnt.cht" type = "data" source = "iso/music/heartbeat/events.json.cht"/>
+				<file name = "3.2n.cht" type = "data" source = "iso/music/pinkwave/pinkwave-hard.json.cht"/>
+				<file name = "3.2evnt.cht" type = "data" source = "iso/music/pinkwave/events.json.cht"/>
+				<file name = "3.3n.cht" type = "data" source = "iso/music/pretender/pretender-hard.json.cht"/>
+				<file name = "3.4n.cht" type = "data" source = "iso/music/sauces-moogus/sauces-moogus-hard.json.cht"/>
+				<file name = "3.4evnt.cht" type = "data" source = "iso/music/sauces-moogus/events.json.cht"/>
+				<file name = "3.5n.cht" type = "data" source = "iso/music/o2/o2-hard.json.cht"/>
+				<file name = "3.5evnt.cht" type = "data" source = "iso/music/o2/events.json.cht"/>
+				<file name = "3.6n.cht" type = "data" source = "iso/music/voting-time/voting-time-hard.json.cht"/>
+				<file name = "3.6evnt.cht" type = "data" source = "iso/music/voting-time/events.json.cht"/>
+				<file name = "3.7n.cht" type = "data" source = "iso/music/turbulence/turbulence-hard.json.cht"/>
+				<file name = "3.7evnt.cht" type = "data" source = "iso/music/turbulence/events.json.cht"/>
+				<file name = "3.8n.cht" type = "data" source = "iso/music/victory/victory-hard.json.cht"/>
+				<file name = "3.8evnt.cht" type = "data" source = "iso/music/victory/events.json.cht"/>
+				<file name = "3.9n.cht" type = "data" source = "iso/music/roomcode/roomcode-hard.json.cht"/>
+			</dir>
+			
+			<!-- Week 4 assets -->
+			<dir name = "week4">
+				
+				<file name = "4.1n.cht" type = "data" source = "iso/music/sussy-bussy/sussy-bussy-hard.json.cht"/>
+				<file name = "4.2n.cht" type = "data" source = "iso/music/rivals/rivals-hard.json.cht"/>
+				<file name = "4.2evnt.cht" type = "data" source = "iso/music/rivals/events.json.cht"/>
+				<file name = "4.3n.cht" type = "data" source = "iso/music/chewmate/chewmate-hard.json.cht"/>
+				<file name = "4.4n.cht" type = "data" source = "iso/music/tomongus-tuesday/tomongus-tuesday-hard.json.cht"/>
+				<file name = "4.4evnt.cht" type = "data" source = "iso/music/tomongus-tuesday/events.json.cht"/>
+				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas-hard.json.cht"/>
+				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor-hard.json.cht"/>
+				<file name = "4.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
+			</dir>
+		
+			<!-- Character assets -->
+			<dir name = "player">
+				<!-- Players -->
+				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
+				<file name = "bfghost.arc" type = "data" source = "iso/chars/bfghost/main.arc"/>
+				<file name = "bflights.arc" type = "data" source = "iso/chars/bflights/main.arc"/>
+				<file name = "bfreac.arc" type = "data" source = "iso/chars/bfreac/main.arc"/>
+				<file name = "bfeject.arc" type = "data" source = "iso/chars/bfeject/main.arc"/>
+				<!-- Boyfriend Danger assets -->
+				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
+				<file name = "bfdefet1.arc" type = "data" source = "iso/chars/bfdefeat/main1.arc"/>
+				<file name = "bfdefet2.arc" type = "data" source = "iso/chars/bfdefeat/main2.arc"/>
+				<file name = "bfpolus.arc" type = "data" source = "iso/chars/bfpolus/main.arc"/>
+				<file name = "bflava.arc" type = "data" source = "iso/chars/bflava/main.arc"/>
+				<file name = "bfairshp.arc" type = "data" source = "iso/chars/bfairshp/main.arc"/>
+				<file name = "bfmira.arc" type = "data" source = "iso/chars/bfmira/main.arc"/>
+				<file name = "pinkpret.arc" type = "data" source = "iso/chars/pinkpret/main.arc"/>
+				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
+				<!-- Boyfriend Turbulence assets -->
+				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
+				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
+				<!-- Boyfriend Tuesday assets -->
+				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
+			</dir>
+			
+			<dir name = "opponent">
+				<!-- Opponents -->
+				<file name = "red.arc" type = "data" source = "iso/chars/red/main.arc"/>
+				<file name = "redmd.arc" type = "data" source = "iso/chars/redmd/main.arc"/>
+				<file name = "greenst.arc" type = "data" source = "iso/chars/greenst/main.arc"/>
+				<file name = "green.arc" type = "data" source = "iso/chars/green/main.arc"/>
+				<file name = "greenrec.arc" type = "data" source = "iso/chars/greenrec/main.arc"/>
+				<file name = "greenpar.arc" type = "data" source = "iso/chars/greenpar/main.arc"/>
+				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
+				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
+				<!-- Black Danger assets -->
+				<file name = "whitedk.arc" type = "data" source = "iso/chars/whitedk/main.arc"/>
+				<file name = "blackdk.arc" type = "data" source = "iso/chars/blackdk/main.arc"/>
+				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
+				<file name = "blackp.arc" type = "data" source = "iso/chars/blackp/main.arc"/>
+				<!-- Boyfriend Evil assets -->
+				<!-- Monotone assets -->
+				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
+				<file name = "maroonp.arc" type = "data" source = "iso/chars/maroonp/main.arc"/>
+				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>
+				<file name = "pink.arc" type = "data" source = "iso/chars/pink/main.arc"/>
+				<file name = "chef.arc" type = "data" source = "iso/chars/chef/main.arc"/>
+				<!-- Jorsawsee assets -->
+				<!-- Redmungus assets -->
+				<file name = "warchief.arc" type = "data" source = "iso/chars/warchief/main.arc"/>
+				<file name = "jelqer.arc" type = "data" source = "iso/chars/jelqer/main.arc"/>
+				<file name = "redmungv.arc" type = "data" source = "iso/chars/redmungv/main.arc"/>
+				<file name = "redmungp.arc" type = "data" source = "iso/chars/redmungp/main.arc"/>
+				<file name = "jorsawsg.arc" type = "data" source = "iso/chars/jorsawsg/main.arc"/>
+				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
+				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
+				<!-- Tomongus HD assets -->
+				<file name = "loggo.arc" type = "data" source = "iso/chars/loggo/main.arc"/>
+				<file name = "spooker.arc" type = "data" source = "iso/chars/spooker/main.arc"/>
+				
+			</dir>
+			
+			<dir name = "opponet2">
+				
+				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
+			</dir>
+			
+			<dir name = "gf">
+				<!-- GFs -->
+				<file name = "gf.arc" type = "data" source = "iso/chars/gf/main.arc"/>
+				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
+				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
+				<file name = "gfghost.arc" type = "data" source = "iso/chars/gfghost/main.arc"/>
+				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
+				<file name = "gfreac.arc" type = "data" source = "iso/chars/gfreac/main.arc"/>
+				<file name = "gfeject.arc" type = "data" source = "iso/chars/gfeject/main.arc"/>
+				<!-- GF Danger assets -->
+				<file name = "gfpolus.arc" type = "data" source = "iso/chars/gfpolus/main.arc"/>
+				<file name = "gfairshp.arc" type = "data" source = "iso/chars/gfairshp/main.arc"/>
+				<file name = "gfmira.arc" type = "data" source = "iso/chars/gfmira/main.arc"/>
+				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
+				<!-- GF Tuesday assets -->
+			</dir>
+			
+			<!-- Dead assets -->
+			<dir name = "dead">
+				<!-- Normal -->
+				<file name = "dead.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- Meltdown -->
+				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
+				<!-- Ejected -->
+				<file name = "deadejct.tim" type = "data" source = "iso/chars/bfeject/dead.tim"/>
+				<!-- Defeat -->
+				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
+				<!-- Pretender -->
+				<file name = "deadpink.tim" type = "data" source = "iso/chars/pinkpret/dead.tim"/>
+				<!-- Roomcode -->
+				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
+				<!-- Tomongus -->
+				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
+				<!-- Ow -->
+				<file name = "deadow.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- Who -->
+				<file name = "deadwho.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- Idk -->
+				<file name = "deadkid.tim" type = "data" source = "iso/chars/dead.tim"/>
+			</dir>
+			
+			<!-- Background assets -->
+			<dir name = "bg">
+				<file name = "polus.arc" type = "data" source = "iso/stages/polus/back.arc"/>
+				<file name = "snow.arc" type = "data" source = "iso/stages/polus/snow.arc"/>
+				<file name = "people.arc" type = "data" source = "iso/stages/polus/people.arc"/>
+				
+				<file name = "mira.arc" type = "data" source = "iso/stages/mira/back.arc"/>
+				<file name = "powerss.arc" type = "data" source = "iso/stages/mira/powers.arc"/>
+				
+				<file name = "reactor.arc" type = "data" source = "iso/stages/reactor/back.arc"/>
+				<file name = "ball.arc" type = "data" source = "iso/stages/reactor/ball.arc"/>
+				
+				<file name = "ejected.arc" type = "data" source = "iso/stages/ejected/back.arc"/>
+				
+				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
+				
+				<!-- Run BG -->
+				
+				<file name = "cargo.arc" type = "data" source = "iso/stages/cargo/back.arc"/>
+				
+				<file name = "defeat.arc" type = "data" source = "iso/stages/defeat/back.arc"/>
+				
+				<!-- Finale BG -->
+				
+				<!-- Identity Crisis -->
+				
+				<file name = "polusmrn.arc" type = "data" source = "iso/stages/polusmrn/back.arc"/>
+				
+				<file name = "lava.arc" type = "data" source = "iso/stages/lava/back.arc"/>
+				<file name = "bubbles.arc" type = "data" source = "iso/stages/lava/bubbles.arc"/>
+				
+				<file name = "poweroom.arc" type = "data" source = "iso/stages/poweroom/back.arc"/>
+				<file name = "blackg.arc" type = "data" source = "iso/stages/poweroom/black.arc"/>
+				
+				<file name = "plantrom.arc" type = "data" source = "iso/stages/plantrom/back.arc"/>
+				<file name = "greyp.arc" type = "data" source = "iso/stages/plantrom/grey.arc"/>
+				<file name = "longtoma.arc" type = "data" source = "iso/stages/plantrom/longtoma.arc"/>
+				<file name = "snapper.arc" type = "data" source = "iso/stages/plantrom/snapper.arc"/>
+				<file name = "cyborg.arc" type = "data" source = "iso/stages/plantrom/cyborg.arc"/>
+				
+				<file name = "pretendr.arc" type = "data" source = "iso/stages/pretendr/back.arc"/>
+				<file name = "snapperd.arc" type = "data" source = "iso/stages/pretendr/snapperd.arc"/>
+				
+				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>
+				<file name = "greyc.arc" type = "data" source = "iso/stages/kitchen/grey.arc"/>
+				<file name = "saster.arc" type = "data" source = "iso/stages/kitchen/saster.arc"/>
+			</dir>
+				
+				
+			<dir name = "bg2">
+				<!-- Lounge BG -->
+				
+				<!-- Meeting BG -->
+				
+				<file name = "turbulen.arc" type = "data" source = "iso/stages/turbulen/back.arc"/>
+				
+				<file name = "victory.arc" type = "data" source = "iso/stages/victory/back.arc"/>
+				
+				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
+				
+				<file name = "cafe.arc" type = "data" source = "iso/stages/cafe/back.arc"/>
+				
+				<file name = "christms.arc" type = "data" source = "iso/stages/christms/back.arc"/>
+				<file name = "people.arc" type = "data" source = "iso/stages/christms/people.arc"/>
+				<file name = "person.arc" type = "data" source = "iso/stages/christms/person.arc"/>
+				<file name = "fire.arc" type = "data" source = "iso/stages/christms/fire.arc"/>
+				
+				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
+			</dir>
+		    
+			<!-- Sound effects -->
+			<dir name = "sounds">
+				<!-- Menu Sounds -->
+				<file name = "scroll.vag" type = "data" source = "iso/sounds/menu/scroll.ogg.vag"/>
+				<file name = "confirm.vag" type = "data" source = "iso/sounds/menu/confirm.ogg.vag"/>
+				<file name = "cancel.vag" type = "data" source = "iso/sounds/menu/cancel.ogg.vag"/>
+				<file name = "scrollfp.vag" type = "data" source = "iso/sounds/menu/scrollfp.ogg.vag"/>
+				<file name = "confirmf.vag" type = "data" source = "iso/sounds/menu/confirmfp.ogg.vag"/>
+				<file name = "defeat.vag" type = "data" source = "iso/sounds/menu/defeat.ogg.vag"/>
+				<file name = "swap0.vag" type = "data" source = "iso/sounds/menu/swap0.ogg.vag"/>
+				<file name = "swap1.vag" type = "data" source = "iso/sounds/menu/swap1.ogg.vag"/>
+				<!-- Stage Sounds -->
+				<file name = "intro0.vag" type = "data" source = "iso/sounds/stage/intro0.ogg.vag"/>
+				<file name = "intro1.vag" type = "data" source = "iso/sounds/stage/intro1.ogg.vag"/>
+				<file name = "intro2.vag" type = "data" source = "iso/sounds/stage/intro2.ogg.vag"/>
+				<file name = "intro3.vag" type = "data" source = "iso/sounds/stage/intro3.ogg.vag"/>
+				<file name = "intro0p.vag" type = "data" source = "iso/sounds/stage/intro0p.ogg.vag"/>
+				<file name = "intro1p.vag" type = "data" source = "iso/sounds/stage/intro1p.ogg.vag"/>
+				<file name = "intro2p.vag" type = "data" source = "iso/sounds/stage/intro2p.ogg.vag"/>
+				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
+				<!-- Other Sounds -->
+				<file name = "pretendr.vag" type = "data" source = "iso/sounds/stage/pretendr.ogg.vag"/>
+				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
+				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
+				<!-- Game Over Sounds -->
+				<file name = "death.vag" type = "data" source = "iso/sounds/gameover/death.ogg.vag"/>
+				<file name = "deathe.vag" type = "data" source = "iso/sounds/gameover/deathe.ogg.vag"/>
+				<file name = "deathd.vag" type = "data" source = "iso/sounds/gameover/deathd.ogg.vag"/>
+				<file name = "deathp.vag" type = "data" source = "iso/sounds/gameover/deathp.ogg.vag"/>
+				<file name = "deathh.vag" type = "data" source = "iso/sounds/gameover/deathh.ogg.vag"/>
+				<file name = "retry.vag" type = "data" source = "iso/sounds/gameover/retry.ogg.vag"/>
+				<file name = "retryj.vag" type = "data" source = "iso/sounds/gameover/retryj.ogg.vag"/>
+				<file name = "retryp.vag" type = "data" source = "iso/sounds/gameover/retryp.ogg.vag"/>
+				<file name = "retryh.vag" type = "data" source = "iso/sounds/gameover/retryh.ogg.vag"/>
+				<!-- Miss Sounds -->
+				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
+				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
+				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
+			</dir>
+			
+			<!-- Music -->
+			<dir name = "music">
+				<file name = "menu.xa" type = "xa" source = "iso/music/menu.xa"/>
+				<dummy sectors="128"/>
+				<file name = "gameovr.xa" type = "xa" source = "iso/music/gameovr.xa"/>
+				<dummy sectors="128"/>
+				<file name = "1.xa" type = "xa" source = "iso/music/1.xa"/>
+				<dummy sectors="128"/>
+				<file name = "2.xa" type = "xa" source = "iso/music/2.xa"/>
+				<dummy sectors="128"/>
+				<file name = "3.xa" type = "xa" source = "iso/music/3.xa"/>
+				<dummy sectors="128"/>
+				<file name = "4.xa" type = "xa" source = "iso/music/4.xa"/>
+				<dummy sectors="128"/>
+				<file name = "5.xa" type = "xa" source = "iso/music/5.xa"/>
+				<dummy sectors="128"/>
+				<file name = "6.xa" type = "xa" source = "iso/music/6.xa"/>
+				<dummy sectors="128"/>
+				<file name = "7.xa" type = "xa" source = "iso/music/7.xa"/>
+				<dummy sectors="128"/>
+				<file name = "8.xa" type = "xa" source = "iso/music/8.xa"/>
+				<dummy sectors="128"/>
+				<file name = "9.xa" type = "xa" source = "iso/music/9.xa"/>
+				<dummy sectors="128"/>
+				<file name = "10.xa" type = "xa" source = "iso/music/10.xa"/>
+				<dummy sectors="128"/>
+				<file name = "11.xa" type = "xa" source = "iso/music/11.xa"/>
+				<dummy sectors="128"/>
+				<file name = "12.xa" type = "xa" source = "iso/music/12.xa"/>
+				<dummy sectors="128"/>
+				<file name = "13.xa" type = "xa" source = "iso/music/13.xa"/>
+				<dummy sectors="128"/>
+				<file name = "14.xa" type = "xa" source = "iso/music/14.xa"/>
+				<dummy sectors="128"/>
+				<file name = "15.xa" type = "xa" source = "iso/music/15.xa"/>
+				<dummy sectors="128"/>
+				<file name = "16.xa" type = "xa" source = "iso/music/16.xa"/>
+				<dummy sectors="128"/>
+				<file name = "17.xa" type = "xa" source = "iso/music/17.xa"/>
+				<dummy sectors="128"/>
+				<file name = "18.xa" type = "xa" source = "iso/music/18.xa"/>
+				<dummy sectors="128"/>
+				<file name = "19.xa" type = "xa" source = "iso/music/19.xa"/>
+				<dummy sectors="128"/>
+			</dir>
+			
+			<!-- Dummy sectors -->
+			<dummy sectors="1024"/>
+		</directory_tree>
+	</track>
+</iso_project>
