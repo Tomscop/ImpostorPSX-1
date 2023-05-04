@@ -75,10 +75,8 @@ void Back_Turbulence_DrawFG(StageBack *back)
 	
 	Debug_StageMoveDebug(&frontcloud1_dst, 13, fx, fy);
 	Debug_StageMoveDebug(&frontcloud2_dst, 14, fx, fy);
-	Debug_StageMoveDebug(&frontcloud3_dst, 15, fx, fy);
-	Debug_StageMoveDebug(&frontcloud4_dst, 16, fx, fy);
-	Debug_StageMoveDebug(&wind1_dst, 17, fx, fy);
-	Debug_StageMoveDebug(&wind2_dst, 18, fx, fy);
+	Debug_StageMoveDebug(&wind1_dst, 15, fx, fy);
+	Debug_StageMoveDebug(&wind2_dst, 16, fx, fy);
 	Stage_BlendTex(&this->tex_back2, &wind_src, &wind1_dst, stage.camera.bzoom,1);
 	Stage_BlendTex(&this->tex_back2, &wind_src, &wind2_dst, stage.camera.bzoom,1);
 	Stage_DrawTex(&this->tex_back3, &frontcloud1_src, &frontcloud1_dst, stage.camera.bzoom);
@@ -151,84 +149,84 @@ void Back_Turbulence_DrawBG(StageBack *back)
 	{
 	if ((stage.song_step >= -29) && (stage.song_step <= 799)) //speed = 1
 	{
-		backc += 1;
-		balloonm += 1;
-		midc += 3;
-		frontc1 += 7;
+		backc += 2;
+		balloonm += 3;
+		midc += 4;
+		frontc1 += 8;
 		windm1 += 7;
 		windm2 += 7;
 	}
 	else if ((stage.song_step >= 800) && (stage.song_step <= 815)) //speed = 1.2
 	{
-		backc += 1;
-		balloonm += 2;
-		midc += 4;
-		frontc1 += 8;
+		backc += 2;
+		balloonm += 3;
+		midc += 5;
+		frontc1 += 9;
 		windm1 += 8;
 		windm2 += 8;
 	}
 	else if ((stage.song_step >= 816) && (stage.song_step <= 943)) //speed = 1.4
 	{
-		backc += 1;
-		balloonm += 2;
-		midc += 5;
-		frontc1 += 9;
+		backc += 2;
+		balloonm += 3;
+		midc += 6;
+		frontc1 += 10;
 		windm1 += 9;
 		windm2 += 9;
 	}
 	else if ((stage.song_step >= 944) && (stage.song_step <= 1039)) //speed = 1.6
 	{
-		backc += 2;
-		balloonm += 2;
-		midc += 5;
-		frontc1 += 11;
-		windm1 += 10;
-		windm2 += 10;
-	}
-	else if ((stage.song_step >= 1040) && (stage.song_step <= 1055)) //speed = 1.8
-	{
-		backc += 2;
+		backc += 3;
 		balloonm += 3;
 		midc += 6;
 		frontc1 += 12;
 		windm1 += 11;
 		windm2 += 11;
 	}
-	else if ((stage.song_step >= 1056) && (stage.song_step <= 1071)) //speed = 1.9
+	else if ((stage.song_step >= 1040) && (stage.song_step <= 1055)) //speed = 1.8
 	{
-		backc += 2;
-		balloonm += 3;
-		midc += 6;
+		backc += 3;
+		balloonm += 4;
+		midc += 7;
 		frontc1 += 13;
 		windm1 += 12;
 		windm2 += 12;
 	}
-	else if ((stage.song_step >= 1072) && (stage.song_step <= 1135)) //speed = 2
-	{
-		backc += 2;
-		balloonm += 3;
-		midc += 7;
-		frontc1 += 13;
-		windm1 += 13;
-		windm2 += 13;
-	}
-	else if ((stage.song_step >= 1136) && (stage.song_step <= 1199)) //speed = 2.2
-	{
-		backc += 2;
-		balloonm += 3;
-		midc += 7;
-		frontc1 += 15;
-		windm1 += 15;
-		windm2 += 15;
-	}
-	else if (stage.song_step >= 1200) //speed = 3
+	else if ((stage.song_step >= 1056) && (stage.song_step <= 1071)) //speed = 1.9
 	{
 		backc += 3;
 		balloonm += 4;
-		midc += 10;
-		frontc1 += 20;
-		windm1 += 20;
-		windm2 += 20;
+		midc += 7;
+		frontc1 += 14;
+		windm1 += 13;
+		windm2 += 13;
+	}
+	else if ((stage.song_step >= 1072) && (stage.song_step <= 1135)) //speed = 2
+	{
+		backc += 3;
+		balloonm += 4;
+		midc += 8;
+		frontc1 += 14;
+		windm1 += 14;
+		windm2 += 14;
+	}
+	else if ((stage.song_step >= 1136) && (stage.song_step <= 1199)) //speed = 2.2
+	{
+		backc += 4;
+		balloonm += 5;
+		midc += 9;
+		frontc1 += 17;
+		windm1 += 17;
+		windm2 += 17;
+	}
+	else if (stage.song_step >= 1200) //speed = 3
+	{
+		backc += 4;
+		balloonm += 5;
+		midc += 11;
+		frontc1 += 21;
+		windm1 += 21;
+		windm2 += 21;
 	}
 	
 	if (backc > 1285)

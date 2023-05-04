@@ -118,7 +118,15 @@ void Char_RedmungusParasite_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_RedmungusParasite_SetFrame);
-	Character_Draw(character, &this->tex, &char_redmungusparasite_frame[this->frame]);
+	if (stage.song_step <= 1220)
+		Character_Draw(character, &this->tex, &char_redmungusparasite_frame[this->frame]);
+	
+	//DIE
+	if ((stage.song_step >= 1209) && (stage.song_step <= 1220))
+	{
+		stage.opponent->x += FIXED_DEC(45,1);
+		stage.opponent->y += FIXED_DEC(4,1);
+	}
 }
 
 void Char_RedmungusParasite_SetAnim(Character *character, u8 anim)
@@ -163,7 +171,7 @@ Character *Char_RedmungusParasite_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFE51919;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
+	this->character.focus_x = FIXED_DEC(-89,1);
 	this->character.focus_y = FIXED_DEC(-66,1);
 	this->character.focus_zoom = FIXED_DEC(814,1024);
 	
