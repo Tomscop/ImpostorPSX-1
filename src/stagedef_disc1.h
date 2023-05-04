@@ -490,12 +490,12 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_RedmungusParasite_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_RedmungusParasite_New, FIXED_DEC(-120,1),  FIXED_DEC(283,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Turbulence_New,
 		
 		//Song info
 		3, 7,

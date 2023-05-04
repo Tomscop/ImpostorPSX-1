@@ -164,8 +164,8 @@ Character *Char_RedmungusParasite_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFFE51919;
 	
 	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_y = FIXED_DEC(-66,1);
+	this->character.focus_zoom = FIXED_DEC(814,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1667,1000);

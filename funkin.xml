@@ -305,7 +305,7 @@
 				
 				<!-- Meeting BG -->
 				
-				<!-- Sky BG -->
+				<file name = "turbulen.arc" type = "data" source = "iso/stages/turbulen/back.arc"/>
 				
 				<file name = "victory.arc" type = "data" source = "iso/stages/victory/back.arc"/>
 				
@@ -343,6 +343,7 @@
 				<file name = "intro3p.vag" type = "data" source = "iso/sounds/stage/intro3p.ogg.vag"/>
 				<!-- Other Sounds -->
 				<file name = "pretendr.vag" type = "data" source = "iso/sounds/stage/pretendr.ogg.vag"/>
+				<file name = "discnect.vag" type = "data" source = "iso/sounds/stage/discnect.ogg.vag"/>
 				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
 				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
 				<!-- Game Over Sounds -->

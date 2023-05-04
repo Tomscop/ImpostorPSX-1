@@ -134,6 +134,7 @@ static u32 Sounds[10];
 #include "stage/plantroom.h"
 #include "stage/pretender.h"
 #include "stage/kitchen.h"
+#include "stage/turbulence.h"
 #include "stage/victory.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
@@ -1612,6 +1613,15 @@ static void Stage_LoadSFX(void)
 		}
     }
 	
+	//disconnect sound
+	if (stage.stage_id == StageId_Victory)
+	{
+		IO_FindFile(&file, "\\SOUNDS\\DISCNECT.VAG;1");
+		u32 *data = IO_ReadFile(&file);
+		Sounds[7] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	
 	//tomongus shot sound
 	if ((stage.stage_id == StageId_SussyBussy) || (stage.stage_id == StageId_Rivals))
 	{
@@ -2256,6 +2266,8 @@ void Stage_Tick(void)
 			//sounds
 			if ((prtndr == true) && (stage.song_step == -135) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[8], 0x3fff);
+			if ((stage.stage_id == StageId_Victory) && ((stage.song_step == 120) || (stage.song_step == 448) || (stage.song_step == 716) || (stage.song_step == 976) || (stage.song_step == 1052) || (stage.song_step == 1116)) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[7], 0x3fff);
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step == 2064) && stage.flag & STAGE_FLAG_JUST_STEP)

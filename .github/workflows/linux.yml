@@ -41,20 +41,12 @@ jobs:
           sudo dpkg -i mkpsxiso-2.02-Linux.deb
           unzip psyq-4_7-converted-light.zip
           mv psyq-4_7-converted mips/psyq
-          cd
-          cd disk-1
           make -f Makefile.assets -j8
           mkdir export
           mv impostor-1.bin export
           mv impostor-1.cue export
-          cd
-          cd disk-2
-          make -f Makefile.assets -j8
-          mkdir export
-          mv impostor-2.bin export
-          mv impostor-2.cue export
-          rar a impostor.rar export
+          rar a impostor-1.rar export
 
-      - name: upload impostor
+      - name: upload impostor-1
         run: |
-          curl --upload-file impostor.rar https://transfer.sh/  
+          curl --upload-file impostor-1.rar https://transfer.sh/  
