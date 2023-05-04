@@ -35,6 +35,7 @@ all: \
 	iso/chars/bfmira/main.arc \
 	iso/chars/pinkpret/main.arc \
 	iso/chars/bfchef/main.arc \
+	iso/chars/bfturb/main.arc \
 	iso/chars/picorc/main.arc \
 	iso/chars/bfpixel/main.arc \
 	iso/chars/bfchrist/main.arc \
@@ -110,6 +111,7 @@ all: \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
 	iso/stages/turbulen/back.arc \
+	iso/stages/turbulen/claw.arc \
 	iso/stages/victory/back.arc \
 	iso/stages/lobby/back.arc \
 	iso/stages/cafe/back.arc \
@@ -170,6 +172,7 @@ iso/chars/pinkpret/main.arc: iso/chars/pinkpret/idle0.tim iso/chars/pinkpret/idl
 iso/chars/bfchef/main.arc: iso/chars/bfchef/idle0.tim iso/chars/bfchef/idle1.tim iso/chars/bfchef/idle2.tim iso/chars/bfchef/left0.tim iso/chars/bfchef/down0.tim iso/chars/bfchef/up0.tim iso/chars/bfchef/right0.tim iso/chars/bfchef/leftm0.tim iso/chars/bfchef/leftm1.tim iso/chars/bfchef/downm0.tim iso/chars/bfchef/upm0.tim iso/chars/bfchef/upm1.tim iso/chars/bfchef/rightm0.tim iso/chars/bfchef/downa0.tim iso/chars/bfchef/upa0.tim iso/chars/bfchef/upa1.tim 
 
 # BF Turbulence
+iso/chars/bfturb/main.arc: iso/chars/bfturb/idle0.tim iso/chars/bfturb/idle1.tim iso/chars/bfturb/left0.tim iso/chars/bfturb/down0.tim iso/chars/bfturb/up0.tim iso/chars/bfturb/right0.tim iso/chars/bfturb/leftm0.tim iso/chars/bfturb/downm0.tim iso/chars/bfturb/upm0.tim iso/chars/bfturb/rightm0.tim iso/chars/bfturb/peace0.tim 
 
 # Pico RC
 iso/chars/picorc/main.arc: iso/chars/picorc/idle0.tim iso/chars/picorc/idle1.tim iso/chars/picorc/left0.tim iso/chars/picorc/down0.tim iso/chars/picorc/up0.tim iso/chars/picorc/right0.tim iso/chars/picorc/leftm0.tim iso/chars/picorc/downm0.tim iso/chars/picorc/upm0.tim iso/chars/picorc/upm1.tim iso/chars/picorc/rightm0.tim iso/chars/picorc/rightm1.tim 
@@ -360,6 +363,7 @@ iso/stages/kitchen/saster.arc: iso/stages/kitchen/saster0.tim iso/stages/kitchen
 
 # Turbulence
 iso/stages/turbulen/back.arc: iso/stages/turbulen/back0.tim iso/stages/turbulen/back1.tim iso/stages/turbulen/back2.tim iso/stages/turbulen/back3.tim
+iso/stages/turbulen/claw.arc: iso/stages/turbulen/claw0.tim iso/stages/turbulen/claw1.tim 
 
 # Victory
 iso/stages/victory/back.arc: iso/stages/victory/back0.tim iso/stages/victory/back1.tim iso/stages/victory/back2.tim

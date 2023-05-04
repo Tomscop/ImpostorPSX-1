@@ -59,6 +59,7 @@ static u32 Sounds[10];
 #include "character/bfmira.h"
 #include "character/pinkpretender.h"
 #include "character/bfchef.h"
+#include "character/bfturbulence.h"
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
@@ -2930,6 +2931,9 @@ void Stage_Tick(void)
 			//Tick characters
 			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
 				stage.player->tick(stage.player);
+			if (stage.stage_id == StageId_Turbulence)
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
 			stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
@@ -2939,8 +2943,9 @@ void Stage_Tick(void)
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
-			if (stage.back->draw_md != NULL)
-				stage.back->draw_md(stage.back);
+			if (stage.stage_id != StageId_Turbulence)
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
 			
 			//Tick girlfriend
 			if (stage.gf != NULL)

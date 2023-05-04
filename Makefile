@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character/bfmira.c \
 	src/character/pinkpretender.c \
 	src/character/bfchef.c \
+	src/character/bfturbulence.c \
 	src/character/picorc.c \
 	src/character/bfpixel.c \
 	src/character/bfchristmas.c \

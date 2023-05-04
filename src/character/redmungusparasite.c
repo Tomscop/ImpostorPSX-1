@@ -118,14 +118,13 @@ void Char_RedmungusParasite_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_RedmungusParasite_SetFrame);
-	if (stage.song_step <= 1220)
+	if (stage.song_step <= 1216)
 		Character_Draw(character, &this->tex, &char_redmungusparasite_frame[this->frame]);
 	
 	//DIE
-	if ((stage.song_step >= 1209) && (stage.song_step <= 1220))
+	if ((stage.song_step >= 1209) && (stage.song_step <= 1216))
 	{
-		stage.opponent->x += FIXED_DEC(45,1);
-		stage.opponent->y += FIXED_DEC(4,1);
+		stage.opponent->x += FIXED_DEC(50,1);
 	}
 }
 

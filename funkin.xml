@@ -161,7 +161,7 @@
 				<file name = "bfmira.arc" type = "data" source = "iso/chars/bfmira/main.arc"/>
 				<file name = "pinkpret.arc" type = "data" source = "iso/chars/pinkpret/main.arc"/>
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
-				<!-- Boyfriend Turbulence assets -->
+				<file name = "bfturb.arc" type = "data" source = "iso/chars/bfturb/main.arc"/>
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
 				<!-- Boyfriend Tuesday assets -->
@@ -306,6 +306,7 @@
 				<!-- Meeting BG -->
 				
 				<file name = "turbulen.arc" type = "data" source = "iso/stages/turbulen/back.arc"/>
+				<file name = "claw.arc" type = "data" source = "iso/stages/turbulen/claw.arc"/>
 				
 				<file name = "victory.arc" type = "data" source = "iso/stages/victory/back.arc"/>
 				

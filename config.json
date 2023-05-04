@@ -24,19 +24,44 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
+		},
+		{
+			"fnfanim" : "hey",
+			"imgname" : "peace",
+			"hname"   : "Peace"
 		}
 	],
-	"input":  "iso/chars/redmungv/mungus",
-	"outdir": "iso/chars/redmungv/",
-	"charname" : "RedmungusVT",
+	"input":  "iso/chars/bfturb/bf_turb",
+	"outdir": "iso/chars/bfturb/",
+	"charname" : "BFTurbulence",
 	"optimize" : false,
-	"optimizename" : "redmungusvt",
+	"optimizename" : "bfturbulence",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		704,
+		640,
 		0,
-		32,
-		481
+		0,
+		480
 	],
 
 	"bpp" : 4,
