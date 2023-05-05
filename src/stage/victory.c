@@ -100,11 +100,11 @@ void Back_Victory_DrawBG(StageBack *back)
 	//Boppers
 	fixed_t beat_bop, other_bop;
 	if ((stage.song_step & 0x3) == 0)
-		beat_bop = FIXED_UNIT - ((stage.note_scroll / 24) & FIXED_LAND/4);
+		beat_bop = FIXED_UNIT - ((stage.chart.note_scroll / 24) & FIXED_LAND/4);
 	else
 		beat_bop = 0;
 	if ((stage.song_step & 0x7) == 0)
-		other_bop = FIXED_UNIT - ((stage.note_scroll / 24) & FIXED_LAND/4);
+		other_bop = FIXED_UNIT - ((stage.chart.note_scroll / 24) & FIXED_LAND/4);
 	else
 		other_bop = 0;
 	

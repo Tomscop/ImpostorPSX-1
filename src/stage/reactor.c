@@ -126,7 +126,7 @@ void Back_Reactor_DrawBG(StageBack *back)
 	
 	fixed_t beat_bop;
 	if ((stage.song_step & 0xF) == 0)
-		beat_bop = FIXED_UNIT - ((stage.note_scroll / 24) & FIXED_LAND/4);
+		beat_bop = FIXED_UNIT - ((stage.chart.note_scroll / 24) & FIXED_LAND/4);
 	else
 		beat_bop = 0;
 	
