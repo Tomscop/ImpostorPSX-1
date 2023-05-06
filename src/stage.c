@@ -166,6 +166,9 @@ static void Stage_CheckAnimations(PlayerState *this, u8 type, Note* note)
 	if (note->type & NOTE_FLAG_NO_ANIM)
 		return;
 	
+	if ((stage.stage_id == StageId_Turbulence) && (stage.song_step >= 1267))
+		return;
+	
 	if ((note->type & NOTE_FLAG_CHAR2SING) == false)
 		this->character->set_anim(this->character, type);
 

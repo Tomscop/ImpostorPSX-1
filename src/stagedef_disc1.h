@@ -488,9 +488,9 @@
 	},
 	{ //StageId_Turbulence (Turbulence)
 		//Characters
-		{Char_BFTurbulence_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFTurbulence_New,    FIXED_DEC(834,1),  FIXED_DEC(461,1)},
         {NULL},
-		{Char_RedmungusParasite_New, FIXED_DEC(-120,1),  FIXED_DEC(283,1)},
+		{Char_RedmungusParasite_New, FIXED_DEC(535,1),  FIXED_DEC(283,1)},
         {NULL},
         {NULL},
 		

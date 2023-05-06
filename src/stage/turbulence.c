@@ -133,7 +133,7 @@ void Back_Turbulence_DrawFG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0)
 		Animatable_SetAnim(&this->claw_animatable, 0);
 	Animatable_Animate(&this->claw_animatable, (void*)this, Turbulence_Claw_SetFrame);
-	Turbulence_Claw_Draw(this, FIXED_DEC(0+426 + 160,1) - fx, FIXED_DEC(270 + 160,1) - fy);
+	Turbulence_Claw_Draw(this, FIXED_DEC(192+426 + 160,1) - fx, FIXED_DEC(293-53 + 160,1) - fy);
 }
 
 void Back_Turbulence_DrawMG(StageBack *back)
@@ -148,8 +148,8 @@ void Back_Turbulence_DrawMG(StageBack *back)
 	
 	RECT arm_src = {  0, 89,255, 31};
 	RECT_FIXED arm_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(323,1) - fy,
+		FIXED_DEC(192 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(293,1) - fy,
 		FIXED_DEC(513 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(63,1)
 	};
@@ -306,7 +306,7 @@ void Back_Turbulence_DrawBG(StageBack *back)
 	
 	if (backc > 1285)
 		backc = -338;
-	if (balloonm > 788)
+	if (balloonm > 860)
 		balloonm = -338;
 	if (midc > 1285)
 		midc = -838;

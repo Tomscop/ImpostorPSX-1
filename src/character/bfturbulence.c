@@ -93,7 +93,7 @@ static const Animation char_bfturbulence_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){ 11, 12, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
     
-    {2, (const u8[]){ 21, 22, 23, ASCR_CHGANI, CharAnim_Special1}},   //CharAnim_Special1
+    {2, (const u8[]){ 21, 22, 23, ASCR_BACK, 1}},   //CharAnim_Special1
     {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
     {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special3
 	
@@ -121,6 +121,8 @@ void Char_BFTurbulence_SetFrame(void *user, u8 frame)
 void Char_BFTurbulence_Tick(Character *character)
 {
 	Char_BFTurbulence *this = (Char_BFTurbulence*)character;
+	
+	//NOTE FOR WHEN I COME BACK ADD THE PEACE ANIM THING AT THE END
 	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -153,6 +155,17 @@ void Char_BFTurbulence_Tick(Character *character)
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
 	}
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Turbulence: //Lmao get rekt
+				if (stage.song_step == 1268)
+					character->set_anim(character, CharAnim_Special1);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFTurbulence_SetFrame);
@@ -204,9 +217,9 @@ Character *Char_BFTurbulence_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF29B5D6;
 	
 	
-	this->character.focus_x = FIXED_DEC(-226,1);
-	this->character.focus_y = FIXED_DEC(-192,1);
-	this->character.focus_zoom = FIXED_DEC(814,1024);
+	this->character.focus_x = FIXED_DEC(-254,1);
+	this->character.focus_y = FIXED_DEC(-171,1);
+	this->character.focus_zoom = FIXED_DEC(700,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(13,10);
