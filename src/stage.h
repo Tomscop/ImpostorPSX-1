@@ -277,6 +277,7 @@ typedef struct
 	//Charts
 	Chart chart;
 	Chart event_chart;
+	Chart special_chart;
 	
 	//HUD textures
 	Gfx_Tex tex_hud0, tex_hud1, tex_count;

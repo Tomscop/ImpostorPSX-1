@@ -1066,7 +1066,7 @@ static void Stage_DrawStrum(u8 i, RECT *note_src, RECT_FIXED *note_dst)
 	}
 }
 
-static void Stage_DrawNotes(void)
+static void Stage_DrawNotes(Chart* chart)
 {
 	//Check if opponent should draw as bot
 	u8 bot = (stage.mode >= StageMode_2P) ? 0 : NOTE_FLAG_OPPONENT;
@@ -1075,11 +1075,11 @@ static void Stage_DrawNotes(void)
 	SectionScroll scroll;
 	scroll.start = stage.time_base;
 	
-	Section *scroll_section = stage.chart.section_base;
+	Section *scroll_section = chart->section_base;
 	Stage_GetSectionScroll(&scroll, scroll_section);
 	
 	//Push scroll back until cur_note is properly contained
-	while (scroll.start_step > stage.chart.cur_note->pos)
+	while (scroll.start_step > chart->cur_note->pos)
 	{
 		//Look for previous section
 		Section *prev_section = Stage_GetPrevSection(scroll_section);
@@ -1093,7 +1093,7 @@ static void Stage_DrawNotes(void)
 	}
 	
 	//Draw notes
-	for (Note *note = stage.chart.cur_note; note->pos != 0xFFFF; note++)
+	for (Note *note = chart->cur_note; note->pos != 0xFFFF; note++)
 	{
 		//Update scroll
 		while (note->pos >= scroll_section->end)
@@ -1115,7 +1115,7 @@ static void Stage_DrawNotes(void)
 		if (y < FIXED_DEC(-16 - screen.SCREEN_HEIGHT2, 1))
 		{
 			//Wait for note to exit late time
-			if (note_fp + stage.late_safe >= stage.chart.note_scroll)
+			if (note_fp + stage.late_safe >= chart->note_scroll)
 				continue;
 			
 			//Miss note if player's note
@@ -1132,7 +1132,7 @@ static void Stage_DrawNotes(void)
 			}
 			
 			//Update current note
-			stage.chart.cur_note++;
+			chart->cur_note++;
 		}
 		else
 		{
@@ -1148,7 +1148,7 @@ static void Stage_DrawNotes(void)
 				//Check for sustain clipping
 				fixed_t clip;
 				y -= scroll.size;
-				if (((note->type ^ stage.note_swap) & (bot | NOTE_FLAG_HIT)) || ((this->pad_held & note_key[note->type & 0x3]) && (note_fp + stage.late_sus_safe >= stage.chart.note_scroll)))
+				if (((note->type ^ stage.note_swap) & (bot | NOTE_FLAG_HIT)) || ((this->pad_held & note_key[note->type & 0x3]) && (note_fp + stage.late_sus_safe >= chart->note_scroll)))
 				{
 					clip = note_y[(note->type & 0x7)] - y;
 					if (clip < 0)
@@ -1540,6 +1540,22 @@ static void Stage_LoadChart(void)
 	{
 		stage.event_chart.data = NULL;
 		Stage_GetChart_Values(&stage.event_chart);
+	}
+
+	//Special Chart
+	sprintf(chart_path, "\\WEEK4\\4.7N.CHT;1");
+
+	if (stage.stage_id == StageId_VotingTime)
+	{
+		Stage_UnloadChart(&stage.special_chart);
+		stage.special_chart.data = IO_Read(chart_path);
+		//Events.json chart
+		Stage_GetChart_Values(&stage.special_chart);
+	}
+	else
+	{
+		stage.special_chart.data = NULL;
+		Stage_GetChart_Values(&stage.special_chart);
 	}
 	
 	//Count max scores
@@ -2033,6 +2049,7 @@ void Stage_Unload(void)
 	//Unload stage data
 	Stage_UnloadChart(&stage.chart);
 	Stage_UnloadChart(&stage.event_chart);
+	Stage_UnloadChart(&stage.special_chart);
 	
 	//Free objects
 	ObjectList_Free(&stage.objlist_splash);
@@ -2872,7 +2889,10 @@ void Stage_Tick(void)
 				ObjectList_Tick(&stage.objlist_splash);
 				
 				//Draw stage notes
-				Stage_DrawNotes();
+				Stage_DrawNotes(&stage.chart);
+
+				if (stage.special_chart.data != NULL)
+					Stage_DrawNotes(&stage.special_chart);
 				
 				//Draw note HUD
 				RECT note_src = {0, 0, 32, 32};
@@ -3064,6 +3084,7 @@ void Stage_Tick(void)
 			//Unload stage data
 			Stage_UnloadChart(&stage.chart);
 			Stage_UnloadChart(&stage.event_chart);
+			Stage_UnloadChart(&stage.special_chart);
 			
 			//Free background
 			stage.back->free(stage.back);
