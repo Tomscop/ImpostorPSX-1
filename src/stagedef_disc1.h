@@ -454,7 +454,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jorsawsee_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
@@ -471,8 +471,8 @@
 	{ //StageId_VotingTime (Voting Time)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_RedmungusVT_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Warchief_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
 		

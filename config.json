@@ -24,47 +24,22 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
-		},
-		{
-			"fnfanim" : "hey",
-			"imgname" : "peace",
-			"hname"   : "Peace"
 		}
 	],
-	"input":  "iso/chars/bfturb/bf_turb",
-	"outdir": "iso/chars/bfturb/",
-	"charname" : "BFTurbulence",
+	"input":  "iso/chars/jorsawse/jorsawsee",
+	"outdir": "iso/chars/jorsawse/",
+	"charname" : "Jorsawsee",
 	"optimize" : false,
-	"optimizename" : "bfturbulence",
+	"optimizename" : "jorsawsee",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
-	"bpp" : 4,
+	"bpp" : 8,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,

@@ -56,6 +56,7 @@ all: \
 	iso/chars/gray/main.arc \
 	iso/chars/pink/main.arc \
 	iso/chars/chef/main.arc \
+	iso/chars/jorsawse/main.arc \
 	iso/chars/warchief/main.arc \
 	iso/chars/jelqer/main.arc \
 	iso/chars/redmungv/main.arc \
@@ -244,6 +245,7 @@ iso/chars/pink/main.arc: iso/chars/pink/idle0.tim iso/chars/pink/idle1.tim iso/c
 iso/chars/chef/main.arc: iso/chars/chef/idle0.tim iso/chars/chef/idle1.tim iso/chars/chef/idle2.tim iso/chars/chef/idle3.tim iso/chars/chef/left0.tim iso/chars/chef/left1.tim iso/chars/chef/left2.tim iso/chars/chef/left3.tim iso/chars/chef/down0.tim iso/chars/chef/down1.tim iso/chars/chef/down2.tim iso/chars/chef/down3.tim iso/chars/chef/down4.tim iso/chars/chef/up0.tim iso/chars/chef/up1.tim iso/chars/chef/up2.tim iso/chars/chef/up3.tim iso/chars/chef/up4.tim iso/chars/chef/right0.tim iso/chars/chef/right1.tim iso/chars/chef/right2.tim iso/chars/chef/right3.tim iso/chars/chef/right4.tim iso/chars/chef/right5.tim iso/chars/chef/right6.tim iso/chars/chef/right7.tim iso/chars/chef/right8.tim iso/chars/chef/downalt0.tim iso/chars/chef/downalt1.tim iso/chars/chef/downalt2.tim iso/chars/chef/downalt3.tim iso/chars/chef/downalt4.tim iso/chars/chef/upalt0.tim iso/chars/chef/upalt1.tim iso/chars/chef/upalt2.tim iso/chars/chef/upalt3.tim 
 
 # Jorsawsee
+iso/chars/jorsawse/main.arc: iso/chars/jorsawse/idle0.tim iso/chars/jorsawse/idle1.tim iso/chars/jorsawse/idle2.tim iso/chars/jorsawse/idle3.tim iso/chars/jorsawse/idle4.tim iso/chars/jorsawse/idle5.tim iso/chars/jorsawse/left0.tim iso/chars/jorsawse/left1.tim iso/chars/jorsawse/down0.tim iso/chars/jorsawse/down1.tim iso/chars/jorsawse/down2.tim iso/chars/jorsawse/down3.tim iso/chars/jorsawse/up0.tim iso/chars/jorsawse/up1.tim iso/chars/jorsawse/up2.tim iso/chars/jorsawse/up3.tim iso/chars/jorsawse/right0.tim iso/chars/jorsawse/right1.tim 
 
 # Redmungus
 

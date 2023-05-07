@@ -122,8 +122,6 @@ void Char_BFTurbulence_Tick(Character *character)
 {
 	Char_BFTurbulence *this = (Char_BFTurbulence*)character;
 	
-	//NOTE FOR WHEN I COME BACK ADD THE PEACE ANIM THING AT THE END
-	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
