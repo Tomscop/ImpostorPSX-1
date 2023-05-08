@@ -51,14 +51,14 @@ typedef struct
 
 //Jorsawsee character definitions
 static const CharFrame char_jorsawsee_frame[] = {
-  {Jorsawsee_ArcMain_Idle0, {  0,  0,166,122}, {155, 87}}, //0 idle 1
-  {Jorsawsee_ArcMain_Idle0, {  0,122,171,122}, {160, 87}}, //1 idle 2
+  {Jorsawsee_ArcMain_Idle0, {  0,  0,166,122}, {155, 86}}, //0 idle 1
+  {Jorsawsee_ArcMain_Idle0, {  0,122,171,122}, {160, 86}}, //1 idle 2
   {Jorsawsee_ArcMain_Idle1, {  0,  0,172,121}, {162, 85}}, //2 idle 3
   {Jorsawsee_ArcMain_Idle1, {  0,121,173,121}, {163, 85}}, //3 idle 4
   {Jorsawsee_ArcMain_Idle2, {  0,  0,166,123}, {158, 87}}, //4 idle 5
   {Jorsawsee_ArcMain_Idle2, {  0,123,165,123}, {157, 87}}, //5 idle 6
   {Jorsawsee_ArcMain_Idle3, {  0,  0,165,125}, {157, 89}}, //6 idle 7
-  {Jorsawsee_ArcMain_Idle3, {  0,125,165,125}, {157, 89}}, //7 idle 8
+  {Jorsawsee_ArcMain_Idle3, {  0,125,165,125}, {158, 89}}, //7 idle 8
   {Jorsawsee_ArcMain_Idle4, {  0,  0,172,125}, {165, 90}}, //8 idle 9
   {Jorsawsee_ArcMain_Idle4, {  0,125,172,125}, {165, 90}}, //9 idle 10
   {Jorsawsee_ArcMain_Idle5, {  0,  0,174,126}, {166, 90}}, //10 idle 11
@@ -69,24 +69,24 @@ static const CharFrame char_jorsawsee_frame[] = {
   {Jorsawsee_ArcMain_Left1, {  0,  0,139,123}, {161, 88}}, //14 left 3
   {Jorsawsee_ArcMain_Left1, {  0,123,141,123}, {162, 88}}, //15 left 4
 
-  {Jorsawsee_ArcMain_Down0, {  0,  0,177,118}, {181, 83}}, //16 down 1
-  {Jorsawsee_ArcMain_Down0, {  0,118,177,118}, {182, 83}}, //17 down 2
-  {Jorsawsee_ArcMain_Down1, {  0,  0,184,120}, {187, 85}}, //18 down 3
-  {Jorsawsee_ArcMain_Down1, {  0,120,184,120}, {187, 85}}, //19 down 4
-  {Jorsawsee_ArcMain_Down2, {  0,  0,180,121}, {182, 86}}, //20 down 5
-  {Jorsawsee_ArcMain_Down2, {  0,121,181,121}, {182, 86}}, //21 down 6
-  {Jorsawsee_ArcMain_Down3, {  0,  0,177,123}, {178, 88}}, //22 down 7
-  {Jorsawsee_ArcMain_Down3, {  0,123,178,123}, {179, 88}}, //23 down 8
+  {Jorsawsee_ArcMain_Down0, {  0,  0,177,118}, {182, 82}}, //16 down 1
+  {Jorsawsee_ArcMain_Down0, {  0,118,177,118}, {182, 82}}, //17 down 2
+  {Jorsawsee_ArcMain_Down1, {  0,  0,184,120}, {187, 84}}, //18 down 3
+  {Jorsawsee_ArcMain_Down1, {  0,120,184,120}, {187, 84}}, //19 down 4
+  {Jorsawsee_ArcMain_Down2, {  0,  0,180,121}, {182, 85}}, //20 down 5
+  {Jorsawsee_ArcMain_Down2, {  0,121,181,121}, {182, 85}}, //21 down 6
+  {Jorsawsee_ArcMain_Down3, {  0,  0,177,123}, {178, 87}}, //22 down 7
+  {Jorsawsee_ArcMain_Down3, {  0,123,178,123}, {179, 87}}, //23 down 8
 
   {Jorsawsee_ArcMain_Up0, {  0,  0,138,133}, {159, 98}}, //24 up 1
   {Jorsawsee_ArcMain_Up1, {  0,  0,145,129}, {157, 94}}, //25 up 2
   {Jorsawsee_ArcMain_Up2, {  0,  0,145,128}, {157, 93}}, //26 up 3
   {Jorsawsee_ArcMain_Up3, {  0,  0,147,127}, {157, 93}}, //27 up 4
 
-  {Jorsawsee_ArcMain_Right0, {  0,  0,188,124}, {167, 90}}, //28 right 1
-  {Jorsawsee_ArcMain_Right0, {  0,124,170,122}, {161, 88}}, //29 right 2
-  {Jorsawsee_ArcMain_Right1, {  0,  0,166,122}, {160, 88}}, //30 right 3
-  {Jorsawsee_ArcMain_Right1, {  0,122,165,122}, {160, 88}}, //31 right 4
+  {Jorsawsee_ArcMain_Right0, {  0,  0,188,124}, {166, 88}}, //28 right 1
+  {Jorsawsee_ArcMain_Right0, {  0,124,170,122}, {160, 86}}, //29 right 2
+  {Jorsawsee_ArcMain_Right1, {  0,  0,166,122}, {159, 86}}, //30 right 3
+  {Jorsawsee_ArcMain_Right1, {  0,122,165,122}, {159, 86}}, //31 right 4
 };
 
 static const Animation char_jorsawsee_anim[CharAnim_Max] = {
@@ -126,7 +126,8 @@ void Char_Jorsawsee_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Jorsawsee_SetFrame);
-	Character_Draw(character, &this->tex, &char_jorsawsee_frame[this->frame]);
+	if (stage.song_step <= 408)
+		Character_Draw(character, &this->tex, &char_jorsawsee_frame[this->frame]);
 }
 
 void Char_Jorsawsee_SetAnim(Character *character, u8 anim)

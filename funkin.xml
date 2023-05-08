@@ -191,7 +191,7 @@
 				<file name = "pink.arc" type = "data" source = "iso/chars/pink/main.arc"/>
 				<file name = "chef.arc" type = "data" source = "iso/chars/chef/main.arc"/>
 				<file name = "jorsawse.arc" type = "data" source = "iso/chars/jorsawse/main.arc"/>
-				<!-- Redmungus assets -->
+				<file name = "redmungs.arc" type = "data" source = "iso/chars/redmungs/main.arc"/>
 				<file name = "warchief.arc" type = "data" source = "iso/chars/warchief/main.arc"/>
 				<file name = "jelqer.arc" type = "data" source = "iso/chars/jelqer/main.arc"/>
 				<file name = "redmungv.arc" type = "data" source = "iso/chars/redmungv/main.arc"/>

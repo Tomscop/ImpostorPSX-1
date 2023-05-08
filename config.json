@@ -26,20 +26,20 @@
 			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/jorsawse/jorsawsee",
-	"outdir": "iso/chars/jorsawse/",
-	"charname" : "Jorsawsee",
+	"input":  "iso/chars/redmungs/meangus",
+	"outdir": "iso/chars/redmungs/",
+	"charname" : "Redmungus",
 	"optimize" : false,
-	"optimizename" : "jorsawsee",
+	"optimizename" : "redmungus",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		896,
 		0,
 		0,
-		481
+		487
 	],
 
-	"bpp" : 8,
+	"bpp" : 4,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,

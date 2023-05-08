@@ -57,6 +57,7 @@ all: \
 	iso/chars/pink/main.arc \
 	iso/chars/chef/main.arc \
 	iso/chars/jorsawse/main.arc \
+	iso/chars/redmungs/main.arc \
 	iso/chars/warchief/main.arc \
 	iso/chars/jelqer/main.arc \
 	iso/chars/redmungv/main.arc \
@@ -248,6 +249,7 @@ iso/chars/chef/main.arc: iso/chars/chef/idle0.tim iso/chars/chef/idle1.tim iso/c
 iso/chars/jorsawse/main.arc: iso/chars/jorsawse/idle0.tim iso/chars/jorsawse/idle1.tim iso/chars/jorsawse/idle2.tim iso/chars/jorsawse/idle3.tim iso/chars/jorsawse/idle4.tim iso/chars/jorsawse/idle5.tim iso/chars/jorsawse/left0.tim iso/chars/jorsawse/left1.tim iso/chars/jorsawse/down0.tim iso/chars/jorsawse/down1.tim iso/chars/jorsawse/down2.tim iso/chars/jorsawse/down3.tim iso/chars/jorsawse/up0.tim iso/chars/jorsawse/up1.tim iso/chars/jorsawse/up2.tim iso/chars/jorsawse/up3.tim iso/chars/jorsawse/right0.tim iso/chars/jorsawse/right1.tim 
 
 # Redmungus
+iso/chars/redmungs/main.arc: iso/chars/redmungs/idle0.tim iso/chars/redmungs/left0.tim iso/chars/redmungs/down0.tim iso/chars/redmungs/up0.tim iso/chars/redmungs/right0.tim 
 
 # Warchief
 iso/chars/warchief/main.arc: iso/chars/warchief/idle0.tim iso/chars/warchief/idle1.tim iso/chars/warchief/left0.tim iso/chars/warchief/left1.tim iso/chars/warchief/down0.tim iso/chars/warchief/up0.tim iso/chars/warchief/up1.tim iso/chars/warchief/right0.tim iso/chars/warchief/right1.tim 

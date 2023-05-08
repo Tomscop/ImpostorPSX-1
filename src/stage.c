@@ -88,6 +88,7 @@ static u32 Sounds[10];
 #include "character/pink.h"
 #include "character/chefogus.h"
 #include "character/jorsawsee.h"
+#include "character/redmungus.h"
 #include "character/warchief.h"
 #include "character/jelqer.h"
 #include "character/redmungusvt.h"
@@ -3063,6 +3064,15 @@ void Stage_Tick(void)
 				if (stage.camswitch != 3)
 					stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = NULL;
+			}
+			else if (stage.stage_id == StageId_O2)
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = NULL;
+				stage.player_state[1].charactersecond = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
 			}
 			else
 			{
