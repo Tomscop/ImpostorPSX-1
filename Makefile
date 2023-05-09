@@ -91,6 +91,7 @@ SRCS = src/main.c \
 	src/stage/plantroom.c \
 	src/stage/pretender.c \
 	src/stage/kitchen.c \
+	src/stage/lounge.c \
 	src/stage/turbulence.c \
 	src/stage/victory.c \
 	src/stage/lobby.c \

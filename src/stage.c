@@ -137,6 +137,7 @@ static u32 Sounds[10];
 #include "stage/plantroom.h"
 #include "stage/pretender.h"
 #include "stage/kitchen.h"
+#include "stage/lounge.h"
 #include "stage/turbulence.h"
 #include "stage/victory.h"
 #include "stage/lobby.h"
@@ -2319,7 +2320,7 @@ void Stage_Tick(void)
 			{
 				if (show)
 				{
-					if (((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
+					if (((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						StageTimer_Draw();
 				}
 			}
@@ -2342,6 +2343,9 @@ void Stage_Tick(void)
 				show = false;
 			else
 				show = true;
+			
+			if ((stage.stage_id == StageId_O2) && (stage.song_step == 408))
+				stage.hudfade = 1;
 			
 			//Complete black screen stuff
 			if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1632))
@@ -2864,14 +2868,14 @@ void Stage_Tick(void)
 							stage.player_state[0].health = 0;
 
 						//Draw health heads
-						if ((stage.stage_id != StageId_DoubleKill) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
+						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
 						}
-					
+						
 						//Draw health bar
-						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)))
+						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
 							if (stage.mode == StageMode_Swap)
 							{

@@ -43,25 +43,25 @@ static const CharFrame char_redmungus_frame[] = {
   {Redmungus_ArcMain_Idle0, {142,  0, 68, 86}, {171,172}}, //2 idle 3
   {Redmungus_ArcMain_Idle0, {  0, 90, 67, 84}, {171,172}}, //3 idle 4
 
-  {Redmungus_ArcMain_Left0, {  0,  0,130, 79}, {203,170}}, //4 left 1
-  {Redmungus_ArcMain_Left0, {  0, 80,128, 79}, {203,171}}, //5 left 2
-  {Redmungus_ArcMain_Left0, {129, 80,106, 79}, {197,172}}, //6 left 3
-  {Redmungus_ArcMain_Left0, {  0,160,104, 80}, {196,172}}, //7 left 4
+  {Redmungus_ArcMain_Left0, {  0,  0,130, 79}, {203-1,170}}, //4 left 1
+  {Redmungus_ArcMain_Left0, {  0, 80,128, 79}, {203-1,171}}, //5 left 2
+  {Redmungus_ArcMain_Left0, {129, 80,106, 79}, {197-1,172}}, //6 left 3
+  {Redmungus_ArcMain_Left0, {  0,160,104, 80}, {196-1,172}}, //7 left 4
 
-  {Redmungus_ArcMain_Down0, {  0,  0, 89, 80}, {178,161}}, //8 down 1
-  {Redmungus_ArcMain_Down0, { 90,  0, 89, 79}, {178,161}}, //9 down 2
-  {Redmungus_ArcMain_Down0, {  0, 81, 88, 80}, {178,164}}, //10 down 3
-  {Redmungus_ArcMain_Down0, { 89, 81, 87, 81}, {178,165}}, //11 down 4
+  {Redmungus_ArcMain_Down0, {  0,  0, 89, 80}, {178+6,161}}, //8 down 1
+  {Redmungus_ArcMain_Down0, { 90,  0, 89, 79}, {178+6,161}}, //9 down 2
+  {Redmungus_ArcMain_Down0, {  0, 81, 88, 80}, {178+6,164}}, //10 down 3
+  {Redmungus_ArcMain_Down0, { 89, 81, 87, 81}, {178+6,165}}, //11 down 4
 
-  {Redmungus_ArcMain_Up0, {  0,  0,116, 84}, {200,177}}, //12 up 1
-  {Redmungus_ArcMain_Up0, {117,  0,117, 84}, {200,177}}, //13 up 2
-  {Redmungus_ArcMain_Up0, {  0, 85,123, 82}, {202,175}}, //14 up 3
-  {Redmungus_ArcMain_Up0, {124, 85,124, 81}, {202,174}}, //15 up 4
+  {Redmungus_ArcMain_Up0, {  0,  0,116, 84}, {200-6,177}}, //12 up 1
+  {Redmungus_ArcMain_Up0, {117,  0,117, 84}, {200-6,177}}, //13 up 2
+  {Redmungus_ArcMain_Up0, {  0, 85,123, 82}, {202-6,175}}, //14 up 3
+  {Redmungus_ArcMain_Up0, {124, 85,124, 81}, {202-6,174}}, //15 up 4
 
-  {Redmungus_ArcMain_Right0, {  0,  0, 84, 82}, {158,173}}, //16 right 1
-  {Redmungus_ArcMain_Right0, { 85,  0, 83, 81}, {158,173}}, //17 right 2
-  {Redmungus_ArcMain_Right0, {169,  0, 86, 80}, {156,173}}, //18 right 3
-  {Redmungus_ArcMain_Right0, {  0, 83, 86, 80}, {155,173}}, //19 right 4
+  {Redmungus_ArcMain_Right0, {  0,  0, 84, 82}, {158+48,173}}, //16 right 1
+  {Redmungus_ArcMain_Right0, { 85,  0, 83, 81}, {158+48,173}}, //17 right 2
+  {Redmungus_ArcMain_Right0, {169,  0, 86, 80}, {156+48,173}}, //18 right 3
+  {Redmungus_ArcMain_Right0, {  0, 83, 86, 80}, {155+48,173}}, //19 right 4
 };
 
 static const Animation char_redmungus_anim[CharAnim_Max] = {

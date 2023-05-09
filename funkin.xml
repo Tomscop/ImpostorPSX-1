@@ -301,7 +301,7 @@
 				
 				
 			<dir name = "bg2">
-				<!-- Lounge BG -->
+				<file name = "lounge.arc" type = "data" source = "iso/stages/lounge/back.arc"/>
 				
 				<!-- Meeting BG -->
 				

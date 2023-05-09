@@ -33,10 +33,10 @@
 	"optimizename" : "redmungus",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		896,
+		768,
 		0,
 		0,
-		487
+		481
 	],
 
 	"bpp" : 4,

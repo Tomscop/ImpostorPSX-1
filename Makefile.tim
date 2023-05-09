@@ -112,6 +112,7 @@ all: \
 	iso/stages/kitchen/back.arc \
 	iso/stages/kitchen/grey.arc \
 	iso/stages/kitchen/saster.arc \
+	iso/stages/lounge/back.arc \
 	iso/stages/turbulen/back.arc \
 	iso/stages/turbulen/claw.arc \
 	iso/stages/victory/back.arc \
@@ -364,6 +365,9 @@ iso/stages/pretendr/snapperd.arc: iso/stages/pretendr/snapperd0.tim
 iso/stages/kitchen/back.arc: iso/stages/kitchen/back0.tim iso/stages/kitchen/back1.tim iso/stages/kitchen/back2.tim
 iso/stages/kitchen/grey.arc: iso/stages/kitchen/grey0.tim
 iso/stages/kitchen/saster.arc: iso/stages/kitchen/saster0.tim iso/stages/kitchen/saster1.tim
+
+# Lounge
+iso/stages/lounge/back.arc: iso/stages/lounge/back0.tim iso/stages/lounge/back1.tim
 
 # Turbulence
 iso/stages/turbulen/back.arc: iso/stages/turbulen/back0.tim iso/stages/turbulen/back1.tim iso/stages/turbulen/back2.tim iso/stages/turbulen/back3.tim
