@@ -55,10 +55,10 @@ static const CharFrame char_jorsawsee_frame[] = {
   {Jorsawsee_ArcMain_Idle0, {  0,122,171,122}, {160, 86}}, //1 idle 2
   {Jorsawsee_ArcMain_Idle1, {  0,  0,172,121}, {162, 85}}, //2 idle 3
   {Jorsawsee_ArcMain_Idle1, {  0,121,173,121}, {163, 85}}, //3 idle 4
-  {Jorsawsee_ArcMain_Idle2, {  0,  0,166,123}, {158, 87}}, //4 idle 5
-  {Jorsawsee_ArcMain_Idle2, {  0,123,165,123}, {157, 87}}, //5 idle 6
-  {Jorsawsee_ArcMain_Idle3, {  0,  0,165,125}, {157, 89}}, //6 idle 7
-  {Jorsawsee_ArcMain_Idle3, {  0,125,165,125}, {158, 89}}, //7 idle 8
+  {Jorsawsee_ArcMain_Idle2, {  0,  0,166,123}, {157, 87}}, //4 idle 5
+  {Jorsawsee_ArcMain_Idle2, {  0,123,165,123}, {156, 87}}, //5 idle 6
+  {Jorsawsee_ArcMain_Idle3, {  0,  0,165,125}, {156, 89}}, //6 idle 7
+  {Jorsawsee_ArcMain_Idle3, {  0,125,165,125}, {157, 89}}, //7 idle 8
   {Jorsawsee_ArcMain_Idle4, {  0,  0,172,125}, {165, 90}}, //8 idle 9
   {Jorsawsee_ArcMain_Idle4, {  0,125,172,125}, {165, 90}}, //9 idle 10
   {Jorsawsee_ArcMain_Idle5, {  0,  0,174,126}, {166, 90}}, //10 idle 11
@@ -120,6 +120,16 @@ void Char_Jorsawsee_Tick(Character *character)
 {
 	Char_Jorsawsee *this = (Char_Jorsawsee*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_O2)
+	{
+		if (stage.song_beat == 120)
+		{
+			this->character.focus_x = FIXED_DEC(12,1);
+			this->character.health_bar = 0xFFE51919;
+		}
+	}
+		
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -172,9 +182,9 @@ Character *Char_Jorsawsee_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF277FE7;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-41,1);
+	this->character.focus_y = FIXED_DEC(-48,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

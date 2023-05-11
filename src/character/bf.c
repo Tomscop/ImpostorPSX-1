@@ -300,6 +300,11 @@ void Char_BF_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-84,1);
 		}
 	}
+	if (stage.stage_id == StageId_O2)
+	{
+		if (stage.song_beat == 120)
+			this->character.focus_x = FIXED_DEC(69,1);
+	}
 	if (stage.stage_id == StageId_Victory)
 	{
 		if (stage.song_step == 129)
@@ -655,6 +660,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_x = FIXED_DEC(-92,1);
 	this->character.focus_y = FIXED_DEC(-84,1);
 	this->character.focus_zoom = FIXED_DEC(1086,1024);
+	}
+	else if (stage.stage_id == StageId_O2)
+	{
+	this->character.focus_x = FIXED_DEC(-64,1);
+	this->character.focus_y = FIXED_DEC(-80,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	}
 	else if (stage.stage_id == StageId_Victory)
 	{

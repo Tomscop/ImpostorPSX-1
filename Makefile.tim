@@ -367,7 +367,7 @@ iso/stages/kitchen/grey.arc: iso/stages/kitchen/grey0.tim
 iso/stages/kitchen/saster.arc: iso/stages/kitchen/saster0.tim iso/stages/kitchen/saster1.tim
 
 # Lounge
-iso/stages/lounge/back.arc: iso/stages/lounge/back0.tim iso/stages/lounge/back1.tim
+iso/stages/lounge/back.arc: iso/stages/lounge/back0.tim iso/stages/lounge/back1.tim iso/stages/lounge/wtf.tim iso/stages/lounge/dark.tim
 
 # Turbulence
 iso/stages/turbulen/back.arc: iso/stages/turbulen/back0.tim iso/stages/turbulen/back1.tim iso/stages/turbulen/back2.tim iso/stages/turbulen/back3.tim

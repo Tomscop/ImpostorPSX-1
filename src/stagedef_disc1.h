@@ -452,10 +452,10 @@
 	
 	{ //StageId_O2 (O2)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(314,1),  FIXED_DEC(185,1)},
         {NULL},
-		{Char_Jorsawsee_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Redmungus_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Jorsawsee_New, FIXED_DEC(206,1),  FIXED_DEC(153,1)},
+		{Char_Redmungus_New, FIXED_DEC(4,1),  FIXED_DEC(264,1)},
         {NULL},
 		
 		//Stage background
