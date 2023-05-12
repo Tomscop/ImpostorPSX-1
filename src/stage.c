@@ -138,6 +138,7 @@ static u32 Sounds[10];
 #include "stage/pretender.h"
 #include "stage/kitchen.h"
 #include "stage/lounge.h"
+#include "stage/meeting.h"
 #include "stage/turbulence.h"
 #include "stage/victory.h"
 #include "stage/lobby.h"
@@ -1546,7 +1547,7 @@ static void Stage_LoadChart(void)
 	}
 
 	//Special Chart
-	sprintf(chart_path, "\\WEEK4\\4.7N.CHT;1");
+	sprintf(chart_path, "\\WEEK6\\6.7N.CHT;1");
 
 	if (stage.stage_id == StageId_VotingTime)
 	{

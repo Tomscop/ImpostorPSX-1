@@ -140,7 +140,12 @@
 				<file name = "4.4evnt.cht" type = "data" source = "iso/music/tomongus-tuesday/events.json.cht"/>
 				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas-hard.json.cht"/>
 				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor-hard.json.cht"/>
-				<file name = "4.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
+			</dir>
+			
+			<!-- Week 6 assets -->
+			<dir name = "week6">
+				
+				<file name = "6.7n.cht" type = "data" source = "iso/music/voting-time/voting-time-other.json.cht"/>
 			</dir>
 		
 			<!-- Character assets -->
@@ -303,7 +308,7 @@
 			<dir name = "bg2">
 				<file name = "lounge.arc" type = "data" source = "iso/stages/lounge/back.arc"/>
 				
-				<!-- Meeting BG -->
+				<file name = "meeting.arc" type = "data" source = "iso/stages/meeting/back.arc"/>
 				
 				<file name = "turbulen.arc" type = "data" source = "iso/stages/turbulen/back.arc"/>
 				<file name = "claw.arc" type = "data" source = "iso/stages/turbulen/claw.arc"/>
