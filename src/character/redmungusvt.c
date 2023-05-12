@@ -71,47 +71,47 @@ static const CharFrame char_redmungusvt_frame[] = {
   {RedmungusVT_ArcMain_Right0, {138,  0, 64, 80}, {171,171}}, //18 right 3
   {RedmungusVT_ArcMain_Right0, {  0, 80, 64, 81}, {171,172}}, //19 right 4
   
-  {RedmungusVT_ArcMain_IdleL0, {  0,  0, 59, 80}, {172+5,171}}, //20 idlel 1
-  {RedmungusVT_ArcMain_IdleL0, { 59,  0, 59, 80}, {171+5,171}}, //21 idlel 2
-  {RedmungusVT_ArcMain_IdleL0, {118,  0, 59, 81}, {170+5,172}}, //22 idlel 3
-  {RedmungusVT_ArcMain_IdleL0, {177,  0, 59, 81}, {169+5,172}}, //23 idlel 4
+  {RedmungusVT_ArcMain_IdleL0, {  0,  0, 59, 80}, {172,171+2}}, //20 idlel 1
+  {RedmungusVT_ArcMain_IdleL0, { 59,  0, 59, 80}, {171,171+2}}, //21 idlel 2
+  {RedmungusVT_ArcMain_IdleL0, {118,  0, 59, 81}, {170,172+2}}, //22 idlel 3
+  {RedmungusVT_ArcMain_IdleL0, {177,  0, 59, 81}, {169,172+2}}, //23 idlel 4
 
-  {RedmungusVT_ArcMain_IdleR0, {  0,  0, 59, 79}, {167+5,170}}, //24 idler 1
-  {RedmungusVT_ArcMain_IdleR0, { 59,  0, 60, 79}, {168+5,170}}, //25 idler 2
-  {RedmungusVT_ArcMain_IdleR0, {119,  0, 59, 80}, {169+5,171}}, //26 idler 3
-  {RedmungusVT_ArcMain_IdleR0, {178,  0, 59, 81}, {169+5,172}}, //27 idler 4
+  {RedmungusVT_ArcMain_IdleR0, {  0,  0, 59, 79}, {167,170+2}}, //24 idler 1
+  {RedmungusVT_ArcMain_IdleR0, { 59,  0, 60, 79}, {168,170+2}}, //25 idler 2
+  {RedmungusVT_ArcMain_IdleR0, {119,  0, 59, 80}, {169,171+2}}, //26 idler 3
+  {RedmungusVT_ArcMain_IdleR0, {178,  0, 59, 81}, {169,172+2}}, //27 idler 4
 
-  {RedmungusVT_ArcMain_LeftM0, {  0,  0, 90, 81}, {202+5,172}}, //28 leftm 1
-  {RedmungusVT_ArcMain_LeftM0, { 90,  0, 90, 81}, {202+5,172}}, //29 leftm 2
-  {RedmungusVT_ArcMain_LeftM0, {  0, 81, 91, 81}, {201+5,172}}, //30 leftm 3
-  {RedmungusVT_ArcMain_LeftM0, { 91, 81, 90, 81}, {201+5,172}}, //31 leftm 4
+  {RedmungusVT_ArcMain_LeftM0, {  0,  0, 90, 81}, {202,172+2}}, //28 leftm 1
+  {RedmungusVT_ArcMain_LeftM0, { 90,  0, 90, 81}, {202,172+2}}, //29 leftm 2
+  {RedmungusVT_ArcMain_LeftM0, {  0, 81, 91, 81}, {201,172+2}}, //30 leftm 3
+  {RedmungusVT_ArcMain_LeftM0, { 91, 81, 90, 81}, {201,172+2}}, //31 leftm 4
 
-  {RedmungusVT_ArcMain_DownM0, {  0,  0, 69, 73}, {180+5,164}}, //32 downm 1
-  {RedmungusVT_ArcMain_DownM0, { 69,  0, 69, 73}, {181+5,164}}, //33 downm 2
-  {RedmungusVT_ArcMain_DownM0, {138,  0, 70, 74}, {181+5,164}}, //34 downm 3
-  {RedmungusVT_ArcMain_DownM0, {  0, 74, 70, 74}, {181+5,164}}, //35 downm 4
+  {RedmungusVT_ArcMain_DownM0, {  0,  0, 69, 73}, {180,164+2}}, //32 downm 1
+  {RedmungusVT_ArcMain_DownM0, { 69,  0, 69, 73}, {181,164+2}}, //33 downm 2
+  {RedmungusVT_ArcMain_DownM0, {138,  0, 70, 74}, {181,164+2}}, //34 downm 3
+  {RedmungusVT_ArcMain_DownM0, {  0, 74, 70, 74}, {181,164+2}}, //35 downm 4
 
-  {RedmungusVT_ArcMain_UpM0, {  0,  0,100, 87}, {191+5,176}}, //36 upm 1
-  {RedmungusVT_ArcMain_UpM0, {100,  0,100, 86}, {192+5,175}}, //37 upm 2
-  {RedmungusVT_ArcMain_UpM0, {  0, 87,101, 84}, {192+5,174}}, //38 upm 3
-  {RedmungusVT_ArcMain_UpM0, {101, 87,101, 84}, {192+5,174}}, //39 upm 4
+  {RedmungusVT_ArcMain_UpM0, {  0,  0,100, 87}, {191,176+2}}, //36 upm 1
+  {RedmungusVT_ArcMain_UpM0, {100,  0,100, 86}, {192,175+2}}, //37 upm 2
+  {RedmungusVT_ArcMain_UpM0, {  0, 87,101, 84}, {192,174+2}}, //38 upm 3
+  {RedmungusVT_ArcMain_UpM0, {101, 87,101, 84}, {192,174+2}}, //39 upm 4
 
-  {RedmungusVT_ArcMain_RightM0, {  0,  0, 85, 80}, {179+5,172}}, //40 rightm 1
-  {RedmungusVT_ArcMain_RightM0, { 85,  0, 86, 80}, {180+5,172}}, //41 rightm 2
-  {RedmungusVT_ArcMain_RightM0, {  0, 80, 87, 81}, {182+5,172}}, //42 rightm 3
-  {RedmungusVT_ArcMain_RightM0, { 87, 80, 87, 81}, {182+5,172}}, //43 rightm 4
+  {RedmungusVT_ArcMain_RightM0, {  0,  0, 85, 80}, {179,172+2}}, //40 rightm 1
+  {RedmungusVT_ArcMain_RightM0, { 85,  0, 86, 80}, {180,172+2}}, //41 rightm 2
+  {RedmungusVT_ArcMain_RightM0, {  0, 80, 87, 81}, {182,172+2}}, //42 rightm 3
+  {RedmungusVT_ArcMain_RightM0, { 87, 80, 87, 81}, {182,172+2}}, //43 rightm 4
 
-  {RedmungusVT_ArcMain_Fuck0, {  0,  0, 56, 81}, {167+5,172}}, //44 fuck 1
-  {RedmungusVT_ArcMain_Fuck0, { 56,  0,101, 84}, {192+5,174}}, //45 fuck 2
-  {RedmungusVT_ArcMain_Fuck0, {  0, 84,103, 83}, {193+5,173}}, //46 fuck 3
-  {RedmungusVT_ArcMain_Fuck0, {103, 84,103, 83}, {193+5,173}}, //47 fuck 4
-  {RedmungusVT_ArcMain_Fuck0, {  0,168,103, 84}, {194+5,174}}, //48 fuck 5
-  {RedmungusVT_ArcMain_Fuck0, {103,168,102, 84}, {192+5,173}}, //49 fuck 6
-  {RedmungusVT_ArcMain_Fuck1, {  0,  0,113, 86}, {198+5,174}}, //50 fuck 7
-  {RedmungusVT_ArcMain_Fuck1, {113,  0,115, 85}, {199+5,173}}, //51 fuck 8
-  {RedmungusVT_ArcMain_Fuck1, {  0, 86,115, 85}, {199+5,173}}, //52 fuck 9
-  {RedmungusVT_ArcMain_Fuck1, {115, 86, 56, 81}, {167+5,171}}, //53 fuck 10
-  {RedmungusVT_ArcMain_Fuck1, {171, 86, 56, 81}, {167+5,171}}, //54 fuck 11
+  {RedmungusVT_ArcMain_Fuck0, {  0,  0, 56, 81}, {167,172+2}}, //44 fuck 1
+  {RedmungusVT_ArcMain_Fuck0, { 56,  0,101, 84}, {192,174+2}}, //45 fuck 2
+  {RedmungusVT_ArcMain_Fuck0, {  0, 84,103, 83}, {193,173+2}}, //46 fuck 3
+  {RedmungusVT_ArcMain_Fuck0, {103, 84,103, 83}, {193,173+2}}, //47 fuck 4
+  {RedmungusVT_ArcMain_Fuck0, {  0,168,103, 84}, {194,174+2}}, //48 fuck 5
+  {RedmungusVT_ArcMain_Fuck0, {103,168,102, 84}, {192,173+2}}, //49 fuck 6
+  {RedmungusVT_ArcMain_Fuck1, {  0,  0,113, 86}, {198,174+2}}, //50 fuck 7
+  {RedmungusVT_ArcMain_Fuck1, {113,  0,115, 85}, {199,173+2}}, //51 fuck 8
+  {RedmungusVT_ArcMain_Fuck1, {  0, 86,115, 85}, {199,173+2}}, //52 fuck 9
+  {RedmungusVT_ArcMain_Fuck1, {115, 86, 56, 81}, {167,171+2}}, //53 fuck 10
+  {RedmungusVT_ArcMain_Fuck1, {171, 86, 56, 81}, {167,171+2}}, //54 fuck 11
 };
 
 static const Animation char_redmungusvt_anim[CharAnim_Max] = {

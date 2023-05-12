@@ -104,6 +104,45 @@ void Char_Warchief_Tick(Character *character)
 	Char_Warchief *this = (Char_Warchief*)character;
 	
 	//Camera stuff
+	if ((stage.stage_id == StageId_VotingTime) && (stage.song_step >= 16))
+	{
+		if (stage.camswitch == 1) //bf focus
+		{
+			this->character.focus_x = FIXED_DEC(267,1);
+			this->character.focus_y = FIXED_DEC(-105,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.camswitch == 2) //warchief focus
+		{
+			this->character.focus_x = FIXED_DEC(-27,1);
+			this->character.focus_y = FIXED_DEC(-105,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+			this->character.health_bar = 0xFF663093;
+			this->character.health_i = 2;
+		}
+		if (stage.camswitch == 3) //redmungus focus
+		{
+			this->character.focus_x = FIXED_DEC(238+18,1);
+			this->character.focus_y = FIXED_DEC(-111,1);
+			this->character.focus_zoom = FIXED_DEC(1696,1024);
+			this->character.health_bar = 0xFFE51919;
+			this->character.health_i = 1;
+		}
+		if (stage.camswitch == 4) //jelqer focus
+		{
+			this->character.focus_x = FIXED_DEC(-1-18,1);
+			this->character.focus_y = FIXED_DEC(-111,1);
+			this->character.focus_zoom = FIXED_DEC(1696,1024);
+			this->character.health_bar = 0xFFFFC8E2;
+			this->character.health_i = 3;
+		}
+		if (stage.camswitch == 5) //zoom out
+		{
+			this->character.focus_x = FIXED_DEC(122,1);
+			this->character.focus_y = FIXED_DEC(-144,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+	}
 	if (stage.stage_id == StageId_Victory)
 	{
 		if (stage.song_step == 129)
@@ -124,7 +163,7 @@ void Char_Warchief_Tick(Character *character)
 		if (stage.song_step == 1120)
 			this->character.health_bar = 0xFF277FE7;
 	}
-		
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -181,9 +220,9 @@ Character *Char_Warchief_New(fixed_t x, fixed_t y)
 	
 	if (stage.stage_id == StageId_VotingTime)
 	{
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-118,1);
-	this->character.focus_zoom = FIXED_DEC(1018,1024);
+	this->character.focus_x = FIXED_DEC(-39,1);
+	this->character.focus_y = FIXED_DEC(-98,1);
+	this->character.focus_zoom = FIXED_DEC(1764,1024);
 	}
 	else if (stage.stage_id == StageId_Victory)
 	{

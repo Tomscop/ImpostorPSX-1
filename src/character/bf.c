@@ -305,6 +305,39 @@ void Char_BF_Tick(Character *character)
 		if (stage.song_beat == 120)
 			this->character.focus_x = FIXED_DEC(69,1);
 	}
+	if ((stage.stage_id == StageId_VotingTime) && (stage.song_step >= 16))
+	{
+		if (stage.camswitch == 1) //bf focus
+		{
+			this->character.focus_x = FIXED_DEC(-45,1);
+			this->character.focus_y = FIXED_DEC(-77,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.camswitch == 2) //warchief focus
+		{
+			this->character.focus_x = FIXED_DEC(-339,1);
+			this->character.focus_y = FIXED_DEC(-77,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.camswitch == 3) //redmungus focus
+		{
+			this->character.focus_x = FIXED_DEC(-74+18,1);
+			this->character.focus_y = FIXED_DEC(-83,1);
+			this->character.focus_zoom = FIXED_DEC(1696,1024);
+		}
+		if (stage.camswitch == 4) //jelqer focus
+		{
+			this->character.focus_x = FIXED_DEC(-313-18,1);
+			this->character.focus_y = FIXED_DEC(-83,1);
+			this->character.focus_zoom = FIXED_DEC(1696,1024);
+		}
+		if (stage.camswitch == 5) //zoom out
+		{
+			this->character.focus_x = FIXED_DEC(-190,1);
+			this->character.focus_y = FIXED_DEC(-116,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+	}
 	if (stage.stage_id == StageId_Victory)
 	{
 		if (stage.song_step == 129)

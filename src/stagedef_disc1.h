@@ -470,10 +470,10 @@
 	},
 	{ //StageId_VotingTime (Voting Time)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_RedmungusVT_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Warchief_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Jelqer_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(445,1),  FIXED_DEC(217,1)},
+		{Char_RedmungusVT_New, FIXED_DEC(528,1),  FIXED_DEC(280,1)},
+		{Char_Warchief_New, FIXED_DEC(133,1),  FIXED_DEC(245,1)},
+		{Char_Jelqer_New, FIXED_DEC(201,1),  FIXED_DEC(214,1)},
         {NULL},
 		
 		//Stage background

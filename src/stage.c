@@ -2951,6 +2951,19 @@ void Stage_Tick(void)
 					stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
 				}
 			
+			if ((stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_VotingTime))
+			{
+				//Draw border
+				RECT border_src = {251,  9,  3,240};
+				RECT_FIXED border_dst = {FIXED_DEC(-165,1), FIXED_DEC(-120,1), FIXED_DEC(380,1), FIXED_DEC(240,1)};
+
+				border_dst.y += stage.noteshakey;
+				border_dst.x += stage.noteshakex;
+				
+				if (show)
+					Stage_DrawTex(&stage.tex_hud1, &border_src, &border_dst, stage.bump);
+			}
+			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)
 				stage.back->draw_fg(stage.back);
