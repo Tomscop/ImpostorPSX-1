@@ -30,9 +30,6 @@ typedef enum
 	XA_14, //14
 	XA_15, //15
 	XA_16, //16
-	XA_17, //17
-	XA_18, //18
-	XA_19, //19
 	
 	XA_Max,
 } XA_File;
@@ -92,15 +89,6 @@ typedef enum
 	XA_Victory, //Victory
 	//16.XA
 	XA_Roomcode, //Roomcode
-	//17.XA
-	XA_SussyBussy, //Sussy Bussy
-	XA_Rivals, //Rivals
-	//18.XA
-	XA_Chewmate, //Chewmate
-	XA_TomongusTuesday, //Tomongus Tuesday
-	//19.XA
-	XA_Christmas, //Christmas
-	XA_Spookpostor, //Spookpostor
 	
 	XA_TrackMax,
 } XA_Track;

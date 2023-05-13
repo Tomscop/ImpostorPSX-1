@@ -37,8 +37,6 @@ SRCS = src/main.c \
 	src/character/bfchef.c \
 	src/character/bfturbulence.c \
 	src/character/picorc.c \
-	src/character/bfpixel.c \
-	src/character/bfchristmas.c \
 	src/character/red.c \
 	src/character/redmd.c \
 	src/character/greenst.c \
@@ -64,9 +62,6 @@ SRCS = src/main.c \
 	src/character/redmungusparasite.c \
 	src/character/jorsawseeghost.c \
 	src/character/powers.c \
-	src/character/tomongus.c \
-	src/character/loggo.c \
-	src/character/spooker.c \
 	src/character/dad.c \
 	src/character/gf.c \
 	src/character/speaker.c \
@@ -77,7 +72,6 @@ SRCS = src/main.c \
 	src/character/gfpolus.c \
 	src/character/gfairship.c \
 	src/character/gfmira.c \
-	src/character/gfpixel.c \
 	src/stage/polus.c \
 	src/stage/mira.c \
 	src/stage/reactor.c \
@@ -96,8 +90,6 @@ SRCS = src/main.c \
 	src/stage/turbulence.c \
 	src/stage/victory.c \
 	src/stage/lobby.c \
-	src/stage/cafeteria.c \
-	src/stage/christmas.c \
 	src/stage/week1.c \
 	src/stage/dummy.c \
 	src/object.c \

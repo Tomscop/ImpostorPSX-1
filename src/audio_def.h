@@ -60,15 +60,6 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_15, XA_LENGTH(17746)}, //XA_Victory
 	//16.XA
 	{XA_16, XA_LENGTH(10666)}, //XA_Roomcode
-	//17.XA
-	{XA_17, XA_LENGTH(12639)}, //XA_SussyBussy
-	{XA_17, XA_LENGTH(11610)}, //XA_Rivals
-	//18.XA
-	{XA_18, XA_LENGTH(9598)}, //XA_Chewmate
-	{XA_18, XA_LENGTH(9660)}, //XA_TomongusTuesday
-	//19.XA
-	{XA_19, XA_LENGTH(8657)}, //XA_Christmas
-	{XA_19, XA_LENGTH(13521)}, //XA_Spookpostor
 };
 
 static const char *xa_paths[] = {
@@ -90,9 +81,6 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\14.XA;1", //XA_14
 	"\\MUSIC\\15.XA;1", //XA_15
 	"\\MUSIC\\16.XA;1", //XA_16
-	"\\MUSIC\\17.XA;1", //XA_17
-	"\\MUSIC\\18.XA;1", //XA_18
-	"\\MUSIC\\19.XA;1", //XA_19
 	NULL,
 };
 
@@ -156,15 +144,6 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"victory", true}, //XA_Victory
 	//16.XA
 	{"roomcode", true}, //XA_Roomcode
-	//17.XA
-	{"sussybussy", true}, //XA_SussyBussy
-	{"rivals", true}, //XA_Rivals
-	//18.XA
-	{"chewmate", true}, //XA_Chewmate
-	{"tomongustuesday", true}, //XA_TomongusTuesday
-	//19.XA
-	{"christmas", true}, //XA_Christmas
-	{"spookpostor", true}, //XA_Spookpostor
 	
 	{NULL, false}
 };

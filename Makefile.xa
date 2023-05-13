@@ -17,9 +17,6 @@ all: \
   iso/music/14.xa \
   iso/music/15.xa \
   iso/music/16.xa \
-  iso/music/17.xa \
-  iso/music/18.xa \
-  iso/music/19.xa 
 
 # XA converts
 iso/music/%.xa: iso/music/%.ogg
@@ -46,6 +43,3 @@ iso/music/13.xa: iso/music/pretender/Inst.xa iso/music/pretender/Vocals.xa iso/m
 iso/music/14.xa: iso/music/o2/Inst.xa iso/music/o2/Vocals.xa iso/music/voting-time/Inst.xa iso/music/voting-time/Vocals.xa
 iso/music/15.xa: iso/music/turbulence/Inst.xa iso/music/turbulence/Vocals.xa iso/music/victory/Inst.xa iso/music/victory/Vocals.xa
 iso/music/16.xa: iso/music/roomcode/Inst.xa iso/music/roomcode/Vocals.xa
-iso/music/17.xa: iso/music/sussy-bussy/Inst.xa iso/music/sussy-bussy/Vocals.xa iso/music/rivals/Inst.xa iso/music/rivals/Vocals.xa
-iso/music/18.xa: iso/music/chewmate/Inst.xa iso/music/chewmate/Vocals.xa iso/music/tomongus-tuesday/Inst.xa iso/music/tomongus-tuesday/Vocals.xa
-iso/music/19.xa: iso/music/christmas/Inst.xa iso/music/christmas/Vocals.xa iso/music/spookpostor/Inst.xa iso/music/spookpostor/Vocals.xa

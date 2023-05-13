@@ -132,14 +132,7 @@
 			<!-- Week 4 assets -->
 			<dir name = "week4">
 				
-				<file name = "4.1n.cht" type = "data" source = "iso/music/sussy-bussy/sussy-bussy-hard.json.cht"/>
-				<file name = "4.2n.cht" type = "data" source = "iso/music/rivals/rivals-hard.json.cht"/>
-				<file name = "4.2evnt.cht" type = "data" source = "iso/music/rivals/events.json.cht"/>
-				<file name = "4.3n.cht" type = "data" source = "iso/music/chewmate/chewmate-hard.json.cht"/>
-				<file name = "4.4n.cht" type = "data" source = "iso/music/tomongus-tuesday/tomongus-tuesday-hard.json.cht"/>
-				<file name = "4.4evnt.cht" type = "data" source = "iso/music/tomongus-tuesday/events.json.cht"/>
-				<file name = "4.5n.cht" type = "data" source = "iso/music/christmas/christmas-hard.json.cht"/>
-				<file name = "4.6n.cht" type = "data" source = "iso/music/spookpostor/spookpostor-hard.json.cht"/>
+				
 			</dir>
 			
 			<!-- Week 6 assets -->
@@ -168,9 +161,6 @@
 				<file name = "bfchef.arc" type = "data" source = "iso/chars/bfchef/main.arc"/>
 				<file name = "bfturb.arc" type = "data" source = "iso/chars/bfturb/main.arc"/>
 				<file name = "picorc.arc" type = "data" source = "iso/chars/picorc/main.arc"/>
-				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
-				<!-- Boyfriend Tuesday assets -->
-				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
 			</dir>
 			
 			<dir name = "opponent">
@@ -203,16 +193,8 @@
 				<file name = "redmungp.arc" type = "data" source = "iso/chars/redmungp/main.arc"/>
 				<file name = "jorsawsg.arc" type = "data" source = "iso/chars/jorsawsg/main.arc"/>
 				<file name = "powers.arc" type = "data" source = "iso/chars/powers/main.arc"/>
-				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
-				<!-- Tomongus HD assets -->
-				<file name = "loggo.arc" type = "data" source = "iso/chars/loggo/main.arc"/>
-				<file name = "spooker.arc" type = "data" source = "iso/chars/spooker/main.arc"/>
-				
-			</dir>
-			
-			<dir name = "opponet2">
-				
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
+				
 			</dir>
 			
 			<dir name = "gf">
@@ -228,8 +210,6 @@
 				<file name = "gfpolus.arc" type = "data" source = "iso/chars/gfpolus/main.arc"/>
 				<file name = "gfairshp.arc" type = "data" source = "iso/chars/gfairshp/main.arc"/>
 				<file name = "gfmira.arc" type = "data" source = "iso/chars/gfmira/main.arc"/>
-				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
-				<!-- GF Tuesday assets -->
 			</dir>
 			
 			<!-- Dead assets -->
@@ -249,7 +229,7 @@
 				<!-- Roomcode -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Tomongus -->
-				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
+				<file name = "deadpix.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- Ow -->
 				<file name = "deadow.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- Who -->
@@ -304,6 +284,8 @@
 				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>
 				<file name = "greyc.arc" type = "data" source = "iso/stages/kitchen/grey.arc"/>
 				<file name = "saster.arc" type = "data" source = "iso/stages/kitchen/saster.arc"/>
+				
+				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 				
 				
@@ -318,15 +300,6 @@
 				<file name = "victory.arc" type = "data" source = "iso/stages/victory/back.arc"/>
 				
 				<file name = "lobby.arc" type = "data" source = "iso/stages/lobby/back.arc"/>
-				
-				<file name = "cafe.arc" type = "data" source = "iso/stages/cafe/back.arc"/>
-				
-				<file name = "christms.arc" type = "data" source = "iso/stages/christms/back.arc"/>
-				<file name = "people.arc" type = "data" source = "iso/stages/christms/people.arc"/>
-				<file name = "person.arc" type = "data" source = "iso/stages/christms/person.arc"/>
-				<file name = "fire.arc" type = "data" source = "iso/stages/christms/fire.arc"/>
-				
-				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 		    
 			<!-- Sound effects -->
@@ -407,12 +380,6 @@
 				<file name = "15.xa" type = "xa" source = "iso/music/15.xa"/>
 				<dummy sectors="128"/>
 				<file name = "16.xa" type = "xa" source = "iso/music/16.xa"/>
-				<dummy sectors="128"/>
-				<file name = "17.xa" type = "xa" source = "iso/music/17.xa"/>
-				<dummy sectors="128"/>
-				<file name = "18.xa" type = "xa" source = "iso/music/18.xa"/>
-				<dummy sectors="128"/>
-				<file name = "19.xa" type = "xa" source = "iso/music/19.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			
