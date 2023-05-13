@@ -84,6 +84,7 @@ all: \
 	iso/chars/bfeject/dead.tim \
 	iso/chars/bfdefeat/dead.tim \
 	iso/chars/pinkpret/dead.tim \
+	iso/chars/bfturb/dead.tim \
 	iso/chars/picorc/dead.tim \
 	iso/chars/bfpixel/dead.tim \
 	iso/stages/polus/back.arc \

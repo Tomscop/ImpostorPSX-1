@@ -235,7 +235,7 @@ typedef struct
 	
 	boolean refresh_score;
 	s32 score, max_score;
-	char score_text[13];
+	char score_text[15];
 
 	boolean refresh_miss;
 	s32 miss;

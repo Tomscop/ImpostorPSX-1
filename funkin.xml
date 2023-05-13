@@ -244,6 +244,8 @@
 				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
 				<!-- Pretender -->
 				<file name = "deadpink.tim" type = "data" source = "iso/chars/pinkpret/dead.tim"/>
+				<!-- Turbulence -->
+				<file name = "deadturb.tim" type = "data" source = "iso/chars/bfturb/dead.tim"/>
 				<!-- Roomcode -->
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Tomongus -->

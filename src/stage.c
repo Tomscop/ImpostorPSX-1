@@ -1421,6 +1421,8 @@ static void Stage_LoadPlayer(void)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Pretender)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPINK.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Turbulence)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADTURB.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Roomcode)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
@@ -1869,7 +1871,10 @@ static void Stage_LoadState(void)
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
 		else
 			strcpy(stage.player_state[i].miss_text, "Misses: 0");
-		strcpy(stage.player_state[i].score_text, "Score: 0");
+		if (stage.stage_id != StageId_Victory)
+			strcpy(stage.player_state[i].score_text, "Score: 0");
+		else
+			sprintf(stage.player_state[i].score_text, "Score: You won!");
 		
 		stage.player_state[i].pad_held = stage.player_state[i].pad_press = 0;
 	}
@@ -2607,11 +2612,22 @@ void Stage_Tick(void)
 					
 				if (this->refresh_score)
 				{
+					if (stage.stage_id != StageId_Victory)
+					{
 					if (this->score != 0)
 						sprintf(this->score_text, "Score: %d0", this->score * stage.max_score / this->max_score);
 					else
 						strcpy(this->score_text, "Score: 0");
 					this->refresh_score = false;
+					}
+					else
+					{
+					if (this->score != 0)
+						sprintf(this->score_text, "Score: You won!");
+					else
+						sprintf(this->score_text, "Score: You won!");
+					this->refresh_score = false;
+					}
 				}
 				
 				if (show)
@@ -3185,6 +3201,12 @@ void Stage_Tick(void)
 			{
 				RECT src = {  0,  0,157,127};
 				RECT dst = { 82, 56,157,127};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if (stage.stage_id == StageId_Turbulence)
+			{
+				RECT src = {  0,  0,123,123};
+				RECT dst = { 160,145,123,123};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))

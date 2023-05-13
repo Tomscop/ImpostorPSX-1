@@ -959,14 +959,21 @@ void Menu_Tick(void)
 				}
 			}
 			
+			menu.font_arial.draw(&menu.font_arial,
+				"1",
+				285,
+				204,
+				FontAlign_Left
+			);
+			
+			//Draw disk thing
+			RECT diskn_src = {  0, 73, 36, 36};
+			RECT diskn_dst = {284,204, 72, 72};
+			Gfx_DrawTex(&menu.tex_disk, &diskn_src, &diskn_dst);
+			
 			//Draw logo
 			RECT logo_src = {  0,  0,191,164};
-			RECT logo_dst = {
-				74,
-				2,
-				172,
-				148
-			};
+			RECT logo_dst = { 74,  2,172,148};
 			Gfx_DrawTex(&menu.tex_title, &logo_src, &logo_dst);
 			
 			//Draw menu options
