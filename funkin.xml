@@ -230,6 +230,8 @@
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/picorc/dead.tim"/>
 				<!-- Tomongus -->
 				<file name = "deadpix.tim" type = "data" source = "iso/chars/dead.tim"/>
+				<!-- Greatest Plan -->
+				<file name = "deadhen.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- Ow -->
 				<file name = "deadow.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- Who -->
@@ -380,6 +382,8 @@
 				<file name = "15.xa" type = "xa" source = "iso/music/15.xa"/>
 				<dummy sectors="128"/>
 				<file name = "16.xa" type = "xa" source = "iso/music/16.xa"/>
+				<dummy sectors="128"/>
+				<file name = "cutscene.xa" type = "xa" source = "iso/music/cutscene.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

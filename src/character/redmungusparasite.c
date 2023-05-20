@@ -73,12 +73,13 @@ static const CharFrame char_redmungusparasite_frame[] = {
 
   {RedmungusParasite_ArcMain_Up0, {  0,  0,199,148}, {178,126}}, //14 up 1
   {RedmungusParasite_ArcMain_Up1, {  0,  0,227,126}, {187,108}}, //15 up 2
-  {RedmungusParasite_ArcMain_Up2, {  0,  0,227,140}, {186,107}}, //16 up 3
-  {RedmungusParasite_ArcMain_Right0, {  0,  0,179,137}, {127, 91}}, //17 up 4
-
-  {RedmungusParasite_ArcMain_Right1, {  0,  0,182,140}, {137, 93}}, //18 right 1
-  {RedmungusParasite_ArcMain_Right2, {  0,  0,181,141}, {137, 94}}, //19 right 2
-  {RedmungusParasite_ArcMain_Right3, {  0,  0,184,138}, {136, 94}}, //20 right 3
+  {RedmungusParasite_ArcMain_Up1, {  0,  0,227,126}, {187,108}}, //16 up 3
+  {RedmungusParasite_ArcMain_Up2, {  0,  0,227,140}, {186,107}}, //17 up 4
+  
+  {RedmungusParasite_ArcMain_Right0, {  0,  0,179,137}, {127, 91}}, //18 right 1
+  {RedmungusParasite_ArcMain_Right1, {  0,  0,182,140}, {137, 93}}, //19 right 2
+  {RedmungusParasite_ArcMain_Right2, {  0,  0,181,141}, {137, 94}}, //20 right 3
+  {RedmungusParasite_ArcMain_Right3, {  0,  0,184,138}, {136, 94}}, //21 right 4
 };
 
 static const Animation char_redmungusparasite_anim[CharAnim_Max] = {
@@ -89,7 +90,7 @@ static const Animation char_redmungusparasite_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
 	{2, (const u8[]){ 14, 15, 16, 17, 17, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
-	{2, (const u8[]){ 18, 19, 20, 20, ASCR_BACK, 1}},         //CharAnim_Right
+	{2, (const u8[]){ 18, 19, 20, 21, 21, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 

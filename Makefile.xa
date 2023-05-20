@@ -17,6 +17,7 @@ all: \
   iso/music/14.xa \
   iso/music/15.xa \
   iso/music/16.xa \
+  iso/music/cutscene.xa \
 
 # XA converts
 iso/music/%.xa: iso/music/%.ogg
@@ -43,3 +44,4 @@ iso/music/13.xa: iso/music/pretender/Inst.xa iso/music/pretender/Vocals.xa iso/m
 iso/music/14.xa: iso/music/o2/Inst.xa iso/music/o2/Vocals.xa iso/music/voting-time/Inst.xa iso/music/voting-time/Vocals.xa
 iso/music/15.xa: iso/music/turbulence/Inst.xa iso/music/turbulence/Vocals.xa iso/music/victory/Inst.xa iso/music/victory/Vocals.xa
 iso/music/16.xa: iso/music/roomcode/Inst.xa iso/music/roomcode/Vocals.xa
+iso/music/cutscene.xa: iso/music/armed-cutscene/Inst.xa

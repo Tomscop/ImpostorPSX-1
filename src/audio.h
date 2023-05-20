@@ -30,7 +30,8 @@ typedef enum
 	XA_14, //14
 	XA_15, //15
 	XA_16, //16
-	
+	XA_Cutscene, //Cutscene
+
 	XA_Max,
 } XA_File;
 
@@ -89,6 +90,8 @@ typedef enum
 	XA_Victory, //Victory
 	//16.XA
 	XA_Roomcode, //Roomcode
+	//Cutscene.XA
+	XA_ArmedCutscene, //Armed Cutscene
 	
 	XA_TrackMax,
 } XA_Track;

@@ -93,7 +93,7 @@ static const Animation char_bfturbulence_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){ 11, 12, ASCR_BACK, 1}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
     
-    {2, (const u8[]){ 21, 22, 23, ASCR_BACK, 1}},   //CharAnim_Special1
+    {1, (const u8[]){ 21, 21, 22, 22, 23, 23, 23, ASCR_BACK, 1}},   //CharAnim_Special1
     {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
     {0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special3
 	

@@ -44,6 +44,8 @@ static const u8 note_anims[4][3] = {
 
 //Stage definitions
 boolean noteshake, show, firsthit, prtndr;
+int cutscene = 0;
+fixed_t flashf, flashspdf;
 static u32 Sounds[10];
 
 //Players
@@ -64,12 +66,14 @@ static u32 Sounds[10];
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
 #include "character/loggop.h"
+#include "character/henryphone.h"
 #include "character/bfv1.h"
 #include "character/blueow.h"
 #include "character/going2killevery1.h"
 #include "character/kid.h"
 #include "character/bfdrip.h"
 #include "character/picodrip.h"
+#include "character/pip.h"
 //Opponents
 #include "character/red.h"
 #include "character/redmd.h"
@@ -103,6 +107,9 @@ static u32 Sounds[10];
 #include "character/clowfoeg.h"
 #include "character/henry.h"
 #include "character/charles.h"
+#include "character/ellie.h"
+#include "character/righthandman.h"
+#include "character/reginald.h"
 #include "character/redv1.h"
 #include "character/redow.h"
 #include "character/yfronts.h"
@@ -113,6 +120,7 @@ static u32 Sounds[10];
 #include "character/drippostor.h"
 #include "character/dave.h"
 #include "character/amogus.h"
+#include "character/cval.h"
 #include "character/jads.h"
 #include "character/dad.h"
 //GFs
@@ -148,7 +156,7 @@ static u32 Sounds[10];
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
 #include "stage/gronch.h"
-#include "stage/henrybg.h" 
+#include "stage/henrybg.h"
 #include "stage/v1.h"
 #include "stage/shields.h"
 #include "stage/jermaroom.h"
@@ -157,6 +165,7 @@ static u32 Sounds[10];
 #include "stage/electrical.h"
 #include "stage/drip.h"
 #include "stage/daveoffice.h"
+#include "stage/towers.h"
 #include "stage/o2.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
@@ -228,7 +237,8 @@ static void Stage_CutVocal(void)
 static void Stage_FocusCharacter(Character *ch, fixed_t div)
 {
 	//Use character focus settings to update target position and zoom
-	stage.camera.tx = ch->x + ch->focus_x;
+	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-240,1))))
+		stage.camera.tx = ch->x + ch->focus_x;
 	stage.camera.ty = ch->y + ch->focus_y;
 	stage.camera.tz = ch->focus_zoom;
 	stage.camera.td = div;
@@ -267,7 +277,8 @@ static void Stage_ScrollCamera(void)
 			{
 				stage.camera.x = lerp(stage.camera.x, stage.camera.tx, FIXED_DEC(5,100));
 				stage.camera.y = lerp(stage.camera.y, stage.camera.ty, FIXED_DEC(5,100));
-				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
+				if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (firsthit == true)))
+					stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
 			}
 			else
 			{
@@ -281,16 +292,8 @@ static void Stage_ScrollCamera(void)
 				stage.camera.zoom += FIXED_MUL(dz, stage.camera.td);
 			}
 		}
-		if (stage.stage_id != StageId_Crewicide)
-		{
-			stage.camera.x += (stage.noteshakex - 2);
-			stage.camera.y += (stage.noteshakey - 2);
-		}
-		else
-		{
-			stage.camera.x += stage.noteshakex;
-			stage.camera.y += stage.noteshakey;
-		}
+		stage.camera.x += stage.noteshakex;
+		stage.camera.y += stage.noteshakey;
 	}
 		
 	//Update other camera stuff
@@ -1431,6 +1434,8 @@ static void Stage_LoadPlayer(void)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPCO.TIM;1"), GFX_LOADTEX_FREE);
 	else if ((stage.stage_id >= StageId_SussyBussy) && (stage.stage_id <= StageId_Chewmate))
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADPIX.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_GreatestPlan)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADHEN.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Ow)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADOW.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Who)
@@ -1870,6 +1875,7 @@ static void Stage_LoadState(void)
 		stage.opacity = 100;
 		stage.hudfade = 0;
 		stage.camswitch = 0;
+		cutscene = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
 		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
@@ -2286,6 +2292,16 @@ void Stage_Tick(void)
 				}
 			}
 			
+			//front flash
+			if (stage.prefs.flash != 0)
+				if (flashf > 0)
+				{
+					RECT flashff = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flashf_col = flashf >> FIXED_SHIFT;
+					Gfx_BlendRect(&flashff, flashf_col, flashf_col, flashf_col, 1);
+					flashf -= FIXED_MUL(flashspdf, timer_dt);
+				}
+			
 			if (stage.black == true)
 			{
 				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -2364,8 +2380,24 @@ void Stage_Tick(void)
 				stage.black = true;
 			else if (((stage.stage_id == StageId_Grinch) && (stage.song_step >= 255) && (stage.song_step <= 316)) || ((stage.stage_id == StageId_Grinch) && (stage.song_step >= 447) && (stage.song_step <= 466)))
 				stage.black = true;
+			else if ((stage.stage_id == StageId_Reinforcements) && (cutscene >= 210))
+				stage.black = true;
 			else
 				stage.black = false;
+			
+			if ((stage.stage_id == StageId_Reinforcements) && (stage.song_step >= 1280) && (stage.paused == false))
+				cutscene += 1;
+			else if ((stage.stage_id == StageId_Reinforcements) && (stage.song_step <= 1279))
+				cutscene = 0;
+			if (cutscene == 195)
+				stage.pink = 1;
+			if (cutscene >= 196)
+				stage.pink = 2;
+			if (cutscene == 210)
+			{
+				flashf = FIXED_DEC(255,1);
+				flashspdf = FIXED_DEC(410,1);
+			}
 			
 			if (stage.prefs.botplay)
 			{
@@ -2401,10 +2433,27 @@ void Stage_Tick(void)
 				stage.noteshakex = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
 				stage.noteshakey = RandomRange(FIXED_DEC(-10,1),FIXED_DEC(10,1));
 			}
+			if ((stage.stage_id == StageId_Reinforcements) && (cutscene >= 156))
+			{
+				stage.noteshakex = RandomRange(FIXED_DEC(-1,1),FIXED_DEC(1,1));
+				stage.noteshakey = RandomRange(FIXED_DEC(-1,1),FIXED_DEC(1,1));
+			}
 			}
 			
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);
+			
+			if ((stage.stage_id == StageId_Spookpostor) && (stage.paused == false))
+			{
+				if (stage.opponent->animatable.anim == CharAnim_Left || stage.opponent->animatable.anim == CharAnim_LeftAlt)
+					stage.camera.x -= FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Down || stage.opponent->animatable.anim == CharAnim_DownAlt)
+					stage.camera.y += FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
+					stage.camera.y -= FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Right || stage.opponent->animatable.anim == CharAnim_RightAlt)
+					stage.camera.x += FIXED_DEC(5,10);
+			}
 			
 			//Get song position
 			boolean playing;
@@ -2498,6 +2547,44 @@ void Stage_Tick(void)
 				}
 				else
 				{
+					if ((stage.stage_id == StageId_Reinforcements) && (stage.story == true))
+					{
+						stage.hudfade = 1;
+						if (cutscene <= 360)
+						{
+							//Update scroll
+							next_scroll = ((fixed_t)stage.step_base << FIXED_SHIFT) + FIXED_MUL(stage.song_time - stage.time_base, stage.chart.step_crochet);
+							event_next_scroll = FIXED_MUL(stage.song_time, stage.event_chart.step_crochet);
+							
+							Audio_PlayXA_Track(XA_ArmedCutscene, 0x40, 0, 0);
+							stage.opponent->set_anim(stage.opponent, CharAnim_Special2);
+							stage.opponent2->set_anim(stage.opponent2, CharAnim_Special2);
+						}
+						else
+						{
+							//Song has ended
+							playing = false;
+							stage.song_time += timer_dt;
+						
+							//Update scroll
+							next_scroll = ((fixed_t)stage.step_base << FIXED_SHIFT) + FIXED_MUL(stage.song_time - stage.time_base, stage.chart.step_crochet);
+							event_next_scroll = FIXED_MUL(stage.song_time, stage.event_chart.step_crochet);
+					
+							//Transition to menu or next song
+							if (stage.story && stage.stage_def->next_stage != stage.stage_id)
+							{
+								if (Stage_NextLoad())
+									goto SeamLoad;
+							}
+							else
+							{
+								stage.trans = StageTrans_Menu;
+								Trans_Start();
+							}
+						}
+					}
+					else
+					{
 					//Song has ended
 					playing = false;
 					stage.song_time += timer_dt;
@@ -2516,6 +2603,7 @@ void Stage_Tick(void)
 					{
 						stage.trans = StageTrans_Menu;
 						Trans_Start();
+					}
 					}
 				}	
                 
@@ -2999,12 +3087,14 @@ void Stage_Tick(void)
 			if (stage.stage_id == StageId_Turbulence)
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
+				stage.opponent2->tick(stage.opponent2);
 			stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill))
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
@@ -3090,6 +3180,15 @@ void Stage_Tick(void)
 				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
 				stage.player_state[1].charactersecond = NULL;
 			}
+			else if (stage.stage_id == StageId_O2)
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = NULL;
+				stage.player_state[1].charactersecond = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+			}
 			else if (stage.stage_id == StageId_Victory)
 			{
 				if ((stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
@@ -3105,14 +3204,22 @@ void Stage_Tick(void)
 					stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = NULL;
 			}
-			else if (stage.stage_id == StageId_O2)
+			else if (stage.stage_id == StageId_Grinch)
 			{
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = NULL;
-				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
-				stage.player_state[1].character2 = NULL;
-				stage.player_state[1].charactersecond = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				if (stage.song_step <= 722)
+				{
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+					stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				}
+				else
+				{
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+					stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				}
+				stage.player_state[1].charactersecond = NULL;
 			}
 			else
 			{
@@ -3219,6 +3326,12 @@ void Stage_Tick(void)
 			{
 				RECT src = {  0,  0, 79, 75};
 				RECT dst = { 80, 44,158,150};
+				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
+			}
+			else if (stage.stage_id == StageId_GreatestPlan)
+			{
+				RECT src = {  0,  0,103,171};
+				RECT dst = {109, 35,103,171};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
 			else if (stage.stage_id == StageId_Idk)

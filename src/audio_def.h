@@ -60,6 +60,8 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_15, XA_LENGTH(17746)}, //XA_Victory
 	//16.XA
 	{XA_16, XA_LENGTH(10666)}, //XA_Roomcode
+	//Cutscene.XA
+	{XA_Cutscene, XA_LENGTH(759)}, //XA_ArmedCutscene
 };
 
 static const char *xa_paths[] = {
@@ -81,6 +83,7 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\14.XA;1", //XA_14
 	"\\MUSIC\\15.XA;1", //XA_15
 	"\\MUSIC\\16.XA;1", //XA_16
+	"\\MUSIC\\CUTSCENE.XA;1", //XA_Cutscene
 	NULL,
 };
 
@@ -144,6 +147,8 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"victory", true}, //XA_Victory
 	//16.XA
 	{"roomcode", true}, //XA_Roomcode
+	//Cutscene.XA
+	{"armedcutscene", false}, //XA_ArmedCutscene
 	
 	{NULL, false}
 };
