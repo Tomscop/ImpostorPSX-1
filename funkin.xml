@@ -256,7 +256,7 @@
 				
 				<file name = "airship.arc" type = "data" source = "iso/stages/airship/back.arc"/>
 				
-				<!-- Run BG -->
+				<file name = "runaway.arc" type = "data" source = "iso/stages/runaway/back.arc"/>
 				
 				<file name = "cargo.arc" type = "data" source = "iso/stages/cargo/back.arc"/>
 				

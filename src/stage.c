@@ -74,6 +74,7 @@ static u32 Sounds[10];
 #include "character/bfdrip.h"
 #include "character/picodrip.h"
 #include "character/pip.h"
+#include "character/ziffy.h"
 //Opponents
 #include "character/red.h"
 #include "character/redmd.h"
@@ -121,6 +122,8 @@ static u32 Sounds[10];
 #include "character/dave.h"
 #include "character/amogus.h"
 #include "character/cval.h"
+#include "character/cvaltorture.h"
+#include "character/piptorture.h"
 #include "character/jads.h"
 #include "character/dad.h"
 //GFs
@@ -140,6 +143,7 @@ static u32 Sounds[10];
 #include "stage/reactor.h"
 #include "stage/ejected.h"
 #include "stage/airship.h"
+#include "stage/runaway.h"
 #include "stage/cargo.h"
 #include "stage/defeat.h"
 #include "stage/polusmaroon.h"
@@ -166,6 +170,7 @@ static u32 Sounds[10];
 #include "stage/drip.h"
 #include "stage/daveoffice.h"
 #include "stage/towers.h"
+#include "stage/warehouse.h"
 #include "stage/o2.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
@@ -713,9 +718,49 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	Gfx_DrawTexCol(tex, src, &sdst, cr, cg, cb);
 }
 
+void Stage_DrawTexColFlipped(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom, u8 cr, u8 cg, u8 cb)
+{
+	fixed_t xz = dst->x;
+	fixed_t yz = dst->y;
+	fixed_t wz = -dst->w;
+	fixed_t hz = dst->h;
+	
+	
+	//Don't draw if HUD and is disabled
+	if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+	{
+		#ifdef STAGE_NOHUD
+			return;
+		#endif
+	}
+	
+	fixed_t l = (screen.SCREEN_WIDTH2  << FIXED_SHIFT) + FIXED_MUL(xz, zoom);// + FIXED_DEC(1,2);
+	fixed_t t = (screen.SCREEN_HEIGHT2 << FIXED_SHIFT) + FIXED_MUL(yz, zoom);// + FIXED_DEC(1,2);
+	fixed_t r = l + FIXED_MUL(wz, zoom);
+	fixed_t b = t + FIXED_MUL(hz, zoom);
+	
+	l >>= FIXED_SHIFT;
+	t >>= FIXED_SHIFT;
+	r >>= FIXED_SHIFT;
+	b >>= FIXED_SHIFT;
+	
+	RECT sdst = {
+		l,
+		t,
+		r - l,
+		b - t,
+	};
+	Gfx_DrawTexCol(tex, src, &sdst, cr, cg, cb);
+}
+
 void Stage_DrawTex(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom)
 {
 	Stage_DrawTexCol(tex, src, dst, zoom, 0x80, 0x80, 0x80);
+}
+
+void Stage_DrawTexFlipped(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom)
+{
+	Stage_DrawTexColFlipped(tex, src, dst, zoom, 0x80, 0x80, 0x80);
 }
 
 void Stage_DrawTexRotate(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom, u8 angle)
@@ -1680,6 +1725,15 @@ static void Stage_LoadSFX(void)
 		Mem_Free(data);
 	}
 	
+	//torture saws sound
+	if (stage.stage_id == StageId_Torture)
+	{
+		IO_FindFile(&file, "\\SOUNDS\\BLADES.VAG;1");
+		u32 *data = IO_ReadFile(&file);
+		Sounds[7] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
@@ -1772,7 +1826,7 @@ static void Stage_LoadMusic(void)
 	
 	//Initialize music state
 	//added more steps and disable intro
-	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus))
+	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Torture))
 	{
 		stage.intro = false;
 		stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
@@ -1873,7 +1927,10 @@ static void Stage_LoadState(void)
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
-		stage.hudfade = 0;
+		if (stage.stage_id != StageId_Torture)
+			stage.hudfade = 0;
+		else
+			stage.hudfade = 1;
 		stage.camswitch = 0;
 		cutscene = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
@@ -2321,6 +2378,8 @@ void Stage_Tick(void)
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step == 2064) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[7], 0x3fff);
+			if ((stage.stage_id == StageId_Torture) && (stage.song_beat == 62) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			
 			if (stage.prefs.debug)
@@ -3082,6 +3141,14 @@ void Stage_Tick(void)
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
+			if (stage.stage_id == StageId_Torture)
+			{
+				stage.opponent->tick(stage.opponent);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+			}
 			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.stage_id == StageId_Turbulence)
@@ -3089,16 +3156,17 @@ void Stage_Tick(void)
 					stage.back->draw_md(stage.back);
 			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
 				stage.opponent2->tick(stage.opponent2);
-			stage.opponent->tick(stage.opponent);
+			if (stage.stage_id != StageId_Torture)
+				stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed))
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed) && (stage.stage_id != StageId_Torture))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
-			if (stage.stage_id != StageId_Turbulence)
+			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture))
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
 			
@@ -3125,6 +3193,9 @@ void Stage_Tick(void)
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				stage.player_state[1].charactersecond = NULL;
 			}
 			else if (stage.stage_id == StageId_DoubleKill)
 			{
