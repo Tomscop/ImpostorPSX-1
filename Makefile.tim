@@ -300,7 +300,7 @@ iso/stages/ejected/back.arc: iso/stages/ejected/back0.tim iso/stages/ejected/bac
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim
 
 # Run Away
-iso/stages/runaway/back.arc: iso/stages/runaway/back0.tim iso/stages/runaway/back1.tim iso/stages/runaway/back2.tim iso/stages/runaway/back3.tim iso/stages/runaway/back4.tim
+iso/stages/runaway/back.arc: iso/stages/runaway/back0.tim iso/stages/runaway/back1.tim iso/stages/runaway/back2.tim iso/stages/runaway/back3.tim iso/stages/runaway/back4.tim iso/stages/runaway/back5.tim
 
 # Cargo
 iso/stages/cargo/back.arc: iso/stages/cargo/back0.tim iso/stages/cargo/back1.tim iso/stages/cargo/back2.tim iso/stages/cargo/back3.tim
