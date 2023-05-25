@@ -71,6 +71,7 @@ SRCS = src/main.c \
 	src/character/speakerghost.c \
 	src/character/gfreactor.c \
 	src/character/gfejected.c \
+	src/character/gfdanger.c \
 	src/character/gfpolus.c \
 	src/character/gfairship.c \
 	src/character/gfmira.c \

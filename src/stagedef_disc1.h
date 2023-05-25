@@ -184,7 +184,7 @@
 		{Char_BFLegs_New,    FIXED_DEC(862+1,1),  FIXED_DEC(486+1,1)},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GFDanger_New,     FIXED_DEC(597,1),  FIXED_DEC(325,1)},
 		
 		//Stage background
 		Back_RunAway_New,

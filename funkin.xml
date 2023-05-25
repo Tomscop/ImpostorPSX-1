@@ -207,7 +207,7 @@
 				<file name = "speakerg.arc" type = "data" source = "iso/chars/gfghost/speakerg.arc"/>
 				<file name = "gfreac.arc" type = "data" source = "iso/chars/gfreac/main.arc"/>
 				<file name = "gfeject.arc" type = "data" source = "iso/chars/gfeject/main.arc"/>
-				<!-- GF Danger assets -->
+				<file name = "gfdanger.arc" type = "data" source = "iso/chars/gfdanger/main.arc"/>
 				<file name = "gfpolus.arc" type = "data" source = "iso/chars/gfpolus/main.arc"/>
 				<file name = "gfairshp.arc" type = "data" source = "iso/chars/gfairshp/main.arc"/>
 				<file name = "gfmira.arc" type = "data" source = "iso/chars/gfmira/main.arc"/>

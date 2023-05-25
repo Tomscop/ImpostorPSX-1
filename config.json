@@ -2,20 +2,20 @@
 	"animations": [
 		{
 			"fnfanim" : "danceLeft",
-			"imgname" : "legs",
-			"hname"   : "Legs"
+			"imgname" : "gf",
+			"hname"   : "GF"
 		}
 	],
-	"input":  "iso/chars/bfrun/bf_legs",
-	"outdir": "iso/chars/bfrun/",
-	"charname" : "BFRun",
+	"input":  "iso/chars/gfdanger/gf_danger",
+	"outdir": "iso/chars/gfdanger/",
+	"charname" : "GFDanger",
 	"optimize" : false,
-	"optimizename" : "bfrunlegs",
+	"optimizename" : "gfdanger",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		576,
+		512,
 		0,
-		32,
+		16,
 		480
 	],
 

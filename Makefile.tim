@@ -72,6 +72,7 @@ all: \
 	iso/chars/gfghost/speakerg.arc \
 	iso/chars/gfreac/main.arc \
 	iso/chars/gfeject/main.arc \
+	iso/chars/gfdanger/main.arc \
 	iso/chars/gfpolus/main.arc \
 	iso/chars/gfairshp/main.arc \
 	iso/chars/gfmira/main.arc \
@@ -273,6 +274,7 @@ iso/chars/gfreac/main.arc: iso/chars/gfreac/gfrl0.tim iso/chars/gfreac/gfrl1.tim
 iso/chars/gfeject/main.arc: iso/chars/gfeject/gf0.tim iso/chars/gfeject/gf1.tim iso/chars/gfeject/gf2.tim iso/chars/gfeject/gf3.tim iso/chars/gfeject/gf4.tim iso/chars/gfeject/gf5.tim iso/chars/gfeject/gf6.tim iso/chars/gfeject/gf7.tim iso/chars/gfeject/gf8.tim iso/chars/gfeject/gf9.tim 
 
 # GF Danger
+iso/chars/gfdanger/main.arc: iso/chars/gfdanger/gf0.tim iso/chars/gfdanger/gf1.tim iso/chars/gfdanger/gf2.tim iso/chars/gfdanger/gf3.tim iso/chars/gfdanger/gf4.tim iso/chars/gfdanger/gf5.tim iso/chars/gfdanger/gf6.tim iso/chars/gfdanger/gf7.tim 
 
 # GF Polus
 iso/chars/gfpolus/main.arc: iso/chars/gfpolus/gf0.tim iso/chars/gfpolus/gf2.tim iso/chars/gfpolus/gf4.tim iso/chars/gfpolus/gf6.tim iso/chars/gfpolus/gf8.tim iso/chars/gfpolus/gf10.tim iso/chars/gfpolus/gf12.tim iso/chars/gfpolus/gf14.tim iso/chars/gfpolus/gf16.tim iso/chars/gfpolus/gf18.tim

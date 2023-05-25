@@ -68,6 +68,16 @@ void Back_RunAway_DrawBG(StageBack *back)
 		FIXED_DEC(446,1)
 	};
 	
+	RECT speakerthing_src = {  0, 84,174, 22};
+	RECT_FIXED speakerthing_dst = {
+		stage.gf->x-FIXED_DEC(88,1) - fx,
+		stage.gf->y+FIXED_DEC(86,1) - fy,
+		FIXED_DEC(174,1),
+		FIXED_DEC(22,1)
+	};
+	Debug_StageMoveDebug(&speakerthing_dst, 10, fx, fy);
+	Stage_DrawTex(&this->tex_back4, &speakerthing_src, &speakerthing_dst, stage.camera.bzoom);
+	
 	//platforms
 	RECT platform_src = {  0,  0,255,193};
 	RECT_FIXED platform1_dst = {FIXED_DEC(platformx,1) - fx, FIXED_DEC(339,1) - fy, FIXED_DEC(290,1), FIXED_DEC(219,1)};
@@ -179,10 +189,10 @@ void Back_RunAway_DrawBG(StageBack *back)
 		cloud = 1030;
 		cloud3 = RandomRange(1,2);
 	}
-	if (cloud2 == cloud3)
-		cloud2 = 0;
 	if ((cloud3 != 1) && (cloud3 != 2))
 		cloud3 = 1;
+	if (cloud2 == cloud3)
+		cloud2 = 0;
 	if (midcloud <= -1134)
 		midcloud = 0;
 	if (midcloud2 == 2)
