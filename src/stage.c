@@ -54,6 +54,8 @@ static u32 Sounds[10];
 #include "character/bflights.h"
 #include "character/bfreactor.h"
 #include "character/bfejected.h"
+#include "character/bfrun.h"
+#include "character/bflegs.h"
 #include "character/bfdefeat.h"
 #include "character/bfpolus.h"
 #include "character/bflava.h"

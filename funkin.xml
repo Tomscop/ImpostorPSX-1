@@ -149,7 +149,8 @@
 				<file name = "bflights.arc" type = "data" source = "iso/chars/bflights/main.arc"/>
 				<file name = "bfreac.arc" type = "data" source = "iso/chars/bfreac/main.arc"/>
 				<file name = "bfeject.arc" type = "data" source = "iso/chars/bfeject/main.arc"/>
-				<!-- Boyfriend Danger assets -->
+				<file name = "bfrun.arc" type = "data" source = "iso/chars/bfrun/main.arc"/>
+				<file name = "legs.arc" type = "data" source = "iso/chars/bfrun/legs.arc"/>
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
 				<file name = "bfdefet1.arc" type = "data" source = "iso/chars/bfdefeat/main1.arc"/>
 				<file name = "bfdefet2.arc" type = "data" source = "iso/chars/bfdefeat/main2.arc"/>

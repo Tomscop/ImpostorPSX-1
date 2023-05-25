@@ -174,13 +174,15 @@ void Back_RunAway_DrawBG(StageBack *back)
 		platformx = 0;
 	if (frontcloud <= -1998)
 		frontcloud = 0;
-	if (cloud <= -1134)
+	if (cloud <= -984)
 	{
 		cloud = 1030;
 		cloud3 = RandomRange(1,2);
 	}
 	if (cloud2 == cloud3)
 		cloud2 = 0;
+	if ((cloud3 != 1) && (cloud3 != 2))
+		cloud3 = 1;
 	if (midcloud <= -1134)
 		midcloud = 0;
 	if (midcloud2 == 2)

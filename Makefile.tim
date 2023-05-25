@@ -26,6 +26,8 @@ all: \
 	iso/chars/bflights/main.arc \
 	iso/chars/bfreac/main.arc \
 	iso/chars/bfeject/main.arc \
+	iso/chars/bfrun/main.arc \
+	iso/chars/bfrun/legs.arc \
 	iso/chars/bfdefeat/main.arc \
 	iso/chars/bfdefeat/main1.arc \
 	iso/chars/bfdefeat/main2.arc \
@@ -140,7 +142,9 @@ iso/chars/bfreac/main.arc: iso/chars/bfreac/idle0.tim iso/chars/bfreac/idle1.tim
 # BF Ejected
 iso/chars/bfeject/main.arc: iso/chars/bfeject/idle0.tim iso/chars/bfeject/idle1.tim iso/chars/bfeject/idle2.tim iso/chars/bfeject/left0.tim iso/chars/bfeject/left1.tim iso/chars/bfeject/down0.tim iso/chars/bfeject/down1.tim iso/chars/bfeject/up0.tim iso/chars/bfeject/up1.tim iso/chars/bfeject/up2.tim iso/chars/bfeject/right0.tim iso/chars/bfeject/leftm0.tim iso/chars/bfeject/leftm1.tim iso/chars/bfeject/downm0.tim iso/chars/bfeject/downm1.tim iso/chars/bfeject/upm0.tim iso/chars/bfeject/upm1.tim iso/chars/bfeject/rightm0.tim iso/chars/bfeject/rightm1.tim 
 
-# BF Danger
+# BF Run
+iso/chars/bfrun/main.arc: iso/chars/bfrun/idle0.tim iso/chars/bfrun/idle1.tim iso/chars/bfrun/left0.tim iso/chars/bfrun/left1.tim iso/chars/bfrun/down0.tim iso/chars/bfrun/up0.tim iso/chars/bfrun/up1.tim iso/chars/bfrun/right0.tim
+iso/chars/bfrun/legs.arc: iso/chars/bfrun/legs0.tim
 
 # BF Defeat
 iso/chars/bfdefeat/main.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/a.tim iso/chars/bfdefeat/b.tim iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 

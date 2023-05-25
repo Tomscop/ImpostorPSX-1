@@ -28,6 +28,8 @@ SRCS = src/main.c \
 	src/character/bflights.c \
 	src/character/bfreactor.c \
 	src/character/bfejected.c \
+	src/character/bfrun.c \
+	src/character/bflegs.c \
 	src/character/bfdefeat.c \
 	src/character/bfpolus.c \
 	src/character/bflava.c \

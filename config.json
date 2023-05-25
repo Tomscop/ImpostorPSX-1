@@ -1,42 +1,22 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
+			"fnfanim" : "danceLeft",
+			"imgname" : "legs",
+			"hname"   : "Legs"
 		}
 	],
-	"input":  "iso/chars/redmungs/meangus",
-	"outdir": "iso/chars/redmungs/",
-	"charname" : "Redmungus",
+	"input":  "iso/chars/bfrun/bf_legs",
+	"outdir": "iso/chars/bfrun/",
+	"charname" : "BFRun",
 	"optimize" : false,
-	"optimizename" : "redmungus",
+	"optimizename" : "bfrunlegs",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		576,
 		0,
-		0,
-		481
+		32,
+		480
 	],
 
 	"bpp" : 4,

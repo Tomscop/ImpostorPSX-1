@@ -180,8 +180,8 @@
 	},
 	{ //StageId_Danger (Danger)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_BFRun_New,    FIXED_DEC(862,1),  FIXED_DEC(486,1)},
+		{Char_BFLegs_New,    FIXED_DEC(862+1,1),  FIXED_DEC(486+1,1)},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
