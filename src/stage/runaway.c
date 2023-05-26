@@ -191,15 +191,15 @@ void Back_RunAway_DrawBG(StageBack *back)
 	}
 	if ((cloud3 != 1) && (cloud3 != 2))
 		cloud3 = 1;
-	if (cloud2 == cloud3)
+	if (cloud2 >= cloud3)
 		cloud2 = 0;
 	if (midcloud <= -1134)
 		midcloud = 0;
-	if (midcloud2 == 2)
+	if (midcloud2 >= 2)
 		midcloud2 = 0;
 	if (backcloud <= -1134)
 		backcloud = 0;
-	if (backcloud2 == 3)
+	if (backcloud2 >= 3)
 		backcloud2 = 0;
 }
 
@@ -239,6 +239,9 @@ StageBack *Back_RunAway_New(void)
 	cloud3 = RandomRange(1,2);
 	midcloud = RandomRange(-1100,0);
 	backcloud = RandomRange(-1100,0);
+	cloud2 = 0;
+	midcloud2 = 0;
+	backcloud2 = 0;
 	
 	return (StageBack*)this;
 }

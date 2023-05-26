@@ -86,6 +86,8 @@ static u32 Sounds[10];
 #include "character/greenparasite.h"
 #include "character/yellow.h"
 #include "character/white.h"
+#include "character/blackrun.h"
+#include "character/blacklegs.h"
 #include "character/whitedk.h"
 #include "character/blackdk.h"
 #include "character/black.h"

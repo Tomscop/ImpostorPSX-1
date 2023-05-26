@@ -47,6 +47,8 @@ SRCS = src/main.c \
 	src/character/greenparasite.c \
 	src/character/yellow.c \
 	src/character/white.c \
+	src/character/blackrun.c \
+	src/character/blacklegs.c \
 	src/character/whitedk.c \
 	src/character/blackdk.c \
 	src/character/black.c \

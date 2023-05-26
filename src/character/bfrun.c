@@ -155,7 +155,7 @@ void Char_BFRun_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(-226,1);
 			this->character.focus_y = FIXED_DEC(-192,1);
-			this->character.focus_zoom = FIXED_DEC(1085,1024);
+			this->character.focus_zoom = FIXED_DEC(924,1024);
 		}
 		if (stage.song_beat == 160)
 		{

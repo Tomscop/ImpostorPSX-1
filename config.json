@@ -1,26 +1,51 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "gf",
-			"hname"   : "GF"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "scream",
+			"imgname" : "scream",
+			"hname"   : "Scream"
 		}
 	],
-	"input":  "iso/chars/gfdanger/gf_danger",
-	"outdir": "iso/chars/gfdanger/",
-	"charname" : "GFDanger",
+	"input":  "iso/chars/blackrun/blackrun",
+	"outdir": "iso/chars/blackrun/",
+	"charname" : "BlackRun",
 	"optimize" : false,
-	"optimizename" : "gfdanger",
+	"optimizename" : "blackrun",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
+		768,
 		0,
-		16,
-		480
+		0,
+		481
 	],
 
-	"bpp" : 4,
-	"resize" : 0.25,
+	"bpp" : 8,
+	"resize" : 0.15,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

@@ -174,7 +174,8 @@
 				<file name = "greenpar.arc" type = "data" source = "iso/chars/greenpar/main.arc"/>
 				<file name = "yellow.arc" type = "data" source = "iso/chars/yellow/main.arc"/>
 				<file name = "white.arc" type = "data" source = "iso/chars/white/main.arc"/>
-				<!-- Black Danger assets -->
+				<file name = "blackrun.arc" type = "data" source = "iso/chars/blackrun/main.arc"/>
+				<file name = "blaklegs.arc" type = "data" source = "iso/chars/blackrun/legs.arc"/>
 				<file name = "whitedk.arc" type = "data" source = "iso/chars/whitedk/main.arc"/>
 				<file name = "blackdk.arc" type = "data" source = "iso/chars/blackdk/main.arc"/>
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>

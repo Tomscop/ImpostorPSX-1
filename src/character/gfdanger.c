@@ -142,13 +142,17 @@ void Char_GFDanger_Tick(Character *character)
 	//Bye
 	if ((stage.song_step >= 656) && (stage.song_step <= 662))
 	{
+		stage.gf->x -= FIXED_DEC(1,1);
+	}
+	if ((stage.song_step >= 663) && (stage.song_step <= 668))
+	{
 		stage.gf->x -= FIXED_DEC(2,1);
 	}
-	if ((stage.song_step >= 663) && (stage.song_step <= 670))
+	if ((stage.song_step >= 669) && (stage.song_step <= 674))
 	{
 		stage.gf->x -= FIXED_DEC(3,1);
 	}
-	if ((stage.song_step >= 671) && (stage.song_step <= 720))
+	if ((stage.song_step >= 675) && (stage.song_step <= 720))
 	{
 		stage.gf->x -= FIXED_DEC(4,1);
 	}

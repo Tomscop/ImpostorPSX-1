@@ -47,6 +47,8 @@ all: \
 	iso/chars/greenpar/main.arc \
 	iso/chars/yellow/main.arc \
 	iso/chars/white/main.arc \
+	iso/chars/blackrun/main.arc \
+	iso/chars/blackrun/legs.arc \
 	iso/chars/whitedk/main.arc \
 	iso/chars/blackdk/main.arc \
 	iso/chars/black/main.arc \
@@ -202,6 +204,8 @@ iso/chars/yellow/main.arc: iso/chars/yellow/idle0.tim iso/chars/yellow/idle1.tim
 iso/chars/white/main.arc: iso/chars/white/idle0.tim iso/chars/white/idle1.tim iso/chars/white/idle2.tim iso/chars/white/left0.tim iso/chars/white/left1.tim iso/chars/white/down0.tim iso/chars/white/up0.tim iso/chars/white/up1.tim iso/chars/white/right0.tim iso/chars/white/right1.tim 
 
 # Black Danger
+iso/chars/blackrun/main.arc: iso/chars/blackrun/idle0.tim iso/chars/blackrun/idle1.tim iso/chars/blackrun/idle2.tim iso/chars/blackrun/idle3.tim iso/chars/blackrun/left0.tim iso/chars/blackrun/left1.tim iso/chars/blackrun/down0.tim iso/chars/blackrun/down1.tim iso/chars/blackrun/up0.tim iso/chars/blackrun/up1.tim iso/chars/blackrun/right0.tim iso/chars/blackrun/right1.tim iso/chars/blackrun/right2.tim iso/chars/blackrun/scream0.tim iso/chars/blackrun/scream1.tim iso/chars/blackrun/scream2.tim iso/chars/blackrun/scream3.tim iso/chars/blackrun/scream4.tim iso/chars/blackrun/scream5.tim iso/chars/blackrun/scream6.tim iso/chars/blackrun/scream7.tim iso/chars/blackrun/scream8.tim iso/chars/blackrun/scream9.tim iso/chars/blackrun/scream10.tim iso/chars/blackrun/scream11.tim iso/chars/blackrun/scream12.tim 
+iso/chars/blackrun/legs.arc: iso/chars/blackrun/legs0.tim 
 
 # White DK
 iso/chars/whitedk/main.arc: iso/chars/whitedk/idle0.tim iso/chars/whitedk/idle1.tim iso/chars/whitedk/left0.tim iso/chars/whitedk/left1.tim iso/chars/whitedk/down0.tim iso/chars/whitedk/down1.tim iso/chars/whitedk/up0.tim iso/chars/whitedk/up1.tim iso/chars/whitedk/right0.tim iso/chars/whitedk/right1.tim 

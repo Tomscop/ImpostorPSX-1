@@ -182,8 +182,8 @@
 		//Characters
 		{Char_BFRun_New,    FIXED_DEC(862,1),  FIXED_DEC(486,1)},
 		{Char_BFLegs_New,    FIXED_DEC(862+1,1),  FIXED_DEC(486+1,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_BlackRun_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BlackLegs_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GFDanger_New,     FIXED_DEC(597,1),  FIXED_DEC(325,1)},
 		
 		//Stage background
