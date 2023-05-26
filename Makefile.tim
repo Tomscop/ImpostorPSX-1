@@ -204,7 +204,7 @@ iso/chars/yellow/main.arc: iso/chars/yellow/idle0.tim iso/chars/yellow/idle1.tim
 iso/chars/white/main.arc: iso/chars/white/idle0.tim iso/chars/white/idle1.tim iso/chars/white/idle2.tim iso/chars/white/left0.tim iso/chars/white/left1.tim iso/chars/white/down0.tim iso/chars/white/up0.tim iso/chars/white/up1.tim iso/chars/white/right0.tim iso/chars/white/right1.tim 
 
 # Black Danger
-iso/chars/blackrun/main.arc: iso/chars/blackrun/idle0.tim iso/chars/blackrun/idle1.tim iso/chars/blackrun/idle2.tim iso/chars/blackrun/idle3.tim iso/chars/blackrun/left0.tim iso/chars/blackrun/left1.tim iso/chars/blackrun/down0.tim iso/chars/blackrun/down1.tim iso/chars/blackrun/up0.tim iso/chars/blackrun/up1.tim iso/chars/blackrun/right0.tim iso/chars/blackrun/right1.tim iso/chars/blackrun/right2.tim iso/chars/blackrun/scream0.tim iso/chars/blackrun/scream1.tim iso/chars/blackrun/scream2.tim iso/chars/blackrun/scream3.tim iso/chars/blackrun/scream4.tim iso/chars/blackrun/scream5.tim iso/chars/blackrun/scream6.tim iso/chars/blackrun/scream7.tim iso/chars/blackrun/scream8.tim iso/chars/blackrun/scream9.tim iso/chars/blackrun/scream10.tim iso/chars/blackrun/scream11.tim iso/chars/blackrun/scream12.tim 
+iso/chars/blackrun/main.arc: iso/chars/blackrun/idle0.tim iso/chars/blackrun/idle1.tim iso/chars/blackrun/idle2.tim iso/chars/blackrun/idle3.tim iso/chars/blackrun/left0.tim iso/chars/blackrun/left1.tim iso/chars/blackrun/down0.tim iso/chars/blackrun/down1.tim iso/chars/blackrun/up0.tim iso/chars/blackrun/right0.tim iso/chars/blackrun/right1.tim iso/chars/blackrun/scream0.tim iso/chars/blackrun/scream1.tim iso/chars/blackrun/scream2.tim iso/chars/blackrun/scream3.tim iso/chars/blackrun/scream4.tim iso/chars/blackrun/scream5.tim iso/chars/blackrun/idlea0.tim iso/chars/blackrun/idlea1.tim iso/chars/blackrun/idlea2.tim iso/chars/blackrun/idlea3.tim iso/chars/blackrun/lefta0.tim iso/chars/blackrun/lefta1.tim iso/chars/blackrun/downa0.tim iso/chars/blackrun/downa1.tim iso/chars/blackrun/downa2.tim iso/chars/blackrun/downa3.tim iso/chars/blackrun/upa0.tim iso/chars/blackrun/upa1.tim iso/chars/blackrun/righta0.tim iso/chars/blackrun/righta1.tim 
 iso/chars/blackrun/legs.arc: iso/chars/blackrun/legs0.tim 
 
 # White DK
@@ -278,7 +278,7 @@ iso/chars/gfreac/main.arc: iso/chars/gfreac/gfrl0.tim iso/chars/gfreac/gfrl1.tim
 iso/chars/gfeject/main.arc: iso/chars/gfeject/gf0.tim iso/chars/gfeject/gf1.tim iso/chars/gfeject/gf2.tim iso/chars/gfeject/gf3.tim iso/chars/gfeject/gf4.tim iso/chars/gfeject/gf5.tim iso/chars/gfeject/gf6.tim iso/chars/gfeject/gf7.tim iso/chars/gfeject/gf8.tim iso/chars/gfeject/gf9.tim 
 
 # GF Danger
-iso/chars/gfdanger/main.arc: iso/chars/gfdanger/gf0.tim iso/chars/gfdanger/gf1.tim iso/chars/gfdanger/gf2.tim iso/chars/gfdanger/gf3.tim iso/chars/gfdanger/gf4.tim iso/chars/gfdanger/gf5.tim iso/chars/gfdanger/gf6.tim iso/chars/gfdanger/gf7.tim 
+iso/chars/gfdanger/main.arc: iso/chars/gfdanger/gf0.tim iso/chars/gfdanger/gf1.tim iso/chars/gfdanger/gf2.tim iso/chars/gfdanger/gf3.tim
 
 # GF Polus
 iso/chars/gfpolus/main.arc: iso/chars/gfpolus/gf0.tim iso/chars/gfpolus/gf2.tim iso/chars/gfpolus/gf4.tim iso/chars/gfpolus/gf6.tim iso/chars/gfpolus/gf8.tim iso/chars/gfpolus/gf10.tim iso/chars/gfpolus/gf12.tim iso/chars/gfpolus/gf14.tim iso/chars/gfpolus/gf16.tim iso/chars/gfpolus/gf18.tim

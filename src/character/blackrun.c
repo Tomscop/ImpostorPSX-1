@@ -23,23 +23,28 @@ enum
   BlackRun_ArcMain_Down0,
   BlackRun_ArcMain_Down1,
   BlackRun_ArcMain_Up0,
-  BlackRun_ArcMain_Up1,
   BlackRun_ArcMain_Right0,
   BlackRun_ArcMain_Right1,
-  BlackRun_ArcMain_Right2,
   BlackRun_ArcMain_Scream0,
   BlackRun_ArcMain_Scream1,
   BlackRun_ArcMain_Scream2,
   BlackRun_ArcMain_Scream3,
   BlackRun_ArcMain_Scream4,
   BlackRun_ArcMain_Scream5,
-  BlackRun_ArcMain_Scream6,
-  BlackRun_ArcMain_Scream7,
-  BlackRun_ArcMain_Scream8,
-  BlackRun_ArcMain_Scream9,
-  BlackRun_ArcMain_Scream10,
-  BlackRun_ArcMain_Scream11,
-  BlackRun_ArcMain_Scream12,
+  BlackRun_ArcMain_IdleA0,
+  BlackRun_ArcMain_IdleA1,
+  BlackRun_ArcMain_IdleA2,
+  BlackRun_ArcMain_IdleA3,
+  BlackRun_ArcMain_LeftA0,
+  BlackRun_ArcMain_LeftA1,
+  BlackRun_ArcMain_DownA0,
+  BlackRun_ArcMain_DownA1,
+  BlackRun_ArcMain_DownA2,
+  BlackRun_ArcMain_DownA3,
+  BlackRun_ArcMain_UpA0,
+  BlackRun_ArcMain_UpA1,
+  BlackRun_ArcMain_RightA0,
+  BlackRun_ArcMain_RightA1,
 	
 	BlackRun_Arc_Max,
 };
@@ -91,51 +96,103 @@ static const CharFrame char_blackrun_frame[] = {
   {BlackRun_ArcMain_Up0, {111,  0,111,116}, {166,226}}, //26 up 2
   {BlackRun_ArcMain_Up0, {  0,116,113,113}, {166,224}}, //27 up 3
   {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220}}, //28 up 4
-  {BlackRun_ArcMain_Up1, {  0,  0,151, 88}, {168,214}}, //29 up 5
+  {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220}}, //29 up 4
 
   {BlackRun_ArcMain_Right0, {  0,  0,174, 91}, {185,210}}, //30 right 1
   {BlackRun_ArcMain_Right0, {  0, 91,174, 92}, {186,210}}, //31 right 2
   {BlackRun_ArcMain_Right1, {  0,  0,168, 95}, {182,210}}, //32 right 3
   {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177,211}}, //33 right 4
-  {BlackRun_ArcMain_Right2, {  0,  0,138, 83}, {169,208}}, //34 right 5
+  {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177,211}}, //34 right 4
 
   {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218}}, //35 scream 1
-  {BlackRun_ArcMain_Scream0, {124,  0,121, 83}, {165,216}}, //36 scream 2
-  {BlackRun_ArcMain_Scream0, {  0, 92,122, 89}, {164,215}}, //37 scream 3
-  {BlackRun_ArcMain_Scream0, {122, 92,121, 88}, {163,215}}, //38 scream 4
-  {BlackRun_ArcMain_Scream1, {  0,  0,121, 83}, {163,215}}, //39 scream 5
-  {BlackRun_ArcMain_Scream1, {121,  0,120, 83}, {163,215}}, //40 scream 6
-  {BlackRun_ArcMain_Scream1, {  0, 83,121, 83}, {163,215}}, //41 scream 7
-  {BlackRun_ArcMain_Scream1, {121, 83,120, 84}, {163,215}}, //42 scream 8
-  {BlackRun_ArcMain_Scream1, {  0,167,121, 87}, {163,215}}, //43 scream 9
-  {BlackRun_ArcMain_Scream1, {121,167,121, 87}, {163,215}}, //44 scream 10
-  {BlackRun_ArcMain_Scream2, {  0,  0,124, 86}, {164,215}}, //45 scream 11
-  {BlackRun_ArcMain_Scream2, {124,  0,124, 86}, {164,215}}, //46 scream 12
-  {BlackRun_ArcMain_Scream2, {  0, 86,129, 85}, {166,216}}, //47 scream 13
-  {BlackRun_ArcMain_Scream3, {  0,  0,129, 85}, {166,216}}, //48 scream 14
-  {BlackRun_ArcMain_Scream3, {  0, 85,139, 84}, {168,217}}, //49 scream 15
-  {BlackRun_ArcMain_Scream3, {  0,170,139, 83}, {168,217}}, //50 scream 16
-  {BlackRun_ArcMain_Scream4, {  0,  0,153, 90}, {172,220}}, //51 scream 17
-  {BlackRun_ArcMain_Scream4, {  0, 90,165, 84}, {176,227}}, //52 scream 18
-  {BlackRun_ArcMain_Scream5, {  0,  0,130,165}, {165,304}}, //53 scream 19
-  {BlackRun_ArcMain_Scream6, {  0,  0,132,135}, {166,272}}, //54 scream 20
-  {BlackRun_ArcMain_Scream7, {  0,  0,137,108}, {168,250}}, //55 scream 21
-  {BlackRun_ArcMain_Scream7, {  0,108,135,101}, {166,245}}, //56 scream 22
-  {BlackRun_ArcMain_Scream8, {  0,  0,129,106}, {165,253}}, //57 scream 23
-  {BlackRun_ArcMain_Scream8, {  0,106,128,102}, {165,247}}, //58 scream 24
-  {BlackRun_ArcMain_Scream8, {128,106,127,102}, {164,249}}, //59 scream 25
-  {BlackRun_ArcMain_Scream9, {  0,  0,127,103}, {165,250}}, //60 scream 26
-  {BlackRun_ArcMain_Scream9, {127,  0,128,102}, {164,249}}, //61 scream 27
-  {BlackRun_ArcMain_Scream9, {  0,103,127,104}, {163,251}}, //62 scream 28
-  {BlackRun_ArcMain_Scream9, {127,103,127,103}, {165,250}}, //63 scream 29
-  {BlackRun_ArcMain_Scream10, {  0,  0,128,102}, {165,248}}, //64 scream 30
-  {BlackRun_ArcMain_Scream10, {  0,102,128,103}, {164,250}}, //65 scream 31
-  {BlackRun_ArcMain_Scream10, {128,102,127,103}, {165,250}}, //66 scream 32
-  {BlackRun_ArcMain_Scream11, {  0,  0,128,103}, {165,250}}, //67 scream 33
-  {BlackRun_ArcMain_Scream11, {  0,103,128,103}, {164,250}}, //68 scream 34
-  {BlackRun_ArcMain_Scream11, {128,103,127,105}, {165,252}}, //69 scream 35
-  {BlackRun_ArcMain_Scream12, {  0,  0,127,104}, {165,250}}, //70 scream 36
-  {BlackRun_ArcMain_Scream12, {127,  0,127,104}, {164,251}}, //71 scream 37
+  {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218}}, //36 scream 1
+  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215}}, //37 scream 2
+  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215}}, //38 scream 2
+  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215}}, //39 scream 3
+  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215}}, //40 scream 3
+  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215}}, //41 scream 4
+  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215}}, //42 scream 4
+  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215}}, //43 scream 5
+  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215}}, //44 scream 5
+  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215}}, //45 scream 6
+  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215}}, //46 scream 6
+  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216}}, //47 scream 7
+  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216}}, //48 scream 7
+  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217}}, //49 scream 8
+  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217}}, //50 scream 8
+  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220}}, //51 scream 9
+  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220}}, //52 scream 9
+  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304}}, //53 scream 10
+  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304}}, //54 scream 10
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //55 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //56 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //57 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //58 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //59 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //60 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //61 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //62 scream 12
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //63 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //64 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //65 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //66 scream 13
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //67 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //68 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //69 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //70 scream 14
+  {BlackRun_ArcMain_Scream5, {128,  0,127,104}, {164,251}}, //71 scream 15
+
+  {BlackRun_ArcMain_IdleA0, {  0,  0,135, 89}, {178,147}}, //72 idlea 1
+  {BlackRun_ArcMain_IdleA0, {  0, 89,133, 90}, {178,147}}, //73 idlea 2
+  {BlackRun_ArcMain_IdleA1, {  0,  0,130, 87}, {177,148}}, //74 idlea 3
+  {BlackRun_ArcMain_IdleA1, {130,  0,122, 81}, {175,150}}, //75 idlea 4
+  {BlackRun_ArcMain_IdleA1, {  0, 87,115, 89}, {169,150}}, //76 idlea 5
+  {BlackRun_ArcMain_IdleA1, {115, 87, 98, 92}, {159,149}}, //77 idlea 6
+  {BlackRun_ArcMain_IdleA2, {  0,  0, 88, 83}, {159,147}}, //78 idlea 7
+  {BlackRun_ArcMain_IdleA2, { 88,  0, 87, 83}, {159,147}}, //79 idlea 8
+  {BlackRun_ArcMain_IdleA2, {  0, 83, 88, 83}, {160,148}}, //80 idlea 9
+  {BlackRun_ArcMain_IdleA2, { 88, 83, 88, 82}, {160,147}}, //81 idlea 10
+  {BlackRun_ArcMain_IdleA2, {  0,166, 96, 82}, {160,148}}, //82 idlea 11
+  {BlackRun_ArcMain_IdleA2, { 96,166,104, 86}, {161,150}}, //83 idlea 12
+  {BlackRun_ArcMain_IdleA3, {  0,  0,117, 88}, {161,150}}, //84 idlea 13
+  {BlackRun_ArcMain_IdleA3, {117,  0,126, 85}, {165,149}}, //85 idlea 14
+  {BlackRun_ArcMain_IdleA3, {  0, 88,136, 89}, {178,149}}, //86 idlea 15
+
+  {BlackRun_ArcMain_LeftA0, {  0,  0,110, 90}, {174,145}}, //87 lefta 1
+  {BlackRun_ArcMain_LeftA0, {110,  0,126, 85}, {178,141}}, //88 lefta 2
+  {BlackRun_ArcMain_LeftA0, {  0, 90,133, 85}, {180,140}}, //89 lefta 3
+  {BlackRun_ArcMain_LeftA1, {  0,  0,135, 86}, {180,141}}, //90 lefta 4
+  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180,142}}, //91 lefta 5
+  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180,142}}, //92 lefta 5
+
+  {BlackRun_ArcMain_DownA0, {  0,  0,187, 94}, {194,127}}, //93 downa 1
+  {BlackRun_ArcMain_DownA0, {  0, 94,169, 95}, {191,131}}, //94 downa 2
+  {BlackRun_ArcMain_DownA1, {  0,  0,161, 91}, {189,132}}, //95 downa 3
+  {BlackRun_ArcMain_DownA1, {  0, 91,161, 91}, {189,132}}, //96 downa 4
+  {BlackRun_ArcMain_DownA2, {  0,  0,158, 90}, {189,133}}, //97 downa 5
+  {BlackRun_ArcMain_DownA2, {  0, 90,157, 91}, {189,133}}, //98 downa 6
+  {BlackRun_ArcMain_DownA3, {  0,  0,157, 90}, {189,133}}, //99 downa 7
+  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189,133}}, //100 downa 8
+  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189,133}}, //101 downa 8
+
+  {BlackRun_ArcMain_UpA0, {  0,  0,114,102}, {181,168}}, //102 upa 1
+  {BlackRun_ArcMain_UpA0, {114,  0,117, 92}, {180,162}}, //103 upa 2
+  {BlackRun_ArcMain_UpA0, {  0,102,117, 92}, {180,162}}, //104 upa 3
+  {BlackRun_ArcMain_UpA0, {117,102,116, 90}, {178,162}}, //105 upa 4
+  {BlackRun_ArcMain_UpA1, {  0,  0,116, 90}, {178,162}}, //106 upa 5
+  {BlackRun_ArcMain_UpA1, {116,  0,116, 90}, {178,161}}, //107 upa 6
+  {BlackRun_ArcMain_UpA1, {  0, 90,115, 90}, {178,161}}, //108 upa 7
+  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177,161}}, //109 upa 8
+  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177,161}}, //110 upa 8
+
+  {BlackRun_ArcMain_RightA0, {  0,  0,118,102}, {148,161}}, //111 righta 1
+  {BlackRun_ArcMain_RightA0, {118,  0,107, 97}, {151,159}}, //112 righta 2
+  {BlackRun_ArcMain_RightA0, {  0,102,106, 99}, {150,159}}, //113 righta 3
+  {BlackRun_ArcMain_RightA0, {106,102,105,100}, {153,158}}, //114 righta 4
+  {BlackRun_ArcMain_RightA1, {  0,  0,105, 94}, {154,158}}, //115 righta 5
+  {BlackRun_ArcMain_RightA1, {105,  0,105, 92}, {154,157}}, //116 righta 6
+  {BlackRun_ArcMain_RightA1, {  0, 94,107, 91}, {156,157}}, //117 righta 7
+  {BlackRun_ArcMain_RightA1, {107, 94,106, 91}, {156,157}}, //118 righta 8
 };
 
 static const Animation char_blackrun_anim[CharAnim_Max] = {
@@ -147,6 +204,21 @@ static const Animation char_blackrun_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 25, 26, 27, 28, 29, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{1, (const u8[]){ 30, 31, 32, 33, 34, ASCR_BACK, 1}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+	
+	{1, (const u8[]){ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, ASCR_BACK, 1}},         //CharAnim_Special1
+	{1, (const u8[]){ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, ASCR_BACK, 1}},         //CharAnim_Special2
+};
+
+static const Animation char_blackrun_anim2[CharAnim_Max] = {
+	{1, (const u8[]){ 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{1, (const u8[]){ 87, 88, 88, 89, 89, 90, 90, 91, 91, 92, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{1, (const u8[]){ 93, 94, 94, 95, 96, 97, 98, 99, 100, 101, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{1, (const u8[]){ 102, 103, 104, 105, 106, 107, 108, 109, 109, 110, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{1, (const u8[]){ 111, 112, 113, 114, 115, 116, 116, 117, 117, 118, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 	
 	{1, (const u8[]){ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, ASCR_BACK, 1}},         //CharAnim_Special1
@@ -262,8 +334,11 @@ void Char_BlackRun_Tick(Character *character)
 			default:
 				break;
 		}
-	//switch character at step 639
-		
+	
+	//switch character
+	if (stage.song_step == 639)
+		Animatable_Init(&this->character.animatable, char_blackrun_anim2);
+	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_BlackRun_SetFrame);
 	Character_Draw(character, &this->tex, &char_blackrun_frame[this->frame]);
@@ -331,23 +406,28 @@ Character *Char_BlackRun_New(fixed_t x, fixed_t y)
   "down0.tim",
   "down1.tim",
   "up0.tim",
-  "up1.tim",
   "right0.tim",
   "right1.tim",
-  "right2.tim",
   "scream0.tim",
   "scream1.tim",
   "scream2.tim",
   "scream3.tim",
   "scream4.tim",
   "scream5.tim",
-  "scream6.tim",
-  "scream7.tim",
-  "scream8.tim",
-  "scream9.tim",
-  "scream10.tim",
-  "scream11.tim",
-  "scream12.tim",
+  "idlea0.tim",
+  "idlea1.tim",
+  "idlea2.tim",
+  "idlea3.tim",
+  "lefta0.tim",
+  "lefta1.tim",
+  "downa0.tim",
+  "downa1.tim",
+  "downa2.tim",
+  "downa3.tim",
+  "upa0.tim",
+  "upa1.tim",
+  "righta0.tim",
+  "righta1.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

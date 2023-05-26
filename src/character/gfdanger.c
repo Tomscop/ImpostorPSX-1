@@ -16,14 +16,10 @@
 //GFDanger character structure
 enum
 {
-  GFDanger_ArcMain_GFDanger0,
-  GFDanger_ArcMain_GFDanger1,
-  GFDanger_ArcMain_GFDanger2,
-  GFDanger_ArcMain_GFDanger3,
-  GFDanger_ArcMain_GFDanger4,
-  GFDanger_ArcMain_GFDanger5,
-  GFDanger_ArcMain_GFDanger6,
-  GFDanger_ArcMain_GFDanger7,
+  GFDanger_ArcMain_GF0,
+  GFDanger_ArcMain_GF1,
+  GFDanger_ArcMain_GF2,
+  GFDanger_ArcMain_GF3,
 	
 	GFDanger_Arc_Max,
 };
@@ -47,37 +43,36 @@ typedef struct
 
 //GFDanger character definitions
 static const CharFrame char_gfdanger_frame[] = {
-  {GFDanger_ArcMain_GFDanger0, {  0,  0,119,103}, {150-63,152-82}}, //0 gfdanger 1
-  {GFDanger_ArcMain_GFDanger0, {119,  0,129,101}, {159-63,149-82}}, //1 gfdanger 2
-  {GFDanger_ArcMain_GFDanger0, {  0,103,114,104}, {145-63,152-82}}, //2 gfdanger 3
-  {GFDanger_ArcMain_GFDanger0, {114,103,120,103}, {151-63,152-82}}, //3 gfdanger 4
-  {GFDanger_ArcMain_GFDanger1, {  0,  0,130,101}, {160-63,150-82}}, //4 gfdanger 5
-  {GFDanger_ArcMain_GFDanger1, {130,  0,114,104}, {144-63,153-82}}, //5 gfdanger 6
-  {GFDanger_ArcMain_GFDanger1, {  0,104,120,104}, {150-63,154-82}}, //6 gfdanger 7
-  {GFDanger_ArcMain_GFDanger1, {120,104,120,108}, {146-63,157-82}}, //7 gfdanger 8
-  {GFDanger_ArcMain_GFDanger2, {  0,  0,131,106}, {156-63,156-82}}, //8 gfdanger 9
-  {GFDanger_ArcMain_GFDanger2, {131,  0,118,106}, {144-63,155-82}}, //9 gfdanger 10
-  {GFDanger_ArcMain_GFDanger2, {  0,106,121,108}, {146-63,158-82}}, //10 gfdanger 11
-  {GFDanger_ArcMain_GFDanger2, {121,106,133,106}, {157-63,156-82}}, //11 gfdanger 12
-  {GFDanger_ArcMain_GFDanger3, {  0,  0,120,106}, {145-63,156-82}}, //12 gfdanger 13
-  {GFDanger_ArcMain_GFDanger3, {120,  0,121,108}, {146-63,158-82}}, //13 gfdanger 14
-  {GFDanger_ArcMain_GFDanger3, {  0,108,133,107}, {157-63,156-82}}, //14 gfdanger 15
-  
-  {GFDanger_ArcMain_GFDanger3, {133,108,118,104}, {141-63,153-82}}, //15 gfdanger 16
-  {GFDanger_ArcMain_GFDanger4, {  0,  0,119,108}, {142-63,157-82}}, //16 gfdanger 17
-  {GFDanger_ArcMain_GFDanger4, {119,  0,129,105}, {154-63,154-82}}, //17 gfdanger 18
-  {GFDanger_ArcMain_GFDanger4, {  0,108,118,104}, {141-63,153-82}}, //18 gfdanger 19
-  {GFDanger_ArcMain_GFDanger4, {118,108,118,106}, {142-63,156-82}}, //19 gfdanger 20
-  {GFDanger_ArcMain_GFDanger5, {  0,  0,129,104}, {153-63,154-82}}, //20 gfdanger 21
-  {GFDanger_ArcMain_GFDanger5, {129,  0,118,104}, {142-63,153-82}}, //21 gfdanger 22
-  {GFDanger_ArcMain_GFDanger5, {  0,104,119,106}, {144-63,155-82}}, //22 gfdanger 23
-  {GFDanger_ArcMain_GFDanger5, {119,104,131,104}, {155-63,153-82}}, //23 gfdanger 24
-  {GFDanger_ArcMain_GFDanger6, {  0,  0,116,104}, {141-63,154-82}}, //24 gfdanger 25
-  {GFDanger_ArcMain_GFDanger6, {116,  0,119,106}, {144-63,155-82}}, //25 gfdanger 26
-  {GFDanger_ArcMain_GFDanger6, {  0,106,130,104}, {155-63,153-82}}, //26 gfdanger 27
-  {GFDanger_ArcMain_GFDanger6, {130,106,116,104}, {141-63,154-82}}, //27 gfdanger 28
-  {GFDanger_ArcMain_GFDanger7, {  0,  0,119,106}, {145-63,155-82}}, //28 gfdanger 29
-  {GFDanger_ArcMain_GFDanger7, {119,  0,130,103}, {155-63,153-82}}, //29 gfdanger 30
+  {GFDanger_ArcMain_GF0, {  0,  0,119,103}, {150-63,152-82}}, //0 gf 1
+  {GFDanger_ArcMain_GF0, {  0,  0,119,103}, {150-63,152-82}}, //1 gf 1
+  {GFDanger_ArcMain_GF0, {119,  0,114,104}, {145-63,152-82}}, //2 gf 2
+  {GFDanger_ArcMain_GF0, {119,  0,114,104}, {145-63,152-82}}, //3 gf 2
+  {GFDanger_ArcMain_GF0, {  0,104,130,101}, {160-63,150-82}}, //4 gf 3
+  {GFDanger_ArcMain_GF0, {  0,104,130,101}, {160-63,150-82}}, //5 gf 3
+  {GFDanger_ArcMain_GF0, {130,104,120,104}, {150-63,154-82}}, //6 gf 4
+  {GFDanger_ArcMain_GF0, {130,104,120,104}, {150-63,154-82}}, //7 gf 4
+  {GFDanger_ArcMain_GF1, {  0,  0,131,106}, {156-63,156-82}}, //8 gf 5
+  {GFDanger_ArcMain_GF1, {  0,  0,131,106}, {156-63,156-82}}, //9 gf 5
+  {GFDanger_ArcMain_GF1, {131,  0,121,108}, {146-63,158-82}}, //10 gf 6
+  {GFDanger_ArcMain_GF1, {131,  0,121,108}, {146-63,158-82}}, //11 gf 6
+  {GFDanger_ArcMain_GF1, {  0,108,120,106}, {145-63,156-82}}, //12 gf 7
+  {GFDanger_ArcMain_GF1, {  0,108,120,106}, {145-63,156-82}}, //13 gf 7
+  {GFDanger_ArcMain_GF1, {120,108,133,107}, {157-63,156-82}}, //14 gf 8
+  {GFDanger_ArcMain_GF1, {120,108,133,107}, {157-63,156-82}}, //15 gf 8
+  {GFDanger_ArcMain_GF2, {  0,  0,119,108}, {142-63,157-82}}, //16 gf 9
+  {GFDanger_ArcMain_GF2, {  0,  0,119,108}, {142-63,157-82}}, //17 gf 9
+  {GFDanger_ArcMain_GF2, {119,  0,118,104}, {141-63,153-82}}, //18 gf 10
+  {GFDanger_ArcMain_GF2, {119,  0,118,104}, {141-63,153-82}}, //19 gf 10
+  {GFDanger_ArcMain_GF2, {  0,108,129,104}, {153-63,154-82}}, //20 gf 11
+  {GFDanger_ArcMain_GF2, {  0,108,129,104}, {153-63,154-82}}, //21 gf 11
+  {GFDanger_ArcMain_GF2, {129,108,119,106}, {144-63,155-82}}, //22 gf 12
+  {GFDanger_ArcMain_GF2, {129,108,119,106}, {144-63,155-82}}, //23 gf 12
+  {GFDanger_ArcMain_GF3, {  0,  0,116,104}, {141-63,154-82}}, //24 gf 13
+  {GFDanger_ArcMain_GF3, {  0,  0,116,104}, {141-63,154-82}}, //25 gf 13
+  {GFDanger_ArcMain_GF3, {116,  0,130,104}, {155-63,153-82}}, //26 gf 14
+  {GFDanger_ArcMain_GF3, {116,  0,130,104}, {155-63,153-82}}, //27 gf 14
+  {GFDanger_ArcMain_GF3, {  0,104,119,106}, {145-63,155-82}}, //28 gf 15
+  {GFDanger_ArcMain_GF3, {  0,104,119,106}, {145-63,155-82}}, //29 gf 15
 };
 
 static const Animation char_gfdanger_anim[CharAnim_Max] = {
@@ -215,10 +210,6 @@ Character *Char_GFDanger_New(fixed_t x, fixed_t y)
   "gf1.tim",
   "gf2.tim",
   "gf3.tim",
-  "gf4.tim",
-  "gf5.tim",
-  "gf6.tim",
-  "gf7.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
