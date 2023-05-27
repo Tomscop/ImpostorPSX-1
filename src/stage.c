@@ -2361,7 +2361,8 @@ void Stage_Tick(void)
 					RECT flashff = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 					u8 flashf_col = flashf >> FIXED_SHIFT;
 					Gfx_BlendRect(&flashff, flashf_col, flashf_col, flashf_col, 1);
-					flashf -= FIXED_MUL(flashspdf, timer_dt);
+					if (stage.paused == false)
+						flashf -= FIXED_MUL(flashspdf, timer_dt);
 				}
 			
 			if (stage.black == true)
@@ -2402,7 +2403,8 @@ void Stage_Tick(void)
 					RECT reactor = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 					u8 reactor_col = stage.reactor >> FIXED_SHIFT;
 					Gfx_BlendRect(&reactor, reactor_col, 0, 0, 1);
-					stage.reactor -= FIXED_MUL(stage.reactorspd, timer_dt);
+					if (stage.paused == false)
+						stage.reactor -= FIXED_MUL(stage.reactorspd, timer_dt);
 				}
 			}
 			
@@ -3122,7 +3124,8 @@ void Stage_Tick(void)
 					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 					u8 flash_col = stage.flash >> FIXED_SHIFT;
 					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
 				}
 			
 			if ((stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_VotingTime))

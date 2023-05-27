@@ -135,6 +135,8 @@ void Char_GFDanger_Tick(Character *character)
 	Speaker_Tick(&this->speaker, character->x, character->y, parallax);
 	
 	//Bye
+	if (stage.paused == false)
+	{
 	if ((stage.song_step >= 656) && (stage.song_step <= 662))
 	{
 		stage.gf->x -= FIXED_DEC(1,1);
@@ -150,6 +152,7 @@ void Char_GFDanger_Tick(Character *character)
 	if ((stage.song_step >= 675) && (stage.song_step <= 720))
 	{
 		stage.gf->x -= FIXED_DEC(4,1);
+	}
 	}
 }
 

@@ -80,119 +80,119 @@ static const CharFrame char_blackrun_frame[] = {
   {BlackRun_ArcMain_Idle2, {118,166,124, 88}, {151,208}}, //13 idle 14
   {BlackRun_ArcMain_Idle3, {  0,  0,143, 78}, {170,209}}, //14 idle 15
 
-  {BlackRun_ArcMain_Left0, {  0,  0,132, 83}, {166,202}}, //15 left 1
-  {BlackRun_ArcMain_Left0, {  0, 83,130, 82}, {166,201}}, //16 left 2
-  {BlackRun_ArcMain_Left0, {  0,166,134, 81}, {166,200}}, //17 left 3
-  {BlackRun_ArcMain_Left1, {  0,  0,145, 76}, {171,200}}, //18 left 4
-  {BlackRun_ArcMain_Left1, {  0, 76,162, 77}, {177,203}}, //19 left 5
+  {BlackRun_ArcMain_Left0, {  0,  0,132, 83}, {166-1,202+2}}, //15 left 1
+  {BlackRun_ArcMain_Left0, {  0, 83,130, 82}, {166-1,201+2}}, //16 left 2
+  {BlackRun_ArcMain_Left0, {  0,166,134, 81}, {166-1,200+2}}, //17 left 3
+  {BlackRun_ArcMain_Left1, {  0,  0,145, 76}, {171-1,200+2}}, //18 left 4
+  {BlackRun_ArcMain_Left1, {  0, 76,162, 77}, {177-1,203+2}}, //19 left 5
 
-  {BlackRun_ArcMain_Down0, {  0,  0,151, 87}, {143,203}}, //20 down 1
-  {BlackRun_ArcMain_Down0, {  0, 87,152, 87}, {143,203}}, //21 down 2
-  {BlackRun_ArcMain_Down1, {  0,  0,142, 85}, {144,204}}, //22 down 3
-  {BlackRun_ArcMain_Down1, {  0, 85,138, 81}, {146,206}}, //23 down 4
-  {BlackRun_ArcMain_Down1, {  0,170,140, 80}, {153,207}}, //24 down 5
+  {BlackRun_ArcMain_Down0, {  0,  0,151, 87}, {143+1,203}}, //20 down 1
+  {BlackRun_ArcMain_Down0, {  0, 87,152, 87}, {143+1,203}}, //21 down 2
+  {BlackRun_ArcMain_Down1, {  0,  0,142, 85}, {144+1,204}}, //22 down 3
+  {BlackRun_ArcMain_Down1, {  0, 85,138, 81}, {146+1,206}}, //23 down 4
+  {BlackRun_ArcMain_Down1, {  0,170,140, 80}, {153+1,207}}, //24 down 5
 
-  {BlackRun_ArcMain_Up0, {  0,  0,111,115}, {166,225}}, //25 up 1
-  {BlackRun_ArcMain_Up0, {111,  0,111,116}, {166,226}}, //26 up 2
-  {BlackRun_ArcMain_Up0, {  0,116,113,113}, {166,224}}, //27 up 3
-  {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220}}, //28 up 4
-  {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220}}, //29 up 4
+  {BlackRun_ArcMain_Up0, {  0,  0,111,115}, {166,225-6}}, //25 up 1
+  {BlackRun_ArcMain_Up0, {111,  0,111,116}, {166,226-6}}, //26 up 2
+  {BlackRun_ArcMain_Up0, {  0,116,113,113}, {166,224-6}}, //27 up 3
+  {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220-6}}, //28 up 4
+  {BlackRun_ArcMain_Up0, {113,116,126,104}, {166,220-6}}, //29 up 4
 
-  {BlackRun_ArcMain_Right0, {  0,  0,174, 91}, {185,210}}, //30 right 1
-  {BlackRun_ArcMain_Right0, {  0, 91,174, 92}, {186,210}}, //31 right 2
-  {BlackRun_ArcMain_Right1, {  0,  0,168, 95}, {182,210}}, //32 right 3
-  {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177,211}}, //33 right 4
-  {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177,211}}, //34 right 4
+  {BlackRun_ArcMain_Right0, {  0,  0,174, 91}, {185-3,210-1}}, //30 right 1
+  {BlackRun_ArcMain_Right0, {  0, 91,174, 92}, {186-3,210-1}}, //31 right 2
+  {BlackRun_ArcMain_Right1, {  0,  0,168, 95}, {182-3,210-1}}, //32 right 3
+  {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177-3,211-1}}, //33 right 4
+  {BlackRun_ArcMain_Right1, {  0, 95,158, 93}, {177-3,211-1}}, //34 right 4
 
-  {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218}}, //35 scream 1
-  {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218}}, //36 scream 1
-  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215}}, //37 scream 2
-  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215}}, //38 scream 2
-  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215}}, //39 scream 3
-  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215}}, //40 scream 3
-  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215}}, //41 scream 4
-  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215}}, //42 scream 4
-  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215}}, //43 scream 5
-  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215}}, //44 scream 5
-  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215}}, //45 scream 6
-  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215}}, //46 scream 6
-  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216}}, //47 scream 7
-  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216}}, //48 scream 7
-  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217}}, //49 scream 8
-  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217}}, //50 scream 8
-  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220}}, //51 scream 9
-  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220}}, //52 scream 9
-  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304}}, //53 scream 10
-  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304}}, //54 scream 10
-  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //55 scream 11
-  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //56 scream 11
-  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //57 scream 11
-  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250}}, //58 scream 11
-  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //59 scream 12
-  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //60 scream 12
-  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //61 scream 12
-  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249}}, //62 scream 12
-  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //63 scream 13
-  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //64 scream 13
-  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //65 scream 13
-  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250}}, //66 scream 13
-  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //67 scream 14
-  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //68 scream 14
-  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //69 scream 14
-  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250}}, //70 scream 14
-  {BlackRun_ArcMain_Scream5, {128,  0,127,104}, {164,251}}, //71 scream 15
+  {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218-22}}, //35 scream 1
+  {BlackRun_ArcMain_Scream0, {  0,  0,124, 92}, {168,218-22}}, //36 scream 1
+  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215-22}}, //37 scream 2
+  {BlackRun_ArcMain_Scream0, {124,  0,122, 89}, {164,215-22}}, //38 scream 2
+  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215-22}}, //39 scream 3
+  {BlackRun_ArcMain_Scream0, {  0, 92,121, 83}, {163,215-22}}, //40 scream 3
+  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215-22}}, //41 scream 4
+  {BlackRun_ArcMain_Scream0, {121, 92,121, 83}, {163,215-22}}, //42 scream 4
+  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215-22}}, //43 scream 5
+  {BlackRun_ArcMain_Scream1, {  0,  0,121, 87}, {163,215-22}}, //44 scream 5
+  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215-22}}, //45 scream 6
+  {BlackRun_ArcMain_Scream1, {121,  0,124, 86}, {164,215-22}}, //46 scream 6
+  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216-22}}, //47 scream 7
+  {BlackRun_ArcMain_Scream1, {  0, 87,129, 85}, {166,216-22}}, //48 scream 7
+  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217-22}}, //49 scream 8
+  {BlackRun_ArcMain_Scream2, {  0,  0,139, 84}, {168,217-22}}, //50 scream 8
+  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220-22}}, //51 scream 9
+  {BlackRun_ArcMain_Scream2, {  0, 84,153, 90}, {172,220-22}}, //52 scream 9
+  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304-22}}, //53 scream 10
+  {BlackRun_ArcMain_Scream3, {  0,  0,130,165}, {165,304-22}}, //54 scream 10
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250-22}}, //55 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250-22}}, //56 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250-22}}, //57 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,  0,137,108}, {168,250-22}}, //58 scream 11
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249-22}}, //59 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249-22}}, //60 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249-22}}, //61 scream 12
+  {BlackRun_ArcMain_Scream4, {  0,108,127,102}, {164,249-22}}, //62 scream 12
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250-22}}, //63 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250-22}}, //64 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250-22}}, //65 scream 13
+  {BlackRun_ArcMain_Scream4, {127,108,127,103}, {165,250-22}}, //66 scream 13
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250-22}}, //67 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250-22}}, //68 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250-22}}, //69 scream 14
+  {BlackRun_ArcMain_Scream5, {  0,  0,128,103}, {165,250-22}}, //70 scream 14
+  {BlackRun_ArcMain_Scream5, {128,  0,127,104}, {164,251-22}}, //71 scream 15
 
-  {BlackRun_ArcMain_IdleA0, {  0,  0,135, 89}, {178,147}}, //72 idlea 1
-  {BlackRun_ArcMain_IdleA0, {  0, 89,133, 90}, {178,147}}, //73 idlea 2
-  {BlackRun_ArcMain_IdleA1, {  0,  0,130, 87}, {177,148}}, //74 idlea 3
-  {BlackRun_ArcMain_IdleA1, {130,  0,122, 81}, {175,150}}, //75 idlea 4
-  {BlackRun_ArcMain_IdleA1, {  0, 87,115, 89}, {169,150}}, //76 idlea 5
-  {BlackRun_ArcMain_IdleA1, {115, 87, 98, 92}, {159,149}}, //77 idlea 6
-  {BlackRun_ArcMain_IdleA2, {  0,  0, 88, 83}, {159,147}}, //78 idlea 7
-  {BlackRun_ArcMain_IdleA2, { 88,  0, 87, 83}, {159,147}}, //79 idlea 8
-  {BlackRun_ArcMain_IdleA2, {  0, 83, 88, 83}, {160,148}}, //80 idlea 9
-  {BlackRun_ArcMain_IdleA2, { 88, 83, 88, 82}, {160,147}}, //81 idlea 10
-  {BlackRun_ArcMain_IdleA2, {  0,166, 96, 82}, {160,148}}, //82 idlea 11
-  {BlackRun_ArcMain_IdleA2, { 96,166,104, 86}, {161,150}}, //83 idlea 12
-  {BlackRun_ArcMain_IdleA3, {  0,  0,117, 88}, {161,150}}, //84 idlea 13
-  {BlackRun_ArcMain_IdleA3, {117,  0,126, 85}, {165,149}}, //85 idlea 14
-  {BlackRun_ArcMain_IdleA3, {  0, 88,136, 89}, {178,149}}, //86 idlea 15
+  {BlackRun_ArcMain_IdleA0, {  0,  0,135, 89}, {178-12,147+63}}, //72 idlea 1
+  {BlackRun_ArcMain_IdleA0, {  0, 89,133, 90}, {178-12,147+63}}, //73 idlea 2
+  {BlackRun_ArcMain_IdleA1, {  0,  0,130, 87}, {177-12,148+63}}, //74 idlea 3
+  {BlackRun_ArcMain_IdleA1, {130,  0,122, 81}, {175-12,150+63}}, //75 idlea 4
+  {BlackRun_ArcMain_IdleA1, {  0, 87,115, 89}, {169-12,150+63}}, //76 idlea 5
+  {BlackRun_ArcMain_IdleA1, {115, 87, 98, 92}, {159-12,149+63}}, //77 idlea 6
+  {BlackRun_ArcMain_IdleA2, {  0,  0, 88, 83}, {159-12,147+63}}, //78 idlea 7
+  {BlackRun_ArcMain_IdleA2, { 88,  0, 87, 83}, {159-12,147+63}}, //79 idlea 8
+  {BlackRun_ArcMain_IdleA2, {  0, 83, 88, 83}, {160-12,148+63}}, //80 idlea 9
+  {BlackRun_ArcMain_IdleA2, { 88, 83, 88, 82}, {160-12,147+63}}, //81 idlea 10
+  {BlackRun_ArcMain_IdleA2, {  0,166, 96, 82}, {160-12,148+63}}, //82 idlea 11
+  {BlackRun_ArcMain_IdleA2, { 96,166,104, 86}, {161-12,150+63}}, //83 idlea 12
+  {BlackRun_ArcMain_IdleA3, {  0,  0,117, 88}, {161-12,150+63}}, //84 idlea 13
+  {BlackRun_ArcMain_IdleA3, {117,  0,126, 85}, {165-12,149+63}}, //85 idlea 14
+  {BlackRun_ArcMain_IdleA3, {  0, 88,136, 89}, {178-12,149+63}}, //86 idlea 15
 
-  {BlackRun_ArcMain_LeftA0, {  0,  0,110, 90}, {174,145}}, //87 lefta 1
-  {BlackRun_ArcMain_LeftA0, {110,  0,126, 85}, {178,141}}, //88 lefta 2
-  {BlackRun_ArcMain_LeftA0, {  0, 90,133, 85}, {180,140}}, //89 lefta 3
-  {BlackRun_ArcMain_LeftA1, {  0,  0,135, 86}, {180,141}}, //90 lefta 4
-  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180,142}}, //91 lefta 5
-  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180,142}}, //92 lefta 5
+  {BlackRun_ArcMain_LeftA0, {  0,  0,110, 90}, {174+1-12,145+63}}, //87 lefta 1
+  {BlackRun_ArcMain_LeftA0, {110,  0,126, 85}, {178+1-12,141+63}}, //88 lefta 2
+  {BlackRun_ArcMain_LeftA0, {  0, 90,133, 85}, {180+1-12,140+63}}, //89 lefta 3
+  {BlackRun_ArcMain_LeftA1, {  0,  0,135, 86}, {180+1-12,141+63}}, //90 lefta 4
+  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180+1-12,142+63}}, //91 lefta 5
+  {BlackRun_ArcMain_LeftA1, {  0, 86,136, 86}, {180+1-12,142+63}}, //92 lefta 5
 
-  {BlackRun_ArcMain_DownA0, {  0,  0,187, 94}, {194,127}}, //93 downa 1
-  {BlackRun_ArcMain_DownA0, {  0, 94,169, 95}, {191,131}}, //94 downa 2
-  {BlackRun_ArcMain_DownA1, {  0,  0,161, 91}, {189,132}}, //95 downa 3
-  {BlackRun_ArcMain_DownA1, {  0, 91,161, 91}, {189,132}}, //96 downa 4
-  {BlackRun_ArcMain_DownA2, {  0,  0,158, 90}, {189,133}}, //97 downa 5
-  {BlackRun_ArcMain_DownA2, {  0, 90,157, 91}, {189,133}}, //98 downa 6
-  {BlackRun_ArcMain_DownA3, {  0,  0,157, 90}, {189,133}}, //99 downa 7
-  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189,133}}, //100 downa 8
-  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189,133}}, //101 downa 8
+  {BlackRun_ArcMain_DownA0, {  0,  0,187, 94}, {194-2-12,127+3+63}}, //93 downa 1
+  {BlackRun_ArcMain_DownA0, {  0, 94,169, 95}, {191-2-12,131+3+63}}, //94 downa 2
+  {BlackRun_ArcMain_DownA1, {  0,  0,161, 91}, {189-2-12,132+3+63}}, //95 downa 3
+  {BlackRun_ArcMain_DownA1, {  0, 91,161, 91}, {189-2-12,132+3+63}}, //96 downa 4
+  {BlackRun_ArcMain_DownA2, {  0,  0,158, 90}, {189-2-12,133+3+63}}, //97 downa 5
+  {BlackRun_ArcMain_DownA2, {  0, 90,157, 91}, {189-2-12,133+3+63}}, //98 downa 6
+  {BlackRun_ArcMain_DownA3, {  0,  0,157, 90}, {189-2-12,133+3+63}}, //99 downa 7
+  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189-2-12,133+3+63}}, //100 downa 8
+  {BlackRun_ArcMain_DownA3, {  0, 90,157, 89}, {189-2-12,133+3+63}}, //101 downa 8
 
-  {BlackRun_ArcMain_UpA0, {  0,  0,114,102}, {181,168}}, //102 upa 1
-  {BlackRun_ArcMain_UpA0, {114,  0,117, 92}, {180,162}}, //103 upa 2
-  {BlackRun_ArcMain_UpA0, {  0,102,117, 92}, {180,162}}, //104 upa 3
-  {BlackRun_ArcMain_UpA0, {117,102,116, 90}, {178,162}}, //105 upa 4
-  {BlackRun_ArcMain_UpA1, {  0,  0,116, 90}, {178,162}}, //106 upa 5
-  {BlackRun_ArcMain_UpA1, {116,  0,116, 90}, {178,161}}, //107 upa 6
-  {BlackRun_ArcMain_UpA1, {  0, 90,115, 90}, {178,161}}, //108 upa 7
-  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177,161}}, //109 upa 8
-  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177,161}}, //110 upa 8
+  {BlackRun_ArcMain_UpA0, {  0,  0,114,102}, {181+1-12,168-3+63}}, //102 upa 1
+  {BlackRun_ArcMain_UpA0, {114,  0,117, 92}, {180+1-12,162-3+63}}, //103 upa 2
+  {BlackRun_ArcMain_UpA0, {  0,102,117, 92}, {180+1-12,162-3+63}}, //104 upa 3
+  {BlackRun_ArcMain_UpA0, {117,102,116, 90}, {178+1-12,162-3+63}}, //105 upa 4
+  {BlackRun_ArcMain_UpA1, {  0,  0,116, 90}, {178+1-12,162-3+63}}, //106 upa 5
+  {BlackRun_ArcMain_UpA1, {116,  0,116, 90}, {178+1-12,161-3+63}}, //107 upa 6
+  {BlackRun_ArcMain_UpA1, {  0, 90,115, 90}, {178+1-12,161-3+63}}, //108 upa 7
+  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177+1-12,161-3+63}}, //109 upa 8
+  {BlackRun_ArcMain_UpA1, {115, 90,114, 90}, {177+1-12,161-3+63}}, //110 upa 8
 
-  {BlackRun_ArcMain_RightA0, {  0,  0,118,102}, {148,161}}, //111 righta 1
-  {BlackRun_ArcMain_RightA0, {118,  0,107, 97}, {151,159}}, //112 righta 2
-  {BlackRun_ArcMain_RightA0, {  0,102,106, 99}, {150,159}}, //113 righta 3
-  {BlackRun_ArcMain_RightA0, {106,102,105,100}, {153,158}}, //114 righta 4
-  {BlackRun_ArcMain_RightA1, {  0,  0,105, 94}, {154,158}}, //115 righta 5
-  {BlackRun_ArcMain_RightA1, {105,  0,105, 92}, {154,157}}, //116 righta 6
-  {BlackRun_ArcMain_RightA1, {  0, 94,107, 91}, {156,157}}, //117 righta 7
-  {BlackRun_ArcMain_RightA1, {107, 94,106, 91}, {156,157}}, //118 righta 8
+  {BlackRun_ArcMain_RightA0, {  0,  0,118,102}, {148+5-12,161-6+63}}, //111 righta 1
+  {BlackRun_ArcMain_RightA0, {118,  0,107, 97}, {151+5-12,159-6+63}}, //112 righta 2
+  {BlackRun_ArcMain_RightA0, {  0,102,106, 99}, {150+5-12,159-6+63}}, //113 righta 3
+  {BlackRun_ArcMain_RightA0, {106,102,105,100}, {153+5-12,158-6+63}}, //114 righta 4
+  {BlackRun_ArcMain_RightA1, {  0,  0,105, 94}, {154+5-12,158-6+63}}, //115 righta 5
+  {BlackRun_ArcMain_RightA1, {105,  0,105, 92}, {154+5-12,157-6+63}}, //116 righta 6
+  {BlackRun_ArcMain_RightA1, {  0, 94,107, 91}, {156+5-12,157-6+63}}, //117 righta 7
+  {BlackRun_ArcMain_RightA1, {107, 94,106, 91}, {156+5-12,157-6+63}}, //118 righta 8
 };
 
 static const Animation char_blackrun_anim[CharAnim_Max] = {

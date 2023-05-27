@@ -104,6 +104,12 @@ void Back_RunAway_DrawBG(StageBack *back)
 	Stage_DrawTex(&this->tex_back2, &platform_src, &platform10_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back2, &platform_src, &platform11_dst, stage.camera.bzoom);
 	
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	if ((stage.song_step >= 632) && (stage.song_step <= 638))
+		Gfx_DrawRect(&screen_src, 255, 44, 71);
+	else if ((stage.song_step == 639))
+		Gfx_DrawRect(&screen_src, 255, 99, 144);
+	
 	RECT frontcloud1_src = {  0,  0,128, 42};
 	RECT_FIXED frontcloud1_dst = {FIXED_DEC(frontcloud+2,1) - fx, FIXED_DEC(331,1) - fy, FIXED_DEC(502,1), FIXED_DEC(163,1)};
 	RECT frontcloud2_src = {127,  0,128, 42};

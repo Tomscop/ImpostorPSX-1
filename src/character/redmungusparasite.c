@@ -123,7 +123,7 @@ void Char_RedmungusParasite_Tick(Character *character)
 		Character_Draw(character, &this->tex, &char_redmungusparasite_frame[this->frame]);
 	
 	//DIE
-	if ((stage.song_step >= 1209) && (stage.song_step <= 1216))
+	if ((stage.song_step >= 1209) && (stage.song_step <= 1216) && (stage.paused == false))
 	{
 		stage.opponent->x += FIXED_DEC(50,1);
 	}
