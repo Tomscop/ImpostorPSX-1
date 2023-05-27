@@ -151,6 +151,7 @@ static u32 Sounds[10];
 #include "stage/runaway.h"
 #include "stage/cargo.h"
 #include "stage/defeat.h"
+#include "stage/finale.h"
 #include "stage/polusmaroon.h"
 #include "stage/lava.h"
 #include "stage/powerroom.h"
@@ -968,10 +969,12 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	{
 		//Get src and dst
 		fixed_t hx;
-		if ((stage.stage_id != StageId_Defeat) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
+		if (((stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_Defeat)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439)))
 			hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
-		else
-			hx = (128 << FIXED_SHIFT) * (10000 - 10000) / 10000;
+		else if (stage.stage_id != StageId_Finale)
+			hx = (128 << FIXED_SHIFT);
+		else if (stage.stage_id == StageId_Finale)
+			hx = (89 << FIXED_SHIFT);
 		RECT src = {
 			(i % 1) * 114 + dying,
 			52 + ((i - 20) / 1) * 46,
@@ -1008,9 +1011,16 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 			dst.w = FIXED_DEC(60,1);
 			dst.h = FIXED_DEC(60,1);
 		}
+		if ((stage.prefs.downscroll) && (stage.stage_id == StageId_Finale))
+			dst.y += FIXED_DEC(4,1);
 		
 		if (show)
-			Stage_DrawTex(&stage.tex_ded, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+		{
+			if (stage.stage_id != StageId_Finale)
+				Stage_DrawTex(&stage.tex_ded, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+			else
+				Stage_DrawTex(&stage.tex_ded, &src, &dst, stage.bump);
+		}
 	}
 	else
 	{
@@ -1058,7 +1068,12 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 		}
 			
 		if (show)
-			Stage_DrawTex(&stage.tex_hud1, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+		{
+			if (stage.stage_id != StageId_Finale)
+				Stage_DrawTex(&stage.tex_hud1, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+			else
+				Stage_DrawTex(&stage.tex_hud1, &src, &dst, stage.bump);
+		}
 	}
 }
 
@@ -1068,6 +1083,8 @@ static void Stage_DrawHealthBar(s16 x, s32 color)
 	u8 red = (color >> 16) & 0xFF;
 	u8 blue = (color >> 8) & 0xFF;
 	u8 green = (color) & 0xFF;
+	if (stage.stage_id != StageId_Finale)
+	{
 	//Get src and dst
 	RECT src = {
 		0,
@@ -1087,6 +1104,32 @@ static void Stage_DrawHealthBar(s16 x, s32 color)
 	
 	if (show)
 		Stage_DrawTexCol(&stage.tex_hud1, &src, &dst, stage.bump, red >> 1, blue >> 1, green >> 1);
+	}
+	else
+	{
+	//Get src and dst
+	RECT src = {
+		0,
+	    73,
+		x,
+		32
+	};
+		RECT_FIXED dst = {
+			FIXED_DEC(-85,1), 
+			(screen.SCREEN_HEIGHT2 - 55) << FIXED_SHIFT, 
+			src.w * FIXED_DEC(12,10), 
+			FIXED_DEC(38,1)
+		};
+
+	if (stage.prefs.downscroll)
+	{
+		dst.y = FIXED_DEC(-65,1);
+		dst.h = FIXED_DEC(-38,1);
+	}
+	
+	if (show)
+		Stage_DrawTexCol(&stage.tex_hud1, &src, &dst, stage.bump, red >> 1, blue >> 1, green >> 1);
+	}
 }
 
 static void Stage_DrawStrum(u8 i, RECT *note_src, RECT_FIXED *note_dst)
@@ -2764,9 +2807,19 @@ void Stage_Tick(void)
 			
 			//Draw Score
 			//colors for score
-			u8 sred = (stage.opponent->health_bar >> 16) & 0xFF;
-			u8 sblue = (stage.opponent->health_bar >> 8) & 0xFF;
-			u8 sgreen = (stage.opponent->health_bar) & 0xFF;
+			u8 sred, sblue, sgreen;
+			if (stage.stage_id != StageId_Finale)
+			{
+			sred = (stage.opponent->health_bar >> 16) & 0xFF;
+			sblue = (stage.opponent->health_bar >> 8) & 0xFF;
+			sgreen = (stage.opponent->health_bar) & 0xFF;
+			}
+			else
+			{
+			sred = (0xFFD70009 >> 16) & 0xFF;
+			sblue = (0xFFD70009 >> 8) & 0xFF;
+			sgreen = (0xFFD70009) & 0xFF;
+			}
 			
 			for (int i = 0; i < ((stage.mode >= StageMode_2P) ? 2 : 1); i++)
 			{
@@ -2808,7 +2861,7 @@ void Stage_Tick(void)
 						stage.font_cdr.draw_col(&stage.font_cdr,
 							this->score_text,
 							(stage.mode == StageMode_2P && i == 0) ? 10 : -150,
-							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 35) : (screen.SCREEN_HEIGHT2 - 21),
 							FontAlign_Left,
 							sred >> 1, sblue >> 1, sgreen >> 1
 						);
@@ -2847,7 +2900,7 @@ void Stage_Tick(void)
 						stage.font_cdr.draw_col(&stage.font_cdr,
 							this->miss_text,
 							(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
-							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 35) : (screen.SCREEN_HEIGHT2 - 21),
 							FontAlign_Left,
 							sred >> 1, sblue >> 1, sgreen >> 1
 						);
@@ -2888,7 +2941,7 @@ void Stage_Tick(void)
 						stage.font_cdr.draw_col(&stage.font_cdr,
 							this->accuracy_text,
 							(stage.mode == StageMode_2P && i == 0) ? 50 : (stage.mode == StageMode_2P && i == 1) ? -110 : 39, 
-							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 12) : (screen.SCREEN_HEIGHT2 - 21),
+							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 35) : (screen.SCREEN_HEIGHT2 - 21),
 							FontAlign_Left,
 							sred >> 1, sblue >> 1, sgreen >> 1
 						);
@@ -3047,6 +3100,11 @@ void Stage_Tick(void)
 							stage.player_state[0].health = 0;
 
 						//Draw health heads
+						if (stage.stage_id == StageId_Finale)
+						{
+							if (stage.back->draw_md != NULL)
+								stage.back->draw_md(stage.back);
+						}
 						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
@@ -3054,6 +3112,8 @@ void Stage_Tick(void)
 						}
 						
 						//Draw health bar
+						if (stage.stage_id != StageId_Finale)
+						{
 						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
 							if (stage.mode == StageMode_Swap)
@@ -3066,6 +3126,31 @@ void Stage_Tick(void)
 								Stage_DrawHealthBar(255 - (255 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
 								Stage_DrawHealthBar(255, stage.player->health_bar);
 							}
+						}
+						}
+						else
+						{
+						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
+						{
+							if (stage.mode == StageMode_Swap)
+							{
+								Stage_DrawHealthBar(152 - (152 * stage.player_state[0].health / 20000), stage.player->health_bar);
+								Stage_DrawHealthBar(152, stage.opponent->health_bar);
+							}
+							else
+							{
+								Stage_DrawHealthBar(152 - (152 * stage.player_state[0].health / 20000), stage.opponent->health_bar);
+								Stage_DrawHealthBar(152, stage.player->health_bar);
+							}
+						}
+							RECT hsrc = {  0,  9,210, 63};
+							RECT_FIXED hdst = {FIXED_DEC(-109,1), (screen.SCREEN_HEIGHT2 - 60) << FIXED_SHIFT, FIXED_DEC(252,1), FIXED_DEC(76,1)};
+							if (stage.prefs.downscroll)
+							{
+								hdst.y = FIXED_DEC(-60,1);
+								hdst.h = FIXED_DEC(-76,1);
+							}
+							Stage_DrawTex(&stage.tex_hud1, &hsrc, &hdst, stage.bump);
 						}
 					}
 				}
@@ -3176,7 +3261,7 @@ void Stage_Tick(void)
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
-			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture))
+			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
 			

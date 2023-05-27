@@ -1,22 +1,22 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "danceLeft",
-			"imgname" : "gf",
-			"hname"   : "GF"
+			"fnfanim" : "idle",
+			"imgname" : "iconanim",
+			"hname"   : "IconAnim"
 		}
 	],
-	"input":  "iso/chars/gfdanger/gf_danger",
-	"outdir": "iso/chars/gfdanger/",
-	"charname" : "GFDanger",
+	"input":  "iso/stage/finale/icon-blackFinale",
+	"outdir": "iso/stage/finale/",
+	"charname" : "IconAnim",
 	"optimize" : false,
-	"optimizename" : "gfdanger",
+	"optimizename" : "iconanim",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
-		0,
+		960,
+		256,
 		16,
-		480
+		510
 	],
 
 	"bpp" : 4,

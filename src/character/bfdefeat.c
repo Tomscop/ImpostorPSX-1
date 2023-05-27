@@ -331,10 +331,16 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = CHAR_SPEC_MISSANIM;
 	
-	this->character.health_i = 0;
+	if (stage.stage_id != StageId_Finale)
+		this->character.health_i = 0;
+	else
+		this->character.health_i = 20;
 	
 	//health bar color
-	this->character.health_bar = 0xFF29B5D6;
+	if (stage.stage_id != StageId_Finale)
+		this->character.health_bar = 0xFF29B5D6;
+	else
+		this->character.health_bar = 0xFF35D8FF;
 	
 	if (stage.stage_id == StageId_Defeat)
 	{

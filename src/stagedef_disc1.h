@@ -241,7 +241,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Finale_New,
 		
 		//Song info
 		2, 2,

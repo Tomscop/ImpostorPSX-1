@@ -19,6 +19,7 @@ all: \
 	iso/stage/hud1-fp1.tim \
 	iso/stage/hud1-fp2.tim \
 	iso/stage/hud1-ph.tim \
+	iso/stage/finale/iconanim.arc \
 	iso/stage/count.tim \
 	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
@@ -129,6 +130,9 @@ iso/%.arc:
 
 # Menu
 iso/menu/menu.arc: iso/menu/starbg.tim iso/menu/starfg.tim iso/menu/border.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/stuff.tim iso/menu/buttons.tim iso/menu/disk.tim
+
+# Icon Anim
+iso/stage/finale/iconanim.arc: iso/stage/finale/iconanim0.tim iso/stage/finale/iconanim1.tim 
 
 
 # BF

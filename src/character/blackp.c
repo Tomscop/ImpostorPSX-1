@@ -165,10 +165,10 @@ Character *Char_BlackP_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 4;
 	
 	//health bar color
-	this->character.health_bar = 0xFFBD1057;
+	this->character.health_bar = 0xFFFF1675;
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-200,1);

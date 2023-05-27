@@ -85,6 +85,7 @@ SRCS = src/main.c \
 	src/stage/runaway.c \
 	src/stage/cargo.c \
 	src/stage/defeat.c \
+	src/stage/finale.c \
 	src/stage/polusmaroon.c \
 	src/stage/lava.c \
 	src/stage/powerroom.c \
