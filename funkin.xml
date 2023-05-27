@@ -222,6 +222,8 @@
 				<file name = "deadgho.tim" type = "data" source = "iso/chars/bfghost/dead.tim"/>
 				<!-- Ejected -->
 				<file name = "deadejct.tim" type = "data" source = "iso/chars/bfeject/dead.tim"/>
+				<!-- Danger -->
+				<file name = "deaddang.tim" type = "data" source = "iso/chars/bfrun/dead.tim"/>
 				<!-- Defeat -->
 				<file name = "deaddef.tim" type = "data" source = "iso/chars/bfdefeat/dead.tim"/>
 				<!-- Pretender -->

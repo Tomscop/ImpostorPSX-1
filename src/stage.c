@@ -1474,6 +1474,8 @@ static void Stage_LoadPlayer(void)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADGHO.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Ejected)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADEJCT.TIM;1"), GFX_LOADTEX_FREE);
+	else if (stage.stage_id == StageId_Danger)
+		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDANG.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Defeat)
 		Gfx_LoadTex(&stage.tex_ded, IO_Read("\\DEAD\\DEADDEF.TIM;1"), GFX_LOADTEX_FREE);
 	else if (stage.stage_id == StageId_Pretender)
@@ -3383,7 +3385,7 @@ void Stage_Tick(void)
 				RECT dst = { 33, 120,255, 83};
 				Gfx_DrawTex(&stage.tex_ded, &src, &dst);
 			}
-			else if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Ow))
+			else if ((stage.stage_id == StageId_Danger) || (stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Ow))
 			{
 				RECT src = {  0,  0,130,123};
 				RECT dst = { 95, 58,130,123};

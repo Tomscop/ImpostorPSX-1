@@ -81,6 +81,7 @@ all: \
 	iso/chars/dead.tim \
 	iso/chars/bfghost/dead.tim \
 	iso/chars/bfeject/dead.tim \
+	iso/chars/bfrun/dead.tim \
 	iso/chars/bfdefeat/dead.tim \
 	iso/chars/pinkpret/dead.tim \
 	iso/chars/bfturb/dead.tim \

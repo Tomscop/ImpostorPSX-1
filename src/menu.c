@@ -773,8 +773,7 @@ void Menu_Tick(void)
 				RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
 				Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-				if (stage.paused == false)
-					menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
+				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
 			}
 			}
 			
@@ -860,8 +859,7 @@ void Menu_Tick(void)
 				RECT flash2 = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
 				Gfx_BlendRect(&flash2, flash_col, flash_col, flash_col, 1);
-				if (stage.paused == false)
-					menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
+				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
 			}
 			}
 			
