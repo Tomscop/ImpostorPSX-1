@@ -6,17 +6,17 @@
 			"hname"   : "IconAnim"
 		}
 	],
-	"input":  "iso/stage/finale/icon-blackFinale",
-	"outdir": "iso/stage/finale/",
+	"input":  "iso/chars/finale/icon-blackFinale",
+	"outdir": "iso/chars/finale/",
 	"charname" : "IconAnim",
 	"optimize" : false,
 	"optimizename" : "iconanim",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		960,
-		256,
-		16,
-		510
+		768,
+		0,
+		0,
+		481
 	],
 
 	"bpp" : 4,

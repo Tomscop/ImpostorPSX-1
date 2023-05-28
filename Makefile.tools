@@ -1,6 +1,6 @@
 TOOLS = tools/funkinisopak tools/funkinarcpak tools/funkinchartpak \
 	tools/funkinpicopak tools/funkintimconv tools/funkinchrpak \
-	tools/psxavenc2 tools/xainterleave tools/funkinmultitool
+	tools/psxavenc tools/xainterleave tools/funkinmultitool
 
 all: $(TOOLS)
 

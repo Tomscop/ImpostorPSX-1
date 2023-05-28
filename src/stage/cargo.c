@@ -73,7 +73,8 @@ void Back_Cargo_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+		if (stage.paused == false)
+			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
 
 	//start fade2
@@ -92,7 +93,8 @@ void Back_Cargo_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade2 >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade2 += FIXED_MUL(this->fadespd2, timer_dt);
+		if (stage.paused == false)
+			this->fade2 += FIXED_MUL(this->fadespd2, timer_dt);
 	}
 }
 void Back_Cargo_DrawMG(StageBack *back)
@@ -117,7 +119,8 @@ void Back_Cargo_DrawMG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade3 >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade3 += FIXED_MUL(this->fadespd3, timer_dt);
+		if (stage.paused == false)
+			this->fade3 += FIXED_MUL(this->fadespd3, timer_dt);
 	}
 	
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -140,7 +143,8 @@ void Back_Cargo_DrawMG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade4 >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade4 -= FIXED_MUL(this->fadespd4, timer_dt);
+		if (stage.paused == false)
+			this->fade4 -= FIXED_MUL(this->fadespd4, timer_dt);
 	}
 	
 	//Draw cargo

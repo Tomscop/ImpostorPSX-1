@@ -102,11 +102,11 @@ void Back_Lounge_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		if ((stage.song_step <= 396) && (this->fade != FIXED_DEC(255,1)))
+		if ((stage.song_step <= 396) && (this->fade != FIXED_DEC(255,1)) && (stage.paused == false))
 			this->fade += FIXED_MUL(this->fadespd, timer_dt);
 		else if ((stage.song_step >= 397) && (stage.song_step <= 480))
 			this->fade = FIXED_DEC(255,1);
-		else if (stage.song_step >= 481)
+		else if ((stage.song_step >= 481) && (stage.paused == false))
 			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
 	

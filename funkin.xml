@@ -267,7 +267,7 @@
 				
 				<file name = "defeat.arc" type = "data" source = "iso/stages/defeat/back.arc"/>
 				
-				<!-- Finale BG -->
+				<file name = "finale.arc" type = "data" source = "iso/stages/finale/back.arc"/>
 				
 				<!-- Identity Crisis -->
 				

@@ -25,6 +25,7 @@ typedef struct
 	IO_Data arc_iconanim, arc_iconanim_ptr[2];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
+	Gfx_Tex tex_back2; //back2
 	
 	//IconAnim state
 	Gfx_Tex tex_iconanim;
@@ -94,6 +95,28 @@ void Back_Finale_DrawMG(StageBack *back) //icon
 		icony = -61;
 }
 
+void Back_Finale_DrawFG(StageBack *back)
+{
+	Back_Finale *this = (Back_Finale*)back;
+
+	fixed_t fx, fy;
+
+	//Draw finale
+	fx = stage.camera.x;
+	fy = stage.camera.y;
+	
+	RECT back2_src = {  0,  0,255,163};
+	RECT_FIXED back2_dst = {
+		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(788 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(504,1)
+	};
+	
+	Debug_StageMoveDebug(&back2_dst, 10, fx, fy);
+	Stage_BlendTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom, 1);
+}
+
 void Back_Finale_DrawBG(StageBack *back)
 {
 	Back_Finale *this = (Back_Finale*)back;
@@ -104,20 +127,20 @@ void Back_Finale_DrawBG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-	RECT back0_src = {  0,  0,225,246};
+	RECT back0_src = {  0,  0,255,255};
 	RECT_FIXED back0_dst = {
 		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
-		FIXED_DEC(225 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(246,1)
+		FIXED_DEC(504 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(504,1)
 	};
 	
-	RECT back1_src = {  0,  0,167,246};
+	RECT back1_src = {  0,  0,145,255};
 	RECT_FIXED back1_dst = {
-		FIXED_DEC(224 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(502 - screen.SCREEN_WIDEOADD2,1) - fx,
 		FIXED_DEC(0,1) - fy,
-		FIXED_DEC(167 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(246,1)
+		FIXED_DEC(286 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(504,1)
 	};
 	
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
@@ -145,15 +168,16 @@ StageBack *Back_Finale_New(void)
 		return NULL;
 	
 	//Set background functions
-	this->back.draw_fg = NULL;
+	this->back.draw_fg = Back_Finale_DrawFG;
 	this->back.draw_md = Back_Finale_DrawMG;
 	this->back.draw_bg = Back_Finale_DrawBG;
 	this->back.free = Back_Finale_Free;
 	
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG\\AIRSHIP.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG\\FINALE.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
+	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load iconanim textures
