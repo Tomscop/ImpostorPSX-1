@@ -32,12 +32,6 @@ jobs:
           sudo apt install gcc-mipsel-linux-gnu g++-mipsel-linux-gnu binutils-mipsel-linux-gnu
           sudo apt install wget
           sudo apt install rar
-          sudo apt install libtinyxml2-dev
-          sudo apt install libavformat-dev
-          sudo apt install libavcodec-dev
-          sudo apt install libavutil-dev
-          sudo apt install libswresample-dev
-          sudo apt install libswscale-dev
           sudo apt install ffmpeg
           wget http://psx.arthus.net/sdk/Psy-Q/psyq-4_7-converted-light.zip
           wget https://github.com/Lameguy64/mkpsxiso/releases/download/v2.02/mkpsxiso-2.02-Linux.deb
