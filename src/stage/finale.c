@@ -26,6 +26,10 @@ typedef struct
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
+	Gfx_Tex tex_back3; //back3
+	Gfx_Tex tex_back4; //back4
+	Gfx_Tex tex_back5; //back5
+	Gfx_Tex tex_back6; //back6
 	
 	//IconAnim state
 	Gfx_Tex tex_iconanim;
@@ -113,8 +117,48 @@ void Back_Finale_DrawFG(StageBack *back)
 		FIXED_DEC(504,1)
 	};
 	
-	Debug_StageMoveDebug(&back2_dst, 10, fx, fy);
+	RECT back5_src = {  0,  0,246,255};
+	RECT_FIXED back5_dst = {
+		FIXED_DEC(-20 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(117,1) - fy,
+		FIXED_DEC(390 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(404,1)
+	};
+	
+	RECT back6_src = {  0,  0,161,255};
+	RECT_FIXED back6_dst = {
+		FIXED_DEC(-20+485 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(117,1) - fy,
+		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(404,1)
+	};
+	
+	RECT lamp_src = {  0,  0, 78,255};
+	RECT_FIXED lamp_dst = {
+		FIXED_DEC(446 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-15,1) - fy,
+		FIXED_DEC(85 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(275,1)
+	};
+	
+	RECT splat_src = { 79,  0, 98,250};
+	RECT_FIXED splat_dst = {
+		FIXED_DEC(383 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(438,1) - fy,
+		FIXED_DEC(98 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(250,1)
+	};
+	
+	Debug_StageMoveDebug(&back2_dst, 12, fx, fy);
+	Debug_StageMoveDebug(&lamp_dst, 8, fx, fy);
+	Debug_StageMoveDebug(&splat_dst, 9, fx, fy);
+	Debug_StageMoveDebug(&back5_dst, 10, fx, fy);
+	Debug_StageMoveDebug(&back6_dst, 11, fx, fy);
 	Stage_BlendTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom, 1);
+	Stage_DrawTex(&this->tex_back5, &back5_src, &back5_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back6, &back6_src, &back6_dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_back4, &lamp_src, &lamp_dst, stage.camera.bzoom);
+	Stage_DrawTexRotate(&this->tex_back4, &splat_src, &splat_dst, stage.camera.bzoom, -64);
 }
 
 void Back_Finale_DrawBG(StageBack *back)
@@ -178,6 +222,10 @@ StageBack *Back_Finale_New(void)
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
+	Gfx_LoadTex(&this->tex_back3, Archive_Find(arc_back, "back3.tim"), 0);
+	Gfx_LoadTex(&this->tex_back4, Archive_Find(arc_back, "back4.tim"), 0);
+	Gfx_LoadTex(&this->tex_back5, Archive_Find(arc_back, "back5.tim"), 0);
+	Gfx_LoadTex(&this->tex_back6, Archive_Find(arc_back, "back6.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load iconanim textures
