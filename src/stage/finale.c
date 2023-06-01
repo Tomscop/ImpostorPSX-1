@@ -119,16 +119,16 @@ void Back_Finale_DrawFG(StageBack *back)
 	
 	RECT back5_src = {  0,  0,246,255};
 	RECT_FIXED back5_dst = {
-		FIXED_DEC(-20 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(117,1) - fy,
+		FIXED_DEC(-24 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(113,1) - fy,
 		FIXED_DEC(390 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(404,1)
 	};
 	
 	RECT back6_src = {  0,  0,161,255};
 	RECT_FIXED back6_dst = {
-		FIXED_DEC(-20+485 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(117,1) - fy,
+		FIXED_DEC(-24+485 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(113,1) - fy,
 		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(404,1)
 	};
@@ -143,8 +143,8 @@ void Back_Finale_DrawFG(StageBack *back)
 	
 	RECT splat_src = { 79,  0, 98,250};
 	RECT_FIXED splat_dst = {
-		FIXED_DEC(383 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(438,1) - fy,
+		FIXED_DEC(379 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(434,1) - fy,
 		FIXED_DEC(98 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(250,1)
 	};

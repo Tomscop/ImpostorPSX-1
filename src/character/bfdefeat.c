@@ -238,6 +238,45 @@ void Char_BFDefeat_Tick(Character *character)
 			this->character.focus_zoom = FIXED_DEC(1875,128);
 		}
 	}
+	if (stage.stage_id == StageId_Finale)
+	{
+		if (stage.song_beat == 32)
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 48)
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 64)
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 67)
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(3259,1024);
+		}
+		if (stage.song_beat == 68) //normal focus
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 492)
+		{
+			this->character.focus_x = FIXED_DEC(-160,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_zoom = FIXED_DEC(3259,1024);
+		}
+	}
 	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -281,10 +320,8 @@ void Char_BFDefeat_Tick(Character *character)
 		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
 	if ((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440)))
 		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
-	if ((stage.stage_id == StageId_Finale) && (stage.song_step <= 271))
+	if (stage.stage_id == StageId_Finale)
 		Character_DrawCol(character, &this->tex, &char_bfdefeat_frame[this->frame], 200, 128, 128);
-	if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272))
-		Character_Draw(character, &this->tex, &char_bfdefeat_frame[this->frame]);
 }
 
 void Char_BFDefeat_SetAnim(Character *character, u8 anim)
@@ -348,11 +385,11 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 		this->character.focus_y = FIXED_DEC(-140,1);
 		this->character.focus_zoom = FIXED_DEC(417,512);
 	}
-	else
+	else if (stage.stage_id == StageId_Finale)
 	{
 		this->character.focus_x = FIXED_DEC(-160,1);
 		this->character.focus_y = FIXED_DEC(-147,1);
-		this->character.focus_zoom = FIXED_DEC(509,512);
+		this->character.focus_zoom = FIXED_DEC(543,1024);
 	}
 	
 	this->character.zoom_save = this->character.focus_zoom;

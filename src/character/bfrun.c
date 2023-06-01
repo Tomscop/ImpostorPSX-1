@@ -163,7 +163,7 @@ void Char_BFRun_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-193,1);
 			this->character.focus_zoom = FIXED_DEC(543,1024);
 		}
-		if (stage.song_beat == 96)
+		if (stage.song_beat == 192)
 		{
 			this->character.focus_x = FIXED_DEC(-236,1);
 			this->character.focus_y = FIXED_DEC(-186,1);
@@ -175,7 +175,7 @@ void Char_BFRun_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-193,1);
 			this->character.focus_zoom = FIXED_DEC(543,1024);
 		}
-		if (stage.song_beat == 96)
+		if (stage.song_beat == 288)
 		{
 			this->character.focus_x = FIXED_DEC(-236,1);
 			this->character.focus_y = FIXED_DEC(-186,1);
@@ -187,7 +187,7 @@ void Char_BFRun_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-211,1);
 			this->character.focus_zoom = FIXED_DEC(447,1024);
 		}
-		if (stage.song_beat == 96)
+		if (stage.song_beat == 384)
 		{
 			this->character.focus_x = FIXED_DEC(-236,1);
 			this->character.focus_y = FIXED_DEC(-186,1);

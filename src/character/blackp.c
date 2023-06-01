@@ -119,6 +119,47 @@ void Char_BlackP_Tick(Character *character)
 {
 	Char_BlackP *this = (Char_BlackP*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Finale)
+	{
+		if (stage.song_beat == 32)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 48)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 64)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 67)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(3259,1024);
+		}
+		if (stage.song_beat == 68) //normal focus
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(543,1024);
+		}
+		if (stage.song_beat == 492)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_zoom = FIXED_DEC(3259,1024);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -172,10 +213,10 @@ Character *Char_BlackP_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-200,1);
-	this->character.focus_zoom = FIXED_DEC(50,100);
+	this->character.focus_zoom = FIXED_DEC(543,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
-	this->character.size = FIXED_DEC(300,100);
+	this->character.size = FIXED_DEC(22738,10000);
 	
 	//Load art
 	this->arc_main = IO_Read("\\OPPONENT\\BLACKP.ARC;1");

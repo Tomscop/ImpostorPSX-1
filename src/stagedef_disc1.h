@@ -234,9 +234,9 @@
 	},
 	{ //StageId_Finale (Finale)
 		//Characters
-		{Char_BFDefeat_New,    FIXED_DEC(640,1),  FIXED_DEC(494,1)},
+		{Char_BFDefeat_New,    FIXED_DEC(674,1),  FIXED_DEC(477,1)},
         {NULL},
-		{Char_BlackP_New, FIXED_DEC(120,1),  FIXED_DEC(420,1)},
+		{Char_BlackP_New, FIXED_DEC(674-430,1),  FIXED_DEC(477-81,1)},
         {NULL},
         {NULL},
 		
