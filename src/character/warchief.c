@@ -124,7 +124,7 @@ void Char_Warchief_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(238+18,1);
 			this->character.focus_y = FIXED_DEC(-111,1);
-			this->character.focus_zoom = FIXED_DEC(1696,1024);
+			this->character.focus_zoom = FIXED_DEC(1696+24,1024);
 			this->character.health_bar = 0xFFE51919;
 			this->character.health_i = 1;
 		}
@@ -132,7 +132,7 @@ void Char_Warchief_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(-1-18,1);
 			this->character.focus_y = FIXED_DEC(-111,1);
-			this->character.focus_zoom = FIXED_DEC(1696,1024);
+			this->character.focus_zoom = FIXED_DEC(1696+24,1024);
 			this->character.health_bar = 0xFFFFC8E2;
 			this->character.health_i = 3;
 		}

@@ -1790,14 +1790,14 @@ static void Stage_LoadSFX(void)
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHE.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHE.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Defeat)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHD.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHD.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1811,21 +1811,21 @@ static void Stage_LoadSFX(void)
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHP.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1834,28 +1834,28 @@ static void Stage_LoadSFX(void)
 	//retry sound
 	if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYJ.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYJ.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYP.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRY.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRY.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -3239,40 +3239,77 @@ void Stage_Tick(void)
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
-			if (stage.stage_id == StageId_Torture)
+			if (stage.stage_id == StageId_DoubleKill)
+			{
+				stage.player->tick(stage.player);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
+			else if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
+			{
+				stage.opponent->tick(stage.opponent);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				stage.player->tick(stage.player);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+			}
+			else if (stage.stage_id == StageId_Turbulence)
+			{
+				stage.player->tick(stage.player);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
+			else if ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed))
+			{
+				stage.player->tick(stage.player);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+			}
+			else if (stage.stage_id == StageId_Torture)
 			{
 				stage.opponent->tick(stage.opponent);
 				if (stage.opponent2 != NULL)
 					stage.opponent2->tick(stage.opponent2);
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+				stage.player->tick(stage.player);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
 			}
-			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
+			else
+			{
 				stage.player->tick(stage.player);
-			if (stage.stage_id == StageId_Turbulence)
-				if (stage.back->draw_md != NULL)
-					stage.back->draw_md(stage.back);
-			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
-				stage.opponent2->tick(stage.opponent2);
-			if (stage.stage_id != StageId_Torture)
 				stage.opponent->tick(stage.opponent);
-			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
-				stage.player->tick(stage.player);
-			if (stage.player2 != NULL)
-				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed) && (stage.stage_id != StageId_Torture))
-				stage.opponent2->tick(stage.opponent2);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
 			
 			//Draw stage middle
-			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+			if ((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+			{
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+			}
 			
 			//Tick girlfriend
 			if (stage.gf != NULL)
 				stage.gf->tick(stage.gf);
-			if ((stage.opponent2 != NULL) && (stage.stage_id == StageId_DoubleKill))
-				stage.opponent2->tick(stage.opponent2);
 			
 			//Tick background objects
 			ObjectList_Tick(&stage.objlist_bg);
@@ -3391,6 +3428,16 @@ void Stage_Tick(void)
 				stage.player_state[1].charactersecond = NULL;
 			}
 			else
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				stage.player_state[1].charactersecond = NULL;
+			}
+			//extra thing
+			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_LightsDown) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Grinch))
 			{
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);

@@ -123,63 +123,63 @@ void Char_BFMira_Tick(Character *character)
 		if (stage.song_step == 32)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 272)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 279)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 283)
-			this->character.focus_zoom = FIXED_DEC(801,1024);
+			this->character.focus_zoom = FIXED_DEC(801+24,1024);
 		if (stage.song_step == 286)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 287)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 288)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 412)
-			this->character.focus_zoom = FIXED_DEC(747,1024);
+			this->character.focus_zoom = FIXED_DEC(747+24,1024);
 		if (stage.song_step == 416)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 528)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 535)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 539)
-			this->character.focus_zoom = FIXED_DEC(801,1024);
+			this->character.focus_zoom = FIXED_DEC(801+24,1024);
 		if (stage.song_step == 542)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 604)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 608)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 612)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 616)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 620)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 640)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 644)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 647)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 652)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 665)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 672)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 736)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		if (stage.song_step == 784)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 788)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 791)
-			this->character.focus_zoom = FIXED_DEC(767,1024);
+			this->character.focus_zoom = FIXED_DEC(767+24,1024);
 		if (stage.song_step == 795)
-			this->character.focus_zoom = FIXED_DEC(801,1024);
+			this->character.focus_zoom = FIXED_DEC(801+24,1024);
 		if (stage.song_step == 798)
-			this->character.focus_zoom = FIXED_DEC(733,1024);
+			this->character.focus_zoom = FIXED_DEC(733+24,1024);
 		if (stage.song_step == 800)
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 	}

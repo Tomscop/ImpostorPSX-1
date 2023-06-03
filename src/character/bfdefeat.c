@@ -266,9 +266,9 @@ void Char_BFDefeat_Tick(Character *character)
 		}
 		if (stage.song_beat == 68) //normal focus
 		{
-			this->character.focus_x = FIXED_DEC(-160,1);
-			this->character.focus_y = FIXED_DEC(-147,1);
-			this->character.focus_zoom = FIXED_DEC(679,1024);
+			this->character.focus_x = FIXED_DEC(-249,1);
+			this->character.focus_y = FIXED_DEC(-218,1);
+			this->character.focus_zoom = FIXED_DEC(703,1024);
 		}
 		if (stage.song_beat == 492)
 		{

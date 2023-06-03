@@ -148,8 +148,8 @@ void Char_BlackP_Tick(Character *character)
 		}
 		if (stage.song_beat == 68) //normal focus
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-200,1);
+			this->character.focus_x = FIXED_DEC(86,1);
+			this->character.focus_y = FIXED_DEC(-152,1);
 			this->character.focus_zoom = FIXED_DEC(543,1024);
 		}
 		if (stage.song_beat == 492)

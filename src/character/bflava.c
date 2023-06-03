@@ -121,37 +121,37 @@ void Char_BFLava_Tick(Character *character)
 	if (stage.stage_id == StageId_BoilingPoint)
 	{
 		if (stage.song_step == 512)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 640)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 		if (stage.song_step == 1088)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 1116)
-			this->character.focus_zoom = FIXED_DEC(998,1024);
+			this->character.focus_zoom = FIXED_DEC(998+24,1024);
 		if (stage.song_step == 1120)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 1132)
-			this->character.focus_zoom = FIXED_DEC(998,1024);
+			this->character.focus_zoom = FIXED_DEC(998+24,1024);
 		if (stage.song_step == 1136)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 1149)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 		if (stage.song_step == 1214)
-			this->character.focus_zoom = FIXED_DEC(903,1024);
+			this->character.focus_zoom = FIXED_DEC(903+24,1024);
 		if (stage.song_step == 1218)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 		if (stage.song_step == 1278)
-			this->character.focus_zoom = FIXED_DEC(903,1024);
+			this->character.focus_zoom = FIXED_DEC(903+24,1024);
 		if (stage.song_step == 1282)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 		if (stage.song_step == 1296)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 1341)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 		if (stage.song_step == 1424)
-			this->character.focus_zoom = FIXED_DEC(1045,1024);
+			this->character.focus_zoom = FIXED_DEC(1045+24,1024);
 		if (stage.song_step == 1552)
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_zoom = FIXED_DEC(950+24,1024);
 	}
 	
 	//Handle animation updates
@@ -237,7 +237,7 @@ Character *Char_BFLava_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(-185,1);
 	this->character.focus_y = FIXED_DEC(-140,1);
-	this->character.focus_zoom = FIXED_DEC(950,1024);
+	this->character.focus_zoom = FIXED_DEC(950+24,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
