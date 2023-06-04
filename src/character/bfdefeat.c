@@ -262,7 +262,7 @@ void Char_BFDefeat_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(-160,1);
 			this->character.focus_y = FIXED_DEC(-147,1);
-			this->character.focus_zoom = FIXED_DEC(3259,1024);
+			this->character.focus_zoom = FIXED_DEC(16,10);
 		}
 		if (stage.song_beat == 68) //normal focus
 		{

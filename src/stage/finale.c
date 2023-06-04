@@ -23,6 +23,7 @@ typedef struct
 	
 	//Textures
 	IO_Data arc_iconanim, arc_iconanim_ptr[2];
+	IO_Data arc_fb, arc_fb_ptr[2];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
@@ -35,6 +36,14 @@ typedef struct
 	Gfx_Tex tex_iconanim;
 	u8 iconanim_frame, iconanim_tex_id;
 	Animatable iconanim_animatable;
+	
+	//fb state
+	Gfx_Tex tex_fb;
+	u8 fb_frame, fb_tex_id;
+	Animatable fb_animatable;
+	
+	//fade stuff
+	fixed_t fade, fadespd;
 	
 } Back_Finale;
 
@@ -81,7 +90,7 @@ void Finale_IconAnim_Draw(Back_Finale *this, fixed_t x, fixed_t y)
 	
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
-	Debug_StageMoveDebug(&dst, 12, stage.camera.x, stage.camera.y);
+	Debug_StageMoveDebug(&dst, 14, stage.camera.x, stage.camera.y);
 	Stage_DrawTex(&this->tex_iconanim, &src, &dst, stage.bump);
 }
 
@@ -100,6 +109,50 @@ void Back_Finale_DrawMG(StageBack *back) //icon
 		icony = -61;
 }
 
+//FB animation and rects
+static const CharFrame fb_frame[] = {
+  {0, {  0,  0,226,127}, {0,0}}, //0 polus
+  {0, {  0,128,226,127}, {0,0}}, //1 mira
+  {1, {  0,  0,226,127}, {0,0}}, //2 airship
+  {0, {226,  0,  1,  1}, {0,0}}, //3 hide
+};
+
+static const Animation fb_anim[] = {
+	{1, (const u8[]){ 0, ASCR_BACK, 1}}, //Polus
+	{1, (const u8[]){ 1, ASCR_BACK, 1}}, //Mira
+	{1, (const u8[]){ 2, ASCR_BACK, 1}}, //Airship
+	{1, (const u8[]){ 3, ASCR_BACK, 1}}, //hide
+};
+
+//FB functions
+void Finale_FB_SetFrame(void *user, u8 frame)
+{
+	Back_Finale *this = (Back_Finale*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->fb_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &fb_frame[this->fb_frame = frame];
+		if (cframe->tex != this->fb_tex_id)
+			Gfx_LoadTex(&this->tex_fb, this->arc_fb_ptr[this->fb_tex_id = cframe->tex], 0);
+	}
+}
+
+void Finale_FB_Draw(Back_Finale *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &fb_frame[this->fb_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w * FIXED_DEC(18899,10000), FIXED_DEC(240,1)};
+	Debug_StageMoveDebug(&dst, 13, stage.camera.x, stage.camera.y);
+	Stage_BlendTex(&this->tex_fb, &src, &dst, stage.bump, 1);
+}
+
 void Back_Finale_DrawFG(StageBack *back)
 {
 	Back_Finale *this = (Back_Finale*)back;
@@ -110,10 +163,69 @@ void Back_Finale_DrawFG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
+	//start fade
+	if (stage.song_step == -29)
+	{
+		this->fade = FIXED_DEC(255,1);
+		this->fadespd = FIXED_DEC(0,1);
+	}
+	if (stage.song_step == 0)
+	{
+		this->fade = FIXED_DEC(255,1);
+		this->fadespd = FIXED_DEC(60,1);
+	}
+	if (stage.song_step == 128)
+	{
+		stage.reactor = FIXED_DEC(255,1);
+		stage.reactorspd = FIXED_DEC(1024,1);
+	}
+	if (stage.song_step == 272)
+	{
+		stage.flash = FIXED_DEC(255,1);
+		stage.flashspd = FIXED_DEC(768,1);
+	}
+	if (stage.song_step == 1986)
+	{
+		this->fade = FIXED_DEC(1,1);
+		this->fadespd = FIXED_DEC(60,1);
+	}
+
+	//end fade
+	if (stage.song_step == 64)
+		this->fade = 0;
+
+	if (this->fade > 0)
+	{
+		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		u8 flash_col = this->fade >> FIXED_SHIFT;
+		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		if (stage.paused == false)
+		{
+			if (stage.song_step <= 700)
+				this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+			else if (this->fade <= FIXED_DEC(254,1))
+				this->fade += FIXED_MUL(this->fadespd, timer_dt);
+		}
+	}
+	
 	//Draw red ending thing
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 	if (stage.song_step >= 1984)
 		Gfx_DrawRect(&screen_src, 255, 18, 102);
+	
+	if (stage.song_step == -29)
+		Animatable_SetAnim(&this->fb_animatable, 3);
+	if (stage.song_step == 64)
+		Animatable_SetAnim(&this->fb_animatable, 0);
+	if (stage.song_step == 80)
+		Animatable_SetAnim(&this->fb_animatable, 1);
+	if (stage.song_step == 96)
+		Animatable_SetAnim(&this->fb_animatable, 2);
+	if (stage.song_step == 128)
+		Animatable_SetAnim(&this->fb_animatable, 3);
+	Animatable_Animate(&this->fb_animatable, (void*)this, Finale_FB_SetFrame);
+	if ((stage.song_step >= 63) && (stage.song_step <= 129))
+		Finale_FB_Draw(this, FIXED_DEC(-214,1), FIXED_DEC(-120,1));
 	
 	RECT back2_src = {  0,  0,255,163};
 	RECT_FIXED back2_dst = {
@@ -195,12 +307,26 @@ void Back_Finale_DrawBG(StageBack *back)
 		FIXED_DEC(286 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(504,1)
 	};
+	RECT back1b_src = {  0,128,145,127};
+	RECT_FIXED back1b_dst = {
+		FIXED_DEC(502 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(253,1) - fy,
+		FIXED_DEC(286 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(251,1)
+	};
 	
 	RECT back3_src = {  0,  0,255, 81};
 	RECT_FIXED back3_dst = {
-		FIXED_DEC(-60 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(-5,1) - fy,
+		FIXED_DEC(58 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(225,1) - fy,
 		FIXED_DEC(636 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(201,1)
+	};
+	RECT back3b_src = {128,  0,127, 81};
+	RECT_FIXED back3b_dst = {
+		FIXED_DEC(377 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(225,1) - fy,
+		FIXED_DEC(317 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(201,1)
 	};
 	
@@ -211,9 +337,13 @@ void Back_Finale_DrawBG(StageBack *back)
 	{
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back1, &back1b_src, &back1b_dst, stage.camera.bzoom);
 	}
 	else
+	{
 		Stage_DrawTex(&this->tex_back3, &back3_src, &back3_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back3, &back3b_src, &back3b_dst, stage.camera.bzoom);
+	}
 	
 	//Draw black
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -226,6 +356,9 @@ void Back_Finale_Free(StageBack *back)
 	
 	//Free iconanim archive
 	Mem_Free(this->arc_iconanim);
+	
+	//Free fb archive
+	Mem_Free(this->arc_fb);
 	
 	//Free structure
 	Mem_Free(this);
@@ -264,6 +397,20 @@ StageBack *Back_Finale_New(void)
 	Animatable_Init(&this->iconanim_animatable, iconanim_anim);
 	Animatable_SetAnim(&this->iconanim_animatable, 0);
 	this->iconanim_frame = this->iconanim_tex_id = 0xFF; //Force art load
+	
+	//Load fb textures
+	this->arc_fb = IO_Read("\\BG\\FB.ARC;1");
+	this->arc_fb_ptr[0] = Archive_Find(this->arc_fb, "fb0.tim");
+	this->arc_fb_ptr[1] = Archive_Find(this->arc_fb, "fb1.tim");
+	
+	//Initialize fb state
+	Animatable_Init(&this->fb_animatable, fb_anim);
+	Animatable_SetAnim(&this->fb_animatable, 0);
+	this->fb_frame = this->fb_tex_id = 0xFF; //Force art load
+	
+	//Initialize Fade
+	this->fade = FIXED_DEC(255,1);
+	this->fadespd = 0;
 	
 	return (StageBack*)this;
 }

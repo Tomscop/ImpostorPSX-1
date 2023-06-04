@@ -1980,6 +1980,8 @@ static void Stage_LoadState(void)
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
+		stage.flash = 0;
+		stage.flashspd = 0;
 		if ((stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
 			stage.hudfade = 0;
 		else
@@ -2403,6 +2405,13 @@ void Stage_Tick(void)
 			}
 			
 			//front flash
+			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 112))
+			{
+				flashf = FIXED_DEC(1,1);
+				flashspdf = FIXED_DEC(175,1);
+			}
+			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 128))
+				flashf = 0;
 			if (stage.prefs.flash != 0)
 				if (flashf > 0)
 				{
@@ -2410,7 +2419,12 @@ void Stage_Tick(void)
 					u8 flashf_col = flashf >> FIXED_SHIFT;
 					Gfx_BlendRect(&flashff, flashf_col, flashf_col, flashf_col, 1);
 					if (stage.paused == false)
-						flashf -= FIXED_MUL(flashspdf, timer_dt);
+					{
+						if (stage.stage_id != StageId_Finale)
+							flashf -= FIXED_MUL(flashspdf, timer_dt);
+						else if ((stage.stage_id == StageId_Finale) && (flashf <= FIXED_DEC(254,1)))
+							flashf += FIXED_MUL(flashspdf, timer_dt);
+					}
 				}
 			
 			if (stage.black == true)
