@@ -152,11 +152,11 @@ void Char_BlackP_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-152,1);
 			this->character.focus_zoom = FIXED_DEC(543,1024);
 		}
-		if (stage.song_beat == 492)
+		if (stage.song_beat == 494)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-200,1);
-			this->character.focus_zoom = FIXED_DEC(3259,1024);
+			this->character.focus_x = FIXED_DEC(86,1);
+			this->character.focus_y = FIXED_DEC(-152,1);
+			this->character.focus_zoom = FIXED_DEC(13,10);
 		}
 	}
 	
@@ -166,7 +166,7 @@ void Char_BlackP_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_BlackP_SetFrame);
-	Character_Draw(character, &this->tex, &char_blackp_frame[this->frame]);
+	Character_DrawCol(character, &this->tex, &char_blackp_frame[this->frame], 200, 128, 128);
 }
 
 void Char_BlackP_SetAnim(Character *character, u8 anim)

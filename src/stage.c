@@ -1980,7 +1980,7 @@ static void Stage_LoadState(void)
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
-		if (stage.stage_id != StageId_Torture)
+		if ((stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
 			stage.hudfade = 0;
 		else
 			stage.hudfade = 1;
@@ -2480,6 +2480,8 @@ void Stage_Tick(void)
 			else if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1600))
 				show = false;
 			else if ((stage.stage_id == StageId_Who) && (stage.song_step >= 1152))
+				show = false;
+			else if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 1984))
 				show = false;
 			else
 				show = true;
@@ -3108,7 +3110,7 @@ void Stage_Tick(void)
 							if (stage.back->draw_md != NULL)
 								stage.back->draw_md(stage.back);
 						}
-						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
+						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Finale)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)) || ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272)))
 						{
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
@@ -3131,7 +3133,7 @@ void Stage_Tick(void)
 							}
 						}
 						}
-						else
+						else if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272))
 						{
 						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
@@ -3153,7 +3155,8 @@ void Stage_Tick(void)
 								hdst.y = FIXED_DEC(-60,1);
 								hdst.h = FIXED_DEC(-76,1);
 							}
-							Stage_DrawTex(&stage.tex_hud1, &hsrc, &hdst, stage.bump);
+							if (show)
+								Stage_DrawTex(&stage.tex_hud1, &hsrc, &hdst, stage.bump);
 						}
 					}
 				}

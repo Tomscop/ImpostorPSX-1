@@ -92,7 +92,8 @@ void Back_Finale_DrawMG(StageBack *back) //icon
 	if (stage.song_step == -29)
 		Animatable_SetAnim(&this->iconanim_animatable, 0);
 	Animatable_Animate(&this->iconanim_animatable, (void*)this, Finale_IconAnim_SetFrame);
-	Finale_IconAnim_Draw(this, FIXED_DEC(-178 + 190,1), FIXED_DEC(icony + 235,1));
+	if ((stage.song_step >= 272) && (stage.song_step <= 1983))
+		Finale_IconAnim_Draw(this, FIXED_DEC(-178 + 190,1), FIXED_DEC(icony + 235,1));
 	if (stage.prefs.downscroll)
 		icony = -231;
 	else
@@ -108,6 +109,11 @@ void Back_Finale_DrawFG(StageBack *back)
 	//Draw finale
 	fx = stage.camera.x;
 	fy = stage.camera.y;
+	
+	//Draw red ending thing
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	if (stage.song_step >= 1984)
+		Gfx_DrawRect(&screen_src, 255, 18, 102);
 	
 	RECT back2_src = {  0,  0,255,163};
 	RECT_FIXED back2_dst = {
@@ -154,11 +160,14 @@ void Back_Finale_DrawFG(StageBack *back)
 	Debug_StageMoveDebug(&splat_dst, 9, fx, fy);
 	Debug_StageMoveDebug(&back5_dst, 10, fx, fy);
 	Debug_StageMoveDebug(&back6_dst, 11, fx, fy);
-	Stage_BlendTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom, 1);
-	Stage_DrawTex(&this->tex_back5, &back5_src, &back5_dst, stage.camera.bzoom);
-	Stage_DrawTex(&this->tex_back6, &back6_src, &back6_dst, stage.camera.bzoom);
-	Stage_DrawTex(&this->tex_back4, &lamp_src, &lamp_dst, stage.camera.bzoom);
-	Stage_DrawTexRotate(&this->tex_back4, &splat_src, &splat_dst, stage.camera.bzoom, -64);
+	if (stage.song_step >= 272)
+	{
+		Stage_BlendTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom, 1);
+		Stage_DrawTex(&this->tex_back5, &back5_src, &back5_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back6, &back6_src, &back6_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back4, &lamp_src, &lamp_dst, stage.camera.bzoom);
+		Stage_DrawTexRotate(&this->tex_back4, &splat_src, &splat_dst, stage.camera.bzoom, -64);
+	}
 }
 
 void Back_Finale_DrawBG(StageBack *back)
@@ -187,10 +196,28 @@ void Back_Finale_DrawBG(StageBack *back)
 		FIXED_DEC(504,1)
 	};
 	
+	RECT back3_src = {  0,  0,255, 81};
+	RECT_FIXED back3_dst = {
+		FIXED_DEC(-60 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-5,1) - fy,
+		FIXED_DEC(636 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(201,1)
+	};
+	
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
 	Debug_StageMoveDebug(&back1_dst, 6, fx, fy);
-	Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
-	Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+	Debug_StageMoveDebug(&back3_dst, 7, fx, fy);
+	if (stage.song_step >= 272)
+	{
+		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+	}
+	else
+		Stage_DrawTex(&this->tex_back3, &back3_src, &back3_dst, stage.camera.bzoom);
+	
+	//Draw black
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	Gfx_DrawRect(&screen_src, 0, 0, 0);
 }
 
 void Back_Finale_Free(StageBack *back)

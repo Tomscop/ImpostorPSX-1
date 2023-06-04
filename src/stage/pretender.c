@@ -98,6 +98,12 @@ void Back_Pretender_DrawFG(StageBack *back)
 		FIXED_DEC(320 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(240,1)
 	};
+	RECT_FIXED border2_dst = {
+		FIXED_DEC(-186 - screen.SCREEN_WIDEOADD2,1),
+		FIXED_DEC(-139,1),
+		FIXED_DEC(372 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(278,1)
+	};
 	
 	RECT vine0_src = {  0,  0,115,233};
 	RECT_FIXED vine0_dst = {
@@ -126,6 +132,7 @@ void Back_Pretender_DrawFG(StageBack *back)
 	Debug_StageMoveDebug(&vine0_dst, 8, fx, fy);
 	Debug_StageMoveDebug(&vine1_dst, 9, fx, fy);
 	Debug_StageMoveDebug(&pot_dst, 10, fx, fy);
+	Stage_BlendTex(&this->tex_border, &border_src, &border2_dst, FIXED_DEC(1,1), 1);
 	Stage_BlendTex(&this->tex_border, &border_src, &border_dst, FIXED_DEC(1,1), 1);
 	Stage_DrawTex(&this->tex_vines, &vine0_src, &vine0_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_vines, &vine1_src, &vine1_dst, stage.camera.bzoom);

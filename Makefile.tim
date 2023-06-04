@@ -100,6 +100,7 @@ all: \
 	iso/stages/cargo/back.arc \
 	iso/stages/defeat/back.arc \
 	iso/stages/finale/back.arc \
+	iso/stages/finale/fb.arc \
 	iso/stages/polusmrn/back.arc \
 	iso/stages/lava/back.arc \
 	iso/stages/lava/bubbles.arc \
@@ -326,6 +327,7 @@ iso/stages/defeat/back.arc: iso/stages/defeat/back0.tim iso/stages/defeat/back1.
 
 # Finale
 iso/stages/finale/back.arc: iso/stages/finale/back0.tim iso/stages/finale/back1.tim iso/stages/finale/back2.tim iso/stages/finale/back3.tim iso/stages/finale/back4.tim iso/stages/finale/back5.tim iso/stages/finale/back6.tim
+iso/stages/finale/fb.arc: iso/stages/finale/fb0.tim iso/stages/finale/fb1.tim 
 
 # Polus Maroon
 iso/stages/polusmrn/back.arc: iso/stages/polusmrn/back0.tim iso/stages/polusmrn/back1.tim
