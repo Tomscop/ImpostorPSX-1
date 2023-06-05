@@ -242,32 +242,32 @@ void Char_BFDefeat_Tick(Character *character)
 	{
 		if (stage.song_beat == 32)
 		{
-			this->character.focus_x = FIXED_DEC(-160,1);
-			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_x = FIXED_DEC(-433,1);
+			this->character.focus_y = FIXED_DEC(-130,1);
 			this->character.focus_zoom = FIXED_DEC(1086,1024);
 		}
 		if (stage.song_beat == 48)
 		{
-			this->character.focus_x = FIXED_DEC(-160,1);
-			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_x = FIXED_DEC(-152,1);
+			this->character.focus_y = FIXED_DEC(-130,1);
 			this->character.focus_zoom = FIXED_DEC(1086,1024);
 		}
 		if (stage.song_beat == 64)
 		{
-			this->character.focus_x = FIXED_DEC(-160,1);
-			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_x = FIXED_DEC(-152,1);
+			this->character.focus_y = FIXED_DEC(-130,1);
 			this->character.focus_zoom = FIXED_DEC(1628,1024);
 		}
 		if (stage.song_beat == 67)
 		{
-			this->character.focus_x = FIXED_DEC(-160,1);
-			this->character.focus_y = FIXED_DEC(-147,1);
+			this->character.focus_x = FIXED_DEC(-152,1);
+			this->character.focus_y = FIXED_DEC(-130,1);
 			this->character.focus_zoom = FIXED_DEC(16,10);
 		}
 		if (stage.song_beat == 68) //normal focus
 		{
 			this->character.focus_x = FIXED_DEC(-249,1);
-			this->character.focus_y = FIXED_DEC(-218,1);
+			this->character.focus_y = FIXED_DEC(-204,1);
 			this->character.focus_zoom = FIXED_DEC(703+24,1024);
 		}
 		if (stage.song_beat == 494)
@@ -387,8 +387,8 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 	}
 	else if (stage.stage_id == StageId_Finale)
 	{
-		this->character.focus_x = FIXED_DEC(-160,1);
-		this->character.focus_y = FIXED_DEC(-147,1);
+		this->character.focus_x = FIXED_DEC(-297,1);
+		this->character.focus_y = FIXED_DEC(-183,1);
 		this->character.focus_zoom = FIXED_DEC(543,1024);
 	}
 	

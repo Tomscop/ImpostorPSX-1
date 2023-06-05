@@ -2408,7 +2408,7 @@ void Stage_Tick(void)
 			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 112))
 			{
 				flashf = FIXED_DEC(1,1);
-				flashspdf = FIXED_DEC(175,1);
+				flashspdf = FIXED_DEC(200,1);
 			}
 			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 128))
 				flashf = 0;
@@ -3112,6 +3112,8 @@ void Stage_Tick(void)
 						}
 						if ((stage.stage_id == StageId_Defeat) && (stage.song_step == 1167))
 							stage.player_state[0].health = 10000;
+						if ((stage.stage_id == StageId_Finale) && (stage.song_beat == 68))
+							stage.player_state[0].health = 1000;
 						if (stage.player_state[0].health > 20000)
 							stage.player_state[0].health = 20000;
 
