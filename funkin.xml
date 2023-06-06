@@ -270,7 +270,7 @@
 				<file name = "finale.arc" type = "data" source = "iso/stages/finale/back.arc"/>
 				<file name = "fb.arc" type = "data" source = "iso/stages/finale/fb.arc"/>
 				
-				<!-- Identity Crisis -->
+				<file name = "skeld.arc" type = "data" source = "iso/stages/skeld/back.arc"/>
 				
 				<file name = "polusmrn.arc" type = "data" source = "iso/stages/polusmrn/back.arc"/>
 				

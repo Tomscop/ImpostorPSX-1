@@ -154,6 +154,7 @@ static u32 Sounds[10];
 #include "stage/cargo.h"
 #include "stage/defeat.h"
 #include "stage/finale.h"
+#include "stage/skeld.h"
 #include "stage/polusmaroon.h"
 #include "stage/lava.h"
 #include "stage/powerroom.h"
@@ -1982,7 +1983,7 @@ static void Stage_LoadState(void)
 		stage.opacity = 100;
 		stage.flash = 0;
 		stage.flashspd = 0;
-		if ((stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+		if ((stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_IdentityCrisis))
 			stage.hudfade = 0;
 		else
 			stage.hudfade = 1;
@@ -2404,6 +2405,12 @@ void Stage_Tick(void)
 				}
 			}
 			
+			if (stage.black == true)
+			{
+				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+				Gfx_DrawRect(&screen_src, 0, 0, 0);
+			}
+			
 			//front flash
 			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 112))
 			{
@@ -2426,11 +2433,17 @@ void Stage_Tick(void)
 							flashf += FIXED_MUL(flashspdf, timer_dt);
 					}
 				}
-			
-			if (stage.black == true)
+			if ((stage.stage_id == StageId_IdentityCrisis) && (stage.pink == 1))
 			{
-				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-				Gfx_DrawRect(&screen_src, 0, 0, 0);
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
 			}
 			
 			if (((stage.stage_id == StageId_BoilingPoint) && (((stage.song_step >= 320) && (stage.song_step <= 327)) || ((stage.song_step >= 448) && (stage.song_step <= 463)))))
@@ -2512,7 +2525,7 @@ void Stage_Tick(void)
 				stage.black = true;
 			else if ((stage.stage_id == StageId_Reinforcements) && (cutscene >= 210))
 				stage.black = true;
-			else
+			else if (stage.stage_id != StageId_IdentityCrisis)
 				stage.black = false;
 			
 			if ((stage.stage_id == StageId_Reinforcements) && (stage.song_step >= 1280) && (stage.paused == false))
@@ -3221,22 +3234,6 @@ void Stage_Tick(void)
 				}
 			}
 			
-			//Draw white flash
-			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
-			{
-				stage.flash = FIXED_DEC(255,1);
-				stage.flashspd = FIXED_DEC(1000,1);
-			}
-			if (stage.prefs.flash != 0)
-				if (stage.flash > 0)
-				{
-					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-					u8 flash_col = stage.flash >> FIXED_SHIFT;
-					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					if (stage.paused == false)
-						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
-				}
-			
 			if ((stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_VotingTime))
 			{
 				//Draw border
@@ -3248,6 +3245,50 @@ void Stage_Tick(void)
 				
 				if (show)
 					Stage_DrawTex(&stage.tex_hud1, &border_src, &border_dst, stage.bump);
+			}
+			
+			//Draw white flash
+			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
+			{
+				stage.flash = FIXED_DEC(255,1);
+				stage.flashspd = FIXED_DEC(1000,1);
+			}
+			if (stage.stage_id != StageId_IdentityCrisis)
+			{
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
+			}
+			if ((stage.stage_id == StageId_IdentityCrisis) && (stage.pink == 0))
+			{
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
+			}
+			if (stage.stage_id == StageId_IdentityCrisis)
+			{
+				if (stage.song_step == -29)
+					stage.pink = 0;
+				if (stage.song_step == 634)
+					stage.pink = 1;
+				if (stage.song_step == 675)
+					stage.pink = 0;
+				if (stage.song_step == 1172)
+					stage.pink = 1;
+				if (stage.song_step == 2080)
+					stage.pink = 0;
 			}
 			
 			//Draw stage foreground

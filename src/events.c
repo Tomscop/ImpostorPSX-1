@@ -44,6 +44,16 @@ static void Events_GetEventsValue(Event* event)
 					stage.flashspd = FIXED_DEC(1024,1);
 				}
 			}
+			if ((event->value1 >> FIXED_SHIFT) == 2)
+			{
+				stage.black = true;
+			}
+			if ((event->value1 >> FIXED_SHIFT) == 3)
+			{
+				stage.black = false;
+				stage.flash = FIXED_DEC(255,1);
+				stage.flashspd = FIXED_DEC(1024,1);
+			}
 			break;
 		}
 		case EVENTS_FLAG_BEEP: //Reactor Beep!!
