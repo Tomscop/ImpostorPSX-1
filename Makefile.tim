@@ -270,6 +270,9 @@ iso/chars/jorsawsg/main.arc: iso/chars/jorsawsg/idle0.tim iso/chars/jorsawsg/idl
 # Powers
 iso/chars/powers/main.arc: iso/chars/powers/idle0.tim iso/chars/powers/idle1.tim iso/chars/powers/idle2.tim iso/chars/powers/idle3.tim iso/chars/powers/idle4.tim iso/chars/powers/idle5.tim iso/chars/powers/idle6.tim iso/chars/powers/left0.tim iso/chars/powers/down0.tim iso/chars/powers/up0.tim iso/chars/powers/up1.tim iso/chars/powers/up2.tim iso/chars/powers/right0.tim iso/chars/powers/right1.tim iso/chars/powers/right2.tim iso/chars/powers/right3.tim iso/chars/powers/lefta0.tim iso/chars/powers/downa0.tim iso/chars/powers/downa1.tim iso/chars/powers/upa0.tim iso/chars/powers/upa1.tim iso/chars/powers/upa2.tim iso/chars/powers/upa3.tim iso/chars/powers/righta0.tim 
 
+# Dad
+iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/chars/dad/left.tim iso/chars/dad/down.tim iso/chars/dad/up.tim iso/chars/dad/right.tim
+
 
 # GF
 iso/chars/gf/main.arc: iso/chars/gf/gf0.tim iso/chars/gf/gf1.tim iso/chars/gf/gf2.tim
@@ -331,7 +334,7 @@ iso/stages/finale/back.arc: iso/stages/finale/back0.tim iso/stages/finale/back1.
 iso/stages/finale/fb.arc: iso/stages/finale/fb0.tim iso/stages/finale/fb1.tim 
 
 # Skeld
-iso/stages/skeld/back.arc: iso/stages/skeld/back0.tim iso/stages/skeld/back1.tim iso/stages/skeld/back2.tim iso/stages/skeld/back3.tim
+iso/stages/skeld/back.arc: iso/stages/skeld/back0.tim iso/stages/skeld/back1.tim iso/stages/skeld/back2.tim iso/stages/skeld/back3.tim iso/stages/skeld/back4.tim iso/stages/skeld/back5.tim iso/stages/skeld/back6.tim
 
 # Polus Maroon
 iso/stages/polusmrn/back.arc: iso/stages/polusmrn/back0.tim iso/stages/polusmrn/back1.tim

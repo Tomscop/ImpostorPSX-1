@@ -26,31 +26,11 @@ typedef struct
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
 	Gfx_Tex tex_back3; //back3
+	Gfx_Tex tex_back4; //back4
+	Gfx_Tex tex_back5; //back5
+	Gfx_Tex tex_back6; //back6
 
 } Back_Skeld;
-
-void Back_Skeld_DrawFG(StageBack *back)
-{
-	Back_Skeld *this = (Back_Skeld*)back;
-
-	fixed_t fx, fy;
-
-	//Draw skeld
-	fx = stage.camera.x;
-	fy = stage.camera.y;
-	
-	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-	if ((stage.song_step >= 512) && (stage.song_step <= 639))
-		Gfx_DrawRect(&screen_src, 0, 0, 0);
-	if ((stage.song_step >= 1152) && (stage.song_step <= 1175))
-		Gfx_DrawRect(&screen_src, 0, 0, 0);
-	if ((stage.song_step >= 1446) && (stage.song_step <= 1695))
-		Gfx_DrawRect(&screen_src, 0, 0, 0);
-	if ((stage.song_step >= 1951) && (stage.song_step <= 1977))
-		Gfx_DrawRect(&screen_src, 0, 0, 0);
-	if ((stage.song_step >= 2248) && (stage.song_step <= 2275))
-		Gfx_DrawRect(&screen_src, 0, 0, 0);
-}
 
 void Back_Skeld_DrawBG(StageBack *back)
 {
@@ -78,8 +58,63 @@ void Back_Skeld_DrawBG(StageBack *back)
 		FIXED_DEC(484,1)
 	};
 	
+	RECT back4_src = {  0,  0,255,136};
+	RECT_FIXED back4_dst = {
+		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(705 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(377,1)
+	};
+	
+	RECT back5_src = {  0,  0,255, 67};
+	RECT_FIXED back5_dst = {
+		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(1645 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(433,1)
+	};
+	RECT back51_src = {  0,  0, 64, 67};
+	RECT_FIXED back51_dst = {
+		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(433,1)
+	};
+	RECT back52_src = { 63,  0, 64, 67};
+	RECT_FIXED back52_dst = {
+		FIXED_DEC((413-7)*1 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(433,1)
+	};
+	RECT back53_src = {127,  0, 64, 67};
+	RECT_FIXED back53_dst = {
+		FIXED_DEC((413-7)*2 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(433,1)
+	};
+	RECT back54_src = {191,  0, 64, 67};
+	RECT_FIXED back54_dst = {
+		FIXED_DEC((413-7)*3 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(433,1)
+	};
+	
+	RECT back6_src = {  0,  0,255, 68};
+	RECT_FIXED back6_dst = {
+		FIXED_DEC(175 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(27,1) - fy,
+		FIXED_DEC(486 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(130,1)
+	};
+	
 	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
 	Debug_StageMoveDebug(&back1_dst, 6, fx, fy);
+	Debug_StageMoveDebug(&back4_dst, 7, fx, fy);
+	Debug_StageMoveDebug(&back5_dst, 8, fx, fy);
+	Debug_StageMoveDebug(&back6_dst, 9, fx, fy);
 	if (bgswitch == 0)
 	{
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
@@ -90,6 +125,21 @@ void Back_Skeld_DrawBG(StageBack *back)
 		Stage_DrawTex(&this->tex_back2, &back0_src, &back0_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back3, &back1_src, &back1_dst, stage.camera.bzoom);
 	}
+	else if (bgswitch == 2)
+	{
+		Stage_DrawTex(&this->tex_back4, &back4_src, &back4_dst, stage.camera.bzoom);
+	}
+	else if (bgswitch == 3)
+	{
+		Stage_DrawTex(&this->tex_back6, &back6_src, &back6_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back5, &back51_src, &back51_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back5, &back52_src, &back52_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back5, &back53_src, &back53_dst, stage.camera.bzoom);
+		Stage_DrawTex(&this->tex_back5, &back54_src, &back54_dst, stage.camera.bzoom);
+	}
+	
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	Gfx_DrawRect(&screen_src, 0, 0, 0);
 	
 	//bg switch
 	if (stage.song_step == -29) //normal
@@ -149,6 +199,9 @@ StageBack *Back_Skeld_New(void)
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Gfx_LoadTex(&this->tex_back3, Archive_Find(arc_back, "back3.tim"), 0);
+	Gfx_LoadTex(&this->tex_back4, Archive_Find(arc_back, "back4.tim"), 0);
+	Gfx_LoadTex(&this->tex_back5, Archive_Find(arc_back, "back5.tim"), 0);
+	Gfx_LoadTex(&this->tex_back6, Archive_Find(arc_back, "back6.tim"), 0);
 	Mem_Free(arc_back);
 	
 	bgswitch = 0;
