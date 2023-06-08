@@ -93,6 +93,7 @@ static u32 Sounds[10];
 #include "character/blackdk.h"
 #include "character/black.h"
 #include "character/blackp.h"
+#include "character/monotone.h"
 #include "character/maroon.h"
 #include "character/maroonparasite.h"
 #include "character/gray.h"

@@ -181,8 +181,7 @@
 				<file name = "blackdk.arc" type = "data" source = "iso/chars/blackdk/main.arc"/>
 				<file name = "black.arc" type = "data" source = "iso/chars/black/main.arc"/>
 				<file name = "blackp.arc" type = "data" source = "iso/chars/blackp/main.arc"/>
-				<!-- Boyfriend Evil assets -->
-				<!-- Monotone assets -->
+				<file name = "monotone.arc" type = "data" source = "iso/chars/monotone/main.arc"/>
 				<file name = "maroon.arc" type = "data" source = "iso/chars/maroon/main.arc"/>
 				<file name = "maroonp.arc" type = "data" source = "iso/chars/maroonp/main.arc"/>
 				<file name = "gray.arc" type = "data" source = "iso/chars/gray/main.arc"/>

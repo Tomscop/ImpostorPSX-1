@@ -2,35 +2,35 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idleb",
-			"hname"   : "IdleB"
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "leftb",
-			"hname"   : "LeftB"
+			"imgname" : "left",
+			"hname"   : "Left"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "downb",
-			"hname"   : "DownB"
+			"imgname" : "down",
+			"hname"   : "Down"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "upb",
-			"hname"   : "UpB"
+			"imgname" : "up",
+			"hname"   : "Up"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "rightb",
-			"hname"   : "RightB"
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/blackp/black",
-	"outdir": "iso/chars/blackp/",
-	"charname" : "BlackP",
+	"input":  "iso/chars/monotone/monotone",
+	"outdir": "iso/chars/monotone/",
+	"charname" : "Monotone",
 	"optimize" : false,
-	"optimizename" : "blackp",
+	"optimizename" : "monotone",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768,
@@ -39,7 +39,7 @@
 		481
 	],
 
-	"bpp" : 8,
+	"bpp" : 4,
 	"resize" : 0.15,
 	"xmlscale" : 1.0,
 	"padding" : 1,
