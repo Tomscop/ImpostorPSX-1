@@ -29,7 +29,21 @@ enum
   Monotone_ArcMain_Up2,
   Monotone_ArcMain_Right0,
   Monotone_ArcMain_Right1,
-	
+  Monotone_ArcMain_IdleD0,
+  Monotone_ArcMain_IdleD1,
+  Monotone_ArcMain_LeftD0,
+  Monotone_ArcMain_DownD0,
+  Monotone_ArcMain_UpD0,
+  Monotone_ArcMain_RightD0,
+  Monotone_ArcMain_IdleR0,
+  Monotone_ArcMain_IdleR1,
+  Monotone_ArcMain_IdleR2,
+  Monotone_ArcMain_LeftR0,
+  Monotone_ArcMain_LeftR1,
+  Monotone_ArcMain_DownR0,
+  Monotone_ArcMain_UpR0,
+  Monotone_ArcMain_RightR0,
+
 	Monotone_Arc_Max,
 };
 
@@ -103,6 +117,46 @@ static const CharFrame char_monotone_frame[] = {
   {Monotone_ArcMain_Right1, {127,  0,127, 75}, {156,115}}, //48 right 7
   {Monotone_ArcMain_Right1, {  0, 75,127, 75}, {156,115}}, //49 right 8
   {Monotone_ArcMain_Right1, {127, 75,127, 75}, {155,115}}, //50 right 9
+  
+  {Monotone_ArcMain_IdleD0, {  0,  0, 96,107}, {156,111}}, //51 idled 1
+  {Monotone_ArcMain_IdleD0, { 96,  0, 96,107}, {156,111}}, //52 idled 2
+  {Monotone_ArcMain_IdleD0, {  0,107, 95,109}, {156,113}}, //53 idled 3
+  {Monotone_ArcMain_IdleD0, { 95,107, 95,111}, {157,115}}, //54 idled 4
+  {Monotone_ArcMain_IdleD1, {  0,  0, 96,112}, {157,115}}, //55 idled 5
+
+  {Monotone_ArcMain_LeftD0, {  0,  0,101,110}, {163,113}}, //56 leftd 1
+  {Monotone_ArcMain_LeftD0, {101,  0, 98,110}, {160,114}}, //57 leftd 2
+
+  {Monotone_ArcMain_DownD0, {  0,  0, 96, 99}, {156,104}}, //58 downd 1
+  {Monotone_ArcMain_DownD0, { 96,  0, 97,101}, {158,106}}, //59 downd 2
+
+  {Monotone_ArcMain_UpD0, {  0,  0, 91,114}, {154,119}}, //60 upd 1
+  {Monotone_ArcMain_UpD0, { 91,  0, 93,112}, {155,117}}, //61 upd 2
+
+  {Monotone_ArcMain_RightD0, {  0,  0, 89,107}, {148,111}}, //62 rightd 1
+  {Monotone_ArcMain_RightD0, { 89,  0, 88,108}, {148,112}}, //63 rightd 2
+  
+  {Monotone_ArcMain_IdleR0, {  0,  0,146, 85}, {169, 76}}, //64 idler 1
+  {Monotone_ArcMain_IdleR0, {  0, 86,147, 84}, {170, 75}}, //65 idler 2
+  {Monotone_ArcMain_IdleR1, {  0,  0,146, 85}, {169, 76}}, //66 idler 3
+  {Monotone_ArcMain_IdleR1, {  0, 86,145, 90}, {169, 81}}, //67 idler 4
+  {Monotone_ArcMain_IdleR2, {  0,  0,143, 92}, {168, 83}}, //68 idler 5
+  
+  {Monotone_ArcMain_LeftR0, {  0,  0,164, 88}, {212, 79}}, //69 leftr 1
+  {Monotone_ArcMain_LeftR0, {  0, 89,164, 88}, {208, 79}}, //70 leftr 2
+  {Monotone_ArcMain_LeftR1, {  0,  0,165, 88}, {209, 79}}, //71 leftr 3
+	
+  {Monotone_ArcMain_DownR0, {  0,  0,116, 91}, {149, 77}}, //72 downr 1
+  {Monotone_ArcMain_DownR0, {117,  0,129,100}, {159, 91}}, //73 downr 2
+  {Monotone_ArcMain_DownR0, {  0,101,129,100}, {159, 91}}, //74 downr 3
+	
+  {Monotone_ArcMain_UpR0, {  0,  0, 98,101}, {146, 92}}, //75 upr 1
+  {Monotone_ArcMain_UpR0, { 99,  0, 96, 91}, {143, 82}}, //76 upr 2
+  {Monotone_ArcMain_UpR0, {  0,102, 96, 92}, {143, 83}}, //77 upr 3
+	
+  {Monotone_ArcMain_RightR0, {  0,  0, 97, 95}, {125, 77}}, //78 rightr 1
+  {Monotone_ArcMain_RightR0, { 98,  0,105, 93}, {132, 77}}, //79 rightr 2
+  {Monotone_ArcMain_RightR0, {  0, 96,106, 93}, {132, 77}}, //80 rightr 3
 };
 
 static const Animation char_monotone_anim[CharAnim_Max] = {
@@ -114,6 +168,30 @@ static const Animation char_monotone_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 38, 39, 40, 41, 38, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{1, (const u8[]){ 42, 43, 44, 45, 46, 47, 48, 48, 49, 50, 48, 48, 49, 50, 48, ASCR_BACK, 1}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+static const Animation char_bfd_anim[PlayerAnim_Max] = {
+	{2, (const u8[]){ 51, 52, 53, 54, 55, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 56, 57, ASCR_BACK, 1}},             //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
+	{2, (const u8[]){ 58, 59, ASCR_BACK, 1}},             //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_DownAlt
+	{2, (const u8[]){ 60, 61, ASCR_BACK, 1}},             //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
+	{2, (const u8[]){ 62, 63, ASCR_BACK, 1}},             //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
+};
+
+static const Animation char_redd_anim[CharAnim_Max] = {
+	{2, (const u8[]){ 64, 65, 66, 67, 68, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 69, 70, 71, 71, 71, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 72, 73, 74, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{2, (const u8[]){ 75, 76, 77, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){ 78, 79, 80, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -137,10 +215,33 @@ void Char_Monotone_Tick(Character *character)
 	Char_Monotone *this = (Char_Monotone*)character;
 	
 	//Camera stuff
-//	if (stage.stage_id == StageId_IdentityCrisis)
-//	{
-//		switch from normal to bf at step 384
-//	}
+	if (stage.stage_id == StageId_IdentityCrisis)
+	{
+		
+		
+		//Switches
+		if (stage.song_step == -29) //bf disguise
+		{
+			Animatable_Init(&this->character.animatable, char_bfd_anim);
+			this->character.health_bar = 0xFF29B5D6;
+			this->character.size = FIXED_DEC(1,1);
+			this->character.health_i = 0;
+		}
+		if ((stage.song_step == 384) || (stage.song_step == 896) || (stage.song_step == 1500) || (stage.song_step == 2270) || (stage.song_step == 3328)) //normal
+		{
+			Animatable_Init(&this->character.animatable, char_monotone_anim);
+			this->character.health_bar = 0xFF392C49;
+			this->character.size = FIXED_DEC(1667,1000);
+			this->character.health_i = 1;
+		}
+		if ((stage.song_step == 638) || (stage.song_step == 2817) || (stage.song_step == 3198)) //red disguise
+		{
+			Animatable_Init(&this->character.animatable, char_redd_anim);
+			this->character.health_bar = 0xFFBB2D30;
+			this->character.size = FIXED_DEC(1,1);
+			this->character.health_i = 2;
+		}
+	}
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -182,23 +283,23 @@ Character *Char_Monotone_New(fixed_t x, fixed_t y)
 	this->character.set_anim = Char_Monotone_SetAnim;
 	this->character.free = Char_Monotone_Free;
 	
-	Animatable_Init(&this->character.animatable, char_monotone_anim);
+	Animatable_Init(&this->character.animatable, char_bfd_anim);
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 1;
+	this->character.health_i = 0;
 
 	//health bar color
-	this->character.health_bar = 0xFF392C49;
+	this->character.health_bar = 0xFF29B5D6;
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.zoom_save = this->character.focus_zoom;
-	this->character.size = FIXED_DEC(1667,1000);
+	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
 	this->arc_main = IO_Read("\\OPPONENT\\MONOTONE.ARC;1");
@@ -219,6 +320,20 @@ Character *Char_Monotone_New(fixed_t x, fixed_t y)
   "up2.tim",
   "right0.tim",
   "right1.tim",
+  "idled0.tim",
+  "idled1.tim",
+  "leftd0.tim",
+  "downd0.tim",
+  "upd0.tim",
+  "rightd0.tim",
+  "idler0.tim",
+  "idler1.tim",
+  "idler2.tim",
+  "leftr0.tim",
+  "leftr1.tim",
+  "downr0.tim",
+  "upr0.tim",
+  "rightr0.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
