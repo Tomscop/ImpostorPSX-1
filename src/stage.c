@@ -2406,6 +2406,9 @@ void Stage_Tick(void)
 				}
 			}
 			
+			if ((stage.back->draw_fg != NULL) && (stage.stage_id == StageId_IdentityCrisis))
+				stage.back->draw_fg(stage.back);
+			
 			if (stage.black == true)
 			{
 				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
@@ -3293,7 +3296,7 @@ void Stage_Tick(void)
 			}
 			
 			//Draw stage foreground
-			if (stage.back->draw_fg != NULL)
+			if ((stage.back->draw_fg != NULL) && (stage.stage_id != StageId_IdentityCrisis))
 				stage.back->draw_fg(stage.back);
 			
 			//Tick foreground objects

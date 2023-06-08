@@ -334,7 +334,7 @@ iso/stages/finale/back.arc: iso/stages/finale/back0.tim iso/stages/finale/back1.
 iso/stages/finale/fb.arc: iso/stages/finale/fb0.tim iso/stages/finale/fb1.tim 
 
 # Skeld
-iso/stages/skeld/back.arc: iso/stages/skeld/back0.tim iso/stages/skeld/back1.tim iso/stages/skeld/back2.tim iso/stages/skeld/back3.tim iso/stages/skeld/back4.tim iso/stages/skeld/back5.tim iso/stages/skeld/back6.tim
+iso/stages/skeld/back.arc: iso/stages/skeld/back0.tim iso/stages/skeld/back1.tim iso/stages/skeld/back2.tim iso/stages/skeld/back3.tim iso/stages/skeld/back4.tim iso/stages/skeld/back5.tim iso/stages/skeld/back6.tim iso/stages/skeld/back7.tim
 
 # Polus Maroon
 iso/stages/polusmrn/back.arc: iso/stages/polusmrn/back0.tim iso/stages/polusmrn/back1.tim

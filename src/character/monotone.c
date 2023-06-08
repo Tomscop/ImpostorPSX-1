@@ -136,6 +136,12 @@ void Char_Monotone_Tick(Character *character)
 {
 	Char_Monotone *this = (Char_Monotone*)character;
 	
+	//Camera stuff
+//	if (stage.stage_id == StageId_IdentityCrisis)
+//	{
+//		switch from normal to bf at step 384
+//	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
