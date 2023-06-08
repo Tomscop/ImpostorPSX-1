@@ -187,17 +187,17 @@ void Back_Skeld_DrawBG(StageBack *back)
 	//bg switch
 	if (stage.song_step == -29) //normal
 		bgswitch = 0;
-	if (stage.song_step == 638) //red
+	if (stage.song_step == 636) //red
 		bgswitch = 1;
 	if (stage.song_step == 896) //normal
 		bgswitch = 0;
-	if (stage.song_step == 1174) //green
+	if (stage.song_step == 1168) //green
 		bgswitch = 2;
 	if (stage.song_step == 1500) //normal
 		bgswitch = 0;
 	if (stage.song_step == 1972) //black
 		bgswitch = 3;
-	if (stage.song_step == 2270) //normal
+	if (stage.song_step == 2272) //normal
 		bgswitch = 0;
 	if (stage.song_step == 2817) //red
 		bgswitch = 1;

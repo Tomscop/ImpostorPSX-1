@@ -57,6 +57,7 @@ static u32 Sounds[10];
 #include "character/bfrun.h"
 #include "character/bflegs.h"
 #include "character/bfdefeat.h"
+#include "character/bfic.h"
 #include "character/bfpolus.h"
 #include "character/bflava.h"
 #include "character/bfairship.h"

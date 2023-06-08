@@ -31,6 +31,7 @@ SRCS = src/main.c \
 	src/character/bfrun.c \
 	src/character/bflegs.c \
 	src/character/bfdefeat.c \
+	src/character/bfic.c \
 	src/character/bfpolus.c \
 	src/character/bflava.c \
 	src/character/bfairship.c \

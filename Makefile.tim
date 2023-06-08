@@ -32,6 +32,7 @@ all: \
 	iso/chars/bfdefeat/main.arc \
 	iso/chars/bfdefeat/main1.arc \
 	iso/chars/bfdefeat/main2.arc \
+	iso/chars/bfic/main.arc \
 	iso/chars/bfpolus/main.arc \
 	iso/chars/bflava/main.arc \
 	iso/chars/bfairshp/main.arc \
@@ -162,6 +163,9 @@ iso/chars/bfrun/legs.arc: iso/chars/bfrun/legs0.tim
 iso/chars/bfdefeat/main.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/a.tim iso/chars/bfdefeat/b.tim iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
 iso/chars/bfdefeat/main1.arc: iso/chars/bfdefeat/idle0.tim iso/chars/bfdefeat/idle1.tim iso/chars/bfdefeat/a.tim iso/chars/bfdefeat/b.tim iso/chars/bfdefeat/miss0.tim
 iso/chars/bfdefeat/main2.arc: iso/chars/bfdefeat/miss0.tim iso/chars/bfdefeat/idles0.tim iso/chars/bfdefeat/idles1.tim iso/chars/bfdefeat/idles2.tim iso/chars/bfdefeat/lefts0.tim iso/chars/bfdefeat/downs0.tim iso/chars/bfdefeat/ups0.tim iso/chars/bfdefeat/rights0.tim 
+
+# BF IC
+iso/chars/bfic/main.arc: iso/chars/bfic/bf0.tim iso/chars/bfic/bf1.tim iso/chars/bfic/bf2.tim iso/chars/bfic/bf3.tim iso/chars/bfic/bf5.tim iso/chars/bfic/bf6.tim iso/chars/bfic/idle0.tim iso/chars/bfic/idle1.tim iso/chars/bfic/idle2.tim iso/chars/bfic/left0.tim iso/chars/bfic/down0.tim iso/chars/bfic/up0.tim iso/chars/bfic/up1.tim iso/chars/bfic/right0.tim 
 
 # BF Polus
 iso/chars/bfpolus/main.arc: iso/chars/bfpolus/idle0.tim iso/chars/bfpolus/idle1.tim iso/chars/bfpolus/idle2.tim iso/chars/bfpolus/left0.tim iso/chars/bfpolus/left1.tim iso/chars/bfpolus/down0.tim iso/chars/bfpolus/down1.tim iso/chars/bfpolus/up0.tim iso/chars/bfpolus/up1.tim iso/chars/bfpolus/right0.tim iso/chars/bfpolus/right1.tim iso/chars/bfpolus/leftm0.tim iso/chars/bfpolus/downm0.tim iso/chars/bfpolus/upm0.tim iso/chars/bfpolus/rightm0.tim 

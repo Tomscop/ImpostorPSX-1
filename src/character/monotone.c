@@ -227,14 +227,14 @@ void Char_Monotone_Tick(Character *character)
 			this->character.size = FIXED_DEC(1,1);
 			this->character.health_i = 0;
 		}
-		if ((stage.song_step == 384) || (stage.song_step == 896) || (stage.song_step == 1500) || (stage.song_step == 2270) || (stage.song_step == 3328)) //normal
+		if ((stage.song_step == 384) || (stage.song_step == 896) || (stage.song_step == 1500) || (stage.song_step == 2272) || (stage.song_step == 3328)) //normal
 		{
 			Animatable_Init(&this->character.animatable, char_monotone_anim);
 			this->character.health_bar = 0xFF392C49;
 			this->character.size = FIXED_DEC(1667,1000);
 			this->character.health_i = 1;
 		}
-		if ((stage.song_step == 638) || (stage.song_step == 2817) || (stage.song_step == 3198)) //red disguise
+		if ((stage.song_step == 636) || (stage.song_step == 2817) || (stage.song_step == 3198)) //red disguise
 		{
 			Animatable_Init(&this->character.animatable, char_redd_anim);
 			this->character.health_bar = 0xFFBB2D30;
@@ -250,6 +250,43 @@ void Char_Monotone_Tick(Character *character)
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Monotone_SetFrame);
 	Character_Draw(character, &this->tex, &char_monotone_frame[this->frame]);
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_IdentityCrisis: //switches
+				if (stage.song_step == 384)
+					character->set_anim(character, CharAnim_Down);
+				if (stage.song_step == 636)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 896)
+					character->set_anim(character, CharAnim_Up);
+				if (stage.song_step == 1168)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 1500)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 1972)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 2272)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 2817)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 2878)
+					character->set_anim(character, CharAnim_Up);
+				if (stage.song_step == 3072)
+					character->set_anim(character, CharAnim_Idle);
+				if (stage.song_step == 3198)
+					character->set_anim(character, CharAnim_Down);
+				if (stage.song_step == 3280)
+					character->set_anim(character, CharAnim_Up);
+				if (stage.song_step == 3296)
+					character->set_anim(character, CharAnim_Up);
+				if (stage.song_step == 3328)
+					character->set_anim(character, CharAnim_Up);
+				break;
+			default:
+				break;
+		}
 }
 
 void Char_Monotone_SetAnim(Character *character, u8 anim)

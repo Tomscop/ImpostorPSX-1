@@ -155,6 +155,7 @@
 				<file name = "bfdefeat.arc" type = "data" source = "iso/chars/bfdefeat/main.arc"/>
 				<file name = "bfdefet1.arc" type = "data" source = "iso/chars/bfdefeat/main1.arc"/>
 				<file name = "bfdefet2.arc" type = "data" source = "iso/chars/bfdefeat/main2.arc"/>
+				<file name = "bfic.arc" type = "data" source = "iso/chars/bfic/main.arc"/>
 				<file name = "bfpolus.arc" type = "data" source = "iso/chars/bfpolus/main.arc"/>
 				<file name = "bflava.arc" type = "data" source = "iso/chars/bflava/main.arc"/>
 				<file name = "bfairshp.arc" type = "data" source = "iso/chars/bfairshp/main.arc"/>
