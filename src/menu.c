@@ -966,11 +966,14 @@ void Menu_Tick(void)
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
 				menu.page_param.stage.last = true;
-				storyx = 152;
-				storyy = 132;
-				fstoryx = FIXED_DEC(152,1);
-				fstoryy = FIXED_DEC(132,1);
-				ship = 0;
+				if (menu.last_select == 0)
+				{
+					storyx = 152;
+					storyy = 132;
+					fstoryx = FIXED_DEC(152,1);
+					fstoryy = FIXED_DEC(132,1);
+					ship = 0;
+				}
 			}
 
 			//Handle option and selection
@@ -1106,7 +1109,7 @@ void Menu_Tick(void)
 				{
 					if ((menu.select != 9) && (menu.select != 10) && (menu.select != 11))
 					{
-						if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
+						if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1)) || ((menu.select == 4) && (stage.prefs.defeat == 1) && (stage.mode == StageMode_2P))) && (menu.select != 0))
 						{
 							//Play confirm sound
 							Audio_PlaySound(Sounds[1], 0x3fff);
@@ -1116,7 +1119,7 @@ void Menu_Tick(void)
 							menu.page_param.stage.story = true;
 							menu.trans_time = FIXED_UNIT;
 						}
-						else if ((menu.select == 4) && (stage.prefs.defeat == 1))
+						else if ((menu.select == 4) && (stage.prefs.defeat == 1) && (stage.mode != StageMode_2P))
 						{
 							//Play confirm sound
 							Audio_PlaySound(Sounds[1], 0x3fff);
@@ -1484,7 +1487,7 @@ void Menu_Tick(void)
 				{
 					if ((menu.freeplaypage != 3) && (menu.freeplaypage != 4) && (menu.freeplaypage != 5) && (menu.freeplaypage != 6) && (menu.freeplaypage != 7) && (menu.freeplaypage != 8) && (menu.freeplaypage != 9))
 					{
-					if ((menu.select != 12) || ((menu.select == 12) && (stage.prefs.defeat != 1)))
+					if ((menu.select != 12) || ((menu.select == 12) && (stage.prefs.defeat != 1)) || ((menu.select == 12) && (stage.prefs.defeat == 1) && (stage.mode == StageMode_2P)))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
@@ -1513,7 +1516,7 @@ void Menu_Tick(void)
 						menu.page_param.stage.story = false;
 						Trans_Start();
 					}
-					else if ((menu.select == 12) && (stage.prefs.defeat == 1))
+					else if ((menu.select == 12) && (stage.prefs.defeat == 1) && (stage.mode != StageMode_2P))
 					{
 						//play confirm sound
 						Audio_PlaySound(Sounds[4], 0x3fff);
@@ -1867,7 +1870,7 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Options:
 		{
-			static const char *gamemode_strs[] = {"NORMAL", "SWAP", "TWO PLAYER"};
+			static const char *gamemode_strs[] = {"NORMAL", "TWO PLAYER"};
 			static const struct
 			{
 				enum
