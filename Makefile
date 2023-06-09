@@ -68,7 +68,6 @@ SRCS = src/main.c \
 	src/character/redmungusparasite.c \
 	src/character/jorsawseeghost.c \
 	src/character/powers.c \
-	src/character/dad.c \
 	src/character/gf.c \
 	src/character/speaker.c \
 	src/character/gfghost.c \
