@@ -118,7 +118,7 @@ static const CharFrame char_monotone_frame[] = {
   {Monotone_ArcMain_Right1, {  0, 75,127, 75}, {156,115}}, //49 right 8
   {Monotone_ArcMain_Right1, {127, 75,127, 75}, {155,115}}, //50 right 9
   
-  {Monotone_ArcMain_IdleD0, {  0,  0, 96,107}, {156,111}}, //51 idled 1
+  {Monotone_ArcMain_IdleD0, {  0,  0, 96,107}, {156,110}}, //51 idled 1
   {Monotone_ArcMain_IdleD0, { 96,  0, 96,107}, {156,111}}, //52 idled 2
   {Monotone_ArcMain_IdleD0, {  0,107, 95,109}, {156,113}}, //53 idled 3
   {Monotone_ArcMain_IdleD0, { 95,107, 95,111}, {157,115}}, //54 idled 4

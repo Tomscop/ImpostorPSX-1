@@ -385,20 +385,20 @@ static void Menu_DrawStory(void)
 static void Menu_DrawDefeat(void) {
     // Define the source and destination rectangles for numbers
     RECT number_src[6] = {
-        {0, 67, 10, 15},
-        {11, 67, 8, 15},
+		{54, 67, 10, 15},
+		{43, 67, 10, 15},
+		{31, 67, 10, 15},
         {20, 67, 10, 15},
-        {31, 67, 10, 15},
-        {43, 67, 10, 15},
-        {54, 67, 10, 15}
+        {11, 67, 8, 15},
+        {0, 67, 10, 15}
     };
     
     RECT number_dst[6] = {
         {5 + 15, 42, 16, 24},
-        {5 + 15, 42, 13, 24},
         {5 + 15, 42, 16, 24},
         {5 + 15, 42, 16, 24},
         {5 + 15, 42, 16, 24},
+		{5 + 15, 42, 13, 24},
         {5 + 15, 42, 16, 24}
     };
     
@@ -418,7 +418,7 @@ static void Menu_DrawDefeat(void) {
     Gfx_DrawTex(&menu.tex_stuff, &combo_src, &combo_dst);
     Gfx_DrawTex(&menu.tex_stuff, &break_src, &break_dst);
     Gfx_DrawTex(&menu.tex_stuff, &slash_src, &slash_dst);
-    Gfx_DrawTex(&menu.tex_stuff, &number_src[5], &five2_dst);
+    Gfx_DrawTex(&menu.tex_stuff, &number_src[0], &five2_dst);
     
     // Define the source and destination rectangles for dead people
     RECT ghost_src = {0, 0, 28, 30};

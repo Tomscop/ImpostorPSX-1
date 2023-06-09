@@ -741,7 +741,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	else if (stage.stage_id == StageId_Crewicide)
 	{
 	this->character.focus_x = FIXED_DEC(-85,1);
-	this->character.focus_y = FIXED_DEC(-95,1);
+	this->character.focus_y = FIXED_DEC(-96,1);
 	this->character.focus_zoom = FIXED_DEC(549,512);
 	}
 	else if ((stage.stage_id >= StageId_LemonLime) && (stage.stage_id <= StageId_Stargazer))
