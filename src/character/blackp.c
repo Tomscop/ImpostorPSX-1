@@ -212,7 +212,7 @@ void Char_BlackP_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(86,1);
 			this->character.focus_y = FIXED_DEC(-152,1);
-			this->character.focus_zoom = FIXED_DEC(13,10);
+			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
 		if (stage.song_beat >= 68)
 		{

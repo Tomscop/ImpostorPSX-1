@@ -43,6 +43,24 @@ enum
   Monotone_ArcMain_DownR0,
   Monotone_ArcMain_UpR0,
   Monotone_ArcMain_RightR0,
+  Monotone_ArcMain_IdleG0,
+  Monotone_ArcMain_IdleG1,
+  Monotone_ArcMain_IdleG2,
+  Monotone_ArcMain_LeftG0,
+  Monotone_ArcMain_DownG0,
+  Monotone_ArcMain_UpG0,
+  Monotone_ArcMain_RightG0,
+  Monotone_ArcMain_IdleB0,
+  Monotone_ArcMain_IdleB1,
+  Monotone_ArcMain_IdleB2,
+  Monotone_ArcMain_IdleB3,
+  Monotone_ArcMain_IdleB4,
+  Monotone_ArcMain_IdleB5,
+  Monotone_ArcMain_IdleB6,
+  Monotone_ArcMain_LeftB0,
+  Monotone_ArcMain_DownB0,
+  Monotone_ArcMain_UpB0,
+  Monotone_ArcMain_RightB0,
 
 	Monotone_Arc_Max,
 };
@@ -157,6 +175,81 @@ static const CharFrame char_monotone_frame[] = {
   {Monotone_ArcMain_RightR0, {  0,  0, 97, 95}, {125, 77}}, //78 rightr 1
   {Monotone_ArcMain_RightR0, { 98,  0,105, 93}, {132, 77}}, //79 rightr 2
   {Monotone_ArcMain_RightR0, {  0, 96,106, 93}, {132, 77}}, //80 rightr 3
+  
+  {Monotone_ArcMain_IdleG0, {  0,  0,100, 81}, {204,171}}, //81 idleg 1
+  {Monotone_ArcMain_IdleG0, {100,  0,101, 80}, {205,170}}, //82 idleg 2
+  {Monotone_ArcMain_IdleG0, {  0, 81,107, 80}, {208,170}}, //83 idleg 3
+  {Monotone_ArcMain_IdleG0, {107, 81,102, 80}, {203,170}}, //84 idleg 4
+  {Monotone_ArcMain_IdleG0, {  0,162, 94, 79}, {200,169}}, //85 idleg 5
+  {Monotone_ArcMain_IdleG0, { 94,162, 90, 80}, {200,170}}, //86 idleg 6
+  {Monotone_ArcMain_IdleG1, {  0,  0, 91, 80}, {201,170}}, //87 idleg 7
+  {Monotone_ArcMain_IdleG1, { 91,  0, 95, 80}, {204,170}}, //88 idleg 8
+  {Monotone_ArcMain_IdleG1, {  0, 80,101, 80}, {207,170}}, //89 idleg 9
+  {Monotone_ArcMain_IdleG1, {101, 80,102, 82}, {204,172}}, //90 idleg 10
+  {Monotone_ArcMain_IdleG1, {  0,162,100, 81}, {204,171}}, //91 idleg 11
+  {Monotone_ArcMain_IdleG1, {100,162,101, 80}, {207,170}}, //92 idleg 12
+  {Monotone_ArcMain_IdleG2, {  0,  0, 90, 79}, {200,169}}, //93 idleg 13
+  {Monotone_ArcMain_IdleG2, { 90,  0, 90, 79}, {200,169}}, //94 idleg 14
+  {Monotone_ArcMain_IdleG2, {  0, 79, 89, 80}, {200,170}}, //95 idleg 15
+  {Monotone_ArcMain_IdleG2, { 89, 79, 94, 80}, {200,170}}, //96 idleg 16
+  {Monotone_ArcMain_IdleG2, {  0,159,103, 79}, {204,170}}, //97 idleg 17
+  {Monotone_ArcMain_IdleG2, {103,159,104, 80}, {208,170}}, //98 idleg 18
+
+  {Monotone_ArcMain_LeftG0, {  0,  0,100, 81}, {221-7,162+8}}, //99 leftg 1
+  {Monotone_ArcMain_LeftG0, {100,  0, 99, 81}, {220-7,162+8}}, //100 leftg 2
+  {Monotone_ArcMain_LeftG0, {  0, 81,100, 81}, {219-7,161+8}}, //101 leftg 3
+  {Monotone_ArcMain_LeftG0, {100, 81,100, 81}, {219-7,161+8}}, //102 leftg 4
+  {Monotone_ArcMain_LeftG0, {  0,162,100, 81}, {218-7,161+8}}, //103 leftg 5
+  {Monotone_ArcMain_LeftG0, {100,162,100, 81}, {218-7,161+8}}, //104 leftg 6
+
+  {Monotone_ArcMain_DownG0, {  0,  0, 87, 71}, {184+10,140+18}}, //105 downg 1
+  {Monotone_ArcMain_DownG0, { 87,  0, 86, 71}, {183+10,140+18}}, //106 downg 2
+  {Monotone_ArcMain_DownG0, {  0, 71, 86, 71}, {183+10,142+18}}, //107 downg 3
+  {Monotone_ArcMain_DownG0, { 86, 71, 86, 71}, {184+10,142+18}}, //108 downg 4
+  {Monotone_ArcMain_DownG0, {  0,142, 87, 71}, {185+10,142+18}}, //109 downg 5
+  {Monotone_ArcMain_DownG0, { 87,142, 86, 72}, {185+10,143+18}}, //110 downg 6
+
+  {Monotone_ArcMain_UpG0, {  0,  0, 78, 85}, {185+9,177-3}}, //111 upg 1
+  {Monotone_ArcMain_UpG0, { 78,  0, 77, 87}, {184+9,179-3}}, //112 upg 2
+  {Monotone_ArcMain_UpG0, {155,  0, 77, 83}, {184+9,175-3}}, //113 upg 3
+  {Monotone_ArcMain_UpG0, {  0, 87, 78, 83}, {185+9,175-3}}, //114 upg 4
+  {Monotone_ArcMain_UpG0, { 78, 87, 77, 81}, {185+9,173-3}}, //115 upg 5
+  {Monotone_ArcMain_UpG0, {155, 87, 77, 81}, {184+9,173-3}}, //116 upg 6
+
+  {Monotone_ArcMain_RightG0, {  0,  0, 96, 80}, {169+19,158+12}}, //117 rightg 1
+  {Monotone_ArcMain_RightG0, { 96,  0, 95, 80}, {169+19,158+12}}, //118 rightg 2
+  {Monotone_ArcMain_RightG0, {  0, 80, 92, 79}, {169+19,158+12}}, //119 rightg 3
+  {Monotone_ArcMain_RightG0, { 92, 80, 93, 79}, {170+19,158+12}}, //120 rightg 4
+  {Monotone_ArcMain_RightG0, {  0,160, 89, 79}, {168+19,158+12}}, //121 rightg 5
+  {Monotone_ArcMain_RightG0, { 89,160, 89, 80}, {168+19,159+12}}, //122 rightg 6
+  
+  {Monotone_ArcMain_IdleB0, {  0,  0,170, 94}, {159,141}}, //123 idleb 1
+  {Monotone_ArcMain_IdleB0, {  0, 94,171, 93}, {158,140}}, //124 idleb 2
+  {Monotone_ArcMain_IdleB1, {  0,  0,170, 93}, {157,140}}, //125 idleb 3
+  {Monotone_ArcMain_IdleB1, {  0, 93,167, 94}, {154,141}}, //126 idleb 4
+  {Monotone_ArcMain_IdleB2, {  0,  0,165, 95}, {152,142}}, //127 idleb 5
+  {Monotone_ArcMain_IdleB2, {  0, 95,164, 98}, {150,145}}, //128 idleb 6
+  {Monotone_ArcMain_IdleB3, {  0,  0,164, 98}, {149,145}}, //129 idleb 7
+  {Monotone_ArcMain_IdleB3, {  0, 98,164, 99}, {150,146}}, //130 idleb 8
+  {Monotone_ArcMain_IdleB4, {  0,  0,165, 99}, {152,146}}, //131 idleb 9
+  {Monotone_ArcMain_IdleB4, {  0, 99,166, 99}, {153,145}}, //132 idleb 10
+  {Monotone_ArcMain_IdleB5, {  0,  0,167, 99}, {154,145}}, //133 idleb 11
+  {Monotone_ArcMain_IdleB5, {  0, 99,166, 98}, {155,144}}, //134 idleb 12
+  {Monotone_ArcMain_IdleB6, {  0,  0,168, 96}, {157,143}}, //135 idleb 13
+
+  {Monotone_ArcMain_LeftB0, {  0,  0,104,107}, {167,154}}, //136 leftb 1
+  {Monotone_ArcMain_LeftB0, {104,  0,103,104}, {165,151}}, //137 leftb 2
+  {Monotone_ArcMain_LeftB0, {  0,107,103,104}, {165,151}}, //138 leftb 3
+  {Monotone_ArcMain_LeftB0, {103,107,100,108}, {161,155}}, //139 leftb 4
+
+  {Monotone_ArcMain_DownB0, {  0,  0,190, 99}, {170,135}}, //140 downb 1
+  {Monotone_ArcMain_DownB0, {  0, 99,180, 82}, {169,122}}, //141 downb 2
+
+  {Monotone_ArcMain_UpB0, {  0,  0,137, 98}, {143,146}}, //142 upb 1
+  {Monotone_ArcMain_UpB0, {  0, 98,128, 96}, {141,144}}, //143 upb 2
+
+  {Monotone_ArcMain_RightB0, {  0,  0,171,101}, {115,148}}, //144 rightb 1
+  {Monotone_ArcMain_RightB0, {  0,101,144,101}, {118,148}}, //145 rightb 2
 };
 
 static const Animation char_monotone_anim[CharAnim_Max] = {
@@ -192,6 +285,30 @@ static const Animation char_redd_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 75, 76, 77, ASCR_BACK, 1}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 78, 79, 80, ASCR_BACK, 1}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+static const Animation char_greend_anim[CharAnim_Max] = {
+	{2, (const u8[]){ 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{1, (const u8[]){ 99, 100, 101, 102, 103, 104, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{1, (const u8[]){ 105, 106, 107, 108, 109, 110, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{1, (const u8[]){ 111, 112, 113, 114, 115, 116, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{1, (const u8[]){ 117, 118, 119, 120, 121, 122, ASCR_BACK, 1}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+static const Animation char_blackd_anim[CharAnim_Max] = {
+	{2, (const u8[]){ 123, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{1, (const u8[]){ 136, 137, 138, 139, ASCR_BACK, 1}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 140, 141, ASCR_BACK, 1}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
+	{2, (const u8[]){ 142, 143, ASCR_BACK, 1}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){ 144, 145, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -240,6 +357,20 @@ void Char_Monotone_Tick(Character *character)
 			this->character.health_bar = 0xFFBB2D30;
 			this->character.size = FIXED_DEC(1,1);
 			this->character.health_i = 2;
+		}
+		if ((stage.song_step == 1168) || (stage.song_step == 2878) || (stage.song_step == 3280)) //green disguise
+		{
+			Animatable_Init(&this->character.animatable, char_greend_anim);
+			this->character.health_bar = 0xFF003315;
+			this->character.size = FIXED_DEC(334,100);
+			this->character.health_i = 3;
+		}
+		if ((stage.song_step == 1972) || (stage.song_step == 3072) || (stage.song_step == 3296)) //black disguise
+		{
+			Animatable_Init(&this->character.animatable, char_blackd_anim);
+			this->character.health_bar = 0xFF3B1A51;
+			this->character.size = FIXED_DEC(1667,1000);
+			this->character.health_i = 4;
 		}
 	}
 	
@@ -371,6 +502,24 @@ Character *Char_Monotone_New(fixed_t x, fixed_t y)
   "downr0.tim",
   "upr0.tim",
   "rightr0.tim",
+  "idleg0.tim",
+  "idleg1.tim",
+  "idleg2.tim",
+  "leftg0.tim",
+  "downg0.tim",
+  "upg0.tim",
+  "rightg0.tim",
+  "idleb0.tim",
+  "idleb1.tim",
+  "idleb2.tim",
+  "idleb3.tim",
+  "idleb4.tim",
+  "idleb5.tim",
+  "idleb6.tim",
+  "leftb0.tim",
+  "downb0.tim",
+  "upb0.tim",
+  "rightb0.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

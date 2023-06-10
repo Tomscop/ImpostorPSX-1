@@ -274,7 +274,7 @@ void Char_BFDefeat_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(-249,1);
 			this->character.focus_y = FIXED_DEC(-218,1);
-			this->character.focus_zoom = FIXED_DEC(13,10);
+			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
 	}
 	
