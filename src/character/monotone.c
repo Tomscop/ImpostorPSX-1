@@ -335,124 +335,128 @@ void Char_Monotone_Tick(Character *character)
 	if (stage.stage_id == StageId_IdentityCrisis)
 	{
 		//Camera
-		if (stage.song_beat == 32)
+		if ((stage.song_beat >= 6) && (stage.song_beat <= 63) && (this->character.focus_zoom >= FIXED_DEC(553,1024)))
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
-			this->character.focus_zoom = FIXED_DEC(543,1024);
+			this->character.focus_zoom = stage.player->focus_zoom;
+		}
+		if (stage.song_beat == 64)
+		{
+			this->character.focus_x = FIXED_DEC(401,1);
+			this->character.focus_y = FIXED_DEC(225,1);
+			this->character.focus_zoom = FIXED_DEC(550,1024);
 		}
 		if (stage.song_beat == 81)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(611,1024);
 		}
 		if (stage.song_beat == 88)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
-			this->character.focus_zoom = FIXED_DEC(1086,1024);
+			this->character.focus_x = FIXED_DEC(295,1);
+			this->character.focus_y = FIXED_DEC(257,1);
+			this->character.focus_zoom = FIXED_DEC(1073,1024);
 		}
 		if (stage.song_beat == 95)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 112)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(401,1);
+			this->character.focus_y = FIXED_DEC(225,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 128)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 		}
 		if (stage.song_beat == 192)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(401,1);
+			this->character.focus_y = FIXED_DEC(225,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 208)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 		}
 		if (stage.song_beat == 224)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(401,1);
+			this->character.focus_y = FIXED_DEC(225,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 254)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(549-80,1);
+			this->character.focus_y = FIXED_DEC(257,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 		}
 		if (stage.song_beat == 262)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
-			this->character.focus_zoom = FIXED_DEC(950,1024);
+			this->character.focus_x = FIXED_DEC(591-80,1);
+			this->character.focus_y = FIXED_DEC(257,1);
+			this->character.focus_zoom = FIXED_DEC(893,1024);
 		}
 		if (stage.song_beat == 270)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
-			this->character.focus_zoom = FIXED_DEC(1086,1024);
+			this->character.focus_x = FIXED_DEC(612-80,1);
+			this->character.focus_y = FIXED_DEC(257,1);
+			this->character.focus_zoom = FIXED_DEC(972,1024);
 		}
 		if (stage.song_beat == 278)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
-			this->character.focus_zoom = FIXED_DEC(1221,1024);
+			this->character.focus_x = FIXED_DEC(633-80,1);
+			this->character.focus_y = FIXED_DEC(257,1);
+			this->character.focus_zoom = FIXED_DEC(1031,1024);
 		}
 		if (stage.song_beat == 294)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(225,1);
 			this->character.focus_zoom = FIXED_DEC(543,1024);
 		}
 		if (stage.song_beat == 312)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(611,1024);
 		}
 		if (stage.song_beat == 328)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(286,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(746,1024);
 		}
 		if (stage.song_beat == 334)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(298,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(611,1024);
 		}
 		if (stage.song_beat == 344)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(591,1);
+			this->character.focus_y = FIXED_DEC(257,1);
 			this->character.focus_zoom = FIXED_DEC(950,1024);
 		}
 		if (stage.song_beat == 360)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(401,1);
+			this->character.focus_y = FIXED_DEC(225,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 456)
 		{
-			this->character.focus_x = FIXED_DEC(65,1);
-			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(241,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 		}
 		
@@ -541,9 +545,9 @@ Character *Char_Monotone_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(179,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1357,1024);
+	this->character.focus_x = FIXED_DEC(401,1);
+	this->character.focus_y = FIXED_DEC(225,1);
+	this->character.focus_zoom = FIXED_DEC(1070,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

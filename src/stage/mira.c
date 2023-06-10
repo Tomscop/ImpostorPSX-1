@@ -293,8 +293,11 @@ void Back_Mira_Free(StageBack *back)
 	//Free structure
 	Mem_Free(this);
 	
+	if (stage.stage_id == StageId_SussusToogus)
+	{
 	//Free powers archive
 	Mem_Free(this->arc_powers);
+	}
 }
 
 StageBack *Back_Mira_New(void)
@@ -335,9 +338,12 @@ StageBack *Back_Mira_New(void)
 	}
 	
 	//Initialize powers state
+	if (stage.stage_id == StageId_SussusToogus)
+	{
 	Animatable_Init(&this->powers_animatable, powers_anim);
 	Animatable_SetAnim(&this->powers_animatable, 0);
 	this->powers_frame = this->powers_tex_id = 0xFF; //Force art load
+	}
 	
 	//Initialize Fade
 	this->fade = FIXED_DEC(0,1);
