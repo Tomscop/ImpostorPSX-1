@@ -103,44 +103,44 @@ void Back_Skeld_DrawBG(StageBack *back)
 	
 	RECT back4_src = {  0,  0,255,136};
 	RECT_FIXED back4_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(30 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(44,1) - fy,
 		FIXED_DEC(705 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(377,1)
 	};
 	
 	RECT back5_src = {  0,  0,255, 67};
 	RECT_FIXED back5_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-400 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(45,1) - fy,
 		FIXED_DEC(1645 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(433,1)
 	};
 	RECT back51_src = {  0,  0, 64, 67};
 	RECT_FIXED back51_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-400 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(45,1) - fy,
 		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(433,1)
 	};
 	RECT back52_src = { 63,  0, 64, 67};
 	RECT_FIXED back52_dst = {
-		FIXED_DEC((413-7)*1 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-400+(413-7)*1 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(45,1) - fy,
 		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(433,1)
 	};
 	RECT back53_src = {127,  0, 64, 67};
 	RECT_FIXED back53_dst = {
-		FIXED_DEC((413-7)*2 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-400+(413-7)*2 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(45,1) - fy,
 		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(433,1)
 	};
 	RECT back54_src = {191,  0, 64, 67};
 	RECT_FIXED back54_dst = {
-		FIXED_DEC((413-7)*3 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-400+(413-7)*3 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(45,1) - fy,
 		FIXED_DEC(413 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(433,1)
 	};
@@ -158,27 +158,117 @@ void Back_Skeld_DrawBG(StageBack *back)
 	Debug_StageMoveDebug(&back4_dst, 7, fx, fy);
 	Debug_StageMoveDebug(&back5_dst, 8, fx, fy);
 	Debug_StageMoveDebug(&back6_dst, 9, fx, fy);
-	if (bgswitch == 0)
+	if (bgswitch == 0) //normal
 	{
 		Stage_DrawTex(&this->tex_back0, &back0_src, &back0_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back1, &back1_src, &back1_dst, stage.camera.bzoom);
+		stage.player->x = FIXED_DEC(567,1);
+		stage.player->y = FIXED_DEC(337,1);
+		if (stage.song_step >= 384) //monotone
+		{
+			stage.opponent->x = FIXED_DEC(411,1);
+			stage.opponent->y = FIXED_DEC(410,1);
+		}
+		else //bf disguise
+		{
+			stage.opponent->x = FIXED_DEC(362,1);
+			stage.opponent->y = FIXED_DEC(351,1);
+		}
+		if (stage.song_step == 1500)
+			stage.player->set_anim(stage.player, CharAnim_Idle);
+		if (stage.song_step == 384)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Down);
+		if (stage.song_step == 384)
+			stage.opponent->size = FIXED_DEC(1667,1000);
+		if (stage.song_step == 896)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Up);
+		if (stage.song_step == 896)
+			stage.opponent->size = FIXED_DEC(1667,1000);
+		if (stage.song_step == 1500)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 1500)
+			stage.opponent->size = FIXED_DEC(1667,1000);
+		if (stage.song_step == 2272)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 2272)
+			stage.opponent->size = FIXED_DEC(1667,1000);
+		if (stage.song_step == 3328)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Up);
+		if (stage.song_step == 3328)
+			stage.opponent->size = FIXED_DEC(1667,1000);
 	}
-	else if (bgswitch == 1)
+	else if (bgswitch == 1) //red
 	{
 		Stage_DrawTex(&this->tex_back2, &back0_src, &back0_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back3, &back1_src, &back1_dst, stage.camera.bzoom);
+		stage.player->x = FIXED_DEC(567,1);
+		stage.player->y = FIXED_DEC(337,1);
+		stage.opponent->x = FIXED_DEC(332,1);
+		stage.opponent->y = FIXED_DEC(330,1);
+		if (stage.song_step == 636)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 636)
+			stage.opponent->size = FIXED_DEC(1,1);
+		if (stage.song_step == 2817)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 2817)
+			stage.opponent->size = FIXED_DEC(1,1);
+		if (stage.song_step == 3198)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Down);
+		if (stage.song_step == 3198)
+			stage.opponent->size = FIXED_DEC(1,1);
 	}
-	else if (bgswitch == 2)
+	else if (bgswitch == 2) //green
 	{
 		Stage_DrawTex(&this->tex_back4, &back4_src, &back4_dst, stage.camera.bzoom);
+		stage.player->x = FIXED_DEC(679,1);
+		stage.player->y = FIXED_DEC(400,1);
+		stage.opponent->x = FIXED_DEC(743,1);
+		stage.opponent->y = FIXED_DEC(697,1);
+		if (stage.song_step == 1168)
+			stage.player->set_anim(stage.player, CharAnim_Idle);
+		if (stage.song_step == 2878)
+			stage.player->set_anim(stage.player, CharAnim_Up);
+		if (stage.song_step == 3280)
+			stage.player->set_anim(stage.player, CharAnim_Up);
+		if (stage.song_step == 1168)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 1168)
+			stage.opponent->size = FIXED_DEC(334,100);
+		if (stage.song_step == 2878)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Up);
+		if (stage.song_step == 2878)
+			stage.opponent->size = FIXED_DEC(334,100);
+		if (stage.song_step == 3280)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Up);
+		if (stage.song_step == 3280)
+			stage.opponent->size = FIXED_DEC(334,100);
 	}
-	else if (bgswitch == 3)
+	else if (bgswitch == 3) //black
 	{
 		Stage_DrawTex(&this->tex_back6, &back6_src, &back6_dst, stage.camera.bzoom);
-		Stage_DrawTex(&this->tex_back5, &back51_src, &back51_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back5, &back52_src, &back52_dst, stage.camera.bzoom);
 		Stage_DrawTex(&this->tex_back5, &back53_src, &back53_dst, stage.camera.bzoom);
-		Stage_DrawTex(&this->tex_back5, &back54_src, &back54_dst, stage.camera.bzoom);
+		stage.player->x = FIXED_DEC(567,1);
+		stage.player->y = FIXED_DEC(337,1);
+		stage.opponent->x = FIXED_DEC(395,1);
+		stage.opponent->y = FIXED_DEC(418,1);
+		if (stage.song_step == 3072)
+			stage.player->set_anim(stage.player, CharAnim_Left);
+		if (stage.song_step == 3296)
+			stage.player->set_anim(stage.player, CharAnim_Up);
+		if (stage.song_step == 1972)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 1972)
+			stage.opponent->size = FIXED_DEC(166,100);
+		if (stage.song_step == 3072)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Idle);
+		if (stage.song_step == 3072)
+			stage.opponent->size = FIXED_DEC(166,100);
+		if (stage.song_step == 3296)
+			stage.opponent->set_anim(stage.opponent, CharAnim_Up);
+		if (stage.song_step == 3296)
+			stage.opponent->size = FIXED_DEC(166,100);
 	}
 	
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};

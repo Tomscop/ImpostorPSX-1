@@ -301,7 +301,7 @@ static const Animation char_greend_anim[CharAnim_Max] = {
 };
 
 static const Animation char_blackd_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 123, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{2, (const u8[]){ 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{1, (const u8[]){ 136, 137, 138, 139, ASCR_BACK, 1}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 140, 141, ASCR_BACK, 1}},         //CharAnim_Down
@@ -331,10 +331,130 @@ void Char_Monotone_Tick(Character *character)
 {
 	Char_Monotone *this = (Char_Monotone*)character;
 	
-	//Camera stuff
+	//stuff
 	if (stage.stage_id == StageId_IdentityCrisis)
 	{
-		
+		//Camera
+		if (stage.song_beat == 32)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(543,1024);
+		}
+		if (stage.song_beat == 81)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(611,1024);
+		}
+		if (stage.song_beat == 88)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 95)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 112)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 128)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 192)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 208)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 224)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 254)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 262)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.song_beat == 270)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(1086,1024);
+		}
+		if (stage.song_beat == 278)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 294)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(543,1024);
+		}
+		if (stage.song_beat == 312)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(611,1024);
+		}
+		if (stage.song_beat == 328)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(746,1024);
+		}
+		if (stage.song_beat == 334)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(611,1024);
+		}
+		if (stage.song_beat == 344)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.song_beat == 360)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(679,1024);
+		}
+		if (stage.song_beat == 456)
+		{
+			this->character.focus_x = FIXED_DEC(65,1);
+			this->character.focus_y = FIXED_DEC(-115,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
 		
 		//Switches
 		if (stage.song_step == -29) //bf disguise
@@ -348,28 +468,24 @@ void Char_Monotone_Tick(Character *character)
 		{
 			Animatable_Init(&this->character.animatable, char_monotone_anim);
 			this->character.health_bar = 0xFF392C49;
-			this->character.size = FIXED_DEC(1667,1000);
 			this->character.health_i = 1;
 		}
 		if ((stage.song_step == 636) || (stage.song_step == 2817) || (stage.song_step == 3198)) //red disguise
 		{
 			Animatable_Init(&this->character.animatable, char_redd_anim);
 			this->character.health_bar = 0xFFBB2D30;
-			this->character.size = FIXED_DEC(1,1);
 			this->character.health_i = 2;
 		}
 		if ((stage.song_step == 1168) || (stage.song_step == 2878) || (stage.song_step == 3280)) //green disguise
 		{
 			Animatable_Init(&this->character.animatable, char_greend_anim);
 			this->character.health_bar = 0xFF003315;
-			this->character.size = FIXED_DEC(334,100);
 			this->character.health_i = 3;
 		}
 		if ((stage.song_step == 1972) || (stage.song_step == 3072) || (stage.song_step == 3296)) //black disguise
 		{
 			Animatable_Init(&this->character.animatable, char_blackd_anim);
 			this->character.health_bar = 0xFF3B1A51;
-			this->character.size = FIXED_DEC(1667,1000);
 			this->character.health_i = 4;
 		}
 	}
@@ -381,43 +497,6 @@ void Char_Monotone_Tick(Character *character)
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Monotone_SetFrame);
 	Character_Draw(character, &this->tex, &char_monotone_frame[this->frame]);
-	
-	//Stage specific animations
-		switch (stage.stage_id)
-		{
-			case StageId_IdentityCrisis: //switches
-				if (stage.song_step == 384)
-					character->set_anim(character, CharAnim_Down);
-				if (stage.song_step == 636)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 896)
-					character->set_anim(character, CharAnim_Up);
-				if (stage.song_step == 1168)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 1500)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 1972)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 2272)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 2817)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 2878)
-					character->set_anim(character, CharAnim_Up);
-				if (stage.song_step == 3072)
-					character->set_anim(character, CharAnim_Idle);
-				if (stage.song_step == 3198)
-					character->set_anim(character, CharAnim_Down);
-				if (stage.song_step == 3280)
-					character->set_anim(character, CharAnim_Up);
-				if (stage.song_step == 3296)
-					character->set_anim(character, CharAnim_Up);
-				if (stage.song_step == 3328)
-					character->set_anim(character, CharAnim_Up);
-				break;
-			default:
-				break;
-		}
 }
 
 void Char_Monotone_SetAnim(Character *character, u8 anim)
@@ -462,9 +541,9 @@ Character *Char_Monotone_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
+	this->character.focus_x = FIXED_DEC(179,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

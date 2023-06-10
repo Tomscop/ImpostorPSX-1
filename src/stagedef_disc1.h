@@ -252,9 +252,9 @@
 	},
 	{ //StageId_IdentityCrisis (Identity Crisis)
 		//Characters
-		{Char_BFIC_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFIC_New,    FIXED_DEC(567,1),  FIXED_DEC(337,1)},
         {NULL},
-		{Char_Monotone_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Monotone_New, FIXED_DEC(362,1),  FIXED_DEC(351,1)},
         {NULL},
         {NULL},
 		
