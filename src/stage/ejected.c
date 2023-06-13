@@ -287,5 +287,7 @@ StageBack *Back_Ejected_New(void)
 	Gfx_LoadTex(&this->tex_lines, Archive_Find(arc_back, "lines.tim"), 0);
 	Mem_Free(arc_back);
 	
+	bgy = -120;
+	
 	return (StageBack*)this;
 }

@@ -338,9 +338,12 @@ void Char_BFDefeat_Free(Character *character)
 	Char_BFDefeat *this = (Char_BFDefeat*)character;
 	
 	//Free art
-	Mem_Free(this->arc_main);
-	Mem_Free(this->arc_1);
-	Mem_Free(this->arc_2);
+	if (stage.stage_id == StageId_Defeat)
+		Mem_Free(this->arc_main);
+	if (stage.stage_id == StageId_DoubleKill)
+		Mem_Free(this->arc_1);
+	if (stage.stage_id == StageId_Finale)
+		Mem_Free(this->arc_2);
 }
 
 Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
@@ -414,6 +417,7 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 			IO_Data *arc_ptr = &this->arc_ptr[BFDefeat_Arc1_Idle0];
 			for (; *pathp != NULL; pathp++)
 				*arc_ptr++ = Archive_Find(this->arc_1, *pathp);
+			this->arc_main = NULL;
 			this->arc_2 = NULL;
 			break;
 		}
@@ -439,6 +443,8 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 			IO_Data *arc_ptr = &this->arc_ptr[BFDefeat_Arc1_Idle0];
 			for (; *pathp != NULL; pathp++)
 				*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+			this->arc_1 = NULL;
+			this->arc_2 = NULL;
 			break;
 		}
 		case StageId_Finale: //Finale
@@ -460,6 +466,7 @@ Character *Char_BFDefeat_New(fixed_t x, fixed_t y)
 			for (; *pathp != NULL; pathp++)
 				*arc_ptr++ = Archive_Find(this->arc_2, *pathp);
 			this->arc_1 = NULL;
+			this->arc_main = NULL;
 			break;
 		}
 		default:

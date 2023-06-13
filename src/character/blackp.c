@@ -126,7 +126,7 @@ static const CharFrame char_blackp_frame[] = {
   {BlackP_ArcMain_RightB1, {  0,  0,144,101}, {192,144}}, //48 rightb 3
 };
 
-static const Animation char_blackp_anim[CharAnim_Max] = { // 674-430, 477-81
+static const Animation char_blackp_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, ASCR_CHGANI, CharAnim_Idle}},		//CharAnim_Idle
 	{2, (const u8[]){ 9, 10, 11, 12, ASCR_BACK, 1}},		//CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},		//CharAnim_LeftAlt
@@ -137,7 +137,7 @@ static const Animation char_blackp_anim[CharAnim_Max] = { // 674-430, 477-81
 	{2, (const u8[]){ 21, 22, 23, 24, ASCR_BACK, 1}},		//CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},		//CharAnim_RightAlt
 };
-static const Animation char_blackp_anim2[CharAnim_Max] = { // 490, 516
+static const Animation char_blackp_anim2[CharAnim_Max] = {
 	{2, (const u8[]){ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, ASCR_CHGANI, CharAnim_Idle}},		//CharAnim_Idle
 	{2, (const u8[]){ 37, 38, 39, ASCR_BACK, 1}},		//CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},		//CharAnim_LeftAlt

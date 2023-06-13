@@ -211,7 +211,7 @@ void Char_BFIC_Tick(Character *character)
 		if (stage.song_beat == 95)
 		{
 			this->character.focus_x = FIXED_DEC(443,1);
-			this->character.focus_y = FIXED_DEC(241,1);
+			this->character.focus_y = FIXED_DEC(236,1);
 			this->character.focus_zoom = FIXED_DEC(679,1024);
 		}
 		if (stage.song_beat == 112)
