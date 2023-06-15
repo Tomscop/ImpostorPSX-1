@@ -99,7 +99,6 @@ SRCS = src/main.c \
 	src/stage/turbulence.c \
 	src/stage/victory.c \
 	src/stage/lobby.c \
-	src/stage/week1.c \
 	src/stage/dummy.c \
 	src/object.c \
 	src/object/combo.c \

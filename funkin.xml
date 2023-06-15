@@ -292,8 +292,6 @@
 				<file name = "kitchen.arc" type = "data" source = "iso/stages/kitchen/back.arc"/>
 				<file name = "greyc.arc" type = "data" source = "iso/stages/kitchen/grey.arc"/>
 				<file name = "saster.arc" type = "data" source = "iso/stages/kitchen/saster.arc"/>
-				
-				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 				
 				

@@ -181,7 +181,7 @@ void Char_BFIC_Tick(Character *character)
 	if (stage.stage_id == StageId_IdentityCrisis)
 	{
 		//Camera
-		if ((stage.song_beat >= 6) && (stage.song_beat <= 63) && (this->character.focus_zoom >= FIXED_DEC(553,1024)))
+		if ((stage.song_beat >= 6) && (stage.song_beat <= 63) && (this->character.focus_zoom >= FIXED_DEC(553,1024)) && (stage.paused == false))
 		{
 			zoomoutic += 1;
 			if (zoomoutic == 7)
