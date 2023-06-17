@@ -320,7 +320,7 @@ iso/stages/mira/back.arc: iso/stages/mira/back0.tim iso/stages/mira/back1.tim is
 iso/stages/mira/powers.arc: iso/stages/mira/powers0.tim iso/stages/mira/powers1.tim iso/stages/mira/powers2.tim iso/stages/mira/powers3.tim iso/stages/mira/powers4.tim iso/stages/mira/powers5.tim iso/stages/mira/powers6.tim iso/stages/mira/powers7.tim iso/stages/mira/powers8.tim iso/stages/mira/powers9.tim 
 
 # Ejected
-iso/stages/ejected/back.arc: iso/stages/ejected/back0.tim iso/stages/ejected/back1.tim iso/stages/ejected/back2.tim iso/stages/ejected/lines.tim
+iso/stages/ejected/back.arc: iso/stages/ejected/back0.tim iso/stages/ejected/back1.tim iso/stages/ejected/back2.tim iso/stages/ejected/lines.tim iso/stages/ejected/scene0.tim iso/stages/ejected/scene1.tim iso/stages/ejected/scene2.tim
 
 # Airship
 iso/stages/airship/back.arc: iso/stages/airship/back0.tim iso/stages/airship/back1.tim

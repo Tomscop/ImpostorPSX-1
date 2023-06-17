@@ -58,6 +58,11 @@ void Back_Cargo_DrawFG(StageBack *back)
 		this->fade = FIXED_DEC(255,1);
 		this->fadespd = FIXED_DEC(717,1);
 	}
+	if (stage.song_step == 3392)
+	{
+		this->fade = FIXED_DEC(1,1);
+		this->fadespd = FIXED_DEC(246,1);
+	}
 	if (stage.song_step == 3408)
 	{
 		this->fade = FIXED_DEC(255,1);
@@ -73,7 +78,9 @@ void Back_Cargo_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		if (stage.paused == false)
+		if ((stage.paused == false) && ((stage.song_step >= 3391) && (stage.song_step <= 3407)))
+			this->fade += FIXED_MUL(this->fadespd, timer_dt);
+		else if (stage.paused == false)
 			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
 
@@ -82,19 +89,6 @@ void Back_Cargo_DrawFG(StageBack *back)
 	{
 		this->fade2 = FIXED_DEC(1,1);
 		this->fadespd2 = FIXED_DEC(246,1);
-	}
-
-	//end fade2
-	if (stage.song_step == 3408)
-		this->fade2 = 0;
-
-	if (this->fade2 > 0)
-	{
-		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-		u8 flash_col = this->fade2 >> FIXED_SHIFT;
-		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		if (stage.paused == false)
-			this->fade2 += FIXED_MUL(this->fadespd2, timer_dt);
 	}
 }
 void Back_Cargo_DrawMG(StageBack *back)
@@ -109,9 +103,16 @@ void Back_Cargo_DrawMG(StageBack *back)
 		this->fade3 = FIXED_DEC(1,1);
 		this->fadespd3 = FIXED_DEC(67,1);
 	}
+	if (stage.song_step == 1558)
+	{
+		this->fade3 = FIXED_DEC(255,1);
+		this->fadespd3 = FIXED_DEC(25,1);
+	}
 
 	//end fade3
 	if (stage.song_step == 1458)
+		this->fade3 = 0;
+	if (stage.song_step == 1680)
 		this->fade3 = 0;
 
 	if (this->fade3 > 0)
@@ -119,7 +120,9 @@ void Back_Cargo_DrawMG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade3 >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		if (stage.paused == false)
+		if ((stage.paused == false) && (stage.song_step >= 1557))
+			this->fade3 -= FIXED_MUL(this->fadespd3, timer_dt);
+		else if (stage.paused == false)
 			this->fade3 += FIXED_MUL(this->fadespd3, timer_dt);
 	}
 	
@@ -137,15 +140,6 @@ void Back_Cargo_DrawMG(StageBack *back)
 	//end fade4
 	if (stage.song_step == 1680)
 		this->fade4 = 0;
-
-	if (this->fade4 > 0)
-	{
-		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-		u8 flash_col = this->fade4 >> FIXED_SHIFT;
-		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		if (stage.paused == false)
-			this->fade4 -= FIXED_MUL(this->fadespd4, timer_dt);
-	}
 	
 	//Draw cargo
 	fx = stage.camera.x;

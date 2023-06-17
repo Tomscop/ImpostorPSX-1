@@ -531,7 +531,7 @@
 		{NULL},
 		
 		//Stage background
-		Back_Lobby_New,
+		Back_Airship_New,
 		
 		//Song info
 		3, 9,

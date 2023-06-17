@@ -26,6 +26,12 @@ typedef struct
 	Gfx_Tex tex_back1; //back1
 	Gfx_Tex tex_back2; //back2
 	Gfx_Tex tex_lines; //lines
+	Gfx_Tex tex_scene0; //scene0
+	Gfx_Tex tex_scene1; //scene1
+	Gfx_Tex tex_scene2; //scene2
+	
+	//fade stuff
+	fixed_t fade, fadespd;
 
 } Back_Ejected;
 
@@ -39,133 +45,96 @@ void Back_Ejected_DrawFG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
+	//start fade
+	if (stage.song_step == 0)
+	{
+		this->fade = FIXED_DEC(255,1);
+		this->fadespd = FIXED_DEC(100,1);
+	}
+	if (this->fade > 0)
+	{
+		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		u8 flash_col = this->fade >> FIXED_SHIFT;
+		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		if (stage.paused == false)
+			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+	}
+	
+	//Opening
+	if (stage.song_step == 256)
+	{
+		stage.flash = FIXED_DEC(255,1);
+		stage.flashspd = FIXED_DEC(1024,1);
+	}
+	if ((stage.song_step == 28) || (stage.song_step == 55) || (stage.song_step == 83) || (stage.song_step == 110) || (stage.song_step == 138) || (stage.song_step == 165) || (stage.song_step == 199))
+	{
+		stage.reactor = FIXED_DEC(255,1);
+		stage.reactorspd = FIXED_DEC(768,1);
+	}
+	
+	RECT cutscene0_src = {  0,  0,127, 95};
+	RECT cutscene1_src = {128,  0,127, 95};
+	RECT cutscene2_src = {  0, 96,127, 95};
+	RECT cutscene3_src = {128, 96,127, 95};
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+	RECT_FIXED cutscene_dst = {FIXED_DEC(-160,1), FIXED_DEC(-120,1), FIXED_DEC(320,1), FIXED_DEC(240,1)};
+	
+	if ((stage.song_step >= -29) && (stage.song_step <= 41))
+		Stage_DrawTex(&this->tex_scene0, &cutscene0_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 41) && (stage.song_step <= 55))
+		Stage_DrawTex(&this->tex_scene0, &cutscene1_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 55) && (stage.song_step <= 82))
+		Stage_DrawTex(&this->tex_scene0, &cutscene2_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 82) && (stage.song_step <= 95))
+		Stage_DrawTex(&this->tex_scene0, &cutscene3_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 95) && (stage.song_step <= 109))
+		Stage_DrawTex(&this->tex_scene1, &cutscene0_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 109) && (stage.song_step <= 140))
+		Stage_DrawTex(&this->tex_scene1, &cutscene1_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 140) && (stage.song_step <= 147))
+		Stage_DrawTex(&this->tex_scene1, &cutscene2_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 147) && (stage.song_step <= 164))
+		Stage_DrawTex(&this->tex_scene1, &cutscene3_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 164) && (stage.song_step <= 198))
+		Stage_DrawTex(&this->tex_scene2, &cutscene0_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 198) && (stage.song_step <= 225))
+		Stage_DrawTex(&this->tex_scene2, &cutscene1_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 225) && (stage.song_step <= 246))
+		Stage_DrawTex(&this->tex_scene2, &cutscene2_src, &cutscene_dst, FIXED_DEC(1,1));
+	if ((stage.song_step >= 246) && (stage.song_step <= 255))
+		Stage_DrawTex(&this->tex_scene2, &cutscene3_src, &cutscene_dst, FIXED_DEC(1,1));
+	
+	if ((stage.song_step >= -29) && (stage.song_step <= 255))
+		Gfx_DrawRect(&screen_src, 0, 0, 0);
+	
+	//Sky stuff
 	RECT lines_src = {  0,  0,255,251};
-	RECT_FIXED lines01_dst = {
-		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines02_dst = {
-		FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines11_dst = {
-		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+907,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines12_dst = {
-		FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+907,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines21_dst = {
-		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+1814,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines22_dst = {
-		FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+1814,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines31_dst = {
-		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+2683,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines32_dst = {
-		FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+2683,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines41_dst = {
-		FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+3566,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
-	RECT_FIXED lines42_dst = {
-		FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+3566,1) - fy,
-		FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(251,1)
-	};
+	RECT_FIXED lines01_dst = {FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines02_dst = {FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines11_dst = {FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+907,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines12_dst = {FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+907,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines21_dst = {FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+1814,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines22_dst = {FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+1814,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines31_dst = {FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+2683,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines32_dst = {FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+2683,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines41_dst = {FIXED_DEC(-160 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+3566,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
+	RECT_FIXED lines42_dst = {FIXED_DEC(198 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+3566,1) - fy, FIXED_DEC(255 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(251,1)};
 	
 	RECT cloud0_src = {  0,  0,200, 46};
 	RECT cloud1_src = {  0, 47,114, 35};
 	RECT cloud2_src = {  0, 83, 98, 18};
 	RECT cloud3_src = { 99, 83, 33, 11};
 	
-	RECT_FIXED cloud0_dst = {
-		FIXED_DEC(99 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+2433,1) - fy,
-		FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(129,1)
-	};
-	RECT_FIXED cloud1_dst = {
-		FIXED_DEC(416 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+1011,1) - fy,
-		FIXED_DEC(317 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(98,1)
-	};
-	RECT_FIXED cloud2_dst = {
-		FIXED_DEC(72 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+3242,1) - fy,
-		FIXED_DEC(275 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(48,1)
-	};
-	RECT_FIXED cloud3_dst = {
-		FIXED_DEC(255 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+1733,1) - fy,
-		FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(28,1)
-	};
-	RECT_FIXED cloud4_dst = {
-		FIXED_DEC(-100 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+175,1) - fy,
-		FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(129,1)
-	};
-	RECT_FIXED cloud5_dst = {
-		FIXED_DEC(-100 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+3741,1) - fy,
-		FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(129,1)
-	};
-	RECT_FIXED cloud6_dst = {
-		FIXED_DEC(40 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+1292,1) - fy,
-		FIXED_DEC(275 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(48,1)
-	};
-	RECT_FIXED cloud7_dst = {
-		FIXED_DEC(567 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+2983,1) - fy,
-		FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(28,1)
-	};
-	RECT_FIXED cloud8_dst = {
-		FIXED_DEC(459 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+180,1) - fy,
-		FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(28,1)
-	};
-	RECT_FIXED cloud9_dst = {
-		FIXED_DEC(459 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(bgy+3775,1) - fy,
-		FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1),
-		FIXED_DEC(28,1)
-	};
+	RECT_FIXED cloud0_dst = {FIXED_DEC(99 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+2433,1) - fy, FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(129,1)};
+	RECT_FIXED cloud1_dst = {FIXED_DEC(416 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+1011,1) - fy, FIXED_DEC(317 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(98,1)};
+	RECT_FIXED cloud2_dst = {FIXED_DEC(72 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+3242,1) - fy, FIXED_DEC(275 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(48,1)};
+	RECT_FIXED cloud3_dst = {FIXED_DEC(255 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+1733,1) - fy, FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(28,1)};
+	RECT_FIXED cloud4_dst = {FIXED_DEC(-100 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+175,1) - fy, FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(129,1)};
+	RECT_FIXED cloud5_dst = {FIXED_DEC(-100 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+3741,1) - fy, FIXED_DEC(555 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(129,1)};
+	RECT_FIXED cloud6_dst = {FIXED_DEC(40 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+1292,1) - fy, FIXED_DEC(275 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(48,1)};
+	RECT_FIXED cloud7_dst = {FIXED_DEC(567 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+2983,1) - fy, FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(28,1)};
+	RECT_FIXED cloud8_dst = {FIXED_DEC(459 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+180,1) - fy, FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(28,1)};
+	RECT_FIXED cloud9_dst = {FIXED_DEC(459 - screen.SCREEN_WIDEOADD2,1) - fx, FIXED_DEC(bgy+3775,1) - fy, FIXED_DEC(99 + screen.SCREEN_WIDEOADD,1), FIXED_DEC(28,1)};
 	
 	Stage_DrawTex(&this->tex_lines, &lines_src, &lines01_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_lines, &lines_src, &lines02_dst, stage.camera.bzoom);
@@ -243,7 +212,6 @@ void Back_Ejected_DrawBG(StageBack *back)
 		FIXED_DEC(491,1)
 	};
 	
-	Debug_StageMoveDebug(&back0_dst, 5, fx, fy);
 	Stage_DrawTex(&this->tex_back1, &building0_src, &building0_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &building1_src, &building1_dst, stage.camera.bzoom);
 	Stage_DrawTex(&this->tex_back1, &building2_src, &building2_dst, stage.camera.bzoom);
@@ -285,7 +253,14 @@ StageBack *Back_Ejected_New(void)
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Gfx_LoadTex(&this->tex_lines, Archive_Find(arc_back, "lines.tim"), 0);
+	Gfx_LoadTex(&this->tex_scene0, Archive_Find(arc_back, "scene0.tim"), 0);
+	Gfx_LoadTex(&this->tex_scene1, Archive_Find(arc_back, "scene1.tim"), 0);
+	Gfx_LoadTex(&this->tex_scene2, Archive_Find(arc_back, "scene2.tim"), 0);
 	Mem_Free(arc_back);
+	
+	//Initialize Fade
+	this->fade = FIXED_DEC(255,1);
+	this->fadespd = 0;
 	
 	bgy = -120;
 	
