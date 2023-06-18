@@ -13,6 +13,8 @@
 #include "../timer.h"
 #include "../animation.h"
 
+int snowx1, snowy1, snowx2, snowy2, snowx3, snowy3, snowx4, snowy4, snowx5, snowy5, snowx6, snowy6, snowx7, snowy7, snowx8, snowy8, snowx9, snowy9, snowx10, snowy10;
+
 //PolusMaroon Maroon background structure
 typedef struct
 {
@@ -24,6 +26,55 @@ typedef struct
 	Gfx_Tex tex_back1; //back1
 	
 } Back_PolusMaroon;
+
+void Back_PolusMaroon_DrawFG(StageBack *back)
+{
+	Back_PolusMaroon *this = (Back_PolusMaroon*)back;
+	
+	if (stage.paused == false)
+	{
+		snowx1 = RandomRange(0,320);
+		snowy1 = RandomRange(0,240);
+		snowx2 = RandomRange(0,320);
+		snowy2 = RandomRange(0,240);
+		snowx3 = RandomRange(0,320);
+		snowy3 = RandomRange(0,240);
+		snowx4 = RandomRange(0,320);
+		snowy4 = RandomRange(0,240);
+		snowx5 = RandomRange(0,320);
+		snowy5 = RandomRange(0,240);
+		snowx6 = RandomRange(0,320);
+		snowy6 = RandomRange(0,240);
+		snowx7 = RandomRange(0,320);
+		snowy7 = RandomRange(0,240);
+		snowx8 = RandomRange(0,320);
+		snowy8 = RandomRange(0,240);
+		snowx9 = RandomRange(0,320);
+		snowy9 = RandomRange(0,240);
+		snowx10 = RandomRange(0,320);
+		snowy10 = RandomRange(0,240);
+	}
+	RECT snow1_src = {snowx1, snowy1, 4, 4};
+	Gfx_DrawRect(&snow1_src, 255, 255, 255);
+	RECT snow2_src = {snowx2, snowy2, 4, 4};
+	Gfx_DrawRect(&snow2_src, 255, 255, 255);
+	RECT snow3_src = {snowx3, snowy3, 4, 4};
+	Gfx_DrawRect(&snow3_src, 255, 255, 255);
+	RECT snow4_src = {snowx4, snowy4, 4, 4};
+	Gfx_DrawRect(&snow4_src, 255, 255, 255);
+	RECT snow5_src = {snowx5, snowy5, 4, 4};
+	Gfx_DrawRect(&snow5_src, 255, 255, 255);
+	RECT snow6_src = {snowx6, snowy6, 4, 4};
+	Gfx_DrawRect(&snow6_src, 255, 255, 255);
+	RECT snow7_src = {snowx7, snowy7, 4, 4};
+	Gfx_DrawRect(&snow7_src, 255, 255, 255);
+	RECT snow8_src = {snowx8, snowy8, 4, 4};
+	Gfx_DrawRect(&snow8_src, 255, 255, 255);
+	RECT snow9_src = {snowx9, snowy9, 4, 4};
+	Gfx_DrawRect(&snow9_src, 255, 255, 255);
+	RECT snow10_src = {snowx10, snowy10, 4, 4};
+	Gfx_DrawRect(&snow10_src, 255, 255, 255);
+}
 
 void Back_PolusMaroon_DrawBG(StageBack *back)
 {
@@ -73,7 +124,7 @@ StageBack *Back_PolusMaroon_New(void)
 		return NULL;
 		
 	//Set background functions
-	this->back.draw_fg = NULL;
+	this->back.draw_fg = Back_PolusMaroon_DrawFG;
 	this->back.draw_md = NULL;
 	this->back.draw_bg = Back_PolusMaroon_DrawBG;
 	this->back.free = Back_PolusMaroon_Free;
