@@ -27,9 +27,7 @@ typedef struct
 	
 	//fade stuff
 	fixed_t fade, fadespd;
-	fixed_t fade2, fadespd2;
 	fixed_t fade3, fadespd3;
-	fixed_t fade4, fadespd4;
 
 } Back_Cargo;
 
@@ -83,13 +81,6 @@ void Back_Cargo_DrawFG(StageBack *back)
 		else if (stage.paused == false)
 			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
-
-	//start fade2
-	if (stage.song_step == 3392)
-	{
-		this->fade2 = FIXED_DEC(1,1);
-		this->fadespd2 = FIXED_DEC(246,1);
-	}
 }
 void Back_Cargo_DrawMG(StageBack *back)
 {
@@ -129,17 +120,6 @@ void Back_Cargo_DrawMG(StageBack *back)
 	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 	if ((stage.song_step >= 1458) && (stage.song_step <= 1557))
 		Gfx_DrawRect(&screen_src, 0, 0, 0);
-	
-	//start fade4
-	if (stage.song_step == 1558)
-	{
-		this->fade4 = FIXED_DEC(255,1);
-		this->fadespd4 = FIXED_DEC(25,1);
-	}
-
-	//end fade4
-	if (stage.song_step == 1680)
-		this->fade4 = 0;
 	
 	//Draw cargo
 	fx = stage.camera.x;
@@ -240,9 +220,7 @@ StageBack *Back_Cargo_New(void)
 	//Initialize Fade
 	this->fade = FIXED_DEC(255,1);
 	this->fadespd = 0;
-	this->fade2 = this->fadespd2 = 0;
 	this->fade3 = this->fadespd3 = 0;
-	this->fade4 = this->fadespd4 = 0;
 	
 	return (StageBack*)this;
 }

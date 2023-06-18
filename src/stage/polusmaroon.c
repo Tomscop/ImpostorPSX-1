@@ -25,70 +25,6 @@ typedef struct
 	
 } Back_PolusMaroon;
 
-typedef struct 
-{
-    int x[2];
-    int y[2];
-
-} Flake;
-
-#define flakexInitMin 0
-#define flakexInitMax 500
-#define flakeyInitMin -100
-#define flakeyInitMax -180
-#define snowscale 1
-#define flakecount 120
-
-Flake flakes[flakecount]; //draw 80 snowflakes
-
-void drawflake(int x, int y)
-{
-    RECT r = {x-1 * snowscale, y * snowscale, 6 * snowscale, 6 * snowscale};
-    Gfx_BlendRect(&r, 255, 255, 255, 0);
-    r.x += 1;
-    r.y += 1 * snowscale;
-    r.w = 3 * snowscale;
-    r.h = 1 * snowscale;
-    Gfx_DrawRect(&r, 255, 255, 255);
-    r.x += 1 * snowscale;
-    r.y -= 1 * snowscale;
-    r.w = 1 * snowscale;
-    r.h = 3 * snowscale;
-    Gfx_DrawRect(&r, 255, 255, 255);
-}
-
-void initFlakes(void)
-{
-    for (int i = 0; i < flakecount; i++)    
-    {
-        flakes[i].x[0] = RandomRange(flakexInitMin, flakexInitMax);
-        flakes[i].y[0] = RandomRange(flakeyInitMin, flakeyInitMax);
-    }
-}
-
-void tickFlakes(void)
-{
-    for (int i = 0; i < flakecount; i++)    
-    {
-        if (flakes[i].x[1] != 0 || flakes[i].x[1] != 0)
-        {
-            flakes[i].x[0] = flakes[i].x[1];
-            flakes[i].y[0] = flakes[i].y[1];
-        }
-		if (stage.paused == false)
-		{
-			flakes[i].x[1] = RandomRange(flakes[i].x[0], flakes[i].x[0] + RandomRange(-1, 1));
-			flakes[i].y[1] += RandomRange(1, 5);
-		}
-        drawflake(flakes[i].x[1]-stage.camera.x, flakes[i].y[1]-stage.camera.y);
-    }
-} 
-
-void Back_PolusMaroon_DrawFG(StageBack *back)
-{
-	tickFlakes();
-}
-
 void Back_PolusMaroon_DrawBG(StageBack *back)
 {
 	Back_PolusMaroon *this = (Back_PolusMaroon*)back;
@@ -135,11 +71,9 @@ StageBack *Back_PolusMaroon_New(void)
 	Back_PolusMaroon *this = (Back_PolusMaroon*)Mem_Alloc(sizeof(Back_PolusMaroon));
 	if (this == NULL)
 		return NULL;
-	
-	initFlakes();
-	
+		
 	//Set background functions
-	this->back.draw_fg = Back_PolusMaroon_DrawFG;
+	this->back.draw_fg = NULL;
 	this->back.draw_md = NULL;
 	this->back.draw_bg = Back_PolusMaroon_DrawBG;
 	this->back.free = Back_PolusMaroon_Free;

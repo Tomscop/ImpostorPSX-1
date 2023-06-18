@@ -1671,7 +1671,7 @@ static void Stage_LoadChart(void)
 	}
 
 	//Special Chart
-	if (stage.stage_id == StageId_VotingTime)
+	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_MonotoneAttack))
 	{
 		sprintf(chart_path, "\\WEEK6\\6.7N.CHT;1");
 		Stage_UnloadChart(&stage.special_chart);
