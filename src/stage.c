@@ -1286,8 +1286,16 @@ static void Stage_DrawNotes(Chart* chart)
 				{
 					if (clip < (24 << FIXED_SHIFT))
 					{
-						note_src.x = 160;
-						note_src.y = ((note->type & 0x3) << 5) + 4 + (clip >> FIXED_SHIFT);
+						if (chart == &stage.special_chart)
+						{
+							note_src.x = 192;
+							note_src.y = 0;
+						}
+						else
+						{
+							note_src.x = 160;
+							note_src.y = ((note->type & 0x3) << 5) + 4 + (clip >> FIXED_SHIFT);
+						}
 						note_src.w = 32;
 						note_src.h = 28 - (clip >> FIXED_SHIFT);
 						
@@ -1304,7 +1312,7 @@ static void Stage_DrawNotes(Chart* chart)
 						//draw for opponent
 						if (show)
 						{
-							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+							if ((stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT) || (chart == &stage.special_chart))
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
 								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1320,8 +1328,16 @@ static void Stage_DrawNotes(Chart* chart)
 					
 					if (clip < next_size)
 					{
-						note_src.x = 160;
-						note_src.y = ((note->type & 0x3) << 5);
+						if (chart == &stage.special_chart)
+						{
+							note_src.x = 192;
+							note_src.y = 0;
+						}
+						else
+						{
+							note_src.x = 160;
+							note_src.y = ((note->type & 0x3) << 5);
+						}
 						note_src.w = 32;
 						note_src.h = 16;
 						
@@ -1335,7 +1351,7 @@ static void Stage_DrawNotes(Chart* chart)
 						//draw for opponent
 						if (show)
 						{
-							if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+							if ((stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT) || (chart == &stage.special_chart))
 								Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 							else
 								Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1365,7 +1381,7 @@ static void Stage_DrawNotes(Chart* chart)
 				//draw for opponent
 				if (show)
 				{
-						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+						if ((stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT) || (chart == &stage.special_chart))
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
 							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1389,7 +1405,7 @@ static void Stage_DrawNotes(Chart* chart)
 				//draw for opponent
 				if (show)
 				{
-						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+						if ((stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT) || (chart == &stage.special_chart))
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
 							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1403,8 +1419,16 @@ static void Stage_DrawNotes(Chart* chart)
 					continue;
 				
 				//Draw note
-				note_src.x = 32 + ((note->type & 0x3) << 5);
-				note_src.y = 0;
+				if (chart == &stage.special_chart)
+				{
+					note_src.x = 0;
+					note_src.y = 0 + ((note->type & 0x3) << 5);;
+				}
+				else
+				{
+					note_src.x = 32 + ((note->type & 0x3) << 5);
+					note_src.y = 0;
+				}
 				note_src.w = 32;
 				note_src.h = 32;
 				
@@ -1418,7 +1442,7 @@ static void Stage_DrawNotes(Chart* chart)
 				//draw for opponent
 				if (show)
 				{
-						if (stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT)
+						if ((stage.prefs.middlescroll && note->type & NOTE_FLAG_OPPONENT) || (chart == &stage.special_chart))
 							Stage_BlendTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump, 1);
 						else
 							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -3160,13 +3184,11 @@ void Stage_Tick(void)
 
 							if (note->type & NOTE_FLAG_OPPONENT)
 							{
-								stage.player_state[1].arrow_hitan[note->type & 0x3] = stage.step_time;
 								Stage_CheckAnimations(&stage.player_state[1], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
 							}
 
 							else
 							{
-								stage.player_state[0].arrow_hitan[note->type & 0x3] = stage.step_time;
 								Stage_CheckAnimations(&stage.player_state[0], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
 							}
 						}
@@ -3272,10 +3294,6 @@ void Stage_Tick(void)
 				ObjectList_Tick(&stage.objlist_splash);
 				
 				//Draw stage notes
-
-				if (stage.special_chart.data != NULL)
-					Stage_DrawNotes(&stage.special_chart);
-				
 				Stage_DrawNotes(&stage.chart);
 				
 				//Draw note HUD
@@ -3311,6 +3329,8 @@ void Stage_Tick(void)
 							Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 					}
 				}
+				if (stage.special_chart.data != NULL)
+					Stage_DrawNotes(&stage.special_chart);
 			}
 			
 			if ((stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_VotingTime))
