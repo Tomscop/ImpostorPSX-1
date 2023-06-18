@@ -1270,7 +1270,7 @@ static void Stage_DrawNotes(Chart* chart)
 				//Check for sustain clipping
 				fixed_t clip;
 				y -= scroll.size;
-				if (((note->type ^ stage.note_swap) & (bot | NOTE_FLAG_HIT)) || ((this->pad_held & note_key[note->type & 0x3]) && (note_fp + stage.late_sus_safe >= chart->note_scroll)))
+				if (((note->type ^ stage.note_swap) & (bot | NOTE_FLAG_HIT)) || (chart == &stage.special_chart) ||((this->pad_held & note_key[note->type & 0x3]) && (note_fp + stage.late_sus_safe >= chart->note_scroll)))
 				{
 					clip = note_y[(note->type & 0x7)] - y;
 					if (clip < 0)
@@ -1899,17 +1899,17 @@ static void Stage_LoadMusic(void)
 	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Torture))
 	{
 		stage.intro = false;
-		stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
+		stage.special_chart.note_scroll = stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
 	}
 	else if (prtndr == true)
 	{
 		stage.intro = true;
-		stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-5 * 28 * 12,1);
+		stage.special_chart.note_scroll = stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-5 * 28 * 12,1);
 	}
 	else
 	{
 		stage.intro = true;
-		stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
+		stage.special_chart.note_scroll = stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-5 * 6 * 12,1);
 	}
 	stage.song_time = FIXED_DIV(stage.chart.note_scroll, stage.chart.step_crochet);
 	stage.interp_time = 0;
