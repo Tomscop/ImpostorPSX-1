@@ -611,7 +611,8 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 	{
 		if (playing)
 		{
-			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || ((this->character == stage.opponent2 ||
+				this->character2 == stage.opponent2) && stage.opponent2 != NULL)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			this->pad_held = this->character->pad_held = pad->held;
 			this->pad_press = pad->press;
@@ -646,7 +647,8 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		//Do perfect note checks
 		if (playing)
 		{
-			u8 i = (this->character == stage.opponent || this->character == stage.opponent2 || this->character2 == stage.opponent2) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || ((this->character == stage.opponent2 ||
+				this->character2 == stage.opponent2) && stage.opponent2 != NULL)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			u8 hit[4] = {0, 0, 0, 0};
 			for (Note *note = stage.chart.cur_note;; note++)
