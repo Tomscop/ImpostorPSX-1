@@ -30,7 +30,10 @@ typedef struct
 	Gfx_Tex tex_back5; //back5
 	Gfx_Tex tex_back6; //back6
 	Gfx_Tex tex_back7; //back7
-
+	
+	int rainx[7];
+	int rainy[7];
+	
 } Back_Skeld;
 
 void Back_Skeld_DrawFG(StageBack *back)
@@ -73,6 +76,28 @@ void Back_Skeld_DrawFG(StageBack *back)
 		Stage_DrawTex(&this->tex_back7, &end_src, &end_dst, FIXED_DEC(1,1));
 	if ((stage.song_step >= 633) && (stage.song_step <= 639))
 		Stage_DrawTex(&this->tex_back7, &you_src, &you_dst, FIXED_DEC(1,1));
+}
+
+void Back_Skeld_DrawMG(StageBack *back)
+{
+	Back_Skeld *this = (Back_Skeld*)back;
+	
+	if (stage.paused == false)
+	{
+		for (u8 i = 0; i < 7; i++)
+		{
+		//Set rain a random value
+		this->rainx[i] = RandomRange(0,320);
+		this->rainy[i] = RandomRange(0,240);
+		}
+	}
+	//Draw rains
+	for (u8 i = 0; i < 7; i++)
+	{
+		RECT rain_src = {this->rainx[i], this->rainy[i], 2, 10};
+		if (bgswitch == 2)
+			Gfx_DrawRect(&rain_src, 255, 255, 255);
+	}
 }
 
 void Back_Skeld_DrawBG(StageBack *back)
@@ -322,7 +347,7 @@ StageBack *Back_Skeld_New(void)
 	
 	//Set background functions
 	this->back.draw_fg = Back_Skeld_DrawFG;
-	this->back.draw_md = NULL;
+	this->back.draw_md = Back_Skeld_DrawMG;
 	this->back.draw_bg = Back_Skeld_DrawBG;
 	this->back.free = Back_Skeld_Free;
 	
