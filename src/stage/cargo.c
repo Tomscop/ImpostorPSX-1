@@ -31,6 +31,11 @@ typedef struct
 
 } Back_Cargo;
 
+void fadething(const RECT *rect, u8 flash_col)
+{
+	Gfx_BlendRect(rect, flash_col, flash_col, flash_col, 2);
+}
+
 void Back_Cargo_DrawFG(StageBack *back)
 {
 	Back_Cargo *this = (Back_Cargo*)back;
@@ -75,7 +80,7 @@ void Back_Cargo_DrawFG(StageBack *back)
 	{
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
-		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		fadething(&flash, flash_col);
 		if ((stage.paused == false) && ((stage.song_step >= 3391) && (stage.song_step <= 3407)))
 			this->fade += FIXED_MUL(this->fadespd, timer_dt);
 		else if (stage.paused == false)
@@ -110,7 +115,7 @@ void Back_Cargo_DrawMG(StageBack *back)
 	{
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade3 >> FIXED_SHIFT;
-		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		fadething(&flash, flash_col);
 		if ((stage.paused == false) && (stage.song_step >= 1557))
 			this->fade3 -= FIXED_MUL(this->fadespd3, timer_dt);
 		else if (stage.paused == false)
